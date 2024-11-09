@@ -21,8 +21,8 @@ waydroid app launch org.phramusca.jamuz
 
 - TODO: H2 have a windowed mode ?
 - TODO: H2 change keyword to azerty as it is on cinnamon default ?
-  - Aucune des olutions ci-dessous ne marche:
-    - pas d'onglet "Disposition" dans menu "Caliver" des "Paramètres.
+  - Aucune des solutions ci-dessous ne marche:
+    - pas d'onglet "Disposition" dans menu "Clavier" des "Paramètres.
     - pas de résultat avec la ligne de commande, french est pourtant selectionné par défaut et il n'y a pas d'erreur à l'execution, mais toujours en qwerty
   - [https://www.numetopia.fr/comment-changer-la-disposition-du-clavier-dans-linux-mint/#changer_dispo_clavier_en_cli](https://www.numetopia.fr/comment-changer-la-disposition-du-clavier-dans-linux-mint/#changer_dispo_clavier_en_cli)
 
@@ -34,7 +34,7 @@ waydroid app launch org.phramusca.jamuz
 
 Hard to start but works somehow, need to find out how ?
 
-A solution, from https://github.com/waydroid/waydroid/issues/282
+A solution, from <https://github.com/waydroid/waydroid/issues/282>
 
 ```console
 sudo killall waydroid
@@ -44,9 +44,9 @@ waydroid session start # In separate terminal, possibly could use `&` at the end
 
 seem to work, to be clarified
 
-https://www.apkmirror.com/
+<https://www.apkmirror.com/>
 
-https://manpages.ubuntu.com/manpages/focal/en/man5/weston.ini.5.html#launcher%20section
+<https://manpages.ubuntu.com/manpages/focal/en/man5/weston.ini.5.html#launcher%20section>
 
 `sudo mount --bind ~/Documents ~/.local/share/waydroid/data/media/0/Documents`
 

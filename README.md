@@ -18,7 +18,7 @@ Il s'agit plutôt d'un bloc-notes de mon expérience (professionnelle et personn
 
 ### [Développement](wiki/Développement)
 
-Le [Développement](wiki/Développement) de logiciels ou de sites Internet, peut se faire sous Linux, mais aussi sous Windows. 
+Le [Développement](wiki/Développement) de logiciels ou de sites Internet, peut se faire sous Linux, mais aussi sous Windows.
 
 Linux est, à mon humble avis, préférable dans le monde du développement, à moins d'utiliser des solutions Microsoft, et encore de nombreux équivalents existent: Mono pour .NET, Gambas pour VB, ...
 
