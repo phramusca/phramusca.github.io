@@ -1,5 +1,11 @@
 # Disques Locaux
 
+Use `Disks` and/or `gparted` to see errors and check, to partition and manage drives.
+
+If drive is mounted and cannot unmount as used, boot to a live linux to perform some operations.
+
+`sudo fdisk -l` to list disks and get /dev/xxx identifier
+
 ## Monter un disque
 
 Monter un disque signifie le rendre accessible en lecture, écriture
@@ -112,6 +118,43 @@ A noter les commandes suivantes :
 mlabel -s d:        pour afficher le label existant de /dev/hda5
 sudo mlabel -c d:    pour effacer le label existant de /dev/hda5
 ```
+
+## Fix bad blocks
+
+[Source](https://askubuntu.com/questions/1278032/fixing-bad-sectors-of-a-hard-drive)
+
+> do NOT abort a bad block scan!
+
+> do NOT bad block a SSD
+
+> backup your important files FIRST!
+
+> this will take many hours
+
+First check with `fsck -f /dev/sdXX` and repeat the fsck command if there were errors
+
+Then launch `sudo e2fsck -fcky /dev/sdXX`
+
+The -k is important, because it saves the previous bad block table, and adds any new bad blocks to that table. Without -k, you loose all of the prior bad block information.
+
+The -fcky parameter...
+
+   ```
+   -f    Force checking even if the file system seems clean.
+   -c    This option causes e2fsck to use badblocks(8) program to do
+         a read-only scan of the device in order to find any bad blocks.
+         If any bad blocks are found, they are added to the bad block
+         inode to prevent them from being allocated to a file or direc‐
+         tory.  If this option is specified twice, then the bad block scan
+         will be done using a non-destructive read-write test.
+   -k    When combined with the -c option, any existing bad blocks in the
+         bad blocks list are preserved, and any new bad blocks found by
+         running badblocks(8) will be added to the existing bad blocks
+         list.
+   -y    Assume an answer of `yes' to all questions; allows e2fsck to be
+         used non-interactively. This option may not be specified at the
+         same time as the -n or -p options.
+   ```
 
 ------------------------------------------------------------------------
 

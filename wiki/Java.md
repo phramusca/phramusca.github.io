@@ -12,6 +12,18 @@ bien connu Eclipse, que je ne connais que très peu)
 - Cours, un autre: <http://prevert.upmf-grenoble.fr/Prog/>
 - Ubuntu.fr: <http://doc.ubuntu-fr.org/java>
 
+- Verify the Java Version
+
+    `java -version`
+
+- Check Installed Java Versions
+
+  `update-alternatives --config java`
+
+- Set the Default Java Version
+
+  `sudo update-alternatives --config java`
+
 ## Log
 
 - <http://imss-www.upmf-grenoble.fr/prevert/Prog/Java/CoursJava/fichierDeLogs.html>
