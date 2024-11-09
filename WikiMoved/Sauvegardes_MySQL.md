@@ -1,3 +1,5 @@
+# Sauvegardes MySQL
+
 Les scripts de backup font une sauvegarde de la base de données avec
 mysqsldump.
 
@@ -35,10 +37,8 @@ la base distante sur le site distant !!**
 
 Les [Scripts de Backup](Scripts_de_Backup "wikilink") font aussi une
 sauvegarde de la base, mais en utilisant mysqldump. L'avantage est que
-ces sauvegardes peuvent être programmées avec cron. Voir [Sauvegardes et
-Restauration](Sauvegardes_et_Restauration "wikilink") pour les détails.
+ces sauvegardes peuvent être programmées avec cron. Voir [Sauvegardes et Restauration](Sauvegardes_et_Restauration "wikilink") pour les détails.
 
 ------------------------------------------------------------------------
 
-Retour à [Sauvegardes et
-Restauration](Sauvegardes_et_Restauration "wikilink")
+Retour à [Sauvegardes et Restauration](Sauvegardes_et_Restauration "wikilink")

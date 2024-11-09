@@ -1,3 +1,5 @@
+# BPM
+
 A essayer et trier
 
 - <http://jorgenmodin.net/index_html/archive/2010/07/23/counting-bpm-beats-per-minute-on-linux/weblogentry_view#1315989621>
@@ -11,7 +13,7 @@ A essayer et trier
 - Banshee
 - Mixxx
 
-<!-- -->
+
 
 - <http://stackoverflow.com/questions/657073/how-to-detect-bpm-of-the-song-by-programming>
 

@@ -1,3 +1,5 @@
+# SciTE
+
 ## Documentation
 
 <http://scintilla.sourceforge.net/SciTEDoc.html>

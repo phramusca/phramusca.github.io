@@ -1,7 +1,9 @@
+# Firefox
+
 Le désormais célèbre Firefox existe bien évidement sous
 [Linux](Linux "wikilink").
 
-### Flash Player
+## Flash Player
 
 Lorsqu'une page contient du Flash, Firefox propose d'installer un
 lecteur. Préferer le Flash Player non-free, car Gnash n'est apparement
@@ -9,13 +11,13 @@ pas encore au point (au 14 fevrier 2008).
 
 [Flash sur Ubuntu-fr](http://doc.ubuntu-fr.org/flashplayer)
 
-### Java
+## Java
 
 Voir [Java sur Ubuntu-fr](http://doc.ubuntu-fr.org/java)
 
-### Modules complémentaires
+## Modules complémentaires
 
-#### Pour tous
+### Pour tous
 
 |  |  |
 |----|----|
@@ -32,7 +34,7 @@ Voir [Java sur Ubuntu-fr](http://doc.ubuntu-fr.org/java)
 | Meebo |  |
 | [Form History Control](https://addons.mozilla.org/fr/firefox/addon/form-history-control/) | Permet de gérer (voir, nettoyer, ...) les entrées faites dans les formulaires sur les sites web (qui sont sauvegardées). |
 
-#### Pour les développeurs
+### Pour les développeurs
 
 |  |  |
 |----|----|
@@ -41,7 +43,7 @@ Voir [Java sur Ubuntu-fr](http://doc.ubuntu-fr.org/java)
 | [Firebug](http://doc.ubuntu-fr.org/firebug) | Pour déboguer, éditer et modifier le PHP, le HTML, le CSS et le Javascript d'une page web |
 | Web Developer | Le couteau suisse du développeur web. Permet notamment d'activer/désactiver le cache, CSS, Javascript, de redimensionner la page, ... |
 
-### Pas de son ?
+## Pas de son ?
 
 Pas de souci :
 
@@ -50,7 +52,7 @@ Pas de souci :
 - Plus de détail :
   <http://www.pcinpact.com/forum/index.php?s=3da47c284e67630dfdcb4f49e62bf12d&showtopic=89999>
 
-### Firefox Sync
+## Firefox Sync
 
 Depuis Firefox 4 "Firefox Sync" est intégré. Cela permet d'avoir touts
 ses marques-pages disponibles ou que l'on soit.

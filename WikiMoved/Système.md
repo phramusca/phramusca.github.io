@@ -1,3 +1,5 @@
+# Système
+
 ## Applications par défaut et menu
 
 *A développer*
@@ -12,8 +14,6 @@
 - /etc/gnome/defaults.list : applications par défaut pour gnome
 - <http://blog.vucica.net/2009/05/debianubuntu-gnome-restoring-nautilus-as-default-folder-viewer-opener.html>
 - ... a compléter !!
-
-<!-- -->
 
 - <http://forum.ubuntu-fr.org/viewtopic.php?pid=7036991>
 
@@ -39,9 +39,11 @@ et/ou pour gérer les sessions (restauration de session), aller à Système
   - Exemple: permettre de monter des disques Samba (rajouter à la fin du
     fichier):
 
-`#Samba mount`
-`Cmnd_Alias MOUNT = /bin/mount,/bin/umount,/sbin/mount.cifs,/sbin/umount.cifs`
-`ALL ALL = NOPASSWD: MOUNT`
+```sh
+#Samba mount
+Cmnd_Alias MOUNT = /bin/mount,/bin/umount,/sbin/mount.cifs,/sbin/umount.cifs
+ALL ALL = NOPASSWD: MOUNT
+```
 
 ## Icônes
 
@@ -54,7 +56,8 @@ Un benchmark est un logiciel qui teste les capacités d'un PC
 - pi : Lancer
 
 `./pi 20`
-[`ftp://pi.super-computing.org/Linux/super_pi.tar.gz`](ftp://pi.super-computing.org/Linux/super_pi.tar.gz)
+
+[ftp://pi.super-computing.org/Linux/super_pi.tar.gz](ftp://pi.super-computing.org/Linux/super_pi.tar.gz)
 
 - geekbenchmark : <http://www.primatelabs.ca/geekbench/index.html>
 
@@ -71,8 +74,7 @@ dé-commenter la ligne correspondante dans ~/.bashrc
 
 Ensuite, relancer le bash avec la commande exec bash
 
-[Liste non exhaustive
-d'alias](http://forum.ubuntu-fr.org/viewtopic.php?id=20437)
+[Liste non exhaustive d'alias](http://forum.ubuntu-fr.org/viewtopic.php?id=20437)
 
 ## Clavier
 
@@ -94,38 +96,62 @@ Pour configurer les boutons supplémentaires d'une souris:
 
 Pour MX Master:
 
-\- Installation
+- Installation
 
-` sudo apt-get install xbindkeys xautomation x11-utils`
-` xbindkeys --defaults > $HOME/.xbindkeysrc`
+  ```sh
+  sudo apt-get install xbindkeys xautomation x11-utils 
+  xbindkeys --defaults > $HOME/.xbindkeysrc
+  ```
 
-\- Identifier les boutons
+- Identifier les boutons
+  
+  ```sh
+  xev -event mouse | grep Button --before-context=1 --after-context=2
+  ```
 
-` xev -event mouse | grep Button --before-context=1 --after-context=2`
+- Modifier la configuration
 
-\- Modifier la configuration
+  ```sh
+  xed $HOME/.xbindkeysrc
+  ```
 
-` xed $HOME/.xbindkeysrc`
+  - Left button
 
-` # Left button: previous`
-` "xte 'keydown Alt_L' 'key Left' 'keyup Alt_L'"`
-` b:8`
+      ```sh
+      # Left button: previous
+      "xte 'keydown Alt_L' 'key Left' 'keyup Alt_L'"
+      b:8
+      ```
+  
+  - Other left button: next
 
-` # Other left button: next`
-` "xte 'keydown Alt_L' 'key Right' 'keyup Alt_L'"`
-` b:9`
+      ```sh
+      # Other left button: next
+      "xte 'keydown Alt_L' 'key Right' 'keyup Alt_L'"
+      b:9
+      ```
 
-` # Thumb wheel scroll left`
-` "xte 'keydown Control_L' 'key Left' 'keyup Control_L'"`
-`     b:6`
+  - Thumb wheel scroll left
 
-` # Thumb wheel scroll right`
-` "xte 'keydown Control_L' 'key Right' 'keyup Control_L'"`
-`     b:7`
+    ```sh
+    # Thumb wheel scroll left
+    "xte 'keydown Control_L' 'key Left' 'keyup Control_L'"
+    b:6
+    ```
 
-\- Relancer:
+  - Thumb wheel scroll right
 
-` xbindkeys -p`
+    ```sh
+    # Thumb wheel scroll right
+    "xte 'keydown Control_L' 'key Right' 'keyup Control_L'"
+    b:7
+    ```
+
+- Relancer:
+
+  ```sh
+  xbindkeys -p
+  ```
 
 ------------------------------------------------------------------------
 

@@ -1,6 +1,8 @@
+# RipperX
+
 RipperX permet de convertir les CDs en fichiers MP3.
 
-#### Configuration
+## Configuration
 
 - CDDB: freedb.freedb.org/~cddb/cddb.cgi port 80
 - filename format : %# %s

@@ -1,6 +1,8 @@
+# GIMP
+
 GIMP est un équivalent Open Source de Photoshop.
 
-# GIF animés
+## GIF animés
 
 <http://www.infetech.com/article.php3?id_article=166>
 
@@ -15,12 +17,12 @@ GIMP est un équivalent Open Source de Photoshop.
   s’emplient) ainsi aue la vitesse de défilement des images (700 ms par
   ex)
 
-# Panorama Tools
+## Panorama Tools
 
 Il existe un plugin des [Panorama
 Tools](http://sourceforge.net/projects/panotools/) pour GIMP.
 
-## Installation
+### Installation
 
 - Télécharger le plugin ici:
   <http://panotools.svn.sourceforge.net/viewvc/panotools/trunk/gimp-plugin-ng/>
@@ -51,7 +53,7 @@ la procédure d'installation:
   - make
   - sudo make install
 
-## Utilisation
+### Utilisation
 
 Je ne connais qu'une utilisation :
 <http://replay.waybackmachine.org/20040215114320/http://www.panoguide.com/technique/circular.html>

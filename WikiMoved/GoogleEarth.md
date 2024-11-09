@@ -1,1 +1,0 @@
-1.  REDIRECTION [Google Earth](Google_Earth "wikilink")

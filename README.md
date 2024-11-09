@@ -7,3 +7,9 @@
 ## Internet Code Samples
 
 [Internet Code Samples](https://github.com/phramusca/Samples/blob/main/internet/README.md)
+
+## Wiki
+
+Des informations en vrac sur l'ordinateur.
+
+[WikiMoved](WikiMoved/Accueil.md)

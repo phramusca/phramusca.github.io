@@ -1,3 +1,5 @@
+# Disques Réseau
+
 Je ne parle ici que de réseau Windows, n'ayant pas eu l'occasion de
 tester comment marche le réseau Linux.
 
@@ -42,7 +44,7 @@ Pour monter un disque réseau, il existe plusieurs méthodes:
 ### mount.cifs
 
 Pour pouvoir utiliser la commande mount.cifs, il faut installer le
-[paquet](paquet "wikilink") [smbfs](apt:smbfs)
+[paquet](Paquet "wikilink") [smbfs](apt:smbfs)
 
 Ensuite, utiliser la commande mount.cifs. Par exemple, pour monter :
 
@@ -54,9 +56,9 @@ Ensuite, utiliser la commande mount.cifs. Par exemple, pour monter :
   (id=1000,gid=1000)
 - sur le domaine WORKGROUP
 
-<!-- -->
-
-     mount.cifs //192.168.0.2/Musiquexxxx /media/Musiquexxxx -o user=toto,password=tutu,id=1000,gid=1000,domain=WORKGROUP,iocharset=utf8
+```sh
+mount.cifs //192.168.0.2/Musiquexxxx /media/Musiquexxxx -o user=toto,password=tutu,id=1000,gid=1000,domain=WORKGROUP,iocharset=utf8
+```
 
 **Attention**: Pour pouvoir utiliser cette commande par un utilisateur
 non-root, il est nécessaire de lui donner les droits avec

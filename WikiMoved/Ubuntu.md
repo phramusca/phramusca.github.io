@@ -1,3 +1,5 @@
+# Ubuntu
+
 Ubuntu (à prononcer « Ou-boun-tou ») est une distribution de
 [Linux](Linux "wikilink") de plus en plus populaire, voir la plus
 populaire, créée en 2004.
@@ -11,7 +13,7 @@ populaire, créée en 2004.
 Pour commencer à tester ou installer Ubuntu: voir la page
 [Installation](Installation "wikilink").
 
-# Unity
+## Unity
 
 Ubuntu 11.04 a introduit une nouvelle interface développée par Canonical
 (la société derrière Ubuntu) appelée

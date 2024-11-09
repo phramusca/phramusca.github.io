@@ -1,10 +1,12 @@
+# VNC
+
 VNC est installé par défaut dans Ubuntu.
 
 ## Client
 
 Pour se connecter à un autre PC:
 
-`vncviewer `<Ip ou nom>`:`<port>` `
+`vncviewer <Ip ou nom>:<port>`
 
 (ex: vncviewer xxxx-desktop:0)
 
@@ -31,17 +33,17 @@ Plus d'informations sur sa configuration :
 
 Résumé de la configuration :
 
-1.  Inscription sur le site :
+1. Inscription sur le site :
     <https://www.dyndns.com/account/create.html>
-2.  Paramètres à saisir pour configurer un routeur :
-    1.  Fournisseur de service DNS dynamique : www.dyndns.org
-    2.  Noms de domaine de DNS dynamique :
+2. Paramètres à saisir pour configurer un routeur :
+    1. Fournisseur de service DNS dynamique : `www.dyndns.org`
+    2. Noms de domaine de DNS dynamique :
         <ce_que_vous_avez_choisi>.dyndns.org
-    3.  Identifiant pour le service de DNS dynamique : le login de votre
-        compte sur le site www.dyndns.org
-    4.  Mot de passe pour le service de DNS dynamique : le mot de passe
-        de votre compte sur le site www.dyndns.org
-    5.  Interface du service de DNS dynamique: eth0 ou ppp0 ou ... selon
+    3. Identifiant pour le service de DNS dynamique : le login de votre
+        compte sur le site `www.dyndns.org`
+    4. Mot de passe pour le service de DNS dynamique : le mot de passe
+        de votre compte sur le site `www.dyndns.org`
+    5. Interface du service de DNS dynamique: eth0 ou ppp0 ou ... selon
         la configuration système de votre connexion internet
 
 ------------------------------------------------------------------------

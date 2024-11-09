@@ -1,3 +1,5 @@
+# Sauvegarde et Restauration
+
 ## Architecture
 
 4 disques:
@@ -19,12 +21,12 @@ un tableau récapitulant l'organisation et backups de mes disques
 **Utiliser le cron (http://doc.ubuntu-fr.org/cron et l'interface Kcron
 pour configurer plus facilement)**
 
-`voir aussi gnome-schedule`
-`ou manuellement: `[`http://www.jkconception.com/dotclear/index.php/2007/07/09/21-les-crons-ou-les-taches-planifiees-sous-linux`](http://www.jkconception.com/dotclear/index.php/2007/07/09/21-les-crons-ou-les-taches-planifiees-sous-linux)
+    voir aussi gnome-schedule
+    ou manuellement: [http://www.jkconception.com/dotclear/index.php/2007/07/09/21-les-crons-ou-les-taches-planifiees-sous-linux](http://www.jkconception.com/dotclear/index.php/2007/07/09/21-les-crons-ou-les-taches-planifiees-sous-linux)
 
 **ESSAYER D'UTILISER rdiff-backup A LA PLACE DE rsync**
 
-# IMPORTANT - ATTENTION
+## IMPORTANT - ATTENTION
 
 '''Certaines actions ne sont pas gérées par les scripts de backup, et
 doivent donc être faite manuellement:
@@ -32,8 +34,6 @@ doivent donc être faite manuellement:
 - synchroniser la base locale avec la base distante manuellement:
   [Sauvegardes MySQL](Sauvegardes_MySQL "wikilink")
 - mettre a jour SVN (Subversion).
-
-'''
 
 ------------------------------------------------------------------------
 

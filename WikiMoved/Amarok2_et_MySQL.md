@@ -1,3 +1,5 @@
+# Amarok2 et MySQL
+
 **Apparemment, dans la version 2.2 et + [Amarok](Amarok "wikilink") gère
 ceci lui-même comme dans la version 1.4**
 

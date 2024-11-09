@@ -1,3 +1,5 @@
+# Disques Locaux
+
 ## Monter un disque
 
 Monter un disque signifie le rendre accessible en lecture, écriture
@@ -7,7 +9,7 @@ bien le montage automatique des disques internes et externe. Il peut
 arriver cependant de devoir, pour une raison ou une autre, configurer un
 disque manuellement. Le plus simple est d'utiliser disk-manager (qui
 n'est plus par défaut sous [Ubuntu](Ubuntu "wikilink") 8.04, mais
-disponible dans les [paquets](paquet "wikilink")). La méthode classique,
+disponible dans les [paquets](Paquet "wikilink")). La méthode classique,
 un peu plus délicate à mettre en place, est de modifier directement le
 fichier /etc/fstab qui configure le montage des disques.
 
@@ -70,17 +72,19 @@ partition et label) utiliser la commande :
 partition préalablement démontée. Par exemple, pour changer le label de
 hdb1 :
 
-`   sudo umount /dev/hdb1`
-`   sudo tune2fs -L nom_de_volume /dev/hdb1`
+```sh
+sudo umount /dev/hdb1
+sudo tune2fs -L nom_de_volume /dev/hdb1
+```
 
 Le nom de volume ne doit pas excéder 16 caractères pour une partition
 Ext 2.
 
 *Partition Fat* On utilise mlabel. Pour cela, il est nécessaire
-d'installer le [paquet](paquet "wikilink") mtools par l'intermédiaire de
+d'installer le [paquet](Paquet "wikilink") mtools par l'intermédiaire de
 synaptic ou par la commande :
 
-`   sudo apt-get install mtools`
+`sudo apt-get install mtools`
 
 On édite le fichier /etc/mtools.conf pour modifier la rubrique consacrée
 aux disques IDE afin d'affecter une lettre à chaque partition Fat, comme
@@ -88,22 +92,26 @@ dans l'exemple suivant :
 
 `gksudo gedit /etc/mtools.conf`
 
-`# # First IDE hard disk partition`
-`# drive c: file="/dev/hda1"`
-`drive d: file="/dev/hda5"`
-`drive e: file="/dev/hda6"`
-`drive f: file="/dev/hda7"`
-`drive g: file="/dev/hda8"`
+```sh
+# # First IDE hard disk partition
+# drive c: file="/dev/hda1"
+drive d: file="/dev/hda5"
+drive e: file="/dev/hda6"
+drive f: file="/dev/hda7"
+drive g: file="/dev/hda8"
+```
 
 Pour modifier le nom de volume de /dev/hda5, il suffira de saisir la
 commande suivante :
 
-`   sudo mlabel d:nom_de_volume`
+   `sudo mlabel d:nom_de_volume`
 
 A noter les commandes suivantes :
 
-`   mlabel -s d:        pour afficher le label existant de /dev/hda5`
-`   sudo mlabel -c d:    pour effacer le label existant de /dev/hda5`
+```sh
+mlabel -s d:        pour afficher le label existant de /dev/hda5
+sudo mlabel -c d:    pour effacer le label existant de /dev/hda5
+```
 
 ------------------------------------------------------------------------
 

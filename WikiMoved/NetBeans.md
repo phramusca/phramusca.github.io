@@ -1,9 +1,11 @@
-# Installation
+# NetBeans
+
+## Installation
 
 - Netbeans: voir sur [Ubuntu-fr](http://doc.ubuntu-fr.org/netbeans)
 - [xdebug](apt://php5-xdebug)
 
-# Configuration
+## Configuration
 
 [Configuration pour Php sur
 Netbeans.org](http://netbeans.org/kb/docs/php/configure-php-environment-ubuntu.html)
@@ -21,3 +23,4 @@ Netbeans.org](http://netbeans.org/kb/docs/php/configure-php-environment-ubuntu.h
   Tools/Options/Editor/Formatting: décocher "Expand Tabs to Spaces" ET
   mettre 4 pour "Number of Spaces per In..." et "Tab Size" (en tout cas,
   la valeur doit être la même).
+  

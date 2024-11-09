@@ -1,3 +1,5 @@
+# Amarok
+
 Logiciel de musique complet et très agréable à utiliser.
 
 ## Amarok 2
@@ -18,9 +20,7 @@ mal de changements, dont:
 
 - Ajouter la clef:
 
-<!-- -->
-
-     sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com B9F1C432AE74AE63
+     `sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com B9F1C432AE74AE63`
 
 - rajouter dans les sources de mise a jour:
 
@@ -33,9 +33,7 @@ A partir de lucid (10.04 LTS), il faut au préalable installer le paquet
 
 - faire la mise a jour:
 
-<!-- -->
-
-     sudo apt-get remove amarok && sudo apt-get install amarok14
+     `sudo apt-get remove amarok && sudo apt-get install amarok14`
 
 Source: <http://forum.ubuntu-fr.org/viewtopic.php?id=311176>
 
@@ -44,8 +42,7 @@ Source: <http://forum.ubuntu-fr.org/viewtopic.php?id=311176>
 Il existe de nombreux forks (embranchements) de Amarok 1.4
 (http://digitizor.com/2010/07/27/gereqi-and-pana-two-more-amarok-1-4-clones/):
 
-- Clementine, facile à installer par un .deb
-  (http://doc.ubuntu-fr.org/clementine) et apparemment bon (on peux même
+- [Clementine](http://doc.ubuntu-fr.org/clementine), facile à installer par un .deb et apparemment bon (on peux même
   utiliser la wiimote comme télécommande), mais ne supporte pas MySQL
   comme Bdd :(
 - Gereki, plus minimaliste, facile à installer par un .deb. supporte
@@ -92,7 +89,7 @@ sa bibliothèque musicale avec MySQL (et donc PhP, ...).
 
 ### En français dans le texte
 
-Pour passer amarok en français, installer le [paquet](paquet "wikilink")
+Pour passer amarok en français, installer le [paquet](Paquet "wikilink")
 [kde-i18n-fr](apt://kde-i18n-fr)
 
 ------------------------------------------------------------------------

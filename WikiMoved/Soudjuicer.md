@@ -1,17 +1,19 @@
+# Soundjuicer
+
 Soundjuicer permet de convertir les CDs en fichiers MP3.
 
 ATTENTION: PB VBR et Durée affichage dans Amarok ! A vérifier !!!
 
 [Plus d'infos sur Ubuntu-fr](http://doc.ubuntu-fr.org/sound_juicer)
 
-### Installation
+## Installation
 
 Installé par défaut dans [Ubuntu](Ubuntu "wikilink"), mais il faut
-installer le [paquet](paquet "wikilink")
+installer le [paquet](Paquet "wikilink")
 [gstreamer0.10-plugins-ugly-multiverse](apt://gstreamer0.10-plugins-ugly-multiverse)
 pour pouvoir encoder en MP3.
 
-### Configuration
+## Configuration
 
 Apparemment, il est possible de créer de nouveaux profils, mais
 impossible de les sélectionner dans la liste !? Donc, le mieux est de

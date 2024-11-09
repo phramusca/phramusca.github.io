@@ -1,10 +1,12 @@
+# Mp3splt
+
 Permet de découper des fichiers MP3.
 
-# Installation
+## Installation
 
-Depuis les [paquets](paquets "wikilink") : [1](apt://mp3splt-gtk)
+[apt://mp3splt-gtk](apt://mp3splt-gtk)
 
-## Installation manuelle
+### Installation manuelle
 
 - Installer les dépendances: sudo apt-get install mp3splt libltdl
   libltdl-dev libtool libogg libogg-dev libvorbis libvorbis-dev
@@ -16,7 +18,7 @@ Depuis les [paquets](paquets "wikilink") : [1](apt://mp3splt-gtk)
 
 mp3splt-gtk pour le lancer
 
-# Configuration
+## Configuration
 
 - Split Mode : Silence. Number of tracks : 2 ; Remove silence between
   tracks.

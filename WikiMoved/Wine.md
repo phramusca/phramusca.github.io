@@ -1,3 +1,5 @@
+# Wine
+
 Wine est l'acronyme récursif anglophone de « Wine Is Not an Emulator »,
 littéralement Wine n'est pas un émulateur.
 
@@ -8,12 +10,12 @@ fonctionner sous Windows.
 
 Plus d'infos: <http://fr.wikipedia.org/wiki/Wine>
 
-### Configuration
+## Configuration
 
 - winecfg pour la configuration
 - wine PROGRAM pour le lancer
 
-### PlayOnLinux
+## PlayOnLinux
 
 Le projet PlayOnLinux, un ensemble de scripts permettant de faire
 marcher facilement des [Programmes#Jeux](Programmes#Jeux "wikilink")

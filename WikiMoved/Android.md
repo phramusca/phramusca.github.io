@@ -1,6 +1,6 @@
-Sites
+# Android
 
-# Applications
+## Applications
 
 Voici une petite sélection d'applications:
 
@@ -11,14 +11,14 @@ Voici une petite sélection d'applications:
 |                                    |                   |
 |                                    |                   |
 
-# Astuces
+## Astuces
 
-## Sonneries et notifications
+### Sonneries et notifications
 
 - Sonneries: /sdcard/media/audio/ringtones/
 - Notifications: sdcard/media/audio/notifications/
 
-# Informations
+## Informations
 
 - <http://www.lesapplicationsandroid.fr/>
 - <http://android-france.fr/>
@@ -29,7 +29,7 @@ Voici une petite sélection d'applications:
 - <http://www.frandroid.com/>
 - <http://www.androlib.com/>
 
-# A tester
+## A tester
 
 Partager la connexion PC sur Android via USB (Reverse Tethering)
 

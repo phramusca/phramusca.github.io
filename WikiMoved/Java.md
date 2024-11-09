@@ -1,7 +1,9 @@
+# Java
+
 J'utilise pour ma part NetBeans comme IDE (un autre équivalent est le
 bien connu Eclipse, que je ne connais que très peu)
 
-### Généralités
+## Généralités
 
 - Developpez.com (tutoriels, outils, api,...) :
   <http://java.developpez.com/>
@@ -10,193 +12,31 @@ bien connu Eclipse, que je ne connais que très peu)
 - Cours, un autre: <http://prevert.upmf-grenoble.fr/Prog/>
 - Ubuntu.fr: <http://doc.ubuntu-fr.org/java>
 
-### Log
+## Log
 
 - <http://imss-www.upmf-grenoble.fr/prevert/Prog/Java/CoursJava/fichierDeLogs.html>
 - <http://cyberzoide.developpez.com/java/logging/>
 
-### Librairies
+## Librairies
 
-<table>
-<tbody>
-<tr>
-<td><p>Nom</p></td>
-<td><p>Description</p></td>
-<td><p>Documentation</p></td>
-<td><p>Download</p></td>
-</tr>
-<tr>
-<td><p>SQLite JDBC Driver</p></td>
-<td><p>SQLite</p></td>
-<td></td>
-<td><p><a
-href="https://bitbucket.org/xerial/sqlite-jdbc">https://bitbucket.org/xerial/sqlite-jdbc</a></p></td>
-</tr>
-<tr>
-<td><p>MySQL Connector/J</p></td>
-<td><p>MySQL</p></td>
-<td><ul>
-<li><a
-href="http://www.fobec.com/CMS/java/tutorial/connecter-une-base-mysql-avec-driver-jdbc_943.html">Tutoriel</a></li>
-<li><a
-href="http://fr.netbeans.org/edi/articles/concours/mysql-client.html">NetBeans
-tuto</a></li>
-</ul></td>
-<td><p><a
-href="http://dev.mysql.com/downloads/connector/j/5.1.html">http://dev.mysql.com/downloads/connector/j/5.1.html</a></p></td>
-</tr>
-<tr>
-<td><p>Apache Commons Net</p></td>
-<td><p>FTP, Telnet, POP3, FTP, SMTP, ...</p></td>
-<td><ul>
-<li><a
-href="http://www.informit.com/guides/content.aspx?g=java&amp;seqNum=40">Exemples</a></li>
-<li><a
-href="http://www.developpez.net/forums/d627242/java/general-java/debuter/connexion-java-ftp/">Exemple
-upload/download FTP</a></li>
-<li><a
-href="http://www.developpez.net/forums/d590818/java/general-java/apis/io/envoi-ftp-fichier-excel-org-apache-commons-net-ftp/">FTP
-Binary mode</a></li>
-</ul></td>
-<td><p><a
-href="http://commons.apache.org/net/download_net.cgi">http://commons.apache.org/net/download_net.cgi</a></p></td>
-</tr>
-<tr>
-<td><p>JSch - Java Secure Channel</p></td>
-<td><p>SSH</p></td>
-<td><p><a
-href="http://www.java-forums.org/new-java/10195-creating-inputstream.html">Create
-InputStream</a></p></td>
-<td><p><a
-href="http://www.jcraft.com/jsch/">http://www.jcraft.com/jsch/</a></p></td>
-</tr>
-<tr>
-<td><p>javax.comm</p></td>
-<td><p>Ports Série (serial port)</p></td>
-<td><ul>
-<li><a
-href="http://christophej.developpez.com/tutoriel/java/javacomm/">Tutoriel</a></li>
-<li><a
-href="http://en.wikibooks.org/wiki/Serial_Programming/Serial_Java">Tuto
-en anglais - utile ?</a></li>
-<li><a
-href="http://circuitnegma.wordpress.com/2007/02/07/how-to-install-the-java-communications-api-in-a-windows-environment/">Windows
-Installation Guide</a></li>
-</ul></td>
-<td></td>
-</tr>
-<tr>
-<td><p><a
-href="http://www.jthink.net/jaudiotagger/">Jaudiotagger</a></p></td>
-<td><p>MP3 ID3 tag (2011-?)</p></td>
-<td><p><em>Autres librairies (outdated)</em> :</p>
-<ul>
-<li><a
-href="https://github.com/mpatric/mp3agic">https://github.com/mpatric/mp3agic</a>
-(2010-2011)</li>
-<li><a
-href="http://www.javazoom.net/javalayer/javalayer.html">http://www.javazoom.net/javalayer/javalayer.html</a>
-(1999-2008)</li>
-<li><a
-href="http://developer.berlios.de/projects/javamp3/">http://developer.berlios.de/projects/javamp3/</a>
-(2004-2008)</li>
-<li><a
-href="http://www.fightingquaker.com/myid3/">http://www.fightingquaker.com/myid3/</a>
-(2007-2008)</li>
-<li><a
-href="http://entagged.sourceforge.net/developer.php">http://entagged.sourceforge.net/developer.php</a>
-(2003-2006)</li>
-<li><a
-href="http://javamusictag.sourceforge.net/">http://javamusictag.sourceforge.net/</a>
-(2003-2006)</li>
-<li><a
-href="http://jid3.blinkenlights.org/">http://jid3.blinkenlights.org/</a>
-(?-2005)</li>
-</ul></td>
-<td><p><a href="http://download.java.net/maven/2/org/jaudiotagger">Maven
-.jar builds</a></p></td>
-</tr>
-<tr>
-<td><p><a href="http://jexcelapi.sourceforge.net/">Java Excel API</a>
-(jxl)</p></td>
-<td><p>Excel</p></td>
-<td><p><a
-href="http://www.vogella.com/articles/JavaExcel/article.html">Tutoriel</a>
-<em>A tester</em> : <a
-href="http://poi.apache.org/">http://poi.apache.org/</a></p></td>
-<td></td>
-</tr>
-<tr>
-<td><p><a
-href="http://code.google.com/p/lastfm-java/">lastfm-java</a></p></td>
-<td><p>Last.fm API bindings for Java</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><p><a
-href="http://www.javazoom.net/javalayer/javalayer.html">JLayer</a></p></td>
-<td><p>MP3 decoder/player/converter library for Java™ platform.</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><p><a href="http://ini4j.sourceforge.net/">ini4j</a></p></td>
-<td><p>Java API for handling Windows ini file format</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><p><a href="http://jcharts.sourceforge.net/">jCharts</a></p></td>
-<td><p>Charts</p></td>
-<td><p>See also: <a
-href="http://www.jfree.org/jfreechart/">JFreeChart</a> (a tester, plus
-compliqué mais plus puissant apparemment)</p></td>
-<td></td>
-</tr>
-<tr>
-<td><p><a
-href="https://github.com/lastfm/coverartarchive-api">coverartarchive-api</a></p></td>
-<td><p>MusicBrainz Cover Art Archive API</p></td>
-<td><p>To use a proxy: First, make
-DefaultCoverArtArchiveClient(HttpClient client) public in
-DefaultCoverArtArchiveClient class</p>
-<p>Then:</p>
-<pre><code>DefaultHttpClient httpclient = new DefaultHttpClient();
-HttpHost proxy = new HttpHost(&quot;xx.xx.xx.xx&quot;, 8080);
-httpclient.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, proxy);
-CoverArtArchiveClient client = new DefaultCoverArtArchiveClient(httpclient);</code></pre></td>
-<td></td>
-</tr>
-<tr>
-<td><p><a
-href="http://code.google.com/p/musicbrainzws2-java/">musicbrainzws2-java</a></p></td>
-<td><p>Java binding for MusicBrainz XML Web Service/Version 2</p></td>
-<td><p><em>Autres librairies (to be tested)</em> :</p>
-<ul>
-<li><a
-href="https://github.com/lastfm/musicbrainz-data">musicbrainz-data</a>
-(Need to learn more about Spring framework and eventually Maven: <a
-href="https://github.com/lastfm/musicbrainz-data/issues/2">forum
-issue</a>) (<a
-href="https://oss.sonatype.org/index.html#view-repositories;releases~browsestorage~/fm/last/musicbrainz-data/1.2/musicbrainz-data-1.2.jar">JAR
-Builds</a></li>
-<li><a
-href="http://javamusicbrainz.sourceforge.net/">javamusicbrainz</a></li>
-</ul></td>
-<td></td>
-</tr>
-<tr>
-<td><p><a
-href="http://www.sauronsoftware.it/projects/jave/">JAVE</a></p></td>
-<td><p>Java Audio Video Encoder</p></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| Nom                              | Description                                                   | Documentation                                                                                                                                                     | Download                                                                                           |
+|----------------------------------|---------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| SQLite JDBC Driver               | SQLite                                                        |                                                                                                                                                                 | [https://bitbucket.org/xerial/sqlite-jdbc](https://bitbucket.org/xerial/sqlite-jdbc)             |
+| MySQL Connector/J                | MySQL                                                         | - [Tutoriel](http://www.fobec.com/CMS/java/tutorial/connecter-une-base-mysql-avec-driver-jdbc_943.html)<br>- [NetBeans tuto](http://fr.netbeans.org/edi/articles/concours/mysql-client.html) | [http://dev.mysql.com/downloads/connector/j/5.1.html](http://dev.mysql.com/downloads/connector/j/5.1.html) |
+| Apache Commons Net              | FTP, Telnet, POP3, FTP, SMTP, ...                           | - [Exemples](http://www.informit.com/guides/content.aspx?g=java&amp;seqNum=40)<br>- [Exemple upload/download FTP](http://www.developpez.net/forums/d627242/java/general-java/debuter/connexion-java-ftp/)<br>- [FTP Binary mode](http://www.developpez.net/forums/d590818/java/general-java/apis/io/envoi-ftp-fichier-excel-org-apache-commons-net-ftp/) | [http://commons.apache.org/net/download_net.cgi](http://commons.apache.org/net/download_net.cgi) |
+| JSch - Java Secure Channel       | SSH                                                           | - [Create InputStream](http://www.java-forums.org/new-java/10195-creating-inputstream.html)                                                                     | [http://www.jcraft.com/jsch/](http://www.jcraft.com/jsch/)                                       |
+| javax.comm                       | Ports Série (serial port)                                    | - [Tutoriel](http://christophej.developpez.com/tutoriel/java/javacomm/)<br>- [Tuto en anglais - utile ?](http://en.wikibooks.org/wiki/Serial_Programming/Serial_Java)<br>- [Windows Installation Guide](http://circuitnegma.wordpress.com/2007/02/07/how-to-install-the-java-communications-api-in-a-windows-environment/) |                                                                                                    |
+| [Jaudiotagger](http://www.jthink.net/jaudiotagger/) | MP3 ID3 tag (2011-?)                                        | *Autres librairies (outdated)* :<br>- [mp3agic](https://github.com/mpatric/mp3agic) (2010-2011)<br>- [JLayer](http://www.javazoom.net/javalayer/javalayer.html) (1999-2008)<br>- [javamp3](http://developer.berlios.de/projects/javamp3/) (2004-2008)<br>- [myid3](http://www.fightingquaker.com/myid3/) (2007-2008)<br>- [entagged](http://entagged.sourceforge.net/developer.php) (2003-2006)<br>- [javamusictag](http://javamusictag.sourceforge.net/) (2003-2006)<br>- [jid3](http://jid3.blinkenlights.org/) (? - 2005) | [Maven .jar builds](http://download.java.net/maven/2/org/jaudiotagger)                              |
+| [Java Excel API](http://jexcelapi.sourceforge.net/) (jxl) | Excel                                                        | - [Tutoriel](http://www.vogella.com/articles/JavaExcel/article.html) <em>A tester</em> : [http://poi.apache.org/](http://poi.apache.org/)                                              |                                                                                                    |
+| [lastfm-java](http://code.google.com/p/lastfm-java/)  | Last.fm API bindings for Java                                 |                                                                                                                                                                 |                                                                                                    |
+| [JLayer](http://www.javazoom.net/javalayer/javalayer.html) | MP3 decoder/player/converter library for Java™ platform.     |                                                                                                                                                                 |                                                                                                    |
+| [ini4j](http://ini4j.sourceforge.net/) | Java API for handling Windows ini file format               |                                                                                                                                                                 |                                                                                                    |
+| [jCharts](http://jcharts.sourceforge.net/) | Charts                                                        | See also: [JFreeChart](http://www.jfree.org/jfreechart/) (a tester, plus compliqué mais plus puissant apparemment)                                            |                                                                                                    |
+| [coverartarchive-api](https://github.com/lastfm/coverartarchive-api) | MusicBrainz Cover Art Archive API                             | To use a proxy: First, make DefaultCoverArtArchiveClient(HttpClient client) public in DefaultCoverArtArchiveClient class<br>Then:<br>  ```DefaultHttpClient httpclient = new DefaultHttpClient();<br>HttpHost proxy = new HttpHost("xx.xx.xx.xx", 8080);<br>httpclient.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, proxy);<br>CoverArtArchiveClient client = new DefaultCoverArtArchiveClient(httpclient);``` |                                                                                                    |
+| [musicbrainzws2-java](http://code.google.com/p/musicbrainzws2-java/) | Java binding for MusicBrainz XML Web Service/Version 2      | *Autres librairies (to be tested)* :<br>- [musicbrainz-data](https://github.com/lastfm/musicbrainz-data) (Need to learn more about Spring framework and eventually Maven: [forum issue](https://github.com/lastfm/musicbrainz-data/issues/2)) (<a href="https://oss.sonatype.org/index.html#view-repositories;releases~browsestorage~/fm/last/musicbrainz-data/1.2/musicbrainz-data-1.2.jar">JAR Builds</a>)<br>- [javamusicbrainz](http://javamusicbrainz.sourceforge.net/) |                                                                                                    |
+| [JAVE](http://www.sauronsoftware.it/projects/jave/) | Java Audio Video Encoder                                     |                                                                                                                                                                 |                                                                                                    |
 
-### Runtime exec et Threads
+## Runtime exec et Threads
 
 - <http://alwin.developpez.com/tutorial/JavaThread/>
 - Interruptions:
@@ -209,9 +49,9 @@ href="http://www.sauronsoftware.it/projects/jave/">JAVE</a></p></td>
 - Passing a parameter to a thread:
   <http://stackoverflow.com/questions/877096/how-can-i-pass-a-parameter-to-a-java-thread>
 
-### Misc
+## Misc
 
-#### Swing
+### Swing
 
 |  |  |  |
 |----|----|----|
@@ -228,7 +68,7 @@ href="http://www.sauronsoftware.it/projects/jave/">JAVE</a></p></td>
 |  | Click event | <http://stackoverflow.com/questions/7350893/click-event-on-jtable-java> |
 | ImageIcon | Creating border around ImageIcon on a JLabel, not around the Jlabel | <http://stackoverflow.com/questions/7350893/click-event-on-jtable-java> |
 
-#### Graphic
+### Graphic
 
 |  |  |
 |----|----|
@@ -236,7 +76,7 @@ href="http://www.sauronsoftware.it/projects/jave/">JAVE</a></p></td>
 | Reading an Image from a File, InputStream, or URL | <http://www.exampledepot.com/egs/javax.imageio/BasicImageRead.html> |
 | Saving a Generated Graphic to a PNG or JPEG File | <http://www.exampledepot.com/egs/javax.imageio/Graphic2File.html> |
 
-#### String
+### String
 
 |  |  |
 |----|----|
@@ -245,31 +85,15 @@ href="http://www.sauronsoftware.it/projects/jave/">JAVE</a></p></td>
 | Date format | <http://30minparjour.la-bnbox.fr/post/2010/petit-point-sur-simpledateformat> |
 | Regex | <http://benhur.teluq.uqam.ca/SPIP/inf6460/article.php3?id_article=29&id_rubrique=7&sem=5> |
 
-#### Convert
+### Convert
 
-<table>
-<tbody>
-<tr>
-<td><p>Description</p></td>
-<td><p>Lien</p></td>
-</tr>
-<tr>
-<td><p>Blob to String</p></td>
-<td><p><a
-href="http://shitmores.blogspot.fr/2007/06/convert-javasqlblob-to-string.html">http://shitmores.blogspot.fr/2007/06/convert-javasqlblob-to-string.html</a></p></td>
-</tr>
-<tr>
-<td><p>Inter &gt; String</p></td>
-<td><pre><code>String.valueOf(myInt);</code></pre></td>
-</tr>
-<tr>
-<td><p>String &gt; Integer</p></td>
-<td><pre><code>Integer.parseInt(myString);</code></pre></td>
-</tr>
-</tbody>
-</table>
+| Description          | Lien                                                                                             |
+|----------------------|--------------------------------------------------------------------------------------------------|
+| Blob to String       | [http://shitmores.blogspot.fr/2007/06/convert-javasqlblob-to-string.html](http://shitmores.blogspot.fr/2007/06/convert-javasqlblob-to-string.html) |
+| Inter > String       | ```String.valueOf(myInt);```                                                                     |
+| String > Integer     | ```Integer.parseInt(myString);```                                                                |
 
-### En vrac (pour l'instant)
+## En vrac (pour l'instant)
 
 - Tableaux associatifs:
   <http://www.chicoree.fr/w/Programmation_imp%C3%A9rative/Tableaux_associatifs>
@@ -304,41 +128,43 @@ href="http://shitmores.blogspot.fr/2007/06/convert-javasqlblob-to-string.html">h
   - On Windows, the file is located under C:\Program Files\NetBeans
     7.0.1\java\maven\conf
 
-### Maven (A TESTER)
+## Maven (A TESTER)
 
 - <http://dcabasson.developpez.com/articles/java/maven/introduction-maven2/>
 - <http://chrisdail.com/2008/04/17/building-with-maven/>
 
-### JAR Version
+## JAR Version
 
-**A étudier plus sérieusement**
+A étudier plus sérieusement
 
 - <http://stackoverflow.com/questions/1237084/netbeans-manifest>
 - <http://docs.oracle.com/javase/7/docs/technotes/guides/versioning/spec/versioning2.html>
 - <http://www.rgagnon.com/javadetails/java-0388.html>
 
-### Include librairies in JAR
+## Include librairies in JAR
 
-- Maven: in pom.xml, add the following lines in <plugins>
+- Maven: in pom.xml, add the following lines in `<plugins>`
   ([Source](http://maven.40175.n5.nabble.com/How-can-I-include-pom-xml-dependencies-in-output-jar-td88102.html)):
 
+```xml
 <plugin>
-` `<artifactId>`maven-assembly-plugin`</artifactId>
-` `<configuration>
-`  `<descriptorRefs>
-`   `<descriptorRef>`jar-with-dependencies`</descriptorRef>
-`   `</descriptorRefs>
-` `</configuration>
-` `<executions>
-`  `<execution>
-`   `<id>`make-assembly`</id>
-`   `<phase>`package`</phase>
-`   `<goals>
-`    `<goal>`attached`</goal>
-`   `</goals>
-`  `</execution>
-` `</executions>
-</plugin>` `
+  <artifactId>maven-assembly-plugin</artifactId>
+  <configuration>
+    <descriptorRefs>
+    <descriptorRef>jar-with-dependencies</descriptorRef>
+    </descriptorRefs>
+  </configuration>
+  <executions>
+    <execution>
+      <id>make-assembly</id>
+      <phase>package</phase>
+      <goals>
+        <goal>attached</goal>
+      </goals>
+    </execution>
+  </executions>
+</plugin>
+```
 
 - Ant: in build.xml, add the following lines
   ([Source](http://dchikhaoui.janua.fr/post/2012/09/07/How-to-include-external-libraries-in-the-final-Jar-with-Netbeans)):
@@ -349,18 +175,20 @@ href="http://shitmores.blogspot.fr/2007/06/convert-javasqlblob-to-string.html">h
   - Note: "-post-jar" insures that this package build is made at the
     end, so expected files are present in dist folder
 
+```xml
 <target name="-post-jar">
-` `<jar jarfile="dist/finalApp.jar">
-`  `<zipfileset src="${dist.jar}" excludes="META-INF/*" />
-`  `<zipfileset src="dist/lib/log4j-1.2.16.jar" excludes="META-INF/*" />
-`  `<manifest>
-`   `<attribute name="Main-Class" value="com.example.package.Main"/>
-`  `</manifest>
-` `</jar>
+  <jar jarfile="dist/finalApp.jar">
+    <zipfileset src="${dist.jar}" excludes="META-INF/*" />
+    <zipfileset src="dist/lib/log4j-1.2.16.jar" excludes="META-INF/*" />
+    <manifest>
+      <attribute name="Main-Class" value="com.example.package.Main"/>
+    </manifest>
+  </jar>
 </target>
+```
 
-### Temp: jMusicLib
+## Temp: jMusicLib
 
-J'ai un projet en cours [jMusicLib](jMusicLib "wikilink") dont le nom
+J'ai un projet en cours [jMusicLib](JMusicLib "wikilink") dont le nom
 n'est pas encore fixé et qui n'est pas encore disponible en ligne. Mais
 pour mon propre besoin, je commence à écrire une doc.

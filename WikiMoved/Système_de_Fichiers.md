@@ -1,3 +1,5 @@
+# Système de fichiers
+
 Plus d'infos sur les systèmes de fichiers:
 
 - <http://doc.ubuntu-fr.org/systeme_de_fichiers>
@@ -48,19 +50,7 @@ les droits ugo sur ce fichier serait 750.
 le umask c'est pour préciser ce qui doit être enlevé des droits maximum
 (777), mais toujours en logique ugo
 
-umask 022 :
-
-# \> j'enleve rien pour l'utilisateur
-
-\> 7 - 0 = 7
-
-# \> j'enleve 2 pour le groupe
-
-\> 7 - 2 = 5
-
-# \> j'enleve 2 pour les autres
-
-\> 7 - 2 = 5
+umask 022 : => j'enleve rien pour l'utilisateur : => 7 - 0 = 7 : => j'enleve 2 pour le groupe : => 7 - 2 = 5 : => j'enleve 2 pour les autres : => 7 - 2 = 5
 
 donc droit 755 sur ce montage. donc rwx pour l'utilisateur qui fait le
 montage r-x pour le groupe de l'utilisateur r-x pour les autres

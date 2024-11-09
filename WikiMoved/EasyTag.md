@@ -1,6 +1,8 @@
+# EasyTag
+
 Logiciel d'éditions des tags MP3 (ID3) très complet.
 
-### Configuration
+## Configuration
 
 - Onglet "Divers":
   - Lecteur audio: amarok -p
@@ -11,7 +13,7 @@ Logiciel d'éditions des tags MP3 (ID3) très complet.
 - Onglet "Paramètres des tags ID3"
   - Pour :
     - éviter un bug avec Amarok
-      (http://forum.ubuntu-fr.org/viewtopic.php?pid=1808988#p1808988 et
+      (<http://forum.ubuntu-fr.org/viewtopic.php?pid=1808988#p1808988> et
       <http://bugs.kde.org/show_bug.cgi?id=151657>)
     - pouvoir avoir les pochettes et le genre sur Archos Gmini 402,
       voici ma config :

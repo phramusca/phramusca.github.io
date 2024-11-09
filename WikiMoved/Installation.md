@@ -1,3 +1,5 @@
+# Installation
+
 Tout d'abord, avant d'installer une distribution
 [Linux](Linux "wikilink"), il faut la choisir !
 
@@ -11,7 +13,7 @@ Il est aussi possible d'[acheter un PC
 pré-installé](http://linuxpreinstalle.com/) avec
 [Linux](Linux "wikilink").
 
-# Ubuntu
+## Ubuntu
 
 Ubuntu se décline en plusieurs versions
 
@@ -20,8 +22,8 @@ Ubuntu se décline en plusieurs versions
 - autres ...
 
 La version principale est [Ubuntu](Ubuntu "wikilink"). Les
-[programmes](programmes "wikilink") présents sur les
-[dépôts](dépôt "wikilink") (valables pour toutes les versions) sont donc
+[programmes](Programmes "wikilink") présents sur les
+[dépôts](Dépôt "wikilink") (valables pour toutes les versions) sont donc
 plus adaptés à [Ubuntu](Ubuntu "wikilink").
 
 Pour choisir la version qui te convient et pour plus de détails sur
@@ -33,12 +35,12 @@ Communauté francophone des utilisateurs d'Ubuntu.
 
 *Documentation :* <http://doc.ubuntu-fr.org/>
 
-## Test
+### Test
 
 Si tu es sous Windows, mais que tu veux tester Linux, sans désinstaller
 Windows, il y a deux possibilités :
 
-### LiveCD
+#### LiveCD
 
 Le CD d'installation d'Ubuntu est aussi un Live CD, c'est a dire qu'il
 est possible de démarrer Ubuntu directement du CD sans l'installer sur
@@ -47,7 +49,7 @@ d'Ubuntu, un raccourci est disponible pour lancer une installation sur
 le disque dur (pense à faire une sauvegarde de tes données avant dans le
 cas d'une mauvaise manipulation).
 
-### Virtualisation (Virtual Box)
+#### Virtualisation (Virtual Box)
 
 Très simple et pas de bidouilles à faire avec cette solution d'Oracle:
 [VirtualBox](http://www.virtualbox.org/)
@@ -60,7 +62,7 @@ Ubuntu](http://www.commentcamarche.net/faq/21387-virtualbox-partage-d-un-dossier
 Pour info, il existe d'autres solutions de virtualisation: VMWare,
 Virtual PC, ...
 
-## Vieille Bécane ?
+### Vieille Bécane ?
 
 Sur un vieux PC, le lancement du Live CD peux poser des problèmes. Pour
 éviter ce problème, il suffit:
@@ -72,21 +74,21 @@ Sur un vieux PC, le lancement du Live CD peux poser des problèmes. Pour
   - soit en ligne de commande (pour occuper un minimum d'espace disque
     et/ou pour pouvoir maitriser au mieux l'installation)
 
-## Et après
+### Et après
 
 Tu peux maintenant utiliser ton nouvel environnement, installer de
-nouveaux [programmes](programmes "wikilink"), ...
+nouveaux [programmes](Programmes "wikilink"), ...
 
 **Un truc important à savoir est que le mot de passe superutilisateur
 (root), qui est notamment demandé pour installer des
-[programmes](programmes "wikilink"), n'est autre que le mot de passe de
+[programmes](Programmes "wikilink"), n'est autre que le mot de passe de
 l'utilisateur principal, choisi lors de l'installation.**
 
 *En mode console, pour passer en root (superutilisateur), tapez sudo
 suivi de la commande (ex : sudo chmod 664 toto.txt pour changer les
 droits d'un fichier).*
 
-# Autres distributions
+## Autres distributions
 
 Il existe bien d'autres distributions, mais je n'ai pas eu l'occasion de
 toutes les tester. Parmi les plus abordables pour un débutant venant de

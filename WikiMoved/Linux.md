@@ -1,3 +1,5 @@
+# Linux
+
 Linux est un système d'exploitation (comme Windows) libre (pas comme
 Windows), multitâche, multi-plate-forme et multi-utilisateur.
 
@@ -12,7 +14,7 @@ système (le moteur pour faire plus simple).
 
 Ces distributions comprennent, outre le noyau (moteur), une ou plusieurs
 interfaces graphiques (ou environnements de bureau), des pilotes pour le
-matériel, des [programmes](programmes "wikilink") en tous genres
+matériel, des [programmes](Programmes "wikilink") en tous genres
 (Internet, Mail, Développement, Jeux,...), le tout avec une interface
 d'installation (graphique dans la plupart des distributions récentes,
 comme [Ubuntu](Ubuntu "wikilink")).

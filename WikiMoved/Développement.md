@@ -1,12 +1,14 @@
+# Développement
+
 Cette page traite du développement de logiciels et d'applications ou
 sites Internet.
 
-# Outils et généralités
+## Outils et généralités
 
 Pour une liste des logiciels et outils de développement, se référer à
 [Programmes#Programmation](Programmes#Programmation "wikilink")
 
-## Contrôle de version
+### Contrôle de version
 
 Subversion est la solution Open Source centralisée du moment
 
@@ -18,7 +20,7 @@ A priori, en version décentralisée, ce serait plutot GIT, A TESTER:
 - <http://www.unixgarden.com/index.php/administration-systeme/git-pour-les-futurs-barbus>
 - <http://www.alexgirard.com/git-book/index.html>
 
-## Hébergement de code
+### Hébergement de code
 
 [Sourceforge](Sourceforge "wikilink") est un fournisseurs parmi
 d'autres.
@@ -28,14 +30,14 @@ d'autres.
 [Comparatif d'hébergements de code
 SVN](http://www.svnhostingcomparison.com/)
 
-## Paquets Debian
+### Paquets Debian
 
 - Créer son paquet Debian: (**A TESTER**)
   - <http://doc.ubuntu-fr.org/tutoriel/creer_un_paquet>
   - <http://alp.developpez.com/tutoriels/debian/creer-paquet/>
   - <http://case.oncle-tom.net/2007/creer-son-propre-paquetage-deb-gtwitter/>
 
-## Sites généralistes
+### Sites généralistes
 
 De nombreux sites fournissant du code source et/ou des tutoriels
 existent:
@@ -51,34 +53,34 @@ Un peu d'humour:
 - <http://www.risacher.com/la-rache/>
 - <http://lesjoiesducode.tumblr.com/>
 
-## Misc
+### Misc
 
 - Jeux de caractères: <http://openweb.eu.org/articles/jeux_caracteres/>
 
-# Logiciels IDE
+## Logiciels IDE
 
-## NetBeans
+### NetBeans
 
 [NetBeans](NetBeans "wikilink") est l'IDE de Sun (malheureusement repris
 maintenant par Oracle) axé Java mais aussi Python, C, C++, Ruby, XML,
 PHP, ... Disponible sous Linux et Windows.
 
-## MonoDevelop
+### MonoDevelop
 
 [Mono](Mono "wikilink") est une implémentation libre de .NET avec comme
 éditeur MonoDevelop
 
-## Gambas
+### Gambas
 
 Gambas se veut le presque Visual Basic libre
 
-# Applications "lourdes"
+## Applications "lourdes"
 
-## Java
+### Java
 
 Contenu transféré sur la page [Java](Java "wikilink") ...
 
-## Visual Basic
+### Visual Basic
 
 Un de mes premiers langages utilisés avec VB6 ...
 
@@ -88,12 +90,12 @@ concentrer sur Java en ce moment.
 
 - <http://www.freevbcode.com/>
 
-# Applications et sites Internet
+## Applications et sites Internet
 
 Pour tester en ligne du code HTML, Javascript et CSS:
 <http://jsfiddle.net/>
 
-## PhP / MySQL
+### PhP / MySQL
 
 Mon éditeur de prédilection est [NetBeans](NetBeans "wikilink"). Voir la
 page dédiée pour l'installation et la configuration cet IDE pour une
@@ -104,9 +106,9 @@ Php/Perl)
 
 Misc: [Visionneuse Panoramique](Visionneuse_Panoramique "wikilink")
 
-### Astuces
+#### Astuces
 
-#### Changer la couleur d'une icone PNG transparente avec GD
+##### Changer la couleur d'une icone PNG transparente avec GD
 
 - Tout d'abord, il faut créer l'icône avec GIMP:
   - Créer une image avec un fond transparent
@@ -117,28 +119,30 @@ Misc: [Visionneuse Panoramique](Visionneuse_Panoramique "wikilink")
   - Enregistrer ensuite en PNG (options par défaut)
 - Ensuite, le script Php:
 
-<!-- -->
 
-    <?php
-    //Load original icon
-    $imgfile="myIcon.png";
-    $image = imagecreatefrompng($imgfile);
-    //Get index of black color
-    $index = imageColorclosest($image,0,0,0);
-    //Get replacement color
-    $tbase = str_replace("#", '', '#FF2299');
-    $baseR = hexdec(substr($tbase,0,2));
-    $baseG = hexdec(substr($tbase,2,2));
-    $baseB = hexdec(substr($tbase,4,2));
-    //Replace black with new color
-    imagecolorset($image,$index,$baseR,$baseG,$baseB);
-    //Output image with black color replaced
-    header('Content-type: image/png');
-    imagepng($image);
-    imagedestroy($image);
-    ?>
 
-## Javascript (et frameworks)
+```php
+<?php
+//Load original icon
+$imgfile="myIcon.png";
+$image = imagecreatefrompng($imgfile);
+//Get index of black color
+$index = imageColorclosest($image,0,0,0);
+//Get replacement color
+$tbase = str_replace("#", '', '#FF2299');
+$baseR = hexdec(substr($tbase,0,2));
+$baseG = hexdec(substr($tbase,2,2));
+$baseB = hexdec(substr($tbase,4,2));
+//Replace black with new color
+imagecolorset($image,$index,$baseR,$baseG,$baseB);
+//Output image with black color replaced
+header('Content-type: image/png');
+imagepng($image);
+imagedestroy($image);
+?>
+```
+
+### Javascript (et frameworks)
 
 - Using POST method in Ajax (XMLHTTPRequest):
   <http://www.openjs.com/articles/ajax_xmlhttp_using_post.php>
@@ -150,7 +154,7 @@ Misc: [Visionneuse Panoramique](Visionneuse_Panoramique "wikilink")
 - JavaScript toolbox: <http://www.javascripttoolbox.com/>
 - L'editeur JavaScript: <http://www.editeurjavascript.com/>
 
-## Divers
+### Divers
 
 Voir [Firefox](Firefox "wikilink") pour une liste de plugins utiles au
 développement.
@@ -165,9 +169,9 @@ développement.
   - Créer un lien de sendmail vers esmtp:
     - sudo ln -s /usr/bin/esmtp /usr/sbin/sendmail
 
-# Bases de données
+## Bases de données
 
-## MySQL
+### MySQL
 
 - <http://www.techiecorner.com/485/how-to-monitor-sql-query-in-mysql/>
 - [phpMyBackup](http://www.m-tecs.net/?a=products&b=pmb&c=en)
@@ -175,7 +179,7 @@ développement.
   base](http://www.supportsages.com/blog/2010/08/mysql-storage-engines-an-overview-their-limitations-and-an-attempt-for-comparison/)
   (MyISAM, InnoDB, ...)
 
-# Divers
+## Divers
 
 Cette section regroupe des idées en vrac. J'essaierai de prendre le
 temps de ranger un peu tout ça ...

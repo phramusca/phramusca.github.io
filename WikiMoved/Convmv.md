@@ -1,7 +1,11 @@
+# Convmv
+
 Cet outil permet de convertir les noms de fichier d'un systeme
 d'encodage de caracteres a un autre
 
-`convmv -r -i -f iso-8859-1 -t utf8 '/media/hda3/xxxx/' (remplacer "/media/hda3/xxxx/" par le chemin approprié)`
+`convmv -r -i -f iso-8859-1 -t utf8 '/media/hda3/xxxx/'`
+
+(remplacer "/media/hda3/xxxx/" par le chemin approprié)
 
 Ensuite relancer avec l'option --notest pour appliquer les changements
 proposés.
@@ -28,5 +32,4 @@ ubuntu-fr](http://doc.ubuntu-fr.org/?do=search&id=convmv)
 
 ------------------------------------------------------------------------
 
-Retour à [Programmes#Divers, sans
-IHM](Programmes#Divers,_sans_IHM "wikilink")
+Retour à [Programmes#Divers, sans IHM](Programmes#Divers,_sans_IHM "wikilink")
