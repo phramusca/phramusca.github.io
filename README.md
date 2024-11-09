@@ -5,10 +5,10 @@
 - [JaMuz](wiki/https://phramusca.github.io/JaMuz/) - Keep your music in check and enjoy it too!
 - [Code Samples](wiki/https://github.com/phramusca/Samples/tree/main) - Pieces of code
 
-Mais aussi:
+### Under Development
 
-- [Cook And Freeze](wiki/https://github.com/phramusca/CookAndFreeze) (**UNDER DEVELOPMENT**) - With CookAndFreeze for Android, easily manage recipients (content and frozen date) stored in your freezer (or elsewhere).
-- [Rom Manager](wiki/https://github.com/phramusca/RomManager) (**UNDER DEVELOPMENT**)
+- [Cook And Freeze](wiki/https://github.com/phramusca/CookAndFreeze) - With CookAndFreeze for Android, easily manage recipients (content and frozen date) stored in your freezer (or elsewhere).
+- [Rom Manager](wiki/https://github.com/phramusca/RomManager)
 
 ## Wiki en français
 
