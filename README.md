@@ -16,4 +16,4 @@ Mais aussi:
 
 Des informations en vrac sur Linux, Windows et la Programmation.
 
-- [Wiki](wiki/Accueil) /!\ Pas à jour /!\
+- [Wiki](wiki/README) /!\ Pas à jour /!\
