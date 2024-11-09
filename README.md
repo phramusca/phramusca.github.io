@@ -1,7 +1,5 @@
 # Welcome
 
-[phramusca on GitHub](https://github.com/phramusca)
-
 ## Projects
 
 - [JaMuz](https://phramusca.github.io/JaMuz/) - Keep your music in check and enjoy it too!
