@@ -2,13 +2,13 @@
 
 ## Projects
 
-- [JaMuz](wiki/https://phramusca.github.io/JaMuz/) - Keep your music in check and enjoy it too!
-- [Code Samples](wiki/https://github.com/phramusca/Samples/tree/main) - Pieces of code
+- [JaMuz](https://phramusca.github.io/JaMuz/) - Keep your music in check and enjoy it too!
+- [Code Samples](https://github.com/phramusca/Samples/tree/main) - Pieces of code
 
 ### Under Development
 
-- [Cook And Freeze](wiki/https://github.com/phramusca/CookAndFreeze) - With CookAndFreeze for Android, easily manage recipients (content and frozen date) stored in your freezer (or elsewhere).
-- [Rom Manager](wiki/https://github.com/phramusca/RomManager)
+- [Cook And Freeze](https://github.com/phramusca/CookAndFreeze) - With CookAndFreeze for Android, easily manage recipients (content and frozen date) stored in your freezer (or elsewhere).
+- [Rom Manager](https://github.com/phramusca/RomManager)
 
 ## Wiki en français
 
@@ -58,4 +58,4 @@ TODO
 
 ------------------------------------------------------------------------
 
-*Ce site a été converti depuis [MediaWiki](wiki/MediaWiki) en utilisant [mediawiki-to-gfm](wiki/https://github.com/outofcontrol/mediawiki-to-gfm) fin 2024, lui-même migré depuis Wikini fin 2009.*
+*Ce site a été converti depuis [MediaWiki](wiki/MediaWiki) en utilisant [mediawiki-to-gfm](https://github.com/outofcontrol/mediawiki-to-gfm) fin 2024, lui-même migré depuis Wikini fin 2009.*
