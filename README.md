@@ -1,15 +1,17 @@
 # Welcome
 
-## JaMuz
+## Projects
 
-[JaMuz](https://phramusca.github.io/JaMuz/) - Keep your music in check and enjoy it too!
+- [JaMuz](https://phramusca.github.io/JaMuz/) - Keep your music in check and enjoy it too!
 
-## Internet Code Samples
+Mais aussi:
 
-[Internet Code Samples](https://github.com/phramusca/Samples/blob/main/internet/README.md)
+- [Code Samples](https://github.com/phramusca/Samples/tree/main) - Pieces of code
+- [Cook And Freeze](https://github.com/phramusca/CookAndFreeze) (**UNDER DEVELOPMENT**) - With CookAndFreeze for Android, easily manage recipients (content and frozen date) stored in your freezer (or elsewhere).
+- [Rom Manager](https://github.com/phramusca/RomManager)
 
 ## Wiki
 
-Des informations en vrac sur l'ordinateur.
+Des informations en vrac sur Linux, Windows et la Programmation.
 
-[WikiMoved](WikiMoved/Accueil.md)
+- [Wiki](wiki/Accueil) /!\ Pas à jour /!\
