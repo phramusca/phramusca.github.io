@@ -2,7 +2,7 @@
 
 ## Projects
 
-- [JaMuz](https://phramusca.github.io/JaMuz/) - Keep your music in check and enjoy it too!
+- [JaMuz](JaMuz) - Keep your music in check and enjoy it too!
 - [Code Samples](https://github.com/phramusca/Samples/tree/main) - Pieces of code
 
 ### Under Development
