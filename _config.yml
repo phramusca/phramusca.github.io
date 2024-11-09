@@ -10,7 +10,7 @@ author:
 # If you want to omit the line-break after the end of text, use `>-` instead.
 description: >
   This is my homepage.
-  It is built with [Jekyll](https://jekyllrb.com) and [Minima](https://github.com/jekyll/minima).
+  Contains information about me.
   
 # Build settings
 
@@ -22,9 +22,9 @@ description: >
 # add a line comment on "theme: minima" above.
 remote_theme: jekyll/minima
 
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+# plugins:
+#   - jekyll-feed
+#   - jekyll-seo-tag
 
 # Theme-specific settings
 
@@ -34,7 +34,7 @@ plugins:
 #   - about.md
 
 # Set to `true` to show excerpts on the homepage.
-#show_excerpts: false
+show_excerpts: false
 
 # Minima specific settings, which are only available from Minima 3.0 onward.
 minima:
