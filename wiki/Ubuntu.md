@@ -40,4 +40,4 @@ pour avoir accès aux programmes un peu comme "à l'ancienne"
 
 ------------------------------------------------------------------------
 
-Retour à l'[Accueil](Accueil "wikilink")
+Retour à l'[Accueil](README "wikilink")

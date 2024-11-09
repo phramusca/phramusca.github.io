@@ -21,8 +21,7 @@ pour Linux. En voici une petite sélection:
 Voici un petit aperçu des programmes disponibles que j'ai eu l'occasion
 de tester, et que j'apprécie, **ainsi que des astuces (installation,
 problèmes connus,...)**. Ils sont classés de la même façon que dans le
-menu d'[Ubuntu](Ubuntu "wikilink") (barre du haut). Comment [Installer
-un programme sous Linux](Installer_un_programme_sous_Linux "wikilink") ?
+menu d'[Ubuntu](Ubuntu "wikilink") (barre du haut). Comment [Installer un programme sous Linux](Installer_un_programme_sous_Linux "wikilink") ?
 
 ### Applications
 
@@ -287,4 +286,4 @@ Voici quelques tableaux de bord:
 
 ------------------------------------------------------------------------
 
-Retour à l'[Accueil](Accueil "wikilink")
+Retour à l'[Accueil](README "wikilink")
