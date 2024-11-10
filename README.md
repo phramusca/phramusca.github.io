@@ -14,12 +14,14 @@
 
 Il s'agit plutôt d'un bloc-notes de mon expérience (professionnelle et personnelle) dans ce domaine.
 
+/!\ EN RECONSTRUCTION /!\
+
 - [Linux](wiki/linux/README.md)
 - [Windows](wiki/windows/README.md)
 - [Android](wiki/android/README.md)
 - [Raspberry](wiki/raspberry/REAME.md)
-- [Développement](wiki/Développement)
-  - [Java](wiki/Java)
+- [Développement](wiki/dev/README.md)
+  - [Java](wiki/dev/Java.md)
 
 ------------------------------------------------------------------------
 

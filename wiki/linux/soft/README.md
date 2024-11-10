@@ -55,15 +55,15 @@ Toutes les applications installés sont regroupées dans ce menu.
 
 #### Internet
 
-|                                                     |                                                                                                                             |                                         |
-| --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
-| Nom                                                 | Description                                                                                                                 | [apt-url](Apt-url) (Installation)       |
+|                                                     |                                                                                                                             |                                                    |
+| --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
+| Nom                                                 | Description                                                                                                                 | [apt-url](Apt-url) (Installation)                  |
 | [Firefox](Firefox)                                  | Navigateur Internet (ou Konqueror, ... le choix est grand)                                                                  | inclus par défaut dans [Ubuntu](linux/dist/Ubuntu) |
 | Transmission                                        | client BitTorrent                                                                                                           | inclus par défaut dans [Ubuntu](linux/dist/Ubuntu) |
-| [aMule](AMule)                                      | eMule (peer2peer).                                                                                                          | [amule](apt://amule)                    |
-| gFTP                                                | Client FTP (File Transfer Protocol)                                                                                         | [gftp](apt://gftp)                      |
-| [JDownloader](http://doc.ubuntu-fr.org/jdownloader) | Gestionnaire de téléchargement de fichiers de divers hébergeurs (megaupload, rapidshare, etc…) avec ou sans compte premium. | N/A                                     |
-| [VNC](VNC)                                          | Remote Desktop (Pour prendre le contrôle d'un PC à distance)                                                                |                                         |
+| [aMule](AMule)                                      | eMule (peer2peer).                                                                                                          | [amule](apt://amule)                               |
+| gFTP                                                | Client FTP (File Transfer Protocol)                                                                                         | [gftp](apt://gftp)                                 |
+| [JDownloader](http://doc.ubuntu-fr.org/jdownloader) | Gestionnaire de téléchargement de fichiers de divers hébergeurs (megaupload, rapidshare, etc…) avec ou sans compte premium. | N/A                                                |
+| [VNC](VNC)                                          | Remote Desktop (Pour prendre le contrôle d'un PC à distance)                                                                |                                                    |
 | Evolution                                           | équivalent ou presque d'Outlook                                                                                             | inclus par défaut dans [Ubuntu](linux/dist/Ubuntu) |
 | Empathy                                             | Messagerie instantanée compatible avec MSN (Windows Live), Jabber, Google Talk, AIM, yahoo,...                              | inclus par défaut dans [Ubuntu](linux/dist/Ubuntu) |
 
@@ -87,17 +87,23 @@ Cela dit, il existe beaucoup de jeux disponibles.
 Plus d'informations, voir la page
 [Développement](Développement) de ce Wiki.
 
-|                      |                                               |                                                                    |                                                    |
-| -------------------- | --------------------------------------------- | ------------------------------------------------------------------ | -------------------------------------------------- |
-| Nom                  | Ubuntu-fr                                     | Description                                                        | [apt-url](Apt-url) (Installation)                  |
-| [Meld](Meld)         |                                               | Comparaison de fichiers / répertoires.                             | [meld](apt://meld)                                 |
-| MySQL Administrator  |                                               | Administration de bases MySQL                                      | [mysql-admin](apt://mysql-admin)                   |
-| Sqliteman            |                                               | Administration de bases Sqlite                                     | [sqliteman](apt://sqliteman)                       |
-| [Mono](Mono)         |                                               | Implémentation libre de .NET avec comme éditeur MonoDevelop        | voir [Mono](Mono)                                  |
-| Gambas               | [Gambas](http://doc.ubuntu-fr.org/Gambas)     | le presque Visual Basic libre                                      | [gambas2](apt://gambas2)                           |
-| [SciTE](SciTE)       | [SciTE](http://doc.ubuntu-fr.org/scite)       | Editeur texte bien pratique                                        | [scite](apt://scite)                               |
-| [NetBeans](NetBeans) | [netbeans](http://doc.ubuntu-fr.org/netbeans) | IDE de Sun axé Java mais aussi Python, C, C++, Ruby, XML, PHP, ... | voir [netbeans](http://doc.ubuntu-fr.org/netbeans) |
-|                      |                                               |                                                                    |                                                    |
+|                      |                                                 |                                                                    |                                                    |
+| -------------------- | ----------------------------------------------- | ------------------------------------------------------------------ | -------------------------------------------------- |
+| Nom                  | Ubuntu-fr                                       | Description                                                        | [apt-url](Apt-url) (Installation)                  |
+| [Meld](Meld)         |                                                 | Comparaison de fichiers / répertoires.                             | [meld](apt://meld)                                 |
+| sqlitebrowser        | [sqlitebrowser.org](https://sqlitebrowser.org/) | Administration de bases Sqlite                                     | [sqlitebrowser](apt://sqlitebrowser)               |
+| [Mono](Mono)         |                                                 | Implémentation libre de .NET avec comme éditeur MonoDevelop        | voir [Mono](Mono)                                  |
+| [NetBeans](NetBeans) | [netbeans](http://doc.ubuntu-fr.org/netbeans)   | IDE de Sun axé Java mais aussi Python, C, C++, Ruby, XML, PHP, ... | voir [netbeans](http://doc.ubuntu-fr.org/netbeans) |
+
+TODO: Move those to archive:
+
+|                     |                                         |                                |                                   |
+| ------------------- | --------------------------------------- | ------------------------------ | --------------------------------- |
+| Nom                 | Doc / website                           | Description                    | [apt-url](Apt-url) (Installation) |
+| [SciTE](SciTE)      | [SciTE](http://doc.ubuntu-fr.org/scite) | Editeur texte bien pratique    | [scite](apt://scite)              |
+| Sqliteman           |                                         | Administration de bases Sqlite | [sqliteman](apt://sqliteman)      |
+| MySQL Administrator |                                         | Administration de bases MySQL  | [mysql-admin](apt://mysql-admin)  |
+| Gambas               | [Gambas](http://doc.ubuntu-fr.org/Gambas)       | le presque Visual Basic libre                                      | [gambas2](apt://gambas2)                           |
 
 #### Son et Vidéo
 
@@ -182,19 +188,19 @@ même bien pratiques:
 
 Les suivants sont à répartir dans les menus appropriés :
 
-|                                                             |                                                            |                                         |
-| ----------------------------------------------------------- | ---------------------------------------------------------- | --------------------------------------- |
-| Nom                                                         | Description                                                | [apt-url](Apt-url) (Installation)       |
-| [BOINC](BOINC)                                              | Calcul partagé                                             | N/A                                     |
-| [Google Earth](Google_Earth)                                | La Terre vue du ciel                                       | N/A                                     |
-| [Sunclock](http://www.arvernes.com/wiki/index.php/Sunclock) | Carte avec zones ensoleillées                              | N/A                                     |
-| K3B                                                         | Gravure CD/DVD                                             |                                         |
-| [Wine](Wine)                                                | Windows Emulation                                          |                                         |
-| Gwhere                                                      | Catalogueur de CDs/DVDs                                    |                                         |
+|                                                             |                                                            |                                                    |
+| ----------------------------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------- |
+| Nom                                                         | Description                                                | [apt-url](Apt-url) (Installation)                  |
+| [BOINC](BOINC)                                              | Calcul partagé                                             | N/A                                                |
+| [Google Earth](Google_Earth)                                | La Terre vue du ciel                                       | N/A                                                |
+| [Sunclock](http://www.arvernes.com/wiki/index.php/Sunclock) | Carte avec zones ensoleillées                              | N/A                                                |
+| K3B                                                         | Gravure CD/DVD                                             |                                                    |
+| [Wine](Wine)                                                | Windows Emulation                                          |                                                    |
+| Gwhere                                                      | Catalogueur de CDs/DVDs                                    |                                                    |
 | OpenOffice                                                  | Office (tableur, traitement de texte, présentations, BDD)  | inclus par défaut dans [Ubuntu](linux/dist/Ubuntu) |
-| Antivirus                                                   | Complètement inutile                                       | N/A                                     |
-| kFileReplace                                                | Changer un texte par un autre dans des fichiers (a tester) |                                         |
-| [Virtual Box](http://doc.ubuntu-fr.org/virtualbox)          | Virtualisation                                             |                                         |
+| Antivirus                                                   | Complètement inutile                                       | N/A                                                |
+| kFileReplace                                                | Changer un texte par un autre dans des fichiers (a tester) |                                                    |
+| [Virtual Box](http://doc.ubuntu-fr.org/virtualbox)          | Virtualisation                                             |                                                    |
 
 ### Raccourcis
 
@@ -216,7 +222,7 @@ Ici sont regroupées tout ce qui concerne la configuration du système.
 | [Compiz Fusion](http://doc.ubuntu-fr.org/compiz_fusion) (avancé)                  | Configuration avancée des effets de bureau.                                                                                                                                                                                                     | [compizconfig-settings-manager](apt://compizconfig-settings-manager) |
 | [nautilus-actions](http://doc.ubuntu-fr.org/nautilus-actions)                     | Configuration des actions de Nautilus (gestionnaire fichiers) [Comparaison avec nautilus-scripts](http://www.commentcamarche.net/faq/6357-editer-le-menu-contextuel-de-nautilus-navigateur-de-fichiers)                                         | [nautilus-actions](apt://nautilus-actions)                           |
 | [nautilus-scripts](http://doc.ubuntu-fr.org/nautilus_scripts)                     | Scripts pour Nautilus (menu contextuel). [Bibliothèque de scripts](http://g-scripts.sourceforge.net/) [Comparaison avec nautilus-actions](http://www.commentcamarche.net/faq/6357-editer-le-menu-contextuel-de-nautilus-navigateur-de-fichiers) |                                                                      |
-| Applications au démarrage                                                         | Configuration des programmes à lancer au démarrage de [Ubuntu](linux/dist/Ubuntu)                                                                                                                                                                          | par défaut dans [Ubuntu](linux/dist/Ubuntu)                                     |
+| Applications au démarrage                                                         | Configuration des programmes à lancer au démarrage de [Ubuntu](linux/dist/Ubuntu)                                                                                                                                                               | par défaut dans [Ubuntu](linux/dist/Ubuntu)                          |
 | [Nautilus Cover Thumbnailer](http://software.flogisoft.com/cover-thumbnailer/fr/) | Afficher les pochettes des albums de musique dans nautilus, prévisualiser les images contenues dans un dossier et plus encore.                                                                                                                  | Via PPA. Refer to link.                                              |
 
 #### Administration
