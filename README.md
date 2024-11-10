@@ -12,14 +12,12 @@
 
 ## Wiki en français
 
-Bienvenue dans ce Wiki. J'y traite d'informatique, et en particulier du monde libre (Open Source).
-
 Il s'agit plutôt d'un bloc-notes de mon expérience (professionnelle et personnelle) dans ce domaine.
 
-- [Linux](wiki/linux)
-- [Windows](wiki/windows)
-- [Android](wiki/Android)
-- [Raspberry](wiki/raspberry/index.md)
+- [Linux](wiki/linux/README.md)
+- [Windows](wiki/windows/README.md)
+- [Android](wiki/android/README.md)
+- [Raspberry](wiki/raspberry/REAME.md)
 - [Développement](wiki/Développement)
   - [Java](wiki/Java)
 

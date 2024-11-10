@@ -139,18 +139,12 @@ libres](http://doc.ubuntu-fr.org/formats_non-libres)**
     gconf-editor)
   - apps \> rhythmbox clé library_locations
 
-
-
 - Genre icons (for future use):
   - <http://www.iconarchive.com/show/music-genre-icons-by-sirubico.html>
   - <http://www.flickr.com/groups/itunesgenres/pool/>
   - <http://myssynen.deviantart.com/art/Music-genre-images-71751056>
   - <http://www.mede8erforum.com/index.php?topic=5472.0>
   - <http://www.iconeasy.com/iconset/music-genre-icons/>
-
-
-
-- Calcul [BPM](BPM)
 
 ##### Vidéo
 

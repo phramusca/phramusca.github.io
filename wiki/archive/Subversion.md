@@ -1,23 +1,21 @@
 # SubVersion
 
-[Subversion](http://doc.ubuntu-fr.org/subversion) (abrégé SVN) est un
-système de gestion de versions visant à remplacer CVS.
+[Subversion](http://doc.ubuntu-fr.org/subversion) (abrégé SVN) est un système de gestion de versions visant à remplacer CVS.
 
 [Installation](apt://subversion)
 
 ## RapidSVN
 
-[RapidSVN](apt://rapidsvn) est un GUI pour SVN. (sous windows, je
-recommande TortoiseSVN)
+[RapidSVN](apt://rapidsvn) est un GUI pour SVN. (sous windows, je recommande TortoiseSVN)
 
-Cependant, il ne permet pas de créer des repository SVN. Pour cela, il
-faut lancer en ligne de commande:
+Cependant, il ne permet pas de créer des repository SVN. Pour cela, il faut lancer en ligne de commande:
 
     sudo svnadmin create /var/svn/projet1
 
 *A essayer aussi, SVN intégré dans nautilus:*
 
 `sudo apt-get install nautilus-script-collection-svn`
+
 `nautilus-script-manager enable Subversion`
 
 ## SVN par le web
