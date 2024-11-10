@@ -7,18 +7,15 @@ Il existe des centaines (voire des milliers) d'applications disponible sous [Lin
 Il existe énormément de sites qui listent ou proposent des logiciels
 pour [Linux](../README.md). En voici une petite sélection:
 
-- [Ubuntu-fr](http://doc.ubuntu-fr.org/logiciels)
-- <http://alternativeto.net/> (Anglais): Trouver des équivalences de programmes. Très utile et pratique !
-- <http://www.framasoft.net/>
-- <http://appnr.com/> (Anglais)
-- <http://linuxappfinder.com/> (Anglais)
+- [Logiciels pour Ubuntu](http://doc.ubuntu-fr.org/logiciels) sur Ubuntu-fr - Pour [Linux Mint](../dist/Mint.md), choisir les versions [Ubuntu](../dist/Ubuntu.md) (Gonme) qui sont compatibles et mieux integrées que les logiciels pour Kubuntu (KDE).
+- [Alternativeto.net](http://alternativeto.net/) (Anglais) - Trouver des équivalences de programmes. Très utile et pratique !
+- [Framasoft](http://www.framasoft.net/) - Association française qui promeut des alternatives libres et éthiques aux services en ligne, notamment en développant et en soutenant des logiciels libres et des outils collaboratifs pour préserver la vie privée et favoriser l'autonomie numérique.
 
 ## Sélection de Programmes
 
-Voici un petit aperçu des programmes disponibles que j'ai eu l'occasion
-de tester, et que j'apprécie, **ainsi que des astuces (installation,
-problèmes connus,...)**. Ils sont classés de la même façon que dans le
-menu d'[Ubuntu](linux/dist/Ubuntu) (barre du haut). Comment [Installer un programme sous Linux](Installer_un_programme_sous_Linux) ?
+Voici un petit aperçu des programmes disponibles que j'ai eu l'occasion de tester, et que j'apprécie, ainsi que des astuces (installation, problèmes connus,...).
+
+> Comment [Installer un programme sous Linux](../system/Installer_un_programme_sous_Linux.md) ?
 
 ### Applications
 

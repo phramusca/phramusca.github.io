@@ -21,7 +21,7 @@ Chaque distribution a ses spécificités (outils, apparence, gestionnaire de paq
 - Chronologie des distributions:
   - [![Distribution timeline](../data/thumb_Linux-Distributions-Timeline.png)](https://upload.wikimedia.org/wikipedia/commons/9/96/Liste_des_distributions_Linux.svg)
 
-### Debian-Based Distributions
+## Distributions basées sur Debian (Linux Mint, Ubuntu,...)
 
 Je recommande les distributions basées sur Debian, et principalement [Linux Mint](dist/Mint.md) du débutant au confirmé. C'est celle que j'utilise depuis au moins 2017. Elle est basée sur [Ubuntu](dist/Ubuntu.md) que j'utilisais avant, depuis 2005 et qui m'a décidé à me séparer de [Windows](../windows/README.md) une fois pour toutes, et qui est basée sur [Debian](https://www.debian.org).
 

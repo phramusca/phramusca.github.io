@@ -1,75 +1,49 @@
 # Installer un programme sous Linux
 
-Sous [Linux](Linux), les programmes (logiciels) peuvent êtres installés de plusieurs manières :
+## Magasins d'applications
 
-## En utilisant des [paquets](Paquet)
+[Linux Mint](../dist/Mint.md) comme [Ubuntu](../dist/Ubuntu.md) et d'autres distributions [Linux](../README.md) ont un magasin d'applications, facilement disponible depuis le menu principal.
 
-L'avantage d'[Ubuntu](linux/dist/Ubuntu), ainsi que d'autres
-distributions [Linux](Linux), est que la grande majorité des
-programmes libres sont disponibles sous forme de
-[paquets](Paquet) sur les [dépôts](Dépôt) de votre
-distribution [Linux](Linux) préférée.
+Ceci est la méthode à privilégier dans tous les cas, pour plus de facilité, de sécurité et de compatibilité.
 
-Ceci est la méthode à privilégier dans tous les cas, pour plus de
-facilité, de sécurité et de compatibilité.
+## Installer un paquet
 
-Sous [ubuntu](linux/dist/Ubuntu), pour gérer les
-[paquets](Paquet) (installer/désinstaller des programmes), il
-y a plusieurs façons:
+### Distributions basées sur Debian (Linux Mint, Ubuntu,...)
 
-- soit, depuis le menu de la barre d'outil principale:
-  - "Applications\Logithèque Ubuntu"
-  - "Système\Administration\Ajouter/supprimer des applications"
-- soit utiliser un gestionnaire graphique comme
-  [Synaptic](apt://synaptic).
-- soit utiliser les liens <apt://> (voir [Système#Liens <apt://>
-  (Apt-url)](Système#Liens_apt:/_(Apt-url))) disponibles sur
-  certains sites proposant l'installation de programmes
-  [Linux](Linux) (comme ce wiki)
-- soit utiliser la ligne de commande apt-get dans un terminal.
+Les [distributions Linux basées sur Debian](../README.md#distributions-basées-sur-debian-linux-mint-ubuntu), comme [Linux Mint](../dist/Mint.md) ou [Ubuntu](../dist/Ubuntu.md), ainsi que Debian bien sûr, utilisent le format de paquet `deb`, donc les [programmes](../soft/README.md) fonctionnent sur les deux.
 
-Ces méthodes sont toutes équivalentes, mais alors que les premières sont
-plus faciles pour tout un chacun (débutant ou confirmé), la dernière
-(ligne de commande) permet plus de souplesse (à réserver aux
-utilisateurs avancés).
+#### Installer un paquet .deb
 
-*Pour profiter de toutes les mises a jour Standard (mais stable) de
-versions d'Ubuntu et non pas seulement des LTS (Long Time Support -
-Support à Long Terme), il faut le choisir dans les options de Synaptic*
+Si le paquet n'est pas disponible dans les magasins, il est parfois disponible soit:
 
-Pour plus d'information :
-<http://doc.ubuntu-fr.org/applications/apt/depots>
+- sous forme de fichier `.deb` à télécharger. Il suffit de l'ouvrir pour l'installer.
+- dans un dépôt alternatif et généralement le site vous indiquera les commandes à effectuer.
 
-`A essayer: easyubuntu (avec `[`Ubuntu`](linux/dist/Ubuntu)`) et/ou easykubuntu (K`[`Ubuntu`](linux/dist/Ubuntu)`)`
+##### Paquet
+
+Les paquets ont étés conçus pour permettre d'éviter la compilation des sources ainsi que pour la gestion des dépendances entre les différents [programmes](../soft/README.md) (beaucoup de [programmes](../soft/README.md) sous [Linux](../README.md) sont dépendants les uns des autres).
+
+Ils peuvent être gérés avec le gestionnaire graphique [Synaptic](apt://synaptic) ou en ligne de commande avec [apt](https://fr.wikipedia.org/wiki/Advanced_Packaging_Tool).
+
+Pour plus d'info, voir [wikipedia](http://fr.wikipedia.org/wiki/Paquet_%28logiciel%29).
+
+##### Dépôt
+
+Un dépôt (ou repository en anglais) est un serveur qui contient les paquets nécessaires pour installer des [programmes](../soft/README.md) sous [Linux](../README.md).
+
+Pour plus d'info, voir [doc.ubuntu-fr.org](<http://doc.ubuntu-fr.org/applications/apt/depots>)
+
+### Autres distributions
+
+Référez vous aux internets, je ne connais que deb pour les distributions de type Debian.
 
 ## En compilant les sources
 
-Ceci est la manière originelle d'installer un programme sous
-[Linux](Linux), mais est à réserver aux utilisateurs avertis
-!!! Dans tous les cas, mieux vaut privilégier l'utilisation de
-[paquets](Paquet) !
+Ceci est la manière originelle d'installer un programme sous [Linux](../README.md), mais est à réserver aux utilisateurs avertis
+!!! Dans tous les cas, mieux vaut privilégier l'utilisation de paquets !
 
-Dans la plupart des cas, cela se révèle relativement simple, mais au
-moindre petit problème, cela peux vite devenir galère.
+Dans la plupart des cas, cela se révèle relativement simple, mais au moindre petit problème, cela peux vite devenir galère.
 
-[Tutoriel](http://doc.ubuntu-fr.org/tutoriel/compilation)
+Perso, ça fait des années que je n'ai pas eu besoin de compiler une application !
 
-Note: [Ubuntu](linux/dist/Ubuntu) ne permet pas de compiler des sources
-par défaut. Pour pouvoir compiler, il faut installer g++ (depuis les
-[dépôts](Dépôt) d'[ubuntu](linux/dist/Ubuntu))
-
-*Désinstallation*: pour pouvoir désinstaller un programme compilé avec
-les sources, il faut garder les sources au même endroit et lancer
-
-    sudo make uninstall
-
-, ou alors si la commande
-
-    sudo checkinstall
-
-a été utilisée, il suffit de désinstaller le \[paquet\] avec
-[Synaptic](Synaptic).
-
-------------------------------------------------------------------------
-
-Retour à [Programmes](Programmes)
+Si vous insistez: [Tutoriel compilation](http://doc.ubuntu-fr.org/tutoriel/compilation) sur doc.ubuntu-fr.org

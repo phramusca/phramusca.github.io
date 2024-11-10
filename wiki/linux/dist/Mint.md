@@ -15,6 +15,10 @@ Mint est donc souvent privilégié pour une expérience plus légère et personn
 
 TODO
 
+https://linuxmint.com/download.php
+https://forum-francophone-linuxmint.fr/
+https://www.numetopia.fr/comment-installer-linux-mint-21/
+
 ### Et après
 
 Tu peux maintenant utiliser ton nouvel environnement, installer de nouveaux [programmes](../soft/README.md), ...
