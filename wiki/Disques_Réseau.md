@@ -34,7 +34,7 @@ pour que les dossiers soient visibles sur le réseau!
 
 Pour monter un disque réseau, il existe plusieurs méthodes:
 
-- [Ubuntu](Ubuntu) peut monter un disque facilement à travers
+- [Ubuntu](linux/dist/Ubuntu) peut monter un disque facilement à travers
   Nautilus, mais ne permet pas d'accéder aux fichiers autrement qu'avec
   Nautilus (ex: <smb://disk> et non /media/disk).
 - mount.cifs, le remplacant de smbmount (car CIFS remplace SMBFS)

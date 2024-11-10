@@ -5,7 +5,7 @@ installés de plusieurs manières :
 
 ## En utilisant des [paquets](Paquet)
 
-L'avantage d'[Ubuntu](Ubuntu), ainsi que d'autres
+L'avantage d'[Ubuntu](linux/dist/Ubuntu), ainsi que d'autres
 distributions [Linux](Linux), est que la grande majorité des
 programmes libres sont disponibles sous forme de
 [paquets](Paquet) sur les [dépôts](Dépôt) de votre
@@ -14,7 +14,7 @@ distribution [Linux](Linux) préférée.
 Ceci est la méthode à privilégier dans tous les cas, pour plus de
 facilité, de sécurité et de compatibilité.
 
-Sous [ubuntu](ubuntu), pour gérer les
+Sous [ubuntu](linux/dist/Ubuntu), pour gérer les
 [paquets](Paquet) (installer/désinstaller des programmes), il
 y a plusieurs façons:
 
@@ -41,7 +41,7 @@ Support à Long Terme), il faut le choisir dans les options de Synaptic*
 Pour plus d'information :
 <http://doc.ubuntu-fr.org/applications/apt/depots>
 
-`A essayer: easyubuntu (avec `[`Ubuntu`](Ubuntu)`) et/ou easykubuntu (K`[`Ubuntu`](Ubuntu)`)`
+`A essayer: easyubuntu (avec `[`Ubuntu`](linux/dist/Ubuntu)`) et/ou easykubuntu (K`[`Ubuntu`](linux/dist/Ubuntu)`)`
 
 ## En compilant les sources
 
@@ -55,9 +55,9 @@ moindre petit problème, cela peux vite devenir galère.
 
 [Tutoriel](http://doc.ubuntu-fr.org/tutoriel/compilation)
 
-Note: [Ubuntu](Ubuntu) ne permet pas de compiler des sources
+Note: [Ubuntu](linux/dist/Ubuntu) ne permet pas de compiler des sources
 par défaut. Pour pouvoir compiler, il faut installer g++ (depuis les
-[dépôts](Dépôt) d'[ubuntu](ubuntu))
+[dépôts](Dépôt) d'[ubuntu](linux/dist/Ubuntu))
 
 *Désinstallation*: pour pouvoir désinstaller un programme compilé avec
 les sources, il faut garder les sources au même endroit et lancer

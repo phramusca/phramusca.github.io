@@ -19,7 +19,7 @@
 
 ## Lancement programmes au démarrage
 
-Pour lancer des programmes au démarrage d'[Ubuntu](Ubuntu)
+Pour lancer des programmes au démarrage d'[Ubuntu](linux/dist/Ubuntu)
 et/ou pour gérer les sessions (restauration de session), aller à Système
 → Préférences → Sessions
 

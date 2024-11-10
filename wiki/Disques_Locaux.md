@@ -10,11 +10,11 @@ If drive is mounted and cannot unmount as used, boot to a live linux to perform 
 
 Monter un disque signifie le rendre accessible en lecture, écriture
 et/ou exécution, sous la forme d'un "dossier" du système de fichiers
-(ex: /media/disk) Normalement, [Ubuntu](Ubuntu) gère très
+(ex: /media/disk) Normalement, [Ubuntu](linux/dist/Ubuntu) gère très
 bien le montage automatique des disques internes et externe. Il peut
 arriver cependant de devoir, pour une raison ou une autre, configurer un
 disque manuellement. Le plus simple est d'utiliser disk-manager (qui
-n'est plus par défaut sous [Ubuntu](Ubuntu) 8.04, mais
+n'est plus par défaut sous [Ubuntu](linux/dist/Ubuntu) 8.04, mais
 disponible dans les [paquets](Paquet)). La méthode classique,
 un peu plus délicate à mettre en place, est de modifier directement le
 fichier /etc/fstab qui configure le montage des disques.

@@ -8,7 +8,7 @@ Comparable à WinMerge sous Windows.
 
 - Installer le paquet [nemo-compare](apt://nemo-compare)
 
-## Intégration dans Nautilus (Ubuntu)
+## Intégration dans Nautilus (linux/dist/Ubuntu)
 
 - Installer le paquet [nautilus-actions](apt://nautilus-actions)
 - Installer le paquet [nautilus-compare](apt://nautilus-compare)

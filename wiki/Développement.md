@@ -1,12 +1,10 @@
 # Développement
 
-Cette page traite du développement de logiciels et d'applications ou
-sites Internet.
+Cette page traite du développement de logiciels et d'applications ou sites Internet.
 
 ## Outils et généralités
 
-Pour une liste des logiciels et outils de développement, se référer à
-[Programmes#Programmation](Programmes#Programmation)
+Pour une liste des logiciels et outils de développement, se référer à [Programmes#Programmation](Programmes#Programmation)
 
 ### Contrôle de version
 
@@ -22,13 +20,11 @@ A priori, en version décentralisée, ce serait plutot GIT, A TESTER:
 
 ### Hébergement de code
 
-[Sourceforge](Sourceforge) est un fournisseurs parmi
-d'autres.
+[Sourceforge](Sourceforge) est un fournisseurs parmi d'autres.
 
 [savannah.gnu.org](http://savannah.gnu.org/) en est un autre.
 
-[Comparatif d'hébergements de code
-SVN](http://www.svnhostingcomparison.com/)
+[Comparatif d'hébergements de code SVN](http://www.svnhostingcomparison.com/)
 
 ### Paquets Debian
 
@@ -39,8 +35,7 @@ SVN](http://www.svnhostingcomparison.com/)
 
 ### Sites généralistes
 
-De nombreux sites fournissant du code source et/ou des tutoriels
-existent:
+De nombreux sites fournissant du code source et/ou des tutoriels existent:
 
 - <http://www.developpez.com/>
 - <http://www.planet-source-code.com/>
@@ -61,14 +56,11 @@ Un peu d'humour:
 
 ### NetBeans
 
-[NetBeans](NetBeans) est l'IDE de Sun (malheureusement repris
-maintenant par Oracle) axé Java mais aussi Python, C, C++, Ruby, XML,
-PHP, ... Disponible sous Linux et Windows.
+[NetBeans](NetBeans) est l'IDE de Sun (malheureusement repris maintenant par Oracle) axé Java mais aussi Python, C, C++, Ruby, XML, PHP, ... Disponible sous Linux et Windows.
 
 ### MonoDevelop
 
-[Mono](Mono) est une implémentation libre de .NET avec comme
-éditeur MonoDevelop
+[Mono](Mono) est une implémentation libre de .NET avec comme éditeur MonoDevelop
 
 ### Gambas
 
@@ -119,8 +111,6 @@ Misc: [Visionneuse Panoramique](Visionneuse_Panoramique)
   - Enregistrer ensuite en PNG (options par défaut)
 - Ensuite, le script Php:
 
-
-
 ```php
 <?php
 //Load original icon
@@ -156,11 +146,9 @@ imagedestroy($image);
 
 ### Divers
 
-Voir [Firefox](Firefox) pour une liste de plugins utiles au
-développement.
+Voir [Firefox](Firefox) pour une liste de plugins utiles au développement.
 
-- [Envoi de mails en
-  localhost](http://totalement.geek.oupas.fr/article/2007/11/27/envoyer-des-mails-depuis-php-avec-ubuntu-et-esmtp):
+- [Envoi de mails en localhost](http://totalement.geek.oupas.fr/article/2007/11/27/envoyer-des-mails-depuis-php-avec-ubuntu-et-esmtp):
   - Installer [esmtp](apt://esmtp) (d'autres alternatives existent,
     renseigne toi)
   - Editer /etc/esmtprc pour y indiquer le serveur SMTP à utiliser
@@ -181,15 +169,12 @@ développement.
 
 ## Divers
 
-Cette section regroupe des idées en vrac. J'essaierai de prendre le
-temps de ranger un peu tout ça ...
+Cette section regroupe des idées en vrac. J'essaierai de prendre le temps de ranger un peu tout ça ...
 
 *Ruby/GTK2: <http://www.bawet.org/article.php3?id_article=60>*
 
 - API Allocine
   - <http://www.phpcs.com/codes/API-ALLOCINE-V3_52259.aspx>
-  - <http://wiki.gromez.fr/dev/api/allocine> (source pour l'api php
-    ci-dessus)
+  - <http://wiki.gromez.fr/dev/api/allocine> (source pour l'api php ci-dessus)
 
-Voir aussi Cine-passion (sur XBMC) qui a apparemnt aussi une API:
-<http://passion-xbmc.org/scraper/index2.php?Page=Home>
+Voir aussi Cine-passion (sur XBMC) qui a apparemnt aussi une API: <http://passion-xbmc.org/scraper/index2.php?Page=Home>

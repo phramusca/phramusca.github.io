@@ -8,7 +8,7 @@ ATTENTION: PB VBR et Durée affichage dans Amarok ! A vérifier !!!
 
 ## Installation
 
-Installé par défaut dans [Ubuntu](Ubuntu), mais il faut
+Installé par défaut dans [Ubuntu](linux/dist/Ubuntu), mais il faut
 installer le [paquet](Paquet)
 [gstreamer0.10-plugins-ugly-multiverse](apt://gstreamer0.10-plugins-ugly-multiverse)
 pour pouvoir encoder en MP3.

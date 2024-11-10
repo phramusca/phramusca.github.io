@@ -23,7 +23,7 @@ MonoDevelop est un IDE, similaire à Visual Studio de Microsoft
 - [Contrôle de Version](apt://monodevelop-versioncontrol); permet
   d'utiliser entre autre [Subversion](Subversion).
 - [Debugger](apt://monodevelop-debugger-mdb,monodevelop-debugger-gdb),
-  pour version \>= 2.0 (Ubuntu \>= 9.04):
+  pour version \>= 2.0 (linux/dist/Ubuntu \>= 9.04):
 
 ### Astuces
 

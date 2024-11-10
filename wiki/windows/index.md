@@ -1,5 +1,7 @@
 # Windows
 
+![50px-Windows_xp_logo](../data/50px-Windows_xp_logo.jpg)
+
 Windows est un système d'exploitation (OS) qui se distingue de
 [Linux](Linux) principalement par le fait d'être propriétaire
 (non libre) et par conséquent payant (Microsoft, son éditeur n'étant pas
