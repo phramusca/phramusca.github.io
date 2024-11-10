@@ -16,7 +16,7 @@ Bienvenue dans ce Wiki. J'y traite d'informatique, et en particulier du monde li
 
 Il s'agit plutôt d'un bloc-notes de mon expérience (professionnelle et personnelle) dans ce domaine.
 
-### [Développement](wiki/Développement)
+### Développement
 
 Le [Développement](wiki/Développement) de logiciels ou de sites Internet, peut se faire sous Linux, mais aussi sous Windows.
 
@@ -24,15 +24,15 @@ Linux est, à mon humble avis, préférable dans le monde du développement, à 
 
 - [Java](wiki/Java)
 
-### [Linux](wiki/Linux)
+### Linux
 
-![50px-Linux-penguin](wiki/data/50px-Linux-penguin.jpg) Et voilà, mon PC ne tourne plus que sous [Linux](wiki/Linux) ([Ubuntu](wiki/Ubuntu)) depuis 2005 !
+![50px-Linux-penguin](wiki/data/50px-Linux-penguin.jpg) Et voilà, mon PC ne tourne plus que sous [Linux](wiki/Linux) depuis 2005 !
 
-C'est notamment [Ubuntu](wiki/Ubuntu), une des nombreuses distributions [Linux](wiki/Linux) qui m'a décidé à me séparer de Windows une fois pour toutes. Elle est d'ailleurs tellement facile à prendre en main que je la conseille à tous.
+C'est notamment [Ubuntu](wiki/Ubuntu), une des nombreuses distributions [Linux](wiki/Linux) qui m'a décidé à me séparer de [Windows](wiki/Windows) une fois pour toutes.
 
-Néanmoins, [Linux](wiki/Linux) présente des différences par rapport à Windows, d'où cette petite page d'aide pour passer à [Linux](wiki/Linux).
+J'utilise maintenant [Linux Mint](https://linuxmint.com/) qui est basé sur [Ubuntu](wiki/Ubuntu) mais utilise Cinnamon comme environnement de bureau, que je préfère aux dernières version de Gnome utilisé par Ubuntu.
 
-Même si les pages de ce Wiki sont très fortement orientées pour [Ubuntu](wiki/Ubuntu), beaucoup de choses sont applicables (notamment les [programmes](wiki/Programmes) cités) sous les autres distributions [Linux](wiki/Linux).
+Les 2 sont basés sur [Debian](https://www.debian.org). Donc ce qui est vrai pour l'un l'est pour l'autre (sauf de rares exceptions spécifiques)
 
 1. [Installation](wiki/Installation)
 
@@ -40,13 +40,13 @@ Même si les pages de ce Wiki sont très fortement orientées pour [Ubuntu](wiki
 
 3. [Misc](wiki/Misc)
 
-### [Windows](wiki/Windows)
+### Windows
 
 ![50px-Windows_xp_logo](wiki/data/50px-Windows_xp_logo.jpg) J'utilise (malheureusement) encore [Windows](wiki/Windows) au boulot.
 
 Bien que [Windows](wiki/Windows) ne soit pas Open Source, il existe de nombreux logiciels libres pour cet OS.
 
-### [Android](wiki/Android)
+### Android
 
 ![50px-Android](wiki/data/50px-Android.jpg)
 

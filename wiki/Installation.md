@@ -1,17 +1,12 @@
 # Installation
 
-Tout d'abord, avant d'installer une distribution
-[Linux](Linux), il faut la choisir !
+Tout d'abord, avant d'installer une distribution [Linux](Linux), il faut la choisir !
 
-Pas de panique, il existe [un site qui permet de choisir sa distribution
-très facilement](http://www.zegeniestudios.net/ldc/index.php?lang=fr)
+Pas de panique, il existe [un site qui permet de choisir sa distribution très facilement](http://www.zegeniestudios.net/ldc/index.php?lang=fr)
 
-Je détaille ci-dessous seulement l'installation de la distribution
-[Ubuntu](Ubuntu), puisque c'est celle que j'utilise.
+Je détaille ci-dessous seulement l'installation de la distribution [Ubuntu](Ubuntu), puisque c'est celle que j'utilise.
 
-Il est aussi possible d'[acheter un PC
-pré-installé](http://linuxpreinstalle.com/) avec
-[Linux](Linux).
+Il est aussi possible d'[acheter un PC pré-installé](http://linuxpreinstalle.com/) avec [Linux](Linux).
 
 ## Ubuntu
 
@@ -21,15 +16,9 @@ Ubuntu se décline en plusieurs versions
 - K[Ubuntu](Ubuntu), basé sur le bureau KDE.
 - autres ...
 
-La version principale est [Ubuntu](Ubuntu). Les
-[programmes](Programmes) présents sur les
-[dépôts](Dépôt) (valables pour toutes les versions) sont donc
-plus adaptés à [Ubuntu](Ubuntu).
+La version principale est [Ubuntu](Ubuntu). Les [programmes](Programmes) présents sur les [dépôts](Dépôt) (valables pour toutes les versions)  sont donc plus adaptés à [Ubuntu](Ubuntu).
 
-Pour choisir la version qui te convient et pour plus de détails sur
-l'installation, tu peux consulter la [page
-consacrée](http://doc.ubuntu-fr.org/installation) sur le site de la
-Communauté francophone des utilisateurs d'Ubuntu.
+Pour choisir la version qui te convient et pour plus de détails sur l'installation, tu peux consulter la [page consacrée](http://doc.ubuntu-fr.org/installation) sur le site de la Communauté francophone des utilisateurs d'Ubuntu.
 
 *Forums, aide, FAQ, ... :* <http://forum.ubuntu-fr.org/>
 
