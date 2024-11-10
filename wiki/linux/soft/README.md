@@ -1,11 +1,11 @@
 # Programmes
 
-Il existe des centaines (voire des milliers) d'applications disponible sous [Linux](Linux). Il n'est pas facile de s'y retrouver, mais voici déjà un point de départ.
+Il existe des centaines (voire des milliers) d'applications disponible sous [Linux](../README.md). Il n'est pas facile de s'y retrouver, mais voici déjà un point de départ.
 
 ## Sur le Web
 
 Il existe énormément de sites qui listent ou proposent des logiciels
-pour [Linux](Linux). En voici une petite sélection:
+pour [Linux](../README.md). En voici une petite sélection:
 
 - [Ubuntu-fr](http://doc.ubuntu-fr.org/logiciels)
 - <http://alternativeto.net/> (Anglais): Trouver des équivalences de programmes. Très utile et pratique !

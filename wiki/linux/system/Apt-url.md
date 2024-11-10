@@ -11,6 +11,4 @@ paquets donnés présents dans les [dépôts](Dépôt) de
 Sur ce wiki, de tels liens sont disponibles pour installer facilement
 les [programmes](Programmes) recommandés.
 
-*Note:* Pour [Ubuntu](linux/dist/Ubuntu) 9.10 et
-[Firefox](Firefox) 3.5, installer
-[firefox-gnome-support](apt://firefox-gnome-support)
+*Note:* Pour [Ubuntu](linux/dist/Ubuntu) 9.10 et [Firefox](Firefox) 3.5, installer [firefox-gnome-support](apt://firefox-gnome-support)

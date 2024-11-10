@@ -1,7 +1,6 @@
 # Installer un programme sous Linux
 
-Sous [Linux](Linux), les programmes (logiciels) peuvent êtres
-installés de plusieurs manières :
+Sous [Linux](Linux), les programmes (logiciels) peuvent êtres installés de plusieurs manières :
 
 ## En utilisant des [paquets](Paquet)
 

@@ -10,3 +10,15 @@ Mint est souvent préféré à [Ubuntu](Ubuntu) pour sa simplicité et son acces
   - Mint inclut plus de codecs et de pilotes par défaut, facilitant l'utilisation de certains types de fichiers multimédias sans configuration supplémentaire.
 
 Mint est donc souvent privilégié pour une expérience plus légère et personnalisable, surtout si on cherche une alternative facile à prendre en main.
+
+## Installation
+
+TODO
+
+### Et après
+
+Tu peux maintenant utiliser ton nouvel environnement, installer de nouveaux [programmes](../soft/README.md), ...
+
+**Un truc important à savoir est que le mot de passe superutilisateur (root), qui est notamment demandé pour installer des [programmes](../soft/README.md), n'est autre que le mot de passe de l'utilisateur principal, choisi lors de l'installation.**
+
+> En mode console, pour passer en root (superutilisateur), tapez sudo suivi de la commande (ex : sudo chmod 664 toto.txt pour changer les droits d'un fichier).

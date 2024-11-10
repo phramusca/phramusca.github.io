@@ -1,6 +1,6 @@
 # Ubuntu
 
-Ubuntu (à prononcer « Ou-boun-tou ») est une distribution de [Linux](Linux) populaire ... jusqu'à l'adoption du bureau [Unity](http://doc.ubuntu-fr.org/unity) très déroutant et qui a conduit de nombreux utilisateurs (comme moi) à se tourner vers [Linux Mint](Mint).
+Ubuntu (à prononcer « Ou-boun-tou ») est une distribution de [Linux](../README.md) populaire ... jusqu'à l'adoption du bureau [Unity](http://doc.ubuntu-fr.org/unity) très déroutant et qui a conduit de nombreux utilisateurs (comme moi) à se tourner vers [Linux Mint](Mint).
 
 **Cette page n'est donc plus à jour depuis 2017 environ quand le support de Gnome 2 (Gnome classic) a été supprimé.**
 
@@ -13,11 +13,11 @@ Ubuntu (à prononcer « Ou-boun-tou ») est une distribution de [Linux](Linux) p
 
 Ubuntu se décline en plusieurs versions
 
-- - Ubuntu, basé sur le bureau Gnome.
+- Ubuntu, basé sur le bureau Gnome.
 - K- Ubuntu, basé sur le bureau KDE.
 - autres ...
 
-La version principale est - Ubuntu. Les [programmes](Programmes) présents sur les [dépôts](Dépôt) (valables pour toutes les versions)  sont donc plus adaptés à - Ubuntu.
+La version principale est - Ubuntu. Les [programmes](../soft/README.md) présents sur les [dépôts](Dépôt) (valables pour toutes les versions)  sont donc plus adaptés à - Ubuntu.
 
 Pour choisir la version qui te convient et pour plus de détails sur l'installation, tu peux consulter la [page consacrée](http://doc.ubuntu-fr.org/installation) sur le site de la Communauté francophone des utilisateurs d'Ubuntu.
 
