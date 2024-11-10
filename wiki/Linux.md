@@ -14,10 +14,10 @@ système (le moteur pour faire plus simple).
 
 Ces distributions comprennent, outre le noyau (moteur), une ou plusieurs
 interfaces graphiques (ou environnements de bureau), des pilotes pour le
-matériel, des [programmes](Programmes "wikilink") en tous genres
+matériel, des [programmes](Programmes) en tous genres
 (Internet, Mail, Développement, Jeux,...), le tout avec une interface
 d'installation (graphique dans la plupart des distributions récentes,
-comme [Ubuntu](Ubuntu "wikilink")).
+comme [Ubuntu](Ubuntu)).
 
 *J'ai pas compris, c'est quoi une distribution ?:*
 <http://fr.wikipedia.org/wiki/Distribution_Linux>
@@ -31,7 +31,7 @@ comme [Ubuntu](Ubuntu "wikilink")).
 <http://distrowatch.com/index.php?language=FR>
 
 **En clair, pour résumer et faire simpliste on peut dire que (une
-distribution) [Linux](Linux "wikilink") est équivalent à Windows, mais
+distribution) [Linux](Linux) est équivalent à Windows, mais
 en mieux :)**
 
 ## Interfaces graphiques
@@ -42,15 +42,15 @@ sont confondus. Dans le cas d'une distribution Linux aussi, sauf que
 l'on a le choix de son interface.
 
 Plusieurs interfaces graphiques existent sous Linux: les plus connues
-sont Gnome (par défaut dans [Ubuntu](Ubuntu "wikilink")), KDE et XFCE
+sont Gnome (par défaut dans [Ubuntu](Ubuntu)), KDE et XFCE
 (plus légère que les 2 précédentes), mais il en existe de de nombreuses
 autres, que je ne connais pas personnellement.
 
 ## Tenté par l'aventure
 
 Si tu es tenté, tu peux dès maintenant et facilement tester et/ou
-installer [Ubuntu](Ubuntu "wikilink") ou une autre distribution: voir la
-page [Installation](Installation "wikilink").
+installer [Ubuntu](Ubuntu) ou une autre distribution: voir la
+page [Installation](Installation).
 
 ## Le Monde du Libre
 

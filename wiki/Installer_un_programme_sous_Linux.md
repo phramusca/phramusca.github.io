@@ -1,21 +1,21 @@
 # Installer un programme sous Linux
 
-Sous [Linux](Linux "wikilink"), les programmes (logiciels) peuvent êtres
+Sous [Linux](Linux), les programmes (logiciels) peuvent êtres
 installés de plusieurs manières :
 
-## En utilisant des [paquets](Paquet "wikilink")
+## En utilisant des [paquets](Paquet)
 
-L'avantage d'[Ubuntu](Ubuntu "wikilink"), ainsi que d'autres
-distributions [Linux](Linux "wikilink"), est que la grande majorité des
+L'avantage d'[Ubuntu](Ubuntu), ainsi que d'autres
+distributions [Linux](Linux), est que la grande majorité des
 programmes libres sont disponibles sous forme de
-[paquets](Paquet "wikilink") sur les [dépôts](Dépôt "wikilink") de votre
-distribution [Linux](Linux "wikilink") préférée.
+[paquets](Paquet) sur les [dépôts](Dépôt) de votre
+distribution [Linux](Linux) préférée.
 
 Ceci est la méthode à privilégier dans tous les cas, pour plus de
 facilité, de sécurité et de compatibilité.
 
-Sous [ubuntu](ubuntu "wikilink"), pour gérer les
-[paquets](Paquet "wikilink") (installer/désinstaller des programmes), il
+Sous [ubuntu](ubuntu), pour gérer les
+[paquets](Paquet) (installer/désinstaller des programmes), il
 y a plusieurs façons:
 
 - soit, depuis le menu de la barre d'outil principale:
@@ -24,9 +24,9 @@ y a plusieurs façons:
 - soit utiliser un gestionnaire graphique comme
   [Synaptic](apt://synaptic).
 - soit utiliser les liens <apt://> (voir [Système#Liens <apt://>
-  (Apt-url)](Système#Liens_apt:/_(Apt-url) "wikilink")) disponibles sur
+  (Apt-url)](Système#Liens_apt:/_(Apt-url))) disponibles sur
   certains sites proposant l'installation de programmes
-  [Linux](Linux "wikilink") (comme ce wiki)
+  [Linux](Linux) (comme ce wiki)
 - soit utiliser la ligne de commande apt-get dans un terminal.
 
 Ces méthodes sont toutes équivalentes, mais alors que les premières sont
@@ -41,23 +41,23 @@ Support à Long Terme), il faut le choisir dans les options de Synaptic*
 Pour plus d'information :
 <http://doc.ubuntu-fr.org/applications/apt/depots>
 
-`A essayer: easyubuntu (avec `[`Ubuntu`](Ubuntu "wikilink")`) et/ou easykubuntu (K`[`Ubuntu`](Ubuntu "wikilink")`)`
+`A essayer: easyubuntu (avec `[`Ubuntu`](Ubuntu)`) et/ou easykubuntu (K`[`Ubuntu`](Ubuntu)`)`
 
 ## En compilant les sources
 
 Ceci est la manière originelle d'installer un programme sous
-[Linux](Linux "wikilink"), mais est à réserver aux utilisateurs avertis
+[Linux](Linux), mais est à réserver aux utilisateurs avertis
 !!! Dans tous les cas, mieux vaut privilégier l'utilisation de
-[paquets](Paquet "wikilink") !
+[paquets](Paquet) !
 
 Dans la plupart des cas, cela se révèle relativement simple, mais au
 moindre petit problème, cela peux vite devenir galère.
 
 [Tutoriel](http://doc.ubuntu-fr.org/tutoriel/compilation)
 
-Note: [Ubuntu](Ubuntu "wikilink") ne permet pas de compiler des sources
+Note: [Ubuntu](Ubuntu) ne permet pas de compiler des sources
 par défaut. Pour pouvoir compiler, il faut installer g++ (depuis les
-[dépôts](Dépôt "wikilink") d'[ubuntu](ubuntu "wikilink"))
+[dépôts](Dépôt) d'[ubuntu](ubuntu))
 
 *Désinstallation*: pour pouvoir désinstaller un programme compilé avec
 les sources, il faut garder les sources au même endroit et lancer
@@ -69,8 +69,8 @@ les sources, il faut garder les sources au même endroit et lancer
     sudo checkinstall
 
 a été utilisée, il suffit de désinstaller le \[paquet\] avec
-[Synaptic](Synaptic "wikilink").
+[Synaptic](Synaptic).
 
 ------------------------------------------------------------------------
 
-Retour à [Programmes](Programmes "wikilink")
+Retour à [Programmes](Programmes)

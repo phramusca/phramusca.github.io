@@ -7,7 +7,7 @@ LAMP (Linux, Apache, Mysql, Php/Perl)
 Se référer à la documentation [lamp sur
 ubuntu-fr](http://doc.ubuntu-fr.org/lamp).
 
-[Ma Configuration LAMP](Ma_Configuration_LAMP "wikilink")
+[Ma Configuration LAMP](Ma_Configuration_LAMP)
 
 ## Résolution de problèmes
 
@@ -62,4 +62,4 @@ de faire des backups réguliers ;).
 
 ------------------------------------------------------------------------
 
-Retour à [Développement Web](Développement_Web "wikilink").
+Retour à [Développement Web](Développement_Web).

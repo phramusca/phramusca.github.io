@@ -32,4 +32,4 @@ ubuntu-fr](http://doc.ubuntu-fr.org/?do=search&id=convmv)
 
 ------------------------------------------------------------------------
 
-Retour à [Programmes#Divers, sans IHM](Programmes#Divers,_sans_IHM "wikilink")
+Retour à [Programmes#Divers, sans IHM](Programmes#Divers,_sans_IHM)

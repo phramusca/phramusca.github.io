@@ -15,7 +15,7 @@ Rien n'est stocké dans le home (disque système), mais il y a des liens
 dans le home vers disque MyBook:
 
 Le répertoire */home/xxxx/Divers/Nouveau/Backups/1.scripts/* contient
-des [Scripts de Backup](Scripts_de_Backup "wikilink"). Il contient aussi
+des [Scripts de Backup](Scripts_de_Backup). Il contient aussi
 un tableau récapitulant l'organisation et backups de mes disques
 
 **Utiliser le cron (http://doc.ubuntu-fr.org/cron et l'interface Kcron
@@ -32,9 +32,9 @@ pour configurer plus facilement)**
 doivent donc être faite manuellement:
 
 - synchroniser la base locale avec la base distante manuellement:
-  [Sauvegardes MySQL](Sauvegardes_MySQL "wikilink")
+  [Sauvegardes MySQL](Sauvegardes_MySQL)
 - mettre a jour SVN (Subversion).
 
 ------------------------------------------------------------------------
 
-Retour à [Perso](Perso "wikilink").
+Retour à [Perso](Perso).

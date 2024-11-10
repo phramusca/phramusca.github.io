@@ -1,7 +1,7 @@
 # Windows
 
 Windows est un système d'exploitation (OS) qui se distingue de
-[Linux](Linux "wikilink") principalement par le fait d'être propriétaire
+[Linux](Linux) principalement par le fait d'être propriétaire
 (non libre) et par conséquent payant (Microsoft, son éditeur n'étant pas
 philanthrope). Bien d'autres différences fondamentales (ou moins)
 existent entre les 2 mondes, que je ne détaillerais pas ici, mais voici
@@ -16,7 +16,7 @@ quelques pistes:
 
 Bien que Windows ne soit pas libre, il existe cependant de nombreuses
 application libres (open source) sous Windows (souvent portée depuis le
-monde [Linux](Linux "wikilink").
+monde [Linux](Linux).
 
 Voici quelques sites pour trouver des équivalences:
 

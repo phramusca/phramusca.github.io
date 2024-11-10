@@ -1,7 +1,7 @@
 # Ubuntu
 
 Ubuntu (à prononcer « Ou-boun-tou ») est une distribution de
-[Linux](Linux "wikilink") de plus en plus populaire, voir la plus
+[Linux](Linux) de plus en plus populaire, voir la plus
 populaire, créée en 2004.
 
 - [Ubuntu sur Wikipédia](http://fr.wikipedia.org/wiki/Ubuntu)
@@ -11,7 +11,7 @@ populaire, créée en 2004.
 - [Versions](http://distrowatch.com/table.php?distribution=ubuntu)
 
 Pour commencer à tester ou installer Ubuntu: voir la page
-[Installation](Installation "wikilink").
+[Installation](Installation).
 
 ## Unity
 
@@ -27,7 +27,7 @@ est l'équivalent de Unity mais fait par l'équipe de Gnome):
   le choix de la session
 - Sous Ubuntu 11.10, il faut :
   - installer [gnome-classic](apt://gnome-classic) pour avoir le menu
-    [Gnome](Gnome "wikilink") classique
+    [Gnome](Gnome) classique
   - ou installer [gnome-shell](apt://gnome-shell) pour avoir Gnome
     Shell.
 
@@ -40,4 +40,4 @@ pour avoir accès aux programmes un peu comme "à l'ancienne"
 
 ------------------------------------------------------------------------
 
-Retour à l'[Accueil](README "wikilink")
+Retour à l'[Accueil](README)

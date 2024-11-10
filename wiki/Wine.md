@@ -18,9 +18,9 @@ Plus d'infos: <http://fr.wikipedia.org/wiki/Wine>
 ## PlayOnLinux
 
 Le projet PlayOnLinux, un ensemble de scripts permettant de faire
-marcher facilement des [Programmes#Jeux](Programmes#Jeux "wikilink")
+marcher facilement des [Programmes#Jeux](Programmes#Jeux)
 Windows sous Linux à travers Wine.
 
 ------------------------------------------------------------------------
 
-Retour à [Programmes](Programmes "wikilink")
+Retour à [Programmes](Programmes)

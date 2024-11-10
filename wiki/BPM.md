@@ -19,4 +19,4 @@ A essayer et trier
 
 ------------------------------------------------------------------------
 
-Retour à [Programmes#Audio](Programmes#Audio "wikilink")
+Retour à [Programmes#Audio](Programmes#Audio)

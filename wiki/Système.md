@@ -19,7 +19,7 @@
 
 ## Lancement programmes au démarrage
 
-Pour lancer des programmes au démarrage d'[Ubuntu](Ubuntu "wikilink")
+Pour lancer des programmes au démarrage d'[Ubuntu](Ubuntu)
 et/ou pour gérer les sessions (restauration de session), aller à Système
 → Préférences → Sessions
 
@@ -61,7 +61,7 @@ Un benchmark est un logiciel qui teste les capacités d'un PC
 
 - geekbenchmark : <http://www.primatelabs.ca/geekbench/index.html>
 
-[Mes Résultats](Mes_Résultats "wikilink")
+[Mes Résultats](Mes_Résultats)
 
 ## Reprendre une installation
 
@@ -155,4 +155,4 @@ Pour MX Master:
 
 ------------------------------------------------------------------------
 
-Retour à [Misc](Misc "wikilink")
+Retour à [Misc](Misc)

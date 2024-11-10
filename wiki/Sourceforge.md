@@ -4,4 +4,4 @@
 de programmes Open Source.
 
 - Importer un repository
-  [SubVersion](Subversion "wikilink"): <https://sourceforge.net/apps/trac/sourceforge/wiki/SVN%20adminrepo#ImportingfromotherreposincludingotherSCMs>
+  [SubVersion](Subversion): <https://sourceforge.net/apps/trac/sourceforge/wiki/SVN%20adminrepo#ImportingfromotherreposincludingotherSCMs>

@@ -172,5 +172,5 @@ Auparavant, je rajoutais:
 
 A REVOIR, notamment les 2 liens ci-dessous:
 
-- [Sauvegardes et Restauration](Sauvegardes_et_Restauration "wikilink")
-- [Sauvegardes MySQL](Sauvegardes_MySQL "wikilink")
+- [Sauvegardes et Restauration](Sauvegardes_et_Restauration)
+- [Sauvegardes MySQL](Sauvegardes_MySQL)

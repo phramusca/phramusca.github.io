@@ -34,7 +34,7 @@ pour que les dossiers soient visibles sur le réseau!
 
 Pour monter un disque réseau, il existe plusieurs méthodes:
 
-- [Ubuntu](Ubuntu "wikilink") peut monter un disque facilement à travers
+- [Ubuntu](Ubuntu) peut monter un disque facilement à travers
   Nautilus, mais ne permet pas d'accéder aux fichiers autrement qu'avec
   Nautilus (ex: <smb://disk> et non /media/disk).
 - mount.cifs, le remplacant de smbmount (car CIFS remplace SMBFS)
@@ -44,7 +44,7 @@ Pour monter un disque réseau, il existe plusieurs méthodes:
 ### mount.cifs
 
 Pour pouvoir utiliser la commande mount.cifs, il faut installer le
-[paquet](Paquet "wikilink") [smbfs](apt:smbfs)
+[paquet](Paquet) [smbfs](apt:smbfs)
 
 Ensuite, utiliser la commande mount.cifs. Par exemple, pour monter :
 
@@ -111,7 +111,7 @@ difficile: <http://mybookworld.wikidot.com/ssh-enable>
 
 1.Change dans l'adresse web suivante "Mybook-Ip-Address" par l'IP du
 MBWE, et lance le lien dans un navigateur internet
-([Firefox](Firefox "wikilink") par ex.):
+([Firefox](Firefox) par ex.):
 
 <http://Mybook-Ip-Address/auth/firmware_upgrade.pl?fwserver=highlevelbits.free.fr/download/MBWE/MBWE-SSH-ENABLE>
 
@@ -172,4 +172,4 @@ serveur distant et non plus le mot de passe de l'utilisateur distant.
 
 ------------------------------------------------------------------------
 
-Retour à [Misc](Misc "wikilink")
+Retour à [Misc](Misc)

@@ -1,7 +1,7 @@
 # Firefox
 
 Le désormais célèbre Firefox existe bien évidement sous
-[Linux](Linux "wikilink").
+[Linux](Linux).
 
 ## Flash Player
 
@@ -66,4 +66,4 @@ A suivre...
 
 ------------------------------------------------------------------------
 
-Retour à [Programmes](Programmes "wikilink")
+Retour à [Programmes](Programmes)

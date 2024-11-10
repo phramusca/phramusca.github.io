@@ -36,4 +36,4 @@ Voici ma configuration:
 
 ------------------------------------------------------------------------
 
-Retour à [Programmes](Programmes "wikilink")
+Retour à [Programmes](Programmes)

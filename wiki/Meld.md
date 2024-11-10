@@ -24,4 +24,4 @@ tourne encore. Ensuite, patiente ou compare moins de fichiers à la fois.
 
 ------------------------------------------------------------------------
 
-Retour à [Programmes](Programmes "wikilink")
+Retour à [Programmes](Programmes)

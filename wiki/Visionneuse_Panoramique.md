@@ -1,6 +1,6 @@
 # Visionneuse Panoramique
 
-Une fois l'image panoramique cree avec [Hugin](Hugin "wikilink"), voici
+Une fois l'image panoramique cree avec [Hugin](Hugin), voici
 une méthode gratuite pour mettre un panoramique en ligne, en Java (a la
 façon d'un QTVR - QuickTime Virtual Reality).
 
@@ -48,6 +48,6 @@ façon d'un QTVR - QuickTime Virtual Reality).
 
 ------------------------------------------------------------------------
 
-Retour à [Hugin](Hugin "wikilink")
+Retour à [Hugin](Hugin)
 
-Retour à [Developement Web](Développement_Web "wikilink")
+Retour à [Developement Web](Développement_Web)

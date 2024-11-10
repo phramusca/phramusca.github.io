@@ -48,4 +48,4 @@ Résumé de la configuration :
 
 ------------------------------------------------------------------------
 
-Retour à [Programmes](Programmes "wikilink")
+Retour à [Programmes](Programmes)

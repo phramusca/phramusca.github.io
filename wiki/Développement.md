@@ -6,7 +6,7 @@ sites Internet.
 ## Outils et généralités
 
 Pour une liste des logiciels et outils de développement, se référer à
-[Programmes#Programmation](Programmes#Programmation "wikilink")
+[Programmes#Programmation](Programmes#Programmation)
 
 ### Contrôle de version
 
@@ -22,7 +22,7 @@ A priori, en version décentralisée, ce serait plutot GIT, A TESTER:
 
 ### Hébergement de code
 
-[Sourceforge](Sourceforge "wikilink") est un fournisseurs parmi
+[Sourceforge](Sourceforge) est un fournisseurs parmi
 d'autres.
 
 [savannah.gnu.org](http://savannah.gnu.org/) en est un autre.
@@ -61,13 +61,13 @@ Un peu d'humour:
 
 ### NetBeans
 
-[NetBeans](NetBeans "wikilink") est l'IDE de Sun (malheureusement repris
+[NetBeans](NetBeans) est l'IDE de Sun (malheureusement repris
 maintenant par Oracle) axé Java mais aussi Python, C, C++, Ruby, XML,
 PHP, ... Disponible sous Linux et Windows.
 
 ### MonoDevelop
 
-[Mono](Mono "wikilink") est une implémentation libre de .NET avec comme
+[Mono](Mono) est une implémentation libre de .NET avec comme
 éditeur MonoDevelop
 
 ### Gambas
@@ -78,7 +78,7 @@ Gambas se veut le presque Visual Basic libre
 
 ### Java
 
-Contenu transféré sur la page [Java](Java "wikilink") ...
+Contenu transféré sur la page [Java](Java) ...
 
 ### Visual Basic
 
@@ -97,14 +97,14 @@ Pour tester en ligne du code HTML, Javascript et CSS:
 
 ### PhP / MySQL
 
-Mon éditeur de prédilection est [NetBeans](NetBeans "wikilink"). Voir la
+Mon éditeur de prédilection est [NetBeans](NetBeans). Voir la
 page dédiée pour l'installation et la configuration cet IDE pour une
 utilisation avec PhP.
 
-Serveur Web : Solution [LAMP](LAMP "wikilink") (Linux, Apache, Mysql,
+Serveur Web : Solution [LAMP](LAMP) (Linux, Apache, Mysql,
 Php/Perl)
 
-Misc: [Visionneuse Panoramique](Visionneuse_Panoramique "wikilink")
+Misc: [Visionneuse Panoramique](Visionneuse_Panoramique)
 
 #### Astuces
 
@@ -156,7 +156,7 @@ imagedestroy($image);
 
 ### Divers
 
-Voir [Firefox](Firefox "wikilink") pour une liste de plugins utiles au
+Voir [Firefox](Firefox) pour une liste de plugins utiles au
 développement.
 
 - [Envoi de mails en

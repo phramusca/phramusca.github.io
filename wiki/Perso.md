@@ -4,9 +4,9 @@
 
 ### Configuration
 
-[Ma Configuration LAMP](Ma_Configuration_LAMP "wikilink")
+[Ma Configuration LAMP](Ma_Configuration_LAMP)
 
-[Sauvegardes et Restauration](Sauvegardes_et_Restauration "wikilink")
+[Sauvegardes et Restauration](Sauvegardes_et_Restauration)
 
 ### Démarrer avec MediaWiki
 

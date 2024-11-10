@@ -1,6 +1,6 @@
 # Amarok2 et MySQL
 
-**Apparemment, dans la version 2.2 et + [Amarok](Amarok "wikilink") gère
+**Apparemment, dans la version 2.2 et + [Amarok](Amarok) gère
 ceci lui-même comme dans la version 1.4**
 
 Source originale: <http://forum.ubuntu-fr.org/viewtopic.php?id=280537>
@@ -24,7 +24,7 @@ Ensuite, créer un lien symbolique vers ce dossier déplacé :
 `ln -s /var/lib/mysql/amarok ~/.kde/share/apps/amarok/mysqle/`
 
 Normalement, à cette étape, si vous redémarrez
-[Amarok](Amarok "wikilink"), tout doit fonctionner ! Le seul problème
+[Amarok](Amarok), tout doit fonctionner ! Le seul problème
 c'est que le serveur mySQL (en particulier au travers de phpmyadmin) ne
 peut pas accéder aux fichiers de la base de données pour des questions
 de droits (on voit la base dans phpmyadmin mais on ne peut pas accéder
@@ -43,4 +43,4 @@ permet de résoudre le problème : Code:
 
 ------------------------------------------------------------------------
 
-Retour à [Amarok](Amarok "wikilink")
+Retour à [Amarok](Amarok)

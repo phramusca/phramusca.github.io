@@ -24,4 +24,4 @@ faut vider le fichier gui_rpc_auth.cfg dans le /home
 
 ------------------------------------------------------------------------
 
-Retour à [Programmes](Programmes "wikilink")
+Retour à [Programmes](Programmes)

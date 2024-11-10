@@ -62,4 +62,4 @@ Il en existe surement d'autres, a vous de jouer.
 
 ------------------------------------------------------------------------
 
-Retour à [Programmes](Programmes "wikilink")
+Retour à [Programmes](Programmes)

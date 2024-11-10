@@ -42,10 +42,10 @@ A essayer quand même: PanoSalado en v1 car des tutos sont dispos:
   (avec aussi PTViewer tuto)
 - D'autres à retrouver (google)
 
-La solution dans [Visionneuse Panoramique](Visionneuse_Panoramique "wikilink") n'est finalement pas si
+La solution dans [Visionneuse Panoramique](Visionneuse_Panoramique) n'est finalement pas si
 bonne. Le format OpenPanoram ne semble pas avoir pris et est finalement
 spécifique à la société ImmerVision.
 
 ------------------------------------------------------------------------
 
-Retour à [Programmes](Programmes "wikilink")
+Retour à [Programmes](Programmes)

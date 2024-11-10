@@ -139,4 +139,4 @@ peux être nécessaire.
 
 ------------------------------------------------------------------------
 
-Retour à [Misc](Misc "wikilink")
+Retour à [Misc](Misc)

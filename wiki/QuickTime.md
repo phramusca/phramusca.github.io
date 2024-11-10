@@ -2,7 +2,7 @@
 
 ## QTVR
 
-On peux utiliser Quicktime avec [Wine](Wine "wikilink"). C'est assez
+On peux utiliser Quicktime avec [Wine](Wine). C'est assez
 lent, mais c'est le plus simple pour voir les MOV:
 <http://www.apple.com/fr/quicktime/download/>
 
@@ -22,7 +22,7 @@ faudrait préférer la librairie "libquicktime" qui permet de voir des
 vidéos MOV (pas les QTVR) dans tous les lecteurs Multimédia.
 
 - Installer "nasm" depuis le gestionnaire de
-  [paquets](Paquet "wikilink")
+  [paquets](Paquet)
 - Télécharger les sources de "QuickTime 4 Linux" et "Libmpeg3" sur
   <http://heroinewarrior.com/quicktime.php3>
 - Decompresser les archives "QuickTime 4 Linux" et "Libmpeg3".
@@ -41,4 +41,4 @@ vidéos MOV (pas les QTVR) dans tous les lecteurs Multimédia.
 
 ------------------------------------------------------------------------
 
-Retour à [Programmes](Programmes "wikilink")
+Retour à [Programmes](Programmes)

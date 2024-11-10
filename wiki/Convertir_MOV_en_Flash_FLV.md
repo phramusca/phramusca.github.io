@@ -9,7 +9,7 @@ lui est mis à jour et les commandes marchent toujours (essais fait le
 ## Convertir des videos QuicTime MOV en Flash FLV
 
 - Installer mencoder et ffmpeg depuis le gestionnaire de
-  [paquets](Paquet "wikilink").
+  [paquets](Paquet).
 - Transformer le MOV en AVI: mencoder -mc 0 -noskip -oac pcm -ovc lavc
   -ffourcc DX50 -o output.avi input.mov
 - Transformer l'AVI en FLV (video Flash): ffmpeg -i input.avi -ab 56 -ar

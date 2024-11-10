@@ -9,8 +9,8 @@ Plus d'infos sur les systèmes de fichiers:
 
 ## Disques locaux et réseaux
 
-- [Disques Locaux](Disques_Locaux "wikilink")
-- [Disques Réseau](Disques_Réseau "wikilink")
+- [Disques Locaux](Disques_Locaux)
+- [Disques Réseau](Disques_Réseau)
 
 ## Droits (chmod)
 
@@ -71,4 +71,4 @@ retrouver dans le répertoire "lost+found" (attention : dossier caché)
 
 ------------------------------------------------------------------------
 
-Retour à [Misc](Misc "wikilink")
+Retour à [Misc](Misc)

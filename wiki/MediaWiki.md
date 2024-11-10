@@ -68,4 +68,4 @@ Pour le mettre en place, rien de plus simple:
 
 ------------------------------------------------------------------------
 
-Retour à l'[Accueil](README "wikilink")
+Retour à l'[Accueil](README)

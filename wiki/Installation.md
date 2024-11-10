@@ -1,30 +1,30 @@
 # Installation
 
 Tout d'abord, avant d'installer une distribution
-[Linux](Linux "wikilink"), il faut la choisir !
+[Linux](Linux), il faut la choisir !
 
 Pas de panique, il existe [un site qui permet de choisir sa distribution
 très facilement](http://www.zegeniestudios.net/ldc/index.php?lang=fr)
 
 Je détaille ci-dessous seulement l'installation de la distribution
-[Ubuntu](Ubuntu "wikilink"), puisque c'est celle que j'utilise.
+[Ubuntu](Ubuntu), puisque c'est celle que j'utilise.
 
 Il est aussi possible d'[acheter un PC
 pré-installé](http://linuxpreinstalle.com/) avec
-[Linux](Linux "wikilink").
+[Linux](Linux).
 
 ## Ubuntu
 
 Ubuntu se décline en plusieurs versions
 
-- [Ubuntu](Ubuntu "wikilink"), basé sur le bureau Gnome.
-- K[Ubuntu](Ubuntu "wikilink"), basé sur le bureau KDE.
+- [Ubuntu](Ubuntu), basé sur le bureau Gnome.
+- K[Ubuntu](Ubuntu), basé sur le bureau KDE.
 - autres ...
 
-La version principale est [Ubuntu](Ubuntu "wikilink"). Les
-[programmes](Programmes "wikilink") présents sur les
-[dépôts](Dépôt "wikilink") (valables pour toutes les versions) sont donc
-plus adaptés à [Ubuntu](Ubuntu "wikilink").
+La version principale est [Ubuntu](Ubuntu). Les
+[programmes](Programmes) présents sur les
+[dépôts](Dépôt) (valables pour toutes les versions) sont donc
+plus adaptés à [Ubuntu](Ubuntu).
 
 Pour choisir la version qui te convient et pour plus de détails sur
 l'installation, tu peux consulter la [page
@@ -77,11 +77,11 @@ Sur un vieux PC, le lancement du Live CD peux poser des problèmes. Pour
 ### Et après
 
 Tu peux maintenant utiliser ton nouvel environnement, installer de
-nouveaux [programmes](Programmes "wikilink"), ...
+nouveaux [programmes](Programmes), ...
 
 **Un truc important à savoir est que le mot de passe superutilisateur
 (root), qui est notamment demandé pour installer des
-[programmes](Programmes "wikilink"), n'est autre que le mot de passe de
+[programmes](Programmes), n'est autre que le mot de passe de
 l'utilisateur principal, choisi lors de l'installation.**
 
 *En mode console, pour passer en root (superutilisateur), tapez sudo

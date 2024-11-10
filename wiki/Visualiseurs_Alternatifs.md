@@ -2,7 +2,7 @@
 
 Un aperçu : <http://www.coagul.org/article.php3?id_article=531>
 
-Avant d'opter pour [Gwenview](Gwenview "wikilink"), j'ai essayé
+Avant d'opter pour [Gwenview](Gwenview), j'ai essayé
 plusieurs logiciels. Les voici : (trouver le plus rapide. Vérifier
 conservation données EXIF)
 
@@ -37,4 +37,4 @@ conservation données EXIF)
 
 ------------------------------------------------------------------------
 
-Retour à [Programmes](Programmes "wikilink")
+Retour à [Programmes](Programmes)

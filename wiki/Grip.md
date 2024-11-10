@@ -6,4 +6,4 @@ GRIP : option encodeur lame, mais apparement ne marche pas :(
 
 ------------------------------------------------------------------------
 
-Retour à [Programmes](Programmes "wikilink")
+Retour à [Programmes](Programmes)

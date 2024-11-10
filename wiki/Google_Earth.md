@@ -6,7 +6,7 @@ satellites de la Terre, en 3D.
 ## Installation
 
 Un paquet Ubuntu googleerath est disponible dans les
-[dépôts](Dépôt "wikilink")
+[dépôts](Dépôt)
 [Medibuntu](http://doc.ubuntu-fr.org/medibuntu).
 
 Sinon, le paquet binaire est disponible sur le site de Google :
@@ -14,4 +14,4 @@ Sinon, le paquet binaire est disponible sur le site de Google :
 
 ------------------------------------------------------------------------
 
-Retour à [Programmes](Programmes "wikilink")
+Retour à [Programmes](Programmes)

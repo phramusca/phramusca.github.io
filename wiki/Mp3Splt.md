@@ -28,4 +28,4 @@ mp3splt-gtk pour le lancer
 
 ------------------------------------------------------------------------
 
-Retour à [Programmes](Programmes "wikilink")
+Retour à [Programmes](Programmes)

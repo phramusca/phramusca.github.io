@@ -8,4 +8,4 @@ Plus d'infos: [amule sur Ubuntu-fr](http://doc.ubuntu-fr.org/amule)
 
 ------------------------------------------------------------------------
 
-Retour à [Programmes](Programmes "wikilink")
+Retour à [Programmes](Programmes)
