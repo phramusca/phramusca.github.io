@@ -1,5 +1,7 @@
 # Mono
 
+TODO: Revoir et/ou archiver
+
 Mono est une mise en œuvre libre (sous licence GNU GPL, GNU LGPL ou X11
 selon les éléments) de la plate-forme de développement Microsoft .NET
 basé sur la CLI. Mono a été initié par Miguel de Icaza au sein de sa

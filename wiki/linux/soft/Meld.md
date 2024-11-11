@@ -1,5 +1,8 @@
 # Meld
 
+
+TODO: A revoir
+
 Comparateur de fichiers/dossiers.
 
 Comparable à WinMerge sous Windows.

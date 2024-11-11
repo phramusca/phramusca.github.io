@@ -1,5 +1,7 @@
 # Wine
 
+TODO: Revoir et/ou archiver
+
 Wine est l'acronyme récursif anglophone de « Wine Is Not an Emulator »,
 littéralement Wine n'est pas un émulateur.
 

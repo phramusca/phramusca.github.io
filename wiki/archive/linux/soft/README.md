@@ -1,135 +1,94 @@
 # Programmes
 
-Il existe des centaines (voire des milliers) d'applications disponible sous [Linux](../README.md). Il n'est pas facile de s'y retrouver, mais voici déjà un point de départ.
-
-## Sur le Web
-
-Il existe énormément de sites qui listent ou proposent des logiciels
-pour [Linux](../README.md). En voici une petite sélection:
-
-- [Logiciels pour Ubuntu](http://doc.ubuntu-fr.org/logiciels) sur Ubuntu-fr - Pour [Linux Mint](../dist/Mint.md), choisir les versions [Ubuntu](../dist/Ubuntu.md) (Gonme) qui sont compatibles et mieux integrées que les logiciels pour Kubuntu (KDE).
-- [Alternativeto.net](http://alternativeto.net/) (Anglais) - Trouver des équivalences de programmes. Très utile et pratique !
-- [Framasoft](http://www.framasoft.net/) - Association française qui promeut des alternatives libres et éthiques aux services en ligne, notamment en développant et en soutenant des logiciels libres et des outils collaboratifs pour préserver la vie privée et favoriser l'autonomie numérique.
-
 ## Sélection de Programmes
-
-Voici un petit aperçu des programmes disponibles que j'ai eu l'occasion de tester, et que j'apprécie, ainsi que des astuces (installation, problèmes connus,...).
-
-> Comment [Installer un programme sous Linux](../system/Installer_un_programme_sous_Linux.md) ?
 
 ### Applications
 
 #### Accessoires
 
-TODO: Est-ce le meilleur ? J'en ai un autre installé (par défaut?), à comparer.
-
-|         |                                             |                       |                                             |
-| ------- | ------------------------------------------- | --------------------- | ------------------------------------------- |
-| Nom     | Ubuntu-fr                                   | Description           | Installation [apturl](../system/Apt-url.md) |
-| krename | [KRename](http://doc.ubuntu-fr.org/krename) | Renommer des fichiers | [krename](apt://krename)                    |
+|     |           |             |                                   |
+| --- | --------- | ----------- | --------------------------------- |
+| Nom | Ubuntu-fr | Description | [apt-url](Apt-url) (Installation) |
 
 #### Autre
 
 #### Bureautique
 
-|     |           |             |                                             |
-| --- | --------- | ----------- | ------------------------------------------- |
-| Nom | Ubuntu-fr | Description | Installation [apturl](../system/Apt-url.md) |
+|                  |                                               |                                                          |                                   |
+| ---------------- | --------------------------------------------- | -------------------------------------------------------- | --------------------------------- |
+| Nom              | Ubuntu-fr                                     | Description                                              | [apt-url](Apt-url) (Installation) |
+| [GCStar](GCStar) | [gcstar](http://doc.ubuntu-fr.org/gcstar)     | Gestion des collections personnelles (Films, jeux, ...). | Voir [GCStar](GCStar)             |
+| HomeBank         | [HomeBank](http://doc.ubuntu-fr.org/HomeBank) | Gestionnaire de finances                                 | [HomeBank](apt://homebank)        |
 
 #### Education
 
 #### Graphisme
 
-|                |                                               |                                                                        |                                             |
-| -------------- | --------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------- |
-| Nom            | Ubuntu-fr                                     | Description                                                            | Installation [apturl](../system/Apt-url.md) |
-| [GIMP](GIMP)   | [gimp](http://doc.ubuntu-fr.org/gimp)         | Éditeur photo, genre Photoshop                                         | [gimp](apt://gimp)                          |
-| [Hugin](Hugin) | [hugin](http://doc.ubuntu-fr.org/hugin)       | Panoramiques                                                           | [hugin](apt://hugin)                        |
-| FotoWall       | [fotowall](http://doc.ubuntu-fr.org/fotowall) | Patchworks de photos  <https://www.enricoros.com/opensource/fotowall/> | [fotowall](apt://fotowall)                  |
-| gcolor2        | [gcolor2](http://doc.ubuntu-fr.org/gcolor2)   | Sélecteur de couleur très simple basé sur GTK+2.                       | [gcolor2](apt://gcolor2)                    |
-
-TODO: Revoir cette partie !! (logiciels par défaut, DIGIKAM - <https://www.digikam.org/> )
-
-|          |                                               |                                                                      |                                             |
-| -------- | --------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------- |
-| Nom      | Ubuntu-fr                                     | Description                                                          | Installation [apturl](../system/Apt-url.md) |
-| Gwenview | [gwenview](http://doc.ubuntu-fr.org/gwenview) | Visualisation ([Visualiseurs Alternatifs](Visualiseurs_Alternatifs)) | [gwenview](apt://gwenview)                  |
+|          |                                             |                                                                                                             |                                                |
+| -------- | ------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| Nom      | Ubuntu-fr                                   | Description                                                                                                 | [apt-url](Apt-url) (Installation)              |
+| Manslide | N/A                                         | SlideShows vidéo                                                                                            | [manslide](apt://manslide)                     |
+| Picasa   | [picasa](http://doc.ubuntu-fr.org/picasa)   | Visualiseur de Google. Permet entre autres de générer des vidéos. [Picasa](http://picasa.google.com/linux/) | Voir [picasa](http://doc.ubuntu-fr.org/picasa) |
+| gcolor2  | [gcolor2](http://doc.ubuntu-fr.org/gcolor2) | Sélecteur de couleur très simple basé sur GTK+2.                                                            | [gcolor2](apt://gcolor2)                       |
 
 #### Internet
 
-|                                                     |                                             |                                             |
-| --------------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
-| Nom                                                 | Description                                 | Installation [apturl](../system/Apt-url.md) |
-| gFTP                                                | Client FTP (File Transfer Protocol)         | [gftp](apt://gftp)                          |
-| [JDownloader](http://doc.ubuntu-fr.org/jdownloader) | Gestionnaire de téléchargement de fichiers. | N/A                                         |
-
-TODO: Faire section FTP, ave aussi FileZill et lftp (script. et gui ?)
-
-|      |                                     |                                             |
-| ---- | ----------------------------------- | ------------------------------------------- |
-| Nom  | Description                         | Installation [apturl](../system/Apt-url.md) |
-| gFTP | Client FTP (File Transfer Protocol) | [gftp](apt://gftp)                          |
-
-TODO: Revoir ou archiver ceux la:
-
-|            |                                                                                                |                                                    |
-| ---------- | ---------------------------------------------------------------------------------------------- | -------------------------------------------------- |
-| Nom        | Description                                                                                    | Installation [apturl](../system/Apt-url.md)        |
-| [VNC](VNC) | Remote Desktop (Pour prendre le contrôle d'un PC à distance)                                   |                                                    |
-| Evolution  | équivalent ou presque d'Outlook                                                                | inclus par défaut dans [Ubuntu](linux/dist/Ubuntu) |
-| Empathy    | Messagerie instantanée compatible avec MSN (Windows Live), Jabber, Google Talk, AIM, yahoo,... | inclus par défaut dans [Ubuntu](linux/dist/Ubuntu) |
+|                    |                                                            |                                                    |
+| ------------------ | ---------------------------------------------------------- | -------------------------------------------------- |
+| Nom                | Description                                                | [apt-url](Apt-url) (Installation)                  |
+| [Firefox](Firefox) | Navigateur Internet (ou Konqueror, ... le choix est grand) | inclus par défaut dans [Ubuntu](linux/dist/Ubuntu) |
+| Transmission       | client BitTorrent                                          | inclus par défaut dans [Ubuntu](linux/dist/Ubuntu) |
+| [aMule](AMule)     | eMule (peer2peer).                                         | [amule](apt://amule)                               |
 
 #### Jeux
 
-TODO (11/2024): A revoir avec Proton, Steam ... Faire une page dédiée
-
-- [PlayOnLinux](http://www.playonlinux.com/fr/) (supporté par [Wine](Wine))
+|     |             |                                   |
+| --- | ----------- | --------------------------------- |
+| Nom | Description | [apt-url](Apt-url) (Installation) |
 
 #### Programmation
 
-TODO: Revoir cette section
-
-Plus d'informations, voir la page [Développement](../../dev/README.md).
-
-|                                   |                                                 |                                                                    |                                             |
-| --------------------------------- | ----------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------- |
-| Nom                               | Ubuntu-fr                                       | Description                                                        | Installation [apturl](../system/Apt-url.md) |
-| [Meld](Meld)                      |                                                 | Comparaison de fichiers / répertoires.                             | [meld](apt://meld)                          |
-| sqlitebrowser                     | [sqlitebrowser.org](https://sqlitebrowser.org/) | Administration de bases Sqlite                                     | [sqlitebrowser](apt://sqlitebrowser)        |
-| [Mono](../../dev/Mono.md)         |                                                 | Implémentation libre de .NET avec comme éditeur MonoDevelop        | N/A                                         |
-| [NetBeans](../../dev/NetBeans.md) | [netbeans](http://doc.ubuntu-fr.org/netbeans)   | IDE de Sun axé Java mais aussi Python, C, C++, Ruby, XML, PHP, ... | N/A                                         |
-| Gambas                            | [Gambas](http://doc.ubuntu-fr.org/Gambas)       | le presque Visual Basic libre                                      | [gambas3](apt://gambas3)                    |
+|                     |                                         |                                |                                   |
+| ------------------- | --------------------------------------- | ------------------------------ | --------------------------------- |
+| Nom                 | Doc / website                           | Description                    | [apt-url](Apt-url) (Installation) |
+| [SciTE](SciTE)      | [SciTE](http://doc.ubuntu-fr.org/scite) | Editeur texte bien pratique    | [scite](apt://scite)              |
+| Sqliteman           |                                         | Administration de bases Sqlite | [sqliteman](apt://sqliteman)      |
+| MySQL Administrator |                                         | Administration de bases MySQL  | [mysql-admin](apt://mysql-admin)  |
 
 #### Son et Vidéo
 
+**Note importante pour lire les MP3, DivX,...: voir [formats non libres](http://doc.ubuntu-fr.org/formats_non-libres)**
+
+- [XBMC Passion](http://passion-xbmc.org/)
+- Free multi-postes:
+  - <http://doc.ubuntu-fr.org/multiposte_free>
+  - <http://doc.ubuntu-fr.org/freetuxtv>
+  - <http://doc.ubuntu-fr.org/myfreetv>
+
 ##### Audio
 
-TODO: Review this list
+- Une [liste de lecteurs](http://doc.ubuntu-fr.org/lecteur_audio) sur Ubuntu-fr
+- Mon comparateur (en cours):
+  <http://socialcompare.com/fr/comparison/linux-open-source-audio-players-p4v154w>
+- Alternatives à AmaroK:
+  <http://alternativeto.net/software/amarok/?platform=linux&license=free>
 
-|                    |                                             |                                                                                                                                             |                                             |
-| ------------------ | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
-| Nom                | Ubuntu-fr                                   | Description                                                                                                                                 | Installation [apturl](../system/Apt-url.md) |
-| [EasyTag](EasyTag) | [easytag](http://doc.ubuntu-fr.org/easytag) | Éditeur de Tags Id3                                                                                                                         | [easytag](apt://easytag)                    |
-| easyMP3Gain        | [mp3gain](http://doc.ubuntu-fr.org/mp3gain) | Normalisation du volume des musiques dans un dossier ou fichier par fichier par replayGain                                                  | [easymp3gain-gtk](apt://easymp3gain-gtk)    |
-| [mp3Splt](Mp3Splt) |                                             | Découper des MP3s                                                                                                                           | [mp3splt-gtk](apt://mp3splt-gtk)            |
-| [RipperX](RipperX) |                                             | Rip & Encodage MP3 (ou [Soudjuicer](Soudjuicer) par défaut dans Ubuntu, mais avec des problèmes en VBR) *A tester aussi : [Grip](Grip) ...* | [ripperx](apt://ripperx)                    |
+|                    |                                              |                                                                                                                                             |                                          |
+| ------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| Nom                | Ubuntu-fr                                    | Description                                                                                                                                 | [apt-url](Apt-url) (Installation)        |
+| [Amarok](Amarok)   | [amarok](http://doc.ubuntu-fr.org/amarok_v1) | Lecteur MP3                                                                                                                                 | Voir page dédiée                         |
+| [JBMGen](JBMGen)   | MAJ Archos                                   |                                                                                                                                             |                                          |
+| Ex Falso           |                                              | pour renommer les fichiers MP3 - autres fonctions a tester                                                                                  |                                          |
 
-TODO: Move to JaMuz
-
-- Genre icons (for future use):
-  - <http://www.iconarchive.com/show/music-genre-icons-by-sirubico.html>
-  - <http://www.flickr.com/groups/itunesgenres/pool/>
-  - <http://myssynen.deviantart.com/art/Music-genre-images-71751056>
-  - <http://www.mede8erforum.com/index.php?topic=5472.0>
-  - <http://www.iconeasy.com/iconset/music-genre-icons/>
+- Rythmbox: éditer la liste des emplacements de la bibliothèque
+  - Application \> Outils système \> éditeur de configuration (ou lancer gconf-editor)
+  - apps \> rhythmbox clé library_locations
 
 ##### Vidéo
 
-TODO : !!!!!!!!!!!!!!!! REPRENDRE ICI (en sync avec page archive)
-
 |                                                      |                                                                                                                                                                                  |                                                                                   |
 | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| Nom                                                  | Description                                                                                                                                                                      | Installation [apturl](../system/Apt-url.md)                                       |
+| Nom                                                  | Description                                                                                                                                                                      | [apt-url](Apt-url) (Installation)                                                 |
 | [vlc](http://doc.ubuntu-fr.org/vlc)                  | Lecteur video. Voir aussi totem, kaffeine,...                                                                                                                                    | [vlc](apt://vlc)                                                                  |
 | [winff](http://doc.ubuntu-fr.org/winff)              | WinFF est une interface graphique à FFmpeg très simple d'utilisation et personnalisable. Voir aussi: [Convertir MOV en Flash FLV](Convertir_MOV_en_Flash_FLV)                    | [winff](apt://winff) + [codecs](http://ubuntuforums.org/showthread.php?t=1117283) |
 | [avidemux](http://doc.ubuntu-fr.org/avidemux)        | Editeur vidéo, considéré comme l'équivalent de VirtualDub. Voir aussi [Fusionner 2 fichiers avi avec mencoder](http://www.ubuntuhowtos.com/howtos/merge_avi_files_with_mencoder) | [avidemux](apt://avidemux)                                                        |
@@ -143,7 +102,7 @@ TODO : !!!!!!!!!!!!!!!! REPRENDRE ICI (en sync avec page archive)
 
 |                                                     |                                                                                                                |                                                          |
 | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| Nom                                                 | Description                                                                                                    | Installation [apturl](../system/Apt-url.md)              |
+| Nom                                                 | Description                                                                                                    | [apt-url](Apt-url) (Installation)                        |
 | yakuake                                             | permet de lancer un shell (Terminal) "rétractible" en pressant F12 - très pratique                             | [yakuake](apt://yakuake)                                 |
 | [rsync](soft/rsync)                                 | Synchronisation de fichiers.                                                                                   | [grsync](apt://grsync)                                   |
 | [rclone](soft/rclone)                               | Manipuler les fichiers sur des stockages cloud.                                                                | [rclone-browser](apt://rclone-browser)                   |
@@ -155,19 +114,19 @@ TODO : !!!!!!!!!!!!!!!! REPRENDRE ICI (en sync avec page archive)
 Les programmes suivants n'ont pas d'interface graphique, mais sont quand
 même bien pratiques:
 
-|                                                        |                                         |                                                                                                                                                                                |                                             |
-| ------------------------------------------------------ | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------- |
-| Nom                                                    | Ubuntu-fr                               | Description                                                                                                                                                                    | Installation [apturl](../system/Apt-url.md) |
-| [convmv](Convmv)                                       |                                         | Conversion de caractères (noms de fichiers)                                                                                                                                    | [convmv](apt://convmv)                      |
-| [Disques_Réseau#mount.cifs](Disques_Réseau#mount.cifs) |                                         | Pour monter des dossiers partagés Windows ou Samba                                                                                                                             | [smbfs](apt://smbfs)                        |
-| [fcron](Fcron)                                         | [fcron](http://doc.ubuntu-fr.org/fcron) | FCron permet de pallier les défauts de Cron et d'Anacron.                                                                                                                      | [fcron](apt://fcron)                        |
-| RAR (archive)                                          | [rar](http://doc.ubuntu-fr.org/rar)     | RAR est un format d'archive (un peu comme ZIP), c'est aussi le nom de l'application pour les gérer. [RAR avec mot de passe](http://forum.ubuntu-fr.org/viewtopic.php?id=83892) | Voir site Ubuntu                            |
+|                                                        |                                         |                                                                                                                                                                                |                                   |
+| ------------------------------------------------------ | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------- |
+| Nom                                                    | Ubuntu-fr                               | Description                                                                                                                                                                    | [apt-url](Apt-url) (Installation) |
+| [convmv](Convmv)                                       |                                         | Conversion de caractères (noms de fichiers)                                                                                                                                    | [convmv](apt://convmv)            |
+| [Disques_Réseau#mount.cifs](Disques_Réseau#mount.cifs) |                                         | Pour monter des dossiers partagés Windows ou Samba                                                                                                                             | [smbfs](apt://smbfs)              |
+| [fcron](Fcron)                                         | [fcron](http://doc.ubuntu-fr.org/fcron) | FCron permet de pallier les défauts de Cron et d'Anacron.                                                                                                                      | [fcron](apt://fcron)              |
+| RAR (archive)                                          | [rar](http://doc.ubuntu-fr.org/rar)     | RAR est un format d'archive (un peu comme ZIP), c'est aussi le nom de l'application pour les gérer. [RAR avec mot de passe](http://forum.ubuntu-fr.org/viewtopic.php?id=83892) | Voir site Ubuntu                  |
 
 Les suivants sont à répartir dans les menus appropriés :
 
 |                                                             |                                                            |                                                    |
 | ----------------------------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------- |
-| Nom                                                         | Description                                                | Installation [apturl](../system/Apt-url.md)        |
+| Nom                                                         | Description                                                | [apt-url](Apt-url) (Installation)                  |
 | [BOINC](BOINC)                                              | Calcul partagé                                             | N/A                                                |
 | [Google Earth](Google_Earth)                                | La Terre vue du ciel                                       | N/A                                                |
 | [Sunclock](http://www.arvernes.com/wiki/index.php/Sunclock) | Carte avec zones ensoleillées                              | N/A                                                |
@@ -181,7 +140,10 @@ Les suivants sont à répartir dans les menus appropriés :
 
 ### Raccourcis
 
-Pas de programmes ici, si ce n'est Nautilus qui est le gestionnaire/explorateur de fichiers par défaut de [Ubuntu](linux/dist/Ubuntu). Voir dans [Misc](Misc) pour plus de détails sur le système de fichiers.
+Pas de programmes ici, si ce n'est Nautilus qui est le
+gestionnaire/explorateur de fichiers par défaut de
+[Ubuntu](linux/dist/Ubuntu). Voir dans [Misc](Misc) pour plus
+de détails sur le système de fichiers.
 
 ### Système
 
@@ -191,7 +153,7 @@ Ici sont regroupées tout ce qui concerne la configuration du système.
 
 |                                                                                   |                                                                                                                                                                                                                                                 |                                                                      |
 | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| Nom                                                                               | Description                                                                                                                                                                                                                                     | Installation [apturl](../system/Apt-url.md)                          |
+| Nom                                                                               | Description                                                                                                                                                                                                                                     | [apt-url](Apt-url) (Installation)                                    |
 | [Compiz Fusion](http://doc.ubuntu-fr.org/compiz_fusion) (simple)                  | Configuration des effets de bureau. Recommandé.                                                                                                                                                                                                 | [simple-ccsm](apt://simple-ccsm)                                     |
 | [Compiz Fusion](http://doc.ubuntu-fr.org/compiz_fusion) (avancé)                  | Configuration avancée des effets de bureau.                                                                                                                                                                                                     | [compizconfig-settings-manager](apt://compizconfig-settings-manager) |
 | [nautilus-actions](http://doc.ubuntu-fr.org/nautilus-actions)                     | Configuration des actions de Nautilus (gestionnaire fichiers) [Comparaison avec nautilus-scripts](http://www.commentcamarche.net/faq/6357-editer-le-menu-contextuel-de-nautilus-navigateur-de-fichiers)                                         | [nautilus-actions](apt://nautilus-actions)                           |
@@ -203,7 +165,7 @@ Ici sont regroupées tout ce qui concerne la configuration du système.
 
 |              |                                                       |                                                                                    |                                                                 |
 | ------------ | ----------------------------------------------------- | ---------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| Nom          | ubuntu-fr                                             | Description                                                                        | Installation [apturl](../system/Apt-url.md)                     |
+| Nom          | ubuntu-fr                                             | Description                                                                        | [apt-url](Apt-url) (Installation)                               |
 | Gparted      | [gparted](http://doc.ubuntu-fr.org/gparted)           | Partitionnement de disque.                                                         | [gparted](apt://gparted)                                        |
 | Disk-Manager | [disk-manager](http://doc.ubuntu-fr.org/disk-manager) | Gestionnaire de disques. Voir [Disques Locaux](Disques_Locaux)                     | N/A. Voir [disk-manager](http://doc.ubuntu-fr.org/disk-manager) |
 | Gufw         | [gufw](http://doc.ubuntu-fr.org/gufw)                 | Interface graphique du pare-feu UFW, celui par défaut dans Ubuntu (10.10 au moins) | [gufw](apt://gufw)                                              |
@@ -254,7 +216,7 @@ Voici quelques tableaux de bord:
 
 |                                                                     |                                                                                                                                                                                                                                                                                                                                                                                                                  |                                                  |
 | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
-| Nom                                                                 | Description                                                                                                                                                                                                                                                                                                                                                                                                      | Installation [apturl](../system/Apt-url.md)      |
+| Nom                                                                 | Description                                                                                                                                                                                                                                                                                                                                                                                                      | [apt-url](Apt-url) (Installation)                |
 | [File Browser Applet](http://doc.ubuntu-fr.org/file-browser-applet) | Il permet de parcourir le contenu de votre ordinateur et d'ouvrir des fichiers sans avoir à utiliser de navigateur de fichiers. Son but n'est pas de remplacer un véritable gestionnaire de fichiers tel que Nautilus ; parfois vous voulez juste ouvrir un document sans avoir à ouvrir un dossier, le parcourir, ouvrir le document et refermer le dossier. Cet applet vous épargne simplement quelques clics. | [file-browser-applet](apt://file-browser-applet) |
 
 ------------------------------------------------------------------------
