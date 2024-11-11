@@ -11,26 +11,46 @@ pour [Linux](../README.md). En voici une petite sélection:
 - [Alternativeto.net](http://alternativeto.net/) (Anglais) - Trouver des équivalences de programmes. Très utile et pratique !
 - [Framasoft](http://www.framasoft.net/) - Association française qui promeut des alternatives libres et éthiques aux services en ligne, notamment en développant et en soutenant des logiciels libres et des outils collaboratifs pour préserver la vie privée et favoriser l'autonomie numérique.
 
-## Sélection de Programmes
+## Ma Sélection
 
 Voici un petit aperçu des programmes disponibles que j'ai eu l'occasion de tester, et que j'apprécie, ainsi que des astuces (installation, problèmes connus,...).
 
 > Comment [Installer un programme sous Linux](../system/Installer_un_programme_sous_Linux.md) ?
 
+TODO: https://doc.ubuntu-fr.org/ventoy
+
+TODO: Ajouter les programmes / nettoyer le répertoire local Installs
+
 ### Applications
 
 #### Accessoires
 
-TODO: Est-ce le meilleur ? J'en ai un autre installé (par défaut?), à comparer.
+TODO: Ajouter:
 
-|         |                                             |                       |                                             |
-| ------- | ------------------------------------------- | --------------------- | ------------------------------------------- |
-| Nom     | Ubuntu-fr                                   | Description           | Installation [apturl](../system/Apt-url.md) |
-| krename | [KRename](http://doc.ubuntu-fr.org/krename) | Renommer des fichiers | [krename](apt://krename)                    |
+- Flatseal (/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=com.github.tchx84)
+- rpi-imager (Raspberry Pi Imager)
+- KeePass2
+- Solaar
+- Spectacle (Capture d'écran avec apparement plus d'options que "Capture d'écran")
+- VNote (Prise de notes en markdown)
+
+|          |                                                  |                                                                 |                                             |
+| -------- | ------------------------------------------------ | --------------------------------------------------------------- | ------------------------------------------- |
+| Nom      | Ubuntu-fr                                        | Description                                                     | Installation [apturl](../system/Apt-url.md) |
+| dupeGuru | [dupeGuru](https://doc.ubuntu-fr.org/dupegurume) | Rechercher et supprimer des fichiers et répertoires en double   | [dupeGuru](apt://dupeGuru)                  |
+| krename  | [KRename](http://doc.ubuntu-fr.org/krename)      | Renommer des fichiers si "Renommeur de fichiers" ne suffit pas. | [krename](apt://krename)                    |
 
 #### Autre
 
+TODO: Faire le tri entre Wayland (à revoir aussi) et le reste
+
 #### Bureautique
+
+TODO: Ajouter:
+
+- Calibre
+- gLabels
+- PDFsamBasic
 
 |     |           |             |                                             |
 | --- | --------- | ----------- | ------------------------------------------- |
@@ -38,7 +58,28 @@ TODO: Est-ce le meilleur ? J'en ai un autre installé (par défaut?), à compare
 
 #### Education
 
+TODO: Ajouter:
+
+- Atelier Linotte
+- GCompris
+- Tux Math
+- [Jeux educatifs](https://doc.ubuntu-fr.org/educatif)
+
 #### Graphisme
+
+TODO: Ajouter:
+
+- Dia
+- digiKam
+- gscan2pdf
+- Sweet Home 3D
+- XSane (=> Integrer page locale sur imprimante lexmark)
+
+Installés par défaut:
+
+- Dessin
+- Numérisuer de documents
+- Pix
 
 |                |                                               |                                                                        |                                             |
 | -------------- | --------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------- |
@@ -48,14 +89,17 @@ TODO: Est-ce le meilleur ? J'en ai un autre installé (par défaut?), à compare
 | FotoWall       | [fotowall](http://doc.ubuntu-fr.org/fotowall) | Patchworks de photos  <https://www.enricoros.com/opensource/fotowall/> | [fotowall](apt://fotowall)                  |
 | gcolor2        | [gcolor2](http://doc.ubuntu-fr.org/gcolor2)   | Sélecteur de couleur très simple basé sur GTK+2.                       | [gcolor2](apt://gcolor2)                    |
 
-TODO: Revoir cette partie !! (logiciels par défaut, DIGIKAM - <https://www.digikam.org/> )
-
-|          |                                               |                                                                      |                                             |
-| -------- | --------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------- |
-| Nom      | Ubuntu-fr                                     | Description                                                          | Installation [apturl](../system/Apt-url.md) |
-| Gwenview | [gwenview](http://doc.ubuntu-fr.org/gwenview) | Visualisation ([Visualiseurs Alternatifs](Visualiseurs_Alternatifs)) | [gwenview](apt://gwenview)                  |
-
 #### Internet
+
+TODO Rajouter:
+
+- 4kyoutubetomp3
+- MEGAsync
+- Remmina
+- RClone Browser
+- TigerVNC (voir page sur VNC)
+- Gnome Web (avec WebKitGTK)
+- Wireshark
 
 |                                                     |                                             |                                             |
 | --------------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
@@ -63,7 +107,7 @@ TODO: Revoir cette partie !! (logiciels par défaut, DIGIKAM - <https://www.digi
 | gFTP                                                | Client FTP (File Transfer Protocol)         | [gftp](apt://gftp)                          |
 | [JDownloader](http://doc.ubuntu-fr.org/jdownloader) | Gestionnaire de téléchargement de fichiers. | N/A                                         |
 
-TODO: Faire section FTP, ave aussi FileZill et lftp (script. et gui ?)
+TODO: Faire section FTP, avec aussi FileZilla et lftp (script. et gui ?)
 
 |      |                                     |                                             |
 | ---- | ----------------------------------- | ------------------------------------------- |
@@ -83,11 +127,17 @@ TODO: Revoir ou archiver ceux la:
 
 TODO (11/2024): A revoir avec Proton, Steam ... Faire une page dédiée
 
+TODO: Voir les jeux installés si bien, sinon supprimer
+
+> Rien n'est installé ici par défaut
+
 - [PlayOnLinux](http://www.playonlinux.com/fr/) (supporté par [Wine](Wine))
 
 #### Programmation
 
 TODO: Revoir cette section
+
+> Rien n'est installé ici par défaut
 
 Plus d'informations, voir la page [Développement](../../dev/README.md).
 
@@ -102,6 +152,8 @@ Plus d'informations, voir la page [Développement](../../dev/README.md).
 
 #### Son et Vidéo
 
+TODO : !!!!!!!!!!!!!!!! REPRENDRE ICI (en sync avec page archive)
+
 ##### Audio
 
 TODO: Review this list
@@ -114,6 +166,10 @@ TODO: Review this list
 | [mp3Splt](Mp3Splt) |                                             | Découper des MP3s                                                                                                                           | [mp3splt-gtk](apt://mp3splt-gtk)            |
 | [RipperX](RipperX) |                                             | Rip & Encodage MP3 (ou [Soudjuicer](Soudjuicer) par défaut dans Ubuntu, mais avec des problèmes en VBR) *A tester aussi : [Grip](Grip) ...* | [ripperx](apt://ripperx)                    |
 
+TODO: Comparer Jamuz (perfs) avec https://doc.ubuntu-fr.org/rhythmbox (installé par défaut)
+
+TODO: Faire un paquet deb pour JaMuz, puis faire un PPA ou mieux ajouter dans les repos ubuntu/linux mint/debian
+
 TODO: Move to JaMuz
 
 - Genre icons (for future use):
@@ -124,8 +180,6 @@ TODO: Move to JaMuz
   - <http://www.iconeasy.com/iconset/music-genre-icons/>
 
 ##### Vidéo
-
-TODO : !!!!!!!!!!!!!!!! REPRENDRE ICI (en sync avec page archive)
 
 |                                                      |                                                                                                                                                                                  |                                                                                   |
 | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
@@ -178,10 +232,6 @@ Les suivants sont à répartir dans les menus appropriés :
 | Antivirus                                                   | Complètement inutile                                       | N/A                                                |
 | kFileReplace                                                | Changer un texte par un autre dans des fichiers (a tester) |                                                    |
 | [Virtual Box](http://doc.ubuntu-fr.org/virtualbox)          | Virtualisation                                             |                                                    |
-
-### Raccourcis
-
-Pas de programmes ici, si ce n'est Nautilus qui est le gestionnaire/explorateur de fichiers par défaut de [Ubuntu](linux/dist/Ubuntu). Voir dans [Misc](Misc) pour plus de détails sur le système de fichiers.
 
 ### Système
 

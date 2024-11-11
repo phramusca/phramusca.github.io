@@ -1,6 +1,8 @@
 # Programmes
 
-## Sélection de Programmes
+## Précedente sélection
+
+J'ai utilisé ces programmes dans le temps, mais ils sont soient obsolètes soit remplacés par mieux.
 
 ### Applications
 
@@ -24,12 +26,12 @@
 
 #### Graphisme
 
-|          |                                             |                                                                                                             |                                                |
-| -------- | ------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| Nom      | Ubuntu-fr                                   | Description                                                                                                 | [apt-url](Apt-url) (Installation)              |
-| Manslide | N/A                                         | SlideShows vidéo                                                                                            | [manslide](apt://manslide)                     |
-| Picasa   | [picasa](http://doc.ubuntu-fr.org/picasa)   | Visualiseur de Google. Permet entre autres de générer des vidéos. [Picasa](http://picasa.google.com/linux/) | Voir [picasa](http://doc.ubuntu-fr.org/picasa) |
-| gcolor2  | [gcolor2](http://doc.ubuntu-fr.org/gcolor2) | Sélecteur de couleur très simple basé sur GTK+2.                                                            | [gcolor2](apt://gcolor2)                       |
+|          |                                               |                                                                      |                                                |
+| -------- | --------------------------------------------- | -------------------------------------------------------------------- | ---------------------------------------------- |
+| Nom      | Ubuntu-fr                                     | Description                                                          | [apt-url](Apt-url) (Installation)              |
+| Manslide | N/A                                           | SlideShows vidéo                                                     | [manslide](apt://manslide)                     |
+| Picasa   | [picasa](http://doc.ubuntu-fr.org/picasa)     | Visualiseur de Google. [Picasa](http://picasa.google.com/linux/)     | Voir [picasa](http://doc.ubuntu-fr.org/picasa) |
+| Gwenview | [gwenview](http://doc.ubuntu-fr.org/gwenview) | Visualisation ([Visualiseurs Alternatifs](Visualiseurs_Alternatifs)) | [gwenview](apt://gwenview)                     |
 
 #### Internet
 
@@ -73,12 +75,12 @@
 - Alternatives à AmaroK:
   <http://alternativeto.net/software/amarok/?platform=linux&license=free>
 
-|                    |                                              |                                                                                                                                             |                                          |
-| ------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| Nom                | Ubuntu-fr                                    | Description                                                                                                                                 | [apt-url](Apt-url) (Installation)        |
-| [Amarok](Amarok)   | [amarok](http://doc.ubuntu-fr.org/amarok_v1) | Lecteur MP3                                                                                                                                 | Voir page dédiée                         |
-| [JBMGen](JBMGen)   | MAJ Archos                                   |                                                                                                                                             |                                          |
-| Ex Falso           |                                              | pour renommer les fichiers MP3 - autres fonctions a tester                                                                                  |                                          |
+|                  |                                              |                                                            |                                   |
+| ---------------- | -------------------------------------------- | ---------------------------------------------------------- | --------------------------------- |
+| Nom              | Ubuntu-fr                                    | Description                                                | [apt-url](Apt-url) (Installation) |
+| [Amarok](Amarok) | [amarok](http://doc.ubuntu-fr.org/amarok_v1) | Lecteur MP3                                                | Voir page dédiée                  |
+| [JBMGen](JBMGen) | MAJ Archos                                   |                                                            |                                   |
+| Ex Falso         |                                              | pour renommer les fichiers MP3 - autres fonctions a tester |                                   |
 
 - Rythmbox: éditer la liste des emplacements de la bibliothèque
   - Application \> Outils système \> éditeur de configuration (ou lancer gconf-editor)
@@ -137,13 +139,6 @@ Les suivants sont à répartir dans les menus appropriés :
 | Antivirus                                                   | Complètement inutile                                       | N/A                                                |
 | kFileReplace                                                | Changer un texte par un autre dans des fichiers (a tester) |                                                    |
 | [Virtual Box](http://doc.ubuntu-fr.org/virtualbox)          | Virtualisation                                             |                                                    |
-
-### Raccourcis
-
-Pas de programmes ici, si ce n'est Nautilus qui est le
-gestionnaire/explorateur de fichiers par défaut de
-[Ubuntu](linux/dist/Ubuntu). Voir dans [Misc](Misc) pour plus
-de détails sur le système de fichiers.
 
 ### Système
 
