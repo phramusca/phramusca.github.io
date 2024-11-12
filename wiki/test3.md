@@ -5,8 +5,8 @@ title: double boucle for
 
 # {{ page.title }}
 
-{% for categorie in site.data.votre_fichier_yaml.categories %}
-<h1>{{ categorie.nom }}</h1>
+{% for categorie in site.data.linux-programmes.categories %}
+## {{ categorie.nom }}
 
 <table>
   <thead>
