@@ -5,13 +5,13 @@ title: double boucle for
 
 # {{ page.title }}
 
-{% for categorie in site.data.linux-programmes.categories %}
+{% for categorie in site.data.votre_fichier_yaml.categories %}
 # {{ categorie.nom }}
 
-| Nom | Ubuntu-fr | Description | Installation [apturl](../system/Apt-url.md) |
-| --- | --------- | ----------- | ------------------------------------------- |
-{% for logiciel in categorie.logiciels %}
+| Nom      | Ubuntu-fr                                       | Description                                                  | Installation                             |
+| -------- | ---------------------------------------------- | ------------------------------------------------------------ | ---------------------------------------- |
+{% raw %}{% for logiciel in categorie.logiciels %}{% endraw %}
 | {{ logiciel.Nom }} | [{{ logiciel.Nom }}]({{ logiciel.doc_ubuntu_fr_url }}) | {{ logiciel.description }} | [{{ logiciel.Nom }}]({{ logiciel.apt_url }}) |
-{% endfor %}
+{% raw %}{% endfor %}{% endraw %}
 
 {% endfor %}
