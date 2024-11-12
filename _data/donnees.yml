@@ -2,8 +2,7 @@
   Age: 30
   Ville: Paris
 - Nom: Bob
-  Age: 25
   Ville: Grenoble
 - Nom: Carol
   Age: 35
-  Ville: Lyon
+  Ville: null
