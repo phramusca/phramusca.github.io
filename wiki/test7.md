@@ -14,13 +14,11 @@ title: test 7
 ## {{ categorie.nom }}
 
 {{ table_header }}
-
 {% capture table_rows %}
 {% for logiciel in categorie.logiciels %}
 | {{ logiciel.Nom }} | [{{ logiciel.Nom }}]({{ logiciel.doc_ubuntu_fr_url }}) | {{ logiciel.description }} | [{{ logiciel.Nom }}]({{ logiciel.apt_url }}) |
 {% endfor %}
 {% endcapture %}
-
 {{ table_rows }}
 
 {% endfor %}
