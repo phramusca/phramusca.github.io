@@ -1,6 +1,14 @@
 ---
-layout: simple
-title: "Liste des personnes"
+layout: default
+title: Liste des personnes
 ---
 
-Voici une liste des personnes :
+# Liste des personnes
+
+{% for personne in site.data.donnees %}
+
+- **Nom** : {{ personne.Nom }}
+- **Âge** : {{ personne.Age }}
+- **Ville** : {{ personne.Ville }}
+
+{% endfor %}
