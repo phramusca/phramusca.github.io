@@ -32,7 +32,7 @@ Voici un petit aperçu des programmes disponibles que j'ai eu l'occasion de test
   <thead>
     <tr>
       <th>Nom</th>
-      <th>Installation [apturl](../system/Apt-url.md)</th>
+      <th>Installation <a href="../system/Apt-url.md">apturl</a></th>
       <th>Ubuntu-fr</th>
       <th>Site</th>
       <th>Repo</th>
@@ -42,9 +42,8 @@ Voici un petit aperçu des programmes disponibles que j'ai eu l'occasion de test
   <tbody>
     {% for logiciel in categorie.logiciels %}
     <tr>
-      <td>{{ logiciel.nom }}</td>
-      <td>{% if personne.url_internal %}<a href="{{ logiciel.url_internal }}">{{ logiciel.nom }}</a>{% else %}{{ logiciel.nom }}{% endif %}</td>
-      <td>{% if personne.apt %}<a href="apt://{{ logiciel.apt }}">{{ logiciel.apt }}</a>{% else %}N/A{% endif %}</td>
+      <td>{% if logiciel.url_internal %}<a href="{{ logiciel.url_internal }}">{{ logiciel.nom }}</a>{% else %}{{ logiciel.nom }}{% endif %}</td>
+      <td>{% if logiciel.apt %}<a href="apt://{{ logiciel.apt }}">{{ logiciel.apt }}</a>{% else %}N/A{% endif %}</td>
       <td><a href="{{ logiciel.url_doc_ubuntu_fr }}">{{ logiciel.nom }}</a></td>
       <td><a href="{{ logiciel.url_website }}">{{ logiciel.nom }}</a></td>
       <td><a href="{{ logiciel.url_repository }}">{{ logiciel.nom }}</a></td>
@@ -55,8 +54,3 @@ Voici un petit aperçu des programmes disponibles que j'ai eu l'occasion de test
 </table>
 
 {% endfor %}
-
-
-{% if personne.Nom %}
-- **Nom** : {{ personne.Nom }}
-{% endif %}
