@@ -1,0 +1,57 @@
+categories:
+  - nom: Accessoires
+    logiciels:
+      - nom: dupeGuru
+        apt: null
+        url_internal: GIMP
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/dupegurume
+        url_website: https://dupeguru.voltaicideas.net/
+        url_repository: https://github.com/arsenetar/dupeguru/
+        description: Rechercher et supprimer des fichiers et répertoires en doublon.
+      - nom: krename
+        apt: krename
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/krename
+        url_website: https://apps.kde.org/fr/krename/
+        url_repository: https://sourceforge.net/projects/krename/
+        description: krename est un logiciel de renommage de fichiers.
+  - nom: Autre
+  - nom: Bureautique
+  - nom: Education
+  - nom: Graphisme
+    logiciels:
+      - nom: GIMP
+        apt: gimp
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/gimp
+        url_website: https://www.gimp.org/
+        url_repository: https://github.com/GNOME/gimp
+        description: Éditeur photo, genre Photoshop.
+      - nom: Hugin
+        apt: hugin
+        url_internal: Hugin
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/hugin  
+        url_website: https://hugin.sourceforge.io/
+        url_repository: https://sourceforge.net/projects/hugin/
+        description: Panoramiques
+      - nom: FotoWall
+        apt: fotowall 
+        url_internal: null 
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/fotowall
+        url_website: https://www.enricoros.com/opensource/fotowall/gfx/screenshots/
+        url_repository: https://github.com/fotowall/fotowall
+        description: Patchworks de photos  <https://www.enricoros.com/opensource/fotowall/>
+      - nom: gcolor2
+        apt: gcolor2
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/gcolor2
+        url_website: https://www.hjdskes.nl/projects/gcolor3/
+        url_repository: https://gitlab.gnome.org/World/gcolor3
+        description: Edition de couleurs en ligne de commande
+  - nom: Internet
+  - nom: Jeux
+  - nom: Programmation
+  - nom: Son et Vidéo
+  - nom: Administration
+  - nom: Préférences
+      

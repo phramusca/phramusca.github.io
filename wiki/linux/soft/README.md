@@ -1,23 +1,8 @@
 # Programmes
 
-Il existe des centaines (voire des milliers) d'applications disponible sous [Linux](../README.md). Il n'est pas facile de s'y retrouver, mais voici déjà un point de départ.
-
-## Sur le Web
-
-Il existe énormément de sites qui listent ou proposent des logiciels
-pour [Linux](../README.md). En voici une petite sélection:
-
-- [Logiciels pour Ubuntu](http://doc.ubuntu-fr.org/logiciels) sur Ubuntu-fr - Pour [Linux Mint](../dist/Mint.md), choisir les versions [Ubuntu](../dist/Ubuntu.md) (Gonme) qui sont compatibles et mieux integrées que les logiciels pour Kubuntu (KDE).
-- [Alternativeto.net](http://alternativeto.net/) (Anglais) - Trouver des équivalences de programmes. Très utile et pratique !
-- [Framasoft](http://www.framasoft.net/) - Association française qui promeut des alternatives libres et éthiques aux services en ligne, notamment en développant et en soutenant des logiciels libres et des outils collaboratifs pour préserver la vie privée et favoriser l'autonomie numérique.
-
 ## Ma Sélection
 
-Voici un petit aperçu des programmes disponibles que j'ai eu l'occasion de tester, et que j'apprécie, ainsi que des astuces (installation, problèmes connus,...).
-
-> Comment [Installer un programme sous Linux](../system/Installer_un_programme_sous_Linux.md) ?
-
-TODO: https://doc.ubuntu-fr.org/ventoy
+TODO: <https://doc.ubuntu-fr.org/ventoy>
 
 TODO: Ajouter les programmes / nettoyer le répertoire local Installs
 
@@ -34,12 +19,6 @@ TODO: Ajouter:
 - Spectacle (Capture d'écran avec apparement plus d'options que "Capture d'écran")
 - VNote (Prise de notes en markdown)
 
-|          |                                                  |                                                                 |                                             |
-| -------- | ------------------------------------------------ | --------------------------------------------------------------- | ------------------------------------------- |
-| Nom      | Ubuntu-fr                                        | Description                                                     | Installation [apturl](../system/Apt-url.md) |
-| dupeGuru | [dupeGuru](https://doc.ubuntu-fr.org/dupegurume) | Rechercher et supprimer des fichiers et répertoires en double   | N/A (PPA)                  |
-| krename  | [KRename](http://doc.ubuntu-fr.org/krename)      | Renommer des fichiers si "Renommeur de fichiers" ne suffit pas. | [krename](apt://krename)                    |
-
 #### Autre
 
 TODO: Faire le tri entre Wayland (à revoir aussi) et le reste
@@ -51,10 +30,6 @@ TODO: Ajouter:
 - Calibre
 - gLabels
 - PDFsamBasic
-
-|     |           |             |                                             |
-| --- | --------- | ----------- | ------------------------------------------- |
-| Nom | Ubuntu-fr | Description | Installation [apturl](../system/Apt-url.md) |
 
 #### Education
 
@@ -80,14 +55,6 @@ Installés par défaut:
 - Dessin
 - Numérisuer de documents
 - Pix
-
-|                |                                               |                                                                        |                                             |
-| -------------- | --------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------- |
-| Nom            | Ubuntu-fr                                     | Description                                                            | Installation [apturl](../system/Apt-url.md) |
-| [GIMP](GIMP)   | [gimp](http://doc.ubuntu-fr.org/gimp)         | Éditeur photo, genre Photoshop                                         | [gimp](apt://gimp)                          |
-| [Hugin](Hugin) | [hugin](http://doc.ubuntu-fr.org/hugin)       | Panoramiques                                                           | [hugin](apt://hugin)                        |
-| FotoWall       | [fotowall](http://doc.ubuntu-fr.org/fotowall) | Patchworks de photos  <https://www.enricoros.com/opensource/fotowall/> | [fotowall](apt://fotowall)                  |
-| gcolor2        | [gcolor2](http://doc.ubuntu-fr.org/gcolor2)   | Sélecteur de couleur très simple basé sur GTK+2.                       | [gcolor2](apt://gcolor2)                    |
 
 #### Internet
 
@@ -166,7 +133,7 @@ TODO: Review this list
 | [mp3Splt](Mp3Splt) |                                             | Découper des MP3s                                                                                                                           | [mp3splt-gtk](apt://mp3splt-gtk)            |
 | [RipperX](RipperX) |                                             | Rip & Encodage MP3 (ou [Soudjuicer](Soudjuicer) par défaut dans Ubuntu, mais avec des problèmes en VBR) *A tester aussi : [Grip](Grip) ...* | [ripperx](apt://ripperx)                    |
 
-TODO: Comparer Jamuz (perfs) avec https://doc.ubuntu-fr.org/rhythmbox (installé par défaut)
+TODO: Comparer Jamuz (perfs) avec <https://doc.ubuntu-fr.org/rhythmbox> (installé par défaut)
 
 TODO: Faire un paquet deb pour JaMuz, puis faire un PPA ou mieux ajouter dans les repos ubuntu/linux mint/debian
 
@@ -207,7 +174,7 @@ TODO: Move to JaMuz
 
 TODO Tester et intégrer ce qui suit (de Chat GPT):
 
-### Outils de Sauvegarde Versionnée pour Fichiers sous Linux
+##### Outils de Sauvegarde Versionnée pour Fichiers sous Linux
 
 Voici des outils Linux pour sauvegarder et versionner des fichiers spécifiques, similaires à Timeshift mais ciblant les fichiers et dossiers, avec options en ligne de commande ou interface graphique.
 
@@ -231,14 +198,14 @@ Voici des outils Linux pour sauvegarder et versionner des fichiers spécifiques,
    - Déjà Dup est un utilitaire de sauvegarde pour l’environnement GNOME, simple d’utilisation, permettant de configurer des sauvegardes automatiques de fichiers spécifiques.
    - **Installation** : Disponible dans la plupart des distributions (ex. `sudo apt install deja-dup`).
 
-### Comparaison rapide
+##### Comparaison rapide
 
-| Outil         | Versionnement | Interface | Adapté pour            | Configuration |
-|---------------|---------------|-----------|-------------------------|---------------|
-| rsnapshot     | Oui           | CLI       | Sauvegardes versionnées | Modéré        |
-| Back In Time  | Oui           | GUI/CLI   | Utilisation facile      | Facile        |
-| Borg + Vorta  | Oui           | GUI/CLI   | Sauvegardes robustes    | Modéré        |
-| Déjà Dup      | Oui           | GUI       | Sauvegarde simple       | Facile        |
+| Outil        | Versionnement | Interface | Adapté pour             | Configuration |
+| ------------ | ------------- | --------- | ----------------------- | ------------- |
+| rsnapshot    | Oui           | CLI       | Sauvegardes versionnées | Modéré        |
+| Back In Time | Oui           | GUI/CLI   | Utilisation facile      | Facile        |
+| Borg + Vorta | Oui           | GUI/CLI   | Sauvegardes robustes    | Modéré        |
+| Déjà Dup     | Oui           | GUI       | Sauvegarde simple       | Facile        |
 
 En fonction de vos besoins (sauvegarde fréquente, déduplication, interface graphique), **Back In Time** et **Vorta** sont de bons choix avec une interface graphique, tandis que **rsnapshot** est très efficace en ligne de commande.
 
