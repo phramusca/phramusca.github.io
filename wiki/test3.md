@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Test 3 : double boucle for
+title: double boucle for
 ---
 
 # {{ page.title }}
@@ -8,8 +8,9 @@ title: Test 3 : double boucle for
 {% for categorie in site.data.linux-programmes.categories %}
 # {{ categorie.nom }}
 
-| Nom      | Ubuntu-fr                                       | Description                                                  | Installation                             |
-| -------- | ---------------------------------------------- | ------------------------------------------------------------ | ---------------------------------------- |
+| Nom | Ubuntu-fr | Description | Installation [apturl](../system/Apt-url.md) |
+| --- | --------- | ----------- | ------------------------------------------- |
+|     |           |             |                                             |
 {% for logiciel in categorie.logiciels %}
 | {{ logiciel.Nom }} | [{{ logiciel.Nom }}]({{ logiciel.doc_ubuntu_fr_url }}) | {{ logiciel.description }} | [{{ logiciel.Nom }}]({{ logiciel.apt_url }}) |
 {% endfor %}
