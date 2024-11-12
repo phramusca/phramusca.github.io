@@ -24,7 +24,7 @@ Voici un petit aperçu des programmes disponibles que j'ai eu l'occasion de test
 
 ### Applications
 
-{% for categorie in site.data.linux.soft.list %}
+{% for categorie in site.data.linux.soft.list.categories %}
 
 #### {{ categorie.nom }}
 
@@ -32,7 +32,7 @@ Voici un petit aperçu des programmes disponibles que j'ai eu l'occasion de test
   <thead>
     <tr>
       <th>Nom</th>
-      <th>Installation</th>
+      <th>Installation [apturl](../system/Apt-url.md)</th>
       <th>Ubuntu-fr</th>
       <th>Site</th>
       <th>Repo</th>
@@ -43,7 +43,8 @@ Voici un petit aperçu des programmes disponibles que j'ai eu l'occasion de test
     {% for logiciel in categorie.logiciels %}
     <tr>
       <td>{{ logiciel.nom }}</td>
-      <td>{% if personne.Nom %}<a href="apt://{{ logiciel.apt }}">{{ logiciel.nom }}</a>{% else %}N/A{% endif %}</td>
+      <td>{% if personne.url_internal %}<a href="{{ logiciel.url_internal }}">{{ logiciel.nom }}</a>{% else %}{{ logiciel.nom }}{% endif %}</td>
+      <td>{% if personne.apt %}<a href="apt://{{ logiciel.apt }}">{{ logiciel.apt }}</a>{% else %}N/A{% endif %}</td>
       <td><a href="{{ logiciel.url_doc_ubuntu_fr }}">{{ logiciel.nom }}</a></td>
       <td><a href="{{ logiciel.url_website }}">{{ logiciel.nom }}</a></td>
       <td><a href="{{ logiciel.url_repository }}">{{ logiciel.nom }}</a></td>
