@@ -14,7 +14,7 @@ categories:
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/krename
         url_website: https://apps.kde.org/fr/krename/
         url_repository: https://sourceforge.net/projects/krename/
-        description: krename est un logiciel de renommage de fichiers.
+        description: Renommer des fichiers si "Renommeur de fichiers" ne suffit pas.
   - nom: Autre
   - nom: Bureautique
   - nom: Education
@@ -40,14 +40,14 @@ categories:
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/fotowall
         url_website: https://www.enricoros.com/opensource/fotowall/gfx/screenshots/
         url_repository: https://github.com/fotowall/fotowall
-        description: Patchworks de photos  <https://www.enricoros.com/opensource/fotowall/>
+        description: Patchworks de photos
       - nom: gcolor2
         apt: gcolor2
         url_internal: null
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/gcolor2
         url_website: https://www.hjdskes.nl/projects/gcolor3/
         url_repository: https://gitlab.gnome.org/World/gcolor3
-        description: Edition de couleurs en ligne de commande
+        description: Sélecteur de couleur très simple.
   - nom: Internet
   - nom: Jeux
   - nom: Programmation

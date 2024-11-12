@@ -32,7 +32,7 @@ Voici un petit aperçu des programmes disponibles que j'ai eu l'occasion de test
   <thead>
     <tr>
       <th>Nom</th>
-      <th>Installation <a href="../system/Apt-url.md">apturl</a></th>
+      <th><a href="../system/Apt-url.md">apturl</a></th>
       <th>Ubuntu-fr</th>
       <th>Site</th>
       <th>Repo</th>
