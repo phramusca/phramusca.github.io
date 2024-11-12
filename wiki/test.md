@@ -1,14 +1,18 @@
 ---
 layout: default
-title: Liste des personnes
+title: Mon nouveau titre dynamique
 ---
 
-# Liste des personnes
+# {{ page.title }}
 
 {% for personne in site.data.donnees %}
-
+{% if personne.Nom %}
 - **Nom** : {{ personne.Nom }}
+{% endif %}
+{% if personne.Age %}
 - **Âge** : {{ personne.Age }}
+{% endif %}
+{% if personne.Ville %}
 - **Ville** : {{ personne.Ville }}
-
+{% endif %}
 {% endfor %}
