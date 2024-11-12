@@ -20,6 +20,8 @@ pour [Linux](../README.md). En voici une petite sélection:
 
 Voici un petit aperçu des programmes disponibles que j'ai eu l'occasion de tester, et que j'apprécie, ainsi que des astuces (installation, problèmes connus,...).
 
+La plupart s'installent en un click avec les liens [apt-url](../system/apturl).
+
 > Comment [Installer un programme sous Linux](../system/Installer_un_programme_sous_Linux.md) ?
 
 ### Applications
@@ -32,7 +34,7 @@ Voici un petit aperçu des programmes disponibles que j'ai eu l'occasion de test
   <thead>
     <tr>
       <th>Nom</th>
-      <th><a href="../system/apturl">apturl</a></th>
+      <th>Apt Url</th>
       <th>Ubuntu-fr</th>
       <th>Site</th>
       <th>Repo</th>
