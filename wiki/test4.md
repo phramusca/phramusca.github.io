@@ -3,10 +3,10 @@ layout: default
 title: double boucle for
 ---
 
-# {{ page.title }}
+<h1>{{ page.title }}</h1>
 
 {% for categorie in site.data.votre_fichier_yaml.categories %}
-<h1>{{ categorie.nom }}</h1>
+<h2>{{ categorie.nom }}</h2>
 
 <table>
   <thead>
