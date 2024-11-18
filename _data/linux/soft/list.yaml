@@ -85,13 +85,6 @@ categories:
         url_website: https://sqlitebrowser.org/
         url_repository: https://github.com/sqlitebrowser/sqlitebrowser
         description: Administration de bases Sqlite.
-      - nom: Mono
-        apt: null
-        url_internal: null
-        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/mono
-        url_website: https://www.mono-project.com/
-        url_repository: https://github.com/mono/mono
-        description: Framework .NET.
   - nom: Son et Vidéo
     logiciels:
       - nom: Audio

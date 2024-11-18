@@ -30,34 +30,34 @@ La plupart s'installent en un click avec les liens [apt-url](../system/apturl).
 
   {% if categorie.logiciels.size > 0%}
 
-  #### {{ categorie.nom }}
+#### {{ categorie.nom }}
 
-  <table>
-    <thead>
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Apt-Url</th>
+      <th>Ubuntu-fr</th>
+      <th>Site</th>
+      <th>Repo</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      {% for logiciel in categorie.logiciels %}
       <tr>
-        <th>Nom</th>
-        <th>Apt-Url</th>
-        <th>Ubuntu-fr</th>
-        <th>Site</th>
-        <th>Repo</th>
-        <th>Description</th>
+        <td>{% if logiciel.url_internal %}<a href="{{ logiciel.url_internal }}">{{ logiciel.nom }}</a>{% else %}{{ logiciel.nom }}{% endif %}</td>
+        <td>{% if logiciel.apt %}<a href="apt://{{ logiciel.apt }}">{{ logiciel.apt }}</a>{% endif %}</td>
+        <td>{% if logiciel.url_doc_ubuntu_fr %}<a href="{{ logiciel.url_doc_ubuntu_fr }}">{{ logiciel.nom }}</a>{% endif %}</td>
+        <td>{% if logiciel.url_website %}<a href="{{ logiciel.url_website }}">{{ logiciel.nom }}</a>{% endif %}</td>
+        <td>{% if logiciel.url_repository %}<a href="{{ logiciel.url_repository }}">{{ logiciel.nom }}</a>{% endif %}</td>
+        <td>{{ logiciel.description }}</td>
       </tr>
-    </thead>
-    <tbody>
-      
-        {% for logiciel in categorie.logiciels %}
-        <tr>
-          <td>{% if logiciel.url_internal %}<a href="{{ logiciel.url_internal }}">{{ logiciel.nom }}</a>{% else %}{{ logiciel.nom }}{% endif %}</td>
-          <td>{% if logiciel.apt %}<a href="apt://{{ logiciel.apt }}">{{ logiciel.apt }}</a>{% endif %}</td>
-          <td>{% if logiciel.url_doc_ubuntu_fr %}<a href="{{ logiciel.url_doc_ubuntu_fr }}">{{ logiciel.nom }}</a>{% endif %}</td>
-          <td>{% if logiciel.url_website %}<a href="{{ logiciel.url_website }}">{{ logiciel.nom }}</a>{% endif %}</td>
-          <td>{% if logiciel.url_repository %}<a href="{{ logiciel.url_repository }}">{{ logiciel.nom }}</a>{% endif %}</td>
-          <td>{{ logiciel.description }}</td>
-        </tr>
-        {% endfor %}
-      
-    </tbody>
-  </table>
+      {% endfor %}
+    
+  </tbody>
+</table>
 
 {% endif %}
 
