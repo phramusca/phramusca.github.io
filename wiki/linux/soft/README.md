@@ -32,7 +32,7 @@ La plupart s'installent en un click avec les liens [apt-url](../system/apturl).
 
   #### {{ categorie.nom }}
 
-  {% include table.html software_list=categorie.logiciels %}
+  {% include site.includes.linux.soft.table.html software_list=categorie.logiciels %}
 
   {% if categorie.sous_categories != blank %}
     {% for sous_categorie in categorie.sous_categories %}
@@ -40,7 +40,7 @@ La plupart s'installent en un click avec les liens [apt-url](../system/apturl).
 
   ##### {{ sous_categorie.nom }}
 
-      {% include table.html software_list=sous_categorie.logiciels %}
+      {% include site.includes.linux.soft.html software_list=sous_categorie.logiciels %}
 
       {% endif %}
     {% endfor %}
