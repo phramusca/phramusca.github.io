@@ -28,24 +28,24 @@ La plupart s'installent en un click avec les liens [apt-url](../system/apturl).
 
 {% for categorie in site.data.linux.soft.list.categories %}
 
-  {% if categorie.logiciels.size > 0%}
+  <!-- {% if categorie.logiciels.size > 0%} -->
 
-  #### {{ categorie.nom }}
+#### {{ categorie.nom }}
 
-  {% include linux/soft/table.html software_list=categorie.logiciels %}
+  {% include linux/soft/table.liquid software_list=categorie.logiciels %}
 
   {% if categorie.sous_categories != blank %}
     {% for sous_categorie in categorie.sous_categories %}
-      {% if sous_categorie.logiciels.size > 0%}
+      <!-- {% if sous_categorie.logiciels.size > 0%} -->
 
-  ##### {{ sous_categorie.nom }}
+##### {{ sous_categorie.nom }}
 
-      {% include linux/soft/table.html software_list=sous_categorie.logiciels %}
+      {% include linux/soft/table.liquid software_list=sous_categorie.logiciels %}
 
-      {% endif %}
+      <!-- {% endif %} -->
     {% endfor %}
   {% endif %}
 
-  {% endif %}
+  <!-- {% endif %} -->
 
 {% endfor %}
