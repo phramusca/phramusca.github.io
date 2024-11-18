@@ -10,7 +10,7 @@
     </tr>
   </thead>
   <tbody>
-    {% for logiciel in software_list %}
+    {% for logiciel in {{include.software_list}} %}
         <tr>
           <td>{% if logiciel.url_internal %}<a href="{{ logiciel.url_internal }}">{{ logiciel.nom }}</a>{% else %}{{ logiciel.nom }}{% endif %}</td>
           <td>{% if logiciel.apt %}<a href="apt://{{ logiciel.apt }}">{{ logiciel.apt }}</a>{% endif %}</td>
