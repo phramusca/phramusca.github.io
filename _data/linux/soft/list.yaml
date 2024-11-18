@@ -16,8 +16,11 @@ categories:
         url_repository: https://sourceforge.net/projects/krename/
         description: Renommer des fichiers si "Renommeur de fichiers" ne suffit pas.
   - nom: Autre
+    logiciels:
   - nom: Bureautique
+    logiciels:
   - nom: Education
+    logiciels:
   - nom: Graphisme
     logiciels:
       - nom: GIMP
@@ -49,6 +52,7 @@ categories:
         url_repository: https://gitlab.gnome.org/World/gcolor3
         description: Sélecteur de couleur très simple.
   - nom: Internet
+    logiciels:
       - nom: gFTP
         apt: gftp
         url_internal: null
@@ -64,7 +68,9 @@ categories:
         url_repository: https://support.jdownloader.org/fr/knowledgebase/article/setup-ide-eclipse
         description: Gestionnaire de téléchargement de fichiers.
   - nom: Jeux
+    logiciels:
   - nom: Programmation
+    logiciels:
       - nom: Meld
         apt: meld
         url_internal: Meld
@@ -87,6 +93,7 @@ categories:
         url_repository: https://github.com/mono/mono
         description: Framework .NET.
   - nom: Son et Vidéo
+    logiciels:
       - nom: Audio
       - nom: EasyTag
         apt: easytag
