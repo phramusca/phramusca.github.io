@@ -37,7 +37,7 @@ La plupart s'installent en un click avec les liens [apt-url](../system/apturl).
 
       {% include linux/soft/table.liquid software_list=sous_categorie.logiciels %}
     {% endfor %}
-  {% else % }
+  {% else %}
       {% include linux/soft/table.liquid software_list=categorie.logiciels %}
   {% endif %}
 
