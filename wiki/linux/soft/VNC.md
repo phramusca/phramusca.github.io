@@ -1,5 +1,7 @@
 # VNC
 
+TODO: Mettre à jour (TigerVNC, gvncviewer, Remmina, authentification - certificats, ...)
+
 VNC est installé par défaut dans Ubuntu.
 
 ## Client

@@ -49,9 +49,81 @@ categories:
         url_repository: https://gitlab.gnome.org/World/gcolor3
         description: Sélecteur de couleur très simple.
   - nom: Internet
+      - nom: gFTP
+        apt: gftp
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/gftp
+        url_website: http://www.gftp.org/
+        url_repository: https://github.com/masneyb/gftp
+        description: Client FTP (File Transfer Protocol).
+      - nom: JDownloader
+        apt: null
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/jdownloader
+        url_website: https://www.jdownloader.org/
+        url_repository: https://support.jdownloader.org/fr/knowledgebase/article/setup-ide-eclipse
+        description: Gestionnaire de téléchargement de fichiers.
   - nom: Jeux
   - nom: Programmation
+      - nom: Meld
+        apt: meld
+        url_internal: Meld
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/meld
+        url_website: https://meldmerge.org/
+        url_repository: https://gitlab.gnome.org/GNOME/meld
+        description: Comparateur de fichiers.
+      - nom: sqlitebrowser
+        apt: sqlitebrowser
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/sqlite#utilisation_avec_un_client_graphique
+        url_website: https://sqlitebrowser.org/
+        url_repository: https://github.com/sqlitebrowser/sqlitebrowser
+        description: Administration de bases Sqlite.
+      - nom: Mono
+        apt: null
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/mono
+        url_website: https://www.mono-project.com/
+        url_repository: https://github.com/mono/mono
+        description: Framework .NET.
   - nom: Son et Vidéo
+      - nom: Audio
+      - nom: EasyTag
+        apt: easytag
+        url_internal: EasyTag
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/easytag
+        url_website: https://easytag.sourceforge.io/
+        url_repository: https://gitlab.gnome.org/GNOME/easytag/
+        description: Editeur de tags MP3.
+      - nom: EasyMP3Gain
+        apt: easymp3gain-gtk
+        url_internal: EasyMP3Gain
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/easymp3gain
+        url_website: https://easymp3gain.sourceforge.io/
+        url_repository: https://gitlab.gnome.org/GNOME/easymp3gain/
+        description: Normalisation du volume des musiques.
+      - nom: MP3Splt
+        apt: mp3splt-gtk
+        url_internal: MP3Splt
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/mp3splt
+        url_website: https://mp3splt.sourceforge.io/
+        url_repository: https://gitlab.gnome.org/GNOME/mp3splt/
+        description: Découper des MP3s.
+      - nom: RipperX
+        apt: ripperx
+        url_internal: RipperX
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/ripperx
+        url_website: https://ripperx.sourceforge.io/
+        url_repository: https://gitlab.gnome.org/GNOME/ripperx/
+        description: Découper des fichiers audio.
+      - nom: Video
+      - nom: vlc
+        apt: vlc
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/vlc
+        url_website: https://www.videolan.org/vlc/
+        url_repository: https://wiki.videolan.org/Getting_Started_At_Coding/
+        description: Lecteur de vidéos.
   - nom: Administration
   - nom: Préférences
       

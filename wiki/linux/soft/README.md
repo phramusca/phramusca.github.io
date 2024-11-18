@@ -34,7 +34,7 @@ La plupart s'installent en un click avec les liens [apt-url](../system/apturl).
   <thead>
     <tr>
       <th>Nom</th>
-      <th>Apt Url</th>
+      <th>Apt-Url</th>
       <th>Ubuntu-fr</th>
       <th>Site</th>
       <th>Repo</th>

@@ -68,18 +68,7 @@ TODO Rajouter:
 - Gnome Web (avec WebKitGTK)
 - Wireshark
 
-|                                                     |                                             |                                             |
-| --------------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
-| Nom                                                 | Description                                 | Installation [apturl](../system/Apt-url.md) |
-| gFTP                                                | Client FTP (File Transfer Protocol)         | [gftp](apt://gftp)                          |
-| [JDownloader](http://doc.ubuntu-fr.org/jdownloader) | Gestionnaire de téléchargement de fichiers. | N/A                                         |
-
-TODO: Faire section FTP, avec aussi FileZilla et lftp (script. et gui ?)
-
-|      |                                     |                                             |
-| ---- | ----------------------------------- | ------------------------------------------- |
-| Nom  | Description                         | Installation [apturl](../system/Apt-url.md) |
-| gFTP | Client FTP (File Transfer Protocol) | [gftp](apt://gftp)                          |
+TODO: Faire section FTP, et ajouter FileZilla et lftp (script. et gui ?)
 
 TODO: Revoir ou archiver ceux la:
 
@@ -102,20 +91,18 @@ TODO: Voir les jeux installés si bien, sinon supprimer
 
 #### Programmation
 
-TODO: Revoir cette section
-
 > Rien n'est installé ici par défaut
 
-Plus d'informations, voir la page [Développement](../../dev/README.md).
+TODO: Revoir cette section
 
-|                                   |                                                 |                                                                    |                                             |
-| --------------------------------- | ----------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------- |
-| Nom                               | Ubuntu-fr                                       | Description                                                        | Installation [apturl](../system/Apt-url.md) |
-| [Meld](Meld)                      |                                                 | Comparaison de fichiers / répertoires.                             | [meld](apt://meld)                          |
-| sqlitebrowser                     | [sqlitebrowser.org](https://sqlitebrowser.org/) | Administration de bases Sqlite                                     | [sqlitebrowser](apt://sqlitebrowser)        |
-| [Mono](../../dev/Mono.md)         |                                                 | Implémentation libre de .NET avec comme éditeur MonoDevelop        | N/A                                         |
-| [NetBeans](../../dev/NetBeans.md) | [netbeans](http://doc.ubuntu-fr.org/netbeans)   | IDE de Sun axé Java mais aussi Python, C, C++, Ruby, XML, PHP, ... | N/A                                         |
-| Gambas                            | [Gambas](http://doc.ubuntu-fr.org/Gambas)       | le presque Visual Basic libre                                      | [gambas3](apt://gambas3)                    |
+|                                   |                                               |                                                                    |                                             |
+| --------------------------------- | --------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------- |
+| Nom                               | Ubuntu-fr                                     | Description                                                        | Installation [apturl](../system/Apt-url.md) |
+| [Mono](../../dev/Mono.md)         |                                               | Implémentation libre de .NET avec comme éditeur MonoDevelop        | N/A                                         |
+| [NetBeans](../../dev/NetBeans.md) | [netbeans](http://doc.ubuntu-fr.org/netbeans) | IDE de Sun axé Java mais aussi Python, C, C++, Ruby, XML, PHP, ... | N/A                                         |
+| Gambas                            | [Gambas](http://doc.ubuntu-fr.org/Gambas)     | le presque Visual Basic libre                                      | [gambas3](apt://gambas3)                    |
+
+Plus d'informations, voir la page [Développement](../../dev/README.md).
 
 #### Son et Vidéo
 
@@ -148,18 +135,20 @@ TODO: Move to JaMuz
 
 ##### Vidéo
 
-|                                                      |                                                                                                                                                                                  |                                                                                   |
-| ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| Nom                                                  | Description                                                                                                                                                                      | Installation [apturl](../system/Apt-url.md)                                       |
-| [vlc](http://doc.ubuntu-fr.org/vlc)                  | Lecteur video. Voir aussi totem, kaffeine,...                                                                                                                                    | [vlc](apt://vlc)                                                                  |
-| [winff](http://doc.ubuntu-fr.org/winff)              | WinFF est une interface graphique à FFmpeg très simple d'utilisation et personnalisable. Voir aussi: [Convertir MOV en Flash FLV](Convertir_MOV_en_Flash_FLV)                    | [winff](apt://winff) + [codecs](http://ubuntuforums.org/showthread.php?t=1117283) |
-| [avidemux](http://doc.ubuntu-fr.org/avidemux)        | Editeur vidéo, considéré comme l'équivalent de VirtualDub. Voir aussi [Fusionner 2 fichiers avi avec mencoder](http://www.ubuntuhowtos.com/howtos/merge_avi_files_with_mencoder) | [avidemux](apt://avidemux)                                                        |
-| [Arista Transcoder](http://doc.ubuntu-fr.org/arista) | logiciel de conversion vidéo                                                                                                                                                     | [arista](apt://arista)                                                            |
-|                                                      |                                                                                                                                                                                  |                                                                                   |
-| [QuickTime](QuickTime)                               | QuickTime pour Linux                                                                                                                                                             |                                                                                   |
-| DVDShrink                                            | xDVDShrink - a tester                                                                                                                                                            |                                                                                   |
-| [ManDVD](http://doc.ubuntu-fr.org/mandvd)            | Création simplifiée de DVD-vidéos, a tester                                                                                                                                      |                                                                                   |
+|                                                      |                                                                                          |                                                                                   |
+| ---------------------------------------------------- | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Nom                                                  | Description                                                                              | Installation [apturl](../system/Apt-url.md)                                       |
+| [winff](http://doc.ubuntu-fr.org/winff)              | WinFF est une interface graphique à FFmpeg très simple d'utilisation et personnalisable. | [winff](apt://winff) + [codecs](http://ubuntuforums.org/showthread.php?t=1117283) |
+| [avidemux](http://doc.ubuntu-fr.org/avidemux)        | Editeur vidéo, considéré comme l'équivalent de VirtualDub.                               | [avidemux](apt://avidemux)                                                        |
+| [Arista Transcoder](http://doc.ubuntu-fr.org/arista) | logiciel de conversion vidéo                                                             | [arista](apt://arista)                                                            |
+|                                                      |                                                                                          |                                                                                   |
+| [QuickTime](QuickTime)                               | QuickTime pour Linux                                                                     |                                                                                   |
+| DVDShrink                                            | xDVDShrink - a tester                                                                    |                                                                                   |
+| [ManDVD](http://doc.ubuntu-fr.org/mandvd)            | Création simplifiée de DVD-vidéos, a tester                                              |                                                                                   |
 
+> Voir aussi [Fusionner 2 fichiers avi avec mencoder](http://www.ubuntuhowtos.com/howtos/merge_avi_files_with_mencoder)
+
+> Voir aussi: [Convertir MOV en Flash FLV](Convertir_MOV_en_Flash_FLV)
 #### Outils système
 
 |                                                     |                                                                                                                |                                                          |

@@ -1,5 +1,7 @@
 # EasyTag
 
+TODO: Revoir
+
 Logiciel d'éditions des tags MP3 (ID3) très complet.
 
 ## Configuration
