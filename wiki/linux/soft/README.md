@@ -26,10 +26,24 @@ La plupart s'installent en un click avec les liens [apt-url](../system/apturl).
 
 ### Applications
 
+### Applications
+
 {% for categorie in site.data.linux.soft.list.categories %}
 
 #### {{ categorie.nom }}
 
-  {% include linux/soft/table.liquid software_list=categorie.logiciels %}
+  {% if categorie.categories != null %}
+    {% for sous_categorie in categorie.categories %}
+
+##### {{ sous_categorie.nom }}
+
+{% include linux/soft/table.html software_list=sous_categorie.logiciels %}
+
+    {% endfor %}
+  {% else %}
+
+{% include linux/soft/table.html software_list=categorie.logiciels %}
+
+  {% endif %}
 
 {% endfor %}
