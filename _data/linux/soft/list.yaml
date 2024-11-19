@@ -3,7 +3,7 @@ categories:
     logiciels:
       - nom: dupeGuru
         apt: null
-        url_internal: GIMP
+        url_internal: null
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/dupegurume
         url_website: https://dupeguru.voltaicideas.net/
         url_repository: https://github.com/arsenetar/dupeguru/

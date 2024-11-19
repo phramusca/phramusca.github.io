@@ -4,10 +4,12 @@ title: Programmes
 ---
 
 # {{ page.title }}
+{:.no_toc}
 
 Il existe des centaines (voire des milliers) d'applications disponible sous [Linux](../README.md). Il n'est pas facile de s'y retrouver, mais voici déjà un point de départ.
 
 ## Sur le Web
+{:.no_toc}
 
 Il existe énormément de sites qui listent ou proposent des logiciels
 pour [Linux](../README.md). En voici une petite sélection:
@@ -17,6 +19,7 @@ pour [Linux](../README.md). En voici une petite sélection:
 - [Framasoft](http://www.framasoft.net/) - Association française qui promeut des alternatives libres et éthiques aux services en ligne, notamment en développant et en soutenant des logiciels libres et des outils collaboratifs pour préserver la vie privée et favoriser l'autonomie numérique.
 
 ## Ma Sélection
+{:.no_toc}
 
 Voici un petit aperçu des programmes disponibles que j'ai eu l'occasion de tester, et que j'apprécie, ainsi que des astuces (installation, problèmes connus,...).
 
@@ -25,8 +28,10 @@ La plupart s'installent en un click avec les liens [apt-url](../system/apturl).
 > Comment [Installer un programme sous Linux](../system/Installer_un_programme_sous_Linux.md) ?
 
 ### Applications
+{:.no_toc}
 
-### Applications
+* TOC
+{:toc}
 
 {% for categorie in site.data.linux.soft.list.categories %}
 
@@ -37,12 +42,12 @@ La plupart s'installent en un click avec les liens [apt-url](../system/apturl).
 
 ##### {{ sous_categorie.nom }}
 
-{% include linux/soft/table.html software_list=sous_categorie.logiciels %}
+{% include linux/soft/table.md software_list=sous_categorie.logiciels %}
 
     {% endfor %}
   {% else %}
 
-{% include linux/soft/table.html software_list=categorie.logiciels %}
+{% include linux/soft/table.md software_list=categorie.logiciels %}
 
   {% endif %}
 
