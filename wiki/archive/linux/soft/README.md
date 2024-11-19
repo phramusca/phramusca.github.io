@@ -6,14 +6,6 @@ J'ai utilisé ces programmes dans le temps, mais ils sont soient obsolètes soit
 
 ### Applications
 
-#### Accessoires
-
-|     |           |             |                                   |
-| --- | --------- | ----------- | --------------------------------- |
-| Nom | Ubuntu-fr | Description | [apt-url](Apt-url) (Installation) |
-
-#### Autre
-
 #### Bureautique
 
 |                  |                                               |                                                          |                                   |
@@ -21,8 +13,6 @@ J'ai utilisé ces programmes dans le temps, mais ils sont soient obsolètes soit
 | Nom              | Ubuntu-fr                                     | Description                                              | [apt-url](Apt-url) (Installation) |
 | [GCStar](GCStar) | [gcstar](http://doc.ubuntu-fr.org/gcstar)     | Gestion des collections personnelles (Films, jeux, ...). | Voir [GCStar](GCStar)             |
 | HomeBank         | [HomeBank](http://doc.ubuntu-fr.org/HomeBank) | Gestionnaire de finances                                 | [HomeBank](apt://homebank)        |
-
-#### Education
 
 #### Graphisme
 
@@ -41,12 +31,6 @@ J'ai utilisé ces programmes dans le temps, mais ils sont soient obsolètes soit
 | [Firefox](Firefox) | Navigateur Internet (ou Konqueror, ... le choix est grand) | inclus par défaut dans [Ubuntu](linux/dist/Ubuntu) |
 | Transmission       | client BitTorrent                                          | inclus par défaut dans [Ubuntu](linux/dist/Ubuntu) |
 | [aMule](AMule)     | eMule (peer2peer).                                         | [amule](apt://amule)                               |
-
-#### Jeux
-
-|     |             |                                   |
-| --- | ----------- | --------------------------------- |
-| Nom | Description | [apt-url](Apt-url) (Installation) |
 
 #### Programmation
 
@@ -88,17 +72,15 @@ J'ai utilisé ces programmes dans le temps, mais ils sont soient obsolètes soit
 
 ##### Vidéo
 
-|                                                      |                                                                                                                                                                                  |                                                                                   |
-| ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| Nom                                                  | Description                                                                                                                                                                      | [apt-url](Apt-url) (Installation)                                                 |
-| [vlc](http://doc.ubuntu-fr.org/vlc)                  | Lecteur video. Voir aussi totem, kaffeine,...                                                                                                                                    | [vlc](apt://vlc)                                                                  |
-| [winff](http://doc.ubuntu-fr.org/winff)              | WinFF est une interface graphique à FFmpeg très simple d'utilisation et personnalisable. Voir aussi: [Convertir MOV en Flash FLV](Convertir_MOV_en_Flash_FLV)                    | [winff](apt://winff) + [codecs](http://ubuntuforums.org/showthread.php?t=1117283) |
-| [avidemux](http://doc.ubuntu-fr.org/avidemux)        | Editeur vidéo, considéré comme l'équivalent de VirtualDub. Voir aussi [Fusionner 2 fichiers avi avec mencoder](http://www.ubuntuhowtos.com/howtos/merge_avi_files_with_mencoder) | [avidemux](apt://avidemux)                                                        |
-| [Arista Transcoder](http://doc.ubuntu-fr.org/arista) | logiciel de conversion vidéo                                                                                                                                                     | [arista](apt://arista)                                                            |
-|                                                      |                                                                                                                                                                                  |                                                                                   |
-| [QuickTime](QuickTime)                               | QuickTime pour Linux                                                                                                                                                             |                                                                                   |
-| DVDShrink                                            | xDVDShrink - a tester                                                                                                                                                            |                                                                                   |
-| [ManDVD](http://doc.ubuntu-fr.org/mandvd)            | Création simplifiée de DVD-vidéos, a tester                                                                                                                                      |                                                                                   |
+|                                                      |                                                                                          |                                                                                   |
+| ---------------------------------------------------- | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Nom                                                  | Description                                                                              | [apt-url](Apt-url) (Installation)                                                 |
+| [winff](http://doc.ubuntu-fr.org/winff)              | WinFF est une interface graphique à FFmpeg très simple d'utilisation et personnalisable. | [winff](apt://winff) + [codecs](http://ubuntuforums.org/showthread.php?t=1117283) |
+| [avidemux](http://doc.ubuntu-fr.org/avidemux)        | Editeur vidéo, considéré comme l'équivalent de VirtualDub.                               | [avidemux](apt://avidemux)                                                        |
+| [Arista Transcoder](http://doc.ubuntu-fr.org/arista) | logiciel de conversion vidéo                                                             | [arista](apt://arista)                                                            |
+| [QuickTime](QuickTime)                               | QuickTime pour Linux                                                                     |                                                                                   |
+| DVDShrink                                            | xDVDShrink - a tester                                                                    |                                                                                   |
+| [ManDVD](http://doc.ubuntu-fr.org/mandvd)            | Création simplifiée de DVD-vidéos, a tester                                              |                                                                                   |
 
 #### Outils système
 

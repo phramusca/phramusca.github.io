@@ -96,26 +96,19 @@ categories:
           url_website: https://easytag.sourceforge.io/
           url_repository: https://gitlab.gnome.org/GNOME/easytag/
           description: Editeur de tags MP3.
-        - nom: EasyMP3Gain
-          apt: easymp3gain-gtk
-          url_internal: EasyMP3Gain
-          url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/easymp3gain
-          url_website: https://easymp3gain.sourceforge.io/
-          url_repository: https://gitlab.gnome.org/GNOME/easymp3gain/
-          description: Normalisation du volume des musiques.
         - nom: MP3Splt
           apt: mp3splt-gtk
-          url_internal: MP3Splt
+          url_internal: null
           url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/mp3splt
           url_website: https://mp3splt.sourceforge.io/
-          url_repository: https://gitlab.gnome.org/GNOME/mp3splt/
+          url_repository: https://sourceforge.net/p/mp3splt/code/HEAD/tree/
           description: Découper des MP3s.
         - nom: RipperX
           apt: ripperx
           url_internal: RipperX
           url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/ripperx
           url_website: https://ripperx.sourceforge.io/
-          url_repository: https://gitlab.gnome.org/GNOME/ripperx/
+          url_repository: https://sourceforge.net/p/ripperx/git/ci/master/tree/
           description: Découper des fichiers audio.
       - nom: Video
         logiciels:

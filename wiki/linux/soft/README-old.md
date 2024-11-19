@@ -106,7 +106,7 @@ Plus d'informations, voir la page [Développement](../../dev/README.md).
 
 #### Son et Vidéo
 
-TODO : !!!!!!!!!!!!!!!! REPRENDRE ICI (en sync avec page archive)
+TODO : !!!!!!!!!!!!!!!! REPRENDRE ICI: comparer mint 2 (en sync avec page archive)
 
 ##### Audio
 
@@ -115,10 +115,9 @@ TODO: Review this list
 |                    |                                             |                                                                                                                                             |                                             |
 | ------------------ | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
 | Nom                | Ubuntu-fr                                   | Description                                                                                                                                 | Installation [apturl](../system/Apt-url.md) |
-| [EasyTag](EasyTag) | [easytag](http://doc.ubuntu-fr.org/easytag) | Éditeur de Tags Id3                                                                                                                         | [easytag](apt://easytag)                    |
 | easyMP3Gain        | [mp3gain](http://doc.ubuntu-fr.org/mp3gain) | Normalisation du volume des musiques dans un dossier ou fichier par fichier par replayGain                                                  | [easymp3gain-gtk](apt://easymp3gain-gtk)    |
-| [mp3Splt](Mp3Splt) |                                             | Découper des MP3s                                                                                                                           | [mp3splt-gtk](apt://mp3splt-gtk)            |
-| [RipperX](RipperX) |                                             | Rip & Encodage MP3 (ou [Soudjuicer](Soudjuicer) par défaut dans Ubuntu, mais avec des problèmes en VBR) *A tester aussi : [Grip](Grip) ...* | [ripperx](apt://ripperx)                    |
+
+TODO:  Rip & Encodage MP3 (ou [Soudjuicer](Soudjuicer) par défaut dans Ubuntu, mais avec des problèmes en VBR) *A tester aussi : [Grip](Grip) ...
 
 TODO: Comparer Jamuz (perfs) avec <https://doc.ubuntu-fr.org/rhythmbox> (installé par défaut)
 
@@ -135,20 +134,10 @@ TODO: Move to JaMuz
 
 ##### Vidéo
 
-|                                                      |                                                                                          |                                                                                   |
-| ---------------------------------------------------- | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| Nom                                                  | Description                                                                              | Installation [apturl](../system/Apt-url.md)                                       |
-| [winff](http://doc.ubuntu-fr.org/winff)              | WinFF est une interface graphique à FFmpeg très simple d'utilisation et personnalisable. | [winff](apt://winff) + [codecs](http://ubuntuforums.org/showthread.php?t=1117283) |
-| [avidemux](http://doc.ubuntu-fr.org/avidemux)        | Editeur vidéo, considéré comme l'équivalent de VirtualDub.                               | [avidemux](apt://avidemux)                                                        |
-| [Arista Transcoder](http://doc.ubuntu-fr.org/arista) | logiciel de conversion vidéo                                                             | [arista](apt://arista)                                                            |
-|                                                      |                                                                                          |                                                                                   |
-| [QuickTime](QuickTime)                               | QuickTime pour Linux                                                                     |                                                                                   |
-| DVDShrink                                            | xDVDShrink - a tester                                                                    |                                                                                   |
-| [ManDVD](http://doc.ubuntu-fr.org/mandvd)            | Création simplifiée de DVD-vidéos, a tester                                              |                                                                                   |
+TODO:  Voir aussi [Fusionner 2 fichiers avi avec mencoder](http://www.ubuntuhowtos.com/howtos/merge_avi_files_with_mencoder)
 
-> Voir aussi [Fusionner 2 fichiers avi avec mencoder](http://www.ubuntuhowtos.com/howtos/merge_avi_files_with_mencoder)
+TODO:  Voir aussi: [Convertir MOV en Flash FLV](Convertir_MOV_en_Flash_FLV)
 
-> Voir aussi: [Convertir MOV en Flash FLV](Convertir_MOV_en_Flash_FLV)
 #### Outils système
 
 |                                                     |                                                                                                                |                                                          |
