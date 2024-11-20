@@ -114,7 +114,6 @@ Les suivants sont à répartir dans les menus appropriés :
 | [BOINC](BOINC)                                              | Calcul partagé                                             | N/A                                                |
 | [Google Earth](Google_Earth)                                | La Terre vue du ciel                                       | N/A                                                |
 | [Sunclock](http://www.arvernes.com/wiki/index.php/Sunclock) | Carte avec zones ensoleillées                              | N/A                                                |
-| K3B                                                         | Gravure CD/DVD                                             |                                                    |
 | [Wine](Wine)                                                | Windows Emulation                                          |                                                    |
 | Gwhere                                                      | Catalogueur de CDs/DVDs                                    |                                                    |
 | OpenOffice                                                  | Office (tableur, traitement de texte, présentations, BDD)  | inclus par défaut dans [Ubuntu](linux/dist/Ubuntu) |
@@ -143,7 +142,6 @@ Ici sont regroupées tout ce qui concerne la configuration du système.
 |              |                                                       |                                                                                    |                                                                 |
 | ------------ | ----------------------------------------------------- | ---------------------------------------------------------------------------------- | --------------------------------------------------------------- |
 | Nom          | ubuntu-fr                                             | Description                                                                        | [apt-url](Apt-url) (Installation)                               |
-| Gparted      | [gparted](http://doc.ubuntu-fr.org/gparted)           | Partitionnement de disque.                                                         | [gparted](apt://gparted)                                        |
 | Disk-Manager | [disk-manager](http://doc.ubuntu-fr.org/disk-manager) | Gestionnaire de disques. Voir [Disques Locaux](Disques_Locaux)                     | N/A. Voir [disk-manager](http://doc.ubuntu-fr.org/disk-manager) |
 | Gufw         | [gufw](http://doc.ubuntu-fr.org/gufw)                 | Interface graphique du pare-feu UFW, celui par défaut dans Ubuntu (10.10 au moins) | [gufw](apt://gufw)                                              |
 

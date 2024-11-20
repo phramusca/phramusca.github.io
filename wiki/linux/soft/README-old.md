@@ -106,18 +106,30 @@ Plus d'informations, voir la page [Développement](../../dev/README.md).
 
 #### Son et Vidéo
 
-TODO : !!!!!!!!!!!!!!!! REPRENDRE ICI: comparer mint 2 (en sync avec page archive)
+TODO: Ajouter:
+
+- Audacity
+- pavucontrol (PulseAudio Volume Control)
+- Sound Converter; soundconverter; Converts audio files into other formats
+- Hypnotix (Watch TV)
+- Mixxx
+- Molotov
+- Qobuz Downloader
+- SimpleScreenRecorder
+- (SoulSeek)
+- [Soudjuicer](Soudjuicer) Rip & Encodage (tjs problèmes en VBR ?)
+  - A tester aussi : [Grip](Grip)
+- K3B
+
 
 ##### Audio
 
 TODO: Review this list
 
-|                    |                                             |                                                                                                                                             |                                             |
-| ------------------ | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
-| Nom                | Ubuntu-fr                                   | Description                                                                                                                                 | Installation [apturl](../system/Apt-url.md) |
-| easyMP3Gain        | [mp3gain](http://doc.ubuntu-fr.org/mp3gain) | Normalisation du volume des musiques dans un dossier ou fichier par fichier par replayGain                                                  | [easymp3gain-gtk](apt://easymp3gain-gtk)    |
-
-TODO:  Rip & Encodage MP3 (ou [Soudjuicer](Soudjuicer) par défaut dans Ubuntu, mais avec des problèmes en VBR) *A tester aussi : [Grip](Grip) ...
+|             |                                             |                                                                                            |                                             |
+| ----------- | ------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------- |
+| Nom         | Ubuntu-fr                                   | Description                                                                                | Installation [apturl](../system/Apt-url.md) |
+| easyMP3Gain | [mp3gain](http://doc.ubuntu-fr.org/mp3gain) | Normalisation du volume des musiques dans un dossier ou fichier par fichier par replayGain | [easymp3gain-gtk](apt://easymp3gain-gtk)    |
 
 TODO: Comparer Jamuz (perfs) avec <https://doc.ubuntu-fr.org/rhythmbox> (installé par défaut)
 
@@ -138,13 +150,32 @@ TODO:  Voir aussi [Fusionner 2 fichiers avi avec mencoder](http://www.ubuntuhowt
 
 TODO:  Voir aussi: [Convertir MOV en Flash FLV](Convertir_MOV_en_Flash_FLV)
 
+#### Administration
+
+TODO : !!!!!!!!!!!!!!!! REPRENDRE ICI: comparer mint 21.3 VirtualBox et lister les nouveaux à ajouter. Puis passer dans list.yaml, en sync avec page archive
+
+
+TODO: Ajouter:
+- Back In Time ?
+- Disks - gnome-disks
+- 
+
+|                 |                                             |                            |                                             |
+| --------------- | ------------------------------------------- | -------------------------- | ------------------------------------------- |
+| Nom             | ubuntu-fr                                   | Description                | Installation [apturl](../system/Apt-url.md) |
+| Gparted         | [gparted](http://doc.ubuntu-fr.org/gparted) | Partitionnement de disque. | [gparted](apt://gparted)                    |
+| [grsync](rsync) | Synchronisation de fichiers.                | [grsync](apt://grsync)     |                                             |
+
 #### Outils système
+
+
+
+
 
 |                                                     |                                                                                                                |                                                          |
 | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
 | Nom                                                 | Description                                                                                                    | Installation [apturl](../system/Apt-url.md)              |
 | yakuake                                             | permet de lancer un shell (Terminal) "rétractible" en pressant F12 - très pratique                             | [yakuake](apt://yakuake)                                 |
-| [rsync](soft/rsync)                                 | Synchronisation de fichiers.                                                                                   | [grsync](apt://grsync)                                   |
 | [rclone](soft/rclone)                               | Manipuler les fichiers sur des stockages cloud.                                                                | [rclone-browser](apt://rclone-browser)                   |
 | [ForemostGUI](http://doc.ubuntu-fr.org/foremostgui) | IHM pour foremost, logiciel de récupération de données                                                         | Voir [ForemostGUI](http://doc.ubuntu-fr.org/foremostgui) |
 | [VirtualBox](http://doc.ubuntu-fr.org/virtualbox)   | Solution de virtualisation de systèmes d'exploitation. [Images toutes prêtes](http://virtualboxes.org/images/) | Voir [VirtualBox](http://doc.ubuntu-fr.org/virtualbox)   |
@@ -192,13 +223,15 @@ En fonction de vos besoins (sauvegarde fréquente, déduplication, interface gra
 Les programmes suivants n'ont pas d'interface graphique, mais sont quand
 même bien pratiques:
 
-|                                                        |                                         |                                                                                                                                                                                |                                             |
-| ------------------------------------------------------ | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------- |
-| Nom                                                    | Ubuntu-fr                               | Description                                                                                                                                                                    | Installation [apturl](../system/Apt-url.md) |
-| [convmv](Convmv)                                       |                                         | Conversion de caractères (noms de fichiers)                                                                                                                                    | [convmv](apt://convmv)                      |
-| [Disques_Réseau#mount.cifs](Disques_Réseau#mount.cifs) |                                         | Pour monter des dossiers partagés Windows ou Samba                                                                                                                             | [smbfs](apt://smbfs)                        |
-| [fcron](Fcron)                                         | [fcron](http://doc.ubuntu-fr.org/fcron) | FCron permet de pallier les défauts de Cron et d'Anacron.                                                                                                                      | [fcron](apt://fcron)                        |
-| RAR (archive)                                          | [rar](http://doc.ubuntu-fr.org/rar)     | RAR est un format d'archive (un peu comme ZIP), c'est aussi le nom de l'application pour les gérer. [RAR avec mot de passe](http://forum.ubuntu-fr.org/viewtopic.php?id=83892) | Voir site Ubuntu                            |
+|                                                        |                                         |                                                                                                     |                                             |
+| ------------------------------------------------------ | --------------------------------------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------- |
+| Nom                                                    | Ubuntu-fr                               | Description                                                                                         | Installation [apturl](../system/Apt-url.md) |
+| [convmv](Convmv)                                       |                                         | Conversion de caractères (noms de fichiers)                                                         | [convmv](apt://convmv)                      |
+| [Disques_Réseau#mount.cifs](Disques_Réseau#mount.cifs) |                                         | Pour monter des dossiers partagés Windows ou Samba                                                  | [smbfs](apt://smbfs)                        |
+| [fcron](Fcron)                                         | [fcron](http://doc.ubuntu-fr.org/fcron) | FCron permet de pallier les défauts de Cron et d'Anacron.                                           | [fcron](apt://fcron)                        |
+| RAR (archive)                                          | [rar](http://doc.ubuntu-fr.org/rar)     | RAR est un format d'archive (un peu comme ZIP), c'est aussi le nom de l'application pour les gérer. | Voir site Ubuntu                            |
+
+> [RAR avec mot de passe](http://forum.ubuntu-fr.org/viewtopic.php?id=83892)
 
 Les suivants sont à répartir dans les menus appropriés :
 
@@ -208,7 +241,6 @@ Les suivants sont à répartir dans les menus appropriés :
 | [BOINC](BOINC)                                              | Calcul partagé                                             | N/A                                                |
 | [Google Earth](Google_Earth)                                | La Terre vue du ciel                                       | N/A                                                |
 | [Sunclock](http://www.arvernes.com/wiki/index.php/Sunclock) | Carte avec zones ensoleillées                              | N/A                                                |
-| K3B                                                         | Gravure CD/DVD                                             |                                                    |
 | [Wine](Wine)                                                | Windows Emulation                                          |                                                    |
 | Gwhere                                                      | Catalogueur de CDs/DVDs                                    |                                                    |
 | OpenOffice                                                  | Office (tableur, traitement de texte, présentations, BDD)  | inclus par défaut dans [Ubuntu](linux/dist/Ubuntu) |
@@ -222,24 +254,22 @@ Ici sont regroupées tout ce qui concerne la configuration du système.
 
 #### Préférences
 
-|                                                                                   |                                                                                                                                                                                                                                                 |                                                                      |
-| --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| Nom                                                                               | Description                                                                                                                                                                                                                                     | Installation [apturl](../system/Apt-url.md)                          |
-| [Compiz Fusion](http://doc.ubuntu-fr.org/compiz_fusion) (simple)                  | Configuration des effets de bureau. Recommandé.                                                                                                                                                                                                 | [simple-ccsm](apt://simple-ccsm)                                     |
-| [Compiz Fusion](http://doc.ubuntu-fr.org/compiz_fusion) (avancé)                  | Configuration avancée des effets de bureau.                                                                                                                                                                                                     | [compizconfig-settings-manager](apt://compizconfig-settings-manager) |
-| [nautilus-actions](http://doc.ubuntu-fr.org/nautilus-actions)                     | Configuration des actions de Nautilus (gestionnaire fichiers) [Comparaison avec nautilus-scripts](http://www.commentcamarche.net/faq/6357-editer-le-menu-contextuel-de-nautilus-navigateur-de-fichiers)                                         | [nautilus-actions](apt://nautilus-actions)                           |
-| [nautilus-scripts](http://doc.ubuntu-fr.org/nautilus_scripts)                     | Scripts pour Nautilus (menu contextuel). [Bibliothèque de scripts](http://g-scripts.sourceforge.net/) [Comparaison avec nautilus-actions](http://www.commentcamarche.net/faq/6357-editer-le-menu-contextuel-de-nautilus-navigateur-de-fichiers) |                                                                      |
-| Applications au démarrage                                                         | Configuration des programmes à lancer au démarrage de [Ubuntu](linux/dist/Ubuntu)                                                                                                                                                               | par défaut dans [Ubuntu](linux/dist/Ubuntu)                          |
-| [Nautilus Cover Thumbnailer](http://software.flogisoft.com/cover-thumbnailer/fr/) | Afficher les pochettes des albums de musique dans nautilus, prévisualiser les images contenues dans un dossier et plus encore.                                                                                                                  | Via PPA. Refer to link.                                              |
+|                                                                                   |                                                                                          |                                                                      |
+| --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| Nom                                                                               | Description                                                                              | Installation [apturl](../system/Apt-url.md)                          |
+| [Compiz Fusion](http://doc.ubuntu-fr.org/compiz_fusion) (simple)                  | Configuration des effets de bureau. Recommandé.                                          | [simple-ccsm](apt://simple-ccsm)                                     |
+| [Compiz Fusion](http://doc.ubuntu-fr.org/compiz_fusion) (avancé)                  | Configuration avancée des effets de bureau.                                              | [compizconfig-settings-manager](apt://compizconfig-settings-manager) |
+| [nautilus-actions](http://doc.ubuntu-fr.org/nautilus-actions)                     | Configuration des actions de Nautilus (gestionnaire fichiers)                            | [nautilus-actions](apt://nautilus-actions)                           |
+| [nautilus-scripts](http://doc.ubuntu-fr.org/nautilus_scripts)                     | Scripts pour Nautilus (menu contextuel).                                                 |                                                                      |
+| [Nautilus Cover Thumbnailer](http://software.flogisoft.com/cover-thumbnailer/fr/) | Afficher les pochettes des albums de musique dans nautilus, prévisualiser les images ... | Via PPA. Refer to link.                                              |
 
-#### Administration
+> Compiz ne marche pas avec Cinnamon (apparement) mais il ya des extensions comme https://github.com/linuxmint/cinnamon-spices-extensions/tree/master/compiz-windows-effect@hermes83.github.com
 
-|              |                                                       |                                                                                    |                                                                 |
-| ------------ | ----------------------------------------------------- | ---------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| Nom          | ubuntu-fr                                             | Description                                                                        | Installation [apturl](../system/Apt-url.md)                     |
-| Gparted      | [gparted](http://doc.ubuntu-fr.org/gparted)           | Partitionnement de disque.                                                         | [gparted](apt://gparted)                                        |
-| Disk-Manager | [disk-manager](http://doc.ubuntu-fr.org/disk-manager) | Gestionnaire de disques. Voir [Disques Locaux](Disques_Locaux)                     | N/A. Voir [disk-manager](http://doc.ubuntu-fr.org/disk-manager) |
-| Gufw         | [gufw](http://doc.ubuntu-fr.org/gufw)                 | Interface graphique du pare-feu UFW, celui par défaut dans Ubuntu (10.10 au moins) | [gufw](apt://gufw)                                              |
+
+[Comparaison avec nautilus-scripts](http://www.commentcamarche.net/faq/6357-editer-le-menu-contextuel-de-nautilus-navigateur-de-fichiers)
+[Bibliothèque de scripts](http://g-scripts.sourceforge.net/) nautilus
+
+
 
 Pimp your terminal:
 
@@ -252,43 +282,6 @@ Pimp your terminal:
     - kubectl
     - kube.ps1
 
-### Tableaux de bord
-
-Par défaut, il y a 2 tableaux de bord installés dans
-[Ubuntu](linux/dist/Ubuntu):
-
-- 1 en haut comprenant:
-  - à gauche La barre de menus (Applications, Raccourcis et Système)
-    dont le contenu est décrit dans les sections ci-dessus
-  - à droite:
-    - une Applet de notification (son, messageries)
-    - une Horloge
-    - une Applet de notification de session (Un endroit pour modifier
-      votre état de présence, changer d'utilisateur ou fermer votre
-      session.)
-- 1 en bas comprenant:
-  - à gauche:
-    - Bouton d'affichage du bureau
-    - Liste des fenêtres
-  - à droite:
-    - Sélecteur d'espaces de travail
-    - Applet Corbeille
-
-Il est possible de rajouter d'autres tableaux de bord (click-droit sur
-un existant et "Nouveau tableau de bord") et de les supprimer
-(click-droit sur le tableau de bord et "Supprimer ce tableau de bord").
-
-Il est aussi possible d'ajouter (click-droit sur un tableau de bord et
-"Ajouter au tableau de bord"), de déplacer ou de supprimer (click-droit
-sur un élément et "Déplacer" ou "Enlever du tableau de bord") les
-éléments des tableaux de bord.
-
-Voici quelques tableaux de bord:
-
-|                                                                     |                                                                                                                                                                                                                                                                                                                                                                                                                  |                                                  |
-| ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
-| Nom                                                                 | Description                                                                                                                                                                                                                                                                                                                                                                                                      | Installation [apturl](../system/Apt-url.md)      |
-| [File Browser Applet](http://doc.ubuntu-fr.org/file-browser-applet) | Il permet de parcourir le contenu de votre ordinateur et d'ouvrir des fichiers sans avoir à utiliser de navigateur de fichiers. Son but n'est pas de remplacer un véritable gestionnaire de fichiers tel que Nautilus ; parfois vous voulez juste ouvrir un document sans avoir à ouvrir un dossier, le parcourir, ouvrir le document et refermer le dossier. Cet applet vous épargne simplement quelques clics. | [file-browser-applet](apt://file-browser-applet) |
 
 ------------------------------------------------------------------------
 
