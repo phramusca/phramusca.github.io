@@ -91,7 +91,6 @@ J'ai utilisé ces programmes dans le temps, mais ils sont soient obsolètes soit
 | [rsync](soft/rsync)                                 | Synchronisation de fichiers.                                                                                   | [grsync](apt://grsync)                                   |
 | [rclone](soft/rclone)                               | Manipuler les fichiers sur des stockages cloud.                                                                | [rclone-browser](apt://rclone-browser)                   |
 | [ForemostGUI](http://doc.ubuntu-fr.org/foremostgui) | IHM pour foremost, logiciel de récupération de données                                                         | Voir [ForemostGUI](http://doc.ubuntu-fr.org/foremostgui) |
-| [VirtualBox](http://doc.ubuntu-fr.org/virtualbox)   | Solution de virtualisation de systèmes d'exploitation. [Images toutes prêtes](http://virtualboxes.org/images/) | Voir [VirtualBox](http://doc.ubuntu-fr.org/virtualbox)   |
 
 #### Divers, sans IHM
 
@@ -119,7 +118,6 @@ Les suivants sont à répartir dans les menus appropriés :
 | OpenOffice                                                  | Office (tableur, traitement de texte, présentations, BDD)  | inclus par défaut dans [Ubuntu](linux/dist/Ubuntu) |
 | Antivirus                                                   | Complètement inutile                                       | N/A                                                |
 | kFileReplace                                                | Changer un texte par un autre dans des fichiers (a tester) |                                                    |
-| [Virtual Box](http://doc.ubuntu-fr.org/virtualbox)          | Virtualisation                                             |                                                    |
 
 ### Système
 

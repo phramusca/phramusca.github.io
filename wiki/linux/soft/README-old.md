@@ -152,33 +152,74 @@ TODO:  Voir aussi: [Convertir MOV en Flash FLV](Convertir_MOV_en_Flash_FLV)
 
 #### Administration
 
-TODO : !!!!!!!!!!!!!!!! REPRENDRE ICI: comparer mint 21.3 VirtualBox et lister les nouveaux à ajouter. Puis passer dans list.yaml, en sync avec page archive
-
-
 TODO: Ajouter:
 - Back In Time ?
 - Disks - gnome-disks
-- 
+- htop
+- Mission Center
+- WoeUSB (Prepare Microsoft Windows installation USB with ease.)
+
+TODO: /!\ Comment gérer rsync/grsync et autres cas de gui pour outil de ligne de commande
 
 |                 |                                             |                            |                                             |
 | --------------- | ------------------------------------------- | -------------------------- | ------------------------------------------- |
 | Nom             | ubuntu-fr                                   | Description                | Installation [apturl](../system/Apt-url.md) |
 | Gparted         | [gparted](http://doc.ubuntu-fr.org/gparted) | Partitionnement de disque. | [gparted](apt://gparted)                    |
 | [grsync](rsync) | Synchronisation de fichiers.                | [grsync](apt://grsync)     |                                             |
+| [VirtualBox](http://doc.ubuntu-fr.org/virtualbox)   | Solution de virtualisation de systèmes d'exploitation. [Images toutes prêtes](http://virtualboxes.org/images/) | Voir [VirtualBox](http://doc.ubuntu-fr.org/virtualbox)   |
+
+
+#### Préférences
+
+TODO: Ajouter:
+- Guake
+
+
+
+#### A REVOIR
+--------------------------------------------------------------------
+TODO !!!!!!!!!!!!!!!!!!!!!! Ce qui suit est à archiver ou a revoir
+--------------------------------------------------------------------
+
+
+|                                                                                   |                                                                                          |                                                                      |
+| --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| Nom                                                                               | Description                                                                              | Installation [apturl](../system/Apt-url.md)                          |
+| [Compiz Fusion](http://doc.ubuntu-fr.org/compiz_fusion) (simple)                  | Configuration des effets de bureau. Recommandé.                                          | [simple-ccsm](apt://simple-ccsm)                                     |
+| [Compiz Fusion](http://doc.ubuntu-fr.org/compiz_fusion) (avancé)                  | Configuration avancée des effets de bureau.                                              | [compizconfig-settings-manager](apt://compizconfig-settings-manager) |
+| [nautilus-actions](http://doc.ubuntu-fr.org/nautilus-actions)                     | Configuration des actions de Nautilus (gestionnaire fichiers)                            | [nautilus-actions](apt://nautilus-actions)                           |
+| [nautilus-scripts](http://doc.ubuntu-fr.org/nautilus_scripts)                     | Scripts pour Nautilus (menu contextuel).                                                 |                                                                      |
+| [Nautilus Cover Thumbnailer](http://software.flogisoft.com/cover-thumbnailer/fr/) | Afficher les pochettes des albums de musique dans nautilus, prévisualiser les images ... | Via PPA. Refer to link.                                              |
+
+> Compiz ne marche pas avec Cinnamon (apparement) mais il ya des extensions comme https://github.com/linuxmint/cinnamon-spices-extensions/tree/master/compiz-windows-effect@hermes83.github.com
+
+
+[Comparaison avec nautilus-scripts](http://www.commentcamarche.net/faq/6357-editer-le-menu-contextuel-de-nautilus-navigateur-de-fichiers)
+[Bibliothèque de scripts](http://g-scripts.sourceforge.net/) nautilus
 
 #### Outils système
-
-
-
-
 
 |                                                     |                                                                                                                |                                                          |
 | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
 | Nom                                                 | Description                                                                                                    | Installation [apturl](../system/Apt-url.md)              |
-| yakuake                                             | permet de lancer un shell (Terminal) "rétractible" en pressant F12 - très pratique                             | [yakuake](apt://yakuake)                                 |
 | [rclone](soft/rclone)                               | Manipuler les fichiers sur des stockages cloud.                                                                | [rclone-browser](apt://rclone-browser)                   |
 | [ForemostGUI](http://doc.ubuntu-fr.org/foremostgui) | IHM pour foremost, logiciel de récupération de données                                                         | Voir [ForemostGUI](http://doc.ubuntu-fr.org/foremostgui) |
-| [VirtualBox](http://doc.ubuntu-fr.org/virtualbox)   | Solution de virtualisation de systèmes d'exploitation. [Images toutes prêtes](http://virtualboxes.org/images/) | Voir [VirtualBox](http://doc.ubuntu-fr.org/virtualbox)   |
+
+
+Les suivants sont à répartir dans les menus appropriés :
+
+|                                                             |                                                            |                                                    |
+| ----------------------------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------- |
+| Nom                                                         | Description                                                | Installation [apturl](../system/Apt-url.md)        |
+| [BOINC](BOINC)                                              | Calcul partagé                                             | N/A                                                |
+| [Google Earth](Google_Earth)                                | La Terre vue du ciel                                       | N/A                                                |
+| [Sunclock](http://www.arvernes.com/wiki/index.php/Sunclock) | Carte avec zones ensoleillées                              | N/A                                                |
+| [Wine](Wine)                                                | Windows Emulation                                          |                                                    |
+| Gwhere                                                      | Catalogueur de CDs/DVDs                                    |                                                    |
+| OpenOffice                                                  | Office (tableur, traitement de texte, présentations, BDD)  | inclus par défaut dans [Ubuntu](linux/dist/Ubuntu) |
+| Antivirus                                                   | Complètement inutile                                       | N/A                                                |
+| kFileReplace                                                | Changer un texte par un autre dans des fichiers (a tester) |                                                    |
+
 
 
 TODO Tester et intégrer ce qui suit (de Chat GPT):
@@ -233,54 +274,18 @@ même bien pratiques:
 
 > [RAR avec mot de passe](http://forum.ubuntu-fr.org/viewtopic.php?id=83892)
 
-Les suivants sont à répartir dans les menus appropriés :
-
-|                                                             |                                                            |                                                    |
-| ----------------------------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------- |
-| Nom                                                         | Description                                                | Installation [apturl](../system/Apt-url.md)        |
-| [BOINC](BOINC)                                              | Calcul partagé                                             | N/A                                                |
-| [Google Earth](Google_Earth)                                | La Terre vue du ciel                                       | N/A                                                |
-| [Sunclock](http://www.arvernes.com/wiki/index.php/Sunclock) | Carte avec zones ensoleillées                              | N/A                                                |
-| [Wine](Wine)                                                | Windows Emulation                                          |                                                    |
-| Gwhere                                                      | Catalogueur de CDs/DVDs                                    |                                                    |
-| OpenOffice                                                  | Office (tableur, traitement de texte, présentations, BDD)  | inclus par défaut dans [Ubuntu](linux/dist/Ubuntu) |
-| Antivirus                                                   | Complètement inutile                                       | N/A                                                |
-| kFileReplace                                                | Changer un texte par un autre dans des fichiers (a tester) |                                                    |
-| [Virtual Box](http://doc.ubuntu-fr.org/virtualbox)          | Virtualisation                                             |                                                    |
-
-### Système
-
-Ici sont regroupées tout ce qui concerne la configuration du système.
-
-#### Préférences
-
-|                                                                                   |                                                                                          |                                                                      |
-| --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| Nom                                                                               | Description                                                                              | Installation [apturl](../system/Apt-url.md)                          |
-| [Compiz Fusion](http://doc.ubuntu-fr.org/compiz_fusion) (simple)                  | Configuration des effets de bureau. Recommandé.                                          | [simple-ccsm](apt://simple-ccsm)                                     |
-| [Compiz Fusion](http://doc.ubuntu-fr.org/compiz_fusion) (avancé)                  | Configuration avancée des effets de bureau.                                              | [compizconfig-settings-manager](apt://compizconfig-settings-manager) |
-| [nautilus-actions](http://doc.ubuntu-fr.org/nautilus-actions)                     | Configuration des actions de Nautilus (gestionnaire fichiers)                            | [nautilus-actions](apt://nautilus-actions)                           |
-| [nautilus-scripts](http://doc.ubuntu-fr.org/nautilus_scripts)                     | Scripts pour Nautilus (menu contextuel).                                                 |                                                                      |
-| [Nautilus Cover Thumbnailer](http://software.flogisoft.com/cover-thumbnailer/fr/) | Afficher les pochettes des albums de musique dans nautilus, prévisualiser les images ... | Via PPA. Refer to link.                                              |
-
-> Compiz ne marche pas avec Cinnamon (apparement) mais il ya des extensions comme https://github.com/linuxmint/cinnamon-spices-extensions/tree/master/compiz-windows-effect@hermes83.github.com
-
-
-[Comparaison avec nautilus-scripts](http://www.commentcamarche.net/faq/6357-editer-le-menu-contextuel-de-nautilus-navigateur-de-fichiers)
-[Bibliothèque de scripts](http://g-scripts.sourceforge.net/) nautilus
-
-
-
 Pimp your terminal:
 
 - [ZSH](https://doc.ubuntu-fr.org/zsh)
 - [Oh My Zsh](https://ohmyz.sh/)
   - [powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
     theme
-  - Useful plugins : [Shell sous
-    stéroides](https://www.tronyxworld.be/2020/zsh_omz_p10k/)
+  - Useful plugins : [Shell sous stéroides](https://www.tronyxworld.be/2020/zsh_omz_p10k/)
     - kubectl
     - kube.ps1
+
+
+TODO: Inclure les applis par défaut dans Mint 21.3 et 22
 
 
 ------------------------------------------------------------------------
