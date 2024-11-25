@@ -26,7 +26,7 @@ categories:
     logiciels:
   - nom: Bureautique
     logiciels:
-    - nom: https://doc.ubuntu-fr.org/bookletimposer
+    - nom: Bookletimposer
       apt: bookletimposer
       url_internal: null
       url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/bookletimposer
