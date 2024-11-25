@@ -15,10 +15,24 @@ categories:
         url_website: https://apps.kde.org/fr/krename/
         url_repository: https://sourceforge.net/projects/krename/
         description: Renommer des fichiers si "Renommeur de fichiers" ne suffit pas.
+      - nom: FlatSeal
+        apt: https://flathub.org/apps/com.github.tchx84.Flatseal 
+        url_internal: null
+        url_doc_ubuntu_fr: https://fr.ubunlog.com/flatseal-gui-autorisations-de-triche-applications-flatpak/
+        url_website: https://github.com/tchx84/Flatseal
+        url_repository: https://github.com/tchx84/Flatseal
+        description: Gestionnaire de Flatpak (permissions).
   - nom: Autre
     logiciels:
   - nom: Bureautique
     logiciels:
+    - nom: https://doc.ubuntu-fr.org/bookletimposer
+      apt: bookletimposer
+      url_internal: null
+      url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/bookletimposer
+      url_website: https://kjo.herbesfolles.org/bookletimposer/
+      url_repository: https://git.codecoop.org/kjo/bookletimposer
+      description: Impression de documents en livrets.
   - nom: Education
     logiciels:
       - nom: Atelier Linotte
@@ -92,6 +106,13 @@ categories:
         url_website: https://sqlitebrowser.org/
         url_repository: https://github.com/sqlitebrowser/sqlitebrowser
         description: Administration de bases Sqlite.
+      - nom: Docker Desktop
+        apt: null
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/docker#docker_desktop
+        url_website: https://docs.docker.com/desktop/
+        url_repository: null
+        description: GUI Docker
   - nom: Son et Vidéo
     categories:
       - nom: Audio

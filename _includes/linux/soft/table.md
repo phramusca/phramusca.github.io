@@ -18,7 +18,7 @@
       {% if logiciel.url_repository %}<a href="{{ logiciel.url_repository }}">{{ logiciel.nom }}</a>{% endif %}
       {% endcapture %}
 
-- {{ url_internal }} ({{ logiciel.description }})
+- {{ url_internal }} -- {{ logiciel.description }}
 
     - Installation: {{ apt }}
     - Untutu-fr: {{ url_doc_ubuntu_fr }} 

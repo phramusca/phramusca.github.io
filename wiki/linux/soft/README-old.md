@@ -2,15 +2,12 @@
 
 ## Ma Sélection
 
-TODO: Ajouter les programmes / nettoyer le répertoire local Installs
-
 ### Applications
 
 #### Accessoires
 
 TODO: Ajouter:
 
-- Flatseal (/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=com.github.tchx84)
 - rpi-imager (Raspberry Pi Imager)
 - KeePass2
 - Solaar
@@ -25,9 +22,13 @@ TODO: Faire le tri entre Wayland (à revoir aussi) et le reste
 
 TODO: Ajouter:
 
-- Calibre
+- Calibre (Faire une page, avec utilisation de /home/raph/Documents/05-Installs/1-Sans_install/calibre2opds-3.5-369.jar) et integrer nouveaux livres
 - gLabels
 - PDFsamBasic
+
+
+
+(A archiver: "livret-2.deb": https://www.biotechno.fr/BookletImposer.html) VS bookletimposer
 
 #### Education
 
