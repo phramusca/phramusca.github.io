@@ -110,7 +110,6 @@ Les suivants sont à répartir dans les menus appropriés :
 |                                                             |                                                            |                                                    |
 | ----------------------------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------- |
 | Nom                                                         | Description                                                | [apt-url](Apt-url) (Installation)                  |
-| [BOINC](BOINC)                                              | Calcul partagé                                             | N/A                                                |
 | [Google Earth](Google_Earth)                                | La Terre vue du ciel                                       | N/A                                                |
 | [Sunclock](http://www.arvernes.com/wiki/index.php/Sunclock) | Carte avec zones ensoleillées                              | N/A                                                |
 | [Wine](Wine)                                                | Windows Emulation                                          |                                                    |

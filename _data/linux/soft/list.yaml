@@ -148,6 +148,14 @@ categories:
           url_repository: https://wiki.videolan.org/Getting_Started_At_Coding/
           description: Lecteur de vidéos.
   - nom: Administration
+    logiciels:
+    - nom: BOINC
+      apt: boinc
+      url_internal: null
+      url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/boinc
+      url_website: https://boinc.berkeley.edu/
+      url_repository: null
+      description: Client BOINC.
   - nom: Préférences
   - nom: Divers
     logiciels:
