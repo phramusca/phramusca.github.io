@@ -4,9 +4,7 @@
       {% if logiciel.url_internal %}<a href="{{ logiciel.url_internal }}">{{ logiciel.nom }}</a>{% else %}{{ logiciel.nom }}{% endif %}
       {% endcapture %}
 
-      {% capture apt %}
-      {% if logiciel.apt %}<a href="apt://{{ logiciel.apt }}">apt://{{ logiciel.apt }}</a>{% endif %}
-      {% endcapture %}
+      {% capture apt %}{% if logiciel.apt %}{% if logiciel.apt contains "http://" or logiciel.apt contains "https://" %}<a href="{{ logiciel.apt }}">{{ logiciel.nom }}</a>{% else %}<a href="apt://{{ logiciel.apt }}">apt://{{ logiciel.apt }}</a>{% endif %}{% endif %}{% endcapture %}
 
       {% capture url_doc_ubuntu_fr %}
       {% if logiciel.url_doc_ubuntu_fr %}<a href="{{ logiciel.url_doc_ubuntu_fr }}">{{ logiciel.nom }}</a>{% endif %}
@@ -21,6 +19,7 @@
       {% endcapture %}
 
 - {{ url_internal }} ({{ logiciel.description }})
+
     - Installation: {{ apt }}
     - Untutu-fr: {{ url_doc_ubuntu_fr }} 
     - Website: {{ url_website }}

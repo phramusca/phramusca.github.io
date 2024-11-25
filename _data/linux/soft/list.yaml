@@ -21,6 +21,13 @@ categories:
     logiciels:
   - nom: Education
     logiciels:
+      - nom: Atelier Linotte
+        apt: https://github.com/cpc6128/LangageLinotte/releases/latest
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/linotte
+        url_website: http://langagelinotte.free.fr/wordpress/
+        url_repository: https://github.com/cpc6128/LangageLinotte
+        description: Langage de programmation en français.
   - nom: Graphisme
     logiciels:
       - nom: GIMP
@@ -121,4 +128,12 @@ categories:
           description: Lecteur de vidéos.
   - nom: Administration
   - nom: Préférences
-      
+  - nom: Divers
+    logiciels:
+    - nom: Ventoy
+      apt: null
+      url_internal: Ventoy
+      url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/ventoy
+      url_website: https://ventoy.net/
+      url_repository: https://github.com/ventoy/Ventoy
+      description: Créer une clé USB live multiboot.    

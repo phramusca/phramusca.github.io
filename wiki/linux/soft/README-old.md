@@ -2,8 +2,6 @@
 
 ## Ma Sélection
 
-TODO: <https://doc.ubuntu-fr.org/ventoy>
-
 TODO: Ajouter les programmes / nettoyer le répertoire local Installs
 
 ### Applications
@@ -35,7 +33,6 @@ TODO: Ajouter:
 
 TODO: Ajouter:
 
-- Atelier Linotte
 - GCompris
 - Tux Math
 - [Jeux educatifs](https://doc.ubuntu-fr.org/educatif)
