@@ -41,14 +41,34 @@ layout: default
       <h1>${foundLogiciel.nom}</h1>
       <p>${foundLogiciel.description || 'No description available.'}</p>
       <ul>
-        ${foundLogiciel.url_internal ? `<li>Lien interne: <a href="${foundLogiciel.url_internal}">${foundLogiciel.nom}</a></li><br/>` : ''}
         ${aptLink ? `<li>Installation: ${aptLink}</li>` : ''}
         ${foundLogiciel.url_doc_ubuntu_fr ? `<li>Documentation Ubuntu: <a href="${foundLogiciel.url_doc_ubuntu_fr}" target="_blank">${foundLogiciel.url_doc_ubuntu_fr}</a></li>` : ''}
         ${foundLogiciel.url_website ? `<li>Site Internet: <a href="${foundLogiciel.url_website}" target="_blank">${foundLogiciel.url_website}</a></li>` : ''}
         ${foundLogiciel.url_repository ? `<li>Repository: <a href="${foundLogiciel.url_repository}" target="_blank">${foundLogiciel.url_repository}</a></li>` : ''}
       </ul>
     `;
+
+    // Vérifiez si `url_internal` existe, puis chargez le fichier HTML prétraité
+    if (foundLogiciel.url_internal) {
+      fetch(foundLogiciel.url_internal)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Fichier non trouvé');
+          }
+          return response.text(); // Récupère le contenu du fichier HTML prétraité par Jekyll
+        })
+        .then(htmlContent => {
+          // Affiche le contenu HTML directement
+          detailsContainer.innerHTML += `
+            <div><h2>Contenu interne :</h2>${htmlContent}</div>
+          `;
+        })
+        .catch(error => {
+          detailsContainer.innerHTML += `<p>Erreur lors du chargement du fichier interne: ${error.message}</p>`;
+        });
+    }
   } else {
     detailsContainer.textContent = 'Logiciel introuvable.';
   }
 </script>
+

@@ -1,7 +1,3 @@
----
-layout: default
----
-
 # Hugin
 
 TODO: Ajouter une mention mise à jour sur toutes les pages mises à jour
