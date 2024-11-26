@@ -1,4 +1,8 @@
-# Hugin
+---
+layout: default
+---
+
+Hugin est un bal bla bla .... TODO
 
 TODO: Ajouter une mention mise à jour sur toutes les pages mises à jour
 *Mise à jour: 11/2024.*

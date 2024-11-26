@@ -39,7 +39,7 @@ layout: default
 
     detailsContainer.innerHTML = `
       <h1>${foundLogiciel.nom}</h1>
-      <p>${foundLogiciel.description || 'No description available.'}</p>
+      <p>${foundLogiciel.description || 'Pas de description disponible.'}</p>
       <ul>
         ${aptLink ? `<li>Installation: ${aptLink}</li>` : ''}
         ${foundLogiciel.url_doc_ubuntu_fr ? `<li>Documentation Ubuntu: <a href="${foundLogiciel.url_doc_ubuntu_fr}" target="_blank">${foundLogiciel.url_doc_ubuntu_fr}</a></li>` : ''}
@@ -48,19 +48,26 @@ layout: default
       </ul>
     `;
 
-    // Vérifiez si `url_internal` existe, puis chargez le fichier HTML prétraité
+    //Affichage du contenu du markdowwn indiqué par url_internal
     if (foundLogiciel.url_internal) {
       fetch(foundLogiciel.url_internal)
         .then(response => {
           if (!response.ok) {
             throw new Error('Fichier non trouvé');
           }
-          return response.text(); // Récupère le contenu du fichier HTML prétraité par Jekyll
+          return response.text();
         })
         .then(htmlContent => {
-          // Affiche le contenu HTML directement
+          // Supprimer l'élément header si présent
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = htmlContent;
+          const header = tempDiv.querySelector('header');
+          if (header) {
+            header.remove(); 
+          }
+          const innerContent = tempDiv.innerHTML;
           detailsContainer.innerHTML += `
-            <div><h2>Contenu interne :</h2>${htmlContent}</div>
+            <div><h3>Plus d'infos :</h3>${innerContent}</div>
           `;
         })
         .catch(error => {
@@ -71,4 +78,5 @@ layout: default
     detailsContainer.textContent = 'Logiciel introuvable.';
   }
 </script>
+
 
