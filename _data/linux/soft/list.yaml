@@ -60,9 +60,6 @@ categories:
         url_website: https://app.vnote.fun/en_us/
         url_repository: https://github.com/vnotex/vnote
         description: Créer et modifier des notes, en markdown.
-
-
-
   - nom: Autre
     logiciels:
   - nom: Bureautique
@@ -74,6 +71,27 @@ categories:
       url_website: https://kjo.herbesfolles.org/bookletimposer/
       url_repository: https://git.codecoop.org/kjo/bookletimposer
       description: Impression de documents en livrets.
+    - nom: Calibre
+      apt: calibre
+      url_internal: Calibre
+      url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/calibre
+      url_website: https://calibre-ebook.com/
+      url_repository: https://github.com/kovidgoyal/calibre
+      description: Gestionnaire de livres numériques (ebook).
+    - nom: gLabels
+      apt: glabels
+      url_internal: null
+      url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/glabels
+      url_website: https://www.glabels.org/
+      url_repository: https://github.com/jimevins/glabels-qt
+      description: Création de séries de documents en petits formats genre étiquettes, pochettes et cartes de visite.
+    - nom: PDFsamBasic
+      apt: null
+      url_internal: null
+      url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/pdfsam
+      url_website: https://pdfsam.org/fr/
+      url_repository: https://github.com/torakiki/pdfsam
+      description: Pivoter, diviser, extraire et mélanger les fichiers PDF.
   - nom: Education
     logiciels:
       - nom: Atelier Linotte

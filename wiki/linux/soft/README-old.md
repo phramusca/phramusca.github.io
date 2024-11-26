@@ -12,15 +12,7 @@ TODO: Faire le tri entre Wayland (à revoir aussi) et le reste
 
 #### Bureautique
 
-TODO: Ajouter:
-
-- Calibre (Faire une page, avec utilisation de /home/raph/Documents/05-Installs/1-Sans_install/calibre2opds-3.5-369.jar) et integrer nouveaux livres
-- gLabels
-- PDFsamBasic
-
-
-
-(A archiver: "livret-2.deb": https://www.biotechno.fr/BookletImposer.html) VS bookletimposer
+TODO: archiver: "livret-2.deb": https://www.biotechno.fr/BookletImposer.html) VS bookletimposer
 
 #### Education
 

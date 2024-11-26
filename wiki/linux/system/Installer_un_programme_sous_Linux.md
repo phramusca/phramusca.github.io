@@ -2,7 +2,7 @@
 
 ## Magasins d'applications
 
-[Linux Mint](../dist/Mint.md) comme [Ubuntu](../dist/Ubuntu.md) et d'autres distributions [Linux](../README.md) ont un magasin d'applications, facilement disponible depuis le menu principal.
+[Linux Mint](../dist/Mint.md) comme [Ubuntu](../dist/Ubuntu.md) et d'autres distributions [Linux](../README.md) ont une logithèque, facilement disponible depuis le menu principal.
 
 Ceci est la méthode à privilégier dans tous les cas, pour plus de facilité, de sécurité et de compatibilité.
 
@@ -14,7 +14,7 @@ Les [distributions Linux basées sur Debian](../README.md#distributions-basées-
 
 #### Installer un paquet .deb
 
-Si le paquet n'est pas disponible dans les magasins, il est parfois disponible soit:
+Si le paquet n'est pas disponible dans les logithèques, il est parfois disponible soit:
 
 - sous forme de fichier `.deb` à télécharger. Il suffit de l'ouvrir pour l'installer.
 - dans un dépôt alternatif et généralement le site vous indiquera les commandes à effectuer.
