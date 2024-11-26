@@ -101,6 +101,21 @@ categories:
         url_website: http://langagelinotte.free.fr/wordpress/
         url_repository: https://github.com/cpc6128/LangageLinotte
         description: Langage de programmation en français.
+      - nom: GCompris
+        apt: null
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/gcompris
+        url_website: https://gcompris.net/
+        url_repository: https://github.com/gcompris/GCompris-gtk
+        description: Logiciel ludo-éducatif. Adapté pour les enfants de 2 à 10 ans.
+      - nom: Jeux educatifs
+        archive: true
+        apt: null
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/educatif
+        url_website: null
+        url_repository: null
+        description: 
   - nom: Graphisme
     logiciels:
       - nom: GIMP

@@ -16,11 +16,6 @@ TODO: archiver: "livret-2.deb": https://www.biotechno.fr/BookletImposer.html) VS
 
 #### Education
 
-TODO: Ajouter:
-
-- GCompris
-- Tux Math
-- [Jeux educatifs](https://doc.ubuntu-fr.org/educatif)
 
 #### Graphisme
 
