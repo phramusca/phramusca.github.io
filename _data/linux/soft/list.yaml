@@ -22,6 +22,47 @@ categories:
         url_website: https://github.com/tchx84/Flatseal
         url_repository: https://github.com/tchx84/Flatseal
         description: Gestionnaire de Flatpak (permissions).
+      - nom: Raspberry Pi Imager
+        apt: rpi-imager
+        url_internal: null
+        url_doc_ubuntu_fr: null
+        url_website: https://www.raspberrypi.com/software/
+        url_repository: https://github.com/raspberrypi/rpi-imager
+        description: Créer une image pour Raspberry Pi.
+      - nom: KeePass2
+        archive: yes
+        apt: keepass2
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/keepass#keepass2
+        url_website: null
+        url_repository: https://github.com/kee-org/KeeFox/wiki/en-%7C-Installation-%7C-Linux
+        description: Créer et modifier des mots de passe.
+      - nom: Solaar
+        apt: solaar
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/solaar
+        url_website: hhttps://pwr-solaar.github.io/solaar/
+        url_repository: https://github.com/pwr-solaar/solaar
+        description: Protocole Logitech™ Unifying Receiver.
+      - nom: Spetacle
+        archive: yes
+        apt: kde-spectacle
+        url_internal: null
+        url_doc_ubuntu_fr: null
+        url_website: https://apps.kde.org/fr/spectacle/
+        url_repository: null
+        description: Créer des screenshots. Pour KDE
+      - nom: VNote
+        archive: yes
+        apt: https://github.com/vnotex/vnote/releases/latest
+        url_internal: null
+        url_doc_ubuntu_fr: null
+        url_website: https://app.vnote.fun/en_us/
+        url_repository: https://github.com/vnotex/vnote
+        description: Créer et modifier des notes, en markdown.
+
+
+
   - nom: Autre
     logiciels:
   - nom: Bureautique

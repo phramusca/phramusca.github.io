@@ -1,5 +1,8 @@
 # Programmes
 
+TODO: User `archive: yes` from list.yaml
+TODO: Add the following (if not already in) to list.yaml with `archive: yes`
+
 ## Précedente sélection
 
 J'ai utilisé ces programmes dans le temps, mais ils sont soient obsolètes soit remplacés par mieux.

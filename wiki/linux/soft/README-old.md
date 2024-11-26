@@ -6,14 +6,6 @@
 
 #### Accessoires
 
-TODO: Ajouter:
-
-- rpi-imager (Raspberry Pi Imager)
-- KeePass2
-- Solaar
-- Spectacle (Capture d'écran avec apparement plus d'options que "Capture d'écran")
-- VNote (Prise de notes en markdown)
-
 #### Autre
 
 TODO: Faire le tri entre Wayland (à revoir aussi) et le reste
@@ -174,7 +166,8 @@ TODO: Ajouter:
 
 
 
-#### A REVOIR
+### A REVOIR
+
 --------------------------------------------------------------------
 TODO !!!!!!!!!!!!!!!!!!!!!! Ce qui suit est à archiver ou a revoir
 --------------------------------------------------------------------
