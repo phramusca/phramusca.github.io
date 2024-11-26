@@ -2,27 +2,21 @@
 layout: default
 ---
 
-<p id="logiciel-details"></p>
+<div id="logiciel-details"></div>
 
 <script>
-  // Extract URL parameter 'name'
   const urlParams = new URLSearchParams(window.location.search);
   const logicielName = urlParams.get('name');
-
-  // Load the YAML data using Liquid
   const data = {{ site.data.linux.soft.list | jsonify }};
 
-  // Recursive function to search through categories and logiciels
   function findLogiciel(categories, name) {
     for (const category of categories) {
-      // Check logiciels in the current category
       if (category.logiciels) {
         const logiciel = category.logiciels.find(l => l.nom.toLowerCase() === name.toLowerCase());
         if (logiciel) {
-          return logiciel; // Return the found logiciel
+          return logiciel;
         }
       }
-      // Check nested categories recursively
       if (category.categories) {
         const result = findLogiciel(category.categories, name);
         if (result) {
@@ -30,24 +24,31 @@ layout: default
         }
       }
     }
-    return null; // Not found
+    return null;
   }
 
-  // Search for the logiciel
   const foundLogiciel = findLogiciel(data.categories, logicielName);
+  const detailsContainer = document.getElementById('logiciel-details');
 
-  // Display logiciel details
   if (foundLogiciel) {
-    document.getElementById('logiciel-details').innerHTML = `
+    const aptLink = foundLogiciel.apt 
+    ? (foundLogiciel.apt.startsWith('http://') || foundLogiciel.apt.startsWith('https://')
+        ? `<a href="${foundLogiciel.apt}">${foundLogiciel.nom}</a>` 
+        : `<a href="apt://${foundLogiciel.apt}">apt://${foundLogiciel.apt}</a>`)
+    : 'Not available';
+
+    detailsContainer.innerHTML = `
       <h1>${foundLogiciel.nom}</h1>
       <p>${foundLogiciel.description || 'No description available.'}</p>
       <ul>
-        ${foundLogiciel.url_doc_ubuntu_fr ? `<li><a href="${foundLogiciel.url_doc_ubuntu_fr}" target="_blank">Documentation Ubuntu</a></li>` : ''}
-        ${foundLogiciel.url_website ? `<li><a href="${foundLogiciel.url_website}" target="_blank">Official Website</a></li>` : ''}
-        ${foundLogiciel.url_repository ? `<li><a href="${foundLogiciel.url_repository}" target="_blank">Repository</a></li>` : ''}
+        ${foundLogiciel.url_internal ? `<li>Lien interne: <a href="${foundLogiciel.url_internal}">${foundLogiciel.nom}</a></li><br/>` : ''}
+        ${aptLink ? `<li>Installation: ${aptLink}</li>` : ''}
+        ${foundLogiciel.url_doc_ubuntu_fr ? `<li>Documentation Ubuntu: <a href="${foundLogiciel.url_doc_ubuntu_fr}" target="_blank">${foundLogiciel.url_doc_ubuntu_fr}</a></li>` : ''}
+        ${foundLogiciel.url_website ? `<li>Site Internet: <a href="${foundLogiciel.url_website}" target="_blank">${foundLogiciel.url_website}</a></li>` : ''}
+        ${foundLogiciel.url_repository ? `<li>Repository: <a href="${foundLogiciel.url_repository}" target="_blank">${foundLogiciel.url_repository}</a></li>` : ''}
       </ul>
     `;
   } else {
-    document.getElementById('logiciel-details').textContent = "Logiciel not found.";
+    detailsContainer.textContent = 'Logiciel introuvable.';
   }
 </script>
