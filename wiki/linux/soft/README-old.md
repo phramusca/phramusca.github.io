@@ -19,19 +19,7 @@ TODO: archiver: "livret-2.deb": https://www.biotechno.fr/BookletImposer.html) VS
 
 #### Graphisme
 
-TODO: Ajouter:
-
-- Dia
-- digiKam
-- gscan2pdf
-- Sweet Home 3D
-- XSane (=> Integrer page locale sur imprimante lexmark)
-
-Installés par défaut:
-
-- Dessin
-- Numérisuer de documents
-- Pix
+TODO: Ajouter: XSane (=> Integrer page locale sur imprimante lexmark)
 
 #### Internet
 
@@ -39,22 +27,22 @@ TODO Rajouter:
 
 - 4kyoutubetomp3
 - MEGAsync
-- Remmina
-- RClone Browser
-- TigerVNC (voir page sur VNC)
 - Gnome Web (avec WebKitGTK)
 - Wireshark
 
+TODO: Revoir rsync / rclone:
+
+- [rclone](soft/rclone)
+- Manipuler les fichiers sur des stockages cloud.
+- [rclone-browser](apt://rclone-browser)
+
+TODO: Faire section "Remote desktop / VNC" mais tester avant avec Rpi et d'autres
+- [VNC](VNC)
+- Remmina
+- TigerVNC (voir page sur VNC)
+- autres ? https://doc.ubuntu-fr.org/bureau_a_distance
+
 TODO: Faire section FTP, et ajouter FileZilla et lftp (script. et gui ?)
-
-TODO: Revoir ou archiver ceux la:
-
-|            |                                                                                                |                                                    |
-| ---------- | ---------------------------------------------------------------------------------------------- | -------------------------------------------------- |
-| Nom        | Description                                                                                    | Installation [apturl](../system/Apt-url.md)        |
-| [VNC](VNC) | Remote Desktop (Pour prendre le contrôle d'un PC à distance)                                   |                                                    |
-| Evolution  | équivalent ou presque d'Outlook                                                                | inclus par défaut dans [Ubuntu](linux/dist/Ubuntu) |
-| Empathy    | Messagerie instantanée compatible avec MSN (Windows Live), Jabber, Google Talk, AIM, yahoo,... | inclus par défaut dans [Ubuntu](linux/dist/Ubuntu) |
 
 #### Jeux
 
@@ -180,7 +168,6 @@ TODO !!!!!!!!!!!!!!!!!!!!!! Ce qui suit est à archiver ou a revoir
 |                                                     |                                                                                                                |                                                          |
 | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
 | Nom                                                 | Description                                                                                                    | Installation [apturl](../system/Apt-url.md)              |
-| [rclone](soft/rclone)                               | Manipuler les fichiers sur des stockages cloud.                                                                | [rclone-browser](apt://rclone-browser)                   |
 | [ForemostGUI](http://doc.ubuntu-fr.org/foremostgui) | IHM pour foremost, logiciel de récupération de données                                                         | Voir [ForemostGUI](http://doc.ubuntu-fr.org/foremostgui) |
 
 
