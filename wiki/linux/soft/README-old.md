@@ -23,12 +23,10 @@ TODO: Ajouter: XSane (=> Integrer page locale sur imprimante lexmark)
 
 #### Internet
 
-TODO Rajouter:
+TODO Rajouter ?
 
 - 4kyoutubetomp3
 - MEGAsync
-- Gnome Web (avec WebKitGTK)
-- Wireshark
 
 TODO: Revoir rsync / rclone:
 

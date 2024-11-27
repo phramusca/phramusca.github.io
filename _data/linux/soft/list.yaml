@@ -190,6 +190,20 @@ categories:
         url_website: https://www.jdownloader.org/
         url_repository: https://support.jdownloader.org/fr/knowledgebase/article/setup-ide-eclipse
         description: Gestionnaire de téléchargement de fichiers.
+      - nom: Gnome Web
+        apt: epiphany-browser
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/epiphany
+        url_website: https://apps.gnome.org/fr/Epiphany/
+        url_repository: https://gitlab.gnome.org/GNOME/epiphany
+        description: Navigateur internet de Gnome (WebKitGTK).
+      - nom: WireShark
+        apt: wireshark
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/trafic#wireshark
+        url_website: https://www.wireshark.org/
+        url_repository: https://gitlab.com/wireshark/wireshark
+        description: Analyseur de paquets réseau.
   - nom: Jeux
     logiciels:
   - nom: Programmation
