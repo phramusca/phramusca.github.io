@@ -7,3 +7,6 @@ plugins:
 - jekyll-remote-theme
 github:
   repository_url: https://github.com/phramusca
+assets:
+  stylesheets:
+    - /assets/css/custom.css
