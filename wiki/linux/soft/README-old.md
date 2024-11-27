@@ -69,30 +69,14 @@ Plus d'informations, voir la page [Développement](../../dev/README.md).
 
 #### Son et Vidéo
 
-TODO: Ajouter:
+TODO: Ajouter ?
 
-- Audacity
-- pavucontrol (PulseAudio Volume Control)
-- Sound Converter; soundconverter; Converts audio files into other formats
-- Hypnotix (Watch TV)
-- Mixxx
-- Molotov
 - Qobuz Downloader
-- SimpleScreenRecorder
-- (SoulSeek)
-- [Soudjuicer](Soudjuicer) Rip & Encodage (tjs problèmes en VBR ?)
-  - A tester aussi : [Grip](Grip)
-- K3B
-
+- SoulSeek
 
 ##### Audio
 
-TODO: Review this list
-
-|             |                                             |                                                                                            |                                             |
-| ----------- | ------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------- |
-| Nom         | Ubuntu-fr                                   | Description                                                                                | Installation [apturl](../system/Apt-url.md) |
-| easyMP3Gain | [mp3gain](http://doc.ubuntu-fr.org/mp3gain) | Normalisation du volume des musiques dans un dossier ou fichier par fichier par replayGain | [easymp3gain-gtk](apt://easymp3gain-gtk)    |
+TODO: Ajouter easyMP3Gain ? | [mp3gain](http://doc.ubuntu-fr.org/mp3gain) | Normalisation du volume des musiques dans un dossier ou fichier par fichier par replayGain | [easymp3gain-gtk](apt://easymp3gain-gtk)    |
 
 TODO: Comparer Jamuz (perfs) avec <https://doc.ubuntu-fr.org/rhythmbox> (installé par défaut)
 

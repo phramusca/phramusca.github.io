@@ -233,6 +233,13 @@ categories:
     categories:
       - nom: Audio
         logiciels:
+        - nom: JaMuz
+          apt: null
+          url_internal: null
+          url_doc_ubuntu_fr: null
+          url_website: https://phramusca.github.io/JaMuz/
+          url_repository: https://github.com/phramusca/JaMuz
+          description: Gestionnaire de musithèque, lecteur et plus encore, pour Linux, Raspberry et Windows.
         - nom: EasyTag
           apt: easytag
           url_internal: EasyTag
@@ -253,7 +260,64 @@ categories:
           url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/ripperx
           url_website: https://ripperx.sourceforge.io/
           url_repository: https://sourceforge.net/p/ripperx/git/ci/master/tree/
-          description: Découper des fichiers audio.
+          description: Extraction (rip) de CDs audio.
+        - nom: Soundjuicer
+          apt: sound-juicer
+          url_internal: Soundjuicer
+          url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/sound-juicer
+          url_website: https://wiki.gnome.org/Apps/SoundJuicer
+          url_repository: https://gitlab.gnome.org/GNOME/sound-juicer
+          description: Extraction (rip) de CDs audio.
+        - nom: Grip
+          archive: true
+          apt: null
+          url_internal: Grip
+          url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/grip
+          url_website: https://sourceforge.net/projects/grip/
+          url_repository: https://sourceforge.net/p/grip/code/ci/master/tree/
+          description: Extraction (rip) de CDs audio. Pas dans les dépôts, plus de PPA, nécessite de compiler.
+        - nom: Audacity
+          apt: audacity
+          url_internal: null
+          url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/audacity
+          url_website: https://www.audacityteam.org/
+          url_repository: https://github.com/audacity/audacity
+          description: Editeur audio.
+        - nom: PulseAudio Volume Control
+          apt: pavucontrol
+          url_internal: null
+          url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/pavucontrol
+          url_website: https://freedesktop.org/software/pulseaudio/pavucontrol/
+          url_repository: https://gitlab.freedesktop.org/pulseaudio/pavucontrol
+          description: Controleur de volume.
+        - nom: Sound Converter
+          apt: soundconverter
+          url_internal: null
+          url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/soundconverter
+          url_website: https://soundconverter.org/
+          url_repository: https://launchpad.net/soundconverter
+          description: Convertisseur audio.
+        - nom: Hypnotix
+          apt: hypnotix
+          url_internal: null
+          url_doc_ubuntu_fr: null
+          url_website: https://www.numetopia.fr/comment-regarder-des-flux-iptv-sous-linux-avec-hypnotix/
+          url_repository: https://github.com/linuxmint/hypnotix
+          description: IPTV pour regarder la télé, des vidéos et des séries.
+        - nom: Molotov
+          apt: null
+          url_internal: null
+          url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/molotov
+          url_website: https://www.molotov.tv/
+          url_repository: null
+          description: Logiciel propriétaire qui permet de regarder la télévision via internet.
+        - nom: Mixxx
+          apt: mixxx
+          url_internal: null
+          url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/mixxx
+          url_website: https://www.mixxx.org/
+          url_repository: https://github.com/mixxxdj/mixxx
+          description: DJing, mixer des musiques sur ordinateur..
       - nom: Video
         logiciels:
         - nom: vlc
@@ -263,6 +327,27 @@ categories:
           url_website: https://www.videolan.org/vlc/
           url_repository: https://wiki.videolan.org/Getting_Started_At_Coding/
           description: Lecteur de vidéos.
+        - nom: Simple Screen Recorder
+          apt: simplescreenrecorder
+          url_internal: null
+          url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/simplescreenrecorder
+          url_website: https://www.maartenbaert.be/simplescreenrecorder/
+          url_repository: https://github.com/MaartenBaert/ssr
+          description: Enregistreur de vidéos.
+        - nom: K3B
+          archive: true
+          apt: k3b
+          url_internal: null
+          url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/k3b
+          url_website: https://apps.kde.org/fr/k3b/
+          url_repository: https://invent.kde.org/kde/k3b.git
+          description: Créateur de DVD. Pour KDE. L'équivalent pour Gnome marche très bien depuis le temps.
+
+
+
+
+
+
   - nom: Administration
     logiciels:
     - nom: BOINC
