@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Linux
 
 ![50px-Linux-penguin](../data/50px-Linux-penguin.jpg)

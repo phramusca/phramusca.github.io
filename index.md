@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Welcome
 
 ## Projects
@@ -16,12 +20,24 @@ Il s'agit plutôt d'un bloc-notes de mon expérience (professionnelle et personn
 
 /!\ EN RECONSTRUCTION /!\
 
-- [Linux](wiki/linux/README.md)
-- [Windows](wiki/windows/README.md)
-- [Android](wiki/android/README.md)
-- [Raspberry](wiki/raspberry/REAME.md)
-- [Développement](wiki/dev/README.md)
+- [Linux](wiki/linux/)
+- [Windows](wiki/windows/)
+- [Android](wiki/android/)
+- [Raspberry](wiki/raspberry/)
+- [Développement](wiki/dev/)
   - [Java](wiki/dev/Java.md)
+
+------------------------------------------------------------------------
+
+<h1>Blog</h1>
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a> - <small>{{ post.date | date: "%d %B %Y" }}
+      <p>{{ post.excerpt }}</p></small>
+    </li>
+  {% endfor %}
+</ul>
 
 ------------------------------------------------------------------------
 
