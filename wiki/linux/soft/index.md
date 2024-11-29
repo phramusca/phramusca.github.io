@@ -42,12 +42,12 @@ La plupart s'installent en un click avec les liens [apt-url](../system/apturl).
 
 ##### {{ sous_categorie.nom }}
 
-{% include linux/soft/table software_list=sous_categorie.logiciels %}
+{% include linux/soft/table.md software_list=sous_categorie.logiciels %}
 
     {% endfor %}
   {% else %}
 
-{% include linux/soft/table software_list=categorie.logiciels %}
+{% include linux/soft/table.md software_list=categorie.logiciels %}
 
   {% endif %}
 
