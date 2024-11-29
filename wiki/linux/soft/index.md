@@ -33,7 +33,7 @@ La plupart s'installent en un click avec les liens [apt-url](../system/apturl).
 * TOC
 {:toc}
 
-{% for categorie in site.data.linux.soft.list.categories %}
+{% for categorie in site.data.soft_list.categories %}
 
 #### {{ categorie.nom }}
 

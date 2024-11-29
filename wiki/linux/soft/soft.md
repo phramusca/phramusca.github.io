@@ -7,7 +7,7 @@ layout: default
 <script>
   const urlParams = new URLSearchParams(window.location.search);
   const logicielName = urlParams.get('name');
-  const data = {{ site.data.linux.soft.list | jsonify }};
+  const data = {{ site.data.soft_list | jsonify }};
 
   function findLogiciel(categories, name) {
     for (const category of categories) {
