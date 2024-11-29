@@ -29,15 +29,14 @@ Il s'agit plutôt d'un bloc-notes de mon expérience (professionnelle et personn
 
 ------------------------------------------------------------------------
 
-<h1>Blog</h1>
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a> - <small>{{ post.date | date: "%d %B %Y" }}
-      <p>{{ post.excerpt }}</p></small>
-    </li>
-  {% endfor %}
-</ul>
+## Blog
+
+/!\ EN TEST /!\
+
+{% for post in site.posts %}
+- [{{ post.title }}]({{ post.url }}) <sub><sup>{{ post.date | date: "%d %B %Y" }}</sup></sub>
+  - <small>*{{ post.excerpt }}* </small>
+{% endfor %}
 
 ------------------------------------------------------------------------
 
