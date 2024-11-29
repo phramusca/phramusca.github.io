@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Firefox
 
 Le désormais célèbre Firefox existe bien évidement sous

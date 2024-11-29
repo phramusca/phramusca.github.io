@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Réseau
 
 ## Contrôle parental

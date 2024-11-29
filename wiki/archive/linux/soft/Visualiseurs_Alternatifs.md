@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Visualiseurs Alternatifs
 
 Un aperçu : <http://www.coagul.org/article.php3?id_article=531>

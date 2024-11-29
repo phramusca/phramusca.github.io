@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # GCStar
 
 La dernière version dans Ubuntu (au 13/4/2010) est un peu ancienne et

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Sauvegarde et Restauration
 
 ## Architecture

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Perso
 
 ## Ma Zone Personnelle

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Ma Configuration LAMP
 
 ## Installation

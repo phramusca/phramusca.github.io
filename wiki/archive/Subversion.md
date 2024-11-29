@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # SubVersion
 
 [Subversion](http://doc.ubuntu-fr.org/subversion) (abrégé SVN) est un système de gestion de versions visant à remplacer CVS.

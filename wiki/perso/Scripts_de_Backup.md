@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Scripts de Backup
 
 **Cette page est obsolète. Pour référence seulement**

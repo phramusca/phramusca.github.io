@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # NetBeans
 
 TODO: Revoir ou archiver

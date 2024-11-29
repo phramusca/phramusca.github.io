@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Sauvegardes MySQL
 
 Les scripts de backup font une sauvegarde de la base de données avec

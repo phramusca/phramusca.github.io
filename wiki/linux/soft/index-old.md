@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Programmes
 
 ## Ma Sélection

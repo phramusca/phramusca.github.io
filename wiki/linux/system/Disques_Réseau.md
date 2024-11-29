@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Disques Réseau
 
 Je ne parle ici que de réseau Windows, n'ayant pas eu l'occasion de

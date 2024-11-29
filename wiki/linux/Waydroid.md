@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Waydroid
 
 [Waydroid](https://waydro.id/) permet de lancer des applications Android

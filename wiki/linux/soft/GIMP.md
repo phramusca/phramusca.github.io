@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # GIMP
 
 GIMP est un équivalent Open Source de Photoshop.

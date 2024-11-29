@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # VNC
 
 TODO: Mettre à jour (TigerVNC, gvncviewer, Remmina, authentification - certificats, ...)

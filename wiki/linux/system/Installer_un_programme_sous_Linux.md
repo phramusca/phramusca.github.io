@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Installer un programme sous Linux
 
 ## Magasins d'applications

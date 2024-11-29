@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # BOINC
 TODO: Supprimer les liens de niveau 1 (tous les fichiers .md dans ce dossier), car contenu intégré dans soft.md
 

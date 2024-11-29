@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Convertir MOV en Flash FLV
 
 Faire une page sur la convertion de vidéos. Ajouter <http://doc.ubuntu-fr.org/winff> WinFF dans la liste des programmes.

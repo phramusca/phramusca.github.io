@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Apt-url
 
 Le protocole APT, ou apturl, est une façon extrêmement facile d'installer un paquet logiciel. Sur les ordinateurs dans lesquels apturl est installé et configuré, le clic dans une page

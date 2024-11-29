@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Ubuntu
 
 Ubuntu (à prononcer « Ou-boun-tou ») est une distribution de [Linux](../) populaire ... jusqu'à l'adoption du bureau [Unity](http://doc.ubuntu-fr.org/unity) très déroutant et qui a conduit de nombreux utilisateurs (comme moi) à se tourner vers [Linux Mint](Mint).

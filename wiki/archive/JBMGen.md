@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # JBMGen
 
 Pour mettre à jour la librairie ARC sur un jukebox Archos (marche avec le Gmini220)

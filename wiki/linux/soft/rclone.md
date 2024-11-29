@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # rclone
 
 [rclone](https://rclone.org/) sert à manipuler les fichiers sur des stockages cloud.

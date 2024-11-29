@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # RipperX
 
 RipperX permet de convertir les CDs en fichiers MP3.

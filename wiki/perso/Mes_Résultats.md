@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Mes Résultats
 
 ## Geek Benchmark

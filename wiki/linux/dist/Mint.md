@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Linux Mint
 
 Mint est souvent préféré à [Ubuntu](Ubuntu) pour sa simplicité et son accessibilité, surtout pour les débutants. Voici quelques points clés :

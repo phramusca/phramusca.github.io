@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # MediaWiki
 
 [MediaWiki](http://www.mediawiki.org/wiki/MediaWiki/fr) est un des

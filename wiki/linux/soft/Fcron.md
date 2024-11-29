@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Fcron
 
 Fcron permet de contôler les tâches planifiées. Il est mieux que cron et

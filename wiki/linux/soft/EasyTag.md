@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # EasyTag
 
 TODO: Revoir

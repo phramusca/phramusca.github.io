@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Grip
 
 GRIP : option encodeur lame, mais apparement ne marche pas :(

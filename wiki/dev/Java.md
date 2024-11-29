@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Java
 
 J'utilise pour ma part NetBeans comme IDE (un autre équivalent est le

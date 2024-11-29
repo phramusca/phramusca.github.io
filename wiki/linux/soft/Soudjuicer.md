@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Soundjuicer
 
 Soundjuicer permet de convertir les CDs en fichiers MP3.

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Convmv
 
 Cet outil permet de convertir les noms de fichier d'un systeme

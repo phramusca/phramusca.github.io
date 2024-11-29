@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Google Earth
 
 Google Earth est un programme grand public pour visualiser des images

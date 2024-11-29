@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Amarok
 
 Logiciel de musique complet et très agréable à utiliser.

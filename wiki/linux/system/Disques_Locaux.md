@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Disques Locaux
 
 Use `Disks` and/or `gparted` to see errors and check, to partition and manage drives.

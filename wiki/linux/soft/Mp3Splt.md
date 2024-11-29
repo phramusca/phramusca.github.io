@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Mp3splt
 
 Permet de découper des fichiers MP3.

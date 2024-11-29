@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # SourceForge
 
 <https://sourceforge.net/> est un site internet qui permet l'hébergement de programmes Open Source.

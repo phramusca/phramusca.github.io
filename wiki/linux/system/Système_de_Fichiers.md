@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Système de fichiers
 
 Plus d'infos sur les systèmes de fichiers:

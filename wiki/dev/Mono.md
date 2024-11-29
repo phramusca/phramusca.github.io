@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Mono
 
 TODO: Revoir et/ou archiver

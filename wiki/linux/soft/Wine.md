@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Wine
 
 TODO: Revoir et/ou archiver

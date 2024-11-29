@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Amarok2 et MySQL
 
 **Apparemment, dans la version 2.2 et + [Amarok](Amarok) gère

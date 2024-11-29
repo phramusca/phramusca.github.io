@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # rsync
 
 [rsync](https://doc.ubuntu-fr.org/rsync) (pour remote synchronization ou synchronisation à distance) est un logiciel de synchronisation de fichiers.

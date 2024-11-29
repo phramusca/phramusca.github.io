@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # LAMP
 
 LAMP (Linux, Apache, Mysql, Php/Perl)

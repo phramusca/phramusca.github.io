@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # aMule
 
 Pour activer les liens ed2k dans Firefox 3.5 pour aMule 2.2.6 sous
