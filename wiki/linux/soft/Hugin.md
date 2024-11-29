@@ -9,11 +9,11 @@ TODO: Ajouter une mention mise à jour sur toutes les pages mises à jour
 
 [Hugin](https://hugin.sourceforge.io/) permet de réaliser de panoramiques en assemblant des photos.
 
-Tuto: [Créer un panoramique avec Hugin](../tuto/Créer%20un%20panoramique%20avec%20Hugin.md)
+Tuto: [Créer un panoramique avec Hugin](../tuto/Créer%20un%20panoramique%20avec%20Hugin)
 
 ## Installation
 
-La dernière version `2023.0.0` est disponible en FlatPack dans le magasin de [Linux Mint](../dist/Mint.md).
+La dernière version `2023.0.0` est disponible en FlatPack dans le magasin de [Linux Mint](../dist/Mint).
 
 ## Post Processing
 

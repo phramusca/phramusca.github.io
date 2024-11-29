@@ -27,11 +27,11 @@ Chaque distribution a ses spécificités (outils, apparence, gestionnaire de paq
 
 ## Distributions basées sur Debian (Linux Mint, Ubuntu,...)
 
-Pour les utilisateurs recherchant une distribution Linux, je recommande celles basées sur Debian, en particulier [Linux Mint](dist/Mint.md).
+Pour les utilisateurs recherchant une distribution Linux, je recommande celles basées sur Debian, en particulier [Linux Mint](dist/Mint).
 
-Adaptée tant aux débutants qu'aux utilisateurs expérimentés, cette distribution est celle que j'utilise depuis 2017. Avant cela, j'ai découvert [Ubuntu](dist/Ubuntu.md) en 2005, qui m'a conduit à abandonner définitivement [Windows](../windows/).
+Adaptée tant aux débutants qu'aux utilisateurs expérimentés, cette distribution est celle que j'utilise depuis 2017. Avant cela, j'ai découvert [Ubuntu](dist/Ubuntu) en 2005, qui m'a conduit à abandonner définitivement [Windows](../windows/).
 
-[Linux Mint](dist/Mint.md) est construit sur [Ubuntu](dist/Ubuntu.md), elle-même fondée sur Debian, ce qui garantit une stabilité et des performances appréciables. Pour une expérience utilisateur fluide et une grande communauté de soutien, [Linux Mint](dist/Mint.md) constitue un excellent choix pour ceux qui souhaitent explorer le monde de Linux.
+[Linux Mint](dist/Mint) est construit sur [Ubuntu](dist/Ubuntu), elle-même fondée sur Debian, ce qui garantit une stabilité et des performances appréciables. Pour une expérience utilisateur fluide et une grande communauté de soutien, [Linux Mint](dist/Mint) constitue un excellent choix pour ceux qui souhaitent explorer le monde de Linux.
 
 - [Programmes](soft/)
 - [Système](system/)

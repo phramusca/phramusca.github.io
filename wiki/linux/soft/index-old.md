@@ -64,9 +64,9 @@ TODO: Revoir cette section
 
 |                                   |                                               |                                                                    |                                             |
 | --------------------------------- | --------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------- |
-| Nom                               | Ubuntu-fr                                     | Description                                                        | Installation [apturl](../system/Apt-url.md) |
-| [Mono](../../dev/Mono.md)         |                                               | Implémentation libre de .NET avec comme éditeur MonoDevelop        | N/A                                         |
-| [NetBeans](../../dev/NetBeans.md) | [netbeans](http://doc.ubuntu-fr.org/netbeans) | IDE de Sun axé Java mais aussi Python, C, C++, Ruby, XML, PHP, ... | N/A                                         |
+| Nom                               | Ubuntu-fr                                     | Description                                                        | Installation [apturl](../system/Apt-url) |
+| [Mono](../../dev/Mono)         |                                               | Implémentation libre de .NET avec comme éditeur MonoDevelop        | N/A                                         |
+| [NetBeans](../../dev/NetBeans) | [netbeans](http://doc.ubuntu-fr.org/netbeans) | IDE de Sun axé Java mais aussi Python, C, C++, Ruby, XML, PHP, ... | N/A                                         |
 | Gambas                            | [Gambas](http://doc.ubuntu-fr.org/Gambas)     | le presque Visual Basic libre                                      | [gambas3](apt://gambas3)                    |
 
 Plus d'informations, voir la page [Développement](../../dev/).
@@ -114,7 +114,7 @@ TODO: /!\ Comment gérer rsync/grsync et autres cas de gui pour outil de ligne d
 
 |                 |                                             |                            |                                             |
 | --------------- | ------------------------------------------- | -------------------------- | ------------------------------------------- |
-| Nom             | ubuntu-fr                                   | Description                | Installation [apturl](../system/Apt-url.md) |
+| Nom             | ubuntu-fr                                   | Description                | Installation [apturl](../system/Apt-url) |
 | Gparted         | [gparted](http://doc.ubuntu-fr.org/gparted) | Partitionnement de disque. | [gparted](apt://gparted)                    |
 | [grsync](rsync) | Synchronisation de fichiers.                | [grsync](apt://grsync)     |                                             |
 | [VirtualBox](http://doc.ubuntu-fr.org/virtualbox)   | Solution de virtualisation de systèmes d'exploitation. [Images toutes prêtes](http://virtualboxes.org/images/) | Voir [VirtualBox](http://doc.ubuntu-fr.org/virtualbox)   |
@@ -136,7 +136,7 @@ TODO !!!!!!!!!!!!!!!!!!!!!! Ce qui suit est à archiver ou a revoir
 
 |                                                                                   |                                                                                          |                                                                      |
 | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| Nom                                                                               | Description                                                                              | Installation [apturl](../system/Apt-url.md)                          |
+| Nom                                                                               | Description                                                                              | Installation [apturl](../system/Apt-url)                          |
 | [Compiz Fusion](http://doc.ubuntu-fr.org/compiz_fusion) (simple)                  | Configuration des effets de bureau. Recommandé.                                          | [simple-ccsm](apt://simple-ccsm)                                     |
 | [Compiz Fusion](http://doc.ubuntu-fr.org/compiz_fusion) (avancé)                  | Configuration avancée des effets de bureau.                                              | [compizconfig-settings-manager](apt://compizconfig-settings-manager) |
 | [nautilus-actions](http://doc.ubuntu-fr.org/nautilus-actions)                     | Configuration des actions de Nautilus (gestionnaire fichiers)                            | [nautilus-actions](apt://nautilus-actions)                           |
@@ -153,7 +153,7 @@ TODO !!!!!!!!!!!!!!!!!!!!!! Ce qui suit est à archiver ou a revoir
 
 |                                                     |                                                                                                                |                                                          |
 | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| Nom                                                 | Description                                                                                                    | Installation [apturl](../system/Apt-url.md)              |
+| Nom                                                 | Description                                                                                                    | Installation [apturl](../system/Apt-url)              |
 | [ForemostGUI](http://doc.ubuntu-fr.org/foremostgui) | IHM pour foremost, logiciel de récupération de données                                                         | Voir [ForemostGUI](http://doc.ubuntu-fr.org/foremostgui) |
 
 
@@ -161,7 +161,7 @@ Les suivants sont à répartir dans les menus appropriés :
 
 |                                                             |                                                            |                                                    |
 | ----------------------------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------- |
-| Nom                                                         | Description                                                | Installation [apturl](../system/Apt-url.md)        |
+| Nom                                                         | Description                                                | Installation [apturl](../system/Apt-url)        |
 | [Google Earth](Google_Earth)                                | La Terre vue du ciel                                       | N/A                                                |
 | [Sunclock](http://www.arvernes.com/wiki/index.php/Sunclock) | Carte avec zones ensoleillées                              | N/A                                                |
 | [Wine](Wine)                                                | Windows Emulation                                          |                                                    |
@@ -216,7 +216,7 @@ même bien pratiques:
 
 |                                                        |                                         |                                                                                                     |                                             |
 | ------------------------------------------------------ | --------------------------------------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------- |
-| Nom                                                    | Ubuntu-fr                               | Description                                                                                         | Installation [apturl](../system/Apt-url.md) |
+| Nom                                                    | Ubuntu-fr                               | Description                                                                                         | Installation [apturl](../system/Apt-url) |
 | [convmv](Convmv)                                       |                                         | Conversion de caractères (noms de fichiers)                                                         | [convmv](apt://convmv)                      |
 | [Disques_Réseau#mount.cifs](Disques_Réseau#mount.cifs) |                                         | Pour monter des dossiers partagés Windows ou Samba                                                  | [smbfs](apt://smbfs)                        |
 | [fcron](Fcron)                                         | [fcron](http://doc.ubuntu-fr.org/fcron) | FCron permet de pallier les défauts de Cron et d'Anacron.                                           | [fcron](apt://fcron)                        |

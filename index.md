@@ -25,7 +25,7 @@ Il s'agit plutôt d'un bloc-notes de mon expérience (professionnelle et personn
 - [Android](wiki/android/)
 - [Raspberry](wiki/raspberry/)
 - [Développement](wiki/dev/)
-  - [Java](wiki/dev/Java.md)
+  - [Java](wiki/dev/Java)
 
 ------------------------------------------------------------------------
 

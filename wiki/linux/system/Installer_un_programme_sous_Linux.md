@@ -6,7 +6,7 @@ layout: default
 
 ## Magasins d'applications
 
-[Linux Mint](../dist/Mint.md) comme [Ubuntu](../dist/Ubuntu.md) et d'autres distributions [Linux](../) ont une logithèque, facilement disponible depuis le menu principal.
+[Linux Mint](../dist/Mint) comme [Ubuntu](../dist/Ubuntu) et d'autres distributions [Linux](../) ont une logithèque, facilement disponible depuis le menu principal.
 
 Ceci est la méthode à privilégier dans tous les cas, pour plus de facilité, de sécurité et de compatibilité.
 
@@ -14,7 +14,7 @@ Ceci est la méthode à privilégier dans tous les cas, pour plus de facilité, 
 
 ### Distributions basées sur Debian (Linux Mint, Ubuntu,...)
 
-Les [distributions Linux basées sur Debian](../#distributions-basées-sur-debian-linux-mint-ubuntu), comme [Linux Mint](../dist/Mint.md) ou [Ubuntu](../dist/Ubuntu.md), ainsi que Debian bien sûr, utilisent le format de paquet `deb`, donc les [programmes](../soft/) fonctionnent sur les deux.
+Les [distributions Linux basées sur Debian](../#distributions-basées-sur-debian-linux-mint-ubuntu), comme [Linux Mint](../dist/Mint) ou [Ubuntu](../dist/Ubuntu), ainsi que Debian bien sûr, utilisent le format de paquet `deb`, donc les [programmes](../soft/) fonctionnent sur les deux.
 
 #### Installer un paquet .deb
 

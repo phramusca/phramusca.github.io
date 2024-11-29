@@ -31,7 +31,7 @@ d'elle (simple à utiliser) est
 [system-config-samba](http://doc.ubuntu-fr.org/system-config-samba)
 
 **Attention:** Il est surement nécessaire de configurer le
-[Firewall](Programmes.md#administration)
+[Firewall](Programmes#administration)
 pour que les dossiers soient visibles sur le réseau!
 
 ## Ouvrir un dossier réseau
@@ -66,7 +66,7 @@ mount.cifs //192.168.0.2/Musiquexxxx /media/Musiquexxxx -o user=toto,password=tu
 
 **Attention**: Pour pouvoir utiliser cette commande par un utilisateur
 non-root, il est nécessaire de lui donner les droits avec
-[visudo](Système.md#sudo)
+[visudo](Système#sudo)
 
 ### fstab
 

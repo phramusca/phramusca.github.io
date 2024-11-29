@@ -6,4 +6,4 @@ layout: default
 
 TODO: Lister les paramètres et astuces pour faire un panoramique cylindrique ou sphérique avec Hugin
 
-- Besoin de [Hugin](../soft/Hugin.md)
+- Besoin de [Hugin](../soft/Hugin)

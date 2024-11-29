@@ -3,7 +3,7 @@ layout: default
 ---
 
 # BOINC
-TODO: Supprimer les liens de niveau 1 (tous les fichiers .md dans ce dossier), car contenu intégré dans soft.md
+TODO: Supprimer les liens de niveau 1 (tous les fichiers  dans ce dossier), car contenu intégré dans soft
 
 
 BOINC est un gestionnaire de projets de calcul partagé. En gros, ce programme permet de participer à des programmes de recherche, en donnant du temps de calcul de son ordinateur (lorsque celui-ci est inactif seulement). Le premier programme grand public a été SEITI@Home, un programme de recherche de signaux extraterrestres. Depuis, de nombreux autres projets ont vu le jour, en climatologie, medecine, ...

@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-TODO: Rajouter layout partout pour que les liens fonctionnent en local sans .md
+TODO: Rajouter layout partout pour que les liens fonctionnent en local sans 
 
 
 # Ventoy
