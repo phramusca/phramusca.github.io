@@ -34,7 +34,7 @@ Il s'agit plutôt d'un bloc-notes de mon expérience (professionnelle et personn
 /!\ EN TEST /!\
 
 {% for post in site.posts %}
-- [{{ post.title }}]({{ post.url }}) <sub><sup>{{ post.date | fr_date }}</sup></sub>
+- [{{ post.title }}]({{ post.url }}) <sub><sup>{{ post.date | date: "%d/%m/%Y" }}</sup></sub>
   - <small>*{{ post.excerpt }}* </small>
 {% endfor %}
 
