@@ -65,7 +65,7 @@ TODO: Revoir cette section
 | [NetBeans](../../dev/NetBeans.md) | [netbeans](http://doc.ubuntu-fr.org/netbeans) | IDE de Sun axé Java mais aussi Python, C, C++, Ruby, XML, PHP, ... | N/A                                         |
 | Gambas                            | [Gambas](http://doc.ubuntu-fr.org/Gambas)     | le presque Visual Basic libre                                      | [gambas3](apt://gambas3)                    |
 
-Plus d'informations, voir la page [Développement](../../dev/README.md).
+Plus d'informations, voir la page [Développement](../../dev/).
 
 #### Son et Vidéo
 
@@ -234,6 +234,4 @@ Pimp your terminal:
 TODO: Inclure les applis par défaut dans Mint 21.3 et 22
 
 
-------------------------------------------------------------------------
 
-Retour à l'[Accueil](README)

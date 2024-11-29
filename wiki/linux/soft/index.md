@@ -6,13 +6,13 @@ title: Programmes
 # {{ page.title }}
 {:.no_toc}
 
-Il existe des centaines (voire des milliers) d'applications disponible sous [Linux](../README.md). Il n'est pas facile de s'y retrouver, mais voici déjà un point de départ.
+Il existe des centaines (voire des milliers) d'applications disponible sous [Linux](../). Il n'est pas facile de s'y retrouver, mais voici déjà un point de départ.
 
 ## Sur le Web
 {:.no_toc}
 
 Il existe énormément de sites qui listent ou proposent des logiciels
-pour [Linux](../README.md). En voici une petite sélection:
+pour [Linux](../). En voici une petite sélection:
 
 - [Logiciels pour Ubuntu](http://doc.ubuntu-fr.org/logiciels) sur Ubuntu-fr - Pour [Linux Mint](../dist/Mint.md), choisir les versions [Ubuntu](../dist/Ubuntu.md) (Gonme) qui sont compatibles et mieux integrées que les logiciels pour Kubuntu (KDE).
 - [Alternativeto.net](http://alternativeto.net/) (Anglais) - Trouver des équivalences de programmes. Très utile et pratique !

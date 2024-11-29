@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Windows
 
 ![50px-Windows_xp_logo](../data/50px-Windows_xp_logo.jpg)

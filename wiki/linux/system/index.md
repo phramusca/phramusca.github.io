@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Système
 
 TODO : Faire de cette page le README for Système !!

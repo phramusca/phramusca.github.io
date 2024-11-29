@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Programmes
 
 TODO: User `archive: yes` from list.yaml
@@ -194,6 +198,4 @@ Voici quelques tableaux de bord:
 | Nom                                                                 | Description                                                                                                                                                                                                                                                                                                                                                                                                      | [apt-url](Apt-url) (Installation)                |
 | [File Browser Applet](http://doc.ubuntu-fr.org/file-browser-applet) | Il permet de parcourir le contenu de votre ordinateur et d'ouvrir des fichiers sans avoir à utiliser de navigateur de fichiers. Son but n'est pas de remplacer un véritable gestionnaire de fichiers tel que Nautilus ; parfois vous voulez juste ouvrir un document sans avoir à ouvrir un dossier, le parcourir, ouvrir le document et refermer le dossier. Cet applet vous épargne simplement quelques clics. | [file-browser-applet](apt://file-browser-applet) |
 
-------------------------------------------------------------------------
 
-Retour à l'[Accueil](README)

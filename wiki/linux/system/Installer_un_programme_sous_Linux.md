@@ -2,7 +2,7 @@
 
 ## Magasins d'applications
 
-[Linux Mint](../dist/Mint.md) comme [Ubuntu](../dist/Ubuntu.md) et d'autres distributions [Linux](../README.md) ont une logithèque, facilement disponible depuis le menu principal.
+[Linux Mint](../dist/Mint.md) comme [Ubuntu](../dist/Ubuntu.md) et d'autres distributions [Linux](../) ont une logithèque, facilement disponible depuis le menu principal.
 
 Ceci est la méthode à privilégier dans tous les cas, pour plus de facilité, de sécurité et de compatibilité.
 
@@ -10,7 +10,7 @@ Ceci est la méthode à privilégier dans tous les cas, pour plus de facilité, 
 
 ### Distributions basées sur Debian (Linux Mint, Ubuntu,...)
 
-Les [distributions Linux basées sur Debian](../README.md#distributions-basées-sur-debian-linux-mint-ubuntu), comme [Linux Mint](../dist/Mint.md) ou [Ubuntu](../dist/Ubuntu.md), ainsi que Debian bien sûr, utilisent le format de paquet `deb`, donc les [programmes](../soft/README.md) fonctionnent sur les deux.
+Les [distributions Linux basées sur Debian](../#distributions-basées-sur-debian-linux-mint-ubuntu), comme [Linux Mint](../dist/Mint.md) ou [Ubuntu](../dist/Ubuntu.md), ainsi que Debian bien sûr, utilisent le format de paquet `deb`, donc les [programmes](../soft/) fonctionnent sur les deux.
 
 #### Installer un paquet .deb
 
@@ -21,7 +21,7 @@ Si le paquet n'est pas disponible dans les logithèques, il est parfois disponib
 
 ##### Paquet
 
-Les paquets ont étés conçus pour permettre d'éviter la compilation des sources ainsi que pour la gestion des dépendances entre les différents [programmes](../soft/README.md) (beaucoup de [programmes](../soft/README.md) sous [Linux](../README.md) sont dépendants les uns des autres).
+Les paquets ont étés conçus pour permettre d'éviter la compilation des sources ainsi que pour la gestion des dépendances entre les différents [programmes](../soft/) (beaucoup de [programmes](../soft/) sous [Linux](../) sont dépendants les uns des autres).
 
 Ils peuvent être gérés avec le gestionnaire graphique [Synaptic](apt://synaptic) ou en ligne de commande avec [apt](https://fr.wikipedia.org/wiki/Advanced_Packaging_Tool).
 
@@ -29,7 +29,7 @@ Pour plus d'info, voir [wikipedia](http://fr.wikipedia.org/wiki/Paquet_%28logici
 
 ##### Dépôt
 
-Un dépôt (ou repository en anglais) est un serveur qui contient les paquets nécessaires pour installer des [programmes](../soft/README.md) sous [Linux](../README.md).
+Un dépôt (ou repository en anglais) est un serveur qui contient les paquets nécessaires pour installer des [programmes](../soft/) sous [Linux](../).
 
 Pour plus d'info, voir [doc.ubuntu-fr.org](<http://doc.ubuntu-fr.org/applications/apt/depots>)
 
@@ -39,7 +39,7 @@ Référez vous aux internets, je ne connais que deb pour les distributions de ty
 
 ## En compilant les sources
 
-Ceci est la manière originelle d'installer un programme sous [Linux](../README.md), mais est à réserver aux utilisateurs avertis
+Ceci est la manière originelle d'installer un programme sous [Linux](../), mais est à réserver aux utilisateurs avertis
 !!! Dans tous les cas, mieux vaut privilégier l'utilisation de paquets !
 
 Dans la plupart des cas, cela se révèle relativement simple, mais au moindre petit problème, cela peux vite devenir galère.

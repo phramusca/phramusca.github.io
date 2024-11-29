@@ -8,7 +8,7 @@ layout: default
 
 [GNU/Linux](https://fr.wikipedia.org/wiki/Linux) est un système d'exploitation libre (open source) fondé sur le [noyau Linux](https://fr.wikipedia.org/wiki/Noyau_Linux) (kernel).
 
-Contrairement à [Windows](../windows/README.md), Linux existe en de multiples variantes, appellées [distribution Linux](https://fr.wikipedia.org/wiki/Distribution_Linux).
+Contrairement à [Windows](../windows/), Linux existe en de multiples variantes, appellées [distribution Linux](https://fr.wikipedia.org/wiki/Distribution_Linux).
 
 Par [métonymie](https://fr.wikipedia.org/wiki/M%C3%A9tonymie), **l'usage du terme `Linux` s'est répandu pour décrire tant le noyau Linux que le système d'exploitation au sens large**
 
@@ -29,12 +29,12 @@ Chaque distribution a ses spécificités (outils, apparence, gestionnaire de paq
 
 Pour les utilisateurs recherchant une distribution Linux, je recommande celles basées sur Debian, en particulier [Linux Mint](dist/Mint.md).
 
-Adaptée tant aux débutants qu'aux utilisateurs expérimentés, cette distribution est celle que j'utilise depuis 2017. Avant cela, j'ai découvert [Ubuntu](dist/Ubuntu.md) en 2005, qui m'a conduit à abandonner définitivement [Windows](../windows/README.md).
+Adaptée tant aux débutants qu'aux utilisateurs expérimentés, cette distribution est celle que j'utilise depuis 2017. Avant cela, j'ai découvert [Ubuntu](dist/Ubuntu.md) en 2005, qui m'a conduit à abandonner définitivement [Windows](../windows/).
 
 [Linux Mint](dist/Mint.md) est construit sur [Ubuntu](dist/Ubuntu.md), elle-même fondée sur Debian, ce qui garantit une stabilité et des performances appréciables. Pour une expérience utilisateur fluide et une grande communauté de soutien, [Linux Mint](dist/Mint.md) constitue un excellent choix pour ceux qui souhaitent explorer le monde de Linux.
 
-- [Programmes](soft/README.md)
-- [Système](system/README.md)
+- [Programmes](soft/)
+- [Système](system/)
 
 ### Interfaces graphiques
 
@@ -55,7 +55,7 @@ Si tu es tenté, tu peux dès maintenant et facilement tester et/ou installer [L
 
 Il est aussi possible d'[acheter un PC pré-installé](http://linuxpreinstalle.com/) avec Linux.
 
-[LDLC.com](https://www.ldlc.com/) propose aussi des PCs fixe et portables sans OS, pour éviter de payer [Windows](../windows/README.md) pour rien.
+[LDLC.com](https://www.ldlc.com/) propose aussi des PCs fixe et portables sans OS, pour éviter de payer [Windows](../windows/) pour rien.
 
 ## Le Monde du Libre
 

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Android
 
 ![50px-Android](data/50px-Android.jpg)

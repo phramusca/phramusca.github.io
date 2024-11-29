@@ -66,6 +66,4 @@ Pour le mettre en place, rien de plus simple:
 
 `<pre class="brush:php"> Ton code PHP ici </pre>`
 
-------------------------------------------------------------------------
 
-Retour à l'[Accueil](README)

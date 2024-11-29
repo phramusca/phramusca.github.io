@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Développement
 
 Cette page traite du développement de logiciels et d'applications ou sites Internet.
