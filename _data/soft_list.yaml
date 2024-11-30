@@ -178,8 +178,8 @@ categories:
         apt: xsane
         url_internal: null
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/xsane
-        url_website: https://www.xsane.org/
-        url_repository: https://gitlab.gnome.org/GNOME/xsane
+        url_website: http://www.sane-project.org/
+        url_repository: https://gitlab.com/sane-project/frontend/xsane
         description: Scan de documents. Plus complet mais plus complexe que simple-scan
   - nom: Internet
     logiciels:

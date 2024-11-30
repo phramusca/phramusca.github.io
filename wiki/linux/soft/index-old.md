@@ -23,8 +23,6 @@ TODO: archiver: "livret-2.deb": https://www.biotechno.fr/BookletImposer.html) VS
 
 #### Graphisme
 
-TODO: Ajouter: XSane (=> Integrer page locale sur imprimante lexmark)
-
 #### Internet
 
 TODO Rajouter ?
