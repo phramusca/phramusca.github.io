@@ -2,8 +2,8 @@
 layout: default
 ---
 
+<!-- https://github.com/christian-fei/Simple-Jekyll-Search -->
 <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   SimpleJekyllSearch({
@@ -12,17 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
     json: "{{ '/search.json' | relative_url }}",
     searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
     noResultsText: 'Aucun résultat trouvé',
-    limit: 10,
+    limit: 10
   });
 });
 </script>
 
 # Welcome
-
-<input type="text" id="search-input" placeholder="Rechercher...">
-<div id="results"></div>
-
-------------------------------------------------------------------------
 
 ## Projects
 
@@ -40,6 +35,11 @@ Il s'agit plutôt d'un bloc-notes de mon expérience (professionnelle et personn
 
 /!\ EN RECONSTRUCTION /!\
 
+<input type="text" id="search-input" placeholder="Rechercher...">
+<div id="results"></div>
+
+------------------------------------------------------------------------
+
 - [Linux](wiki/linux)
 - [Windows](wiki/windows)
 - [Android](wiki/android)
@@ -49,7 +49,7 @@ Il s'agit plutôt d'un bloc-notes de mon expérience (professionnelle et personn
 
 ------------------------------------------------------------------------
 
-## Blog
+## Blog en français
 
 /!\ EN TEST /!\
 
