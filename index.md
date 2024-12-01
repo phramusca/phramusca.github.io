@@ -2,6 +2,21 @@
 layout: default
 ---
 
+<script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results'),
+    json: "{{ '/search.json' | relative_url }}",
+    searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+    noResultsText: 'Aucun résultat trouvé',
+    limit: 10,
+  });
+});
+</script>
+
 # Welcome
 
 ## Projects
@@ -32,6 +47,9 @@ Il s'agit plutôt d'un bloc-notes de mon expérience (professionnelle et personn
 ## Blog
 
 /!\ EN TEST /!\
+
+<input type="text" id="search-input" placeholder="Rechercher...">
+<div id="results"></div>
 
 {% for post in site.posts %}
 - [{{ post.title }}]({{ post.url }}) <sub><sup>{{ post.date | date: "%d/%m/%Y" }}</sup></sub>

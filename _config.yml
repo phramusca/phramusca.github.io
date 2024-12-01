@@ -7,5 +7,3 @@ plugins:
 - jekyll-remote-theme
 github:
   repository_url: https://github.com/phramusca
-lang: fr
-locale: fr_FR
