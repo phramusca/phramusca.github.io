@@ -3,8 +3,89 @@ description: >
   This is my homepage.
 show_downloads: false
 remote_theme: pages-themes/hacker@v0.2.0
+# Plugins supportés par GitHub Pages
 plugins:
-- jekyll-remote-theme
+ # Convertit les fichiers Sass/SCSS en CSS
+  - jekyll-sass-converter
+  # Convertit le Markdown en HTML
+  - kramdown
+  # Permet d'utiliser GitHub Flavored Markdown (GFM) avec Kramdown
+  - kramdown-parser-gfm
+  # Permet d'utiliser CommonMark pour la conversion Markdown
+  - jekyll-commonmark-ghpages
+  # Fournit des fonctionnalités de templating pour Liquid
+  - liquid
+  # Fournit la coloration syntaxique pour les fichiers de code
+  - rouge
+  # Vérifie l'état de santé de la configuration de GitHub Pages
+  - github-pages-health-check
+  # Gère les redirections d'URL (utile pour les anciennes pages)
+  - jekyll-redirect-from
+  # Gère la génération du flux RSS
+  - jekyll-feed
+  # Gère la génération du sitemap XML pour SEO
+  - jekyll-sitemap
+  # Permet d'inclure des Gists GitHub (blocs de code)
+  - jekyll-gist
+  # Gère la pagination des articles
+  - jekyll-paginate
+  # Permet d'utiliser CoffeeScript
+  - jekyll-coffeescript
+  # Ajoute des balises SEO dans les pages HTML
+  - jekyll-seo-tag
+  # Intègre les métadonnées GitHub (par exemple la description du dépôt)
+  - jekyll-github-metadata
+  # Permet d'afficher des avatars via Gravatar
+  - jekyll-avatar
+  # Permet d'utiliser un thème distant pour la personnalisation
+  - jekyll-remote-theme
+  # Permet de mettre en cache les inclusions dans le site
+  - jekyll-include-cache
+  # Gère l'intégration des emojis dans le site
+  - jemoji
+  # Gère les mentions dans le contenu (ex : @username)
+  - jekyll-mentions
+  # Convertit les liens relatifs en liens absolus dans le contenu
+  - jekyll-relative-links
+  # Permet de spécifier des métadonnées optionnelles pour les pages
+  - jekyll-optional-front-matter
+  # Crée un index à partir du README.md
+  - jekyll-readme-index
+  # Permet de spécifier un modèle de mise en page par défaut
+  - jekyll-default-layout
+  # Génère des titres de page à partir des en-têtes dans le contenu
+  - jekyll-titles-from-headings
+  # Ajoute un thème par défaut pour le site (si vous ne spécifiez pas de thème)
+  - minima
+  # Permet d'utiliser un thème "Swiss" pour une mise en page minimaliste
+  - jekyll-swiss
+  # Thèmes additionnels pour personnaliser le style
+  - jekyll-theme-primer
+  - jekyll-theme-architect
+  - jekyll-theme-cayman
+  - jekyll-theme-dinky
+  - jekyll-theme-hacker
+  - jekyll-theme-leap-day
+  - jekyll-theme-merlot
+  - jekyll-theme-midnight
+  - jekyll-theme-minimal
+  - jekyll-theme-modernist
+  - jekyll-theme-slate
+  - jekyll-theme-tactile
+  - jekyll-theme-time-machine
+  # Plugin qui définit la version de Ruby utilisée par GitHub Pages
+  - ruby
+  # Plugin qui regroupe plusieurs autres plugins pour GitHub Pages
+  - github-pages
+  # Plugin qui permet de gérer les pipelines HTML (pour le traitement de contenu HTML)
+  - html-pipeline
+  # Plugin permettant la gestion des feuilles de style SASS pour la mise en page
+  - sass
+  # Plugin qui assure la validation sécurisée des fichiers YAML
+  - safe_yaml
+  # Plugin utilisé pour le traitement de fichiers XML et HTML (parsing)
+  - nokogiri
+
 github:
   repository_url: https://github.com/phramusca
 collections:
