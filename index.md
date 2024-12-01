@@ -29,9 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
 - [Cook And Freeze](https://github.com/phramusca/CookAndFreeze) - With CookAndFreeze for Android, easily manage recipients (content and frozen date) stored in your freezer (or elsewhere).
 - [Rom Manager](https://github.com/phramusca/RomManager)
 
-## Wiki en français
-
-Il s'agit plutôt d'un bloc-notes de mon expérience (professionnelle et personnelle) dans ce domaine.
+## Le Carré Français
 
 /!\ EN RECONSTRUCTION /!\
 
@@ -48,10 +46,6 @@ Il s'agit plutôt d'un bloc-notes de mon expérience (professionnelle et personn
   - [Java](wiki/dev/Java)
 
 ------------------------------------------------------------------------
-
-## Blog en français
-
-/!\ EN TEST /!\
 
 {% for post in site.posts %}
 - [{{ post.title }}]({{ post.url }}) <sub><sup>{{ post.date | date: "%d/%m/%Y" }}</sup></sub>

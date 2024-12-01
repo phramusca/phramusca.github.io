@@ -1,6 +1,6 @@
 ---
 layout: default
-excerpt: "Découvrez comment faire un site Jekyll avec Github Pages"
+excerpt: "Un texte généré qui n'a ni queue ni tête."
 ---
 
 # Wouahouuh
