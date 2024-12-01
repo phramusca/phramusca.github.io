@@ -19,6 +19,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 # Welcome
 
+<input type="text" id="search-input" placeholder="Rechercher...">
+<div id="results"></div>
+
+------------------------------------------------------------------------
+
 ## Projects
 
 - [JaMuz](JaMuz) - Keep your music in check and enjoy it too!
@@ -47,9 +52,6 @@ Il s'agit plutôt d'un bloc-notes de mon expérience (professionnelle et personn
 ## Blog
 
 /!\ EN TEST /!\
-
-<input type="text" id="search-input" placeholder="Rechercher...">
-<div id="results"></div>
 
 {% for post in site.posts %}
 - [{{ post.title }}]({{ post.url }}) <sub><sup>{{ post.date | date: "%d/%m/%Y" }}</sup></sub>
