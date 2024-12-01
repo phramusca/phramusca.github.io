@@ -40,11 +40,11 @@ Il s'agit plutôt d'un bloc-notes de mon expérience (professionnelle et personn
 
 /!\ EN RECONSTRUCTION /!\
 
-- [Linux](wiki/linux/)
-- [Windows](wiki/windows/)
-- [Android](wiki/android/)
-- [Raspberry](wiki/raspberry/)
-- [Développement](wiki/dev/)
+- [Linux](wiki/linux)
+- [Windows](wiki/windows)
+- [Android](wiki/android)
+- [Raspberry](wiki/raspberry)
+- [Développement](wiki/dev)
   - [Java](wiki/dev/Java)
 
 ------------------------------------------------------------------------

@@ -2,7 +2,7 @@
 layout: null
 ---
 [
-    {% assign wiki_pages = site.pages | where_exp: "page", "page.path contains 'wiki/'" %}
+    {% assign wiki_pages = site.wiki | where_exp: "page", "page.path contains 'wiki/'" %}
     {% for post in site.posts %}
       {
         "title": "{{ post.title | escape }}",

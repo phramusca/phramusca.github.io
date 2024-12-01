@@ -7,3 +7,8 @@ plugins:
 - jekyll-remote-theme
 github:
   repository_url: https://github.com/phramusca
+collections:
+  wiki:
+    output: true
+    permalink: /wiki/:path/
+permalink: pretty
