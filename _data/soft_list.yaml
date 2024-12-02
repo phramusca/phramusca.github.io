@@ -211,6 +211,20 @@ categories:
         url_website: https://www.wireshark.org/
         url_repository: https://gitlab.com/wireshark/wireshark
         description: Analyseur de paquets réseau.
+      - nom: rclone
+        apt: rclone
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/rclone
+        url_website: https://rclone.org/
+        url_repository: https://github.com/rclone/rclone
+        description: Gestionnaire de synchronisation de fichiers dans les nuages (cloud).
+      - nom: Rclone Browser
+        apt: rclone-browser
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/Rclone#interface_graphique
+        url_website: https://kapitainsky.github.io/RcloneBrowser/
+        url_repository: https://github.com/kapitainsky/RcloneBrowser
+        description: Interface graphique pour rclone (gestionnaire de synchronisation de fichiers dans les nuages (cloud)).
   - nom: Jeux
     logiciels:
   - nom: Programmation
@@ -236,6 +250,28 @@ categories:
         url_website: https://docs.docker.com/desktop/
         url_repository: null
         description: GUI Docker
+      - nom: Mono
+        archive: yes
+        apt: null
+        url_internal: Mono
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/mono
+        url_website: https://www.mono-project.com/
+        url_repository: https://github.com/mono/mono
+        description: Implémentation libre de Microsoft .NET
+      - nom: NetBeans
+        apt: apache-netbeans
+        url_internal: NetBeans
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/netbeans
+        url_website: https://www.netbeans.org/
+        url_repository: https://github.com/apache/netbeans
+        description: IDE de Apache axé Java mais aussi Python, C, C++, Ruby, XML, PHP, ...
+      - nom: Gambas
+        apt: gambas3
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/gambas
+        url_website: https://gambas.sourceforge.net/fr/main.html
+        url_repository: https://sourceforge.net/p/gambas/code/HEAD/tree/
+        description: Le Visual Basic™ libre, mais en mieux 
   - nom: Son et Vidéo
     categories:
       - nom: Audio
@@ -353,7 +389,7 @@ categories:
     logiciels:
     - nom: BOINC
       apt: boinc
-      url_internal: null
+      url_internal: BOINC
       url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/boinc
       url_website: https://boinc.berkeley.edu/
       url_repository: null

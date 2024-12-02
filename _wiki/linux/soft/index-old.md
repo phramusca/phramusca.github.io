@@ -8,8 +8,6 @@ layout: default
 
 ### Applications
 
-#### Accessoires
-
 #### Autre
 
 TODO: Faire le tri entre Wayland (à revoir aussi) et le reste
@@ -18,23 +16,12 @@ TODO: Faire le tri entre Wayland (à revoir aussi) et le reste
 
 TODO: archiver: "livret-2.deb": https://www.biotechno.fr/BookletImposer.html) VS bookletimposer
 
-#### Education
-
-
-#### Graphisme
-
 #### Internet
 
 TODO Rajouter ?
 
 - 4kyoutubetomp3
 - MEGAsync
-
-TODO: Revoir rsync / rclone:
-
-- [rclone](soft/rclone)
-- Manipuler les fichiers sur des stockages cloud.
-- [rclone-browser](apt://rclone-browser)
 
 TODO: Faire section "Remote desktop / VNC" mais tester avant avec Rpi et d'autres
 - [VNC](VNC)
@@ -56,18 +43,7 @@ TODO: Voir les jeux installés si bien, sinon supprimer
 
 #### Programmation
 
-> Rien n'est installé ici par défaut
-
-TODO: Revoir cette section
-
-|                                   |                                               |                                                                    |                                             |
-| --------------------------------- | --------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------- |
-| Nom                               | Ubuntu-fr                                     | Description                                                        | Installation [apturl](../system/Apt-url) |
-| [Mono](../../dev/Mono)         |                                               | Implémentation libre de .NET avec comme éditeur MonoDevelop        | N/A                                         |
-| [NetBeans](../../dev/NetBeans) | [netbeans](http://doc.ubuntu-fr.org/netbeans) | IDE de Sun axé Java mais aussi Python, C, C++, Ruby, XML, PHP, ... | N/A                                         |
-| Gambas                            | [Gambas](http://doc.ubuntu-fr.org/Gambas)     | le presque Visual Basic libre                                      | [gambas3](apt://gambas3)                    |
-
-Plus d'informations, voir la page [Développement](../../dev/).
+TODO: voir la page [Développement](../../dev/).
 
 #### Son et Vidéo
 
@@ -110,12 +86,12 @@ TODO: Ajouter:
 
 TODO: /!\ Comment gérer rsync/grsync et autres cas de gui pour outil de ligne de commande
 
-|                 |                                             |                            |                                             |
-| --------------- | ------------------------------------------- | -------------------------- | ------------------------------------------- |
-| Nom             | ubuntu-fr                                   | Description                | Installation [apturl](../system/Apt-url) |
-| Gparted         | [gparted](http://doc.ubuntu-fr.org/gparted) | Partitionnement de disque. | [gparted](apt://gparted)                    |
-| [grsync](rsync) | Synchronisation de fichiers.                | [grsync](apt://grsync)     |                                             |
-| [VirtualBox](http://doc.ubuntu-fr.org/virtualbox)   | Solution de virtualisation de systèmes d'exploitation. [Images toutes prêtes](http://virtualboxes.org/images/) | Voir [VirtualBox](http://doc.ubuntu-fr.org/virtualbox)   |
+|                                                   |                                                                                                                |                                                        |                                          |
+| ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ | ---------------------------------------- |
+| Nom                                               | ubuntu-fr                                                                                                      | Description                                            | Installation [apturl](../system/Apt-url) |
+| Gparted                                           | [gparted](http://doc.ubuntu-fr.org/gparted)                                                                    | Partitionnement de disque.                             | [gparted](apt://gparted)                 |
+| [grsync](rsync)                                   | Synchronisation de fichiers.                                                                                   | [grsync](apt://grsync)                                 |                                          |
+| [VirtualBox](http://doc.ubuntu-fr.org/virtualbox) | Solution de virtualisation de systèmes d'exploitation. [Images toutes prêtes](http://virtualboxes.org/images/) | Voir [VirtualBox](http://doc.ubuntu-fr.org/virtualbox) |                                          |
 
 
 #### Préférences
@@ -134,7 +110,7 @@ TODO !!!!!!!!!!!!!!!!!!!!!! Ce qui suit est à archiver ou a revoir
 
 |                                                                                   |                                                                                          |                                                                      |
 | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| Nom                                                                               | Description                                                                              | Installation [apturl](../system/Apt-url)                          |
+| Nom                                                                               | Description                                                                              | Installation [apturl](../system/Apt-url)                             |
 | [Compiz Fusion](http://doc.ubuntu-fr.org/compiz_fusion) (simple)                  | Configuration des effets de bureau. Recommandé.                                          | [simple-ccsm](apt://simple-ccsm)                                     |
 | [Compiz Fusion](http://doc.ubuntu-fr.org/compiz_fusion) (avancé)                  | Configuration avancée des effets de bureau.                                              | [compizconfig-settings-manager](apt://compizconfig-settings-manager) |
 | [nautilus-actions](http://doc.ubuntu-fr.org/nautilus-actions)                     | Configuration des actions de Nautilus (gestionnaire fichiers)                            | [nautilus-actions](apt://nautilus-actions)                           |
@@ -149,17 +125,17 @@ TODO !!!!!!!!!!!!!!!!!!!!!! Ce qui suit est à archiver ou a revoir
 
 #### Outils système
 
-|                                                     |                                                                                                                |                                                          |
-| --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| Nom                                                 | Description                                                                                                    | Installation [apturl](../system/Apt-url)              |
-| [ForemostGUI](http://doc.ubuntu-fr.org/foremostgui) | IHM pour foremost, logiciel de récupération de données                                                         | Voir [ForemostGUI](http://doc.ubuntu-fr.org/foremostgui) |
+|                                                     |                                                        |                                                          |
+| --------------------------------------------------- | ------------------------------------------------------ | -------------------------------------------------------- |
+| Nom                                                 | Description                                            | Installation [apturl](../system/Apt-url)                 |
+| [ForemostGUI](http://doc.ubuntu-fr.org/foremostgui) | IHM pour foremost, logiciel de récupération de données | Voir [ForemostGUI](http://doc.ubuntu-fr.org/foremostgui) |
 
 
 Les suivants sont à répartir dans les menus appropriés :
 
 |                                                             |                                                            |                                                    |
 | ----------------------------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------- |
-| Nom                                                         | Description                                                | Installation [apturl](../system/Apt-url)        |
+| Nom                                                         | Description                                                | Installation [apturl](../system/Apt-url)           |
 | [Google Earth](Google_Earth)                                | La Terre vue du ciel                                       | N/A                                                |
 | [Sunclock](http://www.arvernes.com/wiki/index.php/Sunclock) | Carte avec zones ensoleillées                              | N/A                                                |
 | [Wine](Wine)                                                | Windows Emulation                                          |                                                    |
@@ -212,13 +188,13 @@ En fonction de vos besoins (sauvegarde fréquente, déduplication, interface gra
 Les programmes suivants n'ont pas d'interface graphique, mais sont quand
 même bien pratiques:
 
-|                                                        |                                         |                                                                                                     |                                             |
-| ------------------------------------------------------ | --------------------------------------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------- |
+|                                                        |                                         |                                                                                                     |                                          |
+| ------------------------------------------------------ | --------------------------------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------- |
 | Nom                                                    | Ubuntu-fr                               | Description                                                                                         | Installation [apturl](../system/Apt-url) |
-| [convmv](Convmv)                                       |                                         | Conversion de caractères (noms de fichiers)                                                         | [convmv](apt://convmv)                      |
-| [Disques_Réseau#mount.cifs](Disques_Réseau#mount.cifs) |                                         | Pour monter des dossiers partagés Windows ou Samba                                                  | [smbfs](apt://smbfs)                        |
-| [fcron](Fcron)                                         | [fcron](http://doc.ubuntu-fr.org/fcron) | FCron permet de pallier les défauts de Cron et d'Anacron.                                           | [fcron](apt://fcron)                        |
-| RAR (archive)                                          | [rar](http://doc.ubuntu-fr.org/rar)     | RAR est un format d'archive (un peu comme ZIP), c'est aussi le nom de l'application pour les gérer. | Voir site Ubuntu                            |
+| [convmv](Convmv)                                       |                                         | Conversion de caractères (noms de fichiers)                                                         | [convmv](apt://convmv)                   |
+| [Disques_Réseau#mount.cifs](Disques_Réseau#mount.cifs) |                                         | Pour monter des dossiers partagés Windows ou Samba                                                  | [smbfs](apt://smbfs)                     |
+| [fcron](Fcron)                                         | [fcron](http://doc.ubuntu-fr.org/fcron) | FCron permet de pallier les défauts de Cron et d'Anacron.                                           | [fcron](apt://fcron)                     |
+| RAR (archive)                                          | [rar](http://doc.ubuntu-fr.org/rar)     | RAR est un format d'archive (un peu comme ZIP), c'est aussi le nom de l'application pour les gérer. | Voir site Ubuntu                         |
 
 > [RAR avec mot de passe](http://forum.ubuntu-fr.org/viewtopic.php?id=83892)
 

@@ -50,7 +50,7 @@ layout: default
 
     //Affichage du contenu du markdowwn indiqué par url_internal
     if (foundLogiciel.url_internal) {
-      fetch(foundLogiciel.url_internal)
+      fetch("../"+foundLogiciel.url_internal)
         .then(response => {
           if (!response.ok) {
             throw new Error('Fichier non trouvé');
