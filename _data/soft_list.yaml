@@ -227,6 +227,34 @@ categories:
         description: Interface graphique pour rclone (gestionnaire de synchronisation de fichiers dans les nuages (cloud)).
   - nom: Jeux
     logiciels:
+      - nom: Steam
+        apt: steam,steam-devices
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/steam
+        url_website: https://store.steampowered.com/
+        url_repository: https://github.com/ValveSoftware/steam-for-linux
+        description: Client Steam.
+      - nom: Lutris
+        apt: null
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/lutris
+        url_website: https://lutris.net/
+        url_repository: https://github.com/lutris/lutris
+        description: Gestionnaire de jeux (GOG, Epic Games, EA, Ubisoft, Steam, Dolphin, ...).
+      - nom: GameHub
+        apt: gamehub
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/jeu#gestionnaires_de_jeux
+        url_website: https://tkashkin.github.io/projects/gamehub/
+        url_repository: https://github.com/tkashkin/GameHub
+        description: Gestionnaire de jeux (Steam, GOG, Humble, itch.io).
+      - nom: PlayOnLinux
+        apt: playonlinux
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/playonlinux
+        url_website: https://www.playonlinux.com/fr/
+        url_repository: https://github.com/PlayOnLinux
+        description: Précurseur pour faire tourner les jeux Windows sous Linux. Préférer Lutris ou GameHub.
   - nom: Programmation
     logiciels:
       - nom: Meld

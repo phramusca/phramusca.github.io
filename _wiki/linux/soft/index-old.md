@@ -31,16 +31,6 @@ TODO: Faire section "Remote desktop / VNC" mais tester avant avec Rpi et d'autre
 
 TODO: Faire section FTP, et ajouter FileZilla et lftp (script. et gui ?)
 
-#### Jeux
-
-TODO (11/2024): A revoir avec Proton, Steam ... Faire une page dédiée
-
-TODO: Voir les jeux installés si bien, sinon supprimer
-
-> Rien n'est installé ici par défaut
-
-- [PlayOnLinux](http://www.playonlinux.com/fr/) (supporté par [Wine](Wine))
-
 #### Programmation
 
 TODO: voir la page [Développement](../../dev/).
