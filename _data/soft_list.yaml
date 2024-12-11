@@ -286,7 +286,7 @@ categories:
         url_website: https://www.mono-project.com/
         url_repository: https://github.com/mono/mono
         description: Implémentation libre de Microsoft .NET
-      - nom: NetBeans
+      - nom: Apache NetBeans
         apt: apache-netbeans
         url_internal: NetBeans
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/netbeans

@@ -33,7 +33,32 @@ TODO: Faire section FTP, et ajouter FileZilla et lftp (script. et gui ?)
 
 #### Programmation
 
-TODO: voir la page [Développement](../../dev/).
+TODO: Rajouter:
+- Android Studio
+- GroovyConsole ??
+- IntelliJ IDEA Community ??
+- regexxer ??
+- Postman
+- Rider
+- Visual Studio Code
+- Git gui clients (FAIRE LE TRI)
+  - Gitkraken: seulement open source. Pas de private ni de self-hosted
+  - GitAhead: discontinued
+  - SmartGit: payant. A tester maintenant que licence open source
+  - Gittyup: continuation of gitAhead but does not work :(
+  - Gitnuro: pareil, freeze
+  - Sublime Merge: pas mal, à tester davantage.
+      - Sublime Merge may be downloaded and evaluated for free, however a license must be purchased for continued use. There is currently no enforced time limit for the evaluation (22/4/2024)
+  - gitg: gnome. pas mal, à tester davantage
+  - git-cola, a tester
+  - gitbutler, a tester
+  - gitk, a tester
+  - QGit, a tester
+  - kommit, a tester
+  - sourcegit, a tester
+  - source app, a tester
+  - kdesvn, a tester
+
 
 #### Son et Vidéo
 
