@@ -43,10 +43,10 @@ La plupart s'installent en un click avec les liens [apt-url](../system/apturl).
 
         if (contentRow.style.display === "none") {
           contentRow.style.display = "table-row";
-          this.innerHTML = "&#x21A5;"; // Flèche vers le haut
+          this.innerHTML = "-";
         } else {
           contentRow.style.display = "none";
-          this.innerHTML = "&#x21A7;"; // Flèche vers le bas
+          this.innerHTML = "+";
         }
       });
     });
