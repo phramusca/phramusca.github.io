@@ -54,32 +54,23 @@ La plupart s'installent en un click avec les liens [apt-url](../system/apturl).
 </script>
 
 <table>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Nom</th>
-      <th>Description</th>
-      <th>Apt-Url</th>
-    </tr>
-  </thead>
+
   <tbody>
     {% for categorie in site.data.soft_list.categories %}
-      <tr>
-        <td colspan="4"><strong>{{ categorie.nom }}</strong></td>
-      </tr>
-
+      {% if categorie.logiciels != null or categorie.categories != null%}
+        <tr>
+          <td colspan="4" style="text-align: center; color: #B5E852;"><strong>{{ categorie.nom }}</strong></td>
+        </tr>
+        {% include linux/soft/table.html software_list=categorie.logiciels %}
+      {% endif %}
       {% if categorie.categories != null %}
         {% for sous_categorie in categorie.categories %}
           <tr>
-            <td colspan="4"><strong>{{ sous_categorie.nom }}</strong></td>
+            <td colspan="4" style="color: #B5E852;"><strong>{{ sous_categorie.nom }}</strong></td>
           </tr>
           {% include linux/soft/table.html software_list=sous_categorie.logiciels %}
         {% endfor %}
-      {% else %}
-        {% include linux/soft/table.html software_list=categorie.logiciels %}
       {% endif %}
     {% endfor %}
   </tbody>
 </table>
-
-

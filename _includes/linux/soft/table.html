@@ -1,4 +1,13 @@
 {% for logiciel in include.software_list %}
+  {% if forloop.first %}
+    <tr>
+      <th></th>
+      <th>Nom</th>
+      <th>Description</th>
+      <th>Installation</th>
+    </tr>
+  {% endif %}
+
   {% capture url_internal %}
   {% if logiciel.url_internal %}<a href="{{ logiciel.url_internal }}">{{ logiciel.nom }}</a>{% else %}{{ logiciel.nom }}{% endif %}
   {% endcapture %}
@@ -38,3 +47,8 @@
     </td>
   </tr>
 {% endfor %}
+
+{% if include.software_list.size > 0 %}
+  <!-- Ligne de séparation entre les catégories -->
+  <tr><td colspan="4" style="border-top: 1px dashed #B5E852;"></td></tr>
+{% endif %}
