@@ -34,6 +34,12 @@
   {% if logiciel.url_repository %}<a href="{{ logiciel.url_repository }}">{{ logiciel.nom }}</a>{% endif %}
   {% endcapture %}
 
+  {% capture content_internal %}
+  {% if logiciel.url_internal %}
+    {% include {{ logiciel.url_internal }}.md %}
+  {% endif %}
+  {% endcapture %}
+
   <!-- Ligne principale visible -->
   <tr>
     <td>
@@ -49,7 +55,8 @@
     <td colspan="4">
       <strong>Ubuntu-fr:</strong> {{ url_doc_ubuntu_fr }}<br>
       <strong>Site:</strong> {{ url_website }}<br>
-      <strong>Repo:</strong> {{ url_repository }}
+      <strong>Repo:</strong> {{ url_repository }}<br>
+      {{ content_internal  }}
     </td>
   </tr>
 {% endfor %}
