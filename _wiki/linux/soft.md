@@ -33,22 +33,53 @@ La plupart s'installent en un click avec les liens [apt-url](../system/apturl).
 * TOC
 {:toc}
 
-{% for categorie in site.data.soft_list.categories %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleButtons = document.querySelectorAll(".toggle-button");
 
-#### {{ categorie.nom }}
+    toggleButtons.forEach(button => {
+      button.addEventListener("click", function () {
+        const contentRow = this.closest("tr").nextElementSibling;
 
-  {% if categorie.categories != null %}
-    {% for sous_categorie in categorie.categories %}
+        if (contentRow.style.display === "none") {
+          contentRow.style.display = "table-row";
+          this.innerHTML = "&#x21A5;"; // Flèche vers le haut
+        } else {
+          contentRow.style.display = "none";
+          this.innerHTML = "&#x21A7;"; // Flèche vers le bas
+        }
+      });
+    });
+  });
+</script>
 
-##### {{ sous_categorie.nom }}
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Nom</th>
+      <th>Description</th>
+      <th>Apt-Url</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for categorie in site.data.soft_list.categories %}
+      <tr>
+        <td colspan="4"><strong>{{ categorie.nom }}</strong></td>
+      </tr>
 
-{% include linux/soft/table.html software_list=sous_categorie.logiciels %}
-
+      {% if categorie.categories != null %}
+        {% for sous_categorie in categorie.categories %}
+          <tr>
+            <td colspan="4"><strong>{{ sous_categorie.nom }}</strong></td>
+          </tr>
+          {% include linux/soft/table.html software_list=sous_categorie.logiciels %}
+        {% endfor %}
+      {% else %}
+        {% include linux/soft/table.html software_list=categorie.logiciels %}
+      {% endif %}
     {% endfor %}
-  {% else %}
+  </tbody>
+</table>
 
-{% include linux/soft/table.html software_list=categorie.logiciels %}
 
-  {% endif %}
-
-{% endfor %}

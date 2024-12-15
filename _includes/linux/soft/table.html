@@ -1,74 +1,40 @@
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const toggleButtons = document.querySelectorAll(".toggle-button");
+{% for logiciel in include.software_list %}
+  {% capture url_internal %}
+  {% if logiciel.url_internal %}<a href="{{ logiciel.url_internal }}">{{ logiciel.nom }}</a>{% else %}{{ logiciel.nom }}{% endif %}
+  {% endcapture %}
 
-    toggleButtons.forEach(button => {
-      button.addEventListener("click", function () {
-        const contentRow = this.closest("tr").nextElementSibling;
+  {% capture apt %}
+  {% if logiciel.apt %}<a href="apt://{{ logiciel.apt }}">{{ logiciel.apt }}</a>{% endif %}
+  {% endcapture %}
 
-        if (contentRow.style.display === "none") {
-          contentRow.style.display = "table-row";
-          this.innerHTML = "&#x21A5;"; // Flèche vers le haut
-        } else {
-          contentRow.style.display = "none";
-          this.innerHTML = "&#x21A7;"; // Flèche vers le bas
-        }
-      });
-    });
-  });
-</script>
+  {% capture url_doc_ubuntu_fr %}
+  {% if logiciel.url_doc_ubuntu_fr %}<a href="{{ logiciel.url_doc_ubuntu_fr }}">{{ logiciel.nom }}</a>{% endif %}
+  {% endcapture %}
 
+  {% capture url_website %}
+  {% if logiciel.url_website %}<a href="{{ logiciel.url_website }}">{{ logiciel.nom }}</a>{% endif %}
+  {% endcapture %}
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Nom</th>
-      <th>Description</th>
-      <th>Apt-Url</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for logiciel in {{include.software_list}} %}
-    
-      {% capture url_internal %}
-      {% if logiciel.url_internal %}<a href="{{ logiciel.url_internal }}">{{ logiciel.nom }}</a>{% else %}{{ logiciel.nom }}{% endif %}
-      {% endcapture %}
+  {% capture url_repository %}
+  {% if logiciel.url_repository %}<a href="{{ logiciel.url_repository }}">{{ logiciel.nom }}</a>{% endif %}
+  {% endcapture %}
 
-      {% capture apt %}
-      {% if logiciel.apt %}<a href="apt://{{ logiciel.apt }}">{{ logiciel.apt }}</a>{% endif %}
-      {% endcapture %}
+  <!-- Ligne principale visible -->
+  <tr>
+    <td>
+      <button class="toggle-button">&#x21A7;</button> <!-- Flèche vers le bas -->
+    </td>
+    <td>{{ url_internal }}</td>
+    <td>{{ logiciel.description }}</td>
+    <td>{{ apt }}</td>
+  </tr>
 
-      {% capture url_doc_ubuntu_fr %}
-      {% if logiciel.url_doc_ubuntu_fr %}<a href="{{ logiciel.url_doc_ubuntu_fr }}">{{ logiciel.nom }}</a>{% endif %}
-      {% endcapture %}
-
-      {% capture url_website %}
-      {% if logiciel.url_website %}<a href="{{ logiciel.url_website }}">{{ logiciel.nom }}</a>{% endif %}
-      {% endcapture %}
-
-      {% capture url_repository %}
-      {% if logiciel.url_repository %}<a href="{{ logiciel.url_repository }}">{{ logiciel.nom }}</a>{% endif %}
-      {% endcapture %}
-
-      <!-- Ligne principale visible -->
-      <tr>
-        <td>
-          <button class="toggle-button">&#x21A7;</button> <!-- Flèche vers le bas -->
-        </td>
-        <td>{{ url_internal }}</td>
-        <td>{{ logiciel.description }}</td>
-        <td>{{ apt }}</td>
-      </tr>
-
-      <!-- Ligne supplémentaire cachée -->
-      <tr class="toggle-content" style="display: none;">
-        <td colspan="4">
-          <strong>Ubuntu-fr:</strong> {{ url_doc_ubuntu_fr }}<br>
-          <strong>Site:</strong> {{ url_website }}<br>
-          <strong>Repo:</strong> {{ url_repository }}
-        </td>
-      </tr>
-    {% endfor %}
-  </tbody>
-</table>
+  <!-- Ligne supplémentaire cachée -->
+  <tr class="toggle-content" style="display: none;">
+    <td colspan="4">
+      <strong>Ubuntu-fr:</strong> {{ url_doc_ubuntu_fr }}<br>
+      <strong>Site:</strong> {{ url_website }}<br>
+      <strong>Repo:</strong> {{ url_repository }}
+    </td>
+  </tr>
+{% endfor %}
