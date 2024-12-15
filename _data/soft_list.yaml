@@ -139,11 +139,11 @@ categories:
         url_website: https://www.enricoros.com/opensource/fotowall/gfx/screenshots/
         url_repository: https://github.com/fotowall/fotowall
         description: Patchworks de photos
-      - nom: gcolor2
-        apt: gcolor2
+      - nom: gcolor3
+        apt: gcolor3
         url_internal: null
-        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/gcolor2
-        url_website: https://www.hjdskes.nl/projects/gcolor3/
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/gcolor
+        url_website: https://hjdskes.nl/projects/gcolor3/
         url_repository: https://gitlab.gnome.org/World/gcolor3
         description: Sélecteur de couleur très simple.
       - nom: Dia
