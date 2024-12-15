@@ -10,7 +10,7 @@ layout: default
 
 #### Autre
 
-TODO: Faire le tri entre Wayland (à revoir aussi) et le reste
+TODO: Wayland
 
 #### Bureautique
 

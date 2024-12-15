@@ -299,7 +299,14 @@ categories:
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/gambas
         url_website: https://gambas.sourceforge.net/fr/main.html
         url_repository: https://sourceforge.net/p/gambas/code/HEAD/tree/
-        description: Le Visual Basic™ libre, mais en mieux 
+        description: Le Visual Basic™ libre, mais en mieux
+      - nom: DbVisualizer
+        apt: null
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/dbvisualizer
+        url_website: https://www.dbvis.com/
+        url_repository: null
+        description: Créer des diagrammes de bases de données. Installation par script sh, à récupérer sur le site. S'installe dans ~/DbVisualizer et ne créé qu'un raccourci Desktop. Pour désinstaller, supprimer le dossier ~/DbVisualizer.
   - nom: Son et Vidéo
     categories:
       - nom: Audio
