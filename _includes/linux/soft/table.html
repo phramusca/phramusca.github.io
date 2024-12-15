@@ -36,7 +36,7 @@
 
   {% capture content_internal %}
   {% if logiciel.url_internal %}
-    {% include {{ logiciel.url_internal }}.md %}
+    {% include logiciel.url_internal.md %}
   {% endif %}
   {% endcapture %}
 
