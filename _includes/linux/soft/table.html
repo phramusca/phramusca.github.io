@@ -1,12 +1,31 @@
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleButtons = document.querySelectorAll(".toggle-button");
+
+    toggleButtons.forEach(button => {
+      button.addEventListener("click", function () {
+        const contentRow = this.closest("tr").nextElementSibling;
+
+        if (contentRow.style.display === "none") {
+          contentRow.style.display = "table-row";
+          this.innerHTML = "&#x21A5;"; // Flèche vers le haut
+        } else {
+          contentRow.style.display = "none";
+          this.innerHTML = "&#x21A7;"; // Flèche vers le bas
+        }
+      });
+    });
+  });
+</script>
+
+
 <table>
   <thead>
     <tr>
+      <th></th>
       <th>Nom</th>
-      <th>Apt-Url</th>
-      <th>Ubuntu-fr</th>
-      <th>Site</th>
-      <th>Repo</th>
       <th>Description</th>
+      <th>Apt-Url</th>
     </tr>
   </thead>
   <tbody>
@@ -32,14 +51,24 @@
       {% if logiciel.url_repository %}<a href="{{ logiciel.url_repository }}">{{ logiciel.nom }}</a>{% endif %}
       {% endcapture %}
 
-        <tr>
-          <td>{{ url_internal }}</td>
-          <td>{{ apt }}</td>
-          <td>{{ url_doc_ubuntu_fr }}</td>
-          <td>{{ url_website }}</td>
-          <td>{{ url_repository }}</td>
-          <td>{{ logiciel.description }}</td>
-        </tr>
+      <!-- Ligne principale visible -->
+      <tr>
+        <td>
+          <button class="toggle-button">&#x21A7;</button> <!-- Flèche vers le bas -->
+        </td>
+        <td>{{ url_internal }}</td>
+        <td>{{ logiciel.description }}</td>
+        <td>{{ apt }}</td>
+      </tr>
+
+      <!-- Ligne supplémentaire cachée -->
+      <tr class="toggle-content" style="display: none;">
+        <td colspan="4">
+          <strong>Ubuntu-fr:</strong> {{ url_doc_ubuntu_fr }}<br>
+          <strong>Site:</strong> {{ url_website }}<br>
+          <strong>Repo:</strong> {{ url_repository }}
+        </td>
+      </tr>
     {% endfor %}
   </tbody>
 </table>
