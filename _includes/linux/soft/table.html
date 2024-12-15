@@ -12,8 +12,14 @@
   {% if logiciel.url_internal %}<a href="{{ logiciel.url_internal }}">{{ logiciel.nom }}</a>{% else %}{{ logiciel.nom }}{% endif %}
   {% endcapture %}
 
-  {% capture apt %}
-  {% if logiciel.apt %}<a href="apt://{{ logiciel.apt }}">{{ logiciel.apt }}</a>{% endif %}
+  {% capture url_apt %}
+  {% if logiciel.apt %}
+    {% if logiciel.apt contains "http" %}
+    <a href="{{ logiciel.apt }}">{{ logiciel.apt }}</a>
+    {% else %}
+      <a href="apt://{{ logiciel.apt }}">apt://{{ logiciel.apt }}</a>
+    {% endif %}
+  {% endif %}
   {% endcapture %}
 
   {% capture url_doc_ubuntu_fr %}
