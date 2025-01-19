@@ -24,6 +24,8 @@ En résumé:
 
 ## Forjero
 
+[Doc installation](https://forgejo.org/docs/latest/admin/installation-docker/)
+
 ```yaml
 services:
   forgejo:
@@ -44,7 +46,7 @@ with `.env` file:
 
 ## Lazy Docker
 
-[lazydocker installation for docker from github](https://github.com/jesseduffield/lazydocker?tab=readme-ov-file#docker)
+[Doc installation](https://github.com/jesseduffield/lazydocker?tab=readme-ov-file#docker)
 
 Pour Raspberry Pi 5:
 
@@ -80,6 +82,8 @@ docker exec -it lazydocker lazydocker
 ```
 
 ## Romm
+
+[Doc installation](https://github.com/rommapp/romm/wiki/Quick-Start-Guide)
 
 ```yaml
 version: "3"
