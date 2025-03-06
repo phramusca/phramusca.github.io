@@ -228,7 +228,7 @@ categories:
   - nom: Jeux
     logiciels:
       - nom: Steam
-        apt: steam,steam-devices
+        apt: https://cdn.fastly.steamstatic.com/client/installer/steam.deb
         url_internal: null
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/steam
         url_website: https://store.steampowered.com/
