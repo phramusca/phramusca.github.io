@@ -36,6 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <input type="text" id="search-input" placeholder="Rechercher...">
 <div id="results"></div>
 
+------------------------------------------------------------------------
+
 ### Wiki
 
 - [Docker](wiki/docker)
