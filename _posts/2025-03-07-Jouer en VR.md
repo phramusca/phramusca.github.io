@@ -8,8 +8,6 @@ title: Jouer en VR avec un Quest 2 et un volant
 
 Comment jouer en VR sur Linux avec un casque Meta Quest 2 et un volant ThrusthMaster T150, à l'aide de SteamVR et ALVR.
 
-Voici ma configuration mais ça devrait marcher sous n'importe quel autre distribution de Linux.
-
 Ce post est inspiré de ce [post reddit](https://www.reddit.com/r/linux_gaming/comments/1apuds8/my_setup_experience_with_meta_quest_2_on_linux/?tl=fr).
 
 ## Installation
