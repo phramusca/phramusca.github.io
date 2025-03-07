@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <input type="text" id="search-input" placeholder="Rechercher...">
 <div id="results"></div>
 
-------------------------------------------------------------------------
+### Wiki
 
 - [Docker](wiki/docker)
 - [Linux](wiki/linux)
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
 - [Développement](wiki/dev)
   - [Java](wiki/dev/Java)
 
-------------------------------------------------------------------------
+### Publications
 
 {% for post in site.posts %}
 - [{{ post.title }}]({{ post.url }}) <sub><sup>{{ post.date | date: "%d/%m/%Y" }}</sup></sub>
