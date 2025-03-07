@@ -19,7 +19,7 @@ Ce post est inspiré de ce [post reddit](https://www.reddit.com/r/linux_gaming/c
         - [Google Earth VR](https://store.steampowered.com/app/348250/Google_Earth_VR/)
         - [Epic Roller Coasters](https://store.steampowered.com/app/787790/Epic_Roller_Coasters/)
         - [The Lab](https://store.steampowered.com/app/450390/The_Lab/)
-        - [Adventure Climb VR](https://store.steampowered.com/app/1040430/Adventure_Climb_VR/) (pas essayé)
+        - Ou [DiRT Rally 2.0](https://store.steampowered.com/app/690790/DiRT_Rally_20/), payant mais top avec un volant !
         - ...  
 - Installer [ALVR](https://github.com/alvr-org/ALVR) sur le PC
     - ( Au besoin: [Installation Guide](https://github.com/alvr-org/ALVR/wiki/Installation-guide) et [Troubleshooting](https://github.com/alvr-org/ALVR/wiki/Linux-Troubleshooting) )
@@ -52,7 +52,12 @@ Ce post est inspiré de ce [post reddit](https://www.reddit.com/r/linux_gaming/c
     - Il faut redémarrer SteamVR pour qu'il puisse enregistrer le pilote. Ensuite, ça devrait marcher.
 
 > Il est possible qu'il faille redemarrer le PC et ou le casque à un ou plusieurs moments, mais je ne sais plus quand...
-    
+
+Les jeux suivants ne marchent pas chez moi:
+
+- [Adventure Climb VR](https://store.steampowered.com/app/1040430/Adventure_Climb_VR/)
+- [RaceRoom_Racing_Experience](https://store.steampowered.com/app/211500/RaceRoom_Racing_Experience/)
+
 ## Lancer un jeu    
 
 - Double cliquer sur `ALVR Launcher`
