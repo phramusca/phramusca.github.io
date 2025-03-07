@@ -412,14 +412,22 @@ categories:
           url_website: https://www.maartenbaert.be/simplescreenrecorder/
           url_repository: https://github.com/MaartenBaert/ssr
           description: Enregistreur de vidéos.
+      - nom: Autres
+        logiciels:
+        - nom: Brasero
+          apt: brasero
+          url_internal: null
+          url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/brasero
+          url_website: https://wiki.gnome.org/Apps/Brasero
+          url_repository: https://gitlab.gnome.org/GNOME/brasero
+          description: Créateur de CD/DVD. Pour Gnome. /!\ Il est déconseillé de graver des DVD avec Brasero. Préférer K3B dans ce cas.
         - nom: K3B
-          archive: true
           apt: k3b
           url_internal: null
           url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/k3b
           url_website: https://apps.kde.org/fr/k3b/
           url_repository: https://invent.kde.org/kde/k3b.git
-          description: Créateur de DVD. Pour KDE. L'équivalent pour Gnome marche très bien depuis le temps.
+          description: Créateur de CD/DVD. Pour KDE.
   - nom: Administration
     logiciels:
     - nom: BOINC
