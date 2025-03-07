@@ -1,6 +1,7 @@
 ---
 layout: default
 excerpt: Comment faire des jeux pour Nintendo DS avec MicroLua
+title: MicroLua sur Nintendo DS
 ---
 
 # MicroLua
