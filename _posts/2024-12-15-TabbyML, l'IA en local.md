@@ -14,6 +14,59 @@ La suite détaille l'installation avec Docker (Compose) mais TabbyML peut aussi 
 
 ## Installation
 
+Pour profiter du GPU (fortement recommandé), il faut d'abord installer NVIDIA Container Toolkit.
+
+1. Désinstallation de Docker Desktoop (optionnel)
+    
+    ```bash
+    sudo apt-get remove docker-desktop
+    sudo rm -rf ~/.docker /var/lib/docker
+    sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    sudo apt-get autoremove
+    ```
+    
+2. Installation de NVIDIA Container Toolkit
+
+    - Installez les outils nécessaires :
+
+    ```bash
+    sudo apt-get update
+    sudo apt-get install -y software-properties-common
+    ```
+
+    - Ajoutez le dépôt NVIDIA :
+
+    ```bash
+    distribution=$(
+    . /etc/os-release
+    echo $ID$VERSION_ID
+    )
+    sudo curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg
+    curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list |
+    sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' |
+    sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+    sudo apt-get update
+    ```
+
+    - Installez NVIDIA Container Toolkit :
+
+    ```bash
+    sudo apt-get install -y nvidia-container-toolkit
+    ```
+
+    - Configurez le runtime Docker :
+
+    ```bash
+    sudo nvidia-ctk runtime configure --runtime=docker
+    sudo systemctl restart docker
+    ```
+
+3. Test avec NVIDIA SMI
+
+    ```bash
+    sudo docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
+    ```
+
 ### Avec Docker
 
 Pour tester rapidement, utiliser la commande docker:
@@ -85,8 +138,82 @@ Pour tester rapidement, utiliser la commande docker:
     ```
     
     - Avec GPU, voir la doc: [Installation avec Docker Compose](https://tabby.tabbyml.com/docs/quick-start/installation/docker-compose/)
+
+    ```yaml
+    version: '3.5'
+
+    services:
+    tabby:
+        restart: unless-stopped
+        image: registry.tabbyml.com/tabbyml/tabby
+        command: serve --model Qwen2.5-Coder-1.5B --chat-model Qwen2.5-Coder-1.5B-Instruct --device cuda
+        volumes:
+                - "/.tabby:/data"
+                - "$HOME/Documents/04-Creations/Dev/Repos:/repos"
+        ports:
+        - 8080:8080
+        deploy:
+        resources:
+            reservations:
+            devices:
+                - driver: nvidia
+                count: 1
+                capabilities: [gpu]
+    ```
+
 - Lancer TabbyML: `docker compose up -d`
-   
+
+#### Configurations
+
+Je n'ai pas une carte graphique surpuissante et surtout elle n'a que 8Go de RAM.
+
+Donc, je ne peux utiliser les versions 7 ni 13, à moins de faire  des réglages, comme suggéré par ChatGPT mais non testé:
+
+- 4-bit or 8-bit quantization to reduce VRAM usage.
+- Use GGUF/GGML models optimized for lower memory consumption.
+- Offload part of the model to CPU/RAM if needed (but expect slower response times).
+
+Voici ma configuration et les modèles testés:
+
+- Carte Graphique: Nvidia RTX 4060
+- RAM: 16 Go
+- Processeur: Ryzen 7 5700X
+
+| type       | B  | Model ID                    | License                           | Type Licence        |  Pays            |  Propriétaire                   | status   |
+|------------|----|-----------------------------|-----------------------------------|---------------------|------------------|---------------------------------|----------|
+| chat-model | 5  | Qwen2-1.5B-Instruct         | Apache 2.0                        | Open source         | Chine            | Alibaba Cloud                   | ok       |
+| chat-model | 5  | Qwen2.5-Coder-0.5B-Instruct | Apache 2.0                        | Open source         | Chine            | Alibaba Cloud                   | ok       |
+| chat-model | 5  | Qwen2.5-Coder-1.5B-Instruct | Apache 2.0                        | Open source         | Chine            | Alibaba Cloud                   | ok       |
+| chat-model | 7  | CodeGemma-7B-Instruct       | Gemma License                     | Propriétaire        | États-Unis       | Google DeepMind                 | bug      |
+| chat-model | 7  | CodeQwen-7B-Chat            | Tongyi Qianwen License            | Propriétaire        | Chine            | Alibaba Cloud                   | bug      |
+| chat-model | 7  | Mistral-7B                  | Apache 2.0                        | Open source         | France           | Mistral AI                      | bug      |
+| chat-model | 7  | Qwen2.5-Coder-7B-Instruct   | Apache 2.0                        | Open source         | Chine            | Alibaba Cloud                   | bug      |
+| chat-model | 9  | Yi-Coder-9B-Chat            | Apache 2.0                        | Open source         | Chine            | 01.AI                           | bug      |
+| chat-model | 14 | Qwen2.5-Coder-14B-Instruct  | Apache 2.0                        | Open source         | Chine            | Alibaba Cloud                   | bug      |
+| chat-model | 22 | Codestral-22B               | Mistral AI Non-Production License | Propriétaire        | France           | Mistral AI                      | bug      |
+| chat-model | 32 | Qwen2.5-Coder-32B-Instruct  | Apache 2.0                        | Open source         | Chine            | Alibaba Cloud                   | bug      |
+| model      | 1  | StarCoder-1B                | BigCode-OpenRAIL-M                | Open source éthique | International    | BigCode (Hugging Face)          | ok       |
+| model      | 2  | CodeGemma-2B                | Gemma License                     | Propriétaire        | États-Unis       | Google DeepMind                 | ok       |
+| model      | 3  | DeepseekCoder-1.3B          | Deepseek License                  | Propriétaire        | Chine            | DeepSeek                        | ok       |
+| model      | 3  | Qwen2.5-Coder-3B            | Apache 2.0                        | Open source         | Chine            | Alibaba Cloud                   | ok       |
+| model      | 3  | StarCoder-3B                | BigCode-OpenRAIL-M                | Open source éthique | International    | BigCode (Hugging Face)          | ok       |
+| model      | 3  | StarCoder2-3B               | BigCode-OpenRAIL-M                | Open source éthique | International    | BigCode (Hugging Face)          | ok       |
+| model      | 5  | Qwen2.5-Coder-0.5B          | Apache 2.0                        | Open source         | Chine            | Alibaba Cloud                   | ok       |
+| model      | 5  | Qwen2.5-Coder-1.5B          | Apache 2.0                        | Open source         | Chine            | Alibaba Cloud                   | ok       |
+| model      | 7  | CodeGemma-7B                | Gemma License                     | Propriétaire        | États-Unis       | Google DeepMind                 | bug      |
+| model      | 7  | CodeLlama-7B                | Llama 2                           | Propriétaire        | États-Unis       | Meta                            | bug      |
+| model      | 7  | CodeQwen-7B                 | Tongyi Qianwen License            | Propriétaire        | Chine            | Alibaba Cloud                   | bug & ok |
+| model      | 7  | DeepseekCoder-6.7B          | Deepseek License                  | Propriétaire        | Chine            | DeepSeek                        | bug      |
+| model      | 7  | Qwen2.5-Coder-7B            | Apache 2.0                        | Open source         | Chine            | Alibaba Cloud                   | bug      |
+| model      | 7  | StarCoder-7B                | BigCode-OpenRAIL-M                | Open source éthique | International    | BigCode (Hugging Face)          | bug      |
+| model      | 7  | StarCoder2-7B               | BigCode-OpenRAIL-M                | Open source éthique | International    | BigCode (Hugging Face)          | bug      |
+| model      | 13 | CodeLlama-13B               | Llama 2                           | Propriétaire        | États-Unis       | Meta                            | bug      |
+| model      | 14 | Qwen2.5-Coder-14B           | Apache 2.0                        | Open source         | Chine            | Alibaba Cloud                   | bug      |
+| model      | 22 | Codestral-22B               | Mistral AI Non-Production License | Propriétaire        | France           | Mistral AI                      | bug      |
+| model      | ?  | DeepSeek-Coder-V2-Lite      | Deepseek License                  | Propriétaire        | Chine            | DeepSeek                        | bug      |
+
+> "bug" réfère à [ce bug](https://github.com/TabbyML/tabby/issues/2803), [ce bug](https://github.com/TabbyML/tabby/issues/3512) ou [ce bug](https://github.com/TabbyML/tabby/issues/3056). Mais c'est surtout que ma machine n'est pas assez puissante.
+
 ## Configuration
 
  - Aller sur [http://localhost:8080/](http://localhost:8080/)
