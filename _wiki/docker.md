@@ -1,6 +1,6 @@
----
+
 layout: default
----
+
 
 # Docker
 
@@ -149,73 +149,72 @@ STEAMGRIDDB_API_KEY=
 
 J'utilise un disque externe pour stocker les données des services docker. Pour être sûr que le disque est monté avant de lancer docker, il faut créer un fichier d'unité `.mount` pour gérer le montage de votre disque externe. Voici les étapes pour le faire :
 
-1. **Identifier l'UUID du disque USB**  
-   Exécutez la commande suivante pour obtenir l'UUID de votre disque USB :  
-   `lsblk -o NAME,UUID,MOUNTPOINT`  
-   Notez l'UUID du disque correspondant.
+- Identifier l'UUID du disque USB :
+   
+  ```sh
+  lsblk -o NAME,UUID,MOUNTPOINT
+  ```
+   - Notez l'UUID du disque correspondant.
 
----
+- Créer un fichier d'unité systemd `.mount` pour gérer le montage de votre disque :  
 
-2. **Créer un fichier d'unité `.mount`**  
-   Créez une unité systemd pour gérer le montage de votre disque avec la commande suivante :  
-   `sudo nano /etc/systemd/system/media-myuser-MAXTOR.mount`  
-   Ajoutez-y le contenu suivant, en remplaçant `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` par l'UUID de votre disque :  
+  ```sh
+  sudo nano /etc/systemd/system/media-myuser-MAXTOR.mount
+  ```
+   
+   - Ajoutez-y le contenu suivant, en remplaçant `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` par l'UUID de votre disque :  
 
-   [Unit]  
-   Description=Mount MAXTOR USB Drive  
-   Before=docker.service  
+      ```toml
+      [Unit]  
+      Description=Mount MAXTOR USB Drive  
+      Before=docker.service  
 
-   [Mount]  
-   What=/dev/disk/by-uuid/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  
-   Where=/media/myuser/MAXTOR  
-   Type=ext4  
-   Options=defaults  
+      [Mount]  
+      What=/dev/disk/by-uuid/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  
+      Where=/media/myuser/MAXTOR  
+      Type=ext4  
+      Options=defaults  
 
-   [Install]  
-   WantedBy=multi-user.target
+      [Install]  
+      WantedBy=multi-user.target
+      ```
 
----
-
-3. **Créer le répertoire de montage**  
-   Assurez-vous que le point de montage existe et est accessible avec les commandes suivantes :  
+- Créer le répertoire de montage :  
+   
    `sudo mkdir -p /media/myuser/MAXTOR`  
    `sudo chown myuser:myuser /media/myuser/MAXTOR`
 
----
-
-4. **Recharger et activer l'unité**  
-   Rechargez la configuration de `systemd`, activez et démarrez l'unité avec les commandes suivantes :  
+- Recharger la configuration de `systemd` et activer l'unité
+   
    `sudo systemctl daemon-reload`  
    `sudo systemctl enable media-myuser-MAXTOR.mount`  
    `sudo systemctl start media-myuser-MAXTOR.mount`
 
----
-
-5. **Vérifier que le montage fonctionne**  
-   Vérifiez que le disque est monté correctement avec les commandes suivantes :  
+- Vérifier que le montage fonctionne:
+   
    `sudo systemctl status media-myuser-MAXTOR.mount`  
    `ls /media/myuser/MAXTOR`
 
----
-
-6. **Configurer Docker pour attendre le montage**  
-   Modifiez le fichier de configuration de Docker pour qu'il attende le montage avec la commande suivante :  
+- Configurer Docker pour attendre le montage :  
+   
    `sudo systemctl edit docker.service`  
-   Ajoutez les lignes suivantes :  
+   
+   - Ajoutez les lignes suivantes :  
 
-   [Unit]  
-   After=media-myuser-MAXTOR.mount  
-   Requires=media-myuser-MAXTOR.mount  
+      ```toml
+      [Unit]  
+      After=media-myuser-MAXTOR.mount  
+      Requires=media-myuser-MAXTOR.mount  
+      ```
 
-   Sauvegardez, rechargez et redémarrez Docker avec les commandes suivantes :  
+- Sauvegardez, rechargez et redémarrez Docker-  :  
+
    `sudo systemctl daemon-reload`  
    `sudo systemctl restart docker`
 
----
-
-7. **Tester au redémarrage**  
-   Redémarrez votre Raspberry Pi et vérifiez que :  
+- Redémarrez votre Raspberry Pi et vérifiez que :  
    - Le disque est monté sur `/media/myuser/MAXTOR`  
-   - Docker démarre correctement après le montage avec les commandes suivantes :  
+   - Docker démarre correctement après le montage-  :  
+   
    `sudo systemctl status media-myuser-MAXTOR.mount`  
    `sudo systemctl status docker`
