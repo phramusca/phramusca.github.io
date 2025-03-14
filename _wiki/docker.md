@@ -181,23 +181,31 @@ J'utilise un disque externe pour stocker les données des services docker. Pour 
 
 - Créer le répertoire de montage :  
    
-   `sudo mkdir -p /media/myuser/MAXTOR`  
-   `sudo chown myuser:myuser /media/myuser/MAXTOR`
+   ```sh
+   sudo mkdir -p /media/myuser/MAXTOR
+   sudo chown myuser:myuser /media/myuser/MAXTOR
+   ```
 
 - Recharger la configuration de `systemd` et activer l'unité
    
-   `sudo systemctl daemon-reload`  
-   `sudo systemctl enable media-myuser-MAXTOR.mount`  
-   `sudo systemctl start media-myuser-MAXTOR.mount`
+   ```sh
+   sudo systemctl daemon-reload
+   sudo systemctl enable media-myuser-MAXTOR.mount
+   sudo systemctl start media-myuser-MAXTOR.mount
+  ```
 
 - Vérifier que le montage fonctionne:
    
-   `sudo systemctl status media-myuser-MAXTOR.mount`  
-   `ls /media/myuser/MAXTOR`
+   ```sh
+   sudo systemctl status media-myuser-MAXTOR.mount
+   ls /media/myuser/MAXTOR
+  ```
 
 - Configurer Docker pour attendre le montage :  
    
-   `sudo systemctl edit docker.service`  
+   ```sh
+   sudo systemctl edit docker.service
+   ```
    
    - Ajoutez les lignes suivantes :  
 
@@ -209,12 +217,16 @@ J'utilise un disque externe pour stocker les données des services docker. Pour 
 
 - Sauvegardez, rechargez et redémarrez Docker-  :  
 
-   `sudo systemctl daemon-reload`  
-   `sudo systemctl restart docker`
+    ```sh
+   sudo systemctl daemon-reload  
+   sudo systemctl restart docker
+   ```
 
 - Redémarrez votre Raspberry Pi et vérifiez que :  
    - Le disque est monté sur `/media/myuser/MAXTOR`  
    - Docker démarre correctement après le montage-  :  
    
-   `sudo systemctl status media-myuser-MAXTOR.mount`  
-   `sudo systemctl status docker`
+   ```sh
+   sudo systemctl status media-myuser-MAXTOR.mount
+   sudo systemctl status docker
+   ```
