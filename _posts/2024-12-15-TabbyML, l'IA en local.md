@@ -140,28 +140,41 @@ Pour tester rapidement, utiliser la commande docker:
     - Avec GPU, voir la doc: [Installation avec Docker Compose](https://tabby.tabbyml.com/docs/quick-start/installation/docker-compose/)
 
     ```yaml
-    version: '3.5'
-
     services:
-    tabby:
-        restart: unless-stopped
-        image: registry.tabbyml.com/tabbyml/tabby
-        command: serve --model Qwen2.5-Coder-1.5B --chat-model Qwen2.5-Coder-1.5B-Instruct --device cuda
-        volumes:
-                - "/.tabby:/data"
-                - "$HOME/Documents/04-Creations/Dev/Repos:/repos"
-        ports:
-        - 8080:8080
-        deploy:
-        resources:
-            reservations:
-            devices:
-                - driver: nvidia
-                count: 1
-                capabilities: [gpu]
+        tabby:
+            restart: unless-stopped
+            image: registry.tabbyml.com/tabbyml/tabby
+            command: serve --model Qwen2.5-Coder-1.5B --chat-model Qwen2.5-Coder-1.5B-Instruct --device cuda
+            volumes:
+                    - "/.tabby:/data"
+                    - "$HOME/Documents/04-Creations---ICI/Dev --- ICI/Repos:/repos"
+            ports:
+            - 8086:8080
+            deploy:
+            resources:
+                reservations:
+                devices:
+                    - driver: nvidia
+                    count: 1
+                    capabilities: [gpu]
     ```
 
 - Lancer TabbyML: `docker compose up -d`
+
+- Aller à `http://localhost:8086` et suivre les instructions pour créer le compte admin.
+
+- Pour mettre à jour:
+
+    ```bash
+    docker compose pull
+    docker compose up -d --force-recreate
+    ```
+    
+- Pour voir les logs (ça peut etre long à démarrer):
+
+    ```bash
+    docker logs tabby-tabby-1 -f
+    ```
 
 #### Configurations
 
