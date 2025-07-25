@@ -62,7 +62,7 @@ Pour plus d’options: `man 5 crontab`.
 
 #### Logs rotatifs
 
-Pour eviter de saturer l'espace disque, il convient de mettre en place des logs rotatifs:
+Pour éviter de saturer l'espace disque, il convient de mettre en place des logs rotatifs:
 
 Créer un fichier de configuration logrotate:
 
@@ -84,10 +84,14 @@ Avec le contenu suivant:
 }
 ```
 
-- daily: rotate every day
-- rotate 30: keep 30 logs (≈30 days)
-- compress: old logs are gzipped
-- copytruncate: for scripts that keep the log file open
+- `daily`: Tourner tous les jours
+- `rotate 30`: Garde 30 logs (≈30 jours)
+- `missingok` : Si le fichier de log n’existe pas, logrotate ne génère pas d’erreur (il « ignore » le fichier manquant).
+- `notifempty` : Si le fichier de log est vide, logrotate ne le fait pas tourner (pas de rotation pour un fichier vide).
+- `compress`: Les vieux logs sont compréssés (gzip)
+- `copytruncate`: Pour les scripts qui gardent le fichier de log ouvert
+
+Pour forcer la rotation et ainsi la tester: `sudo logrotate -f /etc/logrotate.d/Update`
 
 #### Rafraichir l'icône de mise à jour
 
