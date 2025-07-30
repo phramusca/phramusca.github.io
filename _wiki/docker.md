@@ -24,7 +24,7 @@ En résumé:
 
 - Naviguer vers [https://localhost:9443](https://localhost:9443) et suivre la procédure d'installation.
 
-### Forjero
+### Forgejo
 
 [Doc installation](https://forgejo.org/docs/latest/admin/installation-docker/)
 
@@ -45,6 +45,73 @@ with `.env` file:
 ```ini
   VOLUME_PATH="/chemin/avec des espaces"
 ```
+
+#### Se connecter aux repos git avec `ssh`
+
+1. **Configuration de Forgejo**
+
+   - Modifier le fichier `/data/gitea/conf/app.ini` pour activer le serveur SSH intégré de Forgejo sur le port 2222:
+
+     ```ini
+     [server]
+     DOMAIN = rpi5.local
+     SSH_DOMAIN = rpi5.local
+     START_SSH_SERVER = true
+     SSH_LISTEN_PORT = 2222
+     ```
+
+   - Modifier le fichier `docker-compose.yml` pour exposer le port 2222:
+
+      ```yaml
+      ports:
+        - "3000:3000"
+        - "2222:2222"
+      ```
+
+   - Redémarrer le conteneur Docker pour prendre en compte la nouvelle configuration.
+
+1. **Configuration du client SSH**
+
+   - Créer l'hôte `forgejo` dans `~/.ssh/config` sur la machine cliente :
+
+      ```config
+      # Pour Git/Forgejo (git@rpi5.local)
+      Host forgejo
+        HostName rpi5.local
+        User git
+        Port 2222
+      ```
+
+   - Changer l’URL du remote Git :
+
+     ```bash
+     git remote set-url origin git@forgejo:phramusca/taratata-downloader.git
+     ```
+
+   - Ajouter la clé publique du client dans l’interface web Forgejo (Settings > SSH Keys).
+
+   - Tester la connexion SSH :
+
+      ```bash
+      ssh git@rpi5.local -p 2222
+      ```
+
+      ou
+
+      ```bash
+      ssh git@forgejo
+      ```
+
+     Ce qui doit donner un message du genre:
+
+      ```text
+      PTY allocation request failed on channel 0
+      Hi there, xxxxxx! You've successfully authenticated with the key named yyyyy, but Forgejo does not provide shell access.
+      If this is unexpected, please log in with password and setup Forgejo under another user.
+      Connection to rpi5.local closed.
+      ```
+
+   - Tester les commandes Git (`git fetch`, `git pull`, `git push`, ...) qui doivent fonctionner sans demander de mot de passe.
 
 ### Lazy Docker
 
