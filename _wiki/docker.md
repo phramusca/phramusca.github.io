@@ -12,17 +12,64 @@ J'utilise [Docker](https://www.docker.com/) pour faire tourner quelques services
 
 [Doc installation docker linux](https://docs.portainer.io/start/install-ce/server/docker/linux)
 
-En résumé:
-  
--  Créer un volume pour le stockage de la base de données:
+```yaml
+services:
+  portainer:
+    image: portainer/portainer-ce:lts
+    container_name: portainer
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ${VOLUME_PATH}/portainer:/data
+    ports:
+      - "9443:9443"
+```
 
-    `docker volume create portainer_data`
+with `.env` file:
 
-- Télécharger et installer Portainer CE:
-
-    `docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:2.21.5`
+```ini
+  VOLUME_PATH="/chemin/avec des espaces"
+```
 
 - Naviguer vers [https://localhost:9443](https://localhost:9443) et suivre la procédure d'installation.
+
+#### Docker 29 Breaking Change
+
+Portainer ne supporte pas les dernieres versions de docker (29 en l'occurence). Voir https://github.com/orgs/portainer/discussions/12926
+
+Il faut se fier à https://docs.portainer.io/start/requirements-and-prerequisites
+
+Pour portainer 2.33.3 LTS, ça marche avec 28.5.1.1, mais pas 29.0
+
+```shell
+# Arrêter Docker
+sudo systemctl stop docker
+sudo systemctl stop docker.socket
+
+# Désinstaller Docker et ses dépendances
+sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+# Supprimer les fichiers de configuration et données
+# /!\ Ne pas supprimer si vous voulez garder les volumes, ...
+# sudo rm -rf /var/lib/docker
+# sudo rm -rf /var/lib/containerd
+# sudo rm -rf /etc/docker
+
+# Installer une version spécifique de Docker (28.5.1)
+sudo apt-get install docker-ce=5:28.5.1-1~debian.12~bookworm docker-ce-cli=5:28.5.1-1~debian.12~bookworm containerd.io
+
+# Bloquer les mises à jour pour Docker
+sudo apt-mark hold docker-ce docker-ce-cli containerd.io
+
+# Démarrer Docker
+sudo systemctl start docker
+
+# Vérifier que les paquets sont bien bloqués
+apt-mark showhold
+
+```
 
 ### Forgejo
 
@@ -210,6 +257,29 @@ IGDB_CLIENT_ID=
 IGDB_CLIENT_SECRET=
 MOBYGAMES_API_KEY=
 STEAMGRIDDB_API_KEY=
+```
+
+### Calibre Web
+
+[https://github.com/janeczku/calibre-web](https://github.com/janeczku/calibre-web)
+
+```yaml
+services:
+  calibre-web:
+    image: linuxserver/calibre-web
+    container_name: calibre-web
+    ports:
+      - 8083:8083
+    volumes:
+      - ${VOLUME_PATH}/books:/app/calibre-web/books
+      - ${VOLUME_PATH}/config:/config
+    restart: unless-stopped
+```
+
+with `.env` file:
+
+```ini
+VOLUME_PATH="/chemin/avec des espaces"
 ```
 
 ## Monter un disque externe avant de lancer docker
