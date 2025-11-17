@@ -45,6 +45,8 @@ TODO
 
 TODO
 
+https://phramusca.github.io/wiki/docker/#calibre-web
+
 https://github.com/janeczku/calibre-web#calibre-web
 
 http://rpi5.local:8083/
