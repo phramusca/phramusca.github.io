@@ -56,7 +56,7 @@
       <strong>Ubuntu-fr:</strong> {{ url_doc_ubuntu_fr }}<br>
       <strong>Site:</strong> {{ url_website }}<br>
       <strong>Repo:</strong> {{ url_repository }}<br>
-      {{ content_internal  }}
+      {{ content_internal | markdownify }}
     </td>
   </tr>
 {% endfor %}
