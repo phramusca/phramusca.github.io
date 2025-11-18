@@ -8,9 +8,6 @@
     </tr>
   {% endif %}
 
-  {% capture url_internal %}
-  {% if logiciel.url_internal %}<a href="{{ logiciel.url_internal }}">{{ logiciel.nom }}</a>{% else %}{{ logiciel.nom }}{% endif %}
-  {% endcapture %}
 
   {% capture url_apt %}
   {% if logiciel.apt %}
@@ -45,7 +42,7 @@
     <td>
       <button class="toggle-button">+</button>
     </td>
-    <td>{{ url_internal }}</td>
+    <td>{{ logiciel.nom }}</td>
     <td>{{ logiciel.description }}</td>
     <td>{{ url_apt }}</td>
   </tr>
@@ -53,10 +50,14 @@
   <!-- Ligne supplémentaire cachée -->
   <tr class="toggle-content" style="display: none;">
     <td></td><td colspan="3">
-      <strong>Ubuntu-fr:</strong> {{ url_doc_ubuntu_fr }}<br>
-      <strong>Site:</strong> {{ url_website }}<br>
-      <strong>Repo:</strong> {{ url_repository }}<br>
-      {{ content_internal | markdownify }}
+      <div style="max-width: 800px; margin: 0 auto; padding: 10px;">
+        <strong>Ubuntu-fr:</strong> {{ url_doc_ubuntu_fr }}<br>
+        <strong>Site:</strong> {{ url_website }}<br>
+        <strong>Repo:</strong> {{ url_repository }}<br>
+        <div style="margin-top: 15px;">
+          {{ content_internal | markdownify }}
+        </div>
+      </div>
     </td>
   </tr>
 {% endfor %}
