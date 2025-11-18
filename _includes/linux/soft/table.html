@@ -44,37 +44,18 @@
     {% assign page_path = '_wiki/linux/soft/' | append: logiciel.url_internal | append: '.md' %}
     {% assign wiki_page = site.wiki | where: "path", page_path | first %}
     {% if wiki_page %}
-      {% comment %} wiki_page.content contient le markdown brut (sans front matter) {% endcomment %}
       {% assign content_raw = wiki_page.content | strip %}
-      {% comment %} Supprimer le titre H1 s'il est présent en première ligne {% endcomment %}
-      {% assign content_lines = content_raw | split: "\n" %}
-      {% assign content_cleaned = "" %}
-      {% assign title_skipped = false %}
-      {% for line in content_lines %}
-        {% assign line_stripped = line | strip %}
-        {% if title_skipped == false and line_stripped != "" %}
-          {% if line_stripped contains "# " and line_stripped.size < 100 %}
-            {% comment %} C'est probablement le titre, on le saute {% endcomment %}
-            {% assign title_skipped = true %}
-          {% else %}
-            {% assign title_skipped = true %}
-            {% if content_cleaned == "" %}
-              {% assign content_cleaned = line %}
-            {% else %}
-              {% assign content_cleaned = content_cleaned | append: "\n" | append: line %}
-            {% endif %}
-          {% endif %}
+      {% comment %} Supprimer le titre H1 s'il est présent {% endcomment %}
+      {% if content_raw contains "# " %}
+        {% assign first_line = content_raw | split: "\n" | first | strip %}
+        {% if first_line contains "# " and first_line.size < 100 %}
+          {% assign content_internal = content_raw | remove_first: first_line | strip | remove_first: "\n" | strip %}
         {% else %}
-          {% if title_skipped or line_stripped != "" %}
-            {% if content_cleaned == "" %}
-              {% assign content_cleaned = line %}
-            {% else %}
-              {% assign content_cleaned = content_cleaned | append: "\n" | append: line %}
-            {% endif %}
-          {% endif %}
+          {% assign content_internal = content_raw %}
         {% endif %}
-      {% endfor %}
-      {% assign content_internal = content_cleaned | strip %}
+      {% else %}
+        {% assign content_internal = content_raw %}
+      {% endif %}
     {% else %}
       {% assign content_internal = "" %}
     {% endif %}
