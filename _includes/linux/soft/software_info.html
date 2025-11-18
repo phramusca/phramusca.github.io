@@ -7,60 +7,38 @@
 
 {% if include.logiciel %}
   {% assign current_software = include.logiciel %}
-{% elsif include.software_name %}
-  {% assign software_name = include.software_name %}
-  {% assign software_found = false %}
-  {% for categorie in site.data.soft_list.categories %}
-    {% for logiciel in categorie.logiciels %}
-      {% if logiciel.nom == software_name or logiciel.url_internal == software_name %}
-        {% assign software_found = true %}
-        {% assign current_software = logiciel %}
-        {% break %}
-      {% endif %}
-    {% endfor %}
-    {% if software_found %}{% break %}{% endif %}
-    {% if categorie.categories %}
+{% else %}
+  {% comment %} Déterminer le nom du logiciel à chercher {% endcomment %}
+  {% if include.software_name %}
+    {% assign software_name = include.software_name %}
+  {% elsif page.path contains "/linux/soft/" %}
+    {% assign path_parts = page.path | split: "/" %}
+    {% assign software_name = path_parts | last | remove: ".md" %}
+  {% endif %}
+  
+  {% comment %} Rechercher dans toutes les catégories et sous-catégories {% endcomment %}
+  {% if software_name %}
+    {% assign current_software = nil %}
+    {% for categorie in site.data.soft_list.categories %}
+      {% for logiciel in categorie.logiciels %}
+        {% if logiciel.nom == software_name or logiciel.url_internal == software_name %}
+          {% assign current_software = logiciel %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+      {% if current_software %}{% break %}{% endif %}
       {% for sous_categorie in categorie.categories %}
         {% for logiciel in sous_categorie.logiciels %}
           {% if logiciel.nom == software_name or logiciel.url_internal == software_name %}
-            {% assign software_found = true %}
             {% assign current_software = logiciel %}
             {% break %}
           {% endif %}
         {% endfor %}
-        {% if software_found %}{% break %}{% endif %}
+        {% if current_software %}{% break %}{% endif %}
       {% endfor %}
-    {% endif %}
-    {% if software_found %}{% break %}{% endif %}
-  {% endfor %}
-{% elsif page.path contains "/linux/soft/" %}
-  {% assign path_parts = page.path | split: "/" %}
-  {% assign filename = path_parts | last %}
-  {% assign software_name = filename | remove: ".md" %}
-  {% assign software_found = false %}
-  {% for categorie in site.data.soft_list.categories %}
-    {% for logiciel in categorie.logiciels %}
-      {% if logiciel.nom == software_name or logiciel.url_internal == software_name %}
-        {% assign software_found = true %}
-        {% assign current_software = logiciel %}
-        {% break %}
-      {% endif %}
+      {% if current_software %}{% break %}{% endif %}
     {% endfor %}
-    {% if software_found %}{% break %}{% endif %}
-    {% if categorie.categories %}
-      {% for sous_categorie in categorie.categories %}
-        {% for logiciel in sous_categorie.logiciels %}
-          {% if logiciel.nom == software_name or logiciel.url_internal == software_name %}
-            {% assign software_found = true %}
-            {% assign current_software = logiciel %}
-            {% break %}
-          {% endif %}
-        {% endfor %}
-        {% if software_found %}{% break %}{% endif %}
-      {% endfor %}
-    {% endif %}
-    {% if software_found %}{% break %}{% endif %}
-  {% endfor %}
+  {% endif %}
 {% endif %}
 
 {% if current_software %}
