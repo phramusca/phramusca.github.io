@@ -4,7 +4,7 @@ layout: default
 
 # Linux
 
-![50px-Linux-penguin](../data/50px-Linux-penguin.jpg)
+![50px-Linux-penguin](/assets/images/wiki/50px-Linux-penguin.jpg)
 
 [GNU/Linux](https://fr.wikipedia.org/wiki/Linux) est un système d'exploitation libre (open source) fondé sur le [noyau Linux](https://fr.wikipedia.org/wiki/Noyau_Linux) (kernel).
 
@@ -23,7 +23,7 @@ Chaque distribution a ses spécificités (outils, apparence, gestionnaire de paq
 - [Principales distributions](https://fr.wikipedia.org/wiki/Distribution_Linux#Principales_distributions)
 - Informations détaillées pour toutes les distributions mais en anglais sur [distrowatch.com](http://distrowatch.com/index.php?language=FR)
 - Chronologie des distributions:
-  - [![Distribution timeline](../data/thumb_Linux-Distributions-Timeline.png)](https://upload.wikimedia.org/wikipedia/commons/9/96/Liste_des_distributions_Linux.svg)
+  - [![Distribution timeline](/assets/images/wiki/thumb_Linux-Distributions-Timeline.png)](https://upload.wikimedia.org/wikipedia/commons/9/96/Liste_des_distributions_Linux.svg)
 
 ## Distributions basées sur Debian (Linux Mint, Ubuntu,...)
 

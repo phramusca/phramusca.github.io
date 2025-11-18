@@ -4,7 +4,7 @@ layout: default
 
 # Android
 
-![50px-Android](../data/50px-Android.jpg)
+![50px-Android](/assets/images/wiki/50px-Android.jpg)
 
 [Android](wiki/Android) est un système d'exploitation Open Source, racheté à la société [Android](wiki/Android) par Google, basé sur un noyau [Linux](wiki/Linux). Il tourne sur de plus en plus d'équipements mobiles: smartphones, PDA, tablettes, téléviseurs, autoradios ...
 

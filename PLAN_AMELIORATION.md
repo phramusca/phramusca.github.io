@@ -39,19 +39,20 @@
 
 ---
 
-### 4. Centraliser les images
+### 4. ✅ Centraliser les images - **FAIT**
 **Problème** : Images dispersées entre `assets/images/` et `_wiki/data/`
 
-**Solution** : 
-- Garder `assets/images/` pour les images générales du site
-- Créer `assets/images/wiki/` pour les images du wiki
-- Déplacer `_wiki/data/*.jpg` vers `assets/images/wiki/`
-- Mettre à jour les références dans les fichiers markdown
+**Solution appliquée** : 
+- Créé `assets/images/wiki/` pour les images du wiki
+- Déplacé 4 images de `_wiki/data/` vers `assets/images/wiki/`
+- Mis à jour toutes les références dans les fichiers markdown (4 fichiers)
+- Supprimé le dossier `_wiki/data/` vide
 
-**Impact** : 
+**Résultat** : 
 - Organisation plus logique
-- Facilite la maintenance
-- Meilleure performance (assets optimisés)
+- Toutes les images du wiki centralisées dans `assets/images/wiki/`
+- Images générales du site dans `assets/images/`
+- Références mises à jour avec chemins absolus (`/assets/images/wiki/...`)
 
 ---
 
