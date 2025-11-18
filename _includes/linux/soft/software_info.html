@@ -13,7 +13,8 @@
     {% assign software_name = include.software_name %}
   {% elsif page.path contains "/linux/soft/" %}
     {% assign path_parts = page.path | split: "/" %}
-    {% assign software_name = path_parts | last | remove: ".md" %}
+    {% assign filename = path_parts | last | remove: ".md" %}
+    {% assign software_name = filename %}
   {% endif %}
   
   {% comment %} Rechercher dans toutes les catégories et sous-catégories {% endcomment %}
@@ -21,7 +22,7 @@
     {% assign current_software = nil %}
     {% for categorie in site.data.soft_list.categories %}
       {% for logiciel in categorie.logiciels %}
-        {% if logiciel.nom == software_name or logiciel.url_internal == software_name %}
+        {% if logiciel.url_internal == software_name %}
           {% assign current_software = logiciel %}
           {% break %}
         {% endif %}
@@ -29,7 +30,7 @@
       {% if current_software %}{% break %}{% endif %}
       {% for sous_categorie in categorie.categories %}
         {% for logiciel in sous_categorie.logiciels %}
-          {% if logiciel.nom == software_name or logiciel.url_internal == software_name %}
+          {% if logiciel.url_internal == software_name %}
             {% assign current_software = logiciel %}
             {% break %}
           {% endif %}

@@ -73,7 +73,7 @@ categories:
       description: Impression de documents en livrets.
     - nom: Calibre
       apt: calibre
-      url_internal: Calibre
+      url_internal: calibre
       url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/calibre
       url_website: https://calibre-ebook.com/
       url_repository: https://github.com/kovidgoyal/calibre
@@ -127,7 +127,7 @@ categories:
         description: Éditeur photo, genre Photoshop.
       - nom: Hugin
         apt: hugin
-        url_internal: Hugin
+        url_internal: hugin
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/hugin  
         url_website: https://hugin.sourceforge.io/
         url_repository: https://sourceforge.net/projects/hugin/
@@ -259,7 +259,7 @@ categories:
     logiciels:
       - nom: Meld
         apt: meld
-        url_internal: Meld
+        url_internal: meld
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/meld
         url_website: https://meldmerge.org/
         url_repository: https://gitlab.gnome.org/GNOME/meld
@@ -281,14 +281,14 @@ categories:
       - nom: Mono
         archive: yes
         apt: null
-        url_internal: Mono
+        url_internal: mono
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/mono
         url_website: https://www.mono-project.com/
         url_repository: https://github.com/mono/mono
         description: Implémentation libre de Microsoft .NET
       - nom: Apache NetBeans
         apt: apache-netbeans
-        url_internal: NetBeans
+        url_internal: netbeans
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/netbeans
         url_website: https://www.netbeans.org/
         url_repository: https://github.com/apache/netbeans
@@ -320,7 +320,7 @@ categories:
           description: Gestionnaire de musithèque, lecteur et plus encore, pour Linux, Raspberry et Windows.
         - nom: EasyTag
           apt: easytag
-          url_internal: EasyTag
+          url_internal: easy_tag
           url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/easytag
           url_website: https://easytag.sourceforge.io/
           url_repository: https://gitlab.gnome.org/GNOME/easytag/
@@ -334,14 +334,14 @@ categories:
           description: Découper des MP3s.
         - nom: RipperX
           apt: ripperx
-          url_internal: RipperX
+          url_internal: ripper_x
           url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/ripperx
           url_website: https://ripperx.sourceforge.io/
           url_repository: https://sourceforge.net/p/ripperx/git/ci/master/tree/
           description: Extraction (rip) de CDs audio.
         - nom: Soundjuicer
           apt: sound-juicer
-          url_internal: Soundjuicer
+          url_internal: soundjuicer
           url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/sound-juicer
           url_website: https://wiki.gnome.org/Apps/SoundJuicer
           url_repository: https://gitlab.gnome.org/GNOME/sound-juicer
@@ -349,7 +349,7 @@ categories:
         - nom: Grip
           archive: true
           apt: null
-          url_internal: Grip
+          url_internal: grip
           url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/grip
           url_website: https://sourceforge.net/projects/grip/
           url_repository: https://sourceforge.net/p/grip/code/ci/master/tree/
@@ -432,7 +432,7 @@ categories:
     logiciels:
     - nom: BOINC
       apt: boinc
-      url_internal: BOINC
+      url_internal: boinc
       url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/boinc
       url_website: https://boinc.berkeley.edu/
       url_repository: null
@@ -442,7 +442,7 @@ categories:
     logiciels:
     - nom: Ventoy
       apt: null
-      url_internal: Ventoy
+      url_internal: ventoy
       url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/ventoy
       url_website: https://ventoy.net/
       url_repository: https://github.com/ventoy/Ventoy

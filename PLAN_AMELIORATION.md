@@ -75,19 +75,19 @@
 
 ---
 
-### 7. Standardiser les noms de fichiers
+### 7. ✅ Standardiser les noms de fichiers - **FAIT**
 **Problème** : Mélange de conventions (espaces, underscores, majuscules)
 
-**Solution** : 
-- Standardiser sur **snake_case** (ex: `nom_du_logiciel.md`, `google_earth.md`)
-- Plus facile à sélectionner en entier le nom
-- Renommer progressivement les fichiers
-- Mettre à jour les références
+**Solution appliquée** : 
+- Standardisé sur **snake_case** (ex: `calibre.md`, `google_earth.md`, `easy_tag.md`)
+- Conversion automatique dans `table.html` et `software_info.html` pour gérer les différents formats
+- Tous les fichiers renommés en snake_case (21 fichiers)
 
-**Impact** : 
+**Résultat** : 
 - Compatibilité cross-platform
 - URLs plus propres
 - Meilleure sélection dans les éditeurs
+- Conversion automatique : les `url_internal` dans `soft_list.yaml` peuvent rester dans leur format original (ex: "Calibre", "EasyTag") et sont automatiquement convertis en snake_case pour les chemins
 
 ---
 
