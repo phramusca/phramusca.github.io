@@ -15,13 +15,24 @@ collections:
     permalink: /wiki/:path/
 
 # Exclure des fichiers du build
+# Note: En Jekyll 3.x, définir 'exclude' remplace la liste par défaut
+# Il faut donc inclure les exclusions par défaut + nos exclusions personnalisées
 exclude:
+  # Exclusions par défaut de Jekyll
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  # Nos exclusions personnalisées
   - README.md
   - PLAN_AMELIORATION.md
-  - TEST_LOCAL.md
   - .devcontainer/
   - .vscode/
   - .git/
   - .gitignore
-  - Gemfile
-  - Gemfile.lock
