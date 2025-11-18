@@ -85,28 +85,30 @@ bundle exec jekyll serve
 │   ├── windows/
 │   ├── android/
 │   └── ...
-├── assets/              # Fichiers statiques
+├── assets/              # Fichiers statiques (CSS, JS, images)
 │   └── images/          # Images
 │       └── wiki/        # Images du wiki
-└── Gemfile              # Dépendances Ruby
+├── Gemfile              # Dépendances Ruby
+├── README.md            # Documentation du projet
+└── PLAN_AMELIORATION.md # Plan d'amélioration (exclu du build)
 ```
 
 ## 📝 Ajouter un logiciel
 
 Pour ajouter un nouveau logiciel à la liste :
 
-1. **Ajouter dans `_data/soft_list.yaml`** :
+1. **Ajouter dans `_data/soft_list.yaml`** dans la catégorie appropriée :
    ```yaml
-   - nom: Nom_du_Logiciel
+   - nom: Nom du Logiciel
      apt: nom-du-paquet
-     url_internal: Nom_du_Logiciel
+     url_internal: nom_du_logiciel  # En snake_case, correspond au nom du fichier .md
      url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/...
      url_website: https://...
      url_repository: https://github.com/...
      description: Description du logiciel
    ```
 
-2. **Créer la page dans `_wiki/linux/soft/Nom_du_Logiciel.md`** :
+2. **Créer la page dans `_wiki/linux/soft/nom_du_logiciel.md`** (nom en snake_case) :
    ```markdown
    ---
    layout: software
@@ -117,12 +119,46 @@ Pour ajouter un nouveau logiciel à la liste :
    Contenu de la page...
    ```
 
-   Le layout `software` inclut automatiquement les informations (Ubuntu-fr, Site, Repo) depuis `soft_list.yaml`.
+   **Important** : 
+   - Le `url_internal` dans le YAML doit correspondre exactement au nom du fichier (sans `.md`)
+   - Le layout `software` inclut automatiquement les informations (Ubuntu-fr, Site, Repo) depuis `soft_list.yaml`
+   - Les fichiers doivent être en **snake_case** (ex: `easy_tag.md`, `google_earth.md`)
+
+## 📰 Ajouter un article (post)
+
+Les articles de blog sont dans `_posts/` avec le format : `YYYY-MM-DD-Titre.md`
+
+**Structure d'un post** :
+```markdown
+---
+layout: default
+excerpt: Résumé court de l'article
+title: Titre de l'article
+---
+
+Contenu de l'article en markdown...
+```
+
+**Exemple** : `_posts/2025-03-07-gTile.md`
+
+Les posts apparaissent automatiquement sur la page d'accueil via `{% for post in site.posts %}`.
 
 ## 🎨 Layouts disponibles
 
 - `default` : Layout par défaut du thème (pages-themes/hacker)
-- `software` : Layout pour les pages de logiciels (inclut automatiquement les infos)
+- `software` : Layout pour les pages de logiciels (inclut automatiquement les infos via `software_info.html`)
+
+## 🔗 Système de logiciels
+
+Le système de gestion des logiciels utilise :
+
+- **`_data/soft_list.yaml`** : Liste structurée par catégories avec toutes les informations
+- **`url_internal`** : Identifiant en snake_case qui correspond au nom du fichier `.md` (ex: `calibre`, `ripper_x`)
+- **`_includes/linux/soft/table.html`** : Affiche la liste des logiciels avec contenu expandable
+- **`_includes/linux/soft/software_info.html`** : Affiche automatiquement les infos (Ubuntu-fr, Site, Repo)
+- **`_layouts/software.html`** : Layout qui inclut automatiquement `software_info.html` pour les pages de logiciels
+
+**Convention de nommage** : Tous les fichiers de logiciels sont en **snake_case** (ex: `easy_tag.md`, `google_earth.md`).
 
 ## 🔧 Technologies
 

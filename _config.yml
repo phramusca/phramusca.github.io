@@ -13,3 +13,15 @@ collections:
   wiki:
     output: true
     permalink: /wiki/:path/
+
+# Exclure des fichiers du build
+exclude:
+  - README.md
+  - PLAN_AMELIORATION.md
+  - TEST_LOCAL.md
+  - .devcontainer/
+  - .vscode/
+  - .git/
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
