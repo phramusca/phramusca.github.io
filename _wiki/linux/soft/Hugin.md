@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: software
 ---
 
 Hugin est un bal bla bla .... TODO

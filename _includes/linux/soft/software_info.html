@@ -1,0 +1,79 @@
+{% comment %}
+  Affiche automatiquement les informations d'un logiciel
+  Usage 1 (dans la liste): {% include linux/soft/software_info.html logiciel=logiciel %}
+  Usage 2 (dans une page): {% include linux/soft/software_info.html software_name="Calibre" %}
+  Usage 3 (auto): {% include linux/soft/software_info.html %}
+{% endcomment %}
+
+{% if include.logiciel %}
+  {% assign current_software = include.logiciel %}
+{% elsif include.software_name %}
+  {% assign software_name = include.software_name %}
+  {% assign software_found = false %}
+  {% for categorie in site.data.soft_list.categories %}
+    {% for logiciel in categorie.logiciels %}
+      {% if logiciel.nom == software_name or logiciel.url_internal == software_name %}
+        {% assign software_found = true %}
+        {% assign current_software = logiciel %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    {% if software_found %}{% break %}{% endif %}
+    {% if categorie.categories %}
+      {% for sous_categorie in categorie.categories %}
+        {% for logiciel in sous_categorie.logiciels %}
+          {% if logiciel.nom == software_name or logiciel.url_internal == software_name %}
+            {% assign software_found = true %}
+            {% assign current_software = logiciel %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+        {% if software_found %}{% break %}{% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if software_found %}{% break %}{% endif %}
+  {% endfor %}
+{% elsif page.path contains "/linux/soft/" %}
+  {% assign path_parts = page.path | split: "/" %}
+  {% assign filename = path_parts | last %}
+  {% assign software_name = filename | remove: ".md" %}
+  {% assign software_found = false %}
+  {% for categorie in site.data.soft_list.categories %}
+    {% for logiciel in categorie.logiciels %}
+      {% if logiciel.nom == software_name or logiciel.url_internal == software_name %}
+        {% assign software_found = true %}
+        {% assign current_software = logiciel %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    {% if software_found %}{% break %}{% endif %}
+    {% if categorie.categories %}
+      {% for sous_categorie in categorie.categories %}
+        {% for logiciel in sous_categorie.logiciels %}
+          {% if logiciel.nom == software_name or logiciel.url_internal == software_name %}
+            {% assign software_found = true %}
+            {% assign current_software = logiciel %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+        {% if software_found %}{% break %}{% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if software_found %}{% break %}{% endif %}
+  {% endfor %}
+{% endif %}
+
+{% if current_software %}
+<div style="margin-bottom: 20px; padding: 10px; background-color: rgba(181, 232, 82, 0.1); border-left: 3px solid #B5E852;">
+  {% if current_software.url_doc_ubuntu_fr %}
+    <strong>Ubuntu-fr:</strong> <a href="{{ current_software.url_doc_ubuntu_fr }}">{{ current_software.nom }}</a><br>
+  {% endif %}
+  {% if current_software.url_website %}
+    <strong>Site:</strong> <a href="{{ current_software.url_website }}">{{ current_software.nom }}</a><br>
+  {% endif %}
+  {% if current_software.url_repository %}
+    <strong>Repo:</strong> <a href="{{ current_software.url_repository }}">{{ current_software.nom }}</a>
+  {% endif %}
+</div>
+{% endif %}
+

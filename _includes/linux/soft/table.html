@@ -66,9 +66,7 @@
   <tr class="toggle-content" style="display: none;">
     <td></td><td colspan="3">
       <div style="max-width: 800px; margin: 0 auto; padding: 10px;">
-        <strong>Ubuntu-fr:</strong> {{ url_doc_ubuntu_fr }}<br>
-        <strong>Site:</strong> {{ url_website }}<br>
-        <strong>Repo:</strong> {{ url_repository }}<br>
+        {% include linux/soft/software_info.html logiciel=logiciel %}
         <div style="margin-top: 15px;">
           {{ content_internal | markdownify }}
         </div>

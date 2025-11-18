@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: software
 ---
 TODO: Rajouter layout partout pour que les liens fonctionnent en local sans 
 
