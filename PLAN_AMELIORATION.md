@@ -56,29 +56,22 @@
 
 ---
 
-### 5. Améliorer la structure des données des logiciels
-**Problème** : Le fichier `_data/soft_list.yaml` est très long (450+ lignes) et difficile à maintenir.
-
-**Solution** : 
-- Option A : Diviser par catégorie (`_data/soft/accessoires.yaml`, `_data/soft/bureautique.yaml`, etc.)
-- Option B : Créer une structure avec des fichiers séparés pour chaque logiciel
-- Option C : Garder un seul fichier mais mieux structuré avec des commentaires
-
-**Impact** : 
-- Meilleure maintenabilité
-- Facilite l'ajout/modification de logiciels
-- Réduit les risques d'erreurs
+### 5. ~~Améliorer la structure des données des logiciels~~~~ - **IGNORÉ**
+**Décision** : Garder un seul fichier `_data/soft_list.yaml`. La structure actuelle est maintenable et préférée.
 
 ---
 
 ## 🟡 MOYEN - Optimisations
 
-### 6. Organiser les layouts
-**Problème** : Un seul layout `simple.md` dans `_layouts/`, mais le projet utilise `default` (du thème).
+### 6. ✅ Organiser les layouts - **FAIT**
+**Solution appliquée** : 
+- Supprimé `simple.md` (fichier de test non utilisé)
+- Créé `software.html` pour les pages de logiciels
+- Layouts documentés dans le README
 
-**Solution** : 
-- Créer des layouts personnalisés si nécessaire
-- Documenter l'usage des layouts
+**Résultat** : 
+- Layouts clairs et documentés
+- `software.html` automatise l'affichage des infos des logiciels
 
 ---
 
@@ -86,26 +79,26 @@
 **Problème** : Mélange de conventions (espaces, underscores, majuscules)
 
 **Solution** : 
-- Standardiser sur kebab-case (ex: `calibre.md`, `google-earth.md`)
+- Standardiser sur **snake_case** (ex: `nom_du_logiciel.md`, `google_earth.md`)
+- Plus facile à sélectionner en entier le nom
 - Renommer progressivement les fichiers
 - Mettre à jour les références
 
 **Impact** : 
 - Compatibilité cross-platform
 - URLs plus propres
-- Meilleure lisibilité
+- Meilleure sélection dans les éditeurs
 
 ---
 
-### 8. Ajouter un README.md
-**Problème** : Pas de documentation sur la structure du projet.
-
-**Solution** : Créer un `README.md` avec :
+### 8. ✅ Ajouter un README.md - **FAIT**
+**Solution appliquée** : Créé `README.md` avec :
 - Description du projet
 - Structure des dossiers
+- Instructions de développement local (depuis TEST_LOCAL.md)
 - Comment ajouter un logiciel
-- Comment contribuer
-- Instructions de build local
+- Documentation des layouts
+- Commandes utiles et dépannage
 
 ---
 
