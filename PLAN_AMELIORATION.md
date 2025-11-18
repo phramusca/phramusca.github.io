@@ -2,56 +2,40 @@
 
 ## 🔴 URGENT - Problèmes critiques
 
-### 1. Déplacer les fichiers markdown des logiciels hors de `_includes/`
-**Problème** : Les fichiers comme `Calibre.md`, `Meld.md`, etc. sont dans `_includes/` alors que ce dossier est destiné aux snippets réutilisables (templates, partials), pas au contenu.
+### 1. ✅ Déplacer les fichiers markdown des logiciels hors de `_includes/` - **FAIT**
+**Solution appliquée** : Les fichiers ont été déplacés dans `_wiki/linux/soft/` avec un layout `software.html` qui inclut automatiquement les informations du logiciel.
 
-**Solution** : Créer un dossier dédié pour le contenu des logiciels
-- Option A (recommandée) : Créer `_data/soft_content/` et y déplacer tous les `.md`
-- Option B : Créer `_soft/` comme collection Jekyll
-- Option C : Les intégrer dans `_wiki/linux/soft/` avec une structure cohérente
-
-**Impact** : 
-- Améliore la maintenabilité
-- Respecte les conventions Jekyll
-- Facilite la gestion du contenu
-
-**Fichiers concernés** : 21 fichiers `.md` dans `_includes/`
+**Résultat** : 
+- 21 fichiers `.md` maintenant dans `_wiki/linux/soft/`
+- Layout `software.html` créé pour automatiser l'affichage
+- Include `software_info.html` pour réutiliser les infos (Ubuntu-fr, Site, Repo)
 
 ---
 
-### 2. Créer un `.gitignore` approprié
-**Problème** : Le dossier `_site/` (build Jekyll) et `vendor/` sont versionnés, ce qui pollue le repo.
+### 2. ✅ Créer un `.gitignore` approprié - **FAIT**
+**Solution appliquée** : `.gitignore` créé avec toutes les entrées standards Jekyll.
 
-**Solution** : Créer un `.gitignore` avec :
-```
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-vendor/
-.bundle/
-*.gem
-*.gemfile.lock
-.DS_Store
-```
-
-**Impact** : 
-- Réduit la taille du repo
-- Évite les conflits de merge
-- Pratique standard Jekyll
+**Résultat** : 
+- `_site/`, `.sass-cache/`, `.jekyll-cache/`, etc. maintenant ignorés
+- `Gemfile.lock` ignoré (compatible GitHub Pages)
 
 ---
 
 ## 🟠 IMPORTANT - Améliorations structurelles
 
-### 3. Nettoyer les dossiers vides/inutilisés
-**Problème** : `_markdown/`, `notices/`, `scripts/` sont vides et polluent la structure.
+### 3. ✅ Nettoyer les dossiers vides/inutilisés - **FAIT**
+**Problème** : `_markdown/`, `notices/`, `scripts/` étaient vides et polluaient la structure.
 
-**Solution** : 
-- Supprimer s'ils ne sont pas utilisés
-- Ou documenter leur usage prévu dans un README
+**Analyse** : 
+- Ces dossiers n'étaient **pas des dossiers standards Jekyll**
+- Jekyll utilise : `_posts/`, `_layouts/`, `_includes/`, `_data/`, `_site/`, etc.
+- Ces dossiers étaient des restes d'une ancienne structure ou des dossiers prévus mais jamais utilisés
 
-**Impact** : Structure plus claire
+**Solution appliquée** : 
+- Vérification effectuée : aucun fichier dedans, aucune référence dans le code
+- Dossiers supprimés
+
+**Résultat** : Structure plus claire
 
 ---
 
