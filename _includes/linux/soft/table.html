@@ -9,6 +9,15 @@
   {% endif %}
 
 
+  {% capture url_internal %}
+  {% if logiciel.url_internal %}
+    {% assign page_url = '/wiki/linux/soft/' | append: logiciel.url_internal | append: '/' %}
+    <a href="{{ page_url | relative_url }}">{{ logiciel.nom }}</a>
+  {% else %}
+    {{ logiciel.nom }}
+  {% endif %}
+  {% endcapture %}
+
   {% capture url_apt %}
   {% if logiciel.apt %}
     {% if logiciel.apt contains "http" %}
@@ -31,18 +40,54 @@
   {% if logiciel.url_repository %}<a href="{{ logiciel.url_repository }}">{{ logiciel.nom }}</a>{% endif %}
   {% endcapture %}
 
-  {% capture content_internal %}
   {% if logiciel.url_internal %}
-    {% include {{ logiciel.url_internal }}.md %}
+    {% assign page_path = '_wiki/linux/soft/' | append: logiciel.url_internal | append: '.md' %}
+    {% assign wiki_page = site.wiki | where: "path", page_path | first %}
+    {% if wiki_page %}
+      {% comment %} wiki_page.content contient le markdown brut (sans front matter) {% endcomment %}
+      {% assign content_raw = wiki_page.content | strip %}
+      {% comment %} Supprimer le titre H1 s'il est présent en première ligne {% endcomment %}
+      {% assign content_lines = content_raw | split: "\n" %}
+      {% assign content_cleaned = "" %}
+      {% assign title_skipped = false %}
+      {% for line in content_lines %}
+        {% assign line_stripped = line | strip %}
+        {% if title_skipped == false and line_stripped != "" %}
+          {% if line_stripped contains "# " and line_stripped.size < 100 %}
+            {% comment %} C'est probablement le titre, on le saute {% endcomment %}
+            {% assign title_skipped = true %}
+          {% else %}
+            {% assign title_skipped = true %}
+            {% if content_cleaned == "" %}
+              {% assign content_cleaned = line %}
+            {% else %}
+              {% assign content_cleaned = content_cleaned | append: "\n" | append: line %}
+            {% endif %}
+          {% endif %}
+        {% else %}
+          {% if title_skipped or line_stripped != "" %}
+            {% if content_cleaned == "" %}
+              {% assign content_cleaned = line %}
+            {% else %}
+              {% assign content_cleaned = content_cleaned | append: "\n" | append: line %}
+            {% endif %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+      {% assign content_internal = content_cleaned | strip %}
+    {% else %}
+      {% assign content_internal = "" %}
+    {% endif %}
+  {% else %}
+    {% assign content_internal = "" %}
   {% endif %}
-  {% endcapture %}
 
   <!-- Ligne principale visible -->
   <tr>
     <td>
       <button class="toggle-button">+</button>
     </td>
-    <td>{{ logiciel.nom }}</td>
+    <td>{{ url_internal }}</td>
     <td>{{ logiciel.description }}</td>
     <td>{{ url_apt }}</td>
   </tr>

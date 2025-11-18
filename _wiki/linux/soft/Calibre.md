@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Calibre
 
 Accès à la [librairie Kobo](https://www.kobo.com/fr/fr/library).
