@@ -44,18 +44,7 @@
     {% assign page_path = '_wiki/linux/soft/' | append: logiciel.url_internal | append: '.md' %}
     {% assign wiki_page = site.wiki | where: "path", page_path | first %}
     {% if wiki_page %}
-      {% assign content_raw = wiki_page.content | strip %}
-      {% comment %} Supprimer le titre H1 s'il est présent {% endcomment %}
-      {% if content_raw contains "# " %}
-        {% assign first_line = content_raw | split: "\n" | first | strip %}
-        {% if first_line contains "# " and first_line.size < 100 %}
-          {% assign content_internal = content_raw | remove_first: first_line | strip | remove_first: "\n" | strip %}
-        {% else %}
-          {% assign content_internal = content_raw %}
-        {% endif %}
-      {% else %}
-        {% assign content_internal = content_raw %}
-      {% endif %}
+      {% assign content_internal = wiki_page.content | strip %}
     {% else %}
       {% assign content_internal = "" %}
     {% endif %}
