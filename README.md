@@ -90,8 +90,14 @@ bundle exec jekyll serve
 │       └── wiki/        # Images du wiki
 ├── Gemfile              # Dépendances Ruby
 ├── README.md            # Documentation du projet
-└── PLAN_AMELIORATION.md # Plan d'amélioration (exclu du build)
+└── .gitignore           # Fichiers ignorés par Git
 ```
+
+> Notes:
+>
+> - assets/ est standard Jekyll (copié tel quel dans _site/)
+> - Les dossiers avec _ (comme _posts/, _layouts/) sont spéciaux
+> - Certains fichiers sont exclus du build Jekyll (voir _config.yml > exclude)
 
 ## 📝 Ajouter un logiciel
 
@@ -145,8 +151,23 @@ Les posts apparaissent automatiquement sur la page d'accueil via `{% for post in
 
 ## 🎨 Layouts disponibles
 
-- `default` : Layout par défaut du thème (pages-themes/hacker)
-- `software` : Layout pour les pages de logiciels (inclut automatiquement les infos via `software_info.html`)
+Les layouts sont des templates de pages définis dans `_layouts/` :
+
+- **`default`** : Layout par défaut du thème (pages-themes/hacker)
+  - Utilisé par défaut pour toutes les pages
+  - Peut être surchargé en spécifiant un autre layout dans le front matter
+  
+- **`software`** : Layout pour les pages de logiciels
+  - Hérite de `default`
+  - Inclut automatiquement les informations du logiciel (Ubuntu-fr, Site, Repo) via `software_info.html`
+  - Utilisé dans les fichiers de `_wiki/linux/soft/` avec `layout: software`
+
+**Utilisation** : Spécifiez le layout dans le front matter YAML en haut du fichier :
+```markdown
+---
+layout: software
+---
+```
 
 ## 🔗 Système de logiciels
 
@@ -159,6 +180,63 @@ Le système de gestion des logiciels utilise :
 - **`_layouts/software.html`** : Layout qui inclut automatiquement `software_info.html` pour les pages de logiciels
 
 **Convention de nommage** : Tous les fichiers de logiciels sont en **snake_case** (ex: `easy_tag.md`, `google_earth.md`).
+
+## 📚 Collections Jekyll
+
+Les **collections** permettent d'organiser du contenu en dehors des posts. Le projet utilise la collection `wiki` :
+
+**Configuration dans `_config.yml`** :
+```yaml
+collections:
+  wiki:
+    output: true        # Génère des fichiers HTML pour chaque page
+    permalink: /wiki/:path/  # Structure d'URL : /wiki/linux/soft/calibre/
+```
+
+**Structure** :
+- Les fichiers sont dans `_wiki/` (dossier avec `_` = collection Jekyll)
+- Accessibles via `site.wiki` dans les templates Liquid
+- Chaque fichier devient une page accessible via son chemin relatif
+
+**Exemple d'utilisation** :
+```liquid
+{% for page in site.wiki %}
+  <a href="{{ page.url }}">{{ page.title }}</a>
+{% endfor %}
+```
+
+## 🧩 Includes
+
+Les **includes** (`_includes/`) sont des snippets réutilisables de code Liquid/HTML :
+
+- **`_includes/linux/soft/table.html`** : Génère le tableau de la liste des logiciels
+  - Utilisé dans les pages de catégories de logiciels
+  - Affiche les logiciels avec contenu expandable
+  
+- **`_includes/linux/soft/software_info.html`** : Affiche les infos d'un logiciel
+  - Peut être utilisé avec `{% include linux/soft/software_info.html logiciel=logiciel %}`
+  - Ou automatiquement dans le layout `software`
+
+**Utilisation** :
+```liquid
+{% include linux/soft/software_info.html logiciel=logiciel %}
+```
+
+## 🚫 Exclure des fichiers du build
+
+Pour exclure des fichiers du build Jekyll, ajoutez-les dans `_config.yml` :
+
+```yaml
+exclude:
+  - README.md
+  - PLAN_AMELIORATION.md
+  - .devcontainer/
+  # ... etc
+```
+
+**Important** : En Jekyll 3.x, définir `exclude` remplace la liste par défaut. Il faut donc inclure les exclusions par défaut de Jekyll (`.sass-cache/`, `node_modules/`, `vendor/`, etc.) si vous définissez une liste personnalisée.
+
+Les fichiers exclus ne seront pas copiés dans `_site/` lors du build.
 
 ## 🔧 Technologies
 
