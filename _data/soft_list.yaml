@@ -44,7 +44,7 @@ categories:
         url_website: hhttps://pwr-solaar.github.io/solaar/
         url_repository: https://github.com/pwr-solaar/solaar
         description: Protocole Logitech™ Unifying Receiver.
-      - nom: Spetacle
+      - nom: Spectacle
         archive: yes
         apt: kde-spectacle
         url_internal: null
