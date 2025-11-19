@@ -1,0 +1,67 @@
+/* Surcharge du thème hacker pour personnaliser les styles */
+
+/* Le thème hacker utilise list-style-image avec une image "bullet.png" contenant ">>" */
+/* On remplace cela par des puces classiques tout en gardant la couleur verte */
+
+/* Désactiver l'image de puce du thème et utiliser des puces classiques */
+body #main_content ul,
+body section ul,
+body ul {
+  list-style: none !important;
+  list-style-image: none !important;
+  padding-left: 1.5em !important;
+}
+
+/* Créer des puces classiques avec ::before */
+body #main_content ul li,
+body section ul li,
+body ul li {
+  position: relative !important;
+  padding-left: 1em !important;
+  margin-left: 0 !important;
+  list-style: none !important;
+  list-style-image: none !important;
+}
+
+body #main_content ul li::before,
+body section ul li::before,
+body ul li::before {
+  content: "•" !important; /* Puce classique (rond plein) au lieu de ">>" */
+  color: #b5e853 !important; /* Garder la couleur verte du thème */
+  font-weight: bold !important;
+  display: inline-block !important;
+  width: 1em !important;
+  margin-left: -1em !important;
+  margin-right: 0.5em !important;
+  position: absolute !important;
+  left: 0 !important;
+}
+
+/* Pour les listes imbriquées, utiliser des puces différentes */
+body ul ul li::before {
+  content: "◦" !important; /* Cercle vide pour les sous-listes */
+  color: #b5e853 !important;
+}
+
+body ul ul ul li::before {
+  content: "▪" !important; /* Carré pour les sous-sous-listes */
+  color: #b5e853 !important;
+}
+
+/* Style pour les listes ordonnées (garder les numéros natifs) */
+body ol {
+  list-style: decimal !important;
+  list-style-image: none !important;
+  padding-left: 1.5em;
+  color: inherit;
+}
+
+body ol li::before {
+  display: none !important; /* Pas de puce personnalisée pour les listes numérotées */
+}
+
+body ol li {
+  list-style: decimal !important;
+  padding-left: 0;
+}
+

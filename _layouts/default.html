@@ -1,0 +1,33 @@
+---
+# Layout default qui surcharge celui du thème hacker
+# Permet d'ajouter du CSS personnalisé dans le <head>
+---
+
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'fr' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <!-- CSS personnalisé pour surcharger le thème (chargé après le CSS du thème) -->
+    <link rel="stylesheet" href="{{ '/assets/css/custom-theme.css' | relative_url }}">
+    {% seo %}
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>{{ site.title | default: site.github.repository_name }}</h1>
+        <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        {{ content }}
+      </section>
+    </div>
+  </body>
+</html>
+
