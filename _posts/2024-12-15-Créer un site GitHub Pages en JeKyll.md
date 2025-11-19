@@ -24,8 +24,7 @@ title: Créer un site GitHub Pages en JeKyll
 
 ### Étape 2 : Ajouter un fichier JSON pour les données de recherche
 
-1. Créez un fichier `search.json` dans la racine de votre site Jekyll.
-2. Ajoutez le code suivant pour inclure les données des articles dans le fichier JSON :
+   {% raw %}
 
    ```liquid
    ---
@@ -43,7 +42,7 @@ title: Créer un site GitHub Pages en JeKyll
    ]
    ```
 
----
+   {% endraw %}
 
 ### Étape 3 : Ajouter le champ de recherche et un conteneur pour les résultats
 
