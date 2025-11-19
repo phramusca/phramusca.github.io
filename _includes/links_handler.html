@@ -1,0 +1,12 @@
+{% comment %}
+  Include pour gérer les liens internes/externes
+  Usage: {% include links_handler.html %}
+  
+  Ajoute le CSS et JS nécessaires pour :
+  - Distinguer visuellement les liens internes et externes
+  - Ouvrir les liens externes dans de nouvelles fenêtres
+{% endcomment %}
+
+<link rel="stylesheet" href="{{ '/assets/css/links.css' | relative_url }}">
+<script src="{{ '/assets/js/links.js' | relative_url }}" defer></script>
+

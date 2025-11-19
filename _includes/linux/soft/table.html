@@ -21,7 +21,7 @@
   {% capture url_apt %}
   {% if logiciel.apt %}
     {% if logiciel.apt contains "http" %}
-    <a href="{{ logiciel.apt }}">{{ logiciel.apt }}</a>
+    <a href="{{ logiciel.apt }}" target="_blank" rel="noopener noreferrer">{{ logiciel.apt }}</a>
     {% else %}
       <a href="apt://{{ logiciel.apt }}">apt://{{ logiciel.apt }}</a>
     {% endif %}

@@ -45,13 +45,13 @@
 {% if current_software %}
 <div style="margin-bottom: 20px; padding: 10px; background-color: rgba(181, 232, 82, 0.1); border-left: 3px solid #B5E852;">
   {% if current_software.url_doc_ubuntu_fr %}
-    <strong>Ubuntu-fr:</strong> <a href="{{ current_software.url_doc_ubuntu_fr }}">{{ current_software.nom }}</a><br>
+    <strong>Ubuntu-fr:</strong> <a href="{{ current_software.url_doc_ubuntu_fr }}" target="_blank" rel="noopener noreferrer">{{ current_software.nom }}</a><br>
   {% endif %}
   {% if current_software.url_website %}
-    <strong>Site:</strong> <a href="{{ current_software.url_website }}">{{ current_software.nom }}</a><br>
+    <strong>Site:</strong> <a href="{{ current_software.url_website }}" target="_blank" rel="noopener noreferrer">{{ current_software.nom }}</a><br>
   {% endif %}
   {% if current_software.url_repository %}
-    <strong>Repo:</strong> <a href="{{ current_software.url_repository }}">{{ current_software.nom }}</a>
+    <strong>Repo:</strong> <a href="{{ current_software.url_repository }}" target="_blank" rel="noopener noreferrer">{{ current_software.nom }}</a>
   {% endif %}
 </div>
 {% endif %}
