@@ -46,29 +46,9 @@ Site personnel hébergé sur GitHub Pages, construit avec Jekyll. Ce site contie
 - `Jekyll: Clean` - Nettoie le dossier `_site/`
 - `Bundle: Install` - Installe les dépendances Ruby
 
-### Dépannage
-
-#### Erreur "bundle: command not found"
-```bash
-gem install bundler
-```
-
-#### Erreur de port déjà utilisé
-```bash
-# Tuer le processus sur le port 4000
-lsof -ti:4000 | xargs kill -9
-```
-
-#### Rebuild complet
-```bash
-bundle exec jekyll clean
-bundle exec jekyll build
-bundle exec jekyll serve
-```
-
 ## 📁 Structure du projet
 
-```
+```bash
 .
 ├── _config.yml          # Configuration Jekyll
 ├── _data/               # Données (YAML, JSON)
@@ -96,7 +76,7 @@ bundle exec jekyll serve
 > Notes:
 >
 > - assets/ est standard Jekyll (copié tel quel dans _site/)
-> - Les dossiers avec _ (comme _posts/, _layouts/) sont spéciaux
+> - Les dossiers avec \_ (comme \_posts/, \_layouts/) sont spéciaux
 > - Certains fichiers sont exclus du build Jekyll (voir _config.yml > exclude)
 
 ## 📝 Ajouter un logiciel
@@ -104,17 +84,19 @@ bundle exec jekyll serve
 Pour ajouter un nouveau logiciel à la liste :
 
 1. **Ajouter dans `_data/soft_list.yaml`** dans la catégorie appropriée :
+
    ```yaml
    - nom: Nom du Logiciel
      apt: nom-du-paquet
-     url_internal: nom_du_logiciel  # En snake_case, correspond au nom du fichier .md
+     url_internal: nom_du_logiciel  # En snake_case, correspond au nom du fichier .md dans le dossier _includes/linux/soft
      url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/...
      url_website: https://...
      url_repository: https://github.com/...
      description: Description du logiciel
    ```
 
-2. **Créer la page dans `_wiki/linux/soft/nom_du_logiciel.md`** (nom en snake_case) :
+1. **Créer la page dans `_wiki/linux/soft/nom_du_logiciel.md`** (nom en snake_case) :
+
    ```markdown
    ---
    layout: software
@@ -125,7 +107,8 @@ Pour ajouter un nouveau logiciel à la liste :
    Contenu de la page...
    ```
 
-   **Important** : 
+   **Important** :
+
    - Le `url_internal` dans le YAML doit correspondre exactement au nom du fichier (sans `.md`)
    - Le layout `software` inclut automatiquement les informations (Ubuntu-fr, Site, Repo) depuis `soft_list.yaml`
    - Les fichiers doivent être en **snake_case** (ex: `easy_tag.md`, `google_earth.md`)
@@ -135,6 +118,7 @@ Pour ajouter un nouveau logiciel à la liste :
 Les articles de blog sont dans `_posts/` avec le format : `YYYY-MM-DD-Titre.md`
 
 **Structure d'un post** :
+
 ```markdown
 ---
 layout: default
@@ -163,6 +147,7 @@ Les layouts sont des templates de pages définis dans `_layouts/` :
   - Utilisé dans les fichiers de `_wiki/linux/soft/` avec `layout: software`
 
 **Utilisation** : Spécifiez le layout dans le front matter YAML en haut du fichier :
+
 ```markdown
 ---
 layout: software
@@ -186,6 +171,7 @@ Le système de gestion des logiciels utilise :
 Les **collections** permettent d'organiser du contenu en dehors des posts. Le projet utilise la collection `wiki` :
 
 **Configuration dans `_config.yml`** :
+
 ```yaml
 collections:
   wiki:
@@ -194,11 +180,13 @@ collections:
 ```
 
 **Structure** :
+
 - Les fichiers sont dans `_wiki/` (dossier avec `_` = collection Jekyll)
 - Accessibles via `site.wiki` dans les templates Liquid
 - Chaque fichier devient une page accessible via son chemin relatif
 
 **Exemple d'utilisation** :
+
 ```liquid
 {% for page in site.wiki %}
   <a href="{{ page.url }}">{{ page.title }}</a>
@@ -218,6 +206,7 @@ Les **includes** (`_includes/`) sont des snippets réutilisables de code Liquid/
   - Ou automatiquement dans le layout `software`
 
 **Utilisation** :
+
 ```liquid
 {% include linux/soft/software_info.html logiciel=logiciel %}
 ```
@@ -240,10 +229,10 @@ Les fichiers exclus ne seront pas copiés dans `_site/` lors du build.
 
 ## 🔧 Technologies
 
-- **Jekyll** : Générateur de site statique
 - **GitHub Pages** : Hébergement
-- **Liquid** : Moteur de templates
+- **Jekyll** : Générateur de site statique
 - **Kramdown** : Processeur Markdown
+- **Liquid** : Moteur de templates
 
 ## 📄 Licence
 
@@ -257,4 +246,3 @@ Ce site est un projet personnel. Le contenu est sous licence appropriée selon l
 ---
 
 *Ce site a été converti depuis MediaWiki en utilisant [mediawiki-to-gfm](https://github.com/outofcontrol/mediawiki-to-gfm) fin 2024, lui-même migré depuis Wikini fin 2009.*
-

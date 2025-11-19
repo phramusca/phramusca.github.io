@@ -13,7 +13,8 @@
     "vscode": {
       "extensions": [
         "kramdown.kramdown",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "Gruntfuggly.todo-tree"
       ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "bash"
