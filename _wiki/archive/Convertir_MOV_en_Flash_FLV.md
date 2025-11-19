@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: wiki
 ---
 
 # Convertir MOV en Flash FLV

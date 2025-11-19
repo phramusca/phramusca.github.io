@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: wiki
 ---
 
 # Créer un panoramique avec Hugin

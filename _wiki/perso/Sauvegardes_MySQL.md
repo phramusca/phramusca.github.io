@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: wiki
 ---
 
 # Sauvegardes MySQL

@@ -141,12 +141,26 @@ Les layouts sont des templates de pages définis dans `_layouts/` :
   - Utilisé par défaut pour toutes les pages
   - Peut être surchargé en spécifiant un autre layout dans le front matter
   
-- **`software`** : Layout pour les pages de logiciels
+- **`wiki`** : Layout pour les pages wiki
   - Hérite de `default`
+  - Inclut automatiquement le gestionnaire de liens (distinction interne/externe, ouverture dans nouvel onglet)
+  - Utilisé par défaut pour toutes les pages dans `_wiki/` (sauf les logiciels)
+  - Facilite l'extension et l'évolution des fonctionnalités communes aux pages wiki
+  
+- **`software`** : Layout pour les pages de logiciels
+  - Hérite de `wiki` (donc inclut aussi le gestionnaire de liens)
   - Inclut automatiquement les informations du logiciel (Ubuntu-fr, Site, Repo) via `software_info.html`
   - Utilisé dans les fichiers de `_wiki/linux/soft/` avec `layout: software`
 
 **Utilisation** : Spécifiez le layout dans le front matter YAML en haut du fichier :
+
+```markdown
+---
+layout: wiki
+---
+```
+
+ou
 
 ```markdown
 ---
