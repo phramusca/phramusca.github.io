@@ -218,7 +218,7 @@ Pour exclure des fichiers du build Jekyll, ajoutez-les dans `_config.yml` :
 ```yaml
 exclude:
   - README.md
-  - PLAN_AMELIORATION.md
+  - TODO.md
   - .devcontainer/
   # ... etc
 ```

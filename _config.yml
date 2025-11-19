@@ -31,7 +31,7 @@ exclude:
   - vendor/ruby/
   # Nos exclusions personnalisées
   - README.md
-  - PLAN_AMELIORATION.md
+  - TODO.md
   - .devcontainer/
   - .vscode/
   - .git/
