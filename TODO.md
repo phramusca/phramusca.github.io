@@ -1,52 +1,5 @@
 # TODO - Plan d'amélioration du projet Jekyll
 
-## 🚀 Quick Wins (à faire en premier)
-
-### 1. Nettoyer les dossiers vides
-**Impact** : Faible, nettoyage simple  
-**Fichiers** :
-- `_posts/data/` : Dossier vide à supprimer
-- `_includes/images/` : Dossier vide à supprimer
-
-**Action** : Supprimer ces dossiers
-
----
-
-### 2. Corriger le TODO dans ventoy.md
-**Impact** : Faible, correction simple  
-**Fichier** : `_wiki/linux/soft/ventoy.md`
-
-**Problème** : Ligne 4 contient "TODO: Rajouter layout partout" mais le layout est déjà présent (ligne 2)
-
-**Action** : Supprimer la ligne 4
-
----
-
-### 3. Archiver ou supprimer soft-old.md
-**Impact** : Faible, nettoyage  
-**Fichier** : `_wiki/linux/soft-old.md`
-
-**Problème** : Fichier avec beaucoup de TODOs, semble être une ancienne version
-
-**Action** :
-- Déplacer dans `_wiki/archive/linux/soft-old.md` OU
-- Supprimer si vraiment obsolète
-
----
-
-### 4. Nettoyer les fichiers avec "TODO: Revoir"
-**Impact** : Moyen, nécessite vérification du contenu  
-**Fichiers** :
-- `_wiki/linux/soft/wine.md` : Ligne 7 "TODO: Revoir et/ou archiver"
-- `_wiki/linux/soft/meld.md` : Ligne 8 "TODO: A revoir"
-- `_wiki/linux/soft/easy_tag.md` : Ligne 7 "TODO: Revoir"
-
-**Action** :
-- Vérifier le contenu de chaque fichier
-- Soit mettre à jour le contenu, soit archiver, soit supprimer le TODO si le contenu est OK
-
----
-
 ## 📝 TODOs dans les fichiers de logiciels
 
 ### Calibre (`_wiki/linux/soft/calibre.md`)
@@ -123,9 +76,30 @@
 
 ---
 
+### Wine (`_wiki/linux/soft/wine.md`)
+- Ligne 7 : `TODO: Revoir et/ou archiver`
+
+**Action** : Vérifier le contenu, soit mettre à jour, soit archiver, soit supprimer le TODO si le contenu est OK
+
+---
+
+### Meld (`_wiki/linux/soft/meld.md`)
+- Ligne 8 : `TODO: A revoir`
+
+**Action** : Vérifier le contenu, soit mettre à jour, soit archiver, soit supprimer le TODO si le contenu est OK
+
+---
+
+### EasyTag (`_wiki/linux/soft/easy_tag.md`)
+- Ligne 7 : `TODO: Revoir`
+
+**Action** : Vérifier le contenu, soit mettre à jour, soit archiver, soit supprimer le TODO si le contenu est OK
+
+---
+
 ## 🔧 Tâches d'amélioration structurelles
 
-### 5. Standardiser les noms de fichiers dans `_wiki/`
+### 1. Standardiser les noms de fichiers dans `_wiki/`
 **Impact** : Moyen, nécessite mise à jour des liens  
 **Problème** : Mélange de conventions de nommage dans `_wiki/`
 
@@ -154,7 +128,7 @@
 
 ---
 
-### 6. Organiser le dossier `_wiki/archive/`
+### 2. Organiser le dossier `_wiki/archive/`
 **Impact** : Faible, organisation  
 **Problème** : Le dossier `archive/` contient du contenu archivé mais sa structure n'est pas claire
 
@@ -165,7 +139,7 @@
 
 ---
 
-### 7. Améliorer la structure des données `soft_list.yaml`
+### 3. Améliorer la structure des données `soft_list.yaml`
 **Impact** : Faible, organisation  
 **Problème** : Le fichier fait 450+ lignes et peut être difficile à maintenir
 
@@ -178,7 +152,7 @@
 
 ---
 
-### 8. Vérifier les liens internes cassés
+### 4. Vérifier les liens internes cassés
 **Impact** : Moyen, nécessite vérification manuelle  
 **Problème** : Après la migration depuis MediaWiki, certains liens internes peuvent être cassés
 
@@ -189,7 +163,7 @@
 
 ---
 
-### 9. Optimiser les images
+### 5. Optimiser les images
 **Impact** : Faible, optimisation  
 **Problème** : Les images peuvent être optimisées (taille, format)
 
@@ -202,6 +176,8 @@
 
 ## ✅ Tâches complétées
 
+- ✅ Nettoyer les dossiers vides (`_posts/data/`, `_includes/images/`)
+- ✅ Corriger le TODO obsolète dans `ventoy.md`
 - ✅ Déplacer les fichiers markdown des logiciels hors de `_includes/`
 - ✅ Créer un `.gitignore` approprié
 - ✅ Nettoyer les dossiers vides/inutilisés
@@ -211,6 +187,26 @@
 - ✅ Ajouter un README.md complet
 - ✅ Exclure les fichiers de documentation du build
 - ✅ Documenter les collections, includes, layouts dans le README
+
+---
+
+## 🔄 Tâches nécessitant une action manuelle
+
+### Intégrer les logiciels de soft-old.md
+**Impact** : Moyen, nécessite décision sur chaque logiciel  
+**Fichier** : `_wiki/linux/soft-old.md`
+
+**Problème** : Fichier avec beaucoup de TODOs et de logiciels à intégrer
+
+**Action** :
+- Passer en revue les logiciels listés dans `soft-old.md`
+- Pour chaque logiciel :
+  - Soit l'ajouter dans `_data/soft_list.yaml` et créer une page dans `_wiki/linux/soft/`
+  - Soit créer une page wiki sans l'ajouter à la liste
+  - Soit archiver si obsolète
+- Une fois intégré, archiver ou supprimer `soft-old.md`
+
+**Note** : Cette tâche nécessite une décision manuelle pour chaque logiciel, ce n'est pas un quick win.
 
 ---
 

@@ -1,8 +1,6 @@
 ---
 layout: software
 ---
-TODO: Rajouter layout partout pour que les liens fonctionnent en local sans 
-
 
 # Ventoy
 
@@ -18,4 +16,4 @@ Ventoy est un outil permettant de créer une clé USB live multiboot, à partir 
   - Copier les fichiers ISO sur la clé
   - Booter sur la clé. Et voila
 
-Voir https://doc.ubuntu-fr.org/ventoy pour plus de détails
+Voir <https://doc.ubuntu-fr.org/ventoy> pour plus de détails
