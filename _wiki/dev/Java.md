@@ -203,8 +203,3 @@ A étudier plus sérieusement
 </target>
 ```
 
-## Temp: jMusicLib
-
-J'ai un projet en cours [jMusicLib](JMusicLib) dont le nom
-n'est pas encore fixé et qui n'est pas encore disponible en ligne. Mais
-pour mon propre besoin, je commence à écrire une doc.
