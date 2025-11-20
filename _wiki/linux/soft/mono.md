@@ -11,7 +11,7 @@ Mono a été repris par Microsoft dans un fork et on peut faire du .NET sous lin
 Voici l'annonce sur le wiki:
 
 > [!IMPORTANT]
-> The [Mono Project (mono/mono)]( https://github.com/mono/mono) (‘original mono’) has been an important part of the .NET ecosystem since it was launched in 2001. Microsoft became the steward of the Mono Project when it acquired Xamarin in 2016.
+> The [Mono Project (mono/mono)](https://github.com/mono/mono) (‘original mono’) has been an important part of the .NET ecosystem since it was launched in 2001. Microsoft became the steward of the Mono Project when it acquired Xamarin in 2016.
 >
 > The last major release of the Mono Project was in July 2019, with minor patch releases since that time. The last patch release was February 2024.
 >

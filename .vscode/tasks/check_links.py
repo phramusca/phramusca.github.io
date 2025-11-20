@@ -603,6 +603,23 @@ def check_and_fix_relative_links(fix: bool = False) -> int:
                 print(f"✅ {rel_path}: {len(issues)} lien(s) corrigé(s)")
         
         print(f"\n✅ {fixed_count} lien(s) corrigé(s) au total !")
+        
+        # Mettre à jour le cache pour les liens relatifs corrigés
+        # Charger le cache existant
+        cache = load_cache()
+        updated_cache = False
+        
+        for file_path, rel_path, issues in all_issues:
+            for line_num, link_text, current_link, suggested_link in issues:
+                # Marquer les anciens liens comme valides (ils sont corrigés maintenant)
+                cache_key = get_cache_key(file_path, current_link, False)
+                update_cache(cache, cache_key, True, '', False)
+                updated_cache = True
+        
+        if updated_cache:
+            save_cache(cache)
+            print("💾 Cache mis à jour pour les liens relatifs corrigés")
+        
         return 0
     else:
         print("\n💡 Utilisez --fix-relative pour corriger automatiquement tous les liens")
@@ -661,8 +678,14 @@ def check_links(check_internal: bool = True, check_external: bool = True,
                             cached_count += 1
                             is_valid, error = cached_result
                             if not is_valid:
-                                broken_external.append((file_path, link_text, link_url, error, line_num))
-                            if verbose:
+                                # En mode interactif, mettre aussi les liens du cache non valides de côté
+                                if interactive:
+                                    interactive_links.append((file_path, link_text, link_url, error, line_num))
+                                    if verbose:
+                                        print(f"   📦 Cache: {link_url} -> ❌ (sera vérifié en mode interactif)")
+                                else:
+                                    broken_external.append((file_path, link_text, link_url, error, line_num))
+                            if verbose and not (interactive and not is_valid):
                                 print(f"   📦 Cache: {link_url} -> {'✅' if is_valid else '❌'}")
                         else:
                             # Vérifier le lien
@@ -671,11 +694,14 @@ def check_links(check_internal: bool = True, check_external: bool = True,
                                 print(f"   🔍 Vérification externe: {link_url}")
                             is_valid, error = check_external_link(link_url)
                             
-                            # En mode interactif, si le lien est protégé par captcha, on le met de côté
-                            if interactive and not is_valid and is_captcha_protected(error):
+                            # En mode interactif, mettre tous les liens non valides de côté pour vérification manuelle
+                            if interactive and not is_valid:
                                 interactive_links.append((file_path, link_text, link_url, error, line_num))
                                 if verbose:
-                                    print(f"      ⚠️  Protection détectée (captcha/rate limit), sera vérifié en mode interactif: {error}")
+                                    if is_captcha_protected(error):
+                                        print(f"      ⚠️  Protection détectée (captcha/rate limit), sera vérifié en mode interactif: {error}")
+                                    else:
+                                        print(f"      ⚠️  Lien mort, sera vérifié en mode interactif: {error}")
                             else:
                                 update_cache(cache, cache_key, is_valid, error, True)
                                 if not is_valid:
@@ -716,13 +742,13 @@ def check_links(check_internal: bool = True, check_external: bool = True,
         except Exception as e:
             print(f"⚠️  Erreur lors de la lecture de {file_path}: {e}")
     
-    # Gérer les liens interactifs (mode captcha)
+    # Gérer les liens interactifs (tous les liens externes non valides)
     if interactive and interactive_links:
         print("\n" + "="*70)
         print("🌐 VÉRIFICATION INTERACTIVE")
         print("="*70)
-        print(f"\n⚠️  {len(interactive_links)} lien(s) nécessitent une vérification manuelle")
-        print("   (protégés par captcha ou rate limit)\n")
+        print(f"\n⚠️  {len(interactive_links)} lien(s) externe(s) ont échoué lors de la vérification automatique")
+        print("   Vous pouvez les vérifier manuellement dans votre navigateur\n")
         
         grouped = group_by_file(interactive_links)
         for file_path in sorted(grouped.keys()):
@@ -736,54 +762,76 @@ def check_links(check_internal: bool = True, check_external: bool = True,
                 print(f"         Erreur automatique: {error}")
         
         print("\n" + "─"*70)
-        response = input("\n💬 Voulez-vous ouvrir ces liens dans votre navigateur pour vérification manuelle? (o/N): ").strip().lower()
+        response = input("\n💬 Voulez-vous vérifier ces liens manuellement? (o/N): ").strip().lower()
         
         if response in ['o', 'oui', 'y', 'yes']:
             import webbrowser
-            print("\n🌐 Ouverture des liens...")
-            for file_path, link_text, link_url, error, line_num in interactive_links:
+            should_exit = False
+            
+            for i, (file_path, link_text, link_url, error, line_num) in enumerate(interactive_links, 1):
+                if should_exit:
+                    break
+                    
                 # Normaliser l'URL
                 url = link_url
                 if not url.startswith(('http://', 'https://')):
                     url = 'https://' + url
-                print(f"   🔗 Ouverture: {url}")
-                webbrowser.open(url)
-                time.sleep(1)  # Petit délai entre chaque ouverture
-            
-            print("\n" + "─"*70)
-            print("\n💬 Pour chaque lien, indiquez s'il est valide (o/N) ou tapez 'q' pour quitter:\n")
-            
-            for file_path, link_text, link_url, error, line_num in interactive_links:
-                url = link_url
-                if not url.startswith(('http://', 'https://')):
-                    url = 'https://' + url
                 
+                link_display = f"[{link_text}]({link_url})" if link_text else f"({link_url})"
+                file_link = make_file_link(file_path, line_num)
+                print(f"\n{'─'*70}")
+                print(f"Lien {i}/{len(interactive_links)}: {link_display}")
+                print(f"   Erreur automatique: {error}")
+                print(f"   📄 Fichier source: {file_link}")
+                
+                # Ouvrir automatiquement le lien
+                print(f"   🔗 Ouverture de {url}...")
+                webbrowser.open(url)
+                time.sleep(0.5)  # Petit délai
+                
+                # Demander si le lien est valide
                 while True:
-                    response = input(f"   ✅ Le lien {url} est-il valide? (o/N/q): ").strip().lower()
-                    if response == 'q':
+                    user_response = input(f"   ✅ Ce lien est-il valide? (o/N/i pour ignorer/q pour quitter): ").strip().lower()
+                    if user_response == 'q':
                         print("\n   ⏭️  Arrêt de la vérification interactive")
+                        should_exit = True
                         break
-                    elif response in ['o', 'oui', 'y', 'yes']:
+                    elif user_response in ['o', 'oui', 'y', 'yes']:
                         # Lien valide
                         cache_key = get_cache_key(file_path, link_url, True)
                         update_cache(cache, cache_key, True, '', True)
+                        print(f"   ✅ Lien marqué comme valide dans le cache")
                         break
-                    elif response in ['n', 'non', 'no', '']:
-                        # Demander la raison
-                        reason = input(f"   ❌ Raison (optionnel): ").strip()
+                    elif user_response in ['i', 'ignore', 'ignorer']:
+                        # Ignorer le lien (exemples, etc.)
                         cache_key = get_cache_key(file_path, link_url, True)
-                        error_msg = reason if reason else "Vérifié manuellement: lien mort"
+                        update_cache(cache, cache_key, True, 'Ignoré (lien d\'exemple)', True)
+                        print(f"   ⏭️  Lien ignoré (marqué comme valide mais ignoré)")
+                        break
+                    elif user_response in ['n', 'non', 'no', '']:
+                        # Lien invalide
+                        cache_key = get_cache_key(file_path, link_url, True)
+                        error_msg = "Vérifié manuellement: lien mort"
                         update_cache(cache, cache_key, False, error_msg, True)
                         broken_external.append((file_path, link_text, link_url, error_msg, line_num))
+                        print(f"   ❌ Lien marqué comme mort dans le cache")
                         break
                     else:
-                        print("   ⚠️  Réponse invalide. Tapez 'o' pour valide, 'N' pour invalide, ou 'q' pour quitter.")
-                
-                if response == 'q':
-                    break
+                        print("   ⚠️  Réponse invalide. Tapez 'o' pour valide, 'N' pour invalide, 'i' pour ignorer, ou 'q' pour quitter.")
+            
+            # Sauvegarder le cache après la vérification interactive
+            save_cache(cache)
+            print(f"\n{'─'*70}")
+            print("💾 Cache mis à jour avec les résultats de la vérification interactive")
+        else:
+            # Si l'utilisateur n'a pas voulu vérifier, on les met dans broken_external
+            for file_path, link_text, link_url, error, line_num in interactive_links:
+                broken_external.append((file_path, link_text, link_url, error, line_num))
     
-    # Sauvegarder le cache
-    save_cache(cache)
+    # Sauvegarder le cache (sauf si on est en mode interactif et qu'on n'a pas encore fini)
+    # Le cache sera sauvegardé après la vérification interactive
+    if not (interactive and interactive_links):
+        save_cache(cache)
     
     # Afficher les statistiques du cache
     if cached_count > 0 or checked_count > 0:
@@ -854,11 +902,14 @@ def check_links(check_internal: bool = True, check_external: bool = True,
                     print(f"         Erreur: {error}")
                 print()
             
-            # Proposer le mode interactif si des liens sont protégés
-            if captcha_links and not interactive:
+            # Proposer le mode interactif si des liens sont protégés ou si des liens ont échoué
+            if not interactive and (captcha_links or broken_external):
                 print("─" * 70)
-                print(f"💡 {len(captcha_links)} lien(s) semble(nt) protégé(s) par captcha/rate limit")
-                print("   Utilisez --interactive pour vérifier ces liens manuellement")
+                if captcha_links:
+                    print(f"💡 {len(captcha_links)} lien(s) semble(nt) protégé(s) par captcha/rate limit")
+                else:
+                    print(f"💡 {len(broken_external)} lien(s) externe(s) ont échoué")
+                print("   Utilisez --interactive pour vérifier ces liens manuellement dans votre navigateur")
                 print("─" * 70)
                 print()
         else:
