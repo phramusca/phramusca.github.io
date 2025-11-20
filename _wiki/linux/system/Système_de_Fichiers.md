@@ -13,8 +13,8 @@ Plus d'infos sur les systèmes de fichiers:
 
 ## Disques locaux et réseaux
 
-- [Disques Locaux](Disques_Locaux)
-- [Disques Réseau](Disques_Réseau)
+- [Disques Locaux](../Disques_Locaux)
+- [Disques Réseau](../Disques_Réseau)
 
 ## Droits (chmod)
 

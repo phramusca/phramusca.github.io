@@ -8,8 +8,8 @@ TODO : Faire de cette page le README for Système !!
 
 - [Système de Fichiers](system/Système_de_Fichiers)
   - [Système](system/Système)
-  - [Réseau](Réseau)
-  - [Waydroid](Waydroid)
+  - [Réseau](../Réseau)
+  - [Waydroid](../../Waydroid)
 
 ET ci-dessous:
 
@@ -76,7 +76,7 @@ Un benchmark est un logiciel qui teste les capacités d'un PC
 
 - geekbenchmark : <http://www.primatelabs.ca/geekbench/index.html>
 
-[Mes Résultats](Mes_Résultats)
+[Mes Résultats](../../../perso/Mes_Résultats)
 
 ## Reprendre une installation
 

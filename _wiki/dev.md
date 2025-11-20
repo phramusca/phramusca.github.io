@@ -24,7 +24,7 @@ A priori, en version décentralisée, ce serait plutot GIT, A TESTER:
 
 ### Hébergement de code
 
-[Sourceforge](Sourceforge) est un fournisseurs parmi d'autres.
+[Sourceforge](../archive/Sourceforge) est un fournisseurs parmi d'autres.
 
 [savannah.gnu.org](http://savannah.gnu.org/) en est un autre.
 
@@ -60,11 +60,11 @@ Un peu d'humour:
 
 ### NetBeans
 
-[NetBeans](NetBeans) est l'IDE de Sun (malheureusement repris maintenant par Oracle) axé Java mais aussi Python, C, C++, Ruby, XML, PHP, ... Disponible sous Linux et Windows.
+[NetBeans](../linux/soft/netbeans) est l'IDE de Sun (malheureusement repris maintenant par Oracle) axé Java mais aussi Python, C, C++, Ruby, XML, PHP, ... Disponible sous Linux et Windows.
 
 ### MonoDevelop
 
-[Mono](Mono) est une implémentation libre de .NET avec comme éditeur MonoDevelop
+[Mono](../linux/soft/mono) est une implémentation libre de .NET avec comme éditeur MonoDevelop
 
 ### Gambas
 
@@ -74,7 +74,7 @@ Gambas se veut le presque Visual Basic libre
 
 ### Java
 
-Contenu transféré sur la page [Java](Java) ...
+Contenu transféré sur la page [Java](../dev/Java) ...
 
 ### Visual Basic
 
@@ -93,14 +93,14 @@ Pour tester en ligne du code HTML, Javascript et CSS:
 
 ### PhP / MySQL
 
-Mon éditeur de prédilection est [NetBeans](NetBeans). Voir la
+Mon éditeur de prédilection est [NetBeans](../linux/soft/netbeans). Voir la
 page dédiée pour l'installation et la configuration cet IDE pour une
 utilisation avec PhP.
 
-Serveur Web : Solution [LAMP](LAMP) (Linux, Apache, Mysql,
+Serveur Web : Solution [LAMP](../dev/LAMP) (Linux, Apache, Mysql,
 Php/Perl)
 
-Misc: [Visionneuse Panoramique](Visionneuse_Panoramique)
+Misc: [Visionneuse Panoramique](../linux/soft/visionneuse_panoramique)
 
 #### Astuces
 
@@ -150,7 +150,7 @@ imagedestroy($image);
 
 ### Divers
 
-Voir [Firefox](Firefox) pour une liste de plugins utiles au développement.
+Voir [Firefox](../archive/linux/soft/Firefox) pour une liste de plugins utiles au développement.
 
 - [Envoi de mails en localhost](http://totalement.geek.oupas.fr/article/2007/11/27/envoyer-des-mails-depuis-php-avec-ubuntu-et-esmtp):
   - Installer [esmtp](apt://esmtp) (d'autres alternatives existent,

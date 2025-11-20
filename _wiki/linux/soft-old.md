@@ -24,7 +24,7 @@ TODO Rajouter ?
 - MEGAsync
 
 TODO: Faire section "Remote desktop / VNC" mais tester avant avec Rpi et d'autres
-- [VNC](VNC)
+- [VNC](../soft/vnc)
 - Remmina
 - TigerVNC (voir page sur VNC)
 - autres ? https://doc.ubuntu-fr.org/bureau_a_distance
@@ -88,7 +88,7 @@ TODO: Move to JaMuz
 
 TODO:  Voir aussi [Fusionner 2 fichiers avi avec mencoder](http://www.ubuntuhowtos.com/howtos/merge_avi_files_with_mencoder)
 
-TODO:  Voir aussi: [Convertir MOV en Flash FLV](Convertir_MOV_en_Flash_FLV)
+TODO:  Voir aussi: [Convertir MOV en Flash FLV](../../archive/Convertir_MOV_en_Flash_FLV)
 
 #### Administration
 
@@ -105,7 +105,7 @@ TODO: /!\ Comment gérer rsync/grsync et autres cas de gui pour outil de ligne d
 | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ | ---------------------------------------- |
 | Nom                                               | ubuntu-fr                                                                                                      | Description                                            | Installation [apturl](../system/Apt-url) |
 | Gparted                                           | [gparted](http://doc.ubuntu-fr.org/gparted)                                                                    | Partitionnement de disque.                             | [gparted](apt://gparted)                 |
-| [grsync](rsync)                                   | Synchronisation de fichiers.                                                                                   | [grsync](apt://grsync)                                 |                                          |
+| [grsync](../soft/rsync)                                   | Synchronisation de fichiers.                                                                                   | [grsync](apt://grsync)                                 |                                          |
 | [VirtualBox](http://doc.ubuntu-fr.org/virtualbox) | Solution de virtualisation de systèmes d'exploitation. [Images toutes prêtes](http://virtualboxes.org/images/) | Voir [VirtualBox](http://doc.ubuntu-fr.org/virtualbox) |                                          |
 
 
@@ -151,9 +151,9 @@ Les suivants sont à répartir dans les menus appropriés :
 |                                                             |                                                            |                                                    |
 | ----------------------------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------- |
 | Nom                                                         | Description                                                | Installation [apturl](../system/Apt-url)           |
-| [Google Earth](Google_Earth)                                | La Terre vue du ciel                                       | N/A                                                |
+| [Google Earth](../soft/google_earth)                                | La Terre vue du ciel                                       | N/A                                                |
 | [Sunclock](http://www.arvernes.com/wiki/index.php/Sunclock) | Carte avec zones ensoleillées                              | N/A                                                |
-| [Wine](Wine)                                                | Windows Emulation                                          |                                                    |
+| [Wine](../soft/wine)                                                | Windows Emulation                                          |                                                    |
 | Gwhere                                                      | Catalogueur de CDs/DVDs                                    |                                                    |
 | OpenOffice                                                  | Office (tableur, traitement de texte, présentations, BDD)  | inclus par défaut dans [Ubuntu](linux/dist/Ubuntu) |
 | Antivirus                                                   | Complètement inutile                                       | N/A                                                |
@@ -206,9 +206,9 @@ même bien pratiques:
 |                                                        |                                         |                                                                                                     |                                          |
 | ------------------------------------------------------ | --------------------------------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------- |
 | Nom                                                    | Ubuntu-fr                               | Description                                                                                         | Installation [apturl](../system/Apt-url) |
-| [convmv](Convmv)                                       |                                         | Conversion de caractères (noms de fichiers)                                                         | [convmv](apt://convmv)                   |
+| [convmv](../soft/convmv)                                       |                                         | Conversion de caractères (noms de fichiers)                                                         | [convmv](apt://convmv)                   |
 | [Disques_Réseau#mount.cifs](Disques_Réseau#mount.cifs) |                                         | Pour monter des dossiers partagés Windows ou Samba                                                  | [smbfs](apt://smbfs)                     |
-| [fcron](Fcron)                                         | [fcron](http://doc.ubuntu-fr.org/fcron) | FCron permet de pallier les défauts de Cron et d'Anacron.                                           | [fcron](apt://fcron)                     |
+| [fcron](../soft/fcron)                                         | [fcron](http://doc.ubuntu-fr.org/fcron) | FCron permet de pallier les défauts de Cron et d'Anacron.                                           | [fcron](apt://fcron)                     |
 | RAR (archive)                                          | [rar](http://doc.ubuntu-fr.org/rar)     | RAR est un format d'archive (un peu comme ZIP), c'est aussi le nom de l'application pour les gérer. | Voir site Ubuntu                         |
 
 > [RAR avec mot de passe](http://forum.ubuntu-fr.org/viewtopic.php?id=83892)

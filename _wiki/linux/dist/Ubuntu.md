@@ -4,7 +4,7 @@ layout: wiki
 
 # Ubuntu
 
-Ubuntu (à prononcer « Ou-boun-tou ») est une distribution de [Linux](../) populaire ... jusqu'à l'adoption du bureau [Unity](http://doc.ubuntu-fr.org/unity) très déroutant et qui a conduit de nombreux utilisateurs (comme moi) à se tourner vers [Linux Mint](Mint).
+Ubuntu (à prononcer « Ou-boun-tou ») est une distribution de [Linux](../) populaire ... jusqu'à l'adoption du bureau [Unity](http://doc.ubuntu-fr.org/unity) très déroutant et qui a conduit de nombreux utilisateurs (comme moi) à se tourner vers [Linux Mint](../Mint).
 
 **Cette page n'est donc plus à jour depuis 2017 environ quand le support de Gnome 2 (Gnome classic) a été supprimé.**
 

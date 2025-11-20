@@ -14,7 +14,7 @@ En passant à Ubuntu 9.04, Amarok passe en version 2.0 qui présente pas
 mal de changements, dont:
 
 - Support exclusif de MySQL comme base de données embarquée. Pour s'y
-  connecter: [Amarok2 et MySQL](Amarok2_et_MySQL)
+  connecter: [Amarok2 et MySQL](../Amarok2_et_MySQL)
 - et d'autres, mais surtout:
 - pleins de problèmes (voir forum ubuntu fr)
 - Apparement il manque un paquet pour Xine lors de la mise a jour:

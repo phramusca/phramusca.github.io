@@ -8,9 +8,9 @@ layout: wiki
 
 ### Configuration
 
-[Ma Configuration LAMP](Ma_Configuration_LAMP)
+[Ma Configuration LAMP](../Ma_Configuration_LAMP)
 
-[Sauvegardes et Restauration](Sauvegardes_et_Restauration)
+[Sauvegardes et Restauration](../Sauvegardes_et_Restauration)
 
 ### Démarrer avec MediaWiki
 

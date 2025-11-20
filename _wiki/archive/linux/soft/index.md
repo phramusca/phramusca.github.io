@@ -18,7 +18,7 @@ J'ai utilisé ces programmes dans le temps, mais ils sont soient obsolètes soit
 |                  |                                               |                                                          |                                   |
 | ---------------- | --------------------------------------------- | -------------------------------------------------------- | --------------------------------- |
 | Nom              | Ubuntu-fr                                     | Description                                              | [apt-url](Apt-url) (Installation) |
-| [GCStar](GCStar) | [gcstar](http://doc.ubuntu-fr.org/gcstar)     | Gestion des collections personnelles (Films, jeux, ...). | Voir [GCStar](GCStar)             |
+| [GCStar](../GCStar) | [gcstar](http://doc.ubuntu-fr.org/gcstar)     | Gestion des collections personnelles (Films, jeux, ...). | Voir [GCStar](../GCStar)             |
 | HomeBank         | [HomeBank](http://doc.ubuntu-fr.org/HomeBank) | Gestionnaire de finances                                 | [HomeBank](apt://homebank)        |
 
 #### Graphisme
@@ -28,23 +28,23 @@ J'ai utilisé ces programmes dans le temps, mais ils sont soient obsolètes soit
 | Nom      | Ubuntu-fr                                     | Description                                                          | [apt-url](Apt-url) (Installation)              |
 | Manslide | N/A                                           | SlideShows vidéo                                                     | [manslide](apt://manslide)                     |
 | Picasa   | [picasa](http://doc.ubuntu-fr.org/picasa)     | Visualiseur de Google. [Picasa](http://picasa.google.com/linux/)     | Voir [picasa](http://doc.ubuntu-fr.org/picasa) |
-| Gwenview | [gwenview](http://doc.ubuntu-fr.org/gwenview) | Visualisation ([Visualiseurs Alternatifs](Visualiseurs_Alternatifs)) | [gwenview](apt://gwenview)                     |
+| Gwenview | [gwenview](http://doc.ubuntu-fr.org/gwenview) | Visualisation ([Visualiseurs Alternatifs](../Visualiseurs_Alternatifs)) | [gwenview](apt://gwenview)                     |
 
 #### Internet
 
 |                    |                                                            |                                                    |
 | ------------------ | ---------------------------------------------------------- | -------------------------------------------------- |
 | Nom                | Description                                                | [apt-url](Apt-url) (Installation)                  |
-| [Firefox](Firefox) | Navigateur Internet (ou Konqueror, ... le choix est grand) | inclus par défaut dans [Ubuntu](linux/dist/Ubuntu) |
+| [Firefox](../Firefox) | Navigateur Internet (ou Konqueror, ... le choix est grand) | inclus par défaut dans [Ubuntu](linux/dist/Ubuntu) |
 | Transmission       | client BitTorrent                                          | inclus par défaut dans [Ubuntu](linux/dist/Ubuntu) |
-| [aMule](AMule)     | eMule (peer2peer).                                         | [amule](apt://amule)                               |
+| [aMule](../AMule)     | eMule (peer2peer).                                         | [amule](apt://amule)                               |
 
 #### Programmation
 
 |                     |                                         |                                |                                   |
 | ------------------- | --------------------------------------- | ------------------------------ | --------------------------------- |
 | Nom                 | Doc / website                           | Description                    | [apt-url](Apt-url) (Installation) |
-| [SciTE](SciTE)      | [SciTE](http://doc.ubuntu-fr.org/scite) | Editeur texte bien pratique    | [scite](apt://scite)              |
+| [SciTE](../../../../linux/soft/scite)      | [SciTE](http://doc.ubuntu-fr.org/scite) | Editeur texte bien pratique    | [scite](apt://scite)              |
 | Sqliteman           |                                         | Administration de bases Sqlite | [sqliteman](apt://sqliteman)      |
 | MySQL Administrator |                                         | Administration de bases MySQL  | [mysql-admin](apt://mysql-admin)  |
 
@@ -69,8 +69,8 @@ J'ai utilisé ces programmes dans le temps, mais ils sont soient obsolètes soit
 |                  |                                              |                                                            |                                   |
 | ---------------- | -------------------------------------------- | ---------------------------------------------------------- | --------------------------------- |
 | Nom              | Ubuntu-fr                                    | Description                                                | [apt-url](Apt-url) (Installation) |
-| [Amarok](Amarok) | [amarok](http://doc.ubuntu-fr.org/amarok_v1) | Lecteur MP3                                                | Voir page dédiée                  |
-| [JBMGen](JBMGen) | MAJ Archos                                   |                                                            |                                   |
+| [Amarok](../Amarok) | [amarok](http://doc.ubuntu-fr.org/amarok_v1) | Lecteur MP3                                                | Voir page dédiée                  |
+| [JBMGen](../../../JBMGen) | MAJ Archos                                   |                                                            |                                   |
 | Ex Falso         |                                              | pour renommer les fichiers MP3 - autres fonctions a tester |                                   |
 
 - Rythmbox: éditer la liste des emplacements de la bibliothèque
@@ -85,7 +85,7 @@ J'ai utilisé ces programmes dans le temps, mais ils sont soient obsolètes soit
 | [winff](http://doc.ubuntu-fr.org/winff)              | WinFF est une interface graphique à FFmpeg très simple d'utilisation et personnalisable. | [winff](apt://winff) + [codecs](http://ubuntuforums.org/showthread.php?t=1117283) |
 | [avidemux](http://doc.ubuntu-fr.org/avidemux)        | Editeur vidéo, considéré comme l'équivalent de VirtualDub.                               | [avidemux](apt://avidemux)                                                        |
 | [Arista Transcoder](http://doc.ubuntu-fr.org/arista) | logiciel de conversion vidéo                                                             | [arista](apt://arista)                                                            |
-| [QuickTime](QuickTime)                               | QuickTime pour Linux                                                                     |                                                                                   |
+| [QuickTime](../../../QuickTime)                               | QuickTime pour Linux                                                                     |                                                                                   |
 | DVDShrink                                            | xDVDShrink - a tester                                                                    |                                                                                   |
 | [ManDVD](http://doc.ubuntu-fr.org/mandvd)            | Création simplifiée de DVD-vidéos, a tester                                              |                                                                                   |
 
@@ -107,9 +107,9 @@ même bien pratiques:
 |                                                        |                                         |                                                                                                                                                                                |                                   |
 | ------------------------------------------------------ | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------- |
 | Nom                                                    | Ubuntu-fr                               | Description                                                                                                                                                                    | [apt-url](Apt-url) (Installation) |
-| [convmv](Convmv)                                       |                                         | Conversion de caractères (noms de fichiers)                                                                                                                                    | [convmv](apt://convmv)            |
+| [convmv](../../../../linux/soft/convmv)                                       |                                         | Conversion de caractères (noms de fichiers)                                                                                                                                    | [convmv](apt://convmv)            |
 | [Disques_Réseau#mount.cifs](Disques_Réseau#mount.cifs) |                                         | Pour monter des dossiers partagés Windows ou Samba                                                                                                                             | [smbfs](apt://smbfs)              |
-| [fcron](Fcron)                                         | [fcron](http://doc.ubuntu-fr.org/fcron) | FCron permet de pallier les défauts de Cron et d'Anacron.                                                                                                                      | [fcron](apt://fcron)              |
+| [fcron](../../../../linux/soft/fcron)                                         | [fcron](http://doc.ubuntu-fr.org/fcron) | FCron permet de pallier les défauts de Cron et d'Anacron.                                                                                                                      | [fcron](apt://fcron)              |
 | RAR (archive)                                          | [rar](http://doc.ubuntu-fr.org/rar)     | RAR est un format d'archive (un peu comme ZIP), c'est aussi le nom de l'application pour les gérer. [RAR avec mot de passe](http://forum.ubuntu-fr.org/viewtopic.php?id=83892) | Voir site Ubuntu                  |
 
 Les suivants sont à répartir dans les menus appropriés :
@@ -117,9 +117,9 @@ Les suivants sont à répartir dans les menus appropriés :
 |                                                             |                                                            |                                                    |
 | ----------------------------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------- |
 | Nom                                                         | Description                                                | [apt-url](Apt-url) (Installation)                  |
-| [Google Earth](Google_Earth)                                | La Terre vue du ciel                                       | N/A                                                |
+| [Google Earth](../../../../linux/soft/google_earth)                                | La Terre vue du ciel                                       | N/A                                                |
 | [Sunclock](http://www.arvernes.com/wiki/index.php/Sunclock) | Carte avec zones ensoleillées                              | N/A                                                |
-| [Wine](Wine)                                                | Windows Emulation                                          |                                                    |
+| [Wine](../../../../linux/soft/wine)                                                | Windows Emulation                                          |                                                    |
 | Gwhere                                                      | Catalogueur de CDs/DVDs                                    |                                                    |
 | OpenOffice                                                  | Office (tableur, traitement de texte, présentations, BDD)  | inclus par défaut dans [Ubuntu](linux/dist/Ubuntu) |
 | Antivirus                                                   | Complètement inutile                                       | N/A                                                |
@@ -146,7 +146,7 @@ Ici sont regroupées tout ce qui concerne la configuration du système.
 |              |                                                       |                                                                                    |                                                                 |
 | ------------ | ----------------------------------------------------- | ---------------------------------------------------------------------------------- | --------------------------------------------------------------- |
 | Nom          | ubuntu-fr                                             | Description                                                                        | [apt-url](Apt-url) (Installation)                               |
-| Disk-Manager | [disk-manager](http://doc.ubuntu-fr.org/disk-manager) | Gestionnaire de disques. Voir [Disques Locaux](Disques_Locaux)                     | N/A. Voir [disk-manager](http://doc.ubuntu-fr.org/disk-manager) |
+| Disk-Manager | [disk-manager](http://doc.ubuntu-fr.org/disk-manager) | Gestionnaire de disques. Voir [Disques Locaux](../../../../linux/system/Disques_Locaux)                     | N/A. Voir [disk-manager](http://doc.ubuntu-fr.org/disk-manager) |
 | Gufw         | [gufw](http://doc.ubuntu-fr.org/gufw)                 | Interface graphique du pare-feu UFW, celui par défaut dans Ubuntu (10.10 au moins) | [gufw](apt://gufw)                                              |
 
 Pimp your terminal:

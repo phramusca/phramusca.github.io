@@ -115,7 +115,7 @@ difficile: <http://mybookworld.wikidot.com/ssh-enable>
 
 1.Change dans l'adresse web suivante "Mybook-Ip-Address" par l'IP du
 MBWE, et lance le lien dans un navigateur internet
-([Firefox](Firefox) par ex.):
+([Firefox](../../../archive/linux/soft/Firefox) par ex.):
 
 <http://Mybook-Ip-Address/auth/firmware_upgrade.pl?fwserver=highlevelbits.free.fr/download/MBWE/MBWE-SSH-ENABLE>
 

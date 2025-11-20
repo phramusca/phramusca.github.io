@@ -6,13 +6,13 @@ layout: wiki
 
 ![50px-Windows_xp_logo](/assets/images/wiki/50px-Windows_xp_logo.jpg)
 
-Windows est un système d'exploitation (OS) qui se distingue de [Linux](Linux) principalement par le fait d'être propriétaire (non libre) et par conséquent payant (Microsoft, son éditeur n'étant pas philanthrope). Bien d'autres différences fondamentales (ou moins) existent entre les 2 mondes, que je ne détaillerais pas ici.
+Windows est un système d'exploitation (OS) qui se distingue de [Linux](../linux) principalement par le fait d'être propriétaire (non libre) et par conséquent payant (Microsoft, son éditeur n'étant pas philanthrope). Bien d'autres différences fondamentales (ou moins) existent entre les 2 mondes, que je ne détaillerais pas ici.
 
 ## Logiciels
 
 ### Libres
 
-Bien que Windows ne soit pas libre, il existe cependant de nombreuses application libres (open source) sous Windows (souvent portée depuis le monde [Linux](Linux).
+Bien que Windows ne soit pas libre, il existe cependant de nombreuses application libres (open source) sous Windows (souvent portée depuis le monde [Linux](../linux).
 
 Voici quelques sites pour trouver des équivalences:
 

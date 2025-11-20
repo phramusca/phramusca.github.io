@@ -250,4 +250,4 @@ rm ~/restoreDB.sql
 echo "Database $2 crée avec le fichier $1."
 ```
 
-Retour à [Sauvegardes et Restauration](Sauvegardes_et_Restauration)
+Retour à [Sauvegardes et Restauration](../Sauvegardes_et_Restauration)

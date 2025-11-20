@@ -4,7 +4,7 @@ layout: software
 
 # Visionneuse Panoramique
 
-Une fois l'image panoramique cree avec [Hugin](Hugin), voici une méthode gratuite pour mettre un panoramique en ligne, en Java (a la façon d'un QTVR - QuickTime Virtual Reality).
+Une fois l'image panoramique cree avec [Hugin](../hugin), voici une méthode gratuite pour mettre un panoramique en ligne, en Java (a la façon d'un QTVR - QuickTime Virtual Reality).
 
 ## OpenPanorama
 
@@ -48,6 +48,6 @@ Une fois l'image panoramique cree avec [Hugin](Hugin), voici une méthode gratui
 
 ------------------------------------------------------------------------
 
-Retour à [Hugin](Hugin)
+Retour à [Hugin](../hugin)
 
 Retour à [Developement Web](Développement_Web)

@@ -39,10 +39,10 @@ la base distante sur le site distant !!**
 
 ## Avec script de backup
 
-Les [Scripts de Backup](Scripts_de_Backup) font aussi une
+Les [Scripts de Backup](../Scripts_de_Backup) font aussi une
 sauvegarde de la base, mais en utilisant mysqldump. L'avantage est que
-ces sauvegardes peuvent être programmées avec cron. Voir [Sauvegardes et Restauration](Sauvegardes_et_Restauration) pour les détails.
+ces sauvegardes peuvent être programmées avec cron. Voir [Sauvegardes et Restauration](../Sauvegardes_et_Restauration) pour les détails.
 
 ------------------------------------------------------------------------
 
-Retour à [Sauvegardes et Restauration](Sauvegardes_et_Restauration)
+Retour à [Sauvegardes et Restauration](../Sauvegardes_et_Restauration)

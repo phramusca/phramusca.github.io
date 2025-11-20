@@ -5,7 +5,7 @@ layout: default
 # Firefox
 
 Le désormais célèbre Firefox existe bien évidement sous
-[Linux](Linux).
+[Linux](../../../../linux).
 
 ## Flash Player
 

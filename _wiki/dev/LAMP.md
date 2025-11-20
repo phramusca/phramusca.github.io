@@ -11,7 +11,7 @@ LAMP (Linux, Apache, Mysql, Php/Perl)
 Se référer à la documentation [lamp sur
 ubuntu-fr](http://doc.ubuntu-fr.org/lamp).
 
-[Ma Configuration LAMP](Ma_Configuration_LAMP)
+[Ma Configuration LAMP](../../perso/Ma_Configuration_LAMP)
 
 ## Résolution de problèmes
 
