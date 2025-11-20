@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <!-- CSS personnalisé pour surcharger le thème (chargé après le CSS du thème) -->
     <link rel="stylesheet" href="{{ '/assets/css/custom-theme.css' | relative_url }}">
+    {% include links_handler.html %}
     {% include head-custom.html %}
     {% seo %}
   </head>
