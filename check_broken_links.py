@@ -14,16 +14,19 @@ Options:
 import os
 import re
 import sys
+import json
 import argparse
 import urllib.parse
 from pathlib import Path
-from typing import List, Tuple, Set
+from typing import List, Tuple, Set, Optional, Dict
 from urllib.request import urlopen, Request
 from urllib.error import URLError, HTTPError
+from datetime import datetime, timedelta
 import time
 
 # Configuration
 BASE_DIR = Path(__file__).parent
+CACHE_FILE = BASE_DIR / '.link_check_cache.json'
 EXCLUDE_DIRS = {'_site', '.git', 'vendor', 'node_modules', '.jekyll-cache', '.sass-cache'}
 EXCLUDE_FILES = {'README.md', 'TODO.md', 'Gemfile', 'Gemfile.lock'}
 
@@ -31,7 +34,7 @@ EXCLUDE_FILES = {'README.md', 'TODO.md', 'Gemfile', 'Gemfile.lock'}
 MARKDOWN_LINK_PATTERN = re.compile(r'\[([^\]]+)\]\(([^\)]+)\)')
 HTML_LINK_PATTERN = re.compile(r'<a\s+[^>]*href=["\']([^"\']+)["\'][^>]*>', re.IGNORECASE)
 
-# Cache pour éviter de vérifier plusieurs fois la même URL externe
+# Cache en mémoire pour éviter de vérifier plusieurs fois la même URL externe dans une session
 external_url_cache = {}
 
 
@@ -39,6 +42,82 @@ def is_external_url(url: str) -> bool:
     """Détermine si une URL est externe."""
     parsed = urllib.parse.urlparse(url)
     return bool(parsed.netloc) and not url.startswith('/')
+
+
+def load_cache() -> Dict:
+    """Charge le cache depuis le fichier JSON."""
+    if CACHE_FILE.exists():
+        try:
+            with open(CACHE_FILE, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except (json.JSONDecodeError, IOError):
+            return {}
+    return {}
+
+
+def save_cache(cache: Dict):
+    """Sauvegarde le cache dans le fichier JSON."""
+    try:
+        with open(CACHE_FILE, 'w', encoding='utf-8') as f:
+            json.dump(cache, f, indent=2, ensure_ascii=False)
+    except IOError as e:
+        print(f"⚠️  Erreur lors de la sauvegarde du cache: {e}")
+
+
+def is_cache_valid(cache_entry: Dict, cache_days: int) -> bool:
+    """Vérifie si une entrée du cache est encore valide."""
+    if 'checked_date' not in cache_entry:
+        return False
+    
+    try:
+        checked_date = datetime.fromisoformat(cache_entry['checked_date'])
+        expiry_date = checked_date + timedelta(days=cache_days)
+        return datetime.now() < expiry_date
+    except (ValueError, KeyError):
+        return False
+
+
+def get_cache_key(file_path: Path, link_url: str, is_external: bool) -> str:
+    """Génère une clé unique pour le cache."""
+    rel_path = file_path.relative_to(BASE_DIR)
+    return f"{rel_path}:{link_url}:{'ext' if is_external else 'int'}"
+
+
+def get_cached_result(cache: Dict, cache_key: str, cache_days: int) -> Optional[Tuple[bool, str]]:
+    """
+    Récupère un résultat depuis le cache s'il est encore valide.
+    Retourne (is_valid, error_message) ou None si pas de cache valide.
+    """
+    if cache_key not in cache:
+        return None
+    
+    entry = cache[cache_key]
+    if not is_cache_valid(entry, cache_days):
+        return None
+    
+    # Pour les liens internes, vérifier que le fichier existe toujours
+    if not entry.get('is_external', True):
+        expected_path = entry.get('expected_path')
+        if expected_path and not Path(expected_path).exists():
+            # Le fichier n'existe toujours pas, le cache est valide
+            return (False, f"Fichier introuvable: {Path(expected_path).relative_to(BASE_DIR)}")
+        elif expected_path and Path(expected_path).exists():
+            # Le fichier existe maintenant, le cache n'est plus valide
+            return None
+    
+    return (entry.get('is_valid', False), entry.get('error', ''))
+
+
+def update_cache(cache: Dict, cache_key: str, is_valid: bool, error: str, 
+                 is_external: bool, expected_path: Optional[str] = None):
+    """Met à jour le cache avec un nouveau résultat."""
+    cache[cache_key] = {
+        'is_valid': is_valid,
+        'error': error,
+        'checked_date': datetime.now().isoformat(),
+        'is_external': is_external,
+        'expected_path': expected_path
+    }
 
 
 def normalize_internal_link(link: str, base_file: Path) -> Path:
@@ -119,17 +198,18 @@ def normalize_internal_link(link: str, base_file: Path) -> Path:
     return BASE_DIR / link
 
 
-def check_external_link(url: str, timeout: int = 10) -> Tuple[bool, str]:
+def check_external_link(url: str, timeout: int = 10, use_session_cache: bool = True) -> Tuple[bool, str]:
     """
     Vérifie si un lien externe est accessible.
     Retourne (is_valid, error_message)
     """
-    # Utiliser le cache
-    if url in external_url_cache:
+    # Utiliser le cache de session pour éviter les vérifications multiples dans la même exécution
+    if use_session_cache and url in external_url_cache:
         return external_url_cache[url]
     
     try:
-        # Ajouter https:// si pas de schéma
+        # Normaliser l'URL pour le cache
+        original_url = url
         if not url.startswith(('http://', 'https://')):
             url = 'https://' + url
         
@@ -139,45 +219,58 @@ def check_external_link(url: str, timeout: int = 10) -> Tuple[bool, str]:
         with urlopen(req, timeout=timeout) as response:
             status = response.getcode()
             if 200 <= status < 400:
-                external_url_cache[url] = (True, '')
-                return (True, '')
+                result = (True, '')
+                if use_session_cache:
+                    external_url_cache[original_url] = result
+                return result
             else:
                 error = f"Status {status}"
-                external_url_cache[url] = (False, error)
-                return (False, error)
+                result = (False, error)
+                if use_session_cache:
+                    external_url_cache[original_url] = result
+                return result
     
     except HTTPError as e:
         error = f"HTTP {e.code}: {e.reason}"
-        external_url_cache[url] = (False, error)
-        return (False, error)
+        result = (False, error)
+        if use_session_cache:
+            external_url_cache[original_url] = result
+        return result
     
     except URLError as e:
         error = f"URL Error: {str(e.reason)}"
-        external_url_cache[url] = (False, error)
-        return (False, error)
+        result = (False, error)
+        if use_session_cache:
+            external_url_cache[original_url] = result
+        return result
     
     except Exception as e:
         error = f"Error: {str(e)}"
-        external_url_cache[url] = (False, error)
-        return (False, error)
+        result = (False, error)
+        if use_session_cache:
+            external_url_cache[original_url] = result
+        return result
 
 
-def extract_links(content: str) -> List[Tuple[str, str]]:
+def extract_links(content: str) -> List[Tuple[str, str, int]]:
     """
-    Extrait tous les liens d'un contenu markdown/HTML.
-    Retourne une liste de tuples (link_text, link_url)
+    Extrait tous les liens d'un contenu markdown/HTML avec leur numéro de ligne.
+    Retourne une liste de tuples (link_text, link_url, line_number)
     """
     links = []
+    lines = content.split('\n')
     
     # Extraire les liens markdown [text](url)
-    for match in MARKDOWN_LINK_PATTERN.finditer(content):
-        text, url = match.groups()
-        links.append((text, url))
+    for line_num, line in enumerate(lines, start=1):
+        for match in MARKDOWN_LINK_PATTERN.finditer(line):
+            text, url = match.groups()
+            links.append((text, url, line_num))
     
     # Extraire les liens HTML <a href="url">
-    for match in HTML_LINK_PATTERN.finditer(content):
-        url = match.group(1)
-        links.append(('', url))
+    for line_num, line in enumerate(lines, start=1):
+        for match in HTML_LINK_PATTERN.finditer(line):
+            url = match.group(1)
+            links.append(('', url, line_num))
     
     return links
 
@@ -198,8 +291,45 @@ def find_markdown_files() -> List[Path]:
     return markdown_files
 
 
-def check_links(check_internal: bool = True, check_external: bool = True, verbose: bool = False):
+def make_file_link(file_path: Path, line_num: int) -> str:
+    """
+    Crée un lien cliquable vers un fichier à une ligne spécifique.
+    Format compatible avec VSCode et terminaux modernes.
+    """
+    abs_path = file_path.resolve()
+    # Format file:// pour VSCode et terminaux modernes
+    file_url = f"file://{abs_path}#L{line_num}"
+    rel_path = file_path.relative_to(BASE_DIR)
+    # Utiliser les codes ANSI pour les liens hypertexte (supporté par les terminaux modernes)
+    # Format: \033]8;;URL\033\\TEXT\033]8;;\033\\
+    return f"\033]8;;{file_url}\033\\{rel_path}:{line_num}\033]8;;\033\\"
+
+
+def group_by_file(links: List[Tuple]) -> dict:
+    """Groupe les liens morts par fichier."""
+    grouped = {}
+    for item in links:
+        file_path = item[0]
+        if file_path not in grouped:
+            grouped[file_path] = []
+        grouped[file_path].append(item[1:])  # Exclure file_path de la liste
+    return grouped
+
+
+def check_links(check_internal: bool = True, check_external: bool = True, 
+                verbose: bool = False, cache_days: int = 7, clear_cache: bool = False):
     """Fonction principale pour vérifier les liens."""
+    # Charger le cache
+    if clear_cache:
+        cache = {}
+        if CACHE_FILE.exists():
+            CACHE_FILE.unlink()
+            print("🗑️  Cache effacé\n")
+    else:
+        cache = load_cache()
+        if cache:
+            print(f"📦 Cache chargé ({len(cache)} entrées)\n")
+    
     print("🔍 Recherche des fichiers markdown...")
     files = find_markdown_files()
     print(f"   Trouvé {len(files)} fichiers\n")
@@ -208,13 +338,15 @@ def check_links(check_internal: bool = True, check_external: bool = True, verbos
     broken_external = []
     total_internal = 0
     total_external = 0
+    cached_count = 0
+    checked_count = 0
     
     for file_path in files:
         try:
             content = file_path.read_text(encoding='utf-8')
             links = extract_links(content)
             
-            for link_text, link_url in links:
+            for link_text, link_url, line_num in links:
                 # Ignorer les liens spéciaux (mailto:, javascript:, etc.)
                 if any(link_url.startswith(prefix) for prefix in ['mailto:', 'javascript:', 'tel:', 'apt://', '#']):
                     continue
@@ -226,26 +358,72 @@ def check_links(check_internal: bool = True, check_external: bool = True, verbos
                 if is_external_url(link_url):
                     total_external += 1
                     if check_external:
-                        if verbose:
-                            print(f"   Vérification externe: {link_url}")
-                        is_valid, error = check_external_link(link_url)
-                        if not is_valid:
-                            broken_external.append((file_path, link_text, link_url, error))
+                        cache_key = get_cache_key(file_path, link_url, True)
+                        cached_result = get_cached_result(cache, cache_key, cache_days)
+                        
+                        if cached_result is not None:
+                            # Utiliser le résultat du cache
+                            cached_count += 1
+                            is_valid, error = cached_result
+                            if not is_valid:
+                                broken_external.append((file_path, link_text, link_url, error, line_num))
                             if verbose:
-                                print(f"      ❌ Lien mort: {error}")
-                        time.sleep(0.1)  # Éviter de surcharger les serveurs
+                                print(f"   📦 Cache: {link_url} -> {'✅' if is_valid else '❌'}")
+                        else:
+                            # Vérifier le lien
+                            checked_count += 1
+                            if verbose:
+                                print(f"   🔍 Vérification externe: {link_url}")
+                            is_valid, error = check_external_link(link_url)
+                            update_cache(cache, cache_key, is_valid, error, True)
+                            
+                            if not is_valid:
+                                broken_external.append((file_path, link_text, link_url, error, line_num))
+                                if verbose:
+                                    print(f"      ❌ Lien mort: {error}")
+                            time.sleep(0.1)  # Éviter de surcharger les serveurs
                 
                 else:
                     total_internal += 1
                     if check_internal:
                         normalized = normalize_internal_link(link_url, file_path)
-                        if not normalized.exists():
-                            broken_internal.append((file_path, link_text, link_url, str(normalized)))
+                        cache_key = get_cache_key(file_path, link_url, False)
+                        cached_result = get_cached_result(cache, cache_key, cache_days)
+                        
+                        if cached_result is not None:
+                            # Utiliser le résultat du cache
+                            cached_count += 1
+                            is_valid, error = cached_result
+                            if not is_valid:
+                                broken_internal.append((file_path, link_text, link_url, error, line_num))
                             if verbose:
-                                print(f"   ❌ Lien interne mort dans {file_path.name}: {link_url} -> {normalized}")
+                                print(f"   📦 Cache: {link_url} -> {'✅' if is_valid else '❌'}")
+                        else:
+                            # Vérifier le lien
+                            checked_count += 1
+                            file_exists = normalized.exists()
+                            expected_path_str = str(normalized)
+                            error_msg = f"Fichier introuvable: {normalized.relative_to(BASE_DIR)}" if not file_exists else ""
+                            
+                            update_cache(cache, cache_key, file_exists, error_msg, False, expected_path_str)
+                            
+                            if not file_exists:
+                                broken_internal.append((file_path, link_text, link_url, expected_path_str, line_num))
+                                if verbose:
+                                    print(f"   ❌ Lien interne mort dans {file_path.name}: {link_url} -> {normalized}")
         
         except Exception as e:
             print(f"⚠️  Erreur lors de la lecture de {file_path}: {e}")
+    
+    # Sauvegarder le cache
+    save_cache(cache)
+    
+    # Afficher les statistiques du cache
+    if cached_count > 0 or checked_count > 0:
+        print(f"\n📊 Statistiques:")
+        print(f"   Liens vérifiés: {checked_count}")
+        print(f"   Liens depuis le cache: {cached_count}")
+        print()
     
     # Afficher les résultats
     print("\n" + "="*70)
@@ -258,11 +436,26 @@ def check_links(check_internal: bool = True, check_external: bool = True, verbos
         print(f"   Morts: {len(broken_internal)}")
         
         if broken_internal:
-            print(f"\n   ❌ Liens internes morts:")
-            for file_path, link_text, link_url, expected_path in broken_internal:
-                print(f"      📄 {file_path.relative_to(BASE_DIR)}")
-                print(f"         Lien: [{link_text}]({link_url})")
-                print(f"         Fichier attendu: {expected_path}")
+            print(f"\n   ❌ Liens internes morts (groupés par fichier):\n")
+            grouped = group_by_file(broken_internal)
+            for file_path in sorted(grouped.keys()):
+                rel_path = file_path.relative_to(BASE_DIR)
+                print(f"   📄 {rel_path}")
+                for link_text, link_url, expected_path, line_num in grouped[file_path]:
+                    file_link = make_file_link(file_path, line_num)
+                    link_display = f"[{link_text}]({link_url})" if link_text else f"({link_url})"
+                    print(f"      Ligne {line_num}: {link_display}")
+                    print(f"         🔗 {file_link}")
+                    # Afficher le chemin attendu de manière propre
+                    if expected_path:
+                        if Path(expected_path).is_absolute():
+                            expected_display = Path(expected_path).relative_to(BASE_DIR)
+                        else:
+                            expected_display = expected_path
+                        # Enlever le préfixe "Fichier introuvable: " si présent
+                        if isinstance(expected_display, str) and expected_display.startswith("Fichier introuvable: "):
+                            expected_display = expected_display.replace("Fichier introuvable: ", "")
+                        print(f"         Fichier attendu: {expected_display}")
                 print()
         else:
             print("   ✅ Aucun lien interne mort trouvé!")
@@ -273,11 +466,17 @@ def check_links(check_internal: bool = True, check_external: bool = True, verbos
         print(f"   Morts: {len(broken_external)}")
         
         if broken_external:
-            print(f"\n   ❌ Liens externes morts:")
-            for file_path, link_text, link_url, error in broken_external:
-                print(f"      📄 {file_path.relative_to(BASE_DIR)}")
-                print(f"         Lien: [{link_text}]({link_url})")
-                print(f"         Erreur: {error}")
+            print(f"\n   ❌ Liens externes morts (groupés par fichier):\n")
+            grouped = group_by_file(broken_external)
+            for file_path in sorted(grouped.keys()):
+                rel_path = file_path.relative_to(BASE_DIR)
+                print(f"   📄 {rel_path}")
+                for link_text, link_url, error, line_num in grouped[file_path]:
+                    file_link = make_file_link(file_path, line_num)
+                    link_display = f"[{link_text}]({link_url})" if link_text else f"({link_url})"
+                    print(f"      Ligne {line_num}: {link_display}")
+                    print(f"         🔗 {file_link}")
+                    print(f"         Erreur: {error}")
                 print()
         else:
             print("   ✅ Aucun lien externe mort trouvé!")
@@ -300,6 +499,8 @@ Exemples:
   python3 check_broken_links.py --internal   # Vérifie uniquement les liens internes
   python3 check_broken_links.py --external   # Vérifie uniquement les liens externes
   python3 check_broken_links.py --verbose    # Mode verbeux
+  python3 check_broken_links.py --cache-days 30  # Cache valide 30 jours
+  python3 check_broken_links.py --clear-cache    # Efface le cache
         """
     )
     
@@ -309,6 +510,10 @@ Exemples:
                        help='Vérifier uniquement les liens externes')
     parser.add_argument('--verbose', '-v', action='store_true',
                        help='Afficher plus de détails')
+    parser.add_argument('--cache-days', type=int, default=7,
+                       help='Nombre de jours de validité du cache (défaut: 7)')
+    parser.add_argument('--clear-cache', action='store_true',
+                       help='Effacer le cache avant de vérifier')
     
     args = parser.parse_args()
     
@@ -319,7 +524,8 @@ Exemples:
         print("❌ Erreur: --internal et --external ne peuvent pas être utilisés ensemble")
         sys.exit(1)
     
-    sys.exit(check_links(check_internal, check_external, args.verbose))
+    sys.exit(check_links(check_internal, check_external, args.verbose, 
+                        args.cache_days, args.clear_cache))
 
 
 if __name__ == '__main__':

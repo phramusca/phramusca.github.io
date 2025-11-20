@@ -7,3 +7,4 @@ vendor/
 *.gem
 Gemfile.lock
 .DS_Store
+.link_check_cache.json
