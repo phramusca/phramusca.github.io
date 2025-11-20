@@ -294,15 +294,13 @@ def find_markdown_files() -> List[Path]:
 def make_file_link(file_path: Path, line_num: int) -> str:
     """
     Crée un lien cliquable vers un fichier à une ligne spécifique.
-    Format compatible avec VSCode et terminaux modernes.
+    Format compatible avec VSCode (file:// avec URL encodée).
     """
     abs_path = file_path.resolve()
-    # Format file:// pour VSCode et terminaux modernes
-    file_url = f"file://{abs_path}#L{line_num}"
-    rel_path = file_path.relative_to(BASE_DIR)
-    # Utiliser les codes ANSI pour les liens hypertexte (supporté par les terminaux modernes)
-    # Format: \033]8;;URL\033\\TEXT\033]8;;\033\\
-    return f"\033]8;;{file_url}\033\\{rel_path}:{line_num}\033]8;;\033\\"
+    # Encoder l'URL pour gérer les espaces et caractères spéciaux
+    abs_path_encoded = urllib.parse.quote(str(abs_path), safe='/:')
+    # Format file:// avec : au lieu de #L (format qui fonctionne dans VS Code)
+    return f"file://{abs_path_encoded}:{line_num}"
 
 
 def group_by_file(links: List[Tuple]) -> dict:
