@@ -103,6 +103,104 @@
       },
       "problemMatcher": [],
       "detail": "Vérifie tous les liens morts (internes et externes) en mode verbose sans utiliser le cache (efface le cache avant)"
+    },
+    {
+      "label": "🔗 Vérifier les liens internes",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "${workspaceFolder}/check_broken_links.py",
+        "--internal",
+        "--verbose"
+      ],
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Vérifie uniquement les liens internes en mode verbose avec cache"
+    },
+    {
+      "label": "🔗 Vérifier les liens internes (sans cache)",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "${workspaceFolder}/check_broken_links.py",
+        "--internal",
+        "--verbose",
+        "--clear-cache"
+      ],
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Vérifie uniquement les liens internes en mode verbose sans cache"
+    },
+    {
+      "label": "🌐 Vérifier les liens externes",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "${workspaceFolder}/check_broken_links.py",
+        "--external",
+        "--verbose"
+      ],
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Vérifie uniquement les liens externes en mode verbose avec cache"
+    },
+    {
+      "label": "🌐 Vérifier les liens externes (sans cache)",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "${workspaceFolder}/check_broken_links.py",
+        "--external",
+        "--verbose",
+        "--clear-cache"
+      ],
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Vérifie uniquement les liens externes en mode verbose sans cache"
+    },
+    {
+      "label": "🌐 Vérifier les liens externes (mode interactif)",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "${workspaceFolder}/check_broken_links.py",
+        "--external",
+        "--verbose",
+        "--interactive"
+      ],
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Vérifie les liens externes avec mode interactif pour les pages protégées par captcha"
     }
   ]
 }
