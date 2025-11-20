@@ -84,6 +84,25 @@
       },
       "problemMatcher": [],
       "detail": "Vérifie tous les liens morts (internes et externes) en mode verbose avec cache (7 jours par défaut)"
+    },
+    {
+      "label": "🔍 Vérifier les liens morts (sans cache)",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "${workspaceFolder}/check_broken_links.py",
+        "--verbose",
+        "--clear-cache"
+      ],
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Vérifie tous les liens morts (internes et externes) en mode verbose sans utiliser le cache (efface le cache avant)"
     }
   ]
 }
