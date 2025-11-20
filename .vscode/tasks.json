@@ -2,46 +2,78 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Jekyll: Serve (live reload)",
+      "label": "🔍 Vérifier tous les liens morts",
       "type": "shell",
-      "command": "bundle exec jekyll serve --host 0.0.0.0 --livereload",
-      "problemMatcher": [],
-      "isBackground": true,
+      "command": "python3",
+      "args": [
+        "${workspaceFolder}/check_broken_links.py"
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
       "presentation": {
         "reveal": "always",
-        "panel": "new"
+        "panel": "dedicated",
+        "focus": false,
+        "clear": true
       },
-      "runOptions": {
-        "runOn": "default"
-      }
+      "problemMatcher": [],
+      "detail": "Vérifie tous les liens morts (internes et externes) dans le projet"
     },
     {
-      "label": "Jekyll: Build",
+      "label": "🔗 Vérifier les liens internes",
       "type": "shell",
-      "command": "bundle exec jekyll build",
-      "problemMatcher": [],
+      "command": "python3",
+      "args": [
+        "${workspaceFolder}/check_broken_links.py",
+        "--internal"
+      ],
+      "group": "test",
       "presentation": {
-        "reveal": "always"
-      }
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Vérifie uniquement les liens internes morts"
     },
     {
-      "label": "Jekyll: Clean",
+      "label": "🌐 Vérifier les liens externes",
       "type": "shell",
-      "command": "bundle exec jekyll clean",
-      "problemMatcher": [],
+      "command": "python3",
+      "args": [
+        "${workspaceFolder}/check_broken_links.py",
+        "--external"
+      ],
+      "group": "test",
       "presentation": {
-        "reveal": "always"
-      }
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Vérifie uniquement les liens externes morts"
     },
     {
-      "label": "Bundle: Install",
+      "label": "🔍 Vérifier tous les liens (verbose)",
       "type": "shell",
-      "command": "bundle install",
-      "problemMatcher": [],
+      "command": "python3",
+      "args": [
+        "${workspaceFolder}/check_broken_links.py",
+        "--verbose"
+      ],
+      "group": "test",
       "presentation": {
-        "reveal": "always"
-      }
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Vérifie tous les liens avec affichage détaillé"
     }
   ]
 }
-
