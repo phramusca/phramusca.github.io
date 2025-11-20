@@ -1,14 +1,11 @@
 #!/usr/bin/env python3
 """
-Script pour vérifier les liens morts (internes et externes) dans un site Jekyll.
+Outil unifié pour vérifier et corriger les liens dans un site Jekyll.
 
-Usage:
-    python3 check_broken_links.py [--external] [--internal] [--verbose]
-
-Options:
-    --external    Vérifier uniquement les liens externes
-    --internal    Vérifier uniquement les liens internes
-    --verbose     Afficher plus de détails
+Fonctionnalités:
+- Vérification des liens internes et externes (mortes, protégées)
+- Détection et correction des liens relatifs incorrects
+- Mode interactif pour les liens externes protégés par captcha
 """
 
 import os
@@ -24,10 +21,12 @@ from urllib.error import URLError, HTTPError
 from datetime import datetime, timedelta
 import time
 
-# Configuration
-BASE_DIR = Path(__file__).parent
-CACHE_FILE = BASE_DIR / '.link_check_cache.json'
-EXCLUDE_DIRS = {'_site', '.git', 'vendor', 'node_modules', '.jekyll-cache', '.sass-cache'}
+# Configuration - BASE_DIR doit pointer vers la racine du projet (2 niveaux au-dessus)
+SCRIPT_DIR = Path(__file__).parent.resolve()
+BASE_DIR = SCRIPT_DIR.parent.parent.resolve()
+CACHE_FILE = SCRIPT_DIR / '.link_check_cache.json'  # Cache dans .vscode/tasks/
+WIKI_DIR = BASE_DIR / '_wiki'
+EXCLUDE_DIRS = {'_site', '.git', 'vendor', 'node_modules', '.jekyll-cache', '.sass-cache', '.vscode'}
 EXCLUDE_FILES = {'README.md', 'TODO.md', 'Gemfile', 'Gemfile.lock'}
 
 # Patterns pour extraire les liens markdown
@@ -79,7 +78,10 @@ def is_cache_valid(cache_entry: Dict, cache_days: int) -> bool:
 
 def get_cache_key(file_path: Path, link_url: str, is_external: bool) -> str:
     """Génère une clé unique pour le cache."""
-    rel_path = file_path.relative_to(BASE_DIR)
+    try:
+        rel_path = file_path.relative_to(BASE_DIR)
+    except ValueError:
+        rel_path = file_path
     return f"{rel_path}:{link_url}:{'ext' if is_external else 'int'}"
 
 
@@ -374,6 +376,239 @@ def is_captcha_protected(error: str) -> bool:
     return any(indicator in error_lower for indicator in captcha_indicators)
 
 
+# ============================================================================
+# Fonctions pour la détection et correction des liens relatifs incorrects
+# ============================================================================
+
+def is_relative_link(link_url: str) -> bool:
+    """Détermine si un lien est relatif simple (sans chemin)."""
+    if not link_url:
+        return False
+    # Ignorer les liens externes, absolus, avec protocole, etc.
+    if any(link_url.startswith(prefix) for prefix in 
+           ['http://', 'https://', '/', './', '../', 'mailto:', 'javascript:', 'tel:', 'apt://', '#']):
+        return False
+    # Ignorer les liens Liquid/Jekyll
+    if '{{' in link_url or '{%' in link_url:
+        return False
+    # Lien relatif simple (juste un nom)
+    return '/' not in link_url and not link_url.endswith(('.md', '.html', '.jpg', '.png', '.gif'))
+
+
+def get_all_wiki_files() -> dict:
+    """Retourne un dictionnaire de tous les fichiers wiki indexés par leur nom (normalisé)."""
+    wiki_files = {}
+    
+    if not WIKI_DIR.exists():
+        return wiki_files
+    
+    for md_file in WIKI_DIR.rglob('*.md'):
+        # Normaliser le nom (enlever extension, convertir en minuscule)
+        name_lower = md_file.stem.lower()
+        wiki_files[name_lower] = md_file
+        # Aussi indexer avec underscores/tirets normalisés
+        name_normalized = name_lower.replace(' ', '_').replace('-', '_')
+        if name_normalized != name_lower:
+            wiki_files[name_normalized] = md_file
+    
+    return wiki_files
+
+
+def find_wiki_file_by_name(name: str, wiki_files: dict) -> Optional[Path]:
+    """Trouve un fichier wiki par son nom (insensible à la casse)."""
+    name_lower = name.lower()
+    name_normalized = name_lower.replace(' ', '_').replace('-', '_')
+    
+    # Chercher exactement
+    if name_lower in wiki_files:
+        return wiki_files[name_lower]
+    if name_normalized in wiki_files:
+        return wiki_files[name_normalized]
+    
+    # Chercher avec variations
+    for key, file_path in wiki_files.items():
+        if key.lower() == name_lower or key.lower().replace('_', '-') == name_lower:
+            return file_path
+    
+    return None
+
+
+def calculate_relative_path(from_file: Path, to_file: Path) -> str:
+    """
+    Calcule le chemin relatif de from_file vers to_file.
+    Dans Jekyll, _wiki/windows.md génère /wiki/windows/, donc pour aller vers linux.md
+    depuis windows.md, il faut remonter d'un niveau: ../linux
+    """
+    from_rel = from_file.relative_to(WIKI_DIR)
+    to_rel = to_file.relative_to(WIKI_DIR)
+    
+    # Obtenir les parties du chemin (sans le nom de fichier)
+    from_dir_parts = list(from_rel.parent.parts) if from_rel.parent != Path('.') else []
+    to_dir_parts = list(to_rel.parent.parts) if to_rel.parent != Path('.') else []
+    
+    # Trouver le préfixe commun
+    common_length = 0
+    min_len = min(len(from_dir_parts), len(to_dir_parts))
+    for i in range(min_len):
+        if from_dir_parts[i] == to_dir_parts[i]:
+            common_length += 1
+        else:
+            break
+    
+    # Calculer le nombre de niveaux à remonter
+    # On doit toujours remonter d'au moins un niveau pour sortir du dossier de la page générée
+    up_levels = len(from_dir_parts) - common_length + 1  # +1 pour sortir du dossier de la page
+    
+    # Construire le chemin relatif
+    parts = []
+    # Ajouter les .. pour remonter
+    parts.extend(['..'] * up_levels)
+    
+    # Ajouter le chemin vers la destination
+    if common_length < len(to_dir_parts):
+        parts.extend(to_dir_parts[common_length:])
+    
+    # Ajouter le nom du fichier (sans extension .md pour Jekyll)
+    parts.append(to_rel.stem)
+    
+    # Construire le chemin final
+    rel_path = '/'.join(parts)
+    
+    return rel_path
+
+
+def analyze_relative_links(file_path: Path, wiki_files: dict) -> List[Tuple[int, str, str, str]]:
+    """
+    Analyse un fichier et retourne les liens relatifs incorrects.
+    Retourne une liste de tuples (line_num, link_text, current_link, suggested_link)
+    """
+    issues = []
+    
+    try:
+        content = file_path.read_text(encoding='utf-8')
+        lines = content.split('\n')
+        
+        for line_num, line in enumerate(lines, start=1):
+            for match in MARKDOWN_LINK_PATTERN.finditer(line):
+                link_text, link_url = match.groups()
+                
+                # Ignorer les liens Liquid/Jekyll
+                if '{{' in link_url or '{%' in link_url:
+                    continue
+                
+                # Si c'est un lien relatif simple
+                if is_relative_link(link_url):
+                    # Chercher le fichier correspondant
+                    target_file = find_wiki_file_by_name(link_url, wiki_files)
+                    
+                    if target_file:
+                        # Calculer le chemin relatif correct
+                        correct_path = calculate_relative_path(file_path, target_file)
+                        
+                        # Si le chemin actuel est différent, c'est un problème
+                        if link_url != correct_path:
+                            issues.append((line_num, link_text, link_url, correct_path))
+    
+    except Exception as e:
+        print(f"⚠️  Erreur lors de l'analyse de {file_path}: {e}")
+    
+    return issues
+
+
+def fix_relative_links_in_file(file_path: Path, issues: List[Tuple[int, str, str, str]]) -> bool:
+    """Corrige les liens relatifs dans un fichier."""
+    try:
+        content = file_path.read_text(encoding='utf-8')
+        lines = content.split('\n')
+        
+        # Trier les issues par numéro de ligne décroissant pour éviter les problèmes d'index
+        issues_sorted = sorted(issues, key=lambda x: x[0], reverse=True)
+        
+        for line_num, link_text, current_link, suggested_link in issues_sorted:
+            # Remplacer le lien dans la ligne
+            old_pattern = f'[{link_text}]({current_link})'
+            new_pattern = f'[{link_text}]({suggested_link})'
+            
+            if line_num <= len(lines):
+                lines[line_num - 1] = lines[line_num - 1].replace(old_pattern, new_pattern)
+        
+        # Sauvegarder le fichier
+        file_path.write_text('\n'.join(lines), encoding='utf-8')
+        return True
+    except Exception as e:
+        print(f"⚠️  Erreur lors de la correction de {file_path}: {e}")
+        return False
+
+
+def check_and_fix_relative_links(fix: bool = False) -> int:
+    """Vérifie et corrige les liens relatifs incorrects."""
+    print("🔍 Recherche des liens relatifs incorrects dans le wiki...\n")
+    
+    # Récupérer tous les fichiers wiki
+    wiki_files = get_all_wiki_files()
+    print(f"📚 {len(wiki_files)} fichiers wiki trouvés\n")
+    
+    # Trouver tous les fichiers markdown dans _wiki
+    md_files = []
+    if WIKI_DIR.exists():
+        for root, dirs, files in os.walk(WIKI_DIR):
+            dirs[:] = [d for d in dirs if d not in EXCLUDE_DIRS]
+            for file in files:
+                if file.endswith('.md'):
+                    file_path = Path(root) / file
+                    md_files.append(file_path)
+    
+    print(f"📄 Analyse de {len(md_files)} fichiers markdown...\n")
+    
+    all_issues = []
+    for md_file in md_files:
+        issues = analyze_relative_links(md_file, wiki_files)
+        if issues:
+            try:
+                rel_path = md_file.relative_to(BASE_DIR)
+            except ValueError:
+                rel_path = md_file
+            all_issues.append((md_file, rel_path, issues))
+    
+    # Afficher les résultats
+    if not all_issues:
+        print("✅ Aucun lien relatif incorrect trouvé !")
+        return 0
+    
+    print("=" * 70)
+    print("⚠️  LIENS RELATIFS INCORRECTS TROUVÉS")
+    print("=" * 70)
+    print()
+    
+    total_count = 0
+    for file_path, rel_path, issues in all_issues:
+        print(f"📄 {rel_path}")
+        for line_num, link_text, current_link, suggested_link in issues:
+            print(f"   Ligne {line_num}: [{link_text}]({current_link})")
+            print(f"      → Devrait être: [{link_text}]({suggested_link})")
+        total_count += len(issues)
+        print()
+    
+    print("=" * 70)
+    print(f"📊 Total: {total_count} lien(s) à corriger")
+    print("=" * 70)
+    
+    # Corriger automatiquement si demandé
+    if fix:
+        print("\n🔧 Correction automatique en cours...\n")
+        fixed_count = 0
+        for file_path, rel_path, issues in all_issues:
+            if fix_relative_links_in_file(file_path, issues):
+                fixed_count += len(issues)
+                print(f"✅ {rel_path}: {len(issues)} lien(s) corrigé(s)")
+        
+        print(f"\n✅ {fixed_count} lien(s) corrigé(s) au total !")
+        return 0
+    else:
+        print("\n💡 Utilisez --fix-relative pour corriger automatiquement tous les liens")
+        return 1
+
+
 def check_links(check_internal: bool = True, check_external: bool = True, 
                 verbose: bool = False, cache_days: int = 7, clear_cache: bool = False,
                 interactive: bool = False):
@@ -600,10 +835,16 @@ def check_links(check_internal: bool = True, check_external: bool = True,
         print(f"   Morts: {len(broken_external)}")
         
         if broken_external:
+            # Vérifier s'il y a des liens protégés par captcha
+            captcha_links = [link for link in broken_external if is_captcha_protected(link[3])]
+            
             print(f"\n   ❌ Liens externes morts (groupés par fichier):\n")
             grouped = group_by_file(broken_external)
             for file_path in sorted(grouped.keys()):
-                rel_path = file_path.relative_to(BASE_DIR)
+                try:
+                    rel_path = file_path.relative_to(BASE_DIR)
+                except ValueError:
+                    rel_path = file_path
                 print(f"   📄 {rel_path}")
                 for link_text, link_url, error, line_num in grouped[file_path]:
                     file_link = make_file_link(file_path, line_num)
@@ -611,6 +852,14 @@ def check_links(check_internal: bool = True, check_external: bool = True,
                     print(f"      Ligne {line_num}: {link_display}")
                     print(f"         🔗 {file_link}")
                     print(f"         Erreur: {error}")
+                print()
+            
+            # Proposer le mode interactif si des liens sont protégés
+            if captcha_links and not interactive:
+                print("─" * 70)
+                print(f"💡 {len(captcha_links)} lien(s) semble(nt) protégé(s) par captcha/rate limit")
+                print("   Utilisez --interactive pour vérifier ces liens manuellement")
+                print("─" * 70)
                 print()
         else:
             print("   ✅ Aucun lien externe mort trouvé!")
@@ -625,16 +874,18 @@ def check_links(check_internal: bool = True, check_external: bool = True,
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Vérifie les liens morts dans un site Jekyll',
+        description='Outil unifié pour vérifier et corriger les liens dans un site Jekyll',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Exemples:
-  python3 check_broken_links.py              # Vérifie tous les liens
-  python3 check_broken_links.py --internal   # Vérifie uniquement les liens internes
-  python3 check_broken_links.py --external   # Vérifie uniquement les liens externes
-  python3 check_broken_links.py --verbose    # Mode verbeux
-  python3 check_broken_links.py --cache-days 30  # Cache valide 30 jours
-  python3 check_broken_links.py --clear-cache    # Efface le cache
+  python3 check_links.py                      # Vérifie tous les liens
+  python3 check_links.py --internal            # Vérifie uniquement les liens internes
+  python3 check_links.py --external            # Vérifie uniquement les liens externes
+  python3 check_links.py --verbose             # Mode verbeux
+  python3 check_links.py --fix-relative         # Corrige les liens relatifs incorrects
+  python3 check_links.py --external --interactive  # Mode interactif pour captcha
+  python3 check_links.py --cache-days 30       # Cache valide 30 jours
+  python3 check_links.py --clear-cache          # Efface le cache
         """
     )
     
@@ -650,8 +901,16 @@ Exemples:
                        help='Effacer le cache avant de vérifier')
     parser.add_argument('--interactive', action='store_true',
                        help='Mode interactif pour les liens protégés par captcha (ouvre dans le navigateur)')
+    parser.add_argument('--check-relative', action='store_true',
+                       help='Détecte les liens relatifs incorrects dans le wiki (sans corriger)')
+    parser.add_argument('--fix-relative', action='store_true',
+                       help='Corrige automatiquement les liens relatifs incorrects dans le wiki')
     
     args = parser.parse_args()
+    
+    # Si --check-relative ou --fix-relative est spécifié, on fait uniquement ça
+    if args.check_relative or args.fix_relative:
+        return check_and_fix_relative_links(fix=args.fix_relative)
     
     check_internal = not args.external
     check_external = not args.internal

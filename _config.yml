@@ -36,5 +36,3 @@ exclude:
   - .vscode/
   - .git/
   - .gitignore
-  - check_broken_links.py
-  - .link_check_cache.json

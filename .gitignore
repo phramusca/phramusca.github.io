@@ -8,3 +8,6 @@ vendor/
 Gemfile.lock
 .DS_Store
 .link_check_cache.json
+__pycache__/
+*.py[cod]
+*$py.class
