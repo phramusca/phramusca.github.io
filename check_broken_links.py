@@ -122,18 +122,22 @@ def update_cache(cache: Dict, cache_key: str, is_valid: bool, error: str,
 
 def normalize_internal_link(link: str, base_file: Path) -> Path:
     """
-    Normalise un lien interne pour trouver le fichier correspondant.
+    Normalise un lien interne pour trouver le fichier correspondant en tenant compte de Jekyll.
     
     Les liens peuvent être:
     - wiki/docker -> _wiki/docker.md
     - wiki/linux/soft/calibre -> _wiki/linux/soft/calibre.md
     - /wiki/linux -> _wiki/linux.md
     - 2024/12/07/FlashSamsung -> _posts/2024-12-07-FlashSamsung.md
+    - Sauvegardes_MySQL (dans _wiki/perso/) -> _wiki/perso/Sauvegardes_MySQL.md
+    - ../linux (depuis _wiki/perso/) -> _wiki/linux.md
     """
+    original_link = link
+    
     # Enlever le slash initial s'il existe
     link = link.lstrip('/')
     
-    # Enlever le fragment/ancre (#)
+    # Enlever le fragment/ancre (#) - Jekyll les gère nativement
     if '#' in link:
         link = link.split('#')[0]
     
@@ -145,20 +149,22 @@ def normalize_internal_link(link: str, base_file: Path) -> Path:
     if link == '' or link == 'index':
         return BASE_DIR / 'index.md'
     
-    # Cas des posts: format YYYY/MM/DD/Titre
+    # Cas des posts: format YYYY/MM/DD/Titre (Jekyll transforme ça en permalink)
     post_pattern = re.compile(r'^(\d{4})/(\d{2})/(\d{2})/(.+)$')
     post_match = post_pattern.match(link)
     if post_match:
         year, month, day, title = post_match.groups()
+        # Jekyll transforme les titres avec espaces en tirets
+        title_normalized = title.replace(' ', '-').replace('_', '-')
+        post_file = BASE_DIR / '_posts' / f"{year}-{month}-{day}-{title_normalized}.md"
+        if post_file.exists():
+            return post_file
+        # Essayer avec le titre original
         post_file = BASE_DIR / '_posts' / f"{year}-{month}-{day}-{title}.md"
         if post_file.exists():
             return post_file
-        # Essayer avec extension .html
-        post_file = BASE_DIR / '_posts' / f"{year}-{month}-{day}-{title}.html"
-        if post_file.exists():
-            return post_file
     
-    # Cas des pages wiki: wiki/...
+    # Cas des pages wiki: wiki/... (Jekyll collection avec permalink /wiki/:path/)
     if link.startswith('wiki/'):
         wiki_path = link[5:]  # Enlever "wiki/"
         # Essayer avec .md
@@ -169,24 +175,58 @@ def normalize_internal_link(link: str, base_file: Path) -> Path:
         wiki_file = BASE_DIR / '_wiki' / wiki_path / 'index.md'
         if wiki_file.exists():
             return wiki_file
-        # Essayer comme chemin complet
-        wiki_file = BASE_DIR / '_wiki' / f"{wiki_path}.md"
-        return wiki_file
+        # Essayer avec underscores remplacés
+        wiki_file = BASE_DIR / '_wiki' / f"{wiki_path.replace(' ', '_')}.md"
+        if wiki_file.exists():
+            return wiki_file
+        # Retourner le chemin attendu même s'il n'existe pas (pour le message d'erreur)
+        return BASE_DIR / '_wiki' / f"{wiki_path}.md"
     
-    # Cas des liens relatifs depuis le fichier courant
+    # Cas des liens relatifs depuis le fichier courant (important pour Jekyll)
     if not link.startswith('http') and not link.startswith('/'):
         # Lien relatif au fichier courant
         relative_file = base_file.parent / link
         if relative_file.exists():
             return relative_file
         # Essayer avec .md
-        if not link.endswith('.md'):
+        if not link.endswith(('.md', '.html', '.jpg', '.png', '.gif', '.svg')):
             relative_file = base_file.parent / f"{link}.md"
             if relative_file.exists():
                 return relative_file
+            # Essayer avec underscores (MediaWiki utilise des underscores)
+            relative_file = base_file.parent / f"{link.replace(' ', '_')}.md"
+            if relative_file.exists():
+                return relative_file
+            # Essayer avec tirets
+            relative_file = base_file.parent / f"{link.replace(' ', '-')}.md"
+            if relative_file.exists():
+                return relative_file
+        
+        # Si le fichier courant est dans _wiki, chercher aussi dans _wiki
+        if '_wiki' in str(base_file):
+            wiki_file = BASE_DIR / '_wiki' / f"{link}.md"
+            if wiki_file.exists():
+                return wiki_file
+            wiki_file = BASE_DIR / '_wiki' / f"{link.replace(' ', '_')}.md"
+            if wiki_file.exists():
+                return wiki_file
+            # Si le fichier courant est dans un sous-dossier de _wiki, chercher dans ce sous-dossier
+            if base_file.parent != BASE_DIR / '_wiki':
+                rel_to_wiki = base_file.parent.relative_to(BASE_DIR / '_wiki')
+                wiki_sub_file = BASE_DIR / '_wiki' / rel_to_wiki / f"{link}.md"
+                if wiki_sub_file.exists():
+                    return wiki_sub_file
+                wiki_sub_file = BASE_DIR / '_wiki' / rel_to_wiki / f"{link.replace(' ', '_')}.md"
+                if wiki_sub_file.exists():
+                    return wiki_sub_file
     
-    # Cas par défaut: chercher dans _wiki
+    # Cas par défaut: chercher dans _wiki (collection Jekyll)
     wiki_file = BASE_DIR / '_wiki' / f"{link}.md"
+    if wiki_file.exists():
+        return wiki_file
+    
+    # Essayer avec underscores (MediaWiki)
+    wiki_file = BASE_DIR / '_wiki' / f"{link.replace(' ', '_')}.md"
     if wiki_file.exists():
         return wiki_file
     
@@ -194,6 +234,18 @@ def normalize_internal_link(link: str, base_file: Path) -> Path:
     wiki_file = BASE_DIR / '_wiki' / link
     if wiki_file.exists():
         return wiki_file
+    
+    # Si le lien commence par .., gérer les chemins relatifs
+    if original_link.startswith('../'):
+        parent_path = base_file.parent.parent
+        rel_link = original_link[3:]  # Enlever ../
+        target = parent_path / rel_link
+        if target.exists():
+            return target
+        if not rel_link.endswith('.md'):
+            target = parent_path / f"{rel_link}.md"
+            if target.exists():
+                return target
     
     return BASE_DIR / link
 
@@ -314,8 +366,17 @@ def group_by_file(links: List[Tuple]) -> dict:
     return grouped
 
 
+def is_captcha_protected(error: str) -> bool:
+    """Détermine si une erreur suggère une protection par captcha."""
+    error_lower = error.lower()
+    captcha_indicators = ['captcha', '403', 'forbidden', 'cloudflare', 'rate limit', '429', 
+                          'too many requests', 'blocked', 'challenge']
+    return any(indicator in error_lower for indicator in captcha_indicators)
+
+
 def check_links(check_internal: bool = True, check_external: bool = True, 
-                verbose: bool = False, cache_days: int = 7, clear_cache: bool = False):
+                verbose: bool = False, cache_days: int = 7, clear_cache: bool = False,
+                interactive: bool = False):
     """Fonction principale pour vérifier les liens."""
     # Charger le cache
     if clear_cache:
@@ -334,6 +395,7 @@ def check_links(check_internal: bool = True, check_external: bool = True,
     
     broken_internal = []
     broken_external = []
+    interactive_links = []  # Liens à vérifier en mode interactif
     total_internal = 0
     total_external = 0
     cached_count = 0
@@ -373,12 +435,18 @@ def check_links(check_internal: bool = True, check_external: bool = True,
                             if verbose:
                                 print(f"   🔍 Vérification externe: {link_url}")
                             is_valid, error = check_external_link(link_url)
-                            update_cache(cache, cache_key, is_valid, error, True)
                             
-                            if not is_valid:
-                                broken_external.append((file_path, link_text, link_url, error, line_num))
+                            # En mode interactif, si le lien est protégé par captcha, on le met de côté
+                            if interactive and not is_valid and is_captcha_protected(error):
+                                interactive_links.append((file_path, link_text, link_url, error, line_num))
                                 if verbose:
-                                    print(f"      ❌ Lien mort: {error}")
+                                    print(f"      ⚠️  Protection détectée (captcha/rate limit), sera vérifié en mode interactif: {error}")
+                            else:
+                                update_cache(cache, cache_key, is_valid, error, True)
+                                if not is_valid:
+                                    broken_external.append((file_path, link_text, link_url, error, line_num))
+                                    if verbose:
+                                        print(f"      ❌ Lien mort: {error}")
                             time.sleep(0.1)  # Éviter de surcharger les serveurs
                 
                 else:
@@ -413,6 +481,72 @@ def check_links(check_internal: bool = True, check_external: bool = True,
         except Exception as e:
             print(f"⚠️  Erreur lors de la lecture de {file_path}: {e}")
     
+    # Gérer les liens interactifs (mode captcha)
+    if interactive and interactive_links:
+        print("\n" + "="*70)
+        print("🌐 VÉRIFICATION INTERACTIVE")
+        print("="*70)
+        print(f"\n⚠️  {len(interactive_links)} lien(s) nécessitent une vérification manuelle")
+        print("   (protégés par captcha ou rate limit)\n")
+        
+        grouped = group_by_file(interactive_links)
+        for file_path in sorted(grouped.keys()):
+            rel_path = file_path.relative_to(BASE_DIR)
+            print(f"   📄 {rel_path}")
+            for link_text, link_url, error, line_num in grouped[file_path]:
+                file_link = make_file_link(file_path, line_num)
+                link_display = f"[{link_text}]({link_url})" if link_text else f"({link_url})"
+                print(f"      Ligne {line_num}: {link_display}")
+                print(f"         🔗 {file_link}")
+                print(f"         Erreur automatique: {error}")
+        
+        print("\n" + "─"*70)
+        response = input("\n💬 Voulez-vous ouvrir ces liens dans votre navigateur pour vérification manuelle? (o/N): ").strip().lower()
+        
+        if response in ['o', 'oui', 'y', 'yes']:
+            import webbrowser
+            print("\n🌐 Ouverture des liens...")
+            for file_path, link_text, link_url, error, line_num in interactive_links:
+                # Normaliser l'URL
+                url = link_url
+                if not url.startswith(('http://', 'https://')):
+                    url = 'https://' + url
+                print(f"   🔗 Ouverture: {url}")
+                webbrowser.open(url)
+                time.sleep(1)  # Petit délai entre chaque ouverture
+            
+            print("\n" + "─"*70)
+            print("\n💬 Pour chaque lien, indiquez s'il est valide (o/N) ou tapez 'q' pour quitter:\n")
+            
+            for file_path, link_text, link_url, error, line_num in interactive_links:
+                url = link_url
+                if not url.startswith(('http://', 'https://')):
+                    url = 'https://' + url
+                
+                while True:
+                    response = input(f"   ✅ Le lien {url} est-il valide? (o/N/q): ").strip().lower()
+                    if response == 'q':
+                        print("\n   ⏭️  Arrêt de la vérification interactive")
+                        break
+                    elif response in ['o', 'oui', 'y', 'yes']:
+                        # Lien valide
+                        cache_key = get_cache_key(file_path, link_url, True)
+                        update_cache(cache, cache_key, True, '', True)
+                        break
+                    elif response in ['n', 'non', 'no', '']:
+                        # Demander la raison
+                        reason = input(f"   ❌ Raison (optionnel): ").strip()
+                        cache_key = get_cache_key(file_path, link_url, True)
+                        error_msg = reason if reason else "Vérifié manuellement: lien mort"
+                        update_cache(cache, cache_key, False, error_msg, True)
+                        broken_external.append((file_path, link_text, link_url, error_msg, line_num))
+                        break
+                    else:
+                        print("   ⚠️  Réponse invalide. Tapez 'o' pour valide, 'N' pour invalide, ou 'q' pour quitter.")
+                
+                if response == 'q':
+                    break
+    
     # Sauvegarder le cache
     save_cache(cache)
     
@@ -421,6 +555,8 @@ def check_links(check_internal: bool = True, check_external: bool = True,
         print(f"\n📊 Statistiques:")
         print(f"   Liens vérifiés: {checked_count}")
         print(f"   Liens depuis le cache: {cached_count}")
+        if interactive_links:
+            print(f"   Liens en mode interactif: {len(interactive_links)}")
         print()
     
     # Afficher les résultats
@@ -512,6 +648,8 @@ Exemples:
                        help='Nombre de jours de validité du cache (défaut: 7)')
     parser.add_argument('--clear-cache', action='store_true',
                        help='Effacer le cache avant de vérifier')
+    parser.add_argument('--interactive', action='store_true',
+                       help='Mode interactif pour les liens protégés par captcha (ouvre dans le navigateur)')
     
     args = parser.parse_args()
     
@@ -522,8 +660,12 @@ Exemples:
         print("❌ Erreur: --internal et --external ne peuvent pas être utilisés ensemble")
         sys.exit(1)
     
+    if args.interactive and not check_external:
+        print("❌ Erreur: --interactive ne peut être utilisé qu'avec --external")
+        sys.exit(1)
+    
     sys.exit(check_links(check_internal, check_external, args.verbose, 
-                        args.cache_days, args.clear_cache))
+                        args.cache_days, args.clear_cache, args.interactive))
 
 
 if __name__ == '__main__':
