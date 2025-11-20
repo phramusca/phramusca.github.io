@@ -29,8 +29,50 @@ WIKI_DIR = BASE_DIR / '_wiki'
 EXCLUDE_DIRS = {'_site', '.git', 'vendor', 'node_modules', '.jekyll-cache', '.sass-cache', '.vscode'}
 EXCLUDE_FILES = {'README.md', 'TODO.md', 'Gemfile', 'Gemfile.lock'}
 
-# Patterns pour extraire les liens markdown
-MARKDOWN_LINK_PATTERN = re.compile(r'\[([^\]]+)\]\(([^\)]+)\)')
+# Fonction pour extraire les liens markdown en gérant les parenthèses dans les URLs
+# Format: [text](url) où l'URL peut contenir des parenthèses
+def extract_markdown_links(text):
+    """Extrait les liens markdown en gérant correctement les parenthèses dans les URLs."""
+    links = []
+    i = 0
+    while i < len(text):
+        # Chercher le début d'un lien: [
+        if text[i] == '[':
+            # Trouver la fin du texte: ]
+            j = i + 1
+            depth = 0
+            while j < len(text) and text[j] != ']':
+                if text[j] == '[':
+                    depth += 1
+                elif text[j] == ']':
+                    if depth > 0:
+                        depth -= 1
+                    else:
+                        break
+                j += 1
+            if j < len(text) and text[j] == ']':
+                link_text = text[i+1:j]
+                # Chercher l'ouverture de l'URL: (
+                if j + 1 < len(text) and text[j+1] == '(':
+                    # Trouver la fin de l'URL en comptant les parenthèses
+                    k = j + 2
+                    paren_count = 1
+                    while k < len(text) and paren_count > 0:
+                        if text[k] == '(':
+                            paren_count += 1
+                        elif text[k] == ')':
+                            paren_count -= 1
+                            if paren_count == 0:
+                                break
+                        k += 1
+                    if paren_count == 0:
+                        link_url = text[j+2:k]
+                        links.append((link_text, link_url, i, k+1))
+                        i = k + 1
+                        continue
+        i += 1
+    return links
+
 HTML_LINK_PATTERN = re.compile(r'<a\s+[^>]*href=["\']([^"\']+)["\'][^>]*>', re.IGNORECASE)
 
 # Cache en mémoire pour éviter de vérifier plusieurs fois la même URL externe dans une session
@@ -314,11 +356,10 @@ def extract_links(content: str) -> List[Tuple[str, str, int]]:
     links = []
     lines = content.split('\n')
     
-    # Extraire les liens markdown [text](url)
+    # Extraire les liens markdown [text](url) en gérant les parenthèses dans les URLs
     for line_num, line in enumerate(lines, start=1):
-        for match in MARKDOWN_LINK_PATTERN.finditer(line):
-            text, url = match.groups()
-            links.append((text, url, line_num))
+        for link_text, link_url, start, end in extract_markdown_links(line):
+            links.append((link_text, link_url, line_num))
     
     # Extraire les liens HTML <a href="url">
     for line_num, line in enumerate(lines, start=1):
@@ -489,9 +530,7 @@ def analyze_relative_links(file_path: Path, wiki_files: dict) -> List[Tuple[int,
         lines = content.split('\n')
         
         for line_num, line in enumerate(lines, start=1):
-            for match in MARKDOWN_LINK_PATTERN.finditer(line):
-                link_text, link_url = match.groups()
-                
+            for link_text, link_url, start, end in extract_markdown_links(line):
                 # Ignorer les liens Liquid/Jekyll
                 if '{{' in link_url or '{%' in link_url:
                     continue
