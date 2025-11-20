@@ -14,7 +14,8 @@
       "extensions": [
         "kramdown.kramdown",
         "bradlc.vscode-tailwindcss",
-        "Gruntfuggly.todo-tree"
+        "Gruntfuggly.todo-tree",
+        "eamodio.gitlens"
       ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "bash"
