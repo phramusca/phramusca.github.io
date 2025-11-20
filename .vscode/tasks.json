@@ -201,6 +201,41 @@
       },
       "problemMatcher": [],
       "detail": "Vérifie les liens externes avec mode interactif pour les pages protégées par captcha"
+    },
+    {
+      "label": "🔗 Détecter les liens relatifs incorrects",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "${workspaceFolder}/fix_relative_links.py"
+      ],
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Détecte les liens relatifs incorrects dans le wiki (affiche les corrections suggérées sans les appliquer)"
+    },
+    {
+      "label": "🔗 Corriger les liens relatifs incorrects",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "${workspaceFolder}/fix_relative_links.py",
+        "--fix"
+      ],
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Corrige automatiquement tous les liens relatifs incorrects dans le wiki"
     }
   ]
 }
