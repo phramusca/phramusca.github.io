@@ -45,6 +45,9 @@ Site personnel hébergé sur GitHub Pages, construit avec Jekyll. Ce site contie
 - `Jekyll: Build` - Construit le site sans le servir
 - `Jekyll: Clean` - Nettoie le dossier `_site/`
 - `Bundle: Install` - Installe les dépendances Ruby
+- `🔍 Vérifier les liens (htmlproofer)` - Vérifie les liens avec htmlproofer
+- `🔍 Vérifier les liens (lychee)` - Vérifie les liens avec lychee
+- `🔍 Vérifier les liens (les deux outils)` - Vérifie avec htmlproofer et lychee
 
 ## 📁 Structure du projet
 
@@ -271,6 +274,92 @@ Vous pouvez aussi utiliser directement la syntaxe kramdown dans le markdown.
 ```
 
 Cette syntaxe génère une TOC basique intégrée dans le contenu, sans le style flottant personnalisé. La liste sera remplacée par la table des matières générée automatiquement.
+
+## 🔍 Vérification des liens morts
+
+Ce projet utilise deux outils pour vérifier les liens morts :
+
+### Outils utilisés
+
+#### htmlproofer
+
+- **Installation** : `bundle install` (déjà dans le Gemfile)
+- **Configuration** : `.htmlproofer.yml`
+- **Usage** : `bundle exec htmlproofer _site [options]`
+- **Avantages** : Intégré à l'écosystème Ruby/Jekyll, très configurable
+
+#### lychee
+
+- **Installation** :
+  - Dans le dev container : Installé automatiquement lors de la création du container
+  - Manuellement : `cargo install lychee` (si nécessaire)
+  - Ou télécharger depuis : <https://github.com/lycheeverse/lychee/releases>
+- **Configuration** : `.lycheeignore`
+- **Usage** : `lychee _site [options]`
+- **Avantages** : Très rapide (écrit en Rust), supporte Markdown et HTML
+
+### Utilisation
+
+#### Tâches VS Code
+
+- **🔍 Vérifier les liens (htmlproofer)** : Utilise htmlproofer (par défaut)
+- **🔍 Vérifier les liens (lychee)** : Utilise lychee
+- **🔍 Vérifier les liens (les deux outils)** : Utilise les deux outils
+
+#### Script shell
+
+```bash
+./scripts/check_links.sh [htmlproofer|lychee|both]
+```
+
+#### Commandes manuelles
+
+**htmlproofer** :
+
+```bash
+bundle exec jekyll build
+bundle exec htmlproofer _site --checks Links,Images,Scripts --no-enforce-https --allow-hash-href --ignore-urls '/#.*/' --ignore-urls 'mailto:.*' --ignore-urls 'tel:.*' --ignore-urls 'apt://.*'
+```
+
+**lychee** :
+
+```bash
+bundle exec jekyll build
+lychee _site --verbose --no-progress --exclude-all-private --exclude '^mailto:.*' --exclude '^tel:.*' --exclude '^#.*$' --exclude '^/assets/.*'
+```
+
+### Configuration
+
+#### Liens ignorés
+
+Les deux outils ignorent automatiquement :
+
+- Les ancres (`#...`)
+- Les liens `mailto:`
+- Les liens `tel:`
+- Les liens `apt://`
+- Les assets (`/assets/...`) - fonctionnent sur le serveur web mais pas en local
+- Les projets externes (comme `JaMuz`)
+
+#### Cache
+
+- **htmlproofer** : Cache de 7 jours (configuré dans `.htmlproofer.yml`)
+- **lychee** : Pas de cache par défaut
+
+### Notes importantes
+
+1. **Build requis** : Les deux outils nécessitent que le site soit construit (`_site/` doit exister)
+2. **GitHub Pages** : Ces outils ne fonctionnent pas directement avec GitHub Pages (nécessitent un build local)
+3. **Templates Liquid** : Les templates Liquid (`{url}`, `{title}`, etc.) sont ignorés automatiquement
+
+### Résultats
+
+Les deux outils peuvent trouver des liens morts différents :
+
+- **htmlproofer** : Vérifie le HTML généré, trouve les problèmes de structure HTML
+- **lychee** : Vérifie les liens de manière asynchrone, très rapide
+
+Il est recommandé d'utiliser les deux outils pour une vérification complète.
 
 ## 🚫 Exclure des fichiers du build
 

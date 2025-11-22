@@ -9,3 +9,6 @@ gem "github-pages", group: :jekyll_plugins
 # Plugins supplémentaires compatibles GitHub Pages
 gem 'jekyll-seo-tag'
 gem 'jekyll-remote-theme'
+
+# Outils de vérification des liens
+gem 'html-proofer', group: :development

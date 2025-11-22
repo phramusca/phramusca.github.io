@@ -67,7 +67,8 @@
     {
       "label": "🔍 Vérifier les liens (htmlproofer)",
       "type": "shell",
-      "command": "bundle exec htmlproofer _site --check-html --check-img-http --check-favicon --check-opengraph --enforce-https=false --allow-hash-href --url-ignore '/#.*/'",
+      "command": "${workspaceFolder}/scripts/check_links.sh",
+      "args": ["htmlproofer"],
       "dependsOn": "Jekyll: Build",
       "group": {
         "kind": "test",
@@ -85,7 +86,8 @@
     {
       "label": "🔍 Vérifier les liens (lychee)",
       "type": "shell",
-      "command": "lychee _site --verbose --no-progress --exclude-all-private --exclude-mail --exclude-tel --exclude-file '/#.*/'",
+      "command": "${workspaceFolder}/scripts/check_links.sh",
+      "args": ["lychee"],
       "dependsOn": "Jekyll: Build",
       "group": "test",
       "presentation": {
@@ -96,6 +98,22 @@
       },
       "problemMatcher": [],
       "detail": "Vérifie tous les liens avec lychee (nécessite un build Jekyll préalable)"
+    },
+    {
+      "label": "🔍 Vérifier les liens (les deux outils)",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/check_links.sh",
+      "args": ["both"],
+      "dependsOn": "Jekyll: Build",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Vérifie tous les liens avec htmlproofer et lychee (nécessite un build Jekyll préalable)"
     }
   ]
 }

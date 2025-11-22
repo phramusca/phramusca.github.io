@@ -1,0 +1,22 @@
+# Configuration lychee - URLs à ignorer
+# Documentation: https://github.com/lycheeverse/lychee
+# Ce fichier est lu automatiquement par lychee
+
+# Ignorer les ancres (fragments)
+^#.*$
+
+# Ignorer les liens mailto
+^mailto:.*
+
+# Ignorer les liens tel
+^tel:.*
+
+# Ignorer les assets (CSS, JS, images) - fonctionnent sur le serveur web mais pas en local
+^/assets/.*
+
+# Ignorer les fichiers JSON générés
+^/search\.json.*
+
+# Ignorer les liens vers des projets externes (exemples)
+^JaMuz$
+

@@ -1,13 +1,20 @@
 {
   "name": "Jekyll GitHub Pages",
-  "image": "mcr.microsoft.com/devcontainers/ruby:3.2",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
   
   "features": {
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
 
-  "postCreateCommand": "bundle install",
+  "postCreateCommand": "bash .devcontainer/postCreate.sh",
+  
+  "remoteEnv": {
+    "PATH": "${containerEnv:PATH}:/home/vscode/.cargo/bin:${containerEnv:HOME}/.cargo/bin"
+  },
 
   "customizations": {
     "vscode": {
@@ -17,7 +24,8 @@
         "Gruntfuggly.todo-tree",
         "eamodio.gitlens",
         "ms-python.python",
-        "DavidAnson.vscode-markdownlint"
+        "DavidAnson.vscode-markdownlint",
+        "ms-azuretools.vscode-docker"
       ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "bash"

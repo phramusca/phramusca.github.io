@@ -1,0 +1,29 @@
+# Configuration htmlproofer
+# Documentation: https://github.com/gjtorikian/html-proofer
+
+# Vérifications à effectuer (Links, Images, Scripts)
+checks:
+  - Links
+  - Images
+  - Scripts
+
+# Options de vérification
+enforce_https: false  # Permettre HTTP pour les liens locaux
+allow_hash_href: true  # Permettre les ancres vides (#)
+check_external_hash: false  # Ne pas vérifier les ancres externes
+
+# URLs à ignorer (regex)
+ignore_urls:
+  - '/#.*/'  # Ignorer les ancres
+  - 'mailto:.*'  # Ignorer les liens mailto
+  - 'tel:.*'  # Ignorer les liens tel
+
+# Options de cache
+cache:
+  timeframe: '7d'  # Cache de 7 jours
+
+# Options de timeout
+typhoeus:
+  timeout: 10
+  connecttimeout: 10
+
