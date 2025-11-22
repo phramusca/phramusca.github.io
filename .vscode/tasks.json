@@ -65,13 +65,10 @@
       "detail": "Installe les dépendances Ruby"
     },
     {
-      "label": "🔍 Vérifier les liens morts",
+      "label": "🔍 Vérifier les liens (htmlproofer)",
       "type": "shell",
-      "command": "python3",
-      "args": [
-        "${workspaceFolder}/.vscode/tasks/check_links.py",
-        "--verbose"
-      ],
+      "command": "bundle exec htmlproofer _site --check-html --check-img-http --check-favicon --check-opengraph --enforce-https=false --allow-hash-href --url-ignore '/#.*/'",
+      "dependsOn": "Jekyll: Build",
       "group": {
         "kind": "test",
         "isDefault": true
@@ -83,17 +80,13 @@
         "clear": true
       },
       "problemMatcher": [],
-      "detail": "Vérifie tous les liens morts (internes et externes) en mode verbose avec cache (7 jours par défaut)"
+      "detail": "Vérifie tous les liens avec htmlproofer (nécessite un build Jekyll préalable)"
     },
     {
-      "label": "🔍 Vérifier les liens morts (sans cache)",
+      "label": "🔍 Vérifier les liens (lychee)",
       "type": "shell",
-      "command": "python3",
-      "args": [
-        "${workspaceFolder}/.vscode/tasks/check_links.py",
-        "--verbose",
-        "--clear-cache"
-      ],
+      "command": "lychee _site --verbose --no-progress --exclude-all-private --exclude-mail --exclude-tel --exclude-file '/#.*/'",
+      "dependsOn": "Jekyll: Build",
       "group": "test",
       "presentation": {
         "reveal": "always",
@@ -102,141 +95,7 @@
         "clear": true
       },
       "problemMatcher": [],
-      "detail": "Vérifie tous les liens morts (internes et externes) en mode verbose sans utiliser le cache (efface le cache avant)"
-    },
-    {
-      "label": "🔗 Vérifier les liens internes",
-      "type": "shell",
-      "command": "python3",
-      "args": [
-        "${workspaceFolder}/.vscode/tasks/check_links.py",
-        "--internal",
-        "--verbose"
-      ],
-      "group": "test",
-      "presentation": {
-        "reveal": "always",
-        "panel": "dedicated",
-        "focus": false,
-        "clear": true
-      },
-      "problemMatcher": [],
-      "detail": "Vérifie uniquement les liens internes en mode verbose avec cache"
-    },
-    {
-      "label": "🔗 Vérifier les liens internes (sans cache)",
-      "type": "shell",
-      "command": "python3",
-      "args": [
-        "${workspaceFolder}/.vscode/tasks/check_links.py",
-        "--internal",
-        "--verbose",
-        "--clear-cache"
-      ],
-      "group": "test",
-      "presentation": {
-        "reveal": "always",
-        "panel": "dedicated",
-        "focus": false,
-        "clear": true
-      },
-      "problemMatcher": [],
-      "detail": "Vérifie uniquement les liens internes en mode verbose sans cache"
-    },
-    {
-      "label": "🌐 Vérifier les liens externes",
-      "type": "shell",
-      "command": "python3",
-      "args": [
-        "${workspaceFolder}/.vscode/tasks/check_links.py",
-        "--external",
-        "--verbose"
-      ],
-      "group": "test",
-      "presentation": {
-        "reveal": "always",
-        "panel": "dedicated",
-        "focus": false,
-        "clear": true
-      },
-      "problemMatcher": [],
-      "detail": "Vérifie uniquement les liens externes en mode verbose avec cache"
-    },
-    {
-      "label": "🌐 Vérifier les liens externes (sans cache)",
-      "type": "shell",
-      "command": "python3",
-      "args": [
-        "${workspaceFolder}/.vscode/tasks/check_links.py",
-        "--external",
-        "--verbose",
-        "--clear-cache"
-      ],
-      "group": "test",
-      "presentation": {
-        "reveal": "always",
-        "panel": "dedicated",
-        "focus": false,
-        "clear": true
-      },
-      "problemMatcher": [],
-      "detail": "Vérifie uniquement les liens externes en mode verbose sans cache"
-    },
-    {
-      "label": "🌐 Vérifier les liens externes (mode interactif)",
-      "type": "shell",
-      "command": "python3",
-      "args": [
-        "${workspaceFolder}/.vscode/tasks/check_links.py",
-        "--external",
-        "--verbose",
-        "--interactive"
-      ],
-      "group": "test",
-      "presentation": {
-        "reveal": "always",
-        "panel": "dedicated",
-        "focus": false,
-        "clear": true
-      },
-      "problemMatcher": [],
-      "detail": "Vérifie les liens externes avec mode interactif pour les pages protégées par captcha"
-    },
-    {
-      "label": "🔗 Détecter les liens relatifs incorrects",
-      "type": "shell",
-      "command": "python3",
-      "args": [
-        "${workspaceFolder}/.vscode/tasks/check_links.py",
-        "--check-relative"
-      ],
-      "group": "test",
-      "presentation": {
-        "reveal": "always",
-        "panel": "dedicated",
-        "focus": false,
-        "clear": true
-      },
-      "problemMatcher": [],
-      "detail": "Détecte les liens relatifs incorrects dans le wiki (affiche les corrections suggérées sans les appliquer)"
-    },
-    {
-      "label": "🔗 Corriger les liens relatifs incorrects",
-      "type": "shell",
-      "command": "python3",
-      "args": [
-        "${workspaceFolder}/.vscode/tasks/check_links.py",
-        "--fix-relative"
-      ],
-      "group": "test",
-      "presentation": {
-        "reveal": "always",
-        "panel": "dedicated",
-        "focus": false,
-        "clear": true
-      },
-      "problemMatcher": [],
-      "detail": "Corrige automatiquement tous les liens relatifs incorrects dans le wiki"
+      "detail": "Vérifie tous les liens avec lychee (nécessite un build Jekyll préalable)"
     }
   ]
 }
