@@ -1,6 +1,6 @@
 /**
  * Génère automatiquement une table des matières (TOC) à partir des titres de la page
- * Usage: Ajouter <div id="toc-container"></div> où vous voulez afficher la TOC
+ * Affiche la TOC flottante sur la droite, alignée en haut, repliée par défaut
  */
 (function() {
   'use strict';
@@ -17,14 +17,18 @@
       return;
     }
 
+    // Créer le conteneur flottant
+    const floatingContainer = document.createElement('div');
+    floatingContainer.id = 'toc-floating';
+
     // Créer l'élément details/summary pour un TOC pliable
     const details = document.createElement('details');
     details.className = 'toc-details';
-    details.open = true; // Ouvert par défaut
+    details.open = false; // Replié par défaut
 
     const summary = document.createElement('summary');
     summary.className = 'toc-summary';
-    summary.textContent = '📑 Table des matières';
+    summary.textContent = 'Table des matières';
 
     const nav = document.createElement('nav');
     nav.className = 'toc-nav';
@@ -95,7 +99,11 @@
     nav.appendChild(ul);
     details.appendChild(summary);
     details.appendChild(nav);
-    tocContainer.appendChild(details);
+    floatingContainer.appendChild(details);
+    document.body.appendChild(floatingContainer);
+
+    // Masquer le conteneur original
+    tocContainer.style.display = 'none';
   }
 
   // Exécuter au chargement de la page

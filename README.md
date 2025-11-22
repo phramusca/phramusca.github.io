@@ -230,35 +230,29 @@ Les **includes** (`_includes/`) sont des snippets réutilisables de code Liquid/
 
 Le site inclut un système automatique de génération de table des matières pour les pages markdown.
 
-### Utilisation
+### Utilisation automatique
 
-Pour ajouter une table des matières à une page, incluez simplement :
-
-```markdown
----
-layout: wiki
----
-
-{% include toc.html %}
-
-# Titre principal
-
-## Section 1
-...
-
-## Section 2
-...
-```
-
-La table des matières sera générée automatiquement à partir des titres (h2 à h6) de la page et sera pliable/dépliable.
+Le layout `content` inclut automatiquement la table des matières. **Aucune action n'est nécessaire** - la TOC est automatiquement disponible sur toutes les pages utilisant `layout: content` (pages wiki et posts).
 
 ### Fonctionnalités
 
-- **Génération automatique** : La TOC est générée par JavaScript à partir des titres de la page
+- **Génération automatique** : La TOC est générée par JavaScript à partir des titres de la page (h2 à h6)
+- **Flottante** : La TOC apparaît sous forme de bouton flottant sur le côté droit de la page
+- **Repliée par défaut** : Le bouton permet d'ouvrir/fermer la TOC à tout moment
 - **Imbrication** : Les sous-sections sont automatiquement imbriquées selon leur niveau
-- **Pliable** : La TOC peut être repliée/dépliée pour économiser l'espace
+- **Navigation** : Cliquer sur un lien dans la TOC ferme automatiquement le panneau
+- **Fermeture** : La TOC se ferme en cliquant en dehors, en appuyant sur `Escape`, ou en cliquant sur un lien
 - **Ancres automatiques** : Les IDs sont générés automatiquement pour les titres si absents
 - **Style cohérent** : Utilise le thème vert du site
+- **Responsive** : S'adapte aux petits écrans
+
+### Utilisation manuelle (optionnelle)
+
+Si vous souhaitez utiliser la TOC manuellement dans une page qui n'utilise pas le layout `content`, vous pouvez inclure :
+
+```markdown
+{% include toc.html %}
+```
 
 ### Alternative : Syntaxe Kramdown
 
@@ -276,7 +270,7 @@ Vous pouvez aussi utiliser directement la syntaxe kramdown dans le markdown.
 ...
 ```
 
-Cette syntaxe génère une TOC basique sans le style personnalisé. La liste sera remplacée par la table des matières générée automatiquement.
+Cette syntaxe génère une TOC basique intégrée dans le contenu, sans le style flottant personnalisé. La liste sera remplacée par la table des matières générée automatiquement.
 
 ## 🚫 Exclure des fichiers du build
 
