@@ -1,5 +1,5 @@
 ---
-layout: wiki
+layout: content
 excerpt:  Créer un site GitHub Pages en JeKyll
 title: Créer un site GitHub Pages en JeKyll
 ---

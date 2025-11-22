@@ -1,5 +1,5 @@
 ---
-layout: wiki
+layout: content
 excerpt: Comment faire des jeux pour Nintendo DS avec MicroLua
 title: MicroLua sur Nintendo DS
 ---

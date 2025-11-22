@@ -1,5 +1,5 @@
 ---
-layout: wiki
+layout: content
 excerpt: Activer un dongle Bluetooth sous linux mint et appairer des périphériques
 title: Bluetooth sous linux
 ---

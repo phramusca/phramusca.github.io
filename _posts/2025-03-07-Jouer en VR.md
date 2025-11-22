@@ -1,5 +1,5 @@
 ---
-layout: wiki
+layout: content
 excerpt: Jouer en VR avec un casque Meta Quest 2 et un volant ThrusthMaster T150, à l'aide de SteamVR et ALVR.
 title: Jouer en VR avec un Quest 2 et un volant
 ---

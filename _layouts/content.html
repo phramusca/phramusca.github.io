@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+{% comment %}
+  Layout pour le contenu principal (pages wiki et posts)
+  - Hérite de default (qui inclut déjà custom-theme.css et links_handler.html)
+  - Inclut automatiquement la table des matières (TOC) flottante
+  - Peut être étendu facilement pour ajouter d'autres fonctionnalités communes
+{% endcomment %}
+
+{% include toc.html %}
+
+{{ content }}
+

@@ -1,5 +1,5 @@
 ---
-layout: wiki
+layout: content
 excerpt: TabbyML offre une expérience de codage AI enrichissante et personnalisable. En local.
 title: TabbyML, l'IA en local
 ---

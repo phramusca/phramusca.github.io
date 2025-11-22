@@ -121,7 +121,7 @@ Les articles de blog sont dans `_posts/` avec le format : `YYYY-MM-DD-Titre.md`
 
 ```markdown
 ---
-layout: default
+layout: content
 excerpt: Résumé court de l'article
 title: Titre de l'article
 ---
@@ -141,14 +141,15 @@ Les layouts sont des templates de pages définis dans `_layouts/` :
   - Utilisé par défaut pour toutes les pages
   - Peut être surchargé en spécifiant un autre layout dans le front matter
   
-- **`wiki`** : Layout pour les pages wiki
+- **`content`** : Layout pour le contenu principal (pages wiki et posts)
   - Hérite de `default`
   - Inclut automatiquement le gestionnaire de liens (distinction interne/externe, ouverture dans nouvel onglet)
+  - Inclut automatiquement la table des matières (TOC) flottante
   - Utilisé par défaut pour toutes les pages dans `_wiki/` (sauf les logiciels) et pour tous les posts
-  - Facilite l'extension et l'évolution des fonctionnalités communes aux pages wiki
+  - Facilite l'extension et l'évolution des fonctionnalités communes au contenu
   
 - **`software`** : Layout pour les pages de logiciels
-  - Hérite de `wiki` (donc inclut aussi le gestionnaire de liens)
+  - Hérite de `content` (donc inclut aussi le gestionnaire de liens et la TOC)
   - Inclut automatiquement les informations du logiciel (Ubuntu-fr, Site, Repo) via `software_info.html`
   - Utilisé dans les fichiers de `_wiki/linux/soft/` avec `layout: software`
 
@@ -156,7 +157,7 @@ Les layouts sont des templates de pages définis dans `_layouts/` :
 
 ```markdown
 ---
-layout: wiki
+layout: content
 ---
 ```
 

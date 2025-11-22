@@ -1,5 +1,5 @@
 ---
-layout: wiki
+layout: content
 ---
 
 # Installer un programme sous Linux

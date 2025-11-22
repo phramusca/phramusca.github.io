@@ -1,5 +1,5 @@
 ---
-layout: wiki
+layout: content
 ---
 
 # Sauvegarde et Restauration
