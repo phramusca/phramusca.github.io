@@ -37,9 +37,9 @@ with `.env` file:
 
 #### Docker 29 Breaking Change
 
-Portainer ne supporte pas les dernieres versions de docker (29 en l'occurence). Voir https://github.com/orgs/portainer/discussions/12926
+Portainer ne supporte pas les dernieres versions de docker (29 en l'occurence). Voir <https://github.com/orgs/portainer/discussions/12926>
 
-Il faut se fier à https://docs.portainer.io/start/requirements-and-prerequisites
+Il faut se fier à <https://docs.portainer.io/start/requirements-and-prerequisites>
 
 Pour portainer 2.33.3 LTS, ça marche avec 28.5.1.1, mais pas 29.0
 
@@ -287,69 +287,78 @@ VOLUME_PATH="/chemin/avec des espaces"
 J'utilise un disque externe pour stocker les données des services docker. Pour être sûr que le disque est monté avant de lancer docker, il faut créer un fichier d'unité `.mount` pour gérer le montage de votre disque externe. Voici les étapes pour le faire :
 
 - Identifier l'UUID du disque USB :
-   
+
   ```sh
   lsblk -o NAME,UUID,MOUNTPOINT
   ```
-   - Notez l'UUID du disque correspondant.
+
+  - Notez l'UUID du disque correspondant.
 
 - Créer un fichier d'unité systemd `.mount` pour gérer le montage de votre disque :  
 
   ```sh
-  sudo nano /etc/systemd/system/media-myuser-MAXTOR.mount
+  sudo nano /etc/systemd/system/media-myuser-MyDiskLabel.mount
   ```
-   
-   - Ajoutez-y le contenu suivant, en remplaçant `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` par l'UUID de votre disque :  
 
-      ```toml
-      [Unit]  
-      Description=Mount MAXTOR USB Drive  
-      Before=docker.service  
+  - Ajoutez-y le contenu suivant, en remplaçant `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` par l'UUID de votre disque :  
 
-      [Mount]  
-      What=/dev/disk/by-uuid/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  
-      Where=/media/myuser/MAXTOR  
-      Type=ext4  
-      Options=defaults  
+    ```toml
+    [Unit]  
+    Description=Mount MyDiskLabel USB Drive  
+    Before=docker.service  
 
-      [Install]  
-      WantedBy=multi-user.target
-      ```
+    [Mount]  
+    What=/dev/disk/by-uuid/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  
+    Where=/media/myuser/MyDiskLabel  
+    Type=ext4  
+    Options=defaults  
+
+    [Install]  
+    WantedBy=multi-user.target
+    ```
 
 - Créer le répertoire de montage :  
-   
+
    ```sh
-   sudo mkdir -p /media/myuser/MAXTOR
-   sudo chown myuser:myuser /media/myuser/MAXTOR
+   sudo mkdir -p /media/myuser/MyDiskLabel
+   sudo chown myuser:myuser /media/myuser/MyDiskLabel
    ```
 
 - Recharger la configuration de `systemd` et activer l'unité
-   
+
    ```sh
    sudo systemctl daemon-reload
-   sudo systemctl enable media-myuser-MAXTOR.mount
-   sudo systemctl start media-myuser-MAXTOR.mount
+   sudo systemctl enable media-myuser-MyDiskLabel.mount
+   sudo systemctl start media-myuser-MyDiskLabel.mount
   ```
 
 - Vérifier que le montage fonctionne:
-   
+
    ```sh
-   sudo systemctl status media-myuser-MAXTOR.mount
-   ls /media/myuser/MAXTOR
+   sudo systemctl status media-myuser-MyDiskLabel.mount
+   ls /media/myuser/MyDiskLabel
   ```
 
 - Configurer Docker pour attendre le montage :  
-   
+
    ```sh
    sudo systemctl edit docker.service
    ```
-   
-   - Ajoutez les lignes suivantes :  
+
+  - Ajoutez les lignes suivantes :  
 
       ```toml
       [Unit]  
-      After=media-myuser-MAXTOR.mount  
-      Requires=media-myuser-MAXTOR.mount  
+      After=media-myuser-MyDiskLabel.mount  
+      Requires=media-myuser-MyDiskLabel.mount  
+      ```
+
+  - Pour plusieurs disques, les séparer par un espace
+
+      ```toml
+      [Unit]
+      After=media-myuser-MyDiskLabel.mount media-myuser-MySecondDisk.mount
+      Requires=media-myuser-MyDiskLabel.mount media-myuser-MySecondDisk.mount
       ```
 
 - Sauvegardez, rechargez et redémarrez Docker-  :  
@@ -360,10 +369,11 @@ J'utilise un disque externe pour stocker les données des services docker. Pour 
    ```
 
 - Redémarrez votre Raspberry Pi et vérifiez que :  
-   - Le disque est monté sur `/media/myuser/MAXTOR`  
-   - Docker démarre correctement après le montage-  :  
-   
-   ```sh
-   sudo systemctl status media-myuser-MAXTOR.mount
-   sudo systemctl status docker
-   ```
+
+  - Le disque est monté sur `/media/myuser/MyDiskLabel`  
+  - Docker démarre correctement après le montage-  :  
+
+    ```sh
+    sudo systemctl status media-myuser-MyDiskLabel.mount
+    sudo systemctl status docker
+    ```

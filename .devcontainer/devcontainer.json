@@ -16,7 +16,8 @@
         "bradlc.vscode-tailwindcss",
         "Gruntfuggly.todo-tree",
         "eamodio.gitlens",
-        "ms-python.python"
+        "ms-python.python",
+        "DavidAnson.vscode-markdownlint"
       ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "bash"
