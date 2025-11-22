@@ -1,0 +1,14 @@
+{% comment %}
+  Include pour générer une table des matières (TOC)
+  
+  Usage dans un fichier markdown :
+  {% include toc.html %}
+  
+  La TOC sera générée automatiquement par JavaScript à partir des titres de la page.
+  Alternative : utiliser directement la syntaxe kramdown {:toc} dans le markdown.
+{% endcomment %}
+
+<link rel="stylesheet" href="{{ '/assets/css/toc.css' | relative_url }}">
+<div id="toc-container"></div>
+<script src="{{ '/assets/js/toc.js' | relative_url }}" defer></script>
+

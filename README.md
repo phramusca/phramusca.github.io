@@ -225,6 +225,58 @@ Les **includes** (`_includes/`) sont des snippets réutilisables de code Liquid/
 {% include linux/soft/software_info.html logiciel=logiciel %}
 ```
 
+## 📑 Table des matières (TOC)
+
+Le site inclut un système automatique de génération de table des matières pour les pages markdown.
+
+### Utilisation
+
+Pour ajouter une table des matières à une page, incluez simplement :
+
+```markdown
+---
+layout: wiki
+---
+
+{% include toc.html %}
+
+# Titre principal
+
+## Section 1
+...
+
+## Section 2
+...
+```
+
+La table des matières sera générée automatiquement à partir des titres (h2 à h6) de la page et sera pliable/dépliable.
+
+### Fonctionnalités
+
+- **Génération automatique** : La TOC est générée par JavaScript à partir des titres de la page
+- **Imbrication** : Les sous-sections sont automatiquement imbriquées selon leur niveau
+- **Pliable** : La TOC peut être repliée/dépliée pour économiser l'espace
+- **Ancres automatiques** : Les IDs sont générés automatiquement pour les titres si absents
+- **Style cohérent** : Utilise le thème vert du site
+
+### Alternative : Syntaxe Kramdown
+
+Vous pouvez aussi utiliser directement la syntaxe kramdown dans le markdown.
+
+**Important** : La syntaxe `{:toc}` doit être placée après une liste vide :
+
+```markdown
+- Table des matières
+{:toc}
+
+# Titre principal
+
+## Section 1
+...
+```
+
+Cette syntaxe génère une TOC basique sans le style personnalisé. La liste sera remplacée par la table des matières générée automatiquement.
+
 ## 🚫 Exclure des fichiers du build
 
 Pour exclure des fichiers du build Jekyll, ajoutez-les dans `_config.yml` :

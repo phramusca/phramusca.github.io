@@ -14,6 +14,15 @@ collections:
     output: true
     permalink: /wiki/:path/
 
+# Configuration Markdown : utiliser Kramdown comme processeur
+markdown: kramdown
+
+# Configuration Kramdown (processeur Markdown)
+kramdown:
+  toc_levels: 2..6  # Niveaux de titres à inclure dans la TOC (h2 à h6)
+  auto_ids: true    # Génère automatiquement des IDs pour les titres
+  heading_offset: 0 # Décalage pour les niveaux de titres
+
 # Exclure des fichiers du build
 # Note: En Jekyll 3.x, définir 'exclude' remplace la liste par défaut
 # Il faut donc inclure les exclusions par défaut + nos exclusions personnalisées
