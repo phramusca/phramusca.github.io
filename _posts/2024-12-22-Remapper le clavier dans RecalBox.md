@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: wiki
 excerpt: Utiliser des touches différentes pour naviguer dans Recalbox avec le clavier.
 title: Remapper le clavier dans Recalbox
 ---

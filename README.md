@@ -144,7 +144,7 @@ Les layouts sont des templates de pages définis dans `_layouts/` :
 - **`wiki`** : Layout pour les pages wiki
   - Hérite de `default`
   - Inclut automatiquement le gestionnaire de liens (distinction interne/externe, ouverture dans nouvel onglet)
-  - Utilisé par défaut pour toutes les pages dans `_wiki/` (sauf les logiciels)
+  - Utilisé par défaut pour toutes les pages dans `_wiki/` (sauf les logiciels) et pour tous les posts
   - Facilite l'extension et l'évolution des fonctionnalités communes aux pages wiki
   
 - **`software`** : Layout pour les pages de logiciels

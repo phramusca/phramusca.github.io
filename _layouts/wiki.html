@@ -4,12 +4,9 @@ layout: default
 
 {% comment %}
   Layout pour les pages wiki
-  - Hérite de default (qui inclut déjà custom-theme.css)
-  - Inclut automatiquement le gestionnaire de liens (distinction interne/externe)
+  - Hérite de default (qui inclut déjà custom-theme.css et links_handler.html)
   - Peut être étendu facilement pour ajouter d'autres fonctionnalités communes aux pages wiki
 {% endcomment %}
-
-{% include links_handler.html %}
 
 {{ content }}
 

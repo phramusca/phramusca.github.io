@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: wiki
 excerpt: Comment remmetre le système à zéro avec la dernière image officielle ou avec LineageOS. 
 title: Flash tablette Samsung Galaxy Note 10.1 (SM-P600) avec image officielle ou avec LineageOS.
 ---
