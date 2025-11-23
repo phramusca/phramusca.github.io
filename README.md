@@ -45,9 +45,12 @@ Site personnel hébergé sur GitHub Pages, construit avec Jekyll. Ce site contie
 - `Jekyll: Build` - Construit le site sans le servir
 - `Jekyll: Clean` - Nettoie le dossier `_site/`
 - `Bundle: Install` - Installe les dépendances Ruby
-- `🔍 Vérifier les liens (htmlproofer)` - Vérifie les liens avec htmlproofer
-- `🔍 Vérifier les liens (lychee)` - Vérifie les liens avec lychee
-- `🔍 Vérifier les liens (les deux outils)` - Vérifie avec htmlproofer et lychee
+- `🔍 Vérifier les liens internes (script maison)` - Vérifie les liens internes directement dans les fichiers Markdown
+- `🔍 Vérifier les liens externes (script maison)` - Vérifie les liens externes avec cache
+- `🔍 Vérifier les liens (scripts maison)` - Vérifie les liens internes et externes
+- `🔍 Vérifier les liens (htmlproofer)` - Vérifie avec htmlproofer (analyse _site)
+- `🔍 Vérifier les liens (lychee)` - Vérifie avec lychee (analyse _site)
+- `🔍 Vérifier les liens (toutes les méthodes)` - Toutes les méthodes
 
 ## 📁 Structure du projet
 
@@ -277,89 +280,132 @@ Cette syntaxe génère une TOC basique intégrée dans le contenu, sans le style
 
 ## 🔍 Vérification des liens morts
 
-Ce projet utilise deux outils pour vérifier les liens morts :
+Ce projet utilise une approche hybride pour vérifier les liens morts :
 
-### Outils utilisés
+### Méthodes disponibles
 
-#### htmlproofer
+#### Scripts maison (recommandés pour le développement)
 
-- **Installation** : `bundle install` (déjà dans le Gemfile)
-- **Configuration** : `.htmlproofer.yml`
-- **Usage** : `bundle exec htmlproofer _site [options]`
-- **Avantages** : Intégré à l'écosystème Ruby/Jekyll, très configurable
+- **Liens internes** : Vérifie directement les fichiers Markdown source
+  - ✅ Numéros de ligne corrects (du Markdown, pas du HTML)
+  - ✅ Pas besoin de build Jekyll
+  - ✅ Résolution intelligente des chemins relatifs
+  - ❌ Ne vérifie pas les images/scripts
+  
+- **Liens externes** : Vérifie les URLs HTTP/HTTPS
+  - ✅ Numéros de ligne corrects
+  - ✅ Cache de 7 jours pour éviter les vérifications répétées
+  - ✅ Pas besoin de build Jekyll
+  - ❌ Plus lent que les outils spécialisés
 
-#### lychee
+**Scripts** : `.vscode/tasks/check_internal_links.py` et `.vscode/tasks/check_external_links.py`
 
-- **Installation** :
-  - Dans le dev container : Installé automatiquement lors de la création du container
-  - Manuellement : `cargo install lychee` (si nécessaire)
-  - Ou télécharger depuis : <https://github.com/lycheeverse/lychee/releases>
-- **Configuration** : `.lycheeignore`
-- **Usage** : `lychee _site [options]`
-- **Avantages** : Très rapide (écrit en Rust), supporte Markdown et HTML
+#### Outils externes (recommandés pour la vérification complète)
+
+- **htmlproofer** : Analyse le site généré (`_site/`)
+  - ✅ Vérifie les images, scripts, structure HTML
+  - ✅ Intégré à l'écosystème Ruby/Jekyll
+  - ❌ Numéros de ligne du HTML (pas du Markdown)
+  - ❌ Nécessite un build Jekyll
+
+- **lychee** : Analyse le site généré (`_site/`)
+  - ✅ Très rapide (écrit en Rust)
+  - ✅ Vérification asynchrone
+  - ❌ Numéros de ligne du HTML (pas du Markdown)
+  - ❌ Nécessite un build Jekyll
 
 ### Utilisation
 
 #### Tâches VS Code
 
-- **🔍 Vérifier les liens (htmlproofer)** : Utilise htmlproofer (par défaut)
+- **🔍 Vérifier les liens internes (script maison)** : Vérifie les liens internes
+- **🔍 Vérifier les liens externes (script maison)** : Vérifie les liens externes avec cache
+- **🔍 Vérifier les liens (scripts maison)** : Vérifie les deux types de liens
+- **🔍 Vérifier les liens (htmlproofer)** : Utilise htmlproofer
 - **🔍 Vérifier les liens (lychee)** : Utilise lychee
-- **🔍 Vérifier les liens (les deux outils)** : Utilise les deux outils
+- **🔍 Vérifier les liens (toutes les méthodes)** : Toutes les méthodes
 
 #### Script shell
 
 ```bash
-./scripts/check_links.sh [htmlproofer|lychee|both]
+# Scripts maison (recommandés pour le développement)
+./.vscode/tasks/check_links.sh internal    # Liens internes uniquement
+./.vscode/tasks/check_links.sh external     # Liens externes uniquement
+./.vscode/tasks/check_links.sh both         # Les deux (scripts maison)
+
+# Outils externes (pour vérification complète)
+./.vscode/tasks/check_links.sh htmlproofer  # htmlproofer
+./.vscode/tasks/check_links.sh lychee       # lychee
+./.vscode/tasks/check_links.sh all          # Toutes les méthodes
 ```
 
 #### Commandes manuelles
+
+**Scripts maison** :
+
+```bash
+# Liens internes
+python3 .vscode/tasks/check_internal_links.py
+
+# Liens externes (avec cache dans .cache/external_links_cache.json)
+python3 .vscode/tasks/check_external_links.py
+```
 
 **htmlproofer** :
 
 ```bash
 bundle exec jekyll build
-bundle exec htmlproofer _site --checks Links,Images,Scripts --no-enforce-https --allow-hash-href --ignore-urls '/#.*/' --ignore-urls 'mailto:.*' --ignore-urls 'tel:.*' --ignore-urls 'apt://.*'
+bundle exec htmlproofer _site --checks Links,Images,Scripts --no-enforce-https --allow-hash-href --ignore-urls '/#.*/' --ignore-urls 'mailto:.*' --ignore-urls 'tel:.*'
 ```
 
 **lychee** :
 
 ```bash
 bundle exec jekyll build
-lychee _site --verbose --no-progress --exclude-all-private --exclude '^mailto:.*' --exclude '^tel:.*' --exclude '^#.*$' --exclude '^/assets/.*'
+lychee _site --format detailed --verbose --exclude-all-private --exclude "^mailto:.*" --exclude "^tel:.*" --exclude "^#.*$"
 ```
 
 ### Configuration
 
 #### Liens ignorés
 
-Les deux outils ignorent automatiquement :
+Tous les outils ignorent automatiquement :
 
 - Les ancres (`#...`)
 - Les liens `mailto:`
 - Les liens `tel:`
-- Les liens `apt://`
-- Les assets (`/assets/...`) - fonctionnent sur le serveur web mais pas en local
+- Les liens `apt://` (protocoles système non-HTTP)
 - Les projets externes (comme `JaMuz`)
+- Les templates Liquid (`{url}`, `{title}`, etc.)
 
 #### Cache
 
+- **Scripts maison (liens externes)** : Cache de 7 jours dans `.cache/external_links_cache.json`
 - **htmlproofer** : Cache de 7 jours (configuré dans `.htmlproofer.yml`)
 - **lychee** : Pas de cache par défaut
 
+### Recommandations
+
+- **Développement quotidien** : Utilisez les scripts maison (`internal` et `external`)
+  - Numéros de ligne corrects
+  - Pas besoin de build
+  - Rapide pour les liens internes
+  
+- **Vérification complète** : Utilisez `all` ou les outils externes
+  - Vérifie aussi les images et scripts
+  - Analyse le site généré (liens résolus par Jekyll)
+  - Détection plus robuste des erreurs réseau
+
 ### Notes importantes
 
-1. **Build requis** : Les deux outils nécessitent que le site soit construit (`_site/` doit exister)
-2. **GitHub Pages** : Ces outils ne fonctionnent pas directement avec GitHub Pages (nécessitent un build local)
-3. **Templates Liquid** : Les templates Liquid (`{url}`, `{title}`, etc.) sont ignorés automatiquement
-
-### Résultats
-
-Les deux outils peuvent trouver des liens morts différents :
-
-- **htmlproofer** : Vérifie le HTML généré, trouve les problèmes de structure HTML
-- **lychee** : Vérifie les liens de manière asynchrone, très rapide
-
-Il est recommandé d'utiliser les deux outils pour une vérification complète.
+1. **Build requis** :
+   - **Scripts maison** : Pas de build requis ✅
+   - **htmlproofer/lychee** : Nécessitent un build Jekyll (`_site/` doit exister)
+2. **Numéros de ligne** :
+   - **Scripts maison** : Numéros de ligne du Markdown source ✅
+   - **htmlproofer/lychee** : Numéros de ligne du HTML généré
+3. **GitHub Pages** : Les outils externes nécessitent un build local
+4. **Cache** : Le cache des liens externes est stocké dans `.cache/` (ignoré par git)
 
 ## 🚫 Exclure des fichiers du build
 

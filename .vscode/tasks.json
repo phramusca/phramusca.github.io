@@ -65,11 +65,10 @@
       "detail": "Installe les dépendances Ruby"
     },
     {
-      "label": "🔍 Vérifier les liens (htmlproofer)",
+      "label": "🔍 Vérifier les liens internes (script maison)",
       "type": "shell",
-      "command": "${workspaceFolder}/scripts/check_links.sh",
-      "args": ["htmlproofer"],
-      "dependsOn": "Jekyll: Build",
+      "command": "${workspaceFolder}/.vscode/tasks/check_links.sh",
+      "args": ["internal"],
       "group": {
         "kind": "test",
         "isDefault": true
@@ -81,12 +80,58 @@
         "clear": true
       },
       "problemMatcher": [],
-      "detail": "Vérifie tous les liens avec htmlproofer (nécessite un build Jekyll préalable)"
+      "detail": "Vérifie les liens internes directement dans les fichiers Markdown (numéros de ligne corrects)"
+    },
+    {
+      "label": "🔍 Vérifier les liens externes (script maison)",
+      "type": "shell",
+      "command": "${workspaceFolder}/.vscode/tasks/check_links.sh",
+      "args": ["external"],
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Vérifie les liens externes avec cache (numéros de ligne corrects)"
+    },
+    {
+      "label": "🔍 Vérifier les liens (scripts maison)",
+      "type": "shell",
+      "command": "${workspaceFolder}/.vscode/tasks/check_links.sh",
+      "args": ["both"],
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Vérifie les liens internes et externes avec les scripts maison"
+    },
+    {
+      "label": "🔍 Vérifier les liens (htmlproofer)",
+      "type": "shell",
+      "command": "${workspaceFolder}/.vscode/tasks/check_links.sh",
+      "args": ["htmlproofer"],
+      "dependsOn": "Jekyll: Build",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Vérifie tous les liens avec htmlproofer (analyse _site, nécessite un build Jekyll)"
     },
     {
       "label": "🔍 Vérifier les liens (lychee)",
       "type": "shell",
-      "command": "${workspaceFolder}/scripts/check_links.sh",
+      "command": "${workspaceFolder}/.vscode/tasks/check_links.sh",
       "args": ["lychee"],
       "dependsOn": "Jekyll: Build",
       "group": "test",
@@ -97,13 +142,13 @@
         "clear": true
       },
       "problemMatcher": [],
-      "detail": "Vérifie tous les liens avec lychee (nécessite un build Jekyll préalable)"
+      "detail": "Vérifie tous les liens avec lychee (analyse _site, nécessite un build Jekyll)"
     },
     {
-      "label": "🔍 Vérifier les liens (les deux outils)",
+      "label": "🔍 Vérifier les liens (toutes les méthodes)",
       "type": "shell",
-      "command": "${workspaceFolder}/scripts/check_links.sh",
-      "args": ["both"],
+      "command": "${workspaceFolder}/.vscode/tasks/check_links.sh",
+      "args": ["all"],
       "dependsOn": "Jekyll: Build",
       "group": "test",
       "presentation": {
@@ -113,7 +158,7 @@
         "clear": true
       },
       "problemMatcher": [],
-      "detail": "Vérifie tous les liens avec htmlproofer et lychee (nécessite un build Jekyll préalable)"
+      "detail": "Vérifie les liens avec toutes les méthodes (scripts maison + htmlproofer + lychee)"
     }
   ]
 }
