@@ -1,18 +1,32 @@
 /* Styles pour la table des matières (TOC) */
 
-/* Version flottante - alignée en haut à droite */
+/* Version flottante - alignée à droite du contenu, juste en dessous de la première ligne horizontale */
 #toc-floating {
   position: fixed;
-  top: 20px;
-  right: 20px;
   z-index: 1000;
-  max-width: 300px;
-  max-height: calc(100vh - 40px);
+  max-width: 280px;
+  max-height: calc(100vh - 100px);
   overflow-y: auto;
-  background-color: rgba(20, 20, 20, 0.95);
-  border: 2px solid #b5e853;
+  background-color: rgba(20, 20, 20, 0.6);
+  border: 1px solid rgba(181, 232, 83, 0.3);
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  opacity: 0.25;
+  transition: opacity 0.2s, background-color 0.2s, border-color 0.2s;
+}
+
+/* Rendre la TOC visible au hover du conteneur */
+.container:hover #toc-floating {
+  opacity: 0.9;
+  background-color: rgba(20, 20, 20, 0.95);
+  border-color: #b5e853;
+}
+
+/* Toujours visible au hover direct de la TOC */
+#toc-floating:hover {
+  opacity: 1 !important;
+  background-color: rgba(20, 20, 20, 0.98) !important;
+  border-color: #b5e853 !important;
 }
 
 #toc-floating .toc-details {

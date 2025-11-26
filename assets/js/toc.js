@@ -24,7 +24,7 @@
     // Créer l'élément details/summary pour un TOC pliable
     const details = document.createElement('details');
     details.className = 'toc-details';
-    details.open = false; // Replié par défaut
+    details.open = true; // Déplié par défaut
 
     const summary = document.createElement('summary');
     summary.className = 'toc-summary';
@@ -100,6 +100,55 @@
     details.appendChild(summary);
     details.appendChild(nav);
     floatingContainer.appendChild(details);
+    
+    // Positionner la TOC à droite du contenu, fixe lors du scroll
+    const container = mainContent.closest('.container');
+    
+    // Capturer la position initiale du top (relative à la fenêtre, ne changera pas)
+    let fixedTopPosition = 20; // Position par défaut
+    
+    if (container && mainContent) {
+      // Trouver le premier <hr> dans le contenu
+      const firstHr = mainContent.querySelector('hr');
+      
+      if (firstHr) {
+        const hrRect = firstHr.getBoundingClientRect();
+        // Capturer la position initiale relative à la fenêtre : juste en dessous du hr
+        fixedTopPosition = hrRect.bottom + 20; // Position relative à la fenêtre (getBoundingClientRect)
+      } else {
+        // Si pas de hr, utiliser le début du contenu
+        const mainContentRect = mainContent.getBoundingClientRect();
+        fixedTopPosition = mainContentRect.top + 20;
+      }
+    }
+    
+    function updateTOCPosition() {
+      if (container && mainContent) {
+        const containerRect = container.getBoundingClientRect();
+        
+        // Position fixe : top reste fixe (ne change pas lors du scroll)
+        floatingContainer.style.position = 'fixed';
+        floatingContainer.style.top = fixedTopPosition + 'px';
+        // Positionner juste à droite du container : left = right du container + 20px
+        // Cette position est recalculée pour rester alignée avec le container
+        floatingContainer.style.left = (containerRect.right + 20) + 'px';
+        floatingContainer.style.right = 'auto'; // Désactiver right pour utiliser left
+      } else {
+        // Fallback si pas de container
+        floatingContainer.style.position = 'fixed';
+        floatingContainer.style.top = '20px';
+        floatingContainer.style.right = '20px';
+        floatingContainer.style.left = 'auto';
+      }
+    }
+    
+    // Calculer la position initiale
+    updateTOCPosition();
+    
+    // Mettre à jour la position au scroll (seulement left pour rester alignée) et au redimensionnement
+    window.addEventListener('scroll', updateTOCPosition);
+    window.addEventListener('resize', updateTOCPosition);
+    
     document.body.appendChild(floatingContainer);
 
     // Masquer le conteneur original
