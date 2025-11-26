@@ -9,7 +9,7 @@ import os
 import sys
 from pathlib import Path
 from typing import List, Tuple, Optional
-from urllib.parse import urlparse
+from urllib.parse import urlparse, quote
 
 
 class LinkExtractor:
@@ -197,6 +197,49 @@ class InternalLinkResolver:
                 target = target_dir / '/'.join(remaining)
             else:
                 target = target_dir
+            
+            # Chercher le fichier .md correspondant
+            if target.is_file() and target.suffix == '.md':
+                return target
+            
+            # Si c'est un dossier, chercher index.md ou un fichier .md avec le même nom
+            if target.is_dir():
+                index_file = target / 'index.md'
+                if index_file.exists():
+                    return index_file
+                
+                # Chercher un fichier .md avec le nom du dossier
+                md_file = target.parent / f"{target.name}.md"
+                if md_file.exists():
+                    return md_file
+            
+            # Si c'est un fichier sans extension, essayer .md
+            if not target.suffix:
+                md_file = target.with_suffix('.md')
+                if md_file.exists():
+                    return md_file
+            
+            # Si le target n'existe pas, essayer de trouver un fichier .md proche
+            if not target.exists():
+                md_file = target.with_suffix('.md')
+                if md_file.exists():
+                    return md_file
+                
+                # Si target est un dossier qui n'existe pas, chercher un .md parent
+                if target.suffix == '':
+                    md_file = target.parent / f"{target.name}.md"
+                    if md_file.exists():
+                        return md_file
+                    
+                    # Si on est dans _wiki et qu'on remonte à la racine, chercher aussi dans _wiki
+                    # Ex: depuis _wiki/windows.md, ../linux devrait trouver _wiki/linux.md
+                    if from_file.is_relative_to(self.wiki_dir) and target_dir == self.project_root and remaining:
+                        wiki_target = self.wiki_dir / '/'.join(remaining)
+                        wiki_md = wiki_target.with_suffix('.md')
+                        if wiki_md.exists():
+                            return wiki_md
+            
+            return None
         else:
             # Lien relatif simple
             target = from_file.parent / link
@@ -223,14 +266,12 @@ class InternalLinkResolver:
                 return md_file
         
         # Si le target n'existe pas, essayer de trouver un fichier .md proche
-        # Ex: ../linux -> ../linux.md
         if not target.exists():
             md_file = target.with_suffix('.md')
             if md_file.exists():
                 return md_file
             
             # Si target est un dossier qui n'existe pas, chercher un .md parent
-            # Ex: ../linux/soft -> ../linux/soft.md
             if target.suffix == '':
                 md_file = target.parent / f"{target.name}.md"
                 if md_file.exists():
@@ -245,6 +286,20 @@ class InternalLinkResolver:
         Returns:
             (is_valid, error_message)
         """
+        # Enlever les ancres
+        link_clean = link.split('#')[0]
+        if not link_clean:
+            return True, None  # Lien d'ancre seulement, valide
+        
+        # Pour les liens absolus vers assets/, vérifier directement le fichier
+        if link_clean.startswith('/assets/'):
+            asset_path = self.project_root / link_clean[1:]  # Enlever le / initial
+            if asset_path.exists():
+                return True, None
+            else:
+                return False, f"Fichier asset introuvable: {link_clean}"
+        
+        # Pour les autres liens, utiliser normalize_internal_link
         target = self.normalize_internal_link(link, from_file)
         
         if target is None:
@@ -271,4 +326,16 @@ def find_markdown_files(project_root: Path) -> List[Path]:
         markdown_files.extend(posts_dir.glob("*.md"))
     
     return sorted(markdown_files)
+
+
+def make_file_link(file_path: Path, line_num: int) -> str:
+    """
+    Crée un lien cliquable vers un fichier à une ligne spécifique.
+    Format compatible avec VSCode (file:// avec URL encodée).
+    """
+    abs_path = file_path.resolve()
+    # Encoder l'URL pour gérer les espaces et caractères spéciaux
+    abs_path_encoded = quote(str(abs_path), safe='/:')
+    # Format file:// avec : au lieu de #L (format qui fonctionne dans VS Code)
+    return f"file://{abs_path_encoded}:{line_num}"
 

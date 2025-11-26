@@ -14,7 +14,8 @@ from check_links_lib import (
     LinkExtractor,
     LinkClassifier,
     InternalLinkResolver,
-    find_markdown_files
+    find_markdown_files,
+    make_file_link
 )
 
 
@@ -66,11 +67,16 @@ def main():
     if errors:
         print(f"❌ {len(errors)} fichiers avec des erreurs:\n")
         
-        for file_path, file_errors in errors:
-            print(f"📄 {file_path}:")
+        for rel_path, file_errors in errors:
+            # Reconstruire le chemin absolu pour make_file_link
+            file_path = project_root / rel_path
+            print(f"📄 {rel_path}:")
             for line_num, url, text, error_msg in file_errors:
-                print(f"  Ligne {line_num}: [{text}]({url})")
-                print(f"    → {error_msg}")
+                file_link = make_file_link(file_path, line_num)
+                link_display = f"[{text}]({url})" if text else f"({url})"
+                print(f"   Ligne {line_num}: {link_display}")
+                print(f"      🔗 {file_link}")
+                print(f"      → {error_msg}")
             print()
         
         sys.exit(1)
