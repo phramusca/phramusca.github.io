@@ -179,6 +179,7 @@ services:
     container_name: lazydocker
     stdin_open: true
     tty: true
+    restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${VOLUME_PATH}/lazydocker/config:/.config/jesseduffield/lazydocker
