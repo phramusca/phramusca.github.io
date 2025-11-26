@@ -55,8 +55,6 @@ Si tu es tenté, tu peux dès maintenant et facilement tester et/ou installer [L
 
 Il est aussi possible d'[acheter un PC pré-installé](http://linuxpreinstalle.com/) avec Linux.
 
-[LDLC.com](https://www.ldlc.com/) propose aussi des PCs fixe et portables sans OS, pour éviter de payer [Windows](../windows/) pour rien.
-
 ## Le Monde du Libre
 
 - <http://www.april.org/> - Promouvoir et défendre le logiciel libre

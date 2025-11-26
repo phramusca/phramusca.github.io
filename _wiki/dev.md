@@ -8,49 +8,28 @@ Cette page traite du développement de logiciels et d'applications ou sites Inte
 
 ## Outils et généralités
 
-Pour une liste des logiciels et outils de développement, se référer à [Programmes#Programmation](Programmes#Programmation)
+Ma liste de [logiciels et outils de développement](linux/soft/)
 
 ### Contrôle de version
 
-Subversion est la solution Open Source centralisée du moment
-
-[Choix d'un hébergeur](http://www.svnhostingcomparison.com/) Subversion
-
-A priori, en version décentralisée, ce serait plutot GIT, A TESTER:
-
-- <http://doc.ubuntu-fr.org/git>
-- <http://www.unixgarden.com/index.php/administration-systeme/git-pour-les-futurs-barbus>
-- <http://www.alexgirard.com/git-book/index.html>
+- [git](http://doc.ubuntu-fr.org/git)
 
 ### Hébergement de code
 
-[Sourceforge](../archive/Sourceforge) est un fournisseurs parmi d'autres.
-
-[savannah.gnu.org](http://savannah.gnu.org/) en est un autre.
-
-[Comparatif d'hébergements de code SVN](http://www.svnhostingcomparison.com/)
+- [github](https://github.com/)
 
 ### Paquets Debian
 
 - Créer son paquet Debian: (**A TESTER**)
   - <http://doc.ubuntu-fr.org/tutoriel/creer_un_paquet>
   - <http://alp.developpez.com/tutoriels/debian/creer-paquet/>
-  - <http://case.oncle-tom.net/2007/creer-son-propre-paquetage-deb-gtwitter/>
 
 ### Sites généralistes
 
 De nombreux sites fournissant du code source et/ou des tutoriels existent:
 
 - <http://www.developpez.com/>
-- <http://www.planet-source-code.com/>
-- <http://www.codes-sources.com/>
 - ...
-
-Un peu d'humour:
-
-- <http://www.commitstrip.com/>
-- <http://www.risacher.com/la-rache/>
-- <http://lesjoiesducode.tumblr.com/>
 
 ### Misc
 
@@ -62,7 +41,7 @@ Un peu d'humour:
 
 [NetBeans](../linux/soft/netbeans) est l'IDE de Sun (malheureusement repris maintenant par Oracle) axé Java mais aussi Python, C, C++, Ruby, XML, PHP, ... Disponible sous Linux et Windows.
 
-### MonoDevelop
+### Mono
 
 [Mono](../linux/soft/mono) est une implémentation libre de .NET avec comme éditeur MonoDevelop
 
@@ -80,11 +59,8 @@ Contenu transféré sur la page [Java](../dev/Java) ...
 
 Un de mes premiers langages utilisés avec VB6 ...
 
-Je ne pense pas utilser ça encore, surtout que ça ne marche que sous
-Windows. Gambas pourrait être une alternative, mais je préfère me
-concentrer sur Java en ce moment.
-
-- <http://www.freevbcode.com/>
+Je ne pense pas utiliser ça encore, surtout que ça ne marche que sous
+Windows.
 
 ## Applications et sites Internet
 
@@ -140,19 +116,14 @@ imagedestroy($image);
 
 - Using POST method in Ajax (XMLHTTPRequest):
   <http://www.openjs.com/articles/ajax_xmlhttp_using_post.php>
-- Prototype Window (gestionnaire de fenêtres DHTML):
-  <http://prototype-window.xilinus.com/>
 - jQuery: <http://jquery.com/>
-- jQuery UI (User Interfaces): <http://jqueryui.com/home>
-- Dynamic Drive (DHTML scripts): <http://www.dynamicdrive.com/>
-- JavaScript toolbox: <http://www.javascripttoolbox.com/>
-- L'editeur JavaScript: <http://www.editeurjavascript.com/>
+- jQuery UI (User Interfaces): <https://jqueryui.com/>
 
 ### Divers
 
 Voir [Firefox](../archive/linux/soft/Firefox) pour une liste de plugins utiles au développement.
 
-- [Envoi de mails en localhost](http://totalement.geek.oupas.fr/article/2007/11/27/envoyer-des-mails-depuis-php-avec-ubuntu-et-esmtp):
+- Envoi de mails en localhost:
   - Installer [esmtp](apt://esmtp) (d'autres alternatives existent,
     renseigne toi)
   - Editer /etc/esmtprc pour y indiquer le serveur SMTP à utiliser
@@ -166,19 +137,3 @@ Voir [Firefox](../archive/linux/soft/Firefox) pour une liste de plugins utiles a
 ### MySQL
 
 - <http://www.techiecorner.com/485/how-to-monitor-sql-query-in-mysql/>
-- [phpMyBackup](http://www.m-tecs.net/?a=products&b=pmb&c=en)
-- [Comparaison type de
-  base](http://www.supportsages.com/blog/2010/08/mysql-storage-engines-an-overview-their-limitations-and-an-attempt-for-comparison/)
-  (MyISAM, InnoDB, ...)
-
-## Divers
-
-Cette section regroupe des idées en vrac. J'essaierai de prendre le temps de ranger un peu tout ça ...
-
-*Ruby/GTK2: <http://www.bawet.org/article.php3?id_article=60>*
-
-- API Allocine
-  - <http://www.phpcs.com/codes/API-ALLOCINE-V3_52259.aspx>
-  - <http://wiki.gromez.fr/dev/api/allocine> (source pour l'api php ci-dessus)
-
-Voir aussi Cine-passion (sur XBMC) qui a apparemnt aussi une API: <http://passion-xbmc.org/scraper/index2.php?Page=Home>
