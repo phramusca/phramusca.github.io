@@ -4,6 +4,172 @@ layout: content
 
 # Raspberry
 
+## Installation
+
+- Installer [rpi-imager](apt://rpi-imager)
+  - Documentation: https://www.raspberrypi.com/documentation/
+
+- TODO: Configurer un certificat pour connexion ssh
+
+- TODO: Booster le pi: https://korben.info/raspberry-pi-5-optimisation-performances-sdram.html
+
+TODO: Bouger ça dans Linux:
+
+- [Pimp My Terminal](https://stackabuse.com/pimp-my-terminal-an-introduction-to-oh-my-zsh/)
+  
+- [ZSH](https://doc.ubuntu-fr.org/zsh)
+- [Oh My Zsh](https://ohmyz.sh/)
+  - [powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
+
+  ```shell
+  sudo apt install zsh
+  ```
+  
+  ```shell
+  chsh -s $(which zsh)
+  ```
+
+  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+Install powerlevel10k (TODO: trouver alternative, plus maintenu)
+
+  https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#oh-my-zsh
+
+Installer les polices pour powerlevel10k et les configurer dans les différents terminaux voulus
+
+  https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#meslo-nerd-font-patched-for-powerlevel10k
+
+  ➜  ~ mkdir ~/.local/share/fonts/
+➜  ~ cp Téléchargements/MesloLGS\ NF\ Bold\ Italic.ttf ~/.local/share/fonts/
+➜  ~ cp Téléchargements/MesloLGS\ NF\ Bold.ttf ~/.local/share/fonts/ 
+➜  ~ cp Téléchargements/MesloLGS\ NF\ Italic.ttf ~/.local/share/fonts/ 
+➜  ~ cp Téléchargements/MesloLGS\ NF\ Regular.ttf ~/.local/share/fonts/ 
+➜  ~ fc-cache -fv
+~/.local/share/fonts/
+
+➜  ~ fc-list | grep "Meslo"           
+
+/home/raph/.local/share/fonts/MesloLGS NF Bold.ttf: MesloLGS NF:style=Bold
+/home/raph/.local/share/fonts/MesloLGS NF Italic.ttf: MesloLGS NF:style=Italic
+/home/raph/.local/share/fonts/MesloLGS NF Bold Italic.ttf: MesloLGS NF:style=Bold Italic
+/home/raph/.local/share/fonts/MesloLGS NF Regular.ttf: MesloLGS NF:style=Regular
+
+
+Installer powerlevel10k
+
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+
+    nano ~/.zshrc
+
+  Open ~/.zshrc, find the line that sets ZSH_THEME, and change its value to "powerlevel10k/powerlevel10k".
+
+  Open a new terminal session, and follow the p10k configuration wizard.
+
+Install unofficial
+
+- https://github.com/zsh-users/zsh-syntax-highlighting
+  - https://stackabuse.com/pimp-my-terminal-an-introduction-to-oh-my-zsh/
+   
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+- https://github.com/zsh-users/zsh-autosuggestions
+  - https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
+
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+
+- Install official Oh My Zsh plugins from https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
+
+  - Git - in essence, this plugin is a bundle of predefined aliases that helps you speed up the usage of Git in a terminal. Instead of git status, you can write gst, instead of git add, you can write ga, etc. Take a look at the list of all aliases to get a feel for the shortcuts.
+  - sudo - a very useful plugin that enables you to add sudo as the prefix to the current or previous command, just by pressing ESC two times.
+  - z - this plugin aims to boost your productivity by enabling you to navigate through directories with as few clicks as possible. It keeps track of your most visited directories and enables you to navigate to them by typing just a few characters from the desired directory path.
+  - kubectl ?
+  - kube.ps1 ?
+  - les autre s?
+
+
+Activer les plugins en éditant `nano ~/.zshrc`
+
+    plugins = (git z sudo zsh-syntax-highlighting zsh-autosuggestions)
+
+Relancer le terminal pour profiter des plugins.
+
+> Note: avec lxterminal, il faut redémarrer le raspberry pour qu'il démarre avec zsh par défaut.
+
+TODO: Voir, tester et documenter partie "Creating Aliases" de https://stackabuse.com/pimp-my-terminal-an-introduction-to-oh-my-zsh/
+
+TODO: Bouger ça dans Docker:
+
+
+- Installer Docker 28 (due to [Docker 29 breaking change](/wiki/docker#docker-29-breaking-change))
+
+  - Ajouter la clé GPG de Docker
+
+    ```shell
+    sudo install -m 0755 -d /etc/apt/keyrings
+    curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    sudo chmod a+r /etc/apt/keyrings/docker.gpg
+    ```
+
+  - Ajouter le dépôt Docker
+
+    ```shell
+    echo \
+    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
+    bookworm stable" | \
+    sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    ```
+
+  - Metrre à jour les dépôts
+
+    ```shell
+    sudo apt-get update
+    ```
+
+  - Chercher la dernière version avant la 5:29
+
+    ```shell
+    apt-cache madison docker-ce | grep -E "5:(2[0-8]|1[0-9]|0-9)"
+    ```
+
+  - Install docker 5:28.*
+
+    ```shell
+    sudo apt-get install docker-ce=5:28.5.2-1~debian.12~bookworm docker-ce-cli=5:28.5.2-1~debian.12~bookworm containerd.io
+    ```
+
+  - Bloquer les mises à jour pour Docker
+
+    ```shell
+    sudo apt-mark hold docker-ce docker-ce-cli containerd.io
+    ```
+
+  - Démarrer Docker
+
+    ```shell
+    sudo systemctl start docker
+    sudo systemctl enable docker
+    ```
+
+  - Ajouter l'utilisateur au groupe docker (pour éviter d'utiliser `sudo` à chaque commande docker)
+
+    ```shell
+    sudo usermod -aG docker $USER
+    ```
+
+    ⚠️ **Important** : Il faut se déconnecter et se reconnecter (ou redémarrer) pour que les changements de groupe prennent effet.
+
+  - Vérifier que les paquets sont bien bloqués, et voir la version docker
+
+    ```shell
+    apt-mark showhold
+    docker --version
+    ```
+
+- [Configurer docker](/wiki/docker#monter-un-disque-externe-avant-de-lancer-docker) pour monter les disques externes avant de lancer les images
+- Installer [Portainer](/wiki/docker#portainer-ce)
+
+
 ## Mise à jour
 
 Un petit script pour faire la maintenance du système (mises à jour et nettoyage des paquets inutilisés)

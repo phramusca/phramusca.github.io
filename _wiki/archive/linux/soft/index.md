@@ -149,17 +149,6 @@ Ici sont regroupées tout ce qui concerne la configuration du système.
 | Disk-Manager | [disk-manager](http://doc.ubuntu-fr.org/disk-manager) | Gestionnaire de disques. Voir [Disques Locaux](../../../../linux/system/Disques_Locaux)                     | N/A. Voir [disk-manager](http://doc.ubuntu-fr.org/disk-manager) |
 | Gufw         | [gufw](http://doc.ubuntu-fr.org/gufw)                 | Interface graphique du pare-feu UFW, celui par défaut dans Ubuntu (10.10 au moins) | [gufw](apt://gufw)                                              |
 
-Pimp your terminal:
-
-- [ZSH](https://doc.ubuntu-fr.org/zsh)
-- [Oh My Zsh](https://ohmyz.sh/)
-  - [powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
-    theme
-  - Useful plugins : [Shell sous
-    stéroides](https://www.tronyxworld.be/2020/zsh_omz_p10k/)
-    - kubectl
-    - kube.ps1
-
 ### Tableaux de bord
 
 Par défaut, il y a 2 tableaux de bord installés dans

@@ -57,7 +57,10 @@ sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin do
 # sudo rm -rf /var/lib/containerd
 # sudo rm -rf /etc/docker
 
-# Installer une version spécifique de Docker (28.5.1)
+# Verifier les versions disponibles
+apt-cache madison docker-ce | grep -E "5:(2[0-8]|1[0-9]|0-9)"
+
+# Installer une version spécifique de Docker (28.5.1 par ex)
 sudo apt-get install docker-ce=5:28.5.1-1~debian.12~bookworm docker-ce-cli=5:28.5.1-1~debian.12~bookworm containerd.io
 
 # Bloquer les mises à jour pour Docker
@@ -172,8 +175,8 @@ services:
     build:
       context: https://github.com/jesseduffield/lazydocker.git
       args:
-        BASE_IMAGE_BUILDER: golang
-        GOARCH: amd64
+        BASE_IMAGE_BUILDER: arm64v8/golang
+        GOARCH: arm64
         GOARM:
     image: lazyteam/lazydocker
     container_name: lazydocker
