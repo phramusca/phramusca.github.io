@@ -29,16 +29,15 @@ document.addEventListener('DOMContentLoaded', function() {
 - [Cook And Freeze](https://github.com/phramusca/CookAndFreeze) - With CookAndFreeze for Android, easily manage recipients (content and frozen date) stored in your freezer (or elsewhere).
 - [Rom Manager](https://github.com/phramusca/RomManager)
 
-## Le Carré Français
-
-/!\ EN RECONSTRUCTION /!\
+## Le Carré Français 🇫🇷
 
 <input type="text" id="search-input" placeholder="Rechercher...">
 <div id="results"></div>
-
 ------------------------------------------------------------------------
 
 ### Wiki
+
+/!\ EN RECONSTRUCTION /!\
 
 - [Docker](wiki/docker)
 - [Linux](wiki/linux)
