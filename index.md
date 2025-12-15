@@ -37,15 +37,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ### Wiki
 
-/!\ EN RECONSTRUCTION /!\
+⚠️ En reconstruction
 
 - [Docker](wiki/docker)
 - [Linux](wiki/linux)
+  - [Programmes](wiki/linux/soft) ✅
+  - [Système](wiki/linux/system) ⚠️
 - [Windows](wiki/windows)
-- [Android](wiki/android)
-- [Raspberry](wiki/raspberry)
-- [Développement](wiki/dev)
-  - [Java](wiki/dev/Java)
+- [Android](wiki/android) ⚠️
+- [Raspberry](wiki/raspberry) ⚠️
+- [Développement](wiki/dev) ⚠️
+  - [Java](wiki/dev/Java) ⚠️
 
 ### Publications
 
