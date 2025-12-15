@@ -98,77 +98,9 @@ Relancer le terminal pour profiter des plugins.
 
 TODO: Voir, tester et documenter partie "Creating Aliases" de https://stackabuse.com/pimp-my-terminal-an-introduction-to-oh-my-zsh/
 
-TODO: Bouger ça dans Docker:
-
-
-- Installer Docker 28 (due to [Docker 29 breaking change](/wiki/docker#docker-29-breaking-change))
-
-  - Ajouter la clé GPG de Docker
-
-    ```shell
-    sudo install -m 0755 -d /etc/apt/keyrings
-    curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-    sudo chmod a+r /etc/apt/keyrings/docker.gpg
-    ```
-
-  - Ajouter le dépôt Docker
-
-    ```shell
-    echo \
-    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
-    bookworm stable" | \
-    sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-    ```
-
-  - Metrre à jour les dépôts
-
-    ```shell
-    sudo apt-get update
-    ```
-
-  - Chercher la dernière version avant la 5:29
-
-    ```shell
-    apt-cache madison docker-ce | grep -E "5:(2[0-8]|1[0-9]|0-9)"
-    ```
-
-  - Install docker 5:28.*
-
-    ```shell
-    sudo apt-get install docker-ce=5:28.5.2-1~debian.12~bookworm docker-ce-cli=5:28.5.2-1~debian.12~bookworm containerd.io
-    ```
-
-  - Bloquer les mises à jour pour Docker
-
-    ```shell
-    sudo apt-mark hold docker-ce docker-ce-cli containerd.io
-    ```
-
-  - Démarrer Docker
-
-    ```shell
-    sudo systemctl start docker
-    sudo systemctl enable docker
-    ```
-
-  - Ajouter l'utilisateur au groupe docker (pour éviter d'utiliser `sudo` à chaque commande docker)
-
-    ```shell
-    sudo usermod -aG docker $USER
-    ```
-
-    ⚠️ **Important** : Il faut se déconnecter et se reconnecter (ou redémarrer) pour que les changements de groupe prennent effet.
-
-  - Vérifier que les paquets sont bien bloqués, et voir la version docker
-
-    ```shell
-    apt-mark showhold
-    docker --version
-    ```
-
+- [Installer Docker](/wiki/docker#installation)
 - [Configurer docker](/wiki/docker#monter-un-disque-externe-avant-de-lancer-docker) pour monter les disques externes avant de lancer les images
 - Installer [Portainer](/wiki/docker#portainer-ce)
-
 
 ## Mise à jour
 

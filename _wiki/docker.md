@@ -4,11 +4,116 @@ layout: content
 
 # Docker
 
-J'utilise [Docker](https://www.docker.com/) pour faire tourner quelques services sur mon Raspberry Pi.
+J'utilise [Docker](https://www.docker.com/) pour faire tourner quelques services sur mon [Raspberry](/wiki/raspberry) Pi.
+
+## Installation
+
+> ⚠️ Portainer ne supportant pas Docker 29, on installera donc la 28
+
+- Ajouter la clé GPG de Docker
+
+  ```shell
+  sudo install -m 0755 -d /etc/apt/keyrings
+  ```
+
+  ```shell
+  curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+  ```
+
+  ```shell
+  sudo chmod a+r /etc/apt/keyrings/docker.gpg
+  ```
+
+- Ajouter le dépôt Docker
+
+  ```shell
+  echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
+  bookworm stable" | \
+  ```
+
+  ```shell
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  ```
+
+- Metrre à jour les dépôts
+
+  ```shell
+  sudo apt-get update
+  ```
+
+- Chercher la dernière version avant la 5:29
+
+  ```shell
+  apt-cache madison docker-ce | grep -E "5:(2[0-8]|1[0-9]|0-9)"
+  ```
+
+- Install docker 5:28.*
+
+  ```shell
+  sudo apt-get install docker-ce=5:28.5.2-1~debian.12~bookworm docker-ce-cli=5:28.5.2-1~debian.12~bookworm containerd.io
+  ```
+
+- Bloquer les mises à jour pour Docker
+
+  ```shell
+  sudo apt-mark hold docker-ce docker-ce-cli containerd.io
+  ```
+
+- Démarrer Docker
+
+  ```shell
+  sudo systemctl start docker
+  ```
+
+  ```shell
+  sudo systemctl enable docker
+  ```
+
+- Ajouter l'utilisateur au groupe docker (pour éviter d'utiliser `sudo` à chaque commande docker)
+
+  ```shell
+  sudo usermod -aG docker $USER
+  ```
+
+  > ⚠️ **Important** : Il faut se déconnecter et se reconnecter (ou redémarrer) pour que les changements de groupe prennent effet.
+
+- Vérifier que les paquets sont bien bloqués
+
+  ```shell
+  apt-mark showhold
+  ```
+
+- Voir la version de docker
+
+  ```shell
+  docker --version
+  ```
+
+### Suppression
+
+```shell
+# Arrêter Docker
+sudo systemctl stop docker
+sudo systemctl stop docker.socket
+
+# Désinstaller Docker et ses dépendances
+sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+# Supprimer les fichiers de configuration et données
+# /!\ Ne pas supprimer si vous voulez garder les volumes, ...
+# sudo rm -rf /var/lib/docker
+# sudo rm -rf /var/lib/containerd
+# sudo rm -rf /etc/docker
+```
 
 ## Docker Compose
 
 ### Portainer CE
+
+> ⚠️ Portainer ne supporte pas les dernieres versions de docker (29 en l'occurence). Voir <https://github.com/orgs/portainer/discussions/12926>
+>
+> Il faut se fier à <https://docs.portainer.io/start/requirements-and-prerequisites>pour savoir les version compatibles
 
 [Doc installation docker linux](https://docs.portainer.io/start/install-ce/server/docker/linux)
 
@@ -35,44 +140,7 @@ with `.env` file:
 
 - Naviguer vers [https://localhost:9443](https://localhost:9443) et suivre la procédure d'installation.
 
-#### Docker 29 Breaking Change
 
-Portainer ne supporte pas les dernieres versions de docker (29 en l'occurence). Voir <https://github.com/orgs/portainer/discussions/12926>
-
-Il faut se fier à <https://docs.portainer.io/start/requirements-and-prerequisites>
-
-Pour portainer 2.33.3 LTS, ça marche avec 28.5.1.1, mais pas 29.0
-
-```shell
-# Arrêter Docker
-sudo systemctl stop docker
-sudo systemctl stop docker.socket
-
-# Désinstaller Docker et ses dépendances
-sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
-# Supprimer les fichiers de configuration et données
-# /!\ Ne pas supprimer si vous voulez garder les volumes, ...
-# sudo rm -rf /var/lib/docker
-# sudo rm -rf /var/lib/containerd
-# sudo rm -rf /etc/docker
-
-# Verifier les versions disponibles
-apt-cache madison docker-ce | grep -E "5:(2[0-8]|1[0-9]|0-9)"
-
-# Installer une version spécifique de Docker (28.5.1 par ex)
-sudo apt-get install docker-ce=5:28.5.1-1~debian.12~bookworm docker-ce-cli=5:28.5.1-1~debian.12~bookworm containerd.io
-
-# Bloquer les mises à jour pour Docker
-sudo apt-mark hold docker-ce docker-ce-cli containerd.io
-
-# Démarrer Docker
-sudo systemctl start docker
-
-# Vérifier que les paquets sont bien bloqués
-apt-mark showhold
-
-```
 
 ### Forgejo
 
