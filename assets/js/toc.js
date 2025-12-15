@@ -100,7 +100,7 @@
     if (!tocContainer) return;
 
     const mainContent = document.querySelector('#main_content') || document.querySelector('main') || document.body;
-    const allHeadings = mainContent.querySelectorAll('h2, h3, h4, h5, h6');
+    const allHeadings = mainContent.querySelectorAll('h1, h2, h3, h4, h5, h6');
     let headings = filterHeadings(allHeadings);
     
     // Convertir les NodeList en objets avec les propriétés nécessaires
@@ -140,7 +140,7 @@
     ul.className = 'toc-list';
 
     const ulStack = [ul]; // Pile pour suivre les niveaux de listes
-    let currentLevel = 2; // Commence à h2
+    let currentLevel = 1; // Commence à h1
 
     headings.forEach(function(heading) {
       const level = heading.level || parseInt(heading.tagName.charAt(1));

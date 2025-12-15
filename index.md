@@ -39,11 +39,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ⚠️ En reconstruction
 
-- [Docker](wiki/docker)
+- [Docker](wiki/docker) ✅
 - [Linux](wiki/linux)
   - [Programmes](wiki/linux/soft) ✅
   - [Système](wiki/linux/system) ⚠️
-- [Windows](wiki/windows)
+- [Windows](wiki/windows) ✅
 - [Android](wiki/android) ⚠️
 - [Raspberry](wiki/raspberry) ⚠️
 - [Développement](wiki/dev) ⚠️

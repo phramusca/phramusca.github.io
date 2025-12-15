@@ -2,6 +2,8 @@
 layout: software
 ---
 
+# Hugin
+
 Hugin est un bal bla bla .... TODO
 
 TODO: Ajouter une mention mise à jour sur toutes les pages mises à jour
