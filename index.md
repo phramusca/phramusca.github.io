@@ -17,21 +17,18 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-# Welcome - Bienvenue
-
-## Projects
-
-- [JaMuz](JaMuz) - Keep your music in check and enjoy it too!
-- [Code Samples](https://github.com/phramusca/Samples/tree/main) - Pieces of code
-- 🚧 [Cook And Freeze](https://github.com/phramusca/CookAndFreeze) - With CookAndFreeze for Android, easily manage recipients (content and frozen date) stored in your freezer (or elsewhere).
-- 🚧 [Rom Manager](https://github.com/phramusca/RomManager)
-
-## Le Carré Français 🇫🇷
+# Bienvenue
 
 <div><input type="text" id="search-input" placeholder="Rechercher..."><div id="search-container"><div id="results"></div></div></div>
 
+## Projets
 
-### Wiki
+- [JaMuz](JaMuz) - Gardez votre musique sous contrôle et profitez-en aussi !
+- [Code Samples](https://github.com/phramusca/Samples/tree/main) - Morceaux de code
+- 🚧 [Cook And Freeze](https://github.com/phramusca/CookAndFreeze) - Avec CookAndFreeze pour Android, gérez facilement les contenants (contenu et date de congélation) stockés dans votre congélateur (ou ailleurs).
+- 🚧 [Rom Manager](https://github.com/phramusca/RomManager)
+
+## Wiki
 
 - [Docker](wiki/docker)
 - [Linux](wiki/linux)
@@ -43,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
 - 🚧 [Développement](wiki/dev)
   - 🚧 [Java](wiki/dev/Java)
 
-### Publications
+## Publications
 
 {% for post in site.posts %}
 - [{{ post.title }}]({{ post.url }}) <sub><sup>{{ post.date | date: "%d/%m/%Y" }}</sup></sub>
