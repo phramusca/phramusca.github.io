@@ -34,7 +34,7 @@ layout: null
         "tags"     : "{{ page.tags | join: ', ' }}",
         "url"      : "{{ site.baseurl }}{{ page.url }}",
         "date"     : "{{ page.date }}",
-        "content"  : {{ content_only | strip_html | jsonify }}
+        "content"  : {{ content_only | strip_html | normalize_whitespace | jsonify }}
    }{% unless forloop.last %},{% endunless %}
     {% else %}
    {
@@ -43,7 +43,7 @@ layout: null
         "tags"     : "{{ page.tags | join: ', ' }}",
         "url"      : "{{ site.baseurl }}{{ page.url }}",
         "date"     : "{{ page.date }}",
-        "content"  : {{ page.content | strip_html | jsonify }}
+        "content"  : {{ page.content | strip_html | normalize_whitespace | jsonify }}
    }{% unless forloop.last %},{% endunless %}
     {% endif %}
   {% endfor %}
