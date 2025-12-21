@@ -29,39 +29,25 @@
   border-color: #b5e853 !important;
 }
 
-#toc-floating .toc-details {
-  width: 100%;
-  margin: 0;
-}
-
-#toc-floating .toc-summary {
-  cursor: pointer;
+/* Titre de la TOC (remplace le summary) */
+#toc-floating .toc-title {
   font-weight: bold;
   color: #b5e853;
   padding: 1em;
-  user-select: none;
-  list-style: none;
   background-color: rgba(181, 232, 83, 0.1);
   border-bottom: 1px solid #b5e853;
 }
 
-#toc-floating .toc-summary::-webkit-details-marker {
-  display: none;
+#toc-floating .toc-title-link {
+  color: #b5e853;
+  text-decoration: none;
+  display: block;
+  transition: color 0.2s;
 }
 
-#toc-floating .toc-summary::before {
-  content: "▼ ";
-  display: inline-block;
-  transition: transform 0.2s;
-  margin-right: 0.5em;
-}
-
-#toc-floating .toc-details[open] .toc-summary::before {
-  transform: rotate(0deg);
-}
-
-#toc-floating .toc-details:not([open]) .toc-summary::before {
-  transform: rotate(-90deg);
+#toc-floating .toc-title-link:hover {
+  color: #fff;
+  text-decoration: underline;
 }
 
 #toc-floating .toc-nav {

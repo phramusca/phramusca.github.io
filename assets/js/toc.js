@@ -12,6 +12,10 @@
    */
   function filterHeadings(allHeadings) {
     return Array.from(allHeadings).filter(heading => {
+      // Exclure les h1 de la TOC (ils seront utilisés comme titre)
+      const level = parseInt(heading.tagName.charAt(1));
+      if (level === 1) return false;
+      
       // Exclure les en-têtes dans les sections de contenu inclus (comme .toggle-content)
       // C'est la règle principale : tout ce qui est dans .toggle-content est exclu
       if (heading.closest('.toggle-content')) return false;
@@ -19,7 +23,6 @@
       // Exclure les en-têtes avec la classe no_toc seulement s'ils ne sont pas des sections principales
       // (les sections principales comme "Sur le Web" et "Ma Sélection" doivent apparaître même avec no_toc)
       // On considère h2 et h3 comme sections principales
-      const level = parseInt(heading.tagName.charAt(1));
       if (heading.classList.contains('no_toc') && level > 3) {
         return false;
       }
@@ -124,14 +127,38 @@
     const floatingContainer = document.createElement('div');
     floatingContainer.id = 'toc-floating';
 
-    // Créer l'élément details/summary pour un TOC pliable
-    const details = document.createElement('details');
-    details.className = 'toc-details';
-    details.open = true; // Déplié par défaut
+    // Trouver le h1 pour l'utiliser comme titre
+    const firstH1 = mainContent.querySelector('h1');
+    let tocTitle = 'Table des matières';
+    let tocTitleId = null;
+    
+    if (firstH1) {
+      tocTitle = firstH1.textContent.trim();
+      // Obtenir ou créer l'ID du h1
+      if (!firstH1.id) {
+        tocTitleId = firstH1.textContent.toLowerCase()
+          .replace(/[^\w\s-]/g, '')
+          .replace(/\s+/g, '-')
+          .replace(/-+/g, '-')
+          .trim();
+        firstH1.id = tocTitleId;
+      } else {
+        tocTitleId = firstH1.id;
+      }
+    }
 
-    const summary = document.createElement('summary');
-    summary.className = 'toc-summary';
-    summary.textContent = 'Table des matières';
+    // Créer le titre avec lien vers le h1
+    const titleElement = document.createElement('div');
+    titleElement.className = 'toc-title';
+    if (tocTitleId) {
+      const titleLink = document.createElement('a');
+      titleLink.href = '#' + tocTitleId;
+      titleLink.className = 'toc-title-link';
+      titleLink.textContent = tocTitle;
+      titleElement.appendChild(titleLink);
+    } else {
+      titleElement.textContent = tocTitle;
+    }
 
     const nav = document.createElement('nav');
     nav.className = 'toc-nav';
@@ -140,7 +167,7 @@
     ul.className = 'toc-list';
 
     const ulStack = [ul]; // Pile pour suivre les niveaux de listes
-    let currentLevel = 1; // Commence à h1
+    let currentLevel = 2; // Commence à h2 (h1 exclu)
 
     headings.forEach(function(heading) {
       const level = heading.level || parseInt(heading.tagName.charAt(1));
@@ -207,9 +234,8 @@
     });
 
     nav.appendChild(ul);
-    details.appendChild(summary);
-    details.appendChild(nav);
-    floatingContainer.appendChild(details);
+    floatingContainer.appendChild(titleElement);
+    floatingContainer.appendChild(nav);
     
     // Positionner la TOC à droite du contenu, fixe lors du scroll
     const container = mainContent.closest('.container');
