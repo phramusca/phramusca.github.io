@@ -114,12 +114,15 @@ pre:hover .copy-code-button {
   background-color: #1d1f21 !important;
   color: #ffffff !important;
   border: 1px solid #b5e853 !important;
-  border-radius: 4px !important;
+  border-bottom: none !important;
+  border-radius: 4px 4px 0 0 !important;
   padding: 0.5em 0.75em !important;
   font-size: 1em !important;
   font-family: inherit !important;
   width: 100% !important;
   max-width: 500px !important;
+  margin: 0 !important;
+  display: block !important;
   transition: border-color 0.2s, box-shadow 0.2s !important;
 }
 
@@ -133,25 +136,37 @@ pre:hover .copy-code-button {
   box-shadow: 0 0 5px rgba(181, 232, 83, 0.3) !important;
 }
 
-/* Style pour les résultats de recherche - même style que les autres listes */
-#results {
-  margin-top: 1em;
-  padding-left: 1.5em !important; /* Décaler pour s'aligner avec le contenu markdown */
+/* Conteneur pour les résultats - forme un rectangle avec bordure, collé au champ */
+#search-container {
+  border: 1px solid #b5e853 !important;
+  border-top: none !important;
+  border-radius: 0 0 4px 4px !important;
+  padding: 0.75em !important;
+  background-color: rgba(29, 31, 33, 0.3) !important;
+  max-width: 500px !important;
+  margin: 0 0 1.5em 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  overflow: hidden !important;
+}
+
+/* Style pour les résultats de recherche */
+#results:empty {
+  display: none !important;
 }
 
 #results ul {
   list-style: none !important;
   list-style-image: none !important;
-  padding-left: 0 !important; /* Le padding est géré par #results */
-  margin-left: 0 !important;
+  padding-left: 0 !important; /* Pas de padding sur le ul, géré par le li */
+  margin: 0 !important;
 }
 
 #results li {
   position: relative !important;
-  padding-left: 1em !important;
-  margin-left: 0 !important;
+  padding-left: 2.5em !important; /* Décalage vers la droite pour éviter la bordure */
+  margin-bottom: 0.25em !important;
   list-style: none !important;
-  list-style-image: none !important;
 }
 
 #results li::before {
@@ -160,11 +175,8 @@ pre:hover .copy-code-button {
   font-weight: bold !important;
   display: inline-block !important;
   width: 1em !important;
-  margin-left: -1em !important;
   margin-right: 0.5em !important;
   position: absolute !important;
-  left: 0 !important;
+  left: 1em !important; /* Positionné à 1em du bord gauche du li */
 }
-
-/* Les liens des résultats utilisent le style par défaut du thème (héritage automatique) */
 

@@ -28,9 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ## Le Carré Français 🇫🇷
 
-<input type="text" id="search-input" placeholder="Rechercher...">
-<div id="results"></div>
-------------------------------------------------------------------------
+<div><input type="text" id="search-input" placeholder="Rechercher..."><div id="search-container"><div id="results"></div></div></div>
+
 
 ### Wiki
 
