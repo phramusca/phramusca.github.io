@@ -14,6 +14,29 @@ layout: null
   {% endfor %}
   {% assign wiki_pages = site.wiki | where_exp: "page", "page.path contains 'wiki/'" %}
   {% for page in wiki_pages %}
+    {% if page.exclude_search_sections %}
+      {% comment %}Exclure le contenu entre SEARCH_EXCLUDE_START et SEARCH_EXCLUDE_END{% endcomment %}
+      {% assign content_filtered = page.content %}
+      {% assign parts = content_filtered | split: '<!-- SEARCH_EXCLUDE_START -->' %}
+      {% if parts.size > 1 %}
+        {% assign content_filtered = parts[0] %}
+        {% for part in parts offset: 1 %}
+          {% assign subparts = part | split: '<!-- SEARCH_EXCLUDE_END -->' %}
+          {% if subparts.size > 1 %}
+            {% assign content_filtered = content_filtered | append: subparts[1] %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      {% assign content_only = content_filtered | strip %}
+   {
+        "title"    : "{{ page.title | escape }}",
+        "category" : "{{ page.category }}",
+        "tags"     : "{{ page.tags | join: ', ' }}",
+        "url"      : "{{ site.baseurl }}{{ page.url }}",
+        "date"     : "{{ page.date }}",
+        "content"  : {{ content_only | strip_html | jsonify }}
+   }{% unless forloop.last %},{% endunless %}
+    {% else %}
    {
         "title"    : "{{ page.title | escape }}",
         "category" : "{{ page.category }}",
@@ -22,5 +45,6 @@ layout: null
         "date"     : "{{ page.date }}",
         "content"  : {{ page.content | strip_html | jsonify }}
    }{% unless forloop.last %},{% endunless %}
+    {% endif %}
   {% endfor %}
 ]

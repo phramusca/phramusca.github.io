@@ -1,6 +1,7 @@
 ---
 layout: content
 title: Programmes
+exclude_search_sections: true
 ---
 
 # {{ page.title }}

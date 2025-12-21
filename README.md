@@ -278,6 +278,36 @@ Vous pouvez aussi utiliser directement la syntaxe kramdown dans le markdown.
 
 Cette syntaxe génère une TOC basique intégrée dans le contenu, sans le style flottant personnalisé. La liste sera remplacée par la table des matières générée automatiquement.
 
+## 🔍 Moteur de recherche
+
+Le site inclut un moteur de recherche qui indexe automatiquement toutes les pages wiki et les posts.
+
+### Exclusion de sections dans la recherche
+
+Si une page inclut du contenu d'autres pages (par exemple via des includes), vous pouvez exclure certaines sections de l'indexation pour éviter les doublons dans les résultats de recherche.
+
+**Utilisation** :
+
+1. Ajoutez le flag `exclude_search_sections: true` dans le front matter de la page :
+
+```yaml
+---
+layout: content
+title: Ma Page
+exclude_search_sections: true
+---
+```
+
+2. Entourez les sections à exclure avec les marqueurs HTML suivants dans vos templates/includes :
+
+```html
+<!-- SEARCH_EXCLUDE_START -->
+Contenu à exclure de l'indexation
+<!-- SEARCH_EXCLUDE_END -->
+```
+
+**Exemple** : La page "Programmes" (`_wiki/linux/soft.md`) utilise cette fonctionnalité pour exclure le contenu des pages individuelles de logiciels qui sont incluses dans le tableau, tout en gardant le reste de la page (introduction, noms de logiciels, descriptions) indexable.
+
 ## 🔍 Vérification des liens morts
 
 Ce projet utilise une approche hybride pour vérifier les liens morts :
