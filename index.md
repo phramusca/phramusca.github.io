@@ -17,17 +17,14 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-# Welcome
+# Welcome - Bienvenue
 
 ## Projects
 
 - [JaMuz](JaMuz) - Keep your music in check and enjoy it too!
 - [Code Samples](https://github.com/phramusca/Samples/tree/main) - Pieces of code
-
-### Under Development
-
-- [Cook And Freeze](https://github.com/phramusca/CookAndFreeze) - With CookAndFreeze for Android, easily manage recipients (content and frozen date) stored in your freezer (or elsewhere).
-- [Rom Manager](https://github.com/phramusca/RomManager)
+- 🚧 [Cook And Freeze](https://github.com/phramusca/CookAndFreeze) - With CookAndFreeze for Android, easily manage recipients (content and frozen date) stored in your freezer (or elsewhere).
+- 🚧 [Rom Manager](https://github.com/phramusca/RomManager)
 
 ## Le Carré Français 🇫🇷
 
@@ -37,17 +34,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ### Wiki
 
-⚠️ En reconstruction
-
-- [Docker](wiki/docker) ✅
+- [Docker](wiki/docker)
 - [Linux](wiki/linux)
-  - [Programmes](wiki/linux/soft) ✅
-  - [Système](wiki/linux/system) ⚠️
-- [Windows](wiki/windows) ✅
-- [Android](wiki/android) ⚠️
-- [Raspberry](wiki/raspberry) ⚠️
-- [Développement](wiki/dev) ⚠️
-  - [Java](wiki/dev/Java) ⚠️
+  - [Programmes](wiki/linux/soft)
+  - 🚧 [Système](wiki/linux/system)
+- [Windows](wiki/windows)
+- 🚧 [Android](wiki/android)
+- 🚧 [Raspberry](wiki/raspberry)
+- 🚧 [Développement](wiki/dev)
+  - 🚧 [Java](wiki/dev/Java)
 
 ### Publications
 
