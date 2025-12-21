@@ -109,3 +109,62 @@ pre:hover .copy-code-button {
   color: #fff;
 }
 
+/* Style pour le champ de recherche - intégré au thème sombre */
+#search-input {
+  background-color: #1d1f21 !important;
+  color: #ffffff !important;
+  border: 1px solid #b5e853 !important;
+  border-radius: 4px !important;
+  padding: 0.5em 0.75em !important;
+  font-size: 1em !important;
+  font-family: inherit !important;
+  width: 100% !important;
+  max-width: 500px !important;
+  transition: border-color 0.2s, box-shadow 0.2s !important;
+}
+
+#search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+#search-input:focus {
+  outline: none !important;
+  border-color: #b5e853 !important;
+  box-shadow: 0 0 5px rgba(181, 232, 83, 0.3) !important;
+}
+
+/* Style pour les résultats de recherche - même style que les autres listes */
+#results {
+  margin-top: 1em;
+  padding-left: 1.5em !important; /* Décaler pour s'aligner avec le contenu markdown */
+}
+
+#results ul {
+  list-style: none !important;
+  list-style-image: none !important;
+  padding-left: 0 !important; /* Le padding est géré par #results */
+  margin-left: 0 !important;
+}
+
+#results li {
+  position: relative !important;
+  padding-left: 1em !important;
+  margin-left: 0 !important;
+  list-style: none !important;
+  list-style-image: none !important;
+}
+
+#results li::before {
+  content: "•" !important;
+  color: #b5e853 !important;
+  font-weight: bold !important;
+  display: inline-block !important;
+  width: 1em !important;
+  margin-left: -1em !important;
+  margin-right: 0.5em !important;
+  position: absolute !important;
+  left: 0 !important;
+}
+
+/* Les liens des résultats utilisent le style par défaut du thème (héritage automatique) */
+
