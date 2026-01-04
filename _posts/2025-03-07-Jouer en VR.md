@@ -62,8 +62,7 @@ Ce post est inspiré de ce [post reddit](https://www.reddit.com/r/linux_gaming/c
 
 Voici les jeux que j'ai pu essayer. Tous ne marchent pas mais seulement 2 sur 7 pour le moment.
 
-Se référer à la base [protondb.com](https://www.protondb.com) pour connaitre la compatibilité pour d'autres jeux,
-
+Se référer à la base [protondb.com](https://www.protondb.com) pour connaitre la compatibilité pour d'autres jeux.
 
 |                                                                                                     |                                  |            |
 | --------------------------------------------------------------------------------------------------- | -------------------------------- | ---------- |
