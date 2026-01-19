@@ -33,11 +33,9 @@ Plus d'infos sur les systèmes de fichiers:
 
 ### UGO et umask
 
-tu connais la notion de droit sur les dossiers/fichiers (rwx =\> Read
-Write eXecute) ? le fameux ugo (UserGroupOther)
+tu connais la notion de droit sur les dossiers/fichiers (rwx =\> Read Write eXecute) ? le fameux ugo (UserGroupOther)
 
-tu as deja vu en faisant un ls -l dans un dossier que cela se présente
-toujours par
+tu as deja vu en faisant un ls -l dans un dossier que cela se présente toujours par
 
 `-rwxr-x--- users group taille fichier`
 
@@ -45,8 +43,7 @@ ben le fameux UGO peut se presenter sous forme de combinaison chiffrée.
 
 r=4 w=2 x=1
 
-tiens on dirait du binaire. pour l'utilisateur sur ma ligne précédente
-on avait rwx =\> 4+2+1 = 7 pour le groupe on avait r-x =\> 4 + 1 = 5
+tiens on dirait du binaire. pour l'utilisateur sur ma ligne précédente on avait rwx =\> 4+2+1 = 7 pour le groupe on avait r-x =\> 4 + 1 = 5
 pour les autres on avait --- =\> 0
 
 les droits ugo sur ce fichier serait 750.
@@ -59,19 +56,10 @@ umask 022 : => j'enleve rien pour l'utilisateur : => 7 - 0 = 7 : => j'enleve 2 p
 donc droit 755 sur ce montage. donc rwx pour l'utilisateur qui fait le
 montage r-x pour le groupe de l'utilisateur r-x pour les autres
 
-## Caractère Tilde ~ dans nautilus
-
-Les fichiers ou dssiers dont le nom fini par ~ (tilda) sont considérés
-comme des fichiers/dossiers de sauvegarde par Nautilus et sont donc
-cachés.
-
-Pour les voir, afficher les fichiers cachés ...
-
 ## lost+found
 
 Lors d'un crash disque ou de la réparation d'un disque au démarrage
-(fdsck), il se peut que des données soient perdues. Celle-ci peuvent se
-retrouver dans le répertoire "lost+found" (attention : dossier caché)
+(fdsck), il se peut que des données soient perdues. Celle-ci peuvent se retrouver dans le répertoire "lost+found" (attention : dossier caché)
 
 ------------------------------------------------------------------------
 
