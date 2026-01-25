@@ -72,7 +72,6 @@ categories:
       url_repository: https://git.codecoop.org/kjo/bookletimposer
       description: Impression de documents en livrets.
     - nom: Calibre
-      apt: calibre
       url_internal: calibre
       url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/calibre
       url_website: https://calibre-ebook.com/

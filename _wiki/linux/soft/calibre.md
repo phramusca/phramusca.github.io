@@ -6,19 +6,29 @@ layout: software
 
 Accès à la [librairie Kobo](https://www.kobo.com/fr/fr/library).
 
+## Installation
+
+Le paquet [calibre](apt://calibre) est une vieille version. Pour avoir une version plus récente, préférer le flatpak:
+
+```shell
+flatpak install flathub com.calibre_ebook.calibre
+```
+
 ## Configuration
 
-- Installer les extensions suivantes:
-  - [DeDRM](https://github.com/noDRM/DeDRM_tools/releases) pour supprimer les DRM. Dernière version Beta 10.0.9 de 2023
+- Installer les extensions suivantes depuis `Préférences / Extensions`:
+  - [DeDRM](https://github.com/noDRM/DeDRM_tools/releases) pour supprimer les DRM.
+    - Dernière version Beta 10.0.9 de 2023
     - ATTENTION: Liste aussi les extraits de livre, venant des livres "Recommandés" par ex. Généralement ils n'ont pas de DRM, mais ce ne sont peut etre pas les seuls.
     - [Guide d'installation](https://www.epubor.com/enlvement-des-drm-avec-calibre.html)
-  - [Babelio_db](https://www.mobileread.com/forums/showthread.php?t=349713) 0.8.8, à installer directement depuis Calibre.
+  - [Babelio_db](https://www.mobileread.com/forums/showthread.php?t=349713)
+  - [Find Duplicates](https://www.mobileread.com/forums/showthread.php?t=131017)
 - **IMPORTANT** Configurer `Télécharger les métadonnées`:
-  - **Déselectionner** globalement le champ `Note`, pour ne pas voir ses propres notes écrasées !
+  - **Déselectionner** globalement les champs comme `Note` par ex, pour ne pas voir ses propres données écrasées !
   - Ne garder que Babelio_db, ou déselectionner `étiquettes` des autres..
   - Voir les autres options si besoin
 
-## Envoyer vers le périphérique
+### Envoyer vers le périphérique
 
 Je trouve préférable d'envoyer les livres venant de Calibre dans un dossier spécifique, au lieu d'à la racine directement.
 
