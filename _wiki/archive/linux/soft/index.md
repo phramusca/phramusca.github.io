@@ -21,15 +21,6 @@ J'ai utilisé ces programmes dans le temps, mais ils sont soient obsolètes soit
 | [GCStar](../GCStar) | [gcstar](http://doc.ubuntu-fr.org/gcstar)     | Gestion des collections personnelles (Films, jeux, ...). | Voir [GCStar](../GCStar)             |
 | HomeBank         | [HomeBank](http://doc.ubuntu-fr.org/HomeBank) | Gestionnaire de finances                                 | [HomeBank](apt://homebank)        |
 
-#### Graphisme
-
-|          |                                               |                                                                      |                                                |
-| -------- | --------------------------------------------- | -------------------------------------------------------------------- | ---------------------------------------------- |
-| Nom      | Ubuntu-fr                                     | Description                                                          | [apt-url](Apt-url) (Installation)              |
-| Manslide | N/A                                           | SlideShows vidéo                                                     | [manslide](apt://manslide)                     |
-| Picasa   | [picasa](http://doc.ubuntu-fr.org/picasa)     | Visualiseur de Google. [Picasa](http://picasa.google.com/linux/)     | Voir [picasa](http://doc.ubuntu-fr.org/picasa) |
-| Gwenview | [gwenview](http://doc.ubuntu-fr.org/gwenview) | Visualisation ([Visualiseurs Alternatifs](../Visualiseurs_Alternatifs)) | [gwenview](apt://gwenview)                     |
-
 #### Internet
 
 |                    |                                                            |                                                    |
