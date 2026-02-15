@@ -48,6 +48,10 @@ waydroid session start # In separate terminal, possibly could use `&` at the end
 
 seem to work, to be clarified
 
+Enfin ça marchait (voir dossier waydroid dans ce wiki) jusqu'au 15/2 après une mise à jour de waydroid effectuée dans Weston/waydroid
+
+Depuis jamuz ne se lance plus :(
+
 <https://www.apkmirror.com/>
 
 <https://manpages.ubuntu.com/manpages/focal/en/man5/weston.ini.5.html#launcher%20section>

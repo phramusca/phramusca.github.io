@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=JaMuz
+Exec=waydroid app launch org.phramusca.jamuz
+Icon=~/.local/share/waydroid/data/icons/org.phramusca.jamuz.png
+Categories=X-WayDroid-App;
+X-Purism-FormFactor=Workstation;Mobile;
+Actions=app_settings;
+Name[fr_FR]=JaMuz Android
+
+[Desktop Action app_settings]
+Name=App Settings
+Exec=waydroid app intent android.settings.APPLICATION_DETAILS_SETTINGS package:org.phramusca.jamuz

@@ -49,10 +49,10 @@ Installer les polices pour powerlevel10k et les configurer dans les différents 
 
 ➜  ~ fc-list | grep "Meslo"           
 
-/home/raph/.local/share/fonts/MesloLGS NF Bold.ttf: MesloLGS NF:style=Bold
-/home/raph/.local/share/fonts/MesloLGS NF Italic.ttf: MesloLGS NF:style=Italic
-/home/raph/.local/share/fonts/MesloLGS NF Bold Italic.ttf: MesloLGS NF:style=Bold Italic
-/home/raph/.local/share/fonts/MesloLGS NF Regular.ttf: MesloLGS NF:style=Regular
+~/.local/share/fonts/MesloLGS NF Bold.ttf: MesloLGS NF:style=Bold
+~/.local/share/fonts/MesloLGS NF Italic.ttf: MesloLGS NF:style=Italic
+~/.local/share/fonts/MesloLGS NF Bold Italic.ttf: MesloLGS NF:style=Bold Italic
+~/.local/share/fonts/MesloLGS NF Regular.ttf: MesloLGS NF:style=Regular
 
 
 Installer powerlevel10k
