@@ -6,12 +6,20 @@ layout: software
 
 Accès à la [librairie Kobo](https://www.kobo.com/fr/fr/library).
 
+Signaler erreurs Babelio: https://babelio.freshdesk.com/support/tickets/new 
+
 ## Installation
 
 Le paquet [calibre](apt://calibre) est une vieille version. Pour avoir une version plus récente, préférer le flatpak:
 
 ```shell
 flatpak install flathub com.calibre_ebook.calibre
+```
+
+## Mise à jour
+
+```shell
+flatpak update com.calibre_ebook.calibre
 ```
 
 ## Configuration
@@ -53,11 +61,9 @@ TODO: Comment gérer les collections, l'état de lecture (reading, read, ... le 
 
 ### OPDS
 
-TODO
+Le flux OPDS est accessible à l'adresse : `http://rpi5.local:8083/opds`
 
 ### calibre-web
-
-TODO
 
 https://phramusca.github.io/wiki/docker/#calibre-web
 
@@ -66,6 +72,51 @@ https://github.com/janeczku/calibre-web#calibre-web
 http://rpi5.local:8083/
 
 http://rpi5.local:8083/opds
+
+### Applications pour lire OPDS sur Android Boox
+
+https://github.com/janeczku/calibre-web/wiki/FAQ#which-opds-readers-work-with-calibre-web
+
+Pour accéder au flux OPDS de Calibre-Web sur une liseuse Android Boox, plusieurs applications sont recommandées :
+
+#### **KOReader** (Recommandé pour Boox)
+- Open-source, optimisé pour les appareils à encre électronique
+- Excellente prise en charge OPDS
+- Personnalisation avancée (polices, marges, thèmes)
+- Support de nombreux formats (EPub, PDF, MOBI, etc.)
+- Synchronisation de la progression de lecture
+- Site : https://koreader.com/
+
+#### **Moon+ Reader**
+- Application populaire avec connexion directe aux catalogues Calibre
+- Support OPDS
+- Formats : EPub, PDF, MOBI, CHM, CBR, CBZ
+- Personnalisation étendue (polices, thèmes, modes de lecture)
+
+#### **ReadEra**
+- Interface épurée, sans publicité
+- Support OPDS et Calibre
+- Formats : EPub, PDF, MOBI, AZW, DJVU, FB2
+- Conserve les métadonnées, séries et informations auteurs
+- Thèmes et polices personnalisables
+
+#### **Aldiko**
+- Support OPDS intégré
+- Interface conviviale
+- Options de personnalisation
+
+#### **FBReader**
+- Open-source, multi-plateforme
+- Support OPDS
+- Personnalisation (polices, couleurs, marges)
+
+### Configuration
+
+Pour ajouter le catalogue OPDS dans une application :
+1. Ouvrir l'application de lecture
+2. Aller dans les paramètres / bibliothèques / catalogues OPDS
+3. Ajouter un nouveau catalogue avec l'URL : `http://rpi5.local:8083/opds`
+4. Si authentification requise, utiliser les identifiants Calibre-Web
 
 ### KOReader
 
