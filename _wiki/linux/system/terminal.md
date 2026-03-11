@@ -75,11 +75,13 @@ Source: [Pimp My Terminal](https://stackabuse.com/pimp-my-terminal-an-introducti
 
 - Installer des [plugins officiels](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins) comme:
 
-  | Plugin | Description |
-  | --- | --- |
-  | `git` | Ce plugin est un ensemble d’alias prédéfinis pour accélérer l’utilisation de Git dans le terminal. Par exemple : `gst` au lieu de `git status`, `ga` au lieu de `git add`, etc. |
-  | `sudo` | Ce plugin permet d’ajouter `sudo` en préfixe de la commande courante ou précédente en appuyant deux fois sur `ESC`. |
-  | `z` | Ce plugin améliore la productivité en permettant de naviguer rapidement dans l’arborescence. Il garde une trace des répertoires les plus visités et permet d’y accéder avec quelques caractères. |
+  | Plugin                                                                | Description                                                                                                                                                                                      |
+  | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+  | [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)     | Ce plugin est un ensemble d’alias prédéfinis pour accélérer l’utilisation de Git dans le terminal. Par exemple : `gst` au lieu de `git status`, `ga` au lieu de `git add`, etc.                  |
+  | [sudo](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo)   | Ce plugin permet d’ajouter `sudo` en préfixe de la commande courante ou précédente en appuyant deux fois sur `ESC`.                                                                              |
+  | [z](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/z)         | Ce plugin améliore la productivité en permettant de naviguer rapidement dans l’arborescence. Il garde une trace des répertoires les plus visités et permet d’y accéder avec quelques caractères. |
+  | [aws](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aws)     | Ce plugin fournit la complétion pour awscli v2 et quelques utilitaires pour gérer les profils/régions AWS et les afficher dans l’invite.                                                         |
+  | [azure](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/azure) | Ce plugin fournit la complétion pour Azure CLI et quelques utilitaires pour gérer les abonnements Azure et les afficher dans l’invite.                                                           |
 
 - Activer les plugins en éditant `nano ~/.zshrc`
 
