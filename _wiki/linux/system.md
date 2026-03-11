@@ -4,6 +4,10 @@ layout: content
 
 # Système
 
+## Terminal
+
+Voir [terminal](../system/terminal)
+
 ## Système de fichiers
 
 ### Disques Locaux
