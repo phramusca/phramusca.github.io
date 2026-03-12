@@ -4,6 +4,8 @@ layout: content
 
 # Terminal
 
+Personnellement, j'apprécie [Tilix](../../soft#category-0-accessoires) et [guake](../../soft#category-12-prfrences)
+
 ## Pimp My Terminal
 
 Source: [Pimp My Terminal](https://stackabuse.com/pimp-my-terminal-an-introduction-to-oh-my-zsh/)

@@ -52,6 +52,13 @@ categories:
         url_website: https://apps.kde.org/fr/spectacle/
         url_repository: null
         description: Créer des screenshots. Pour KDE
+      - nom: Tilix
+        apt: tilix
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/tilix
+        url_website: https://gnunn1.github.io/tilix-web/
+        url_repository: https://github.com/gnunn1/tilix
+        description: Terminal en tuiles.
       - nom: VNote
         archive: yes
         apt: https://github.com/vnotex/vnote/releases/latest
@@ -437,6 +444,14 @@ categories:
       url_repository: null
       description: Client BOINC.
   - nom: Préférences
+    logiciels:
+    - nom: Guake
+      apt: guake
+      url_internal: null
+      url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/guake
+      url_website: http://guake.org/
+      url_repository: https://github.com/Guake/guake
+      description: Terminal déroulant.
   - nom: Divers
     logiciels:
     - nom: Ventoy

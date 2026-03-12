@@ -108,14 +108,6 @@ TODO: /!\ Comment gérer rsync/grsync et autres cas de gui pour outil de ligne d
 | [grsync](../soft/rsync)                                   | Synchronisation de fichiers.                                                                                   | [grsync](apt://grsync)                                 |                                          |
 | [VirtualBox](http://doc.ubuntu-fr.org/virtualbox) | Solution de virtualisation de systèmes d'exploitation. [Images toutes prêtes](http://virtualboxes.org/images/) | Voir [VirtualBox](http://doc.ubuntu-fr.org/virtualbox) |                                          |
 
-
-#### Préférences
-
-TODO: Ajouter:
-- Guake
-
-
-
 ### A REVOIR
 
 --------------------------------------------------------------------
