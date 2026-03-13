@@ -27,6 +27,10 @@ Et voici quelques exemples qui me paraissent intéressants:
 | [GIMP](http://www.gimp.org/)                                                                                              | Gnu Image Manipulation Program                                           | Adobe Photoshop |
 | [Sumatra PDF](http://blog.kowalczyk.info/software/sumatrapdf/) ([GitHub](https://github.com/sumatrapdfreader/sumatrapdf)) | Visionneuse de fichiers (PDF, EPUB, MOBI, CBZ, CBR, FB2, CHM, XPS, DjVu) | Adobe Reader    |
 
+### Freewares
+
+- [Rapid Environment Editor](https://www.rapidee.com)
+
 ## Trucs et Astuces
 
 | Logiciel | Astuce            | Détails                                                                                                                                                                                                                         |

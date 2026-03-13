@@ -108,7 +108,6 @@ TODO:  Voir aussi: [Convertir MOV en Flash FLV](../../archive/Convertir_MOV_en_F
 TODO: Ajouter:
 - Back In Time ?
 - Disks - gnome-disks
-- htop
 - Mission Center
 - WoeUSB (Prepare Microsoft Windows installation USB with ease.)
 

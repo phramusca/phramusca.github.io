@@ -6,6 +6,8 @@ title: Créer un site GitHub Pages en JeKyll
 
 # JeKyll
 
+- [Doc officielle](https://docs.github.com/fr/pages)
+
 - Faire un lien avec image ET texte
 
    [<img src="https://github.com/fluidicon.png" alt="GitHub Logo" width="50"> GitHub](https://github.com)

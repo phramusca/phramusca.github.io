@@ -450,6 +450,13 @@ categories:
       url_website: https://boinc.berkeley.edu/
       url_repository: null
       description: Client BOINC.
+    - nom: htop
+      apt: htop
+      url_internal: htop
+      url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/htop
+      url_website: https://htop.dev/
+      url_repository: https://github.com/htop-dev/htop
+      description: Affiche les processus en cours d'exécution.
   - nom: Préférences
     logiciels:
     - nom: Guake
@@ -467,4 +474,11 @@ categories:
       url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/ventoy
       url_website: https://ventoy.net/
       url_repository: https://github.com/ventoy/Ventoy
-      description: Créer une clé USB live multiboot.    
+      description: Créer une clé USB live multiboot.
+    - nom: gdu
+      apt: gdu
+      url_internal: null
+      url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/analyseur_usage_espace_disque
+      url_website: https://github.com/dundee/gdu
+      url_repository: https://github.com/dundee/gdu
+      description: Affiche l'utilisation du disque dur dans le terminal, en arborescence.
