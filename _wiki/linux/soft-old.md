@@ -31,11 +31,11 @@ TODO: Faire section "Remote desktop / VNC" mais tester avant avec Rpi et d'autre
 
 TODO: Faire section FTP, et ajouter FileZilla et lftp (script. et gui ?)
 
-|                  |                                               |                                                          |                                   |
-| ---------------- | --------------------------------------------- | -------------------------------------------------------- | --------------------------------- |
-| Nom              | Ubuntu-fr                                     | Description                                              | [apt-url](Apt-url) (Installation) |
-| [GCStar](../GCStar) | [gcstar](http://doc.ubuntu-fr.org/gcstar)     | Gestion des collections personnelles (Films, jeux, ...). | Voir [GCStar](../GCStar)             |
-| HomeBank         | [HomeBank](http://doc.ubuntu-fr.org/HomeBank) | Gestionnaire de finances                                 | [HomeBank](apt://homebank)        |
+|                     |                                               |                                                          |                                   |
+| ------------------- | --------------------------------------------- | -------------------------------------------------------- | --------------------------------- |
+| Nom                 | Ubuntu-fr                                     | Description                                              | [apt-url](Apt-url) (Installation) |
+| [GCStar](../GCStar) | [gcstar](http://doc.ubuntu-fr.org/gcstar)     | Gestion des collections personnelles (Films, jeux, ...). | Voir [GCStar](../GCStar)          |
+| HomeBank            | [HomeBank](http://doc.ubuntu-fr.org/HomeBank) | Gestionnaire de finances                                 | [HomeBank](apt://homebank)        |
 
 
 #### Programmation
@@ -118,7 +118,7 @@ TODO: /!\ Comment gérer rsync/grsync et autres cas de gui pour outil de ligne d
 | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ | ---------------------------------------- |
 | Nom                                               | ubuntu-fr                                                                                                      | Description                                            | Installation [apturl](../system/Apt-url) |
 | Gparted                                           | [gparted](http://doc.ubuntu-fr.org/gparted)                                                                    | Partitionnement de disque.                             | [gparted](apt://gparted)                 |
-| [grsync](../soft/rsync)                                   | Synchronisation de fichiers.                                                                                   | [grsync](apt://grsync)                                 |                                          |
+| [grsync](../soft/rsync)                           | Synchronisation de fichiers.                                                                                   | [grsync](apt://grsync)                                 |                                          |
 | [VirtualBox](http://doc.ubuntu-fr.org/virtualbox) | Solution de virtualisation de systèmes d'exploitation. [Images toutes prêtes](http://virtualboxes.org/images/) | Voir [VirtualBox](http://doc.ubuntu-fr.org/virtualbox) |                                          |
 
 |                                                      |                                                                                          |                                                                                   |
@@ -127,7 +127,7 @@ TODO: /!\ Comment gérer rsync/grsync et autres cas de gui pour outil de ligne d
 | [winff](http://doc.ubuntu-fr.org/winff)              | WinFF est une interface graphique à FFmpeg très simple d'utilisation et personnalisable. | [winff](apt://winff) + [codecs](http://ubuntuforums.org/showthread.php?t=1117283) |
 | [avidemux](http://doc.ubuntu-fr.org/avidemux)        | Editeur vidéo, considéré comme l'équivalent de VirtualDub.                               | [avidemux](apt://avidemux)                                                        |
 | [Arista Transcoder](http://doc.ubuntu-fr.org/arista) | logiciel de conversion vidéo                                                             | [arista](apt://arista)                                                            |
-| [QuickTime](../../../QuickTime)                               | QuickTime pour Linux                                                                     |                                                                                   |
+| [QuickTime](../../../QuickTime)                      | QuickTime pour Linux                                                                     |                                                                                   |
 | DVDShrink                                            | xDVDShrink - a tester                                                                    |                                                                                   |
 | [ManDVD](http://doc.ubuntu-fr.org/mandvd)            | Création simplifiée de DVD-vidéos, a tester                                              |                                                                                   |
 
@@ -164,18 +164,14 @@ TODO !!!!!!!!!!!!!!!!!!!!!! Ce qui suit est à archiver ou a revoir
 
 Les suivants sont à répartir dans les menus appropriés :
 
-|                                                             |                                                            |                                                    |
-| ----------------------------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------- |
-| Nom                                                         | Description                                                | Installation [apturl](../system/Apt-url)           |
-| [Google Earth](../soft/google_earth)                                | La Terre vue du ciel                                       | N/A                                                |
-| [Sunclock](http://www.arvernes.com/wiki/index.php/Sunclock) | Carte avec zones ensoleillées                              | N/A                                                |
-| [Wine](../soft/wine)                                                | Windows Emulation                                          |                                                    |
-| Gwhere                                                      | Catalogueur de CDs/DVDs                                    |                                                    |
-| OpenOffice                                                  | Office (tableur, traitement de texte, présentations, BDD)  | inclus par défaut dans [Ubuntu](linux/dist/Ubuntu) |
-| Antivirus                                                   | Complètement inutile                                       | N/A                                                |
-| kFileReplace                                                | Changer un texte par un autre dans des fichiers (a tester) |                                                    |
-
-
+|                                                             |                                                            |                                          |
+| ----------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------- |
+| Nom                                                         | Description                                                | Installation [apturl](../system/Apt-url) |
+| [Google Earth](../soft/google_earth)                        | La Terre vue du ciel                                       | N/A                                      |
+| [Sunclock](http://www.arvernes.com/wiki/index.php/Sunclock) | Carte avec zones ensoleillées                              | N/A                                      |
+| [Wine](../soft/wine)                                        | Windows Emulation                                          |                                          |
+| Gwhere                                                      | Catalogueur de CDs/DVDs                                    |                                          |
+| kFileReplace                                                | Changer un texte par un autre dans des fichiers (a tester) |                                          |
 
 TODO Tester et intégrer ce qui suit (de Chat GPT):
 
@@ -222,9 +218,9 @@ même bien pratiques:
 |                                                        |                                         |                                                                                                     |                                          |
 | ------------------------------------------------------ | --------------------------------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------- |
 | Nom                                                    | Ubuntu-fr                               | Description                                                                                         | Installation [apturl](../system/Apt-url) |
-| [convmv](../soft/convmv)                                       |                                         | Conversion de caractères (noms de fichiers)                                                         | [convmv](apt://convmv)                   |
+| [convmv](../soft/convmv)                               |                                         | Conversion de caractères (noms de fichiers)                                                         | [convmv](apt://convmv)                   |
 | [Disques_Réseau#mount.cifs](Disques_Réseau#mount.cifs) |                                         | Pour monter des dossiers partagés Windows ou Samba                                                  | [smbfs](apt://smbfs)                     |
-| [fcron](../soft/fcron)                                         | [fcron](http://doc.ubuntu-fr.org/fcron) | FCron permet de pallier les défauts de Cron et d'Anacron.                                           | [fcron](apt://fcron)                     |
+| [fcron](../soft/fcron)                                 | [fcron](http://doc.ubuntu-fr.org/fcron) | FCron permet de pallier les défauts de Cron et d'Anacron.                                           | [fcron](apt://fcron)                     |
 | RAR (archive)                                          | [rar](http://doc.ubuntu-fr.org/rar)     | RAR est un format d'archive (un peu comme ZIP), c'est aussi le nom de l'application pour les gérer. | Voir site Ubuntu                         |
 
 > [RAR avec mot de passe](http://forum.ubuntu-fr.org/viewtopic.php?id=83892)
@@ -232,10 +228,10 @@ même bien pratiques:
 
 TODO: Inclure les applis par défaut dans Mint 21.3 et 22
 
-|              |                                                       |                                                                                    |                                                                 |
-| ------------ | ----------------------------------------------------- | ---------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| Nom          | ubuntu-fr                                             | Description                                                                        | [apt-url](Apt-url) (Installation)                               |
-| Disk-Manager | [disk-manager](http://doc.ubuntu-fr.org/disk-manager) | Gestionnaire de disques. Voir [Disques Locaux](../../../../linux/system/Disques_Locaux)                     | N/A. Voir [disk-manager](http://doc.ubuntu-fr.org/disk-manager) |
-| Gufw         | [gufw](http://doc.ubuntu-fr.org/gufw)                 | Interface graphique du pare-feu UFW, celui par défaut dans Ubuntu (10.10 au moins) | [gufw](apt://gufw)                                              |
+|              |                                                       |                                                                                         |                                                                 |
+| ------------ | ----------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| Nom          | ubuntu-fr                                             | Description                                                                             | [apt-url](Apt-url) (Installation)                               |
+| Disk-Manager | [disk-manager](http://doc.ubuntu-fr.org/disk-manager) | Gestionnaire de disques. Voir [Disques Locaux](../../../../linux/system/Disques_Locaux) | N/A. Voir [disk-manager](http://doc.ubuntu-fr.org/disk-manager) |
+| Gufw         | [gufw](http://doc.ubuntu-fr.org/gufw)                 | Interface graphique du pare-feu UFW, celui par défaut dans Ubuntu (10.10 au moins)      | [gufw](apt://gufw)                                              |
 
 

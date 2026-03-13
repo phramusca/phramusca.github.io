@@ -91,6 +91,13 @@ categories:
       url_website: https://www.glabels.org/
       url_repository: https://github.com/jimevins/glabels-qt
       description: Création de séries de documents en petits formats genre étiquettes, pochettes et cartes de visite.
+    - nom: LibreOffice
+      apt: libreoffice
+      url_internal: libreoffice
+      url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/libreoffice
+      url_website: https://www.libreoffice.org/
+      url_repository: https://git.libreoffice.org/core/
+      description: Suite bureautique complète.
     - nom: PDFsamBasic
       apt: null
       url_internal: null
