@@ -31,6 +31,13 @@ TODO: Faire section "Remote desktop / VNC" mais tester avant avec Rpi et d'autre
 
 TODO: Faire section FTP, et ajouter FileZilla et lftp (script. et gui ?)
 
+|                  |                                               |                                                          |                                   |
+| ---------------- | --------------------------------------------- | -------------------------------------------------------- | --------------------------------- |
+| Nom              | Ubuntu-fr                                     | Description                                              | [apt-url](Apt-url) (Installation) |
+| [GCStar](../GCStar) | [gcstar](http://doc.ubuntu-fr.org/gcstar)     | Gestion des collections personnelles (Films, jeux, ...). | Voir [GCStar](../GCStar)             |
+| HomeBank         | [HomeBank](http://doc.ubuntu-fr.org/HomeBank) | Gestionnaire de finances                                 | [HomeBank](apt://homebank)        |
+
+
 #### Programmation
 
 TODO: Rajouter:
@@ -84,6 +91,12 @@ TODO: Move to JaMuz
   - <http://www.mede8erforum.com/index.php?topic=5472.0>
   - <http://www.iconeasy.com/iconset/music-genre-icons/>
 
+- Une [liste de lecteurs](http://doc.ubuntu-fr.org/lecteur_audio) sur Ubuntu-fr
+- Mon comparateur (en cours):
+  <http://socialcompare.com/fr/comparison/linux-open-source-audio-players-p4v154w>
+- Alternatives à AmaroK:
+  <http://alternativeto.net/software/amarok/?platform=linux&license=free>
+
 ##### Vidéo
 
 TODO:  Voir aussi [Fusionner 2 fichiers avi avec mencoder](http://www.ubuntuhowtos.com/howtos/merge_avi_files_with_mencoder)
@@ -107,6 +120,17 @@ TODO: /!\ Comment gérer rsync/grsync et autres cas de gui pour outil de ligne d
 | Gparted                                           | [gparted](http://doc.ubuntu-fr.org/gparted)                                                                    | Partitionnement de disque.                             | [gparted](apt://gparted)                 |
 | [grsync](../soft/rsync)                                   | Synchronisation de fichiers.                                                                                   | [grsync](apt://grsync)                                 |                                          |
 | [VirtualBox](http://doc.ubuntu-fr.org/virtualbox) | Solution de virtualisation de systèmes d'exploitation. [Images toutes prêtes](http://virtualboxes.org/images/) | Voir [VirtualBox](http://doc.ubuntu-fr.org/virtualbox) |                                          |
+
+|                                                      |                                                                                          |                                                                                   |
+| ---------------------------------------------------- | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Nom                                                  | Description                                                                              | [apt-url](Apt-url) (Installation)                                                 |
+| [winff](http://doc.ubuntu-fr.org/winff)              | WinFF est une interface graphique à FFmpeg très simple d'utilisation et personnalisable. | [winff](apt://winff) + [codecs](http://ubuntuforums.org/showthread.php?t=1117283) |
+| [avidemux](http://doc.ubuntu-fr.org/avidemux)        | Editeur vidéo, considéré comme l'équivalent de VirtualDub.                               | [avidemux](apt://avidemux)                                                        |
+| [Arista Transcoder](http://doc.ubuntu-fr.org/arista) | logiciel de conversion vidéo                                                             | [arista](apt://arista)                                                            |
+| [QuickTime](../../../QuickTime)                               | QuickTime pour Linux                                                                     |                                                                                   |
+| DVDShrink                                            | xDVDShrink - a tester                                                                    |                                                                                   |
+| [ManDVD](http://doc.ubuntu-fr.org/mandvd)            | Création simplifiée de DVD-vidéos, a tester                                              |                                                                                   |
+
 
 ### A REVOIR
 
@@ -205,18 +229,13 @@ même bien pratiques:
 
 > [RAR avec mot de passe](http://forum.ubuntu-fr.org/viewtopic.php?id=83892)
 
-Pimp your terminal:
-
-- [ZSH](https://doc.ubuntu-fr.org/zsh)
-- [Oh My Zsh](https://ohmyz.sh/)
-  - [powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
-    theme
-  - Useful plugins : [Shell sous stéroides](https://www.tronyxworld.be/2020/zsh_omz_p10k/)
-    - kubectl
-    - kube.ps1
-
 
 TODO: Inclure les applis par défaut dans Mint 21.3 et 22
 
+|              |                                                       |                                                                                    |                                                                 |
+| ------------ | ----------------------------------------------------- | ---------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| Nom          | ubuntu-fr                                             | Description                                                                        | [apt-url](Apt-url) (Installation)                               |
+| Disk-Manager | [disk-manager](http://doc.ubuntu-fr.org/disk-manager) | Gestionnaire de disques. Voir [Disques Locaux](../../../../linux/system/Disques_Locaux)                     | N/A. Voir [disk-manager](http://doc.ubuntu-fr.org/disk-manager) |
+| Gufw         | [gufw](http://doc.ubuntu-fr.org/gufw)                 | Interface graphique du pare-feu UFW, celui par défaut dans Ubuntu (10.10 au moins) | [gufw](apt://gufw)                                              |
 
 

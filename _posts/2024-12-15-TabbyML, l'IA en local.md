@@ -6,7 +6,7 @@ title: TabbyML, l'IA en local
 
 # TabbyML
 
-[TabbyML](https://www.tabbyml.com/) offre une expérience de codage AI enrichissante et personnalisable. 
+[TabbyML](https://www.tabbyml.com/) offre une expérience de codage AI enrichissante et personnalisable.
 
 C'est "le concurrent open source du CoPilot de GitHub". Et ça tourne en local !
 
@@ -21,7 +21,7 @@ La suite détaille l'installation avec Docker (Compose) mais TabbyML peut aussi 
 Pour profiter du GPU (fortement recommandé), il faut d'abord installer NVIDIA Container Toolkit.
 
 1. Désinstallation de Docker Desktop
-    
+
     > Il vaut mieux utiliser docker sans passer par Docker Desktop.
 
     Donc, commencer par supprimer Docker Desktop. **Ne pas oublier de sauvegarder les données**.
@@ -32,7 +32,7 @@ Pour profiter du GPU (fortement recommandé), il faut d'abord installer NVIDIA C
     sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
     sudo apt-get autoremove
     ```
-    
+
 2. Installation de NVIDIA Container Toolkit
 
     - Installez les outils nécessaires :
@@ -78,7 +78,7 @@ Pour profiter du GPU (fortement recommandé), il faut d'abord installer NVIDIA C
 ### Docker Compose
 
 - Créer un fichier `docker-compose.yaml`:
-   
+
     ```yaml
     services:
         tabby:
@@ -100,7 +100,7 @@ Pour profiter du GPU (fortement recommandé), il faut d'abord installer NVIDIA C
     ```
 
 - Lancer TabbyML: `docker compose up -d`
-   
+
 - Pour voir les logs (ça peut etre long à démarrer):
 
     ```bash
@@ -109,11 +109,11 @@ Pour profiter du GPU (fortement recommandé), il faut d'abord installer NVIDIA C
 
 ## Configuration
 
- - Aller sur [http://localhost:8086/](http://localhost:8086/)
-    - Créer un compte
-    - *Optionnel*: [Ajouter un fournisseur de contexte](https://tabby.tabbyml.com/docs/administration/context/#adding-a-repository-through-admin-ui) (Git local, GitHub, GitLab ou auto-hebergé) 
-        - Utiliser un chemin de type `file:///repos/MonRepoGit` poura ajouter un repo git local.
- - Installer l'extension pour [VSCode](https://tabby.tabbyml.com/docs/extensions/installation/vscode/), [intellij](https://tabby.tabbyml.com/docs/extensions/installation/intellij/) or [VIM](https://tabby.tabbyml.com/docs/extensions/installation/vim/), puis [configurer l'IDE](https://tabby.tabbyml.com/docs/quick-start/setup-ide/).
+- Aller sur [http://localhost:8086/](http://localhost:8086/)
+  - Créer un compte
+  - *Optionnel*: [Ajouter un fournisseur de contexte](https://tabby.tabbyml.com/docs/administration/context/#adding-a-repository-through-admin-ui) (Git local, GitHub, GitLab ou auto-hebergé)
+    - Utiliser un chemin de type `file:///repos/MonRepoGit` poura ajouter un repo git local.
+- Installer l'extension pour [VSCode](https://tabby.tabbyml.com/docs/extensions/installation/vscode/), [intellij](https://tabby.tabbyml.com/docs/extensions/installation/intellij/) or [VIM](https://tabby.tabbyml.com/docs/extensions/installation/vim/), puis [configurer l'IDE](https://tabby.tabbyml.com/docs/quick-start/setup-ide/).
 
 ## Mise à jour
 
@@ -127,8 +127,8 @@ docker compose up -d --force-recreate
 ## Aller plus loin
 
 - [Créer un fichier de configuration](https://tabby.tabbyml.com/docs/extensions/configurations/) pour l'extension IDE.
-    - Spécifiquement pour le [Code Completion](https://tabby.tabbyml.com/docs/administration/code-completion/)
-    - La [configuration du modèle](https://tabby.tabbyml.com/docs/administration/model/)
+  - Spécifiquement pour le [Code Completion](https://tabby.tabbyml.com/docs/administration/code-completion/)
+  - La [configuration du modèle](https://tabby.tabbyml.com/docs/administration/model/)
 - [Faire une sauvegarde](https://tabby.tabbyml.com/docs/administration/backup/)
 - [Configurer le SMTP](https://tabby.tabbyml.com/docs/administration/smtp/) pour l'envoi de mail aux utilisateurs
 
@@ -148,38 +148,38 @@ Voici ma configuration et les modèles testés:
 - RAM: 16 Go
 - Processeur: Ryzen 7 5700X
 
-| type       | B  | Model ID                    | License                           | Type Licence        |  Pays            |  Propriétaire                   | status   |
-|------------|----|-----------------------------|-----------------------------------|---------------------|------------------|---------------------------------|----------|
-| chat-model | 5  | Qwen2-1.5B-Instruct         | Apache 2.0                        | Open source         | Chine            | Alibaba Cloud                   | ok       |
-| chat-model | 5  | Qwen2.5-Coder-0.5B-Instruct | Apache 2.0                        | Open source         | Chine            | Alibaba Cloud                   | ok       |
-| chat-model | 5  | Qwen2.5-Coder-1.5B-Instruct | Apache 2.0                        | Open source         | Chine            | Alibaba Cloud                   | ok       |
-| chat-model | 7  | CodeGemma-7B-Instruct       | Gemma License                     | Propriétaire        | États-Unis       | Google DeepMind                 | "bug" *      |
-| chat-model | 7  | CodeQwen-7B-Chat            | Tongyi Qianwen License            | Propriétaire        | Chine            | Alibaba Cloud                   | "bug" *      |
-| chat-model | 7  | Mistral-7B                  | Apache 2.0                        | Open source         | France           | Mistral AI                      | "bug" *      |
-| chat-model | 7  | Qwen2.5-Coder-7B-Instruct   | Apache 2.0                        | Open source         | Chine            | Alibaba Cloud                   | "bug" *      |
-| chat-model | 9  | Yi-Coder-9B-Chat            | Apache 2.0                        | Open source         | Chine            | 01.AI                           | "bug" *      |
-| chat-model | 14 | Qwen2.5-Coder-14B-Instruct  | Apache 2.0                        | Open source         | Chine            | Alibaba Cloud                   | "bug" *      |
-| chat-model | 22 | Codestral-22B               | Mistral AI Non-Production License | Propriétaire        | France           | Mistral AI                      | "bug" *      |
-| chat-model | 32 | Qwen2.5-Coder-32B-Instruct  | Apache 2.0                        | Open source         | Chine            | Alibaba Cloud                   | "bug" *      |
-| model      | 1  | StarCoder-1B                | BigCode-OpenRAIL-M                | Open source éthique | International    | BigCode (Hugging Face)          | ok       |
-| model      | 2  | CodeGemma-2B                | Gemma License                     | Propriétaire        | États-Unis       | Google DeepMind                 | ok       |
-| model      | 3  | DeepseekCoder-1.3B          | Deepseek License                  | Propriétaire        | Chine            | DeepSeek                        | ok       |
-| model      | 3  | Qwen2.5-Coder-3B            | Apache 2.0                        | Open source         | Chine            | Alibaba Cloud                   | ok       |
-| model      | 3  | StarCoder-3B                | BigCode-OpenRAIL-M                | Open source éthique | International    | BigCode (Hugging Face)          | ok       |
-| model      | 3  | StarCoder2-3B               | BigCode-OpenRAIL-M                | Open source éthique | International    | BigCode (Hugging Face)          | ok       |
-| model      | 5  | Qwen2.5-Coder-0.5B          | Apache 2.0                        | Open source         | Chine            | Alibaba Cloud                   | ok       |
-| model      | 5  | Qwen2.5-Coder-1.5B          | Apache 2.0                        | Open source         | Chine            | Alibaba Cloud                   | ok       |
-| model      | 7  | CodeGemma-7B                | Gemma License                     | Propriétaire        | États-Unis       | Google DeepMind                 | "bug" *      |
-| model      | 7  | CodeLlama-7B                | Llama 2                           | Propriétaire        | États-Unis       | Meta                            | "bug" *      |
-| model      | 7  | CodeQwen-7B                 | Tongyi Qianwen License            | Propriétaire        | Chine            | Alibaba Cloud                   | "bug" * & ok |
-| model      | 7  | DeepseekCoder-6.7B          | Deepseek License                  | Propriétaire        | Chine            | DeepSeek                        | "bug" *      |
-| model      | 7  | Qwen2.5-Coder-7B            | Apache 2.0                        | Open source         | Chine            | Alibaba Cloud                   | "bug" *      |
-| model      | 7  | StarCoder-7B                | BigCode-OpenRAIL-M                | Open source éthique | International    | BigCode (Hugging Face)          | "bug" *      |
-| model      | 7  | StarCoder2-7B               | BigCode-OpenRAIL-M                | Open source éthique | International    | BigCode (Hugging Face)          | "bug" *      |
-| model      | 13 | CodeLlama-13B               | Llama 2                           | Propriétaire        | États-Unis       | Meta                            | "bug" *      |
-| model      | 14 | Qwen2.5-Coder-14B           | Apache 2.0                        | Open source         | Chine            | Alibaba Cloud                   | "bug" *      |
-| model      | 22 | Codestral-22B               | Mistral AI Non-Production License | Propriétaire        | France           | Mistral AI                      | "bug" *      |
-| model      | ?  | DeepSeek-Coder-V2-Lite      | Deepseek License                  | Propriétaire        | Chine            | DeepSeek                        | "bug" *      |
+| type       | B   | Model ID                    | License                           | Type Licence        | Pays          | Propriétaire           | status       |
+| ---------- | --- | --------------------------- | --------------------------------- | ------------------- | ------------- | ---------------------- | ------------ |
+| chat-model | 5   | Qwen2-1.5B-Instruct         | Apache 2.0                        | Open source         | Chine         | Alibaba Cloud          | ok           |
+| chat-model | 5   | Qwen2.5-Coder-0.5B-Instruct | Apache 2.0                        | Open source         | Chine         | Alibaba Cloud          | ok           |
+| chat-model | 5   | Qwen2.5-Coder-1.5B-Instruct | Apache 2.0                        | Open source         | Chine         | Alibaba Cloud          | ok           |
+| chat-model | 7   | CodeGemma-7B-Instruct       | Gemma License                     | Propriétaire        | États-Unis    | Google DeepMind        | "bug" *      |
+| chat-model | 7   | CodeQwen-7B-Chat            | Tongyi Qianwen License            | Propriétaire        | Chine         | Alibaba Cloud          | "bug" *      |
+| chat-model | 7   | Mistral-7B                  | Apache 2.0                        | Open source         | France        | Mistral AI             | "bug" *      |
+| chat-model | 7   | Qwen2.5-Coder-7B-Instruct   | Apache 2.0                        | Open source         | Chine         | Alibaba Cloud          | "bug" *      |
+| chat-model | 9   | Yi-Coder-9B-Chat            | Apache 2.0                        | Open source         | Chine         | 01.AI                  | "bug" *      |
+| chat-model | 14  | Qwen2.5-Coder-14B-Instruct  | Apache 2.0                        | Open source         | Chine         | Alibaba Cloud          | "bug" *      |
+| chat-model | 22  | Codestral-22B               | Mistral AI Non-Production License | Propriétaire        | France        | Mistral AI             | "bug" *      |
+| chat-model | 32  | Qwen2.5-Coder-32B-Instruct  | Apache 2.0                        | Open source         | Chine         | Alibaba Cloud          | "bug" *      |
+| model      | 1   | StarCoder-1B                | BigCode-OpenRAIL-M                | Open source éthique | International | BigCode (Hugging Face) | ok           |
+| model      | 2   | CodeGemma-2B                | Gemma License                     | Propriétaire        | États-Unis    | Google DeepMind        | ok           |
+| model      | 3   | DeepseekCoder-1.3B          | Deepseek License                  | Propriétaire        | Chine         | DeepSeek               | ok           |
+| model      | 3   | Qwen2.5-Coder-3B            | Apache 2.0                        | Open source         | Chine         | Alibaba Cloud          | ok           |
+| model      | 3   | StarCoder-3B                | BigCode-OpenRAIL-M                | Open source éthique | International | BigCode (Hugging Face) | ok           |
+| model      | 3   | StarCoder2-3B               | BigCode-OpenRAIL-M                | Open source éthique | International | BigCode (Hugging Face) | ok           |
+| model      | 5   | Qwen2.5-Coder-0.5B          | Apache 2.0                        | Open source         | Chine         | Alibaba Cloud          | ok           |
+| model      | 5   | Qwen2.5-Coder-1.5B          | Apache 2.0                        | Open source         | Chine         | Alibaba Cloud          | ok           |
+| model      | 7   | CodeGemma-7B                | Gemma License                     | Propriétaire        | États-Unis    | Google DeepMind        | "bug" *      |
+| model      | 7   | CodeLlama-7B                | Llama 2                           | Propriétaire        | États-Unis    | Meta                   | "bug" *      |
+| model      | 7   | CodeQwen-7B                 | Tongyi Qianwen License            | Propriétaire        | Chine         | Alibaba Cloud          | "bug" * & ok |
+| model      | 7   | DeepseekCoder-6.7B          | Deepseek License                  | Propriétaire        | Chine         | DeepSeek               | "bug" *      |
+| model      | 7   | Qwen2.5-Coder-7B            | Apache 2.0                        | Open source         | Chine         | Alibaba Cloud          | "bug" *      |
+| model      | 7   | StarCoder-7B                | BigCode-OpenRAIL-M                | Open source éthique | International | BigCode (Hugging Face) | "bug" *      |
+| model      | 7   | StarCoder2-7B               | BigCode-OpenRAIL-M                | Open source éthique | International | BigCode (Hugging Face) | "bug" *      |
+| model      | 13  | CodeLlama-13B               | Llama 2                           | Propriétaire        | États-Unis    | Meta                   | "bug" *      |
+| model      | 14  | Qwen2.5-Coder-14B           | Apache 2.0                        | Open source         | Chine         | Alibaba Cloud          | "bug" *      |
+| model      | 22  | Codestral-22B               | Mistral AI Non-Production License | Propriétaire        | France        | Mistral AI             | "bug" *      |
+| model      | ?   | DeepSeek-Coder-V2-Lite      | Deepseek License                  | Propriétaire        | Chine         | DeepSeek               | "bug" *      |
 
 > \* "bug" réfère à [ce bug](https://github.com/TabbyML/tabby/issues/2803), [ce bug](https://github.com/TabbyML/tabby/issues/3512) ou [ce bug](https://github.com/TabbyML/tabby/issues/3056). Mais c'est surtout que ma machine n'est pas assez puissante.
 
@@ -198,10 +198,10 @@ Voir la doc: [Installation avec Docker](https://tabby.tabbyml.com/docs/quick-sta
         -v $HOME/.tabby:/data registry.tabbyml.com/tabbyml/tabby \   
         serve --device cpu --model StarCoder-1B --chat-model Qwen2-1.5B-Instruct
     ```
-    
-- Pareil, mais pour profiter du SSD (disque `/` dans mon cas). 
-    - Nécessite d'aller dans `Settings / Ressources / File Sharing` (Docker Desktop) et ajouter `/.tabby` dans la liste des `Virtual file shares`. 
-    - Mais c'est bien plus rapide !
+
+- Pareil, mais pour profiter du SSD (disque `/` dans mon cas).
+  - Nécessite d'aller dans `Settings / Ressources / File Sharing` (Docker Desktop) et ajouter `/.tabby` dans la liste des `Virtual file shares`.
+  - Mais c'est bien plus rapide !
 
     ```shell
     docker run \
