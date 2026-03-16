@@ -16,6 +16,9 @@ RUN export PATH="$HOME/.cargo/bin:$PATH" && \
 # Retourner à root pour les configurations système
 USER root
 
+# Outils pour construire les paquets .deb (packages/)
+RUN apt-get update && apt-get install -y --no-install-recommends fakeroot && rm -rf /var/lib/apt/lists/*
+
 # Ajouter cargo au PATH pour tous les utilisateurs
 ENV PATH="${PATH}:/home/vscode/.cargo/bin"
 
