@@ -2,14 +2,21 @@
 # Script d'installation post-création du dev container
 # Exécuté automatiquement lors de la création du container
 
-set -e
+set -euo pipefail
 
 echo "🚀 Configuration du dev container..."
 echo ""
 
 # Installation des dépendances Ruby
 echo "📦 Installation des dépendances Ruby (bundle install)..."
-bundle install
+# NOTE: certains gems natifs (ex: prism) peuvent échouer de façon intermittente
+# quand Bundler compile en parallèle dans l'overlay filesystem du devcontainer.
+# On force une installation séquentielle et on installe dans le workspace,
+# sans dépendre d'un répertoire de config potentiellement non inscriptible.
+export BUNDLE_APP_CONFIG="$PWD/.bundle"
+export BUNDLE_PATH="$PWD/vendor/bundle"
+export BUNDLE_JOBS="1"
+bundle install --retry 3
 echo "✅ Dépendances Ruby installées"
 echo ""
 
@@ -23,16 +30,16 @@ else
     echo "❌ bundle non trouvé"
 fi
 
-if command -v jekyll &> /dev/null; then
-    echo "✅ jekyll: $(jekyll --version)"
+if bundle exec jekyll --version &> /dev/null; then
+    echo "✅ jekyll: $(bundle exec jekyll --version)"
 else
-    echo "❌ jekyll non trouvé"
+    echo "❌ jekyll non trouvé (essayez: bundle exec jekyll --version)"
 fi
 
-if command -v htmlproofer &> /dev/null; then
-    echo "✅ htmlproofer: $(htmlproofer --version 2>&1 | head -1)"
+if bundle exec htmlproofer --version &> /dev/null; then
+    echo "✅ htmlproofer: $(bundle exec htmlproofer --version 2>&1 | head -1)"
 else
-    echo "❌ htmlproofer non trouvé"
+    echo "❌ htmlproofer non trouvé (essayez: bundle exec htmlproofer --version)"
 fi
 
 if command -v lychee &> /dev/null; then

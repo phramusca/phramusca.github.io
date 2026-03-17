@@ -5,6 +5,10 @@
       "label": "Jekyll: Serve (développement)",
       "type": "shell",
       "command": "bundle exec jekyll serve --livereload",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "dependsOn": "Bundle: Install",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -26,6 +30,10 @@
       "label": "Jekyll: Build",
       "type": "shell",
       "command": "bundle exec jekyll build",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "dependsOn": "Bundle: Install",
       "group": "build",
       "presentation": {
         "reveal": "always",
@@ -40,6 +48,10 @@
       "label": "Jekyll: Clean",
       "type": "shell",
       "command": "bundle exec jekyll clean",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "dependsOn": "Bundle: Install",
       "group": "build",
       "presentation": {
         "reveal": "always",
@@ -53,7 +65,10 @@
     {
       "label": "Bundle: Install",
       "type": "shell",
-      "command": "bundle install",
+      "command": "bash -lc 'export BUNDLE_APP_CONFIG=\"$PWD/.bundle\"; export BUNDLE_PATH=\"$PWD/vendor/bundle\"; export BUNDLE_JOBS=\"1\"; bundle install --retry 3'",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
       "group": "build",
       "presentation": {
         "reveal": "always",
