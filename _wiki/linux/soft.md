@@ -24,10 +24,25 @@ pour [Linux](../). En voici une petite sélection:
 
 Voici un petit aperçu des programmes disponibles que j'ai eu l'occasion de tester, et que j'apprécie, ainsi que des astuces (installation, problèmes connus,...).
 
-La plupart s'installent en un click avec les liens [apt-url](../system/apturl), les liens [snap://](https://doc.ubuntu-fr.org/utilisateurs/amiralgaby/snap_parametrage_avance) (snaps) et les liens Flathub (Flatpak). Sous [Ubuntu](../dist/Ubuntu), `snap://` est géré par défaut (Snap Store). Sous [Linux Mint](../dist/Mint) https://linuxmint-user-guide.readthedocs.io/en/latest/snap.html ou sans Snap Store : `xdg-mime default snap-handle-link.desktop x-scheme-handler/snap` (le fichier est fourni par **snapd**). Si ça ne change rien dans le navigateur, vérifier avec `xdg-mime query default x-scheme-handler/snap` puis tester en terminal : `xdg-open snap://bruno` ; Firefox peut garder en cache l’ancien handler (redémarrer Firefox après le `xdg-mime`). Pour **Flatpak**, il n’y a pas de protocole `flatpak://` : le bouton « Install » sur [Flathub](https://flathub.org/) ouvre la logithèque si le type `.flatpakref` lui est associé, sinon le fichier se télécharge et on peut lancer `flatpak install ./xxx.flatpakref` ou `flatpak install https://flathub.org/repo/appstream/io.usebruno.Bruno.flatpakref`.
+Pour tester:
 
-[apt://bruno](apt://bruno) — [snap://bruno](snap://bruno) — [Bruno en Flatpak](https://flathub.org/apps/io.usebruno.Bruno) (ou [install direct](https://flathub.org/repo/appstream/io.usebruno.Bruno.flatpakref))  
-Si les pages « Install » Flathub (URL **flatpak+https**) ne font rien : [prendre en charge flatpak+https](../system/flatpak-url-handler).
+[apt://bruno](apt://bruno)
+
+[snap://bruno](snap://bruno)
+
+[Bruno en Flatpak](https://flathub.org/en/apps/com.usebruno.Bruno) (ou [install direct](https://dl.flathub.org/repo/appstream/com.usebruno.Bruno.flatpakref))
+
+- apt
+  - s'installe direct avec les liens [apt-url](../system/apturl), ex apt://nomDuProgramme
+- [snap://](https://doc.ubuntu-fr.org/utilisateurs/amiralgaby/snap_parametrage_avance): Canonical/Ubuntu
+  - [Ubuntu](../dist/Ubuntu): snap est disponible par défaut.
+  - [Linux Mint](../dist/Mint):
+    - <https://linuxmint-user-guide.readthedocs.io/en/latest/snap.html>
+    - sans Snap Store : `xdg-mime default snap-handle-link.desktop x-scheme-handler/snap` (le fichier est fourni par **snapd**). Si ça ne change rien dans le navigateur, vérifier avec `xdg-mime query default x-scheme-handler/snap` puis tester en terminal : `xdg-open snap://bruno` ; Firefox peut garder en cache l’ancien handler (redémarrer Firefox après le `xdg-mime`).
+- flatpak
+  - il n’y a pas de protocole `flatpak://`
+  - le bouton « Install » sur [Flathub](https://flathub.org/) ouvre la logithèque si le type `.flatpakref` lui est associé, sinon le fichier se télécharge et on peut lancer `flatpak install ./xxx.flatpakref` ou `flatpak install https://flathub.org/repo/appstream/io.usebruno.Bruno.flatpakref`.
+  - Si les pages « Install » Flathub (URL **flatpak+https**) ne font rien : [prendre en charge flatpak+https](../system/flatpak-url-handler).
 
 > Comment [Installer un programme sous Linux](../system/Installer_un_programme_sous_Linux) ?
 
