@@ -34,15 +34,28 @@ Pour tester:
 
 - apt
   - s'installe direct avec les liens [apt-url](../system/apturl), ex apt://nomDuProgramme
-- [snap://](https://doc.ubuntu-fr.org/utilisateurs/amiralgaby/snap_parametrage_avance): Canonical/Ubuntu
+- snap: Canonical/Ubuntu propriétaire. Désactivé par défaut dans Mint
   - [Ubuntu](../dist/Ubuntu): snap est disponible par défaut.
   - [Linux Mint](../dist/Mint):
     - <https://linuxmint-user-guide.readthedocs.io/en/latest/snap.html>
-    - sans Snap Store : `xdg-mime default snap-handle-link.desktop x-scheme-handler/snap` (le fichier est fourni par **snapd**). Si ça ne change rien dans le navigateur, vérifier avec `xdg-mime query default x-scheme-handler/snap` puis tester en terminal : `xdg-open snap://bruno` ; Firefox peut garder en cache l’ancien handler (redémarrer Firefox après le `xdg-mime`).
+
+      ```bash
+      # Remove the lock
+      sudo rm /etc/apt/preferences.d/nosnap.pref 
+      # Update apt
+      sudo apt update
+      # Install snapd (snap deamon)                       
+      sudo apt install snapd
+      # Install snap store (qui est un snap) pou pouvoir ouvrir les liens snap://
+      snap install snap-store
+      ```
+
+    - Voir si on peut se passer du snap-store: <https://doc.ubuntu-fr.org/utilisateurs/amiralgaby/snap_parametrage_avance>
 - flatpak
   - il n’y a pas de protocole `flatpak://`
   - le bouton « Install » sur [Flathub](https://flathub.org/) ouvre la logithèque si le type `.flatpakref` lui est associé, sinon le fichier se télécharge et on peut lancer `flatpak install ./xxx.flatpakref` ou `flatpak install https://flathub.org/repo/appstream/io.usebruno.Bruno.flatpakref`.
   - Si les pages « Install » Flathub (URL **flatpak+https**) ne font rien : [prendre en charge flatpak+https](../system/flatpak-url-handler).
+  - Pour Ubuntu, y'a pas par défaut. A tester: https://www.reddit.com/r/Ubuntu/comments/1d68i68/installing_flatpak_on_ubuntu_2404/?tl=fr et https://flathub.org/fr/setup/Ubuntu
 
 > Comment [Installer un programme sous Linux](../system/Installer_un_programme_sous_Linux) ?
 
