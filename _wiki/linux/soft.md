@@ -24,39 +24,23 @@ pour [Linux](../). En voici une petite sélection:
 
 Voici un petit aperçu des programmes disponibles que j'ai eu l'occasion de tester, et que j'apprécie, ainsi que des astuces (installation, problèmes connus,...).
 
-Pour tester:
+Il existe plusieurs façons d'installer des programmes sous linux.
 
-[apt://bruno](apt://bruno)
+|                                                       | Description                                                                                                                 | Installation facile par URL                                                                    | Ligne de commande                                 | [Ubuntu](../dist/Ubuntu)                         | [Linux Mint](../dist/Mint)                                                                                                                                                                                   |
+| ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [APT](https://help.ubuntu.com/community/AptGet/Howto) | Paquets “classiques” de la distro (intégration système, libs/CLI/services).                                                 | [apt-url](../system/apturl), ex [apt://gimp](apt://gimp)                                       | `sudo apt install <pkg>`                          | ✅ Par défaut.                                   | ✅ Par défaut.                                                                                                                                                                                               |
+| [AppImage](https://appimage.org/)                     | Un seul fichier exécutable, pas d’installation, pratique pour tester/épingler une version. Pas de sandbox par défaut.       | N/A. Pas d'installation.                                                                       | `chmod +x fichier.AppImage && ./fichier.AppImage` | ✅ Possible (téléchargement + `chmod +x`).       | ✅ Possible (téléchargement + `chmod +x`).                                                                                                                                                                   |
+| [Flatpak](https://flatpak.org/)                       | Apps (surtout GUI) via Flathub, sandbox (portals/bubblewrap), bon cross-distro. Pas de `flatpak://` (plutôt `.flatpakref`). | [flathub.org](https://flathub.org), ex [Bruno](https://flathub.org/en/apps/com.usebruno.Bruno) | `flatpak install flathub <appID>`                 | ⚠️ Pas par défaut (à installer/configurer).    | ✅ Possible (souvent via la logithèque/Flathub).                                                                                                                                                             |
+| [Snap](https://snapcraft.io/)                         | ⚠️ Format Ubuntu/Canonical avec Snap Store **propriétaire**. **Non recommandé !**                                         | [snap://bruno](snap://bruno)                                                                   | `sudo snap install <pkg>`                         | ✅ Par défaut (snapd et snap-store préinstallé). | ❌ [Désactivé par défaut](https://linuxmint-user-guide.readthedocs.io/en/latest/snap.html) (snapd verrouillé; nécessite déverrouillage + installation + ``snap install snap-store`` pour liens ``snap://``). |
 
-[snap://bruno](snap://bruno)
-
-[Bruno en Flatpak](https://flathub.org/en/apps/com.usebruno.Bruno) (ou [install direct](https://dl.flathub.org/repo/appstream/com.usebruno.Bruno.flatpakref))
-
-- apt
-  - s'installe direct avec les liens [apt-url](../system/apturl), ex apt://nomDuProgramme
-- snap: Canonical/Ubuntu propriétaire. Désactivé par défaut dans Mint
-  - [Ubuntu](../dist/Ubuntu): snap est disponible par défaut.
-  - [Linux Mint](../dist/Mint):
-    - <https://linuxmint-user-guide.readthedocs.io/en/latest/snap.html>
-
-      ```bash
-      # Remove the lock
-      sudo rm /etc/apt/preferences.d/nosnap.pref 
-      # Update apt
-      sudo apt update
-      # Install snapd (snap deamon)                       
-      sudo apt install snapd
-      # Install snap store (qui est un snap) pou pouvoir ouvrir les liens snap://
-      snap install snap-store
-      ```
-
-    - Voir si on peut se passer du snap-store: <https://doc.ubuntu-fr.org/utilisateurs/amiralgaby/snap_parametrage_avance>
+TODO: Faire un repo pour ce .deb pour gerer **flatpak+https**
 - flatpak
   - il n’y a pas de protocole `flatpak://`
   - le bouton « Install » sur [Flathub](https://flathub.org/) ouvre la logithèque si le type `.flatpakref` lui est associé, sinon le fichier se télécharge et on peut lancer `flatpak install ./xxx.flatpakref` ou `flatpak install https://flathub.org/repo/appstream/io.usebruno.Bruno.flatpakref`.
   - Si les pages « Install » Flathub (URL **flatpak+https**) ne font rien : [prendre en charge flatpak+https](../system/flatpak-url-handler).
   - Pour Ubuntu, y'a pas par défaut. A tester: https://www.reddit.com/r/Ubuntu/comments/1d68i68/installing_flatpak_on_ubuntu_2404/?tl=fr et https://flathub.org/fr/setup/Ubuntu
 
+TODO: Supprimer la page ci-dessous
 > Comment [Installer un programme sous Linux](../system/Installer_un_programme_sous_Linux) ?
 
 ### Applications
