@@ -39,16 +39,9 @@ Il existe plusieurs façons d'installer des programmes sous linux.
 
 [https://flathub.org/apps/dev.tchx84.Gameeky/flatpakhttps](https://flathub.org/apps/dev.tchx84.Gameeky/flatpakhttps)
 
-TODO: Faire un repo pour ce .deb pour gerer **flatpak+https**
-- flatpak
-  - il n’y a pas de protocole `flatpak://`
-  - le bouton « Install » sur [Flathub](https://flathub.org/) ouvre la logithèque si le type `.flatpakref` lui est associé, sinon le fichier se télécharge et on peut lancer `flatpak install ./xxx.flatpakref` ou `flatpak install https://flathub.org/repo/appstream/io.usebruno.Bruno.flatpakref`.
-  - Si les pages « Install » Flathub (URL **flatpak+https**) ne font rien : [prendre en charge flatpak+https](../system/flatpak-url-handler).
-  - Pour Ubuntu, y'a pas par défaut. A tester: https://www.reddit.com/r/Ubuntu/comments/1d68i68/installing_flatpak_on_ubuntu_2404/?tl=fr et https://flathub.org/fr/setup/Ubuntu
-
 > Flatpak pour Ubuntu: https://flathub.org/fr/setup/Ubuntu car si y'a bien un handler sous Ubuntu pour flatpak+https, ça ouvre une popup disant "Aucune application disponible" car les fichiers .flatpakref ne sont associés à aucun type d'application.
 
-TODO: Supprimer la page ci-dessous
+TODO: Mettre à jour la page ci-dessous avec le tableau ci-dessus.
 > Comment [Installer un programme sous Linux](../system/Installer_un_programme_sous_Linux) ?
 
 ### Applications
