@@ -81,7 +81,7 @@ class LinkClassifier:
     """Classe les liens en internes ou externes."""
     
     # Protocoles à ignorer (ne sont pas vérifiables)
-    IGNORED_PROTOCOLS = {'mailto', 'tel', 'apt', 'file'}
+    IGNORED_PROTOCOLS = {'mailto', 'tel', 'apt', 'snap', 'flatpak+https', 'file'}
     
     # Liens à ignorer complètement
     IGNORED_PATTERNS = [

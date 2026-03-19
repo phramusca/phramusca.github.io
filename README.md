@@ -404,7 +404,7 @@ Tous les outils ignorent automatiquement :
 - Les ancres (`#...`)
 - Les liens `mailto:`
 - Les liens `tel:`
-- Les liens `apt://` (protocoles système non-HTTP)
+- Les liens `apt://`, `snap://`, `flatpak+https://` (protocoles système non-HTTP)
 - Les projets externes (comme `JaMuz`)
 - Les templates Liquid (`{url}`, `{title}`, etc.)
 

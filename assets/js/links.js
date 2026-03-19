@@ -11,12 +11,15 @@
     if (!href) return false;
     
     // Liens internes : /, ./, ../, #, ou pas de protocole
-    if (href.startsWith('/') || 
-        href.startsWith('./') || 
-        href.startsWith('../') || 
+    // Protocoles « système » (comme apt://) : pas de nouvel onglet ni style lien externe
+    if (href.startsWith('/') ||
+        href.startsWith('./') ||
+        href.startsWith('../') ||
         href.startsWith('#') ||
         href.startsWith('wiki/') ||
         href.startsWith('apt://') ||
+        href.startsWith('snap://') ||
+        href.startsWith('flatpak+https://') ||
         !href.match(/^[a-zA-Z][a-zA-Z\d+\-.]*:/)) {
       return false;
     }
