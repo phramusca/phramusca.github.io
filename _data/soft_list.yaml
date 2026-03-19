@@ -16,7 +16,8 @@ categories:
         url_repository: https://sourceforge.net/projects/krename/
         description: Renommer des fichiers si "Renommeur de fichiers" ne suffit pas.
       - nom: FlatSeal
-        apt: https://flathub.org/apps/com.github.tchx84.Flatseal 
+        apt: null
+        flathub: com.github.tchx84.Flatseal
         url_internal: null
         url_doc_ubuntu_fr: https://fr.ubunlog.com/flatseal-gui-autorisations-de-triche-applications-flatpak/
         url_website: https://github.com/tchx84/Flatseal

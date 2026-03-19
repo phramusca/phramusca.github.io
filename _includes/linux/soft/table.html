@@ -28,6 +28,19 @@
   {% endif %}
   {% endcapture %}
 
+  {% capture url_snap %}
+    {% if logiciel.snap %}
+      <a href="snap://{{ logiciel.snap }}">snap://{{ logiciel.snap }}</a>
+    {% endif %}
+  {% endcapture %}
+
+  {% capture url_flathub %}
+    {% if logiciel.flathub %}
+      {% assign flatpakref_href = 'flatpak+https://dl.flathub.org/repo/appstream/' | append: logiciel.flathub | append: '.flatpakref' %}
+      <a href="{{ flatpakref_href }}">flathub://{{ logiciel.flathub }}</a>
+    {% endif %}
+  {% endcapture %}
+
   {% capture url_doc_ubuntu_fr %}
   {% if logiciel.url_doc_ubuntu_fr %}<a href="{{ logiciel.url_doc_ubuntu_fr }}">{{ logiciel.nom }}</a>{% endif %}
   {% endcapture %}
@@ -59,7 +72,21 @@
     </td>
     <td style="vertical-align: top;">{{ url_internal }}</td>
     <td>{{ logiciel.description }}</td>
-    <td>{{ url_apt }}</td>
+    <td>
+      {% if logiciel.apt %}
+        {{ url_apt }}
+      {% endif %}
+
+      {% if logiciel.apt and logiciel.snap %}<br/>{% endif %}
+      {% if logiciel.snap %}
+        {{ url_snap }}
+      {% endif %}
+
+      {% if (logiciel.apt or logiciel.snap) and logiciel.flathub %}<br/>{% endif %}
+      {% if logiciel.flathub %}
+        {{ url_flathub }}
+      {% endif %}
+    </td>
   </tr>
 
   <!-- Ligne supplémentaire cachée -->
