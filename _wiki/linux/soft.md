@@ -33,7 +33,7 @@ Il existe plusieurs façons d'installer des programmes sous linux.
 | [Flatpak](https://flatpak.org/) ([ubuntu-fr](https://doc.ubuntu-fr.org/flatpak))          | [Flathub](https://flathub.org) ou autres.               | Apps (surtout GUI) via Flathub, sandbox (portals/bubblewrap), bon cross-distro. Pas de `flatpak://` (plutôt `.flatpakref`). | [flathub.org](https://flathub.org), ex [Bruno](https://flathub.org/en/apps/com.usebruno.Bruno) | `flatpak install flathub <appID>`                 | ⚠️ Pas par défaut (à installer/configurer).    | ✅ Possible (souvent via la logithèque/Flathub).                                                                                                                                                             |
 | [Snap](https://snapcraft.io/) ([ubuntu-fr](https://doc.ubuntu-fr.org/flatpak))            | [Snap Store](https://snapcraft.io/store) exclusivement. | ⚠️ Format Ubuntu/Canonical avec Snap Store **propriétaire**. **Non recommandé !**                                         | [snap://bruno](snap://bruno)                                                                   | `sudo snap install <pkg>`                         | ✅ Par défaut (snapd et snap-store préinstallé). | ❌ [Désactivé par défaut](https://linuxmint-user-guide.readthedocs.io/en/latest/snap.html) (snapd verrouillé; nécessite déverrouillage + installation + ``snap install snap-store`` pour liens ``snap://``). |
 
-[flatpak+https://dev.tchx84.Gameeky](flatpak+https://dev.tchx84.Gameeky)
+[flatpak+https://dl.flathub.org/repo/appstream/dev.tchx84.Gameeky.flatpakref](flatpak+https://dl.flathub.org/repo/appstream/dev.tchx84.Gameeky.flatpakref)
 
 [https://flathub.org/fr/apps/dev.tchx84.Gameeky/install](https://flathub.org/fr/apps/dev.tchx84.Gameeky/install)
 
