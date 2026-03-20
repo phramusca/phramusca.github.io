@@ -5,11 +5,16 @@ exclude_search_sections: true
 ---
 
 # {{ page.title }}
+
 {:.no_toc}
 
 Il existe des centaines (voire des milliers) d'applications disponible sous [Linux](../). Il n'est pas facile de s'y retrouver, mais voici déjà un point de départ.
 
+- [Installer une application sur Linux Mint](https://www.numetopia.fr/comment-installer-des-applications-sur-linux-mint/).
+- [Installer une application sur Ubuntu](https://doc.ubuntu-fr.org/installer_une_application).
+
 ## Sur le Web
+
 {:.no_toc}
 
 Il existe énormément de sites qui listent ou proposent des logiciels
@@ -20,16 +25,24 @@ pour [Linux](../). En voici une petite sélection:
 - [Framasoft](http://www.framasoft.net/) - Association française qui promeut des alternatives libres et éthiques aux services en ligne, notamment en développant et en soutenant des logiciels libres et des outils collaboratifs pour préserver la vie privée et favoriser l'autonomie numérique.
 
 ## Ma Sélection
+
 {:.no_toc}
 
 Voici un petit aperçu des programmes disponibles que j'ai eu l'occasion de tester, et que j'apprécie, ainsi que des astuces (installation, problèmes connus,...).
 
-> Comment [Installer un programme sous Linux](../system/Installer_un_programme_sous_Linux) ?
+|                                                                                           | Store                                                   | Description                                                                                                                  | Installation facile par URL                                                                    | Ligne de commande                                                     | [Ubuntu](../dist/Ubuntu)                                                             | [Linux Mint](../dist/Mint)                                                                                                                                                                                   |
+| ----------------------------------------------------------------------------------------- | ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [APT](https://salsa.debian.org/apt-team/apt) ([ubuntu-fr](https://doc.ubuntu-fr.org/apt)) | Selon OS.                                               | Paquets “classiques” pour les [distributions Linux basées sur Debian](../#distributions-basées-sur-debian-linux-mint-ubuntu) | [apt-url](../system/apturl), ex [apt://gimp](apt://gimp)                                       | `sudo apt install <pkg>`                                              | ✅ Par défaut.                                                                       | ✅ Par défaut.                                                                                                                                                                                               |
+| [AppImage](https://appimage.org/) ([ubuntu-fr](https://doc.ubuntu-fr.org/appimage))       | N/A                                                     | Un seul fichier exécutable, pratique pour tester une version.        | N/A. Pas d'installation.                                                                       | `chmod +x fichier.AppImage && ./fichier.AppImage`                     | ✅ Possible (téléchargement + `chmod +x`).                                           | ✅ Possible (téléchargement + `chmod +x`).                                                                                                                                                                   |
+| [Flatpak](https://flatpak.org/) ([ubuntu-fr](https://doc.ubuntu-fr.org/flatpak))          | [Flathub](https://flathub.org) ou autres.               | Apps (surtout GUI) via Flathub, sandbox (portals/bubblewrap), bon cross-distro. Pas de `flatpak://` (plutôt `.flatpakref`).  | [flathub.org](https://flathub.org), ex [Bruno](https://flathub.org/en/apps/com.usebruno.Bruno) | `flatpak install flathub <appID>`                                     | ⚠️ Pas par défaut (à [installer/configurer](https://flathub.org/fr/setup/Ubuntu)). | ✅ Possible (via la logithèque/Flathub).                                                                                                                                                             |
+| [Snap](https://snapcraft.io/) ([ubuntu-fr](https://doc.ubuntu-fr.org/flatpak))            | [Snap Store](https://snapcraft.io/store) exclusivement. | ⚠️ Format Ubuntu/Canonical avec Snap Store **propriétaire**. **Non recommandé !**                                          | [snap://bruno](snap://bruno)                                                                   | `sudo snap install <pkg>`                                             | ✅ Par défaut (snapd et snap-store préinstallé).                                     | ❌ [Désactivé par défaut](https://linuxmint-user-guide.readthedocs.io/en/latest/snap.html) (snapd verrouillé; nécessite déverrouillage + installation + ``snap install snap-store`` pour liens ``snap://``). |
+| Compiler les sources                                                                      | N/A                                                     | Rarement utilisé. [Tutoriel compilation](http://doc.ubuntu-fr.org/tutoriel/compilation)                                      | N/A                                                                                            | [Tutoriel compilation](http://doc.ubuntu-fr.org/tutoriel/compilation) | ✅ Possible                                                                          | ✅ Possible                                                                                                                                                                                                  |
 
 ### Applications
+
 {:.no_toc}
 
-* TOC
+- TOC
 {:toc}
 
 <script>
