@@ -321,6 +321,15 @@ categories:
         url_website: https://www.dbvis.com/
         url_repository: null
         description: Créer des diagrammes de bases de données. Installation par script sh, à récupérer sur le site. S'installe dans ~/DbVisualizer et ne créé qu'un raccourci Desktop. Pour désinstaller, supprimer le dossier ~/DbVisualizer.
+      - nom: Bruno
+        apt: null
+        flathub: com.usebruno.Bruno
+        snap: bruno
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/bruno
+        url_website: https://www.usebruno.com/
+        url_repository: https://github.com/usebruno/bruno
+        description: IDE pour les développeurs.
   - nom: Son et Vidéo
     categories:
       - nom: Audio
