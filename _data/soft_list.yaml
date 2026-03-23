@@ -324,7 +324,6 @@ categories:
       - nom: Bruno
         apt: null
         flathub: com.usebruno.Bruno
-        snap: bruno
         url_internal: null
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/bruno
         url_website: https://www.usebruno.com/
