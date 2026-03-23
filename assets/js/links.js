@@ -18,6 +18,7 @@
         href.startsWith('#') ||
         href.startsWith('wiki/') ||
         href.startsWith('apt://') ||
+        href.startsWith('aptrepo://') ||
         href.startsWith('snap://') ||
         href.startsWith('flatpak+https://') ||
         !href.match(/^[a-zA-Z][a-zA-Z\d+\-.]*:/)) {

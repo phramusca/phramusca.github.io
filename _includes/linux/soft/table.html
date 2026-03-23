@@ -34,6 +34,12 @@
     {% endif %}
   {% endcapture %}
 
+  {% capture url_aptrepo %}
+    {% if logiciel.aptrepo %}
+      <a href="aptrepo://{{ logiciel.aptrepo }}">aptrepo://{{ logiciel.aptrepo }}</a>
+    {% endif %}
+  {% endcapture %}
+
   {% capture url_flathub %}
     {% if logiciel.flathub %}
       {% assign flatpakref_href = 'flatpak+https://dl.flathub.org/repo/appstream/' | append: logiciel.flathub | append: '.flatpakref' %}
@@ -77,12 +83,17 @@
         {{ url_apt }}
       {% endif %}
 
-      {% if logiciel.apt and logiciel.snap %}<br/>{% endif %}
+      {% if logiciel.apt and logiciel.aptrepo %}<br/>{% endif %}
+      {% if logiciel.aptrepo %}
+        {{ url_aptrepo }}
+      {% endif %}
+
+      {% if (logiciel.apt or logiciel.aptrepo) and logiciel.snap %}<br/>{% endif %}
       {% if logiciel.snap %}
         {{ url_snap }}
       {% endif %}
 
-      {% if (logiciel.apt or logiciel.snap) and logiciel.flathub %}<br/>{% endif %}
+      {% if (logiciel.apt or logiciel.aptrepo or logiciel.snap) and logiciel.flathub %}<br/>{% endif %}
       {% if logiciel.flathub %}
         {{ url_flathub }}
       {% endif %}
