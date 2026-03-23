@@ -34,9 +34,9 @@
     {% endif %}
   {% endcapture %}
 
-  {% capture url_aptrepo %}
-    {% if logiciel.aptrepo %}
-      <a href="aptrepo://{{ logiciel.aptrepo }}">aptrepo://{{ logiciel.aptrepo }}</a>
+  {% capture url_apt_thirdparty %}
+    {% if logiciel.apt_thirdparty %}
+      <a href="apt-thirdparty://{{ logiciel.apt_thirdparty }}">apt-thirdparty://{{ logiciel.apt_thirdparty }}</a>
     {% endif %}
   {% endcapture %}
 
@@ -83,17 +83,17 @@
         {{ url_apt }}
       {% endif %}
 
-      {% if logiciel.apt and logiciel.aptrepo %}<br/>{% endif %}
-      {% if logiciel.aptrepo %}
-        {{ url_aptrepo }}
+      {% if logiciel.apt and logiciel.apt_thirdparty %}<br/>{% endif %}
+      {% if logiciel.apt_thirdparty %}
+        {{ url_apt_thirdparty }}
       {% endif %}
 
-      {% if (logiciel.apt or logiciel.aptrepo) and logiciel.snap %}<br/>{% endif %}
+      {% if (logiciel.apt or logiciel.apt_thirdparty) and logiciel.snap %}<br/>{% endif %}
       {% if logiciel.snap %}
         {{ url_snap }}
       {% endif %}
 
-      {% if (logiciel.apt or logiciel.aptrepo or logiciel.snap) and logiciel.flathub %}<br/>{% endif %}
+      {% if (logiciel.apt or logiciel.apt_thirdparty or logiciel.snap) and logiciel.flathub %}<br/>{% endif %}
       {% if logiciel.flathub %}
         {{ url_flathub }}
       {% endif %}

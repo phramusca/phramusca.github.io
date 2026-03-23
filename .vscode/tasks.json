@@ -174,6 +174,31 @@
       },
       "problemMatcher": [],
       "detail": "Vérifie les liens avec toutes les méthodes (scripts maison + htmlproofer + lychee)"
+    },
+    {
+      "label": "🔐 Signer la whitelist apt-thirdparty",
+      "type": "shell",
+      "command": "${workspaceFolder}/.vscode/tasks/sign_apt_thirdparty_whitelist.sh",
+      "args": [
+        "${input:aptThirdpartySigningKey}"
+      ],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Génère et signe apt-thirdparty/apps.tar et apt-thirdparty/apps.tar.asc depuis .apt-thirdparty/apps.d"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "aptThirdpartySigningKey",
+      "type": "promptString",
+      "description": "Identifiant de clé GPG (email ou key-id) pour signer la whitelist",
+      "default": "you@example.com"
     }
   ]
 }
