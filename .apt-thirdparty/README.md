@@ -14,7 +14,7 @@ Source de la whitelist signée utilisée par `apt-thirdparty-handler`.
 1. Modifier/ajouter des fichiers `.conf` dans `apps.d/`
 2. Lancer la tâche VS Code: `🔐 Signer la whitelist apt-thirdparty`
    (utilise `tools/build-whitelist-bundle.sh`)
-3. (si besoin) exporter la clé publique:
+3. Exporter la clé publique (à faire au premier setup, puis uniquement en cas de rotation/changement de clé) :
   `gpg --armor --export "<votre clé>" > apt-thirdparty/whitelist-signing.pub`
 4. Commit/push du repo
 
