@@ -52,6 +52,12 @@ Site personnel hébergé sur GitHub Pages, construit avec Jekyll. Ce site contie
 - `🔍 Vérifier les liens (lychee)` - Vérifie avec lychee (analyse _site)
 - `🔍 Vérifier les liens (toutes les méthodes)` - Toutes les méthodes
 
+## 🔐 Clés de signature apt-thirdparty
+
+La procédure d'export/import/backup des clés GPG (notamment en cas de changement de machine) est documentée dans :
+
+- `.apt-thirdparty/README.md` (section **Export / import / backup des clés**)
+
 ## 📁 Structure du projet
 
 ```bash
