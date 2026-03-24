@@ -27,7 +27,10 @@ SIG="$OUT_DIR/apps.tar.asc"
 
 tar -cf "$ARCHIVE" -C "$TMP_DIR" apps.d
 gpg --armor --detach-sign --local-user "$SIGNING_KEY" --output "$SIG" "$ARCHIVE"
+gpg --verify "$SIG" "$ARCHIVE" >/dev/null
 
 echo "Created:"
 echo "  $ARCHIVE"
 echo "  $SIG"
+echo "Verified:"
+echo "  Signature valid for $ARCHIVE"

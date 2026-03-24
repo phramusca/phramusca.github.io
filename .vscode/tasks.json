@@ -192,7 +192,7 @@
         "clear": true
       },
       "problemMatcher": [],
-      "detail": "Génère et signe apt-thirdparty/apps.tar et apt-thirdparty/apps.tar.asc via tools/build-whitelist-bundle.sh"
+      "detail": "Génère, signe et vérifie apt-thirdparty/apps.tar et apt-thirdparty/apps.tar.asc via tools/build-whitelist-bundle.sh"
     }
   ],
   "inputs": [

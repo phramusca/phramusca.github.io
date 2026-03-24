@@ -45,6 +45,7 @@ Site personnel hébergé sur GitHub Pages, construit avec Jekyll. Ce site contie
 - `Jekyll: Build` - Construit le site sans le servir
 - `Jekyll: Clean` - Nettoie le dossier `_site/`
 - `Bundle: Install` - Installe les dépendances Ruby
+- `🔐 Signer la whitelist apt-thirdparty` - Génère `apt-thirdparty/apps.tar` et sa signature GPG
 - `🔍 Vérifier les liens internes (script maison)` - Vérifie les liens internes directement dans les fichiers Markdown
 - `🔍 Vérifier les liens externes (script maison)` - Vérifie les liens externes avec cache
 - `🔍 Vérifier les liens (scripts maison)` - Vérifie les liens internes et externes
@@ -107,7 +108,7 @@ Pour ajouter un nouveau logiciel à la liste :
      description: Description du logiciel
    ```
 
-1. **Créer la page dans `_wiki/linux/soft/nom_du_logiciel.md`** (nom en snake_case) :
+2. **(Optionnel) Créer la page dans `_wiki/linux/soft/nom_du_logiciel.md`** (nom en snake_case) :
 
    ```markdown
    ---
@@ -124,6 +125,32 @@ Pour ajouter un nouveau logiciel à la liste :
    - Le `url_internal` dans le YAML doit correspondre exactement au nom du fichier (sans `.md`)
    - Le layout `software` inclut automatiquement les informations (Ubuntu-fr, Site, Repo) depuis `soft_list.yaml`
    - Les fichiers doivent être en **snake_case** (ex: `easy_tag.md`, `google_earth.md`)
+
+3. **Si le logiciel est installable via `apt-thirdparty://`**, faire aussi la partie whitelist :
+
+   - Ajouter `apt_thirdparty: <app_id>` dans l'entrée du logiciel dans `_data/soft_list.yaml`
+   - Créer/mettre à jour `.apt-thirdparty/apps.d/<app_id>.conf` avec `APP_ID="<app_id>"`
+   - Vérifier que l'identifiant est cohérent partout (`apt_thirdparty`, nom de fichier `.conf`, `APP_ID`)
+
+   Puis générer l'archive signée :
+
+   - via la tâche VS Code `🔐 Signer la whitelist apt-thirdparty`
+   - ou en CLI :
+     ```bash
+     ./tools/build-whitelist-bundle.sh ./.apt-thirdparty/apps.d "<email-ou-key-id-gpg>" ./apt-thirdparty
+     ```
+
+   La vérification de signature est faite automatiquement par la tâche/script.
+
+   (Premier setup ou rotation) publier la clé publique :
+
+   ```bash
+   gpg --armor --export "<email-ou-key-id-gpg>" > ./apt-thirdparty/whitelist-signing.pub
+   ```
+
+4. Commit/push des fichiers modifiés
+
+Pour les recommandations GPG et la procédure de sauvegarde/restauration des clés, voir `.apt-thirdparty/README.md`.
 
 ## 📰 Ajouter un article (post)
 

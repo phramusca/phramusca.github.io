@@ -1,4 +1,4 @@
-# apt-thirdparty whitelist
+# apt-thirdparty whitelist signée
 
 Source de la whitelist signée utilisée par `apt-thirdparty-handler`.
 
@@ -13,10 +13,12 @@ Source de la whitelist signée utilisée par `apt-thirdparty-handler`.
 
 1. Modifier/ajouter des fichiers `.conf` dans `apps.d/`
 2. Lancer la tâche VS Code: `🔐 Signer la whitelist apt-thirdparty`
-   (utilise `tools/build-whitelist-bundle.sh`)
-3. Exporter la clé publique (à faire au premier setup, puis uniquement en cas de rotation/changement de clé) :
+   (utilise `tools/build-whitelist-bundle.sh`, qui vérifie aussi automatiquement la signature)
+3. (Optionnel) Vérification manuelle :
+   `gpg --verify apt-thirdparty/apps.tar.asc apt-thirdparty/apps.tar`
+4. Exporter la clé publique (à faire au premier setup, puis uniquement en cas de rotation/changement de clé) :
   `gpg --armor --export "<votre clé>" > apt-thirdparty/whitelist-signing.pub`
-4. Commit/push du repo
+5. Commit/push du repo
 
 ## Recommandations clé GPG
 
@@ -81,7 +83,6 @@ gpg --list-secret-keys --keyid-format LONG
 Dans le repo :
 
 ```bash
-./tools/build-whitelist-bundle.sh
 gpg --verify apt-thirdparty/apps.tar.asc apt-thirdparty/apps.tar
 ```
 
