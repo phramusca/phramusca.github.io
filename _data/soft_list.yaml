@@ -43,7 +43,7 @@ categories:
         apt: solaar
         url_internal: null
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/solaar
-        url_website: hhttps://pwr-solaar.github.io/solaar/
+        url_website: https://pwr-solaar.github.io/Solaar/
         url_repository: https://github.com/pwr-solaar/solaar
         description: Protocole Logitech™ Unifying Receiver.
       - nom: Spectacle
