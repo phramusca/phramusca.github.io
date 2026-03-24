@@ -21,7 +21,7 @@ categories:
         flathub: com.github.tchx84.Flatseal
         url_internal: null
         url_doc_ubuntu_fr: https://fr.ubunlog.com/flatseal-gui-autorisations-de-triche-applications-flatpak/
-        url_website: https://github.com/tchx84/Flatseal
+        url_website: null
         url_repository: https://github.com/tchx84/Flatseal
         description: Gestionnaire de Flatpak (permissions).
       - nom: Raspberry Pi Imager
@@ -31,14 +31,14 @@ categories:
         url_website: https://www.raspberrypi.com/software/
         url_repository: https://github.com/raspberrypi/rpi-imager
         description: Créer une image pour Raspberry Pi.
-      - nom: KeePass2
+      - nom: KeePassXC
         archive: yes
-        apt: keepass2
+        apt: keepassxc
         url_internal: null
-        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/keepass#keepass2
-        url_website: null
-        url_repository: https://github.com/kee-org/KeeFox/wiki/en-%7C-Installation-%7C-Linux
-        description: Créer et modifier des mots de passe.
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/keepassxc
+        url_website: https://keepassxc.org/
+        url_repository: https://github.com/keepassxreboot/keepassxc
+        description: Créer et modifier des mots de passe (fork moderne de KeePass).
       - nom: Solaar
         apt: solaar
         url_internal: null
