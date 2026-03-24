@@ -9,6 +9,7 @@ title: Système de gestion de paquets
   - Paquets “classiques” pour les [distributions Linux basées sur Debian](../../#distributions-basées-sur-debian-linux-mint-ubuntu)
   - Installation facile par [apt-url](http://doc.ubuntu-fr.org/apturl), ex [apt://gimp](apt://gimp)
   - Ligne de commande: `sudo apt install <pkg>`
+  - Pour liens `apt-thirdparty://...` (repo tiers validé par whitelist signée), installer le handler : [apt-thirdparty-handler (latest release)](https://github.com/phramusca/apt-thirdparty-handler/releases/latest)
 - [Flatpak](https://flatpak.org/) ([ubuntu-fr](https://doc.ubuntu-fr.org/flatpak))
   - Apps (surtout GUI) via [flathub.org](https://flathub.org) principalement.
   - Disponible nativement dans le store de Linux Mint.

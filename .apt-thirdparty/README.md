@@ -47,7 +47,9 @@ gpg --armor --export <KEY_ID> > ~/.gnupg-backup/whitelist-signing.pub.asc
 # Export confiance locale (ownertrust)
 gpg --export-ownertrust > ~/.gnupg-backup/ownertrust.txt
 
-# (Recommandé) certificat de révocation
+# (Optionnel mais recommandé) certificat de révocation
+# Générer ce fichier NE révoque PAS la clé immédiatement.
+# Il sert de "bouton d'urgence" à publier/importer plus tard en cas de compromission.
 gpg --output ~/.gnupg-backup/whitelist-signing.revocation.asc --gen-revoke <KEY_ID>
 ```
 
@@ -84,4 +86,23 @@ gpg --verify apt-thirdparty/apps.tar.asc apt-thirdparty/apps.tar
 ```
 
 Si la vérification passe, la migration de la clé est opérationnelle.
+
+### 5) (Optionnel) Révoquer réellement la clé plus tard
+
+Utilisez cette procédure seulement en cas d'incident (clé privée compromise/perdue).
+
+```bash
+# 1) Importer le certificat de révocation (cela marque la clé comme révoquée localement)
+gpg --import ~/.gnupg-backup/whitelist-signing.revocation.asc
+
+# 2) Vérifier l'état (doit indiquer que la clé est révoquée)
+gpg --list-keys --keyid-format LONG <KEY_ID>
+```
+
+Ensuite, côté publication :
+
+1. Générer une nouvelle clé de signature.
+2. Publier la nouvelle clé publique dans `apt-thirdparty/whitelist-signing.pub`.
+3. Resigner `apt-thirdparty/apps.tar` avec la nouvelle clé.
+4. Demander aux clients de rafraîchir/réinstaller le keyring de confiance.
 

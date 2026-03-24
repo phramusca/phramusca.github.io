@@ -32,6 +32,10 @@ Voici un petit aperçu des programmes disponibles que j'ai eu l'occasion de test
 
 Les programmes sont distribués sous [différents formats](../system/soft-packages/), chacun avec ses avantages et ses limites.
 
+Handlers utiles :
+- [apt-thirdparty-handler](https://github.com/phramusca/apt-thirdparty-handler/releases/latest) pour les liens `apt-thirdparty://...`
+- [flatpak-https-handler](https://github.com/phramusca/flatpak-https-handler) pour les liens `flatpak+https://...` (si besoin selon la distribution)
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const toggleButtons = document.querySelectorAll(".toggle-button");
