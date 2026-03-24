@@ -14,7 +14,7 @@ title: Système de gestion de paquets
   - Apps (surtout GUI) via [flathub.org](https://flathub.org) principalement.
   - Disponible nativement dans le store de Linux Mint.
   - Indisponible dans le store de Ubuntu, à [installer/configurer](https://flathub.org/fr/setup/Ubuntu).
-  - Installation facile par URL, ex [flathub://com.usebruno.Bruno](flatpak+https://dl.flathub.org/repo/appstream/com.usebruno.Bruno). Necessite un [handler](https://github.com/phramusca/flatpak-https-handler) pour Linux Mint.
+  - Installation facile par URL, ex [flathub://com.usebruno.Bruno](flatpak+https://dl.flathub.org/repo/appstream/com.usebruno.Bruno). Necessite un [handler](https://github.com/phramusca/flatpak-https-handler/releases/latest) pour Linux Mint.
   - Ligne de commande: `flatpak install flathub <appID>`
 - [AppImage](https://appimage.org/) ([ubuntu-fr](https://doc.ubuntu-fr.org/appimage))
   - Un seul fichier exécutable, pratique pour tester une version.

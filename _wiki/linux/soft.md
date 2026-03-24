@@ -34,7 +34,7 @@ Les programmes sont distribués sous [différents formats](../system/soft-packag
 
 Handlers utiles :
 - [apt-thirdparty-handler](https://github.com/phramusca/apt-thirdparty-handler/releases/latest) pour les liens `apt-thirdparty://...`
-- [flatpak-https-handler](https://github.com/phramusca/flatpak-https-handler) pour les liens `flatpak+https://...` (si besoin selon la distribution)
+- [flatpak-https-handler](https://github.com/phramusca/flatpak-https-handler/releases/latest) pour les liens `flatpak+https://...` (si besoin selon la distribution)
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
