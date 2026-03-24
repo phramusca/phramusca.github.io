@@ -338,6 +338,14 @@ categories:
         url_website: https://cursor.com/
         url_repository: null
         description: Éditeur de code avec agent IA.
+      - nom: Visual Studio Code
+        apt: null
+        apt_thirdparty: vscode
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/visual_studio_code
+        url_website: https://code.visualstudio.com/
+        url_repository: https://github.com/microsoft/vscode
+        description: Éditeur de code.
   - nom: Son et Vidéo
     categories:
       - nom: Audio
