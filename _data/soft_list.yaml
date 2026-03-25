@@ -327,7 +327,7 @@ categories:
       - nom: Cursor
         apt: null
         apt_thirdparty: cursor
-        url_internal: cursor
+        url_internal: null
         url_doc_ubuntu_fr: null
         url_website: https://cursor.com/
         url_repository: null
