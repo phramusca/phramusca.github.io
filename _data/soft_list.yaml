@@ -52,15 +52,8 @@ categories:
         url_internal: null
         url_doc_ubuntu_fr: null
         url_website: https://apps.kde.org/fr/spectacle/
-        url_repository: null
+        url_repository: https://invent.kde.org/plasma/spectacle
         description: Créer des screenshots. Pour KDE
-      - nom: Tilix
-        apt: tilix
-        url_internal: null
-        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/tilix
-        url_website: https://gnunn1.github.io/tilix-web/
-        url_repository: https://github.com/gnunn1/tilix
-        description: Terminal en tuiles.
       - nom: VNote
         archive: yes
         apt: https://github.com/vnotex/vnote/releases/latest
@@ -484,6 +477,13 @@ categories:
       url_website: https://htop.dev/
       url_repository: https://github.com/htop-dev/htop
       description: Affiche les processus en cours d'exécution.
+    - nom: Tilix
+      apt: tilix
+      url_internal: null
+      url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/tilix
+      url_website: https://gnunn1.github.io/tilix-web/
+      url_repository: https://github.com/gnunn1/tilix
+      description: Terminal en tuiles.
   - nom: Préférences
     logiciels:
     - nom: Guake
