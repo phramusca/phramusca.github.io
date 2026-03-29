@@ -6,8 +6,7 @@ layout: content
 
 ## Installation
 
-- Installer [rpi-imager](apt://rpi-imager)
-  - Documentation: https://www.raspberrypi.com/documentation/
+- Installer [rpi-imager](apt://rpi-imager) ([documentation](https://www.raspberrypi.com/documentation/))
 - Mettre à jour:
 
   ```shell
