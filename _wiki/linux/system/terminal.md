@@ -10,6 +10,22 @@ Personnellement, j'apprécie [Tilix](../../soft#category-0-accessoires) et [guak
 
 Source: [Pimp My Terminal](https://stackabuse.com/pimp-my-terminal-an-introduction-to-oh-my-zsh/)
 
+### Installation automatique (paquet .deb)
+
+- Télécharger [pimp-my-terminal_*.deb](https://github.com/phramusca/pimp-my-terminal/releases/latest)
+-  et, **à lancer avec votre utilisateur** (pas en root)
+
+```shell
+sudo apt install ./pimp-my-terminal_1.0_all.deb
+pimp-my-terminal
+```
+
+> `chsh` peut être proposé pour le shell de connexion.
+
+Après exécution, ouvrir un **nouveau** terminal et suivre l’assistant Powerlevel10k (si besoin `p10k configure`).
+
+### Installation manuelle
+
 - Installer [zsh](https://doc.ubuntu-fr.org/zsh)
 
     ```shell
@@ -28,7 +44,7 @@ Source: [Pimp My Terminal](https://stackabuse.com/pimp-my-terminal-an-introducti
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     ```
 
-- Installer le thème [powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh) (Plus maintenu. TODO: trouver alternative parmis les autres [thèmes](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes))
+- Installer le thème [powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh) (support limité mais toujours utilisable ; autres [thèmes](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes))
 
   - Installer la famille de police [MesloLGS NF](https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#meslo-nerd-font-patched-for-powerlevel10k)
 
@@ -63,7 +79,7 @@ Source: [Pimp My Terminal](https://stackabuse.com/pimp-my-terminal-an-introducti
     - Open a new terminal session, and follow the p10k configuration wizard.
 
 - Installer des plugins non-officiels, comme:
-  - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlightinghttps://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)
+  - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)
 
     ```shell
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -88,7 +104,7 @@ Source: [Pimp My Terminal](https://stackabuse.com/pimp-my-terminal-an-introducti
 - Activer les plugins en éditant `nano ~/.zshrc`
 
     ```text
-    plugins = (git z sudo zsh-syntax-highlighting zsh-autosuggestions)
+    plugins=(git z sudo zsh-autosuggestions zsh-syntax-highlighting)
     ```
 
 - Relancer le terminal pour profiter des plugins.

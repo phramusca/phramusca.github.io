@@ -8,8 +8,18 @@ layout: content
 
 - Installer [rpi-imager](apt://rpi-imager)
   - Documentation: https://www.raspberrypi.com/documentation/
-- TODO: Configurer un certificat pour connexion ssh
-- TODO: Booster le pi: https://korben.info/raspberry-pi-5-optimisation-performances-sdram.html
+- Mettre à jour:
+
+  ```shell
+  sudo rpi-update
+  ```
+
+- Copier les clés ssh (publiques) (depuis le PC):
+
+  ```shell
+  ssh-copy-id UTILISATEUR@ADRESSE_DU_PI
+  ```
+
 - [Pimp My terminal](../linux/system/terminal#pimp-my-terminal)
 - [Installer Docker](/wiki/docker#installation)
 - [Configurer docker](/wiki/docker#monter-un-disque-externe-avant-de-lancer-docker) pour monter les disques externes avant de lancer les images
