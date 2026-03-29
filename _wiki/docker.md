@@ -8,7 +8,7 @@ J'utilise [Docker](https://www.docker.com/) pour faire tourner quelques services
 
 ## Installation
 
-> ⚠️ Portainer ne supportant pas Docker 29, on installera donc la 28
+Installation « un clic » depuis la [liste des logiciels](../linux/soft) (rubrique Programmation) : lien **`apt-thirdparty://docker`** (dépôt officiel Docker, Debian **bookworm** ; voir [apt-thirdparty-handler](https://github.com/phramusca/apt-thirdparty-handler/releases/latest)). Sinon, manuellement :
 
 - Ajouter la clé GPG de Docker
 
@@ -24,40 +24,25 @@ J'utilise [Docker](https://www.docker.com/) pour faire tourner quelques services
   sudo chmod a+r /etc/apt/keyrings/docker.gpg
   ```
 
-- Ajouter le dépôt Docker
+- Ajouter le dépôt Docker (choisir **une** ligne selon la base — voir [la doc officielle](https://docs.docker.com/engine/install/)) :
+
+  Debian / Raspberry Pi OS :
 
   ```shell
-  echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
-  bookworm stable" | \
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
   ```
+
+  Ubuntu / Linux Mint :
 
   ```shell
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
   ```
 
-- Metrre à jour les dépôts
+- Mettre à jour les dépôts et installer la **version courante** du dépôt (moteur + CLI + containerd ; plugins optionnels)
 
   ```shell
   sudo apt-get update
-  ```
-
-- Chercher la dernière version avant la 5:29
-
-  ```shell
-  apt-cache madison docker-ce | grep -E "5:(2[0-8]|1[0-9]|0-9)"
-  ```
-
-- Install docker 5:28.*
-
-  ```shell
-  sudo apt-get install docker-ce=5:28.5.2-1~debian.12~bookworm docker-ce-cli=5:28.5.2-1~debian.12~bookworm containerd.io
-  ```
-
-- Bloquer les mises à jour pour Docker
-
-  ```shell
-  sudo apt-mark hold docker-ce docker-ce-cli containerd.io
+  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
   ```
 
 - Démarrer Docker
@@ -77,12 +62,6 @@ J'utilise [Docker](https://www.docker.com/) pour faire tourner quelques services
   ```
 
   > ⚠️ **Important** : Il faut se déconnecter et se reconnecter (ou redémarrer) pour que les changements de groupe prennent effet.
-
-- Vérifier que les paquets sont bien bloqués
-
-  ```shell
-  apt-mark showhold
-  ```
 
 - Voir la version de docker
 
@@ -111,9 +90,7 @@ sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin do
 
 ### Portainer CE
 
-> ⚠️ Portainer ne supporte pas les dernieres versions de docker (29 en l'occurence). Voir <https://github.com/orgs/portainer/discussions/12926>
->
-> Il faut se fier à <https://docs.portainer.io/start/requirements-and-prerequisites>pour savoir les version compatibles
+Vérifier la **compatibilité** entre votre version de Docker Engine et Portainer sur [les prérequis Portainer](https://docs.portainer.io/start/install-ce/requirements-and-prerequisites) (les exigences évoluent avec les versions).
 
 [Doc installation docker linux](https://docs.portainer.io/start/install-ce/server/docker/linux)
 

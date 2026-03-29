@@ -13,16 +13,21 @@ Source: [Pimp My Terminal](https://stackabuse.com/pimp-my-terminal-an-introducti
 ### Installation automatique (paquet .deb)
 
 - Télécharger [pimp-my-terminal_*.deb](https://github.com/phramusca/pimp-my-terminal/releases/latest)
--  et, **à lancer avec votre utilisateur** (pas en root)
+- l'installer
 
-```shell
-sudo apt install ./pimp-my-terminal_1.0_all.deb
-pimp-my-terminal
-```
+  ```shell
+  sudo apt install ./pimp-my-terminal_1.0_all.deb
+  ```
 
-> `chsh` peut être proposé pour le shell de connexion.
+  > `chsh` sera proposé pour le shell de connexion. Dire oui pour que le changement opère.
 
-Après exécution, ouvrir un **nouveau** terminal et suivre l’assistant Powerlevel10k (si besoin `p10k configure`).
+- Finalement, lancer:
+
+  ```shell
+  pimp-my-terminal
+  ```
+
+- Après exécution, ouvrir un **nouveau** terminal et suivre l’assistant Powerlevel10k (si besoin `p10k configure`).
 
 ### Installation manuelle
 
