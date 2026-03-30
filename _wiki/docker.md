@@ -8,7 +8,23 @@ J'utilise [Docker](https://www.docker.com/) pour faire tourner quelques services
 
 ## Installation
 
-Installation « un clic » depuis la [liste des logiciels](../linux/soft) (rubrique Programmation) : lien **`apt-thirdparty://docker`** (dépôt officiel Docker, Debian **bookworm** ; voir [apt-thirdparty-handler](https://github.com/phramusca/apt-thirdparty-handler/releases/latest)). Sinon, manuellement :
+Installation depuis la [liste des logiciels](../linux/soft#category-6-programmation)
+
+- Puis, ajouter l'utilisateur au groupe docker (pour éviter d'utiliser `sudo` à chaque commande docker)
+
+  ```shell
+  sudo usermod -aG docker $USER
+  ```
+
+  > ⚠️ **Important** : Il faut se déconnecter et se reconnecter (ou redémarrer) pour que les changements de groupe prennent effet.
+
+- Voir la version de docker
+
+  ```shell
+  docker --version
+  ```
+
+### Sinon, manuellement
 
 - Ajouter la clé GPG de Docker
 
@@ -69,7 +85,7 @@ Installation « un clic » depuis la [liste des logiciels](../linux/soft) (r
   docker --version
   ```
 
-### Suppression
+## Suppression
 
 ```shell
 # Arrêter Docker
@@ -116,8 +132,6 @@ with `.env` file:
 ```
 
 - Naviguer vers [https://localhost:9443](https://localhost:9443) et suivre la procédure d'installation.
-
-
 
 ### Forgejo
 
