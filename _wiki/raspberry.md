@@ -26,9 +26,17 @@ layout: content
 
 ## Mise à jour
 
-Un petit script pour faire la maintenance du système (mises à jour et nettoyage des paquets inutilisés)
+### Paquet Debian `apt-auto-update` (recommandé)
 
-- Créer un script `~/Documents/scripts/Update.sh`
+- Télécharger [apt-auto-update_*.deb](https://github.com/phramusca/apt-auto-update/releases/latest)
+
+Le projet **[apt-auto-update](https://github.com/phramusca/apt-auto-update)** installe la commande **`apt-auto-update`** : même idée que l’ancien script (mise à jour + nettoyage), avec **activation / désactivation** de la planification et **nettoyage à la suppression** du paquet.
+
+Détails : README du dépôt [apt-auto-update](https://github.com/phramusca/apt-auto-update).
+
+### Ancienne méthode : script utilisateur + crontab
+
+Un petit script pour faire la maintenance du système (mises à jour et nettoyage des paquets inutilisés), par exemple `~/Documents/scripts/Update.sh` :
 
 ```bash
 #!/bin/bash
@@ -39,38 +47,34 @@ sudo apt-get autoremove -y
 sudo apt-get autoclean
 sudo apt-get clean
 
-echo "-------------------- Press enter to exit "--------------------
-read case;
+echo "-------------------- Press enter to exit --------------------"
+read -r
 ```
 
-- Créer un ficher `Update & clean.desktop`
+Raccourci bureau (exemple) : fichier `Update & clean.desktop` :
 
 ```ini
 [Desktop Entry]
 Type=Application
 Name=Update & clean
-Exec=lxterminal -e ~/Documents/Update.sh
+Exec=lxterminal -e ~/Documents/scripts/Update.sh
 Icon=/usr/share/icons/AdwaitaLegacy/48x48/legacy/software-update-available.png
 Terminal=false
 ```
 
-### Automatiser la mise à jour
-
-Ouvrir la configuration de crontab avec cette commande:
+#### Automatiser avec crontab utilisateur
 
 ```bash
 crontab -e
 ```
 
-En fin de fichier, ajouter la ligne suivante:
+Exemple (tous les jours à 4h) :
 
 ```bash
 0 4 * * * /bin/bash ~/Documents/scripts/Update.sh >> ~/Documents/scripts/Update.log 2>&1
 ```
 
-Ceci va lancer le script tous les jours à 4H du matin.
-
-Pour info, les options de base pour une ligne crontab sont :
+Rappel des champs cron :
 
 ```text
 ┌───────── minute (0 - 59)
@@ -82,26 +86,14 @@ Pour info, les options de base pour une ligne crontab sont :
 * * * * * commande à exécuter
 ```
 
-Pour plus d’options:
+`man 5 crontab` pour la suite.
 
-```bash
-man 5 crontab
-```
+#### Logs rotatifs (méthode manuelle)
 
-#### Logs rotatifs
-
-Pour éviter de saturer l'espace disque, il convient de mettre en place des logs rotatifs:
-
-Créer un fichier de configuration logrotate:
-
-```bash
-sudo mousepad /etc/logrotate.d/Update
-```
-
-Avec le contenu suivant:
+Fichier `/etc/logrotate.d/Update` (adapter le chemin du `.log`) :
 
 ```text
-~/Documents/scripts/Update.log {
+/home/UTILISATEUR/Documents/scripts/Update.log {
     daily
     rotate 30
     missingok
@@ -112,14 +104,13 @@ Avec le contenu suivant:
 }
 ```
 
-- `daily`: Tourner tous les jours
-- `rotate 30`: Garde 30 logs (≈30 jours)
-- `missingok` : Si le fichier de log n’existe pas, logrotate ne génère pas d’erreur (il « ignore » le fichier manquant).
-- `notifempty` : Si le fichier de log est vide, logrotate ne le fait pas tourner (pas de rotation pour un fichier vide).
-- `compress`: Les vieux logs sont compréssés (gzip)
-- `copytruncate`: Pour les scripts qui gardent le fichier de log ouvert
+- `daily` : rotation chaque jour  
+- `rotate 30` : garder environ 30 jours  
+- `missingok` / `notifempty` : ignorer fichier absent ou vide  
+- `compress` : anciens journaux en gzip  
+- `copytruncate` : adapté si le script garde le fichier ouvert  
 
-Pour forcer la rotation et ainsi la tester: `sudo logrotate -f /etc/logrotate.d/Update`
+Test : `sudo logrotate -f /etc/logrotate.d/Update`
 
 #### Rafraichir l'icône de mise à jour
 
