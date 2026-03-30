@@ -333,7 +333,33 @@ VOLUME_PATH="/chemin/avec des espaces"
 
 ## Monter un disque externe avant de lancer docker
 
-J'utilise un disque externe pour stocker les données des services docker. Pour être sûr que le disque est monté avant de lancer docker, il faut créer un fichier d'unité `.mount` pour gérer le montage de votre disque externe. Voici les étapes pour le faire :
+J'utilise un disque externe pour stocker les données des services Docker. Le disque doit être monté **avant** `docker.service`. Un script automatise les unités `.mount` et le *drop-in* `docker.service` (`After=` / `Requires=`).
+
+### Script [docker-pre-mount-disks.sh](../../scripts/docker-pre-mount-disks.sh)
+
+```sh
+chmod +x docker-pre-mount-disks.sh
+sudo ./docker-pre-mount-disks.sh          # menu interactif
+sudo ./docker-pre-mount-disks.sh list
+sudo ./docker-pre-mount-disks.sh add      # liste + numéro ; chemin [défaut = montage actuel]
+sudo ./docker-pre-mount-disks.sh remove   # liste des unités avec détail, puis numéro
+```
+
+- **État** : liste des unités dans `/etc/docker/pre-mount-disks.units` ; *drop-in* Docker : `/etc/systemd/system/docker.service.d/10-docker-pre-mount-disks.conf`.
+- **add** : liste les volumes avec UUID/FSTYPE (via `lsblk -P`) ; tu choisis le **numéro** (ou `0` pour saisir l’UUID à la main). Le point de montage est demandé avec le **chemin actuel** (`MOUNTPOINT`) comme défaut entre crochets si le volume est déjà monté ; **Entrée** le conserve. Le **propriétaire** propose par défaut `USER:USER`, sinon le propriétaire du répertoire ou du parent ; **Entrée** le conserve (tu peux saisir `root:root` si besoin). Puis `chown` du point de montage. Vérifie `/dev/disk/by-uuid/…`, crée l’unité `*.mount` (nom via `systemd-escape`), active le montage, régénère le *drop-in* et redémarre Docker.
+- **remove** : liste numérotée avec **Where / What / état** pour chaque unité, puis choix du numéro.
+- Après une réinstall, il suffit de **remettre le script** et, si les fichiers système ont sauté, de refaire **add** pour chaque disque (mêmes UUID et chemins).
+
+Vérification après redémarrage :
+
+```sh
+sudo systemctl status media-…-.mount
+sudo systemctl status docker
+```
+
+### Référence manuelle (sans script)
+
+Voici les étapes pour le faire :
 
 - Identifier l'UUID du disque USB :
 
@@ -426,3 +452,5 @@ J'utilise un disque externe pour stocker les données des services docker. Pour 
     sudo systemctl status media-myuser-MyDiskLabel.mount
     sudo systemctl status docker
     ```
+
+(voir [systemd.mount](https://www.freedesktop.org/software/systemd/man/systemd.mount.html)).

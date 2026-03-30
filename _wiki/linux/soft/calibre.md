@@ -202,7 +202,7 @@ TODO:
 TODO: On y était presque :(
 
 ```shell
-✘ raph@raph-B450M-DS3H  ~/Documents/03-Divers/Livres  ./FixImagesForCalibre2opds.sh
+✘  ~/Documents/03-Divers/Livres  ./FixImagesForCalibre2opds.sh
 === Nettoyage des images dans : Bibliothèque calibre ===
 Sauvegardes dans : backup_covers_20251011_234129
 69095 fichiers trouvés.
