@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
   - 🚧 [Système](wiki/linux/system)
 - [Windows](wiki/windows)
 - 🚧 [Android](wiki/android)
-- 🚧 [Raspberry](wiki/raspberry)
+- [Raspberry](wiki/raspberry)
 - 🚧 [Développement](wiki/dev)
   - 🚧 [Java](wiki/dev/Java)
 
