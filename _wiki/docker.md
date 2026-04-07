@@ -345,6 +345,124 @@ with `.env` file:
 VOLUME_PATH="/chemin/avec des espaces"
 ```
 
+### Wanderer
+
+[Wanderer](https://wanderer.to/) est une base de données de sentiers GPX (ou Kml) décentralisée et auto-hébergée. Vous pouvez télécharger vos trajets GPS enregistrés ou en créer de nouveaux et ajouter diverses métadonnées pour créer un catalogue facilement consultable.
+
+```yaml
+x-common-env: &cenv
+  MEILI_URL: http://search:7700
+  MEILI_MASTER_KEY: ${MEILI_MASTER_KEY}
+
+services:
+  search:
+    container_name: wanderer-search
+    image: getmeili/meilisearch:v1.36.0
+    environment:
+      <<: *cenv
+      MEILI_NO_ANALYTICS: "true"
+    ports:
+      - 7700:7700
+    networks:
+      - wanderer
+    volumes:
+      - ${WANDERER_DATA_DIR:-./data}/data.ms:/meili_data/data.ms
+    restart: unless-stopped
+    healthcheck:
+      test: curl --fail http://localhost:7700/health || exit 1
+      interval: 15s
+      retries: 10
+      start_period: 20s
+      timeout: 10s
+  db:
+    container_name: wanderer-db
+    image: flomp/wanderer-db
+    depends_on:
+      search:
+        condition: service_healthy
+    environment:
+      <<: *cenv
+      POCKETBASE_ENCRYPTION_KEY: ${POCKETBASE_ENCRYPTION_KEY}
+      ORIGIN: ${WANDERER_ORIGIN:-http://localhost:3000}
+      POCKETBASE_CRON_SYNC_SCHEDULE: ${POCKETBASE_CRON_SYNC_SCHEDULE}
+    ports:
+      - "8090:8090"
+    networks:
+      - wanderer
+    restart: unless-stopped
+    volumes:
+      - ${WANDERER_DATA_DIR:-./data}/pb_data:/pb_data
+    healthcheck:
+      test: ["CMD", "/curl", "--fail", "http://localhost:8090/health"]
+      interval: 15s
+      retries: 10
+      start_period: 20s
+      timeout: 10s
+  web:
+    container_name: wanderer-web
+    image: flomp/wanderer-web
+    depends_on:
+      search:
+        condition: service_healthy
+      db:
+        condition: service_healthy
+    environment:
+      <<: *cenv
+      ORIGIN: ${WANDERER_ORIGIN:-http://localhost:3000}
+      BODY_SIZE_LIMIT: Infinity
+      PUBLIC_POCKETBASE_URL: http://db:8090
+      PUBLIC_DISABLE_SIGNUP: "false"
+      UPLOAD_FOLDER: /app/uploads
+      UPLOAD_USER: ${UPLOAD_USER:-}
+      UPLOAD_PASSWORD: ${UPLOAD_PASSWORD:-}
+      PUBLIC_OVERPASS_API_URL: https://overpass-api.de
+      PUBLIC_VALHALLA_URL: https://valhalla1.openstreetmap.de
+      PUBLIC_NOMINATIM_URL: https://nominatim.openstreetmap.org
+    volumes:
+      - ${WANDERER_DATA_DIR:-./data}/uploads:/app/uploads
+      # - ${WANDERER_DATA_DIR:-./data}/about.md:/app/build/client/md/about.md
+    ports:
+      - "${WANDERER_WEB_PORT:-3000}:3000"
+    networks:
+      - wanderer
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "/curl", "--fail", "http://localhost:3000/"]
+      interval: 15s
+      retries: 10
+      start_period: 20s
+      timeout: 10s
+
+networks:
+  wanderer:
+    driver: bridge
+```
+
+Fichier `.env` ([README](https://github.com/open-wanderer/wanderer), [doc](https://wanderer.to/welcome)) :
+
+```ini
+# Chemin des données de Wanderer
+WANDERER_DATA_DIR="/chemin/vers/données/wanderer"
+
+# URL exacte navigateur : protocole + hôte + port, sinon CORS.
+# WANDERER_ORIGIN=http://localhost:3000
+# Port sur l'hôte pour l'interface web. Doit être cohérent avec WANDERER_ORIGIN.
+# WANDERER_WEB_PORT=3000
+
+# MEILI_MASTER_KEY : en prod / instance exposée, clé obligatoire (pas celle du dépôt). Générer : openssl rand -hex 32
+MEILI_MASTER_KEY=
+
+# POCKETBASE_ENCRYPTION_KEY : base neuve — openssl rand -hex 16 avant le 1er lancement (doc Wanderer) ; ne pas changer après (déchiffrement cassé)
+POCKETBASE_ENCRYPTION_KEY=
+
+# POCKETBASE_CRON_SYNC_SCHEDULE : pas dans le compose d’origine ; expr. cron synchro PocketBase (décommenter si besoin)
+# POCKETBASE_CRON_SYNC_SCHEDULE="0 */2 * * *"
+
+# UPLOAD_USER / UPLOAD_PASSWORD : optionnel ; HTTP basic sur l’endpoint d’upload si renseignés
+# UPLOAD_USER=
+# UPLOAD_PASSWORD=
+```
+
 ## Monter un disque externe avant de lancer docker
 
 J'utilise un disque externe pour stocker les données des services Docker. Le disque doit être monté **avant** `docker.service`. Un script automatise les unités `.mount` et le *drop-in* `docker.service` (`After=` / `Requires=`).
