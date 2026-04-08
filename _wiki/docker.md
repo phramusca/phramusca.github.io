@@ -106,9 +106,9 @@ sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin do
 
 ### Portainer CE
 
-Vérifier la **compatibilité** entre votre version de Docker Engine et Portainer sur [les prérequis Portainer](https://docs.portainer.io/start/install-ce/requirements-and-prerequisites) (les exigences évoluent avec les versions).
+Vérifier la **compatibilité** entre la version du moteur Docker et Portainer sur [les prérequis Portainer](https://docs.portainer.io/start/install-ce/requirements-and-prerequisites) (les exigences évoluent avec les versions).
 
-[Doc installation docker linux](https://docs.portainer.io/start/install-ce/server/docker/linux)
+[Documentation d'installation](https://docs.portainer.io/start/install-ce/server/docker/linux)
 
 ```yaml
 services:
@@ -125,7 +125,7 @@ services:
       - "9443:9443"
 ```
 
-with `.env` file:
+Avec fichier `.env` :
 
 ```ini
   VOLUME_PATH="/chemin/avec des espaces"
@@ -135,7 +135,7 @@ with `.env` file:
 
 ### Forgejo
 
-[Doc installation](https://forgejo.org/docs/latest/admin/installation-docker/)
+[Documentation d'installation](https://forgejo.org/docs/latest/admin/installation-docker/)
 
 ```yaml
 services:
@@ -149,7 +149,7 @@ services:
       - 3000:3000
 ```
 
-with `.env` file:
+Avec fichier `.env` :
 
 ```ini
   VOLUME_PATH="/chemin/avec des espaces"
@@ -191,13 +191,13 @@ with `.env` file:
         Port 2222
       ```
 
-   - Changer l’URL du remote Git :
+   - Changer l'URL du remote Git :
 
      ```bash
      git remote set-url origin git@forgejo:phramusca/taratata-downloader.git
      ```
 
-   - Ajouter la clé publique du client dans l’interface web Forgejo (Settings > SSH Keys).
+   - Ajouter la clé publique du client dans l'interface web Forgejo (Settings > SSH Keys).
 
    - Tester la connexion SSH :
 
@@ -224,9 +224,9 @@ with `.env` file:
 
 ### Lazy Docker
 
-[Doc installation](https://github.com/jesseduffield/lazydocker?tab=readme-ov-file#docker)
+[Documentation d'installation](https://github.com/jesseduffield/lazydocker?tab=readme-ov-file#docker)
 
-Pour Raspberry Pi 5:
+Pour Raspberry Pi 5 :
 
 ```yaml
 services:
@@ -247,13 +247,13 @@ services:
       - ${VOLUME_PATH}/lazydocker/config:/.config/jesseduffield/lazydocker
 ```
 
-with `.env` file:
+Avec fichier `.env` :
 
 ```ini
   VOLUME_PATH="/chemin/avec des espaces"
 ```
 
-Then launch it using:
+Puis lancer avec :
 
 ```sh
 docker exec -it lazydocker lazydocker
@@ -261,7 +261,7 @@ docker exec -it lazydocker lazydocker
 
 ### Romm
 
-[Doc installation](https://github.com/rommapp/romm/wiki/Quick-Start-Guide)
+[Documentation](https://github.com/rommapp/romm/wiki/Quick-Start-Guide)
 
 ```yaml
 volumes:
@@ -274,20 +274,20 @@ services:
     restart: unless-stopped
     environment:
       - DB_HOST=romm-db
-      - DB_NAME=romm # Should match MYSQL_DATABASE in mariadb
-      - DB_USER=romm-user # Should match MYSQL_USER in mariadb
-      - DB_PASSWD=${DB_PASSWD} # Should match MYSQL_PASSWORD in mariadb
-      - ROMM_AUTH_SECRET_KEY=${ROMM_AUTH_SECRET_KEY} # Generate a key with `openssl rand -hex 32`
-      - IGDB_CLIENT_ID=${IGDB_CLIENT_ID} # Generate an ID and SECRET in IGDB
+      - DB_NAME=romm # doit correspondre à MYSQL_DATABASE dans MariaDB
+      - DB_USER=romm-user # doit correspondre à MYSQL_USER dans MariaDB
+      - DB_PASSWD=${DB_PASSWD} # doit correspondre à MYSQL_PASSWORD dans MariaDB
+      - ROMM_AUTH_SECRET_KEY=${ROMM_AUTH_SECRET_KEY} # clé : openssl rand -hex 32
+      - IGDB_CLIENT_ID=${IGDB_CLIENT_ID} # créer un ID et un secret sur IGDB
       - IGDB_CLIENT_SECRET=${IGDB_CLIENT_SECRET} # https://api-docs.igdb.com/#account-creation
       - MOBYGAMES_API_KEY=${MOBYGAMES_API_KEY} # https://www.mobygames.com/info/api/
       - STEAMGRIDDB_API_KEY=${STEAMGRIDDB_API_KEY} # https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb
     volumes:
-      - ${VOLUME_PATH}/cache/romm_resources:/romm/resources # Resources fetched from IGDB (covers, screenshots, etc.)
-      - ${VOLUME_PATH}/cache/romm_redis_data:/redis-data # Cached data for background tasks
-      - ${VOLUME_PATH}/library:/romm/library # Your game library
-      - ${VOLUME_PATH}/assets:/romm/assets # Uploaded saves, states, etc.
-      - ${VOLUME_PATH}/config:/romm/config # Path where config.yml is stored
+      - ${VOLUME_PATH}/cache/romm_resources:/romm/resources # ressources IGDB (jaquettes, captures, etc.)
+      - ${VOLUME_PATH}/cache/romm_redis_data:/redis-data # cache pour les tâches en arrière-plan
+      - ${VOLUME_PATH}/library:/romm/library # bibliothèque de jeux
+      - ${VOLUME_PATH}/assets:/romm/assets # sauvegardes et états uploadés, etc.
+      - ${VOLUME_PATH}/config:/romm/config # répertoire du config.yml
     ports:
       - 80:8080
     depends_on:
@@ -301,7 +301,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD} # Use a unique, secure password
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD} # mot de passe root unique et solide
       - MYSQL_DATABASE=romm
       - MYSQL_USER=romm-user
       - MYSQL_PASSWORD=${DB_PASSWD}
@@ -309,7 +309,7 @@ services:
       - ${VOLUME_PATH}/mariadb/config:/config
 ```
 
-with `.env` file:
+Avec fichier `.env` :
 
 ```ini
 VOLUME_PATH="/chemin/avec des espaces"
@@ -339,7 +339,7 @@ services:
     restart: unless-stopped
 ```
 
-with `.env` file:
+Avec fichier `.env` :
 
 ```ini
 VOLUME_PATH="/chemin/avec des espaces"
@@ -438,27 +438,27 @@ networks:
     driver: bridge
 ```
 
-Fichier `.env` ([README](https://github.com/open-wanderer/wanderer), [doc](https://wanderer.to/welcome)) :
+Fichier `.env` ([dépôt](https://github.com/open-wanderer/wanderer), [documentation](https://wanderer.to/welcome)) :
 
 ```ini
 # Chemin des données de Wanderer
 WANDERER_DATA_DIR="/chemin/vers/données/wanderer"
 
-# URL exacte navigateur : protocole + hôte + port, sinon CORS.
+# URL exacte dans le navigateur : protocole + hôte + port, sinon erreurs CORS.
 # WANDERER_ORIGIN=http://localhost:3000
 # Port sur l'hôte pour l'interface web. Doit être cohérent avec WANDERER_ORIGIN.
 # WANDERER_WEB_PORT=3000
 
-# MEILI_MASTER_KEY : en prod / instance exposée, clé obligatoire (pas celle du dépôt). Générer : openssl rand -hex 32
+# MEILI_MASTER_KEY : en production ou instance exposée, clé obligatoire (pas celle du dépôt). Générer : openssl rand -hex 32
 MEILI_MASTER_KEY=
 
 # POCKETBASE_ENCRYPTION_KEY : base neuve — openssl rand -hex 16 avant le 1er lancement (doc Wanderer) ; ne pas changer après (déchiffrement cassé)
 POCKETBASE_ENCRYPTION_KEY=
 
-# POCKETBASE_CRON_SYNC_SCHEDULE : pas dans le compose d’origine ; expr. cron synchro PocketBase (décommenter si besoin)
+# POCKETBASE_CRON_SYNC_SCHEDULE : absent du compose d'origine ; expression cron de synchro PocketBase (décommenter si besoin)
 # POCKETBASE_CRON_SYNC_SCHEDULE="0 */2 * * *"
 
-# UPLOAD_USER / UPLOAD_PASSWORD : optionnel ; HTTP basic sur l’endpoint d’upload si renseignés
+# UPLOAD_USER / UPLOAD_PASSWORD : optionnel ; HTTP basic sur l'endpoint d'upload si renseignés
 # UPLOAD_USER=
 # UPLOAD_PASSWORD=
 ```
@@ -478,8 +478,8 @@ sudo ./docker-pre-mount-disks.sh remove   # liste des unités avec détail, puis
 ```
 
 - **État** : liste des unités dans `/etc/docker/pre-mount-disks.units` ; *drop-in* Docker : `/etc/systemd/system/docker.service.d/10-docker-pre-mount-disks.conf`.
-- **add** : liste les volumes avec UUID/FSTYPE (via `lsblk -P`) ; tu choisis le **numéro** (ou `0` pour saisir l’UUID à la main). Le point de montage est demandé avec le **chemin actuel** (`MOUNTPOINT`) comme défaut entre crochets si le volume est déjà monté ; **Entrée** le conserve. Le **propriétaire** propose par défaut `USER:USER`, sinon le propriétaire du répertoire ou du parent ; **Entrée** le conserve (tu peux saisir `root:root` si besoin). Puis `chown` du point de montage. Vérifie `/dev/disk/by-uuid/…`, crée l’unité `*.mount` (nom via `systemd-escape`), active le montage, régénère le *drop-in* et redémarre Docker.
-- **remove** : liste numérotée avec **Where / What / état** pour chaque unité, puis choix du numéro.
+- **add** : liste les volumes avec UUID/FSTYPE (via `lsblk -P`) ; tu choisis le **numéro** (ou `0` pour saisir l'UUID à la main). Le point de montage est demandé avec le **chemin actuel** (`MOUNTPOINT`) comme défaut entre crochets si le volume est déjà monté ; **Entrée** le conserve. Le **propriétaire** propose par défaut `USER:USER`, sinon le propriétaire du répertoire ou du parent ; **Entrée** le conserve (tu peux saisir `root:root` si besoin). Puis `chown` du point de montage. Vérifie `/dev/disk/by-uuid/…`, crée l'unité `*.mount` (nom via `systemd-escape`), active le montage, régénère le *drop-in* et redémarre Docker.
+- **remove** : liste numérotée avec les colonnes **Where / What / état** (où / quoi / état) pour chaque unité, puis choix du numéro.
 - Après une réinstall, il suffit de **remettre le script** et, si les fichiers système ont sauté, de refaire **add** pour chaque disque (mêmes UUID et chemins).
 
 Vérification après redémarrage :
@@ -491,7 +491,7 @@ sudo systemctl status docker
 
 ### Référence manuelle (sans script)
 
-Voici les étapes pour le faire :
+Procédure :
 
 - Identifier l'UUID du disque USB :
 
@@ -501,17 +501,17 @@ Voici les étapes pour le faire :
 
   - Notez l'UUID du disque correspondant.
 
-- Créer un fichier d'unité systemd `.mount` pour gérer le montage de votre disque :  
+- Créer un fichier d'unité systemd `.mount` pour gérer le montage du disque :  
 
   ```sh
   sudo nano /etc/systemd/system/media-myuser-MyDiskLabel.mount
   ```
 
-  - Ajoutez-y le contenu suivant, en remplaçant `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` par l'UUID de votre disque :  
+  - Y insérer le contenu suivant, en remplaçant `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` par l'UUID du disque :  
 
     ```toml
     [Unit]  
-    Description=Mount MyDiskLabel USB Drive  
+    Description=Montage du disque USB MyDiskLabel  
     Before=docker.service  
 
     [Mount]  
@@ -531,7 +531,7 @@ Voici les étapes pour le faire :
    sudo chown myuser:myuser /media/myuser/MyDiskLabel
    ```
 
-- Recharger la configuration de `systemd` et activer l'unité
+- Recharger la configuration de `systemd` et activer l'unité :
 
    ```sh
    sudo systemctl daemon-reload
@@ -539,7 +539,7 @@ Voici les étapes pour le faire :
    sudo systemctl start media-myuser-MyDiskLabel.mount
   ```
 
-- Vérifier que le montage fonctionne:
+- Vérifier que le montage fonctionne :
 
    ```sh
    sudo systemctl status media-myuser-MyDiskLabel.mount
@@ -552,7 +552,7 @@ Voici les étapes pour le faire :
    sudo systemctl edit docker.service
    ```
 
-  - Ajoutez les lignes suivantes :  
+  - Ajouter les lignes suivantes :  
 
       ```toml
       [Unit]  
@@ -560,7 +560,7 @@ Voici les étapes pour le faire :
       Requires=media-myuser-MyDiskLabel.mount  
       ```
 
-  - Pour plusieurs disques, les séparer par un espace
+  - Pour plusieurs disques, les séparer par un espace dans `After=` et `Requires=`.
 
       ```toml
       [Unit]
@@ -568,17 +568,17 @@ Voici les étapes pour le faire :
       Requires=media-myuser-MyDiskLabel.mount media-myuser-MySecondDisk.mount
       ```
 
-- Sauvegardez, rechargez et redémarrez Docker-  :  
+- Enregistrer le fichier, recharger systemd et redémarrer Docker :
 
     ```sh
    sudo systemctl daemon-reload  
    sudo systemctl restart docker
    ```
 
-- Redémarrez votre Raspberry Pi et vérifiez que :  
+- Redémarrer le Raspberry Pi et vérifier que :
 
-  - Le disque est monté sur `/media/myuser/MyDiskLabel`  
-  - Docker démarre correctement après le montage-  :  
+  - le disque est monté sur `/media/myuser/MyDiskLabel` ;
+  - Docker démarre correctement après le montage :
 
     ```sh
     sudo systemctl status media-myuser-MyDiskLabel.mount
