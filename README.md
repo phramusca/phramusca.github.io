@@ -136,6 +136,7 @@ Pour ajouter un nouveau logiciel à la liste :
 
    - via la tâche VS Code `🔐 Signer la whitelist apt-thirdparty`
    - ou en CLI :
+
      ```bash
      ./tools/build-whitelist-bundle.sh ./.apt-thirdparty/apps.d "<email-ou-key-id-gpg>" ./apt-thirdparty
      ```
@@ -323,21 +324,21 @@ Si une page inclut du contenu d'autres pages (par exemple via des includes), vou
 
 1. Ajoutez le flag `exclude_search_sections: true` dans le front matter de la page :
 
-```yaml
----
-layout: content
-title: Ma Page
-exclude_search_sections: true
----
-```
+    ```yaml
+    ---
+    layout: content
+    title: Ma Page
+    exclude_search_sections: true
+    ---
+    ```
 
-2. Entourez les sections à exclure avec les marqueurs HTML suivants dans vos templates/includes :
+1. Entourez les sections à exclure avec les marqueurs HTML suivants dans vos templates/includes :
 
-```html
-<!-- SEARCH_EXCLUDE_START -->
-Contenu à exclure de l'indexation
-<!-- SEARCH_EXCLUDE_END -->
-```
+    ```html
+    <!-- SEARCH_EXCLUDE_START -->
+    Contenu à exclure de l'indexation
+    <!-- SEARCH_EXCLUDE_END -->
+    ```
 
 **Exemple** : La page "Programmes" (`_wiki/linux/soft.md`) utilise cette fonctionnalité pour exclure le contenu des pages individuelles de logiciels qui sont incluses dans le tableau, tout en gardant le reste de la page (introduction, noms de logiciels, descriptions) indexable.
 
@@ -499,8 +500,8 @@ Ce site est un projet personnel. Le contenu est sous licence appropriée selon l
 
 ## 🔗 Liens
 
-- Site en ligne : https://phramusca.github.io
-- Repository : https://github.com/phramusca/phramusca.github.io
+- Site en ligne : <https://phramusca.github.io>
+- Repository : <https://github.com/phramusca/phramusca.github.io>
 
 ---
 

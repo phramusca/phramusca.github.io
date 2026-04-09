@@ -3,6 +3,7 @@
 ## 📝 TODOs dans les fichiers de logiciels
 
 ### Calibre (`_wiki/linux/soft/calibre.md`)
+
 - Ligne 40 : `TODO: Comment gérer les collections, l'état de lecture (reading, read, ... le %), ... ?`
 - Ligne 46 : `TODO`
 - Ligne 50 : `TODO`
@@ -17,23 +18,20 @@
 
 **Action** : Passer en revue et compléter ou supprimer ces TODO
 
----
-
 ### VNC (`_wiki/linux/soft/vnc.md`)
+
 - Ligne 7 : `TODO: Mettre à jour (TigerVNC, gvncviewer, Remmina, authentification - certificats, ...)`
 
 **Action** : Mettre à jour la documentation VNC
 
----
-
 ### Mono (`_wiki/linux/soft/mono.md`)
+
 - Ligne 58 : `- [Subversion](Subversion): **TODO**`
 
 **Action** : Compléter ou supprimer cette ligne
 
----
-
 ### Hugin (`_wiki/linux/soft/hugin.md`)
+
 - Ligne 5 : `Hugin est un bal bla bla .... TODO`
 - Ligne 7 : `TODO: Ajouter une mention mise à jour sur toutes les pages mises à jour`
 - Ligne 20 : `TODO *A VALIDER (11/2024) !*`
@@ -42,68 +40,61 @@
 
 **Action** : Compléter la description, valider les infos, archiver l'ancien contenu
 
----
-
 ### BOINC (`_wiki/linux/soft/boinc.md`)
+
 - Ligne 6 : `TODO: Supprimer les liens de niveau 1 (tous les fichiers  dans ce dossier), car contenu intégré dans soft`
 - Ligne 14 : `TODO: Comment lancer \`boinc\` ?`
 - Ligne 27 : `TODO: Voir https://boinc.berkeley.edu/gui_rpc.php`
 
 **Action** : Compléter la documentation BOINC
 
----
-
 ### Waydroid (`_wiki/linux/Waydroid.md`)
+
 - Ligne 26 : `TODO: H2 have a windowed mode ?`
 - Ligne 27 : `TODO: H2 change keyword to azerty as it is on cinnamon default ?`
 - Ligne 35 : `=> TODO: Revoir cette partie`
 
 **Action** : Compléter la documentation Waydroid, notamment pour Cinnamon
 
----
-
 ### Tuto Hugin (`_wiki/linux/tuto/Créer un panoramique avec Hugin.md`)
+
 - Ligne 7 : `TODO: Lister les paramètres et astuces pour faire un panoramique cylindrique ou sphérique avec Hugin`
 
 **Action** : Compléter le tutoriel
 
----
-
 ### System Index (`_wiki/linux/system/index.md`)
+
 - Ligne 7 : `TODO : Faire de cette page le README for Système !!`
 
 **Action** : Améliorer cette page pour en faire une page d'index/README pour la section Système
 
----
-
 ### Wine (`_wiki/linux/soft/wine.md`)
+
 - Ligne 7 : `TODO: Revoir et/ou archiver`
 
 **Action** : Vérifier le contenu, soit mettre à jour, soit archiver, soit supprimer le TODO si le contenu est OK
 
----
-
 ### Meld (`_wiki/linux/soft/meld.md`)
+
 - Ligne 8 : `TODO: A revoir`
 
 **Action** : Vérifier le contenu, soit mettre à jour, soit archiver, soit supprimer le TODO si le contenu est OK
 
----
-
 ### EasyTag (`_wiki/linux/soft/easy_tag.md`)
+
 - Ligne 7 : `TODO: Revoir`
 
 **Action** : Vérifier le contenu, soit mettre à jour, soit archiver, soit supprimer le TODO si le contenu est OK
 
----
-
 ## 🔧 Tâches d'amélioration structurelles
 
 ### 1. Standardiser les noms de fichiers dans `_wiki/`
+
 **Impact** : Moyen, nécessite mise à jour des liens  
 **Problème** : Mélange de conventions de nommage dans `_wiki/`
 
 **Fichiers avec espaces/majuscules** :
+
 - `_wiki/linux/system/Disques_Locaux.md`
 - `_wiki/linux/system/Disques_Réseau.md`
 - `_wiki/linux/system/Installer_un_programme_sous_Linux.md`
@@ -117,62 +108,62 @@
 - Et d'autres dans `_wiki/archive/`
 
 **Solution** :
+
 - Convertir en snake_case progressivement
 - Mettre à jour les liens internes
 - Vérifier que les URLs fonctionnent toujours
 
 **Impact** :
+
 - URLs plus propres
 - Meilleure compatibilité cross-platform
 - Cohérence avec les fichiers de logiciels déjà en snake_case
 
----
-
 ### 2. Organiser le dossier `_wiki/archive/`
+
 **Impact** : Faible, organisation  
 **Problème** : Le dossier `archive/` contient du contenu archivé mais sa structure n'est pas claire
 
 **À faire** :
+
 - Documenter pourquoi ces fichiers sont archivés
 - Vérifier s'ils doivent rester accessibles ou être complètement exclus
 - Peut-être les exclure du build si ce sont vraiment des archives
 
----
-
 ### 3. Améliorer la structure des données `soft_list.yaml`
+
 **Impact** : Faible, organisation  
 **Problème** : Le fichier fait 450+ lignes et peut être difficile à maintenir
 
 **Options** :
+
 - Garder un seul fichier (préférence actuelle) mais mieux structuré
 - Ajouter des commentaires pour séparer les sections
 - Vérifier la cohérence des données
 
 **Note** : L'utilisateur préfère garder un seul fichier, donc on se concentre sur l'organisation et les commentaires
 
----
-
 ### 4. Vérifier les liens internes cassés
+
 **Impact** : Moyen, nécessite vérification manuelle  
 **Problème** : Après la migration depuis MediaWiki, certains liens internes peuvent être cassés
 
 **À faire** :
+
 - Scanner les fichiers markdown pour les liens internes
 - Vérifier que les pages référencées existent
 - Corriger les liens cassés
 
----
-
 ### 5. Optimiser les images
+
 **Impact** : Faible, optimisation  
 **Problème** : Les images peuvent être optimisées (taille, format)
 
 **À faire** :
+
 - Vérifier la taille des images dans `assets/images/wiki/`
 - Optimiser si nécessaire (compression, format WebP si supporté)
 - S'assurer que toutes les images sont bien référencées
-
----
 
 ## ✅ Tâches complétées
 
@@ -188,17 +179,17 @@
 - ✅ Exclure les fichiers de documentation du build
 - ✅ Documenter les collections, includes, layouts dans le README
 
----
-
 ## 🔄 Tâches nécessitant une action manuelle
 
 ### Intégrer les logiciels de soft-old.md
+
 **Impact** : Moyen, nécessite décision sur chaque logiciel  
 **Fichier** : `_wiki/linux/soft-old.md`
 
 **Problème** : Fichier avec beaucoup de TODOs et de logiciels à intégrer
 
 **Action** :
+
 - Passer en revue les logiciels listés dans `soft-old.md`
 - Pour chaque logiciel :
   - Soit l'ajouter dans `_data/soft_list.yaml` et créer une page dans `_wiki/linux/soft/`
@@ -208,12 +199,9 @@
 
 **Note** : Cette tâche nécessite une décision manuelle pour chaque logiciel, ce n'est pas un quick win.
 
----
-
 ## 📝 Notes
 
 - Tester chaque changement localement avant de commit
 - Faire des commits atomiques (un changement à la fois)
 - Vérifier que le site fonctionne après chaque modification
 - Les fichiers dans `_wiki/archive/` peuvent être exclus du build si nécessaire
-
