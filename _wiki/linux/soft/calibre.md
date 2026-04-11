@@ -10,17 +10,7 @@ Signaler erreurs Babelio: https://babelio.freshdesk.com/support/tickets/new
 
 ## Installation
 
-Le paquet [calibre](apt://calibre) est une vieille version. Pour avoir une version plus récente, préférer le flatpak:
-
-```shell
-flatpak install flathub com.calibre_ebook.calibre
-```
-
-## Mise à jour
-
-```shell
-flatpak update com.calibre_ebook.calibre
-```
+[Voir l’entrée dans la liste des programmes](../#category-1-bureautique)
 
 ## Configuration
 
