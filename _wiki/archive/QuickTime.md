@@ -6,7 +6,7 @@ layout: content
 
 ## QTVR
 
-On peux utiliser Quicktime avec [Wine](../../linux/soft/wine). C'est assez lent, mais c'est le plus simple pour voir les MOV:
+On peux utiliser Quicktime avec Wine. C'est assez lent, mais c'est le plus simple pour voir les MOV:
 <http://www.apple.com/fr/quicktime/download/>
 
 FreePV : <http://freepv.sourceforge.net/>
