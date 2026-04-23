@@ -4,25 +4,11 @@
 
 ### Calibre (`_wiki/linux/soft/calibre.md`)
 
-- Ligne 40 : `TODO: Comment gérer les collections, l'état de lecture (reading, read, ... le %), ... ?`
-- Ligne 46 : `TODO`
-- Ligne 50 : `TODO`
-- Ligne 62 : `TODO`
-- Ligne 72 : `TODO: Essayer des alternatives:`
-- Ligne 77 : `TODO; Reprendre la doc (bien faite) :https://christophe-rhein.canoprof.fr/eleve/Fabricolages/Comment_creer_une_bibliotheque_numerique_de_3000_livres/activities/biblio_autonome.xhtml`
-- Ligne 81 : `TODO: Ajouter un moteur de recherche js (comme sur phramusca.github.io)`
-- Ligne 83 : `TODO , documenter: Support OPDS sur Kobo (fnac) inenviseagable https://www.liseuses.net/liseuses-opds/ sauf à passer sur une inBook https://www.liseuses.net/les-liseuses-inkbook-chez-youboox/`
-- Ligne 103 : `TODO: Lancer avec java8 pour résoudre les problèmes d'encodage de caractères`
-- Ligne 130 : `TODO:`
-- Ligne 141 : `TODO: On y était presque :(`
+- Ligne 31 : `TODO: Tester ça sur le boox`
+- Ligne 60 : `TODO: Comment gérer les collections, l'état de lecture (reading, read, ... le %), ... ?`
+- Ligne 68 : `TODO: Tester ces applications sur le boox`
 
 **Action** : Passer en revue et compléter ou supprimer ces TODO
-
-### VNC (`_wiki/linux/soft/vnc.md`)
-
-- Ligne 7 : `TODO: Mettre à jour (TigerVNC, gvncviewer, Remmina, authentification - certificats, ...)`
-
-**Action** : Mettre à jour la documentation VNC
 
 ### Mono (`_wiki/linux/soft/mono.md`)
 

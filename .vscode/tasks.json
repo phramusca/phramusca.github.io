@@ -2,7 +2,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Jekyll: Serve (développement)",
+      "label": "🔄 Jekyll: Serve (développement)",
       "type": "shell",
       "command": "bundle exec jekyll serve --livereload",
       "options": {
@@ -27,7 +27,7 @@
       }
     },
     {
-      "label": "Jekyll: Build",
+      "label": "🏗️ Jekyll: Build",
       "type": "shell",
       "command": "bundle exec jekyll build",
       "options": {
@@ -45,7 +45,7 @@
       "detail": "Construit le site sans le servir"
     },
     {
-      "label": "Jekyll: Clean",
+      "label": "🧹 Jekyll: Clean",
       "type": "shell",
       "command": "bundle exec jekyll clean",
       "options": {
@@ -63,7 +63,7 @@
       "detail": "Nettoie le dossier _site/"
     },
     {
-      "label": "Bundle: Install",
+      "label": "💾 Bundle: Install",
       "type": "shell",
       "command": "bash -lc 'export BUNDLE_APP_CONFIG=\"$PWD/.bundle\"; export BUNDLE_PATH=\"$PWD/vendor/bundle\"; export BUNDLE_JOBS=\"1\"; bundle install --retry 3'",
       "options": {

@@ -213,6 +213,14 @@ categories:
         url_website: https://apps.gnome.org/fr/Epiphany/
         url_repository: https://gitlab.gnome.org/GNOME/epiphany
         description: Navigateur internet de Gnome (WebKitGTK).
+      - nom: TigerVNC Viewer
+        apt: null
+        flathub: org.tigervnc.vncviewer
+        url_internal: tigervnc
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/bureau_a_distance
+        url_website: https://tigervnc.org/
+        url_repository: https://github.com/TigerVNC/tigervnc
+        description: Client VNC Viewer.
       - nom: WireShark
         apt: wireshark
         url_internal: null

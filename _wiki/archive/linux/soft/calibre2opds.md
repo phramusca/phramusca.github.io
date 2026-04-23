@@ -1,0 +1,172 @@
+# calibre2opds
+
+## calibre2opds: Obsolète
+
+> Attention: pas de mises à jour depuis 2015, version 3.15 (et 2 betas en 2018, non testées) !
+>
+> => Bien compliqué, plus maintenu, bugs d'affichages, ... mieux vaut utiliser calibre-web
+
+[Repo GitHub](https://github.com/calibre2opds/calibre2opds)
+
+- Essayer des alternatives:
+  - <https://github.com/mikespub-org/seblucas-cops>
+  - <https://github.com/janeczku/calibre-web>
+  - BicBucStriim: trouver un fork compatbile php de free.fr
+
+- Reprendre la doc (bien faite) :<https://christophe-rhein.canoprof.fr/eleve/Fabricolages/Comment_creer_une_bibliotheque_numerique_de_3000_livres/activities/biblio_autonome.xhtml>
+  - l'adapter à mes besoins
+  - Voir comment exporter que certains tags
+  
+- Ajouter un moteur de recherche js (comme sur phramusca.github.io)
+
+Documenter: Support OPDS sur Kobo (fnac) inenviseagable <https://www.liseuses.net/liseuses-opds/> sauf à passer sur une inBook <https://www.liseuses.net/les-liseuses-inkbook-chez-youboox/>
+
+## Installer calibre2opds
+
+- [Télécharger calibre2opds](https://calibre2opds.wordpress.com/downloads/) 3.5-369
+- Lancer le fichier `calibre2opds-3.5-369.jar`
+- Choisir le dossier d'installation (par défaut: `~/Calibre2opds`)
+- Une fois l'installation finie:
+  - Corriger le lanceur `rungui.sh`, ligne ``44``:
+
+    ```bash
+    if [ "$1" = "-enableassertions" ] || [ "$old" != "$scriptdir" ]; then
+    ```
+
+  - Et le rendre executable
+
+    ```shell
+    chmod +x ~/Calibre2opds/rungui.sh
+    ```
+
+> On utilise java8 pour résoudre les problèmes d'encodage de caractères
+
+- Isntaller Java8
+  - sudo apt install openjdk-8-jre
+
+- Trouver le chemin
+  - update-java-alternatives --list
+
+- Voici un script pour le lancer avec Java 8 sans changer le java par défaut
+
+  ```bash
+  #!/bin/bash
+
+  JAVA8_BIN="/usr/lib/jvm/java-1.8.0-openjdk-amd64/bin/java"
+  C2O_JAR="$HOME/Calibre2opds/OpdsOutput-3.5-SNAPSHOT.jar"
+
+  # Lancer Calibre2opds avec Java 8
+  "$JAVA8_BIN" -jar "$C2O_JAR" &>/dev/null
+
+  ```
+
+## Lancer calibre2opds
+
+  ```shell
+  ~/Calibre2opds/rungui.sh
+  ```
+
+TODO: Archiver ces fichiers, ou voir quoi en faire
+
+- ~/Documents/04-Creations/Internet/00-Archives -----/0000-raphael.camus-A_CLASSER/2024-Scripts/SiteCalibreUpdate.sh
+- ~/Documents/04-Creations/Internet/00-Archives -----/0000-raphael.camus-A_CLASSER/2024-Online/config/calibreUsers.txt
+- ~/VirtualBoxes/2023_11_Windows.old__Ebook_save/Users/Test/
+
+### Problèmes d'images
+
+Dommage, on y était presque :(
+
+```shell
+✘  ~/Documents/03-Divers/Livres  ./FixImagesForCalibre2opds.sh
+=== Nettoyage des images dans : Bibliothèque calibre ===
+Sauvegardes dans : backup_covers_20251011_234129
+69095 fichiers trouvés.
+Traitement: [==============================>] 100% (69095/69095)   ./FixImagesForCalibre2opds.sh: ligne 80: fin de fichier (EOF) prématurée lors de la recherche du « " » correspondant
+```
+
+Si vous avez des erreurs sur la lecture de fichiers image, vous pouvez les convertir avec ce script
+
+```bash
+#!/bin/bash
+
+# Utilisation : ./FixImagesForCalibre2opds.sh [DOSSIER_CIBLE]
+# Par défaut : "Bibliothèque calibre" (dans le dossier courant)
+
+TARGET_DIR="${1:-Bibliothèque calibre}"
+TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+BACKUP_DIR="backup_covers_$TIMESTAMP"
+mkdir -p "$BACKUP_DIR"
+COUNT=0
+
+echo "=== Nettoyage des images dans : $TARGET_DIR ==="
+echo "Sauvegardes dans : $BACKUP_DIR"
+
+# Compte des fichiers
+echo -n "Compte des fichiers: 0"
+TOTAL=0
+while IFS= read -r -d '' file; do
+    ((TOTAL++))
+    [ $((TOTAL % 100)) -eq 0 ] && echo -ne "\rCompte des fichiers: $TOTAL"
+done < <(find "$TARGET_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -print0)
+
+# Efface complètement la ligne et affiche le résultat final
+echo -e "\r\033[K$TOTAL fichiers trouvés."
+
+# Deuxième passe pour le traitement
+CURRENT=0
+LAST_PERCENT=0
+files=()
+while IFS= read -r -d '' file; do
+    files+=("$file")
+done < <(find "$TARGET_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -print0)
+
+for file in "${files[@]}"; do
+    ((CURRENT++))
+
+    # Calcul du pourcentage (limité à 100%)
+    PERCENT=$((CURRENT * 100 / TOTAL))
+    [ $PERCENT -gt 100 ] && PERCENT=100
+
+    # Traitement des fichiers
+    colorspace=$(identify -format "%[colorspace]" "$file" 2>/dev/null)
+
+    if [[ "$colorspace" == "CMYK" ]]; then
+        rel_path="${file#$TARGET_DIR/}"
+        backup_path="$BACKUP_DIR/$(dirname "$rel_path")"
+        mkdir -p "$backup_path"
+
+        echo -e "\n[CONVERSION] $rel_path"
+        echo "  Avant : $colorspace"
+        convert "$file" -colorspace RGB -strip "$file" 2>/dev/null
+        new_colorspace=$(identify -format "%[colorspace]" "$file" 2>/dev/null)
+        echo "  Après : $new_colorspace"
+        cp "$file" "$backup_path/" 2>/dev/null
+        echo "  --> Sauvegardée dans $backup_path/"
+        ((COUNT++))
+    else
+        if file "$file" | grep -qi "PhotometricInterpretation=CMYK"; then
+            rel_path="${file#$TARGET_DIR/}"
+            backup_path="$BACKUP_DIR/$(dirname "$rel_path")"
+            mkdir -p "$backup_path"
+
+            echo -e "\n[NETTOYAGE] $rel_path (métadonnées CMYK)"
+            convert "$file" -strip "$file" 2>/dev/null
+            cp "$file" "$backup_path/" 2>/dev/null
+            echo "  --> Métadonnées nettoyées, sauvegardée dans $backup_path/"
+            ((COUNT++))
+        fi
+    fi
+
+    # Mise à jour de la progression toutes les 100 images ou si le pourcentage change
+    if (( CURRENT % 100 == 0 )) || (( PERCENT != LAST_PERCENT )); then
+        PROGRESS_BAR=$(printf "%${PERCENT}s" | tr ' ' '=')
+        PROGRESS_BAR=${PROGRESS_BAR:0:30}
+        echo -ne "\rTraitement: [$PROGRESS_BAR>] ${PERCENT}% ($CURRENT/$TOTAL)   "
+        LAST_PERCENT=$PERCENT
+    fi
+done
+
+echo -e "\n--------------------------------------------------"
+echo "Traitement terminé. $COUNT images corrigées sur $TOTAL."
+
+```

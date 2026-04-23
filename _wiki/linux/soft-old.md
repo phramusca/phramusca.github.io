@@ -23,12 +23,6 @@ TODO Rajouter ?
 - 4kyoutubetomp3
 - MEGAsync
 
-TODO: Faire section "Remote desktop / VNC" mais tester avant avec Rpi et d'autres
-- [VNC](../soft/vnc)
-- Remmina
-- TigerVNC (voir page sur VNC)
-- autres ? https://doc.ubuntu-fr.org/bureau_a_distance
-
 TODO: Faire section FTP, et ajouter FileZilla et lftp (script. et gui ?)
 
 |                     |                                               |                                                          |                                   |
