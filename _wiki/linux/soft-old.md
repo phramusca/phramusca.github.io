@@ -8,10 +8,6 @@ layout: content
 
 ### Applications
 
-#### Autre
-
-TODO: Wayland
-
 #### Bureautique
 
 TODO: archiver: "livret-2.deb": https://www.biotechno.fr/BookletImposer.html) VS bookletimposer
