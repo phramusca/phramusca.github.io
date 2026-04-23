@@ -55,8 +55,6 @@ MonoDevelop est un IDE, similaire à Visual Studio de Microsoft
     the "Refresh" button near the "Show all files").
   - Right-mouse, "include in project".
 
-- [Subversion](../../../archive/Subversion): **TODO**
-
 ## Documentation
 
 - [Mono Project](http://mono-project.com/)

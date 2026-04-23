@@ -295,14 +295,6 @@ categories:
         url_website: https://docs.docker.com/desktop/
         url_repository: null
         description: GUI Docker
-      - nom: Mono
-        archive: yes
-        apt: null
-        url_internal: mono
-        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/mono
-        url_website: https://www.mono-project.com/
-        url_repository: https://github.com/mono/mono
-        description: Implémentation libre de Microsoft .NET
       - nom: Apache NetBeans
         apt: apache-netbeans
         url_internal: netbeans

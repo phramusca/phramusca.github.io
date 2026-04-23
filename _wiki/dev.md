@@ -41,10 +41,6 @@ De nombreux sites fournissant du code source et/ou des tutoriels existent:
 
 [NetBeans](../linux/soft/netbeans) est l'IDE de Sun (malheureusement repris maintenant par Oracle) axé Java mais aussi Python, C, C++, Ruby, XML, PHP, ... Disponible sous Linux et Windows.
 
-### Mono
-
-[Mono](../linux/soft/mono) est une implémentation libre de .NET avec comme éditeur MonoDevelop
-
 ### Gambas
 
 Gambas se veut le presque Visual Basic libre

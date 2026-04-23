@@ -10,12 +10,6 @@
 
 **Action** : Passer en revue et compléter ou supprimer ces TODO
 
-### Mono (`_wiki/linux/soft/mono.md`)
-
-- Ligne 58 : `- [Subversion](Subversion): **TODO**`
-
-**Action** : Compléter ou supprimer cette ligne
-
 ### Hugin (`_wiki/linux/soft/hugin.md`)
 
 - Ligne 5 : `Hugin est un bal bla bla .... TODO`
