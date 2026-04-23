@@ -39,7 +39,9 @@ dans `/etc/fstab` pour que le disque soit monté automatiquement au démarrage d
 
 #### Changer les droits
 
-    chmod -R u+w-x,g+w-x,o-wx,a+rX /mon/repertoire/
+```bash
+chmod -R u+w-x,g+w-x,o-wx,a+rX /mon/repertoire/
+```
 
 - Change les droits récursivement dans le répertoire:
   - donne les droits de lecture à tous (a+r) ainsi que le droit d'ouvrir
@@ -100,18 +102,34 @@ Ensuite, relancer le shell avec la commande `exec bash` ou `exec zsh`
 
 ## SSH FS
 
-TODO: A relire et vérifier ces informations
+Monter un répertoire distant via SSH avec `sshfs` (basé sur FUSE).
 
-sshfs (ssh file system):
-<http://doc.ubuntu-fr.org/ssh#monter_un_repertoire_distant_en_utilisant_sshfs>
+- Documentation : <http://doc.ubuntu-fr.org/ssh#monter_un_repertoire_distant_en_utilisant_sshfs>
 
-Monter:
+Installation :
 
-     sshfs username@ipaddress:/RepertoireDistant /EmplacementDeMontage
+```bash
+sudo apt install sshfs
+```
 
-Démonter:
+Monter :
 
-     fusermount -u /EmplacementDeMontage
+```bash
+mkdir -p ~/mnt/serveur
+sshfs username@ipaddress:/RepertoireDistant ~/mnt/serveur
+```
+
+Démonter :
+
+```bash
+fusermount -u ~/mnt/serveur
+```
+
+Si le montage est bloqué (réseau coupé, session distante perdue), forcer le démontage :
+
+```bash
+fusermount -uz ~/mnt/serveur
+```
 
 ### Utilisation de clefs publiques/privées
 
@@ -119,16 +137,14 @@ Démonter:
 
 Générer la clef:
 
-     ssh-keygen -t dsa
-
-(ne pas utiliser de paraphrase permet de se connecter - par script par
-exemple - sans avoir à taper de paraphrase, mais cela est moins
-sécurisé. Ubuntu permet aussi, lors de la connection avec paraphrase de
-cocher une option pour ne plus avoir à rentrer la paraphrase)
+```bash
+ssh-keygen -t ed25519
+```
 
 La copier sur le serveur distant:
 
-     ssh-copy-id -i ~/.ssh/id_dsa.pub username@ipaddress
+```bash
+ssh-copy-id -i ~/.ssh/id_ed25519.pub username@ipaddress
+```
 
-Et voila, maintenant il faut utiliser la paraphrase pour se connecter au
-serveur distant et non plus le mot de passe de l'utilisateur distant.
+Et voila, maintenant il faut utiliser la paraphrase (si renseignée) pour se connecter au serveur distant et non plus le mot de passe de l'utilisateur distant.
