@@ -1,62 +1,8 @@
 # TODO - Plan d'amélioration du projet Jekyll
 
-## 📝 TODOs dans les fichiers de logiciels
+## 📝 TODOs
 
-### Calibre (`_wiki/linux/soft/calibre.md`)
-
-- Ligne 31 : `TODO: Tester ça sur le boox`
-- Ligne 60 : `TODO: Comment gérer les collections, l'état de lecture (reading, read, ... le %), ... ?`
-- Ligne 68 : `TODO: Tester ces applications sur le boox`
-
-**Action** : Passer en revue et compléter ou supprimer ces TODO
-
-### Hugin (`_wiki/linux/soft/hugin.md`)
-
-- Ligne 5 : `Hugin est un bal bla bla .... TODO`
-- Ligne 7 : `TODO: Ajouter une mention mise à jour sur toutes les pages mises à jour`
-- Ligne 20 : `TODO *A VALIDER (11/2024) !*`
-- Ligne 65 : `TODO *D'autres, trouvailles sur internet en 11/2024, A TESTER:*`
-- Ligne 73 : `TODO *Du TRES vieux, à archiver:*`
-
-**Action** : Compléter la description, valider les infos, archiver l'ancien contenu
-
-### Waydroid (`_wiki/linux/Waydroid.md`)
-
-- Ligne 26 : `TODO: H2 have a windowed mode ?`
-- Ligne 27 : `TODO: H2 change keyword to azerty as it is on cinnamon default ?`
-- Ligne 35 : `=> TODO: Revoir cette partie`
-
-**Action** : Compléter la documentation Waydroid, notamment pour Cinnamon
-
-### Tuto Hugin (`_wiki/linux/tuto/Créer un panoramique avec Hugin.md`)
-
-- Ligne 7 : `TODO: Lister les paramètres et astuces pour faire un panoramique cylindrique ou sphérique avec Hugin`
-
-**Action** : Compléter le tutoriel
-
-### System Index (`_wiki/linux/system/index.md`)
-
-- Ligne 7 : `TODO : Faire de cette page le README for Système !!`
-
-**Action** : Améliorer cette page pour en faire une page d'index/README pour la section Système
-
-### Wine (`_wiki/linux/soft/wine.md`)
-
-- Ligne 7 : `TODO: Revoir et/ou archiver`
-
-**Action** : Vérifier le contenu, soit mettre à jour, soit archiver, soit supprimer le TODO si le contenu est OK
-
-### Meld (`_wiki/linux/soft/meld.md`)
-
-- Ligne 8 : `TODO: A revoir`
-
-**Action** : Vérifier le contenu, soit mettre à jour, soit archiver, soit supprimer le TODO si le contenu est OK
-
-### EasyTag (`_wiki/linux/soft/easy_tag.md`)
-
-- Ligne 7 : `TODO: Revoir`
-
-**Action** : Vérifier le contenu, soit mettre à jour, soit archiver, soit supprimer le TODO si le contenu est OK
+Voir TODO Tree.
 
 ## 🔧 Tâches d'amélioration structurelles
 

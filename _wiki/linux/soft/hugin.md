@@ -4,18 +4,9 @@ layout: software
 
 # Hugin
 
-Hugin est un bal bla bla .... TODO
+Hugin permet de réaliser de panoramiques en assemblant des photos.
 
-TODO: Ajouter une mention mise à jour sur toutes les pages mises à jour
-*Mise à jour: 11/2024.*
-
-[Hugin](https://hugin.sourceforge.io/) permet de réaliser de panoramiques en assemblant des photos.
-
-Tuto: [Créer un panoramique avec Hugin](../tuto/Créer%20un%20panoramique%20avec%20Hugin)
-
-## Installation
-
-La dernière version `2023.0.0` est disponible en FlatPack dans le magasin de [Linux Mint](../dist/Mint).
+TODO: Lister les paramètres et astuces pour faire un panoramique cylindrique ou sphérique avec Hugin
 
 ## Post Processing
 
@@ -36,7 +27,49 @@ Une fois le panoramique créé, il faut, avec jhead :
 
 ### Intégration Web
 
-*De Chat GPT, 11/2024, A TESTER :*
+TODO: Reparcourir tout ça et trouver la meilleure solution en 2026
+
+#### OpenPanorama
+
+- Spécifications Open Source du format XML : <http://www.openpanorama.org/>
+- Player gratuit: <http://www.immervision.com/fr/multimedia/multimedia_download/player.php?player=PlayerPROJava>
+
+##### Exemples
+
+###### Fichier HTML
+
+```html
+<HTML>
+<HEAD>
+    <title>TEST PANO VIEWER</TITLE>
+</HEAD>
+<BODY>
+    <APPLET archive="PurePlayerPro.jar" code="PurePlayerPro" width="461" height="306">
+        <param name="panorama" value="panorama.xml">
+        <param name="optimizememory" value="true">
+        <param name="antialiasing" value="everytime">
+        <param name="mousespeed" value="100">
+    </APPLET>
+</BODY>
+</HTML>
+```
+
+###### Fichier panorama.xml (pano.jpg fait 180° horizontal et 90° vertical)
+
+```html
+<?xml version="1.0" encoding="utf-8" ?>
+<panorama angleType="degree" ns="http://www.immervision.com/panorama">
+    <camera>
+        <entryPoint pan="170"/>
+            <limits maxTilt="45" minTilt="-45" maxPan="175" minPan="-175"/>
+    </camera>
+    <panoCylinder>
+        <image file="pano.jpg"/>
+    </panoCylinder> 
+</panorama>
+```
+
+### *De Chat GPT, 11/2024, A TESTER :*
 
 Pour afficher une image panoramique cylindrique ou sphérique en mode immersif dans un navigateur web, plusieurs options modernes existent, remplaçant le QTVR d’autrefois. Voici quelques solutions populaires et performantes :
 
