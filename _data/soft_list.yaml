@@ -362,7 +362,7 @@ categories:
           description: Gestionnaire de musithèque, lecteur et plus encore, pour Linux, Raspberry et Windows.
         - nom: EasyTag
           apt: easytag
-          url_internal: easy_tag
+          url_internal: null
           url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/easytag
           url_website: https://easytag.sourceforge.io/
           url_repository: https://gitlab.gnome.org/GNOME/easytag/

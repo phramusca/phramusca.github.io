@@ -124,7 +124,7 @@ Pour ajouter un nouveau logiciel à la liste :
 
    - Le `url_internal` dans le YAML doit correspondre exactement au nom du fichier (sans `.md`)
    - Le layout `software` inclut automatiquement les informations (Ubuntu-fr, Site, Repo) depuis `soft_list.yaml`
-   - Les fichiers doivent être en **snake_case** (ex: `easy_tag.md`, `google_earth.md`)
+   - Les fichiers doivent être en **snake_case** (ex: `google_earth.md`)
 
 3. **Si le logiciel est installable via `apt-thirdparty://`**, faire aussi la partie whitelist :
 

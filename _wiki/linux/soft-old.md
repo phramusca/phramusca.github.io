@@ -70,8 +70,6 @@ TODO: Ajouter ?
 
 ##### Audio
 
-TODO: Ajouter easyMP3Gain ? | [mp3gain](http://doc.ubuntu-fr.org/mp3gain) | Normalisation du volume des musiques dans un dossier ou fichier par fichier par replayGain | [easymp3gain-gtk](apt://easymp3gain-gtk)    |
-
 TODO: Comparer Jamuz (perfs) avec <https://doc.ubuntu-fr.org/rhythmbox> (installé par défaut)
 
 TODO: Faire un paquet deb pour JaMuz, puis faire un PPA ou mieux ajouter dans les repos ubuntu/linux mint/debian
