@@ -20,14 +20,6 @@
 
 **Action** : Compléter la description, valider les infos, archiver l'ancien contenu
 
-### BOINC (`_wiki/linux/soft/boinc.md`)
-
-- Ligne 6 : `TODO: Supprimer les liens de niveau 1 (tous les fichiers  dans ce dossier), car contenu intégré dans soft`
-- Ligne 14 : `TODO: Comment lancer \`boinc\` ?`
-- Ligne 27 : `TODO: Voir https://boinc.berkeley.edu/gui_rpc.php`
-
-**Action** : Compléter la documentation BOINC
-
 ### Waydroid (`_wiki/linux/Waydroid.md`)
 
 - Ligne 26 : `TODO: H2 have a windowed mode ?`

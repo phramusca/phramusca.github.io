@@ -472,13 +472,6 @@ categories:
           description: Créateur de CD/DVD. Pour KDE.
   - nom: Administration
     logiciels:
-    - nom: BOINC
-      apt: boinc
-      url_internal: boinc
-      url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/boinc
-      url_website: https://boinc.berkeley.edu/
-      url_repository: null
-      description: Client BOINC.
     - nom: htop
       apt: htop
       url_internal: htop
