@@ -314,6 +314,22 @@ categories:
         url_website: https://www.jetbrains.com/fr-fr/rider/download/?section=linux
         url_repository: null
         description: IDE .NET multiplateforme (JetBrains). Préférer Flathub (com.jetbrains.Rider) à Snap ; sinon archive .tar.gz depuis le site ou via JetBrains Toolbox.
+      - nom: GitKraken
+        apt: null
+        flathub: com.axosoft.GitKraken
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/git#interfaces_graphiques
+        url_website: https://www.gitkraken.com/
+        url_repository: null
+        description: Client graphique Git (propriétaire). Offre gratuite limitée (pas de dépôts privés ni self-hosted). Préférer SourceGit.
+      - nom: SourceGit
+        apt: null
+        apt_thirdparty: sourcegit
+        url_internal: null
+        url_doc_ubuntu_fr: null
+        url_website: https://github.com/sourcegit-scm/sourcegit
+        url_repository: https://github.com/sourcegit-scm/sourcegit
+        description: Client graphique Git open source. Dépôt Debian tiers (paquet sourcegit) documenté sur le README du projet ; alternative AppImage / releases GitHub.
       - nom: Meld
         apt: meld
         url_internal: meld

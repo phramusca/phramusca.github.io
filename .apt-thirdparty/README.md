@@ -106,4 +106,3 @@ Ensuite, côté publication :
 2. Publier la nouvelle clé publique dans `apt-thirdparty/whitelist-signing.pub`.
 3. Resigner `apt-thirdparty/apps.tar` avec la nouvelle clé.
 4. Demander aux clients de rafraîchir/réinstaller le keyring de confiance.
-

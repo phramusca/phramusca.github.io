@@ -8,14 +8,6 @@ layout: content
 
 ### Applications
 
-#### Programmation
-
-TODO: Rajouter:
-
-- Git gui clients (FAIRE LE TRI)
-  - Gitkraken: seulement open source. Pas de private ni de self-hosted
-  - sourcegit
-
 #### Son et Vidéo
 
 TODO: Ajouter ?
