@@ -10,7 +10,7 @@ layout: content
 
 #### Bureautique
 
-TODO: archiver: "livret-2.deb": https://www.biotechno.fr/BookletImposer.html) VS bookletimposer
+TODO: archiver: "livret-2.deb": <https://www.biotechno.fr/BookletImposer.html>) VS bookletimposer
 
 #### Internet
 
@@ -27,10 +27,10 @@ TODO: Faire section FTP, et ajouter FileZilla et lftp (script. et gui ?)
 | [GCStar](../GCStar) | [gcstar](http://doc.ubuntu-fr.org/gcstar)     | Gestion des collections personnelles (Films, jeux, ...). | Voir [GCStar](../GCStar)          |
 | HomeBank            | [HomeBank](http://doc.ubuntu-fr.org/HomeBank) | Gestionnaire de finances                                 | [HomeBank](apt://homebank)        |
 
-
 #### Programmation
 
 TODO: Rajouter:
+
 - Android Studio
 - GroovyConsole ??
 - IntelliJ IDEA Community ??
@@ -45,7 +45,7 @@ TODO: Rajouter:
   - Gittyup: continuation of gitAhead but does not work :(
   - Gitnuro: pareil, freeze
   - Sublime Merge: pas mal, à tester davantage.
-      - Sublime Merge may be downloaded and evaluated for free, however a license must be purchased for continued use. There is currently no enforced time limit for the evaluation (22/4/2024)
+    - Sublime Merge may be downloaded and evaluated for free, however a license must be purchased for continued use. There is currently no enforced time limit for the evaluation (22/4/2024)
   - gitg: gnome. pas mal, à tester davantage
   - git-cola, a tester
   - gitbutler, a tester
@@ -55,7 +55,6 @@ TODO: Rajouter:
   - sourcegit, a tester
   - source app, a tester
   - kdesvn, a tester
-
 
 #### Son et Vidéo
 
@@ -94,6 +93,7 @@ TODO:  Voir aussi: [Convertir MOV en Flash FLV](../../archive/Convertir_MOV_en_F
 #### Administration
 
 TODO: Ajouter:
+
 - Back In Time ?
 - Disks - gnome-disks
 - Mission Center
@@ -118,28 +118,9 @@ TODO: /!\ Comment gérer rsync/grsync et autres cas de gui pour outil de ligne d
 | DVDShrink                                            | xDVDShrink - a tester                                                                    |                                                                                   |
 | [ManDVD](http://doc.ubuntu-fr.org/mandvd)            | Création simplifiée de DVD-vidéos, a tester                                              |                                                                                   |
 
-
 ### A REVOIR
 
---------------------------------------------------------------------
 TODO !!!!!!!!!!!!!!!!!!!!!! Ce qui suit est à archiver ou a revoir
---------------------------------------------------------------------
-
-
-|                                                                                   |                                                                                          |                                                                      |
-| --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| Nom                                                                               | Description                                                                              | Installation [apturl](../system/Apt-url)                             |
-| [Compiz Fusion](http://doc.ubuntu-fr.org/compiz_fusion) (simple)                  | Configuration des effets de bureau. Recommandé.                                          | [simple-ccsm](apt://simple-ccsm)                                     |
-| [Compiz Fusion](http://doc.ubuntu-fr.org/compiz_fusion) (avancé)                  | Configuration avancée des effets de bureau.                                              | [compizconfig-settings-manager](apt://compizconfig-settings-manager) |
-| [nautilus-actions](http://doc.ubuntu-fr.org/nautilus-actions)                     | Configuration des actions de Nautilus (gestionnaire fichiers)                            | [nautilus-actions](apt://nautilus-actions)                           |
-| [nautilus-scripts](http://doc.ubuntu-fr.org/nautilus_scripts)                     | Scripts pour Nautilus (menu contextuel).                                                 |                                                                      |
-| [Nautilus Cover Thumbnailer](http://software.flogisoft.com/cover-thumbnailer/fr/) | Afficher les pochettes des albums de musique dans nautilus, prévisualiser les images ... | Via PPA. Refer to link.                                              |
-
-> Compiz ne marche pas avec Cinnamon (apparement) mais il ya des extensions comme https://github.com/linuxmint/cinnamon-spices-extensions/tree/master/compiz-windows-effect@hermes83.github.com
-
-
-[Comparaison avec nautilus-scripts](http://www.commentcamarche.net/faq/6357-editer-le-menu-contextuel-de-nautilus-navigateur-de-fichiers)
-[Bibliothèque de scripts](http://g-scripts.sourceforge.net/) nautilus
 
 #### Outils système
 
@@ -147,7 +128,6 @@ TODO !!!!!!!!!!!!!!!!!!!!!! Ce qui suit est à archiver ou a revoir
 | --------------------------------------------------- | ------------------------------------------------------ | -------------------------------------------------------- |
 | Nom                                                 | Description                                            | Installation [apturl](../system/Apt-url)                 |
 | [ForemostGUI](http://doc.ubuntu-fr.org/foremostgui) | IHM pour foremost, logiciel de récupération de données | Voir [ForemostGUI](http://doc.ubuntu-fr.org/foremostgui) |
-
 
 Les suivants sont à répartir dans les menus appropriés :
 
@@ -171,7 +151,7 @@ Voici des outils Linux pour sauvegarder et versionner des fichiers spécifiques,
    - Permet de prendre des instantanés fréquents de dossiers, pour restaurer des versions spécifiques.
 2. **Back In Time** (GUI et ligne de commande)
    - `Back In Time` est une interface graphique (et en ligne de commande) pour créer des sauvegardes incrémentielles de fichiers et dossiers spécifiques. Il utilise `rsync` et `diff` pour stocker des versions.
-   - **Avantages** : 
+   - **Avantages** :
      - Interface facile à utiliser.
      - Peut être configuré pour des sauvegardes automatiques.
    - **Installation** : Disponible dans les dépôts (ex. `sudo apt install backintime-qt`).
@@ -211,7 +191,6 @@ même bien pratiques:
 
 > [RAR avec mot de passe](http://forum.ubuntu-fr.org/viewtopic.php?id=83892)
 
-
 TODO: Inclure les applis par défaut dans Mint 21.3 et 22
 
 |              |                                                       |                                                                                         |                                                                 |
@@ -219,5 +198,3 @@ TODO: Inclure les applis par défaut dans Mint 21.3 et 22
 | Nom          | ubuntu-fr                                             | Description                                                                             | [apt-url](Apt-url) (Installation)                               |
 | Disk-Manager | [disk-manager](http://doc.ubuntu-fr.org/disk-manager) | Gestionnaire de disques. Voir [Disques Locaux](../../../../linux/system/Disques_Locaux) | N/A. Voir [disk-manager](http://doc.ubuntu-fr.org/disk-manager) |
 | Gufw         | [gufw](http://doc.ubuntu-fr.org/gufw)                 | Interface graphique du pare-feu UFW, celui par défaut dans Ubuntu (10.10 au moins)      | [gufw](apt://gufw)                                              |
-
-
