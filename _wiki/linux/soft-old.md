@@ -12,8 +12,6 @@ layout: content
 
 TODO: Rajouter:
 
-- GroovyConsole ??
-- IntelliJ IDEA Community ??
 - regexxer ??
 - Postman
 - Rider

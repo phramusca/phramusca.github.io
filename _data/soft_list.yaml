@@ -298,6 +298,14 @@ categories:
         url_website: https://developer.android.com/studio
         url_repository: null
         description: IDE pour le développement Android (émulateurs, SDK). Paquet Flathub ; le lanceur .desktop appelle souvent flatpak avec la commande android-studio-wrapper.
+      - nom: IntelliJ IDEA Ultimate
+        apt: null
+        flathub: com.jetbrains.IntelliJ-IDEA-Ultimate
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/intellij_idea
+        url_website: https://www.jetbrains.com/idea/
+        url_repository: null
+        description: IDE Java et Kotlin (JetBrains), édition Ultimate (licence). Flathub ; l’édition Community gratuite est com.jetbrains.IntelliJ-IDEA-Community.
       - nom: Meld
         apt: meld
         url_internal: meld
