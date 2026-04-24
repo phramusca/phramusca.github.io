@@ -122,13 +122,6 @@ TODO: /!\ Comment gérer rsync/grsync et autres cas de gui pour outil de ligne d
 
 TODO !!!!!!!!!!!!!!!!!!!!!! Ce qui suit est à archiver ou a revoir
 
-#### Outils système
-
-|                                                     |                                                        |                                                          |
-| --------------------------------------------------- | ------------------------------------------------------ | -------------------------------------------------------- |
-| Nom                                                 | Description                                            | Installation [apturl](../system/Apt-url)                 |
-| [ForemostGUI](http://doc.ubuntu-fr.org/foremostgui) | IHM pour foremost, logiciel de récupération de données | Voir [ForemostGUI](http://doc.ubuntu-fr.org/foremostgui) |
-
 Les suivants sont à répartir dans les menus appropriés :
 
 |                                                             |                                                            |                                          |
@@ -141,7 +134,7 @@ Les suivants sont à répartir dans les menus appropriés :
 
 TODO Tester et intégrer ce qui suit (de Chat GPT):
 
-##### Outils de Sauvegarde Versionnée pour Fichiers sous Linux
+#### Outils de Sauvegarde Versionnée pour Fichiers sous Linux
 
 Voici des outils Linux pour sauvegarder et versionner des fichiers spécifiques, similaires à Timeshift mais ciblant les fichiers et dossiers, avec options en ligne de commande ou interface graphique.
 
