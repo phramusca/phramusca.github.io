@@ -12,9 +12,6 @@ layout: content
 
 TODO: Rajouter:
 
-- regexxer ??
-- Postman
-- Rider
 - Visual Studio Code
 - Git gui clients (FAIRE LE TRI)
   - Gitkraken: seulement open source. Pas de private ni de self-hosted

@@ -306,6 +306,14 @@ categories:
         url_website: https://www.jetbrains.com/idea/
         url_repository: null
         description: IDE Java et Kotlin (JetBrains), édition Ultimate (licence). Flathub ; l’édition Community gratuite est com.jetbrains.IntelliJ-IDEA-Community.
+      - nom: Rider
+        apt: null
+        flathub: com.jetbrains.Rider
+        url_internal: null
+        url_doc_ubuntu_fr: null
+        url_website: https://www.jetbrains.com/fr-fr/rider/download/?section=linux
+        url_repository: null
+        description: IDE .NET multiplateforme (JetBrains). Préférer Flathub (com.jetbrains.Rider) à Snap ; sinon archive .tar.gz depuis le site ou via JetBrains Toolbox.
       - nom: Meld
         apt: meld
         url_internal: meld
