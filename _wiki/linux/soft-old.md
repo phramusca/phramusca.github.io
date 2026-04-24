@@ -127,7 +127,6 @@ Les suivants sont à répartir dans les menus appropriés :
 |                                                             |                                                            |                                          |
 | ----------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------- |
 | Nom                                                         | Description                                                | Installation [apturl](../system/Apt-url) |
-| [Google Earth](../soft/google_earth)                        | La Terre vue du ciel                                       | N/A                                      |
 | [Sunclock](http://www.arvernes.com/wiki/index.php/Sunclock) | Carte avec zones ensoleillées                              | N/A                                      |
 | Gwhere                                                      | Catalogueur de CDs/DVDs                                    |                                          |
 | kFileReplace                                                | Changer un texte par un autre dans des fichiers (a tester) |                                          |
