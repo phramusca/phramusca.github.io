@@ -12,7 +12,6 @@ layout: content
 
 TODO: Rajouter:
 
-- Android Studio
 - GroovyConsole ??
 - IntelliJ IDEA Community ??
 - regexxer ??

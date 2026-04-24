@@ -290,6 +290,14 @@ categories:
         description: Précurseur pour faire tourner les jeux Windows sous Linux. Préférer Lutris ou GameHub.
   - nom: Programmation
     logiciels:
+      - nom: Android Studio
+        apt: null
+        flathub: com.google.AndroidStudio
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/android_studio
+        url_website: https://developer.android.com/studio
+        url_repository: null
+        description: IDE pour le développement Android (émulateurs, SDK). Paquet Flathub ; le lanceur .desktop appelle souvent flatpak avec la commande android-studio-wrapper.
       - nom: Meld
         apt: meld
         url_internal: meld
