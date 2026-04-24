@@ -221,6 +221,14 @@ categories:
         url_website: https://www.google.com/earth/about/versions/
         url_repository: null
         description: Globe virtuel pour explorer la Terre en 3D (satellite, cartes, Street View).
+      - nom: HomeBank
+        archive: yes
+        apt: homebank
+        url_internal: null
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/homebank
+        url_website: https://www.gethomebank.org/
+        url_repository: https://code.launchpad.net/homebank
+        description: Gestionnaire de finances personnelles.
       - nom: TigerVNC Viewer
         apt: null
         flathub: org.tigervnc.vncviewer

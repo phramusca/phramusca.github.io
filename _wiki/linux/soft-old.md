@@ -8,13 +8,6 @@ layout: content
 
 ### Applications
 
-#### Internet
-
-|                     |                                               |                                                          |                                   |
-| ------------------- | --------------------------------------------- | -------------------------------------------------------- | --------------------------------- |
-| Nom                 | Ubuntu-fr                                     | Description                                              | [apt-url](Apt-url) (Installation) |
-| HomeBank            | [HomeBank](http://doc.ubuntu-fr.org/HomeBank) | Gestionnaire de finances                                 | [HomeBank](apt://homebank)        |
-
 #### Programmation
 
 TODO: Rajouter:
