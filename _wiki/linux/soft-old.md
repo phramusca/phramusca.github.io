@@ -156,26 +156,3 @@ Voici des outils Linux pour sauvegarder et versionner des fichiers spécifiques,
 | Déjà Dup     | Oui           | GUI       | Sauvegarde simple       | Facile        |
 
 En fonction de vos besoins (sauvegarde fréquente, déduplication, interface graphique), **Back In Time** et **Vorta** sont de bons choix avec une interface graphique, tandis que **rsnapshot** est très efficace en ligne de commande.
-
-#### Divers, sans IHM
-
-Les programmes suivants n'ont pas d'interface graphique, mais sont quand
-même bien pratiques:
-
-|                                                        |                                         |                                                                                                     |                                          |
-| ------------------------------------------------------ | --------------------------------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| Nom                                                    | Ubuntu-fr                               | Description                                                                                         | Installation [apturl](../system/Apt-url) |
-| [convmv](../soft/convmv)                               |                                         | Conversion de caractères (noms de fichiers)                                                         | [convmv](apt://convmv)                   |
-| [Disques_Réseau#mount.cifs](Disques_Réseau#mount.cifs) |                                         | Pour monter des dossiers partagés Windows ou Samba                                                  | [smbfs](apt://smbfs)                     |
-| [fcron](../soft/fcron)                                 | [fcron](http://doc.ubuntu-fr.org/fcron) | FCron permet de pallier les défauts de Cron et d'Anacron.                                           | [fcron](apt://fcron)                     |
-| RAR (archive)                                          | [rar](http://doc.ubuntu-fr.org/rar)     | RAR est un format d'archive (un peu comme ZIP), c'est aussi le nom de l'application pour les gérer. | Voir site Ubuntu                         |
-
-> [RAR avec mot de passe](http://forum.ubuntu-fr.org/viewtopic.php?id=83892)
-
-TODO: Inclure les applis par défaut dans Mint 21.3 et 22
-
-|              |                                                       |                                                                                         |                                                                 |
-| ------------ | ----------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| Nom          | ubuntu-fr                                             | Description                                                                             | [apt-url](Apt-url) (Installation)                               |
-| Disk-Manager | [disk-manager](http://doc.ubuntu-fr.org/disk-manager) | Gestionnaire de disques. Voir [Disques Locaux](../../../../linux/system/Disques_Locaux) | N/A. Voir [disk-manager](http://doc.ubuntu-fr.org/disk-manager) |
-                                         |

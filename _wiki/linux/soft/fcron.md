@@ -4,20 +4,16 @@ layout: software
 
 # Fcron
 
-Fcron permet de contôler les tâches planifiées. Il est mieux que cron et
-anacron.
+**Fcron** est un planificateur de tâches (daemon + `fcrontab`), alternative à **cron** et **anacron**. Le projet est ancien ; pour du récent et intégré au système, voir plus bas.
 
-Contenu de fcrontab (fcrontab -e)
+## Installation
 
-\# utiliser /bin/bash pour lancer les commandes, quoique puisse indiquer
-/etc/passwd
+L’installation amont se fait par **compilation des sources**. Procédure et prérequis : [documentation officielle — How to install fcron](https://yo8192.github.io/fcron/install.html#AEN206).
 
-SHELL=/bin/bash
+## Configuration (aperçu)
 
-@ 5h /usr/bin/mono
-/home/xxxx/Creations/dev/MyBackups/BackupDrives/bin/Release/BackupDrives.exe
---schedule
+Tâches avec **`fcrontab`** (ex. `fcrontab -e`). Syntaxe détaillée : doc du projet et [Ubuntu-fr](https://doc.ubuntu-fr.org/fcron).
 
-------------------------------------------------------------------------
+## Alternatives plus modernes
 
-Retour à [Programmes](Programmes)
+En pratique : **[systemd timers](https://systemd.io/)** (unités `.timer` + `.service`), ou **cron** / **anacron** selon le besoin.

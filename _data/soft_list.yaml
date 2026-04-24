@@ -494,6 +494,13 @@ categories:
       url_website: https://gnunn1.github.io/tilix-web/
       url_repository: https://github.com/gnunn1/tilix
       description: Terminal en tuiles.
+    - nom: Fcron
+      apt: null
+      url_internal: fcron
+      url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/fcron
+      url_website: https://yo8192.github.io/fcron/
+      url_repository: https://github.com/yo8192/fcron
+      description: Planificateur de tâches
     - nom: ForemostGUI
       apt: https://doc.ubuntu-fr.org/foremostgui
       url_internal: null
