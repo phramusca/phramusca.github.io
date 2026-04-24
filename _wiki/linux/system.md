@@ -148,3 +148,5 @@ ssh-copy-id -i ~/.ssh/id_ed25519.pub username@ipaddress
 ```
 
 Et voila, maintenant il faut utiliser la paraphrase (si renseignée) pour se connecter au serveur distant et non plus le mot de passe de l'utilisateur distant.
+
+TODO: Faire section FTP, et ajouter FileZilla et lftp (script. et gui ? => faire des liens avec doc internet/free.fr)

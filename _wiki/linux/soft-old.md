@@ -8,23 +8,11 @@ layout: content
 
 ### Applications
 
-#### Bureautique
-
-TODO: archiver: "livret-2.deb": <https://www.biotechno.fr/BookletImposer.html>) VS bookletimposer
-
 #### Internet
-
-TODO Rajouter ?
-
-- 4kyoutubetomp3
-- MEGAsync
-
-TODO: Faire section FTP, et ajouter FileZilla et lftp (script. et gui ?)
 
 |                     |                                               |                                                          |                                   |
 | ------------------- | --------------------------------------------- | -------------------------------------------------------- | --------------------------------- |
 | Nom                 | Ubuntu-fr                                     | Description                                              | [apt-url](Apt-url) (Installation) |
-| [GCStar](../GCStar) | [gcstar](http://doc.ubuntu-fr.org/gcstar)     | Gestion des collections personnelles (Films, jeux, ...). | Voir [GCStar](../GCStar)          |
 | HomeBank            | [HomeBank](http://doc.ubuntu-fr.org/HomeBank) | Gestionnaire de finances                                 | [HomeBank](apt://homebank)        |
 
 #### Programmation

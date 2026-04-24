@@ -117,8 +117,6 @@ imagedestroy($image);
 
 ### Divers
 
-Voir [Firefox](../archive/linux/soft/Firefox) pour une liste de plugins utiles au développement.
-
 - Envoi de mails en localhost:
   - Installer [esmtp](apt://esmtp) (d'autres alternatives existent,
     renseigne toi)
