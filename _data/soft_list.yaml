@@ -503,6 +503,13 @@ categories:
       description: Interface graphique non officielle pour Foremost, un logiciel de récupération de données.
   - nom: Préférences
     logiciels:
+    - nom: Gufw (Configuration du pare-feu)
+      apt: gufw
+      url_internal: null
+      url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/gufw
+      url_website: null
+      url_repository: https://github.com/costales/gufw
+      description: Interface graphique pour le pare-feu UFW.
     - nom: Guake
       apt: guake
       url_internal: null

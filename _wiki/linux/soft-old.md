@@ -120,17 +120,6 @@ TODO: /!\ Comment gérer rsync/grsync et autres cas de gui pour outil de ligne d
 
 ### A REVOIR
 
-TODO !!!!!!!!!!!!!!!!!!!!!! Ce qui suit est à archiver ou a revoir
-
-Les suivants sont à répartir dans les menus appropriés :
-
-|                                                             |                                                            |                                          |
-| ----------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------- |
-| Nom                                                         | Description                                                | Installation [apturl](../system/Apt-url) |
-| [Sunclock](http://www.arvernes.com/wiki/index.php/Sunclock) | Carte avec zones ensoleillées                              | N/A                                      |
-| Gwhere                                                      | Catalogueur de CDs/DVDs                                    |                                          |
-| kFileReplace                                                | Changer un texte par un autre dans des fichiers (a tester) |                                          |
-
 TODO Tester et intégrer ce qui suit (de Chat GPT):
 
 #### Outils de Sauvegarde Versionnée pour Fichiers sous Linux
@@ -189,4 +178,4 @@ TODO: Inclure les applis par défaut dans Mint 21.3 et 22
 | ------------ | ----------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
 | Nom          | ubuntu-fr                                             | Description                                                                             | [apt-url](Apt-url) (Installation)                               |
 | Disk-Manager | [disk-manager](http://doc.ubuntu-fr.org/disk-manager) | Gestionnaire de disques. Voir [Disques Locaux](../../../../linux/system/Disques_Locaux) | N/A. Voir [disk-manager](http://doc.ubuntu-fr.org/disk-manager) |
-| Gufw         | [gufw](http://doc.ubuntu-fr.org/gufw)                 | Interface graphique du pare-feu UFW, celui par défaut dans Ubuntu (10.10 au moins)      | [gufw](apt://gufw)                                              |
+                                         |
