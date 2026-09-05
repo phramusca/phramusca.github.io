@@ -388,7 +388,7 @@ categories:
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/bruno
         url_website: https://www.usebruno.com/
         url_repository: https://github.com/usebruno/bruno
-        description: IDE pour les développeurs.
+        description: Client d'API.
       - nom: Cursor
         apt: null
         apt_thirdparty: cursor
