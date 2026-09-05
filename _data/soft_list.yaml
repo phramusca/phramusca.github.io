@@ -396,7 +396,7 @@ categories:
         url_doc_ubuntu_fr: null
         url_website: https://cursor.com/
         url_repository: null
-        description: Éditeur de code avec agent IA.
+        description: Éditeur de code avec agent IA. ⚠️ Appartient maintenant à Elon Musk ... ⚠️
       - nom: Visual Studio Code
         apt: null
         apt_thirdparty: vscode
