@@ -625,6 +625,33 @@ La réservation DHCP de l'adresse `192.168.1.92` doit rester active (ou cette
 adresse doit être configurée statiquement sur le Raspberry Pi), car le routeur
 doit toujours retrouver Pi-hole à la même adresse.
 
+#### Cas de la Freebox et du DNS IPv6
+
+La Freebox peut aussi annoncer un serveur DNS IPv6 aux clients au moyen des
+annonces IPv6 et de DHCPv6. Android peut alors utiliser ce DNS IPv6 en
+priorité, même si `192.168.1.92` est bien indiqué comme DNS IPv4. Un nom local
+présent uniquement dans Pi-hole peut donc être résolu en `NXDOMAIN` sans
+qu'aucune requête n'apparaisse dans le journal Pi-hole.
+
+Dans Freebox OS, l'option **Activer le serveur DHCPv6** peut modifier cette
+annonce. Sur certains réseaux, l'activation de cette option fait disparaître
+le DNS IPv6 affiché par Android et permet alors aux clients d'utiliser le DNS
+IPv4 Pi-hole. Ce résultat dépend toutefois du modèle, du firmware et de la
+configuration IPv6 de la Freebox.
+
+Après toute modification, reconnecter les clients au Wi-Fi puis vérifier :
+
+```sh
+resolvectl status
+resolvectl dns
+```
+
+Sur Android, vérifier que le DNS IPv6 indésirable a bien disparu et tester à la
+fois un domaine local et un domaine public. La Freebox affiche parfois un
+avertissement indiquant que DHCPv6 peut dégrader la connectivité IPv6 de
+certains appareils Android : contrôler donc aussi l'accès IPv6 avant de
+conserver ce réglage.
+
 ### Renouveler le réseau sur les hôtes clients
 
 Après avoir modifié les paramètres DHCP/DNS, les appareils doivent récupérer la
