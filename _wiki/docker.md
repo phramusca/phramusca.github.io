@@ -463,6 +463,212 @@ POCKETBASE_ENCRYPTION_KEY=
 # UPLOAD_PASSWORD=
 ```
 
+## Accéder aux applications Docker par leur nom
+
+Pour accéder aux applications sans mémoriser un port, j'utilise deux services
+complémentaires :
+
+- [Pi-hole](https://pi-hole.net/) fournit le DNS local et fait correspondre les
+  noms aux adresses IP ;
+- [Nginx Proxy Manager](https://nginxproxymanager.com/) est le reverse proxy :
+  il reçoit les requêtes HTTP/HTTPS sur les ports `80`/`443` et les transmet au
+  bon conteneur.
+
+L'architecture est par exemple la suivante :
+
+```text
+romm.rpi5.home.arpa
+        │
+        ├── DNS Pi-hole ──> 192.168.1.92
+        │
+        └── Nginx Proxy Manager:80/443
+                         └──> RomM:8082
+```
+
+On utilise ici `home.arpa`, réservé aux réseaux domestiques. Le suffixe
+`rpi5.local` est fourni par mDNS/Avahi pour le nom de l'hôte, mais il ne crée
+pas automatiquement de sous-domaines comme `romm.rpi5.local`. Il vaut donc
+mieux utiliser un domaine local géré par son propre DNS :
+
+```text
+http://romm.rpi5.home.arpa
+http://portainer.rpi5.home.arpa
+```
+
+### Nginx Proxy Manager
+
+Nginx Proxy Manager doit être le seul service qui utilise les ports `80` et
+`443` de l'hôte. Les applications peuvent continuer à utiliser leurs ports
+actuels (par exemple `8082` pour RomM), mais ces ports ne sont plus nécessaires
+dans l'URL des clients.
+
+```yaml
+services:
+  app:
+    image: 'jc21/nginx-proxy-manager:2.15.1'
+    restart: unless-stopped
+    ports:
+      # These ports are in format <host-port>:<container-port>
+      - '80:80' # Public HTTP Port
+      - '443:443' # Public HTTPS Port
+      - '81:81' # Admin Web Port
+      # Add any other Stream port you want to expose
+      # - '21:21' # FTP
+    environment:
+      TZ: "Europe/Paris"
+
+      # Uncomment this if you want to change the location of
+      # the SQLite DB file within the container
+      # DB_SQLITE_FILE: "/data/database.sqlite"
+
+      # Uncomment this if IPv6 is not enabled on your host
+      # DISABLE_IPV6: 'true'
+    volumes:
+      - ${VOLUME_PATH}/data:/data
+      - ${VOLUME_PATH}/letsencrypt:/etc/letsencrypt
+```
+
+Avec fichier `.env` :
+
+```ini
+VOLUME_PATH="/chemin/avec des espaces"
+```
+
+Après le déploiement, l'interface d'administration est disponible sur
+`http://rpi5.local:81`. Dans **Hosts > Proxy Hosts**, ajouter par exemple :
+
+| Domain Names | Scheme | Forward Host | Forward Port |
+| --- | --- | --- | ---: |
+| `romm.rpi5.home.arpa` | `http` | `192.168.1.92` | `8082` |
+
+Activer **Websockets Support** si l'application en a besoin. Pour les autres
+applications, ajouter un proxy host avec le même principe :
+
+```text
+portainer.rpi5.home.arpa  -> 192.168.1.92:9000
+immich.rpi5.home.arpa     -> 192.168.1.92:2283
+```
+
+Ne pas exposer le port `81` sur Internet. Il sert uniquement à administrer
+Nginx Proxy Manager depuis le réseau local.
+
+### Pi-hole et DNS local
+
+Pi-hole est le serveur DNS utilisé par les appareils du réseau. Il doit être
+joignable sur le port DNS `53` de l'hôte. Dans son interface
+(`http://rpi5.local:8085` avec la configuration ci-dessous), ajouter les
+enregistrements dans **Local DNS > DNS Records** :
+
+| Domaine | Adresse IP |
+| --- | --- |
+| `romm.rpi5.home.arpa` | `192.168.1.92` |
+| `portainer.rpi5.home.arpa` | `192.168.1.92` |
+
+Tous les noms utilisés dans Nginx Proxy Manager doivent avoir un
+enregistrement DNS Pi-hole qui pointe vers l'adresse IP du Raspberry Pi.
+Pi-hole ne redirige pas le trafic web : il fait uniquement la résolution du
+nom. C'est Nginx Proxy Manager qui choisit ensuite l'application et son port.
+
+```yaml
+# More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    ports:
+      # DNS Ports
+      - "53:53/tcp"
+      - "53:53/udp"
+      # Default HTTP Port
+      - "8085:80/tcp"
+      # Default HTTPs Port. FTL will generate a self-signed certificate
+      - "4435:443/tcp"
+      # Uncomment the line below if you are using Pi-hole as your DHCP server
+      #- "67:67/udp"
+      # Uncomment the line below if you are using Pi-hole as your NTP server
+      #- "123:123/udp"
+    environment:
+      # Set the appropriate timezone for your location (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones), e.g:
+      TZ: 'Europe/Paris'
+      # Set a password to access the web interface. Not setting one will result in a random password being assigned
+      FTLCONF_webserver_api_password: 'CHANGER_CE_MOT_DE_PASSE'
+      # If using Docker's default `bridge` network setting the dns listening mode should be set to 'ALL'
+      FTLCONF_dns_listeningMode: 'ALL'
+    # Volumes store your data between container upgrades
+    volumes:
+       - ${VOLUME_PATH}:/etc/pihole
+    restart: unless-stopped
+```
+
+Avec fichier `.env` :
+
+```ini
+VOLUME_PATH="/chemin/avec des espaces"
+```
+
+### Configurer le DNS distribué par le routeur
+
+Le serveur DHCP du routeur doit annoncer l'adresse IP de Pi-hole comme serveur
+DNS. Dans la Freebox, ouvrir l'application Freebox ou l'interface
+d'administration, puis rechercher les paramètres du réseau local, du DHCP ou
+des serveurs DNS. Renseigner :
+
+```text
+Serveur DNS primaire : 192.168.1.92
+```
+
+Laisser le DNS secondaire vide permet d'éviter que les clients contournent
+Pi-hole pour les noms locaux. Si la Freebox impose un DNS secondaire, il faut
+vérifier qu'il ne prend pas la priorité sur Pi-hole.
+
+La réservation DHCP de l'adresse `192.168.1.92` doit rester active (ou cette
+adresse doit être configurée statiquement sur le Raspberry Pi), car le routeur
+doit toujours retrouver Pi-hole à la même adresse.
+
+### Renouveler le réseau sur les hôtes clients
+
+Après avoir modifié les paramètres DHCP/DNS, les appareils doivent récupérer la
+nouvelle configuration. Le plus simple est par le gestionnaire de réseau de la distrib. Sinon, en ligne de commande, il faut: 
+
+Identifier la connexion active :
+
+```sh
+nmcli -f NAME,DEVICE connection show --active
+```
+
+Exemple de sortie:
+
+```sh
+NAME                  DEVICE          
+Connexion Ethernet 1  enxa84a6391096a 
+docker0               docker0         
+lo                    lo              
+lxcbr0                lxcbr0          
+veth7372412           veth7372412     
+virbr0                virbr0 
+```
+
+Dans cet exemple, la connexion active est `Connexion Ethernet 1` sur
+l'interface `enxa84a6391096a`. La désactiver puis la réactiver demande une
+nouvelle configuration DHCP :
+
+```sh
+sudo nmcli connection down id "Connexion Ethernet 1"
+sudo nmcli connection up id "Connexion Ethernet 1"
+```
+
+Le nom de l'interface (`enxa84a6391096a`) n'est pas le nom à utiliser avec
+`nmcli connection down/up` : ces commandes attendent le nom de la connexion,
+ici `Connexion Ethernet 1`.
+
+Vérifier ensuite que Pi-hole est bien utilisé et que le nom se résout :
+
+```sh
+resolvectl dns
+getent hosts romm.rpi5.home.arpa
+curl -I http://romm.rpi5.home.arpa
+```
+
 ## Monter un disque externe avant de lancer docker
 
 J'utilise un disque externe pour stocker les données des services Docker. Le disque doit être monté **avant** `docker.service`. Un script automatise les unités `.mount` et le *drop-in* `docker.service` (`After=` / `Requires=`).
