@@ -6,25 +6,153 @@ layout: content
 
 ## Installation
 
-- Installer [rpi-imager](apt://rpi-imager) ([documentation](https://www.raspberrypi.com/documentation/))
+Depuis un PC:
+
+- installer Raspberry Pi Imager: [rpi-imager](apt://rpi-imager) ([documentation](https://www.raspberrypi.com/documentation/))
+- Créer une microSD avec le Raspberry Pi OS (64-bit)
+
+## Configuration du Raspberry
+
 - Mettre à jour:
 
   ```shell
   sudo rpi-update
   ```
 
-- Copier les clés ssh (publiques) (depuis le PC):
+- **Depuis le PC**, copier les clés ssh (publiques):
 
   ```shell
   ssh-copy-id UTILISATEUR@ADRESSE_DU_PI
   ```
 
 - [Pimp My terminal](../linux/system/terminal#pimp-my-terminal)
+- [Installer la mise à jour automatique](#mise-à-jour-automatique)
 - [Installer Docker](/wiki/docker#installation)
 - [Configurer docker](/wiki/docker#monter-un-disque-externe-avant-de-lancer-docker) pour monter les disques externes avant de lancer les images
-- Installer [Portainer](/wiki/docker#portainer-ce)
+- Installer [Portainer](/wiki/docker#portainer-ce) et les autres [applications docker](/wiki/docker#docker-compose) depuis Portainer.
+- (Configuer le réseau pour [l'accès aux applications Docker par leur nom](/wiki/docker#accéder-aux-applications-docker-par-leur-nom))
+- [Configurer VNC](#tunnel-ssh-pour-vnc-sur-raspberry-pi-5) (ayant eu dernièrement pleins de problèmes de connexion dues au problème de l'auth (avec un truc appelé pam), j'ai créé un tunnel ssh, ce qui a résolu le problème et me permet de me connecter sans authentification comme pour ssh)
 
-## Mise à jour
+## Tunnel SSH pour VNC sur Raspberry Pi 5
+
+Accès VNC chiffré et authentifié par clé SSH, sans mot de passe VNC.  
+Principe : wayvnc n'écoute que sur `localhost` du Pi ; TigerVNC passe par le tunnel SSH.
+
+```text
+TigerVNC ──► localhost:5900 (PC) ──► tunnel SSH ──► localhost:5900 (Pi: wayvnc)
+```
+
+### 1. Configurer wayvnc côté Pi
+
+Éditer `/etc/wayvnc/config` :
+
+```ini
+enable_auth=false
+address=127.0.0.1
+port=5900
+```
+
+Puis redémarrer le service :
+
+```bash
+sudo systemctl restart wayvnc
+```
+
+wayvnc n'est plus joignable depuis le réseau : seule une session SSH sur le Pi peut y accéder.
+
+### 2. Créer le tunnel depuis le PC
+
+>/!\ Il faut avoir copié les clés ssh sur le pi avant de lancer cette commande
+
+```bash
+ssh -N -L 5900:localhost:5900 UTILISATEUR@ADRESSE_DU_PI
+```
+
+- `-L 5900:localhost:5900` : redirige le port 5900 local vers le 5900 du Pi
+- `-N` : n'ouvre pas de shell, juste le tunnel
+
+Laisser cette commande tourner dans un terminal.
+
+### 3. Se connecter avec TigerVNC
+
+Dans TigerVNC Viewer, se connecter à :
+
+```text
+localhost:5900
+```
+
+Aucune authentification VNC n'est demandée : c'est la clé SSH qui joue ce rôle, et le trafic est chiffré de bout en bout.
+
+### 4. Tunnel avec reconnexion automatique
+
+Pour éviter de relancer la commande à chaque coupure (réseau, veille du Pi) ou redémarrage du PC
+
+1. Dans `~/.ssh/config` du PC :
+
+    ```text
+    Host rpi5-vnc
+        HostName ADRESSE_DU_PI
+        User UTILISATEUR
+        ServerAliveInterval 30
+        ServerAliveCountMax 3
+        ExitOnForwardFailure yes
+    ```
+
+1. Créer le fichier ~/.config/systemd/user/rpi5-vnc-tunnel.service
+
+    ```ini
+    [Unit]
+    Description=Tunnel SSH VNC vers rpi5
+    After=network-online.target
+
+    [Service]
+    ExecStart=/usr/bin/ssh -N -o ExitOnForwardFailure=yes -o ServerAliveInterval=30 -o ServerAliveCountMax=3 -L 5900:localhost:5900 rpi5-vnc
+    Restart=always
+    RestartSec=5
+
+    [Install]
+    WantedBy=default.target
+    ```
+
+1. Activer et lancer :
+
+    ```bash
+    systemctl --user daemon-reload
+    systemctl --user enable --now rpi5-vnc-tunnel.service
+    ```
+
+    `ServerAliveInterval` détecte les connexions mortes en \~90 s et ferme le tunnel proprement au lieu de rester bloqué.
+
+Commandes utiles:
+
+```bash
+systemctl --user status rpi5-vnc-tunnel    # état du tunnel
+journalctl --user -u rpi5-vnc-tunnel -f   # logs en direct
+systemctl --user stop rpi5-vnc-tunnel     # arrêter
+systemctl --user disable rpi5-vnc-tunnel  # désactiver au démarrage
+```
+
+Le tunnel tourne en arrière-plan dès l'ouverture de session : TigerVNC se connecte simplement à localhost:5900, rien d'autre à faire.
+
+> **Note** : si la session SSH utilise une clé protégée par passphrase, ajouter un agent ssh (ssh-add) au démarrage de la session, ou une clé sans passphrase dédiée au tunnel (restrictive : restrict,command=echo dans authorized_keys du Pi).
+
+### 5. Vérifications et dépannage
+
+| Problème                              | Vérification                                                                                            |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| « Connection refused » dans TigerVNC  | Le tunnel tourne-t-il ? `ssh -N -L ...` doit rester ouvert                                              |
+| Tunnel se ferme aussitôt              | Port 5900 déjà utilisé en local : essayer `-L 5901:localhost:5900` puis se connecter à `localhost:5901` |
+| Écran noir / connexion qui se détache | Écran HDMI du Pi : fixer une résolution dans `raspi-config` → Display Options → Screen Resolution       |
+| wayvnc injoignable                    | `sudo systemctl status wayvnc` et `ss -tlnp \| grep 5900` : doit écouter sur `127.0.0.1:5900`            |
+
+### Récap sécurité
+
+- Authentification : **clé SSH** (aucun mot de passe, côté Pi comme côté VNC)
+- Chiffrement : **SSH** de bout en bout
+- Exposition réseau : **aucune** — le port 5900 n'est ouvert que sur le localhost du Pi
+- La box ne doit pas avoir de redirection du port 22 ou 5900 vers le Pi (à vérifier)
+
+## Mise à jour automatique
 
 ### Paquet Debian `apt-auto-update` (recommandé)
 
