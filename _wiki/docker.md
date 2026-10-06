@@ -537,9 +537,9 @@ VOLUME_PATH="/chemin/avec des espaces"
 Après le déploiement, l'interface d'administration est disponible sur
 `http://rpi5.local:81`. Dans **Hosts > Proxy Hosts**, ajouter par exemple :
 
-| Domain Names | Scheme | Forward Host | Forward Port |
-| --- | --- | --- | ---: |
-| `romm.rpi5.home.arpa` | `http` | `192.168.1.92` | `8082` |
+| Domain Names          | Scheme | Forward Host   | Forward Port |
+| --------------------- | ------ | -------------- | -----------: |
+| `romm.rpi5.home.arpa` | `http` | `192.168.1.92` |       `8082` |
 
 Activer **Websockets Support** si l'application en a besoin. Pour les autres
 applications, ajouter un proxy host avec le même principe :
@@ -559,9 +559,9 @@ joignable sur le port DNS `53` de l'hôte. Dans son interface
 (`http://rpi5.local:8085` avec la configuration ci-dessous), ajouter les
 enregistrements dans **Local DNS > DNS Records** :
 
-| Domaine | Adresse IP |
-| --- | --- |
-| `romm.rpi5.home.arpa` | `192.168.1.92` |
+| Domaine                    | Adresse IP     |
+| -------------------------- | -------------- |
+| `romm.rpi5.home.arpa`      | `192.168.1.92` |
 | `portainer.rpi5.home.arpa` | `192.168.1.92` |
 
 Tous les noms utilisés dans Nginx Proxy Manager doivent avoir un
