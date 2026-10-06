@@ -115,20 +115,59 @@ sudo apt install sshfs
 Monter :
 
 ```bash
-mkdir -p ~/mnt/serveur
-sshfs username@ipaddress:/RepertoireDistant ~/mnt/serveur
+mkdir -p /media/$USER/serveur
+sshfs utilisateur@serveur.local:/ /media/$USER/serveur
 ```
+
+### Montage automatique au démarrage avec `/etc/fstab`
+
+Créer le point de montage si nécessaire, puis ajouter une ligne à `/etc/fstab` :
+
+```bash
+mkdir -p /media/$USER/serveur
+sudo nano /etc/fstab
+```
+
+L'équivalent de la commande SSHFS ci-dessus est :
+
+```fstab
+utilisateur@serveur.local:/ /media/utilisateur/serveur fuse.sshfs _netdev,nofail,user,reconnect,IdentityFile=/home/utilisateur/.ssh/id_ed25519,UserKnownHostsFile=/home/utilisateur/.ssh/known_hosts 0 0
+```
+
+- Le chemin dans `/etc/fstab` est absolu : contrairement au shell, le fichier ne développe ni `~` ni `$USER`.
+- Remplacer `utilisateur` et `serveur.local` par le nom d'utilisateur et l'adresse du serveur ; le chemin distant `/` peut être remplacé par le répertoire à monter.
+- `_netdev` indique que le montage dépend du réseau ; `nofail` laisse le démarrage continuer si le serveur est indisponible.
+- `user` autorise l'utilisateur à monter le partage ; `reconnect` demande à SSHFS de réessayer après une coupure.
+- `IdentityFile` et `UserKnownHostsFile` indiquent la clé privée et les clés d'hôtes SSH de l'utilisateur local. Choisir une clé dont la clé publique est autorisée sur le serveur. Le chemin `id_ed25519` ci-dessus est un exemple : si seule `id_rsa` est autorisée, utiliser `/home/utilisateur/.ssh/id_rsa`. C'est utile au montage automatique, qui ne peut pas compter sur l'agent SSH de la session interactive.
+
+Pour un montage sans intervention au démarrage, la clé privée ne doit pas demander de phrase secrète (sauf configuration supplémentaire).
+
+Pour savoir quelle clé le serveur accepte, lancer `ssh -v utilisateur@serveur.local` et repérer `Server accepts key`. Si plusieurs clés sont autorisées, Ed25519 est généralement préférable à RSA, mais on peut garder RSA si nécessaire ou si c'est la seule clé déjà installée sur le serveur.
+
+Options facultatives :
+
+- `idmap=user` associe les fichiers distants à l'utilisateur local qui effectue le montage.
+- `ServerAliveInterval=15,ServerAliveCountMax=3` permet de détecter plus rapidement une connexion interrompue.
+
+Tester la configuration sans redémarrer :
+
+```bash
+sudo mount /media/$USER/serveur
+findmnt /media/$USER/serveur
+```
+
+Si le serveur est hors ligne, `nofail` évite de bloquer le démarrage ; relancer ensuite le montage avec `sudo mount /media/$USER/serveur`.
 
 Démonter :
 
 ```bash
-fusermount -u ~/mnt/serveur
+fusermount -u /media/$USER/serveur
 ```
 
 Si le montage est bloqué (réseau coupé, session distante perdue), forcer le démontage :
 
 ```bash
-fusermount -uz ~/mnt/serveur
+fusermount -uz /media/$USER/serveur
 ```
 
 ### Utilisation de clefs publiques/privées
