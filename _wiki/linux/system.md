@@ -119,43 +119,46 @@ mkdir -p /media/$USER/serveur
 sshfs utilisateur@serveur.local:/ /media/$USER/serveur
 ```
 
-### Montage automatique au démarrage et démontage sans `sudo`
+### Montage au démarrage, démontage utilisateur et accès depuis Nemo
 
-Pour monter le partage au démarrage tout en pouvant le démonter comme utilisateur, lancer SSHFS depuis un service systemd utilisateur. Contrairement à une entrée `/etc/fstab`, ce service s'exécute avec les droits de l'utilisateur et celui-ci reste propriétaire du montage.
+Cette configuration combine `/etc/fstab` et un service systemd utilisateur afin de répondre aux trois besoins : monter le partage au démarrage, pouvoir le démonter sans `sudo` et le remonter facilement depuis Nemo.
 
-Si une entrée `/etc/fstab` existe déjà pour ce même point de montage, la commenter ou la retirer et arrêter l'unité système correspondante avant de continuer : un seul mécanisme doit gérer le montage.
+> **Note:** *Une entrée `fstab` montée automatiquement par systemd est montée par le gestionnaire système, donc en root. L'option FUSE `allow_other` peut autoriser l'accès aux fichiers depuis la session utilisateur, mais elle ne donne pas le droit de démonter le montage : cela nécessite toujours `sudo`. Un service systemd utilisateur, lui, monte le partage sous le compte de l'utilisateur, qui peut donc le démonter sans privilèges ; toutefois, l'entrée peut disparaître de Nemo une fois le montage arrêté. On déclare donc le partage dans `/etc/fstab` avec `noauto`, puis le service utilisateur le monte au démarrage. Nemo peut alors aussi le monter à la demande.*
 
 Créer le point de montage :
 
 ```bash
 mkdir -p /media/$USER/serveur
-
 ```
 
-Créer le service suivant, en remplaçant `utilisateur` et `serveur.local` :
+Ajouter à `/etc/fstab` (remplacer `utilisateur`, `serveur` et `.local`) :
 
-```bash
-nano ~/.config/systemd/user/sshfs-serveur.service
+```fstab
+utilisateur@serveur.local:/ /media/utilisateur/serveur fuse.sshfs noauto,user,reconnect,IdentityFile=/home/utilisateur/.ssh/id_ed25519,UserKnownHostsFile=/home/utilisateur/.ssh/known_hosts,ServerAliveInterval=15,ServerAliveCountMax=3 0 0
 ```
+
+- `noauto` empêche systemd de monter lui-même le partage en root au démarrage.
+- `user` autorise l'utilisateur à monter et démonter le partage.
+- `reconnect` et les options `ServerAlive` aident à gérer les coupures réseau.
+- `IdentityFile` et `UserKnownHostsFile` pointent vers les fichiers SSH de l'utilisateur local.
+
+Créer `~/.config/systemd/user/sshfs-serveur.service` :
 
 ```ini
 [Unit]
 Description=Montage SSHFS du serveur distant
 
 [Service]
-Type=simple
-ExecStart=/usr/bin/sshfs -f utilisateur@serveur.local:/ /media/%u/serveur -o reconnect,IdentityFile=%h/.ssh/id_ed25519,ServerAliveInterval=15,ServerAliveCountMax=3
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/mount /media/%u/serveur
 ExecStop=-/usr/bin/fusermount3 -u /media/%u/serveur
-Restart=on-failure
-RestartSec=15
 
 [Install]
 WantedBy=default.target
 ```
 
-Dans le fichier de service, `%u` est remplacé par le nom de l'utilisateur et `%h` par son dossier personnel. `-f` garde SSHFS au premier plan pour que systemd puisse suivre le processus. `Restart=on-failure` réessaie si le montage échoue au démarrage, par exemple si le réseau n'est pas encore prêt.
-
-Activer le démarrage du gestionnaire systemd utilisateur dès le démarrage de la machine, puis activer et lancer le service :
+L'unité utilise l'entrée `fstab` pour monter le partage en tant qu'utilisateur, plutôt que de le monter en root. Activer le gestionnaire systemd utilisateur au démarrage, puis activer le service :
 
 ```bash
 sudo loginctl enable-linger "$USER"
@@ -163,47 +166,21 @@ systemctl --user daemon-reload
 systemctl --user enable --now sshfs-serveur.service
 ```
 
-Vérifier le service et le montage :
+Tester et contrôler le montage :
 
 ```bash
+findmnt /media/$USER/serveur
 systemctl --user status sshfs-serveur.service
-findmnt /media/$USER/serveur
 ```
 
-L'utilisateur peut monter, démonter et remonter le partage sans `sudo` :
+Après démontage depuis Nemo, l'entrée reste visible dans son panneau latéral ; cliquer dessus remonte le partage. `x-gvfs-show` n'est pas nécessaire dans cette configuration avec Nemo. On peut aussi démonter/remonter via le menu contextuel de Nemo, ou depuis un terminal :
 
 ```bash
-systemctl --user stop sshfs-serveur.service
-systemctl --user start sshfs-serveur.service
+fusermount3 -u /media/$USER/serveur
+mount /media/$USER/serveur
 ```
 
-Les journaux du service sont consultables avec :
-
-```bash
-journalctl --user -u sshfs-serveur.service
-```
-
-La clé privée doit être utilisable sans demande interactive au démarrage. Si elle est protégée par une phrase secrète, il faut prévoir une solution d'agent SSH dans la session utilisateur.
-
-### Alternative : montage système avec `/etc/fstab`
-
-Une entrée `/etc/fstab` est montée par systemd en tant que root. Il faut `allow_other` pour que l'utilisateur puisse accéder aux fichiers, mais le démontage se fait avec `sudo systemctl stop`. Utiliser cette méthode si le montage doit être géré comme un montage système.
-
-Ajouter une entrée à `/etc/fstab` en remplaçant les valeurs d'exemple :
-
-```fstab
-utilisateur@serveur.local:/ /media/utilisateur/serveur fuse.sshfs _netdev,user,allow_other,reconnect,IdentityFile=/home/utilisateur/.ssh/id_ed25519,UserKnownHostsFile=/home/utilisateur/.ssh/known_hosts,ServerAliveInterval=15,ServerAliveCountMax=3 0 0
-```
-
-Après avoir créé le point de montage et enregistré `/etc/fstab`, recharger systemd puis démarrer l'unité :
-
-```bash
-sudo systemctl daemon-reload
-sudo systemctl start "$(systemd-escape --path --suffix=mount "/media/$USER/serveur")"
-findmnt /media/$USER/serveur
-```
-
-Pour l'arrêter, utiliser `sudo systemctl stop "$(systemd-escape --path --suffix=mount "/media/$USER/serveur")"`. `allow_other` autorise l'accès aux fichiers, mais ne permet pas à l'utilisateur de démonter lui-même le montage.
+La clé doit être utilisable sans demande interactive au démarrage. `allow_other` n'est pas nécessaire ici : SSHFS est monté par l'utilisateur qui l'utilise.
 
 ### Utilisation de clefs publiques/privées
 
