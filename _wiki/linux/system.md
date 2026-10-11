@@ -256,3 +256,66 @@ ssh-copy-id -i ~/.ssh/id_ed25519.pub username@ipaddress
 Et voila, maintenant il faut utiliser la paraphrase (si renseignée) pour se connecter au serveur distant et non plus le mot de passe de l'utilisateur distant.
 
 TODO: Faire section FTP, et ajouter FileZilla et lftp (script. et gui ? => faire des liens avec doc internet/free.fr)
+
+## Planification des tâches
+
+Il y a plusieurs façons de planifier des tâches sur Linux. Les plus courantes sont `cron`, `anacron`, `fcron` et les timers systemd.
+
+| Choix              | À privilégier quand…                                                                                                  | Atouts / limites                                                                                                                                                                                                                                      |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **systemd timers** | Le script est important, ou tu veux un service bien intégré au système                                                | Logs dans le journal, gestion des dépendances et des erreurs, configuration explicite. `Persistent=true` permet de rattraper une échéance manquée pendant que la machine était éteinte — une exécution au retour, pas toutes les exécutions manquées. |
+| **cron**           | C’est une commande simple, sur une machine toujours allumée                                                           | Très répandu et facile à installer. Attention à l’environnement minimal (PATH, répertoire courant, variables) ; les tâches manquées pendant l’arrêt ne sont généralement pas rattrapées.                                                              |
+| **fcron**          | Tu as besoin de ses fonctions particulières, par exemple gérer des tâches quand la machine n’est pas toujours allumée | Alternative à cron, mais moins courante. Pour un nouveau déploiement, elle apporte rarement un avantage décisif face aux timers systemd.                                                                                                              |
+
+**En bref : systemd timer par défaut sur une distribution moderne ; cron pour la simplicité ou la portabilité ; fcron seulement pour un besoin spécifique.**
+
+## Exemple de timer systemd
+
+Un timer systemd s’appuie sur deux fichiers : un **service** qui lance le script, et un **timer** qui définit quand le lancer. Pour une tâche personnelle, crée-les dans `~/.config/systemd/user/`.
+
+Par exemple, pour lancer `/home/alice/bin/mon-script.sh` tous les jours à 2 h 30 :
+
+`~/.config/systemd/user/mon-script.service` :
+
+```ini
+[Unit]
+Description=Exécute mon script
+
+[Service]
+Type=oneshot
+ExecStart=/home/alice/bin/mon-script.sh
+```
+
+`~/.config/systemd/user/mon-script.timer` :
+
+```ini
+[Unit]
+Description=Planifie mon script chaque jour
+
+[Timer]
+OnCalendar=*-*-* 02:30:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+```
+
+Remplace `/home/alice` par ton chemin réel et vérifie que le script est exécutable (`chmod +x ~/bin/mon-script.sh`). Active ensuite le timer :
+
+```bash
+systemctl --user daemon-reload
+systemctl --user enable --now mon-script.timer
+```
+
+Pour vérifier la prochaine exécution et consulter les logs :
+
+```bash
+systemctl --user list-timers
+journalctl --user -u mon-script.service
+```
+
+Avec `Persistent=true`, si l’ordinateur était éteint à l’heure prévue, le timer lance le script au prochain démarrage de la session. Sans cette option, l’exécution manquée est ignorée.
+
+La syntaxe de `OnCalendar` est détaillée dans la [documentation systemd (systemd.time)](https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#Calendar%20Events).
+
+Pour gérer systemd avec une interface graphique, **Cockpit** propose une interface web qui permet notamment de consulter et de gérer les services. Pour créer un timer utilisateur comme celui-ci, les fichiers et les commandes `systemctl --user` restent souvent le plus simple.
