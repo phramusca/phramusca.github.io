@@ -29,9 +29,10 @@ Depuis un PC:
 - [Installer la mise à jour automatique](#mise-à-jour-automatique)
 - [Installer Docker](/wiki/docker#installation)
 - [Configurer docker](/wiki/docker#monter-un-disque-externe-avant-de-lancer-docker) pour monter les disques externes avant de lancer les images
-- Installer [Portainer](/wiki/docker#portainer-ce) et les autres [applications docker](/wiki/docker#docker-compose) depuis Portainer.
+- Installer [Portainer](/wiki/docker#portainer-ce) puis les autres [applications docker](/wiki/docker#docker-compose) depuis Portainer.
 - (Configuer le réseau pour [l'accès aux applications Docker par leur nom](/wiki/docker#accéder-aux-applications-docker-par-leur-nom))
 - [Configurer VNC](#tunnel-ssh-pour-vnc-sur-raspberry-pi-5) (ayant eu dernièrement pleins de problèmes de connexion dues au problème de l'auth (avec un truc appelé pam), j'ai créé un tunnel ssh, ce qui a résolu le problème et me permet de me connecter sans authentification comme pour ssh)
+- Mettre en place la sauvegarde automatique de la base de données JaMuz (voir [rclone-JaMuz.db.sh](../../scripts/rclone-JaMuz.db.sh)) en utilisant un [service systemd](../linux/system/#systemd-timers) pour le lancer automatiquement au démarrage du Pi.
 
 ## Tunnel SSH pour VNC sur Raspberry Pi 5
 
@@ -143,7 +144,7 @@ Le tunnel tourne en arrière-plan dès l'ouverture de session : TigerVNC se conn
 | « Connection refused » dans TigerVNC  | Le tunnel tourne-t-il ? `ssh -N -L ...` doit rester ouvert                                              |
 | Tunnel se ferme aussitôt              | Port 5900 déjà utilisé en local : essayer `-L 5901:localhost:5900` puis se connecter à `localhost:5901` |
 | Écran noir / connexion qui se détache | Écran HDMI du Pi : fixer une résolution dans `raspi-config` → Display Options → Screen Resolution       |
-| wayvnc injoignable                    | `sudo systemctl status wayvnc` et `ss -tlnp \| grep 5900` : doit écouter sur `127.0.0.1:5900`            |
+| wayvnc injoignable                    | `sudo systemctl status wayvnc` et `ss -tlnp \| grep 5900` : doit écouter sur `127.0.0.1:5900`           |
 
 ### Récap sécurité
 
@@ -274,4 +275,4 @@ Commandes:
   restart - Redémarrer le hotspot
 ```
 
-Le script: [HotspotWEP.sh](raspberry/HotspotWEP.sh)
+Le script: [HotspotWEP.sh](/scripts/HotspotWEP.sh)

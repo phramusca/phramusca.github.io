@@ -14,6 +14,6 @@ L’installation amont se fait par **compilation des sources**. Procédure et pr
 
 Tâches avec **`fcrontab`** (ex. `fcrontab -e`). Syntaxe détaillée : doc du projet et [Ubuntu-fr](https://doc.ubuntu-fr.org/fcron).
 
-## Alternatives plus modernes
+## Alternative plus moderne
 
-En pratique : **[systemd timers](https://systemd.io/)** (unités `.timer` + `.service`), ou **cron** / **anacron** selon le besoin.
+Voir [Planification de tâches](/wiki/linux/system#planification-des-tâches) pour des solutions plus récentes et intégrées au système (ex. `systemd` + `systemd.timer`).

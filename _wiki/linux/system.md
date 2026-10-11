@@ -261,15 +261,19 @@ TODO: Faire section FTP, et ajouter FileZilla et lftp (script. et gui ? => faire
 
 Il y a plusieurs façons de planifier des tâches sur Linux. Les plus courantes sont `cron`, `anacron`, `fcron` et les timers systemd.
 
-| Choix              | À privilégier quand…                                                                                                  | Atouts / limites                                                                                                                                                                                                                                      |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **systemd timers** | Le script est important, ou tu veux un service bien intégré au système                                                | Logs dans le journal, gestion des dépendances et des erreurs, configuration explicite. `Persistent=true` permet de rattraper une échéance manquée pendant que la machine était éteinte — une exécution au retour, pas toutes les exécutions manquées. |
-| **cron**           | C’est une commande simple, sur une machine toujours allumée                                                           | Très répandu et facile à installer. Attention à l’environnement minimal (PATH, répertoire courant, variables) ; les tâches manquées pendant l’arrêt ne sont généralement pas rattrapées.                                                              |
-| **fcron**          | Tu as besoin de ses fonctions particulières, par exemple gérer des tâches quand la machine n’est pas toujours allumée | Alternative à cron, mais moins courante. Pour un nouveau déploiement, elle apporte rarement un avantage décisif face aux timers systemd.                                                                                                              |
+| Choix                             | À privilégier quand…                                                                                                  | Atouts / limites                                                                                                                                                                                                                                      |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [systemd timers](#systemd-timers) | Le script est important, ou tu veux un service bien intégré au système                                                | Logs dans le journal, gestion des dépendances et des erreurs, configuration explicite. `Persistent=true` permet de rattraper une échéance manquée pendant que la machine était éteinte — une exécution au retour, pas toutes les exécutions manquées. |
+| **cron**                          | C’est une commande simple, sur une machine toujours allumée                                                           | Très répandu et facile à installer. Attention à l’environnement minimal (PATH, répertoire courant, variables) ; les tâches manquées pendant l’arrêt ne sont généralement pas rattrapées.                                                              |
+| [fcron](#fcron)                   | Tu as besoin de ses fonctions particulières, par exemple gérer des tâches quand la machine n’est pas toujours allumée | Alternative à cron, mais moins courante. Pour un nouveau déploiement, elle apporte rarement un avantage décisif face aux timers systemd.                                                                                                              |
 
 **En bref : systemd timer par défaut sur une distribution moderne ; cron pour la simplicité ou la portabilité ; fcron seulement pour un besoin spécifique.**
 
-## Exemple de timer systemd
+### Fcron
+
+Voir [Fcron](../soft/fcron) pour plus de détails.
+
+### Systemd Timers
 
 Un timer systemd s’appuie sur deux fichiers : un **service** qui lance le script, et un **timer** qui définit quand le lancer. Pour une tâche personnelle, crée-les dans `~/.config/systemd/user/`.
 
