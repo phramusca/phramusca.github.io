@@ -100,6 +100,61 @@ Ensuite, relancer le shell avec la commande `exec bash` ou `exec zsh`
 
 [Exemples d'alias](http://forum.ubuntu-fr.org/viewtopic.php?id=20437)
 
+## Samba
+
+Samba est un logiciel libre qui permet de partager des fichiers et des imprimantes sur les réseaux locaux. Il est compatible avec les systèmes Windows, Linux et macOS.
+
+### Installation et configuration
+
+Installer [samba](apt://samba) et vérifier la version installée :
+
+```shell
+smbd --version
+```
+
+Pour partager un répertoire, il faut:
+
+- que le user linux ait un mot de passe samba
+
+  ```shell
+  sudo smbpasswd -a myUser
+  ```
+
+- qu'il ait les droits d'accès (et de modification si on veut autoriser `read only = no`) au répertoire à partager.
+
+  ```shell
+  sudo mkdir -p /home/myUser/partage
+  sudo chown -R myUser:myUser /home/myUser/partage
+  sudo chmod -R ug=rwX,o= /home/myUser/partage
+  ```
+
+- Editer le fichier de configuration de Samba pour ajouter et configurer le partage.
+
+  ```shell
+  sudo nano /etc/samba/smb.conf
+  ```
+
+  ```ini
+  [NomDuPartage]
+    path = /home/myUser/partage
+    browseable = yes
+    read only = no
+    valid users = myUser
+    create mask = 0660
+    directory mask = 0770
+  ```
+
+- browseable = yes : le partage apparaît dans la liste des partages. Ça ne donne pas, à lui seul, le droit d’y accéder.
+- read only = no : Samba autorise les modifications. Il faut aussi que Linux autorise l’écriture.
+- valid users = myUser : seul myUser peut se connecter à ce partage.
+- create mask et directory mask : limites de permissions appliquées aux nouveaux fichiers et dossiers créés via Samba. Elles ne changent pas les permissions des éléments déjà présents. 0660 et 0770 sont plus restrictifs : ils autorisent lecture, écriture et accès pour le propriétaire et le groupe, mais pas pour les autres. Les permissions Linux peuvent toutefois encore restreindre l’accès.
+
+Redémarrer le service Samba pour prendre en compte les modifications :
+
+```shell
+sudo systemctl restart smbd
+```
+
 ## SSH FS
 
 Monter un répertoire distant via SSH avec `sshfs` (basé sur FUSE).
