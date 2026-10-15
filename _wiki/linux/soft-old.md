@@ -2,21 +2,7 @@
 layout: content
 ---
 
-# Programmes
-
-## Ma Sélection
-
-### Applications
-
-#### Administration
-
 TODO: Ajouter:
-
-|                                                   |                                                                                                                |                                                        |                                          |
-| ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ | ---------------------------------------- |
-| Nom                                               | ubuntu-fr                                                                                                      | Description                                            | Installation [apturl](../system/Apt-url) |
-| Gparted                                           | [gparted](http://doc.ubuntu-fr.org/gparted)                                                                    | Partitionnement de disque.                             | [gparted](apt://gparted)                 |
-| [VirtualBox](http://doc.ubuntu-fr.org/virtualbox) | Solution de virtualisation de systèmes d'exploitation. [Images toutes prêtes](http://virtualboxes.org/images/) | Voir [VirtualBox](http://doc.ubuntu-fr.org/virtualbox) |                                          |
 
 |                                                      |                                                                                          |                                                                                   |
 | ---------------------------------------------------- | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
@@ -24,45 +10,3 @@ TODO: Ajouter:
 | [winff](http://doc.ubuntu-fr.org/winff)              | WinFF est une interface graphique à FFmpeg très simple d'utilisation et personnalisable. | [winff](apt://winff) + [codecs](http://ubuntuforums.org/showthread.php?t=1117283) |
 | [avidemux](http://doc.ubuntu-fr.org/avidemux)        | Editeur vidéo, considéré comme l'équivalent de VirtualDub.                               | [avidemux](apt://avidemux)                                                        |
 | [Arista Transcoder](http://doc.ubuntu-fr.org/arista) | logiciel de conversion vidéo                                                             | [arista](apt://arista)                                                            |
-| [QuickTime](../../../QuickTime)                      | QuickTime pour Linux                                                                     |                                                                                   |
-| DVDShrink                                            | xDVDShrink - a tester                                                                    |                                                                                   |
-| [ManDVD](http://doc.ubuntu-fr.org/mandvd)            | Création simplifiée de DVD-vidéos, a tester                                              |                                                                                   |
-
-### A REVOIR
-
-TODO Tester et intégrer ce qui suit (de Chat GPT):
-
-#### Outils de Sauvegarde Versionnée pour Fichiers sous Linux
-
-Voici des outils Linux pour sauvegarder et versionner des fichiers spécifiques, similaires à Timeshift mais ciblant les fichiers et dossiers, avec options en ligne de commande ou interface graphique.
-
-1. **rsnapshot** (ligne de commande)
-   - `rsnapshot` est un utilitaire basé sur `rsync` pour les sauvegardes incrémentielles, gérant des versions en utilisant des liens symboliques.
-   - **Installation** : Généralement disponible dans les dépôts (ex. `sudo apt install rsnapshot`).
-   - Permet de prendre des instantanés fréquents de dossiers, pour restaurer des versions spécifiques.
-2. **Back In Time** (GUI et ligne de commande)
-   - `Back In Time` est une interface graphique (et en ligne de commande) pour créer des sauvegardes incrémentielles de fichiers et dossiers spécifiques. Il utilise `rsync` et `diff` pour stocker des versions.
-   - **Avantages** :
-     - Interface facile à utiliser.
-     - Peut être configuré pour des sauvegardes automatiques.
-   - **Installation** : Disponible dans les dépôts (ex. `sudo apt install backintime-qt`).
-3. **Borg Backup + Vorta** (GUI pour Borg)
-   - **Borg** est un utilitaire de ligne de commande pour des sauvegardes dédupliquées et chiffrées. Il est très performant pour les sauvegardes de fichiers en raison de sa déduplication.
-   - **Vorta** est une interface graphique qui facilite l’utilisation de Borg.
-   - **Installation** :
-     - Borg : `sudo apt install borgbackup`
-     - Vorta : disponible via des AppImage ou dans certains dépôts (comme Flatpak).
-4. **Déjà Dup** (GUI)
-   - Déjà Dup est un utilitaire de sauvegarde pour l’environnement GNOME, simple d’utilisation, permettant de configurer des sauvegardes automatiques de fichiers spécifiques.
-   - **Installation** : Disponible dans la plupart des distributions (ex. `sudo apt install deja-dup`).
-
-##### Comparaison rapide
-
-| Outil        | Versionnement | Interface | Adapté pour             | Configuration |
-| ------------ | ------------- | --------- | ----------------------- | ------------- |
-| rsnapshot    | Oui           | CLI       | Sauvegardes versionnées | Modéré        |
-| Back In Time | Oui           | GUI/CLI   | Utilisation facile      | Facile        |
-| Borg + Vorta | Oui           | GUI/CLI   | Sauvegardes robustes    | Modéré        |
-| Déjà Dup     | Oui           | GUI       | Sauvegarde simple       | Facile        |
-
-En fonction de vos besoins (sauvegarde fréquente, déduplication, interface graphique), **Back In Time** et **Vorta** sont de bons choix avec une interface graphique, tandis que **rsnapshot** est très efficace en ligne de commande.
