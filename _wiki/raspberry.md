@@ -241,10 +241,6 @@ Fichier `/etc/logrotate.d/Update` (adapter le chemin du `.log`) :
 
 Test : `sudo logrotate -f /etc/logrotate.d/Update`
 
-#### Rafraichir l'icône de mise à jour
-
-TODO: Comment rafraichir l'icone de mise à jour ??
-
 ## Hotspot WEP pour Nintendo DS
 
 La Nintendo DS ne supporte que les clefs WEP. La freebox ne permet plus de configurer le WiFi avec ce format.

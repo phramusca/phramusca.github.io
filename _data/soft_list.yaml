@@ -556,6 +556,21 @@ categories:
       url_website: null
       url_repository: null
       description: Interface graphique non officielle pour Foremost, un logiciel de récupération de données.
+    - nom: Mission Center
+      description: Mission Center est 
+      apt: null
+      flathub: io.missioncenter.MissionCenter
+      url_internal: null
+      url_doc_ubuntu_fr: null
+      url_website: https://missioncenter.io/
+      url_repository: https://gitlab.com/mission-center-devs/mission-center
+    - nom: Grsync
+      description: Grsync est une interface graphique pour le logiciel de synchronisation de fichiers rsync.
+      apt: grsync
+      url_internal: Grsync
+      url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/grsync
+      url_website: http://www.opbyte.it/grsync/
+      url_repository: https://sourceforge.net/projects/grsync/
   - nom: Préférences
     logiciels:
     - nom: Gufw (Configuration du pare-feu)

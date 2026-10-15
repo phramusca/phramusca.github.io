@@ -2,11 +2,11 @@
 layout: software
 ---
 
-# rsync
+# Grsync
 
-[rsync](https://doc.ubuntu-fr.org/rsync) (pour remote synchronization ou synchronisation à distance) est un logiciel de synchronisation de fichiers.
+[Grsync](http://doc.ubuntu-fr.org/grsync) est une interface graphique pour la commande [rsync](https://doc.ubuntu-fr.org/rsync) qui est un logiciel de synchronisation de fichiers.
 
-[Grsync](http://doc.ubuntu-fr.org/grsync) est une interface graphique pour la commande [rsync](https://doc.ubuntu-fr.org/rsync).
+ Il permet aux utilisateurs de configurer et d'exécuter des tâches de synchronisation de manière conviviale, sans avoir à utiliser la ligne de commande.
 
 ## Exclude files/folders
 

@@ -8,8 +8,6 @@ layout: content
 
 > Pas facile à installer et à utiliser. Attendons que Wayland devienne le mode par défaut et remplace X11, comme c'est le cas sur Ubuntu depuis 26.04.
 
-TODO: Que faire du contenu du dossier _wiki/linux/waydroid ?
-
 ## Général
 
 - Installation:  [https://waydro.id/#install](https://waydro.id/#install)

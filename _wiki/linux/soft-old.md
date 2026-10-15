@@ -8,56 +8,14 @@ layout: content
 
 ### Applications
 
-#### Son et Vidéo
-
-TODO: Ajouter ?
-
-- Qobuz Downloader
-- SoulSeek
-
-##### Audio
-
-TODO: Comparer Jamuz (perfs) avec <https://doc.ubuntu-fr.org/rhythmbox> (installé par défaut)
-
-TODO: Faire un paquet deb pour JaMuz, puis faire un PPA ou mieux ajouter dans les repos ubuntu/linux mint/debian
-
-TODO: Move to JaMuz
-
-- Genre icons (for future use):
-  - <http://www.iconarchive.com/show/music-genre-icons-by-sirubico.html>
-  - <http://www.flickr.com/groups/itunesgenres/pool/>
-  - <http://myssynen.deviantart.com/art/Music-genre-images-71751056>
-  - <http://www.mede8erforum.com/index.php?topic=5472.0>
-  - <http://www.iconeasy.com/iconset/music-genre-icons/>
-
-- Une [liste de lecteurs](http://doc.ubuntu-fr.org/lecteur_audio) sur Ubuntu-fr
-- Mon comparateur (en cours):
-  <http://socialcompare.com/fr/comparison/linux-open-source-audio-players-p4v154w>
-- Alternatives à AmaroK:
-  <http://alternativeto.net/software/amarok/?platform=linux&license=free>
-
-##### Vidéo
-
-TODO:  Voir aussi [Fusionner 2 fichiers avi avec mencoder](http://www.ubuntuhowtos.com/howtos/merge_avi_files_with_mencoder)
-
-TODO:  Voir aussi: [Convertir MOV en Flash FLV](../../archive/Convertir_MOV_en_Flash_FLV)
-
 #### Administration
 
 TODO: Ajouter:
-
-- Back In Time ?
-- Disks - gnome-disks
-- Mission Center
-- WoeUSB (Prepare Microsoft Windows installation USB with ease.)
-
-TODO: /!\ Comment gérer rsync/grsync et autres cas de gui pour outil de ligne de commande
 
 |                                                   |                                                                                                                |                                                        |                                          |
 | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ | ---------------------------------------- |
 | Nom                                               | ubuntu-fr                                                                                                      | Description                                            | Installation [apturl](../system/Apt-url) |
 | Gparted                                           | [gparted](http://doc.ubuntu-fr.org/gparted)                                                                    | Partitionnement de disque.                             | [gparted](apt://gparted)                 |
-| [grsync](../soft/rsync)                           | Synchronisation de fichiers.                                                                                   | [grsync](apt://grsync)                                 |                                          |
 | [VirtualBox](http://doc.ubuntu-fr.org/virtualbox) | Solution de virtualisation de systèmes d'exploitation. [Images toutes prêtes](http://virtualboxes.org/images/) | Voir [VirtualBox](http://doc.ubuntu-fr.org/virtualbox) |                                          |
 
 |                                                      |                                                                                          |                                                                                   |
