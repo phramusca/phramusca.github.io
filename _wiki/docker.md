@@ -383,6 +383,7 @@ services:
     environment:
       <<: *cenv
       POCKETBASE_ENCRYPTION_KEY: ${POCKETBASE_ENCRYPTION_KEY}
+      POCKETBASE_PROXY_SECRET: ${POCKETBASE_PROXY_SECRET}
       ORIGIN: ${WANDERER_ORIGIN:-http://localhost:3000}
       POCKETBASE_CRON_SYNC_SCHEDULE: ${POCKETBASE_CRON_SYNC_SCHEDULE}
     ports:
@@ -392,6 +393,7 @@ services:
     restart: unless-stopped
     volumes:
       - ${WANDERER_DATA_DIR:-./data}/pb_data:/pb_data
+      - ${WANDERER_DATA_DIR:-./data}/plugins:/data/plugins
     healthcheck:
       test: ["CMD", "/curl", "--fail", "http://localhost:8090/health"]
       interval: 15s
@@ -410,14 +412,16 @@ services:
       <<: *cenv
       ORIGIN: ${WANDERER_ORIGIN:-http://localhost:3000}
       BODY_SIZE_LIMIT: Infinity
+      POCKETBASE_PROXY_SECRET: ${POCKETBASE_PROXY_SECRET}
       PUBLIC_POCKETBASE_URL: http://db:8090
       PUBLIC_DISABLE_SIGNUP: "false"
       UPLOAD_FOLDER: /app/uploads
       UPLOAD_USER: ${UPLOAD_USER:-}
       UPLOAD_PASSWORD: ${UPLOAD_PASSWORD:-}
-      PUBLIC_OVERPASS_API_URL: https://overpass-api.de
-      PUBLIC_VALHALLA_URL: https://valhalla1.openstreetmap.de
-      PUBLIC_NOMINATIM_URL: https://nominatim.openstreetmap.org
+      OVERPASS_API_URL: https://overpass-api.de
+      VALHALLA_URL: https://valhalla1.openstreetmap.de
+      NOMINATIM_URL: https://nominatim.openstreetmap.org
+      PUBLIC_MAP_MAX_POLYLINES: 100
     volumes:
       - ${WANDERER_DATA_DIR:-./data}/uploads:/app/uploads
       # - ${WANDERER_DATA_DIR:-./data}/about.md:/app/build/client/md/about.md
@@ -454,6 +458,8 @@ MEILI_MASTER_KEY=
 
 # POCKETBASE_ENCRYPTION_KEY : base neuve — openssl rand -hex 16 avant le 1er lancement (doc Wanderer) ; ne pas changer après (déchiffrement cassé)
 POCKETBASE_ENCRYPTION_KEY=
+# POCKETBASE_PROXY_SECRET : Inbound ActivityPub deliveries authentication key between the web and db services. Generate with openssl rand -hex 32 and set it in both the db and web services.
+POCKETBASE_PROXY_SECRET=
 
 # POCKETBASE_CRON_SYNC_SCHEDULE : absent du compose d'origine ; expression cron de synchro PocketBase (décommenter si besoin)
 # POCKETBASE_CRON_SYNC_SCHEDULE="0 */2 * * *"
