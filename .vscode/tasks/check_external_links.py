@@ -172,6 +172,7 @@ def main():
         sys.exit(1)
     
     errors = []
+    warnings = []
     total_links = 0
     checked_files = 0
     cached_count = 0
@@ -186,6 +187,7 @@ def main():
         
         checked_files += 1
         file_errors = []
+        file_warnings = []
         
         for line_num, text, url in links:
             # Ignorer les liens non-externes
@@ -203,11 +205,18 @@ def main():
             is_valid, status_code, error_msg = checker.check_url(url)
             
             if not is_valid:
-                file_errors.append((line_num, url, text, status_code, error_msg))
+                issue = (line_num, url, text, status_code, error_msg)
+                if status_code == 403:
+                    file_warnings.append(issue)
+                else:
+                    file_errors.append(issue)
         
         if file_errors:
             rel_path = file_path.relative_to(project_root)
             errors.append((rel_path, file_errors))
+        if file_warnings:
+            rel_path = file_path.relative_to(project_root)
+            warnings.append((rel_path, file_warnings))
     
     # Sauvegarder le cache
     cache.save()
@@ -219,14 +228,12 @@ def main():
     else:
         print()
     
-    if errors:
-        print(f"❌ {len(errors)} fichiers avec des erreurs:\n")
-        
-        for rel_path, file_errors in errors:
+    def print_issues(entries):
+        for rel_path, file_issues in entries:
             # Reconstruire le chemin absolu pour make_file_link
             file_path = project_root / rel_path
             print(f"📄 {rel_path}:")
-            for line_num, url, text, status_code, error_msg in file_errors:
+            for line_num, url, text, status_code, error_msg in file_issues:
                 file_link = make_file_link(file_path, line_num)
                 link_display = f"[{text}]({url})" if text else f"({url})"
                 print(f"   Ligne {line_num}: {link_display}")
@@ -236,13 +243,25 @@ def main():
                 if error_msg:
                     print(f"      → {error_msg}")
             print()
-        
+
+    if errors:
+        print(f"❌ {len(errors)} fichiers avec des erreurs:\n")
+        print_issues(errors)
+
+    if warnings:
+        print(f"⚠️ {len(warnings)} fichiers avec des liens HTTP 403 à vérifier manuellement:")
+        print("   Un 403 peut provenir d'un filtrage anti-robot et ne signifie pas toujours que le lien est cassé.\n")
+        print_issues(warnings)
+
+    if errors:
         sys.exit(1)
-    else:
+
+    if not warnings:
         print("✅ Tous les liens externes sont valides !")
-        sys.exit(0)
+    else:
+        print("✅ Aucun lien cassé détecté parmi les liens vérifiables.")
+    sys.exit(0)
 
 
 if __name__ == "__main__":
     main()
-
