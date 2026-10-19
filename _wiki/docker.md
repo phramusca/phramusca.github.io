@@ -106,7 +106,7 @@ sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin do
 
 ### Portainer CE
 
-Vérifier la **compatibilité** entre la version du moteur Docker et Portainer sur [les prérequis Portainer](https://docs.portainer.io/start/install-ce/requirements-and-prerequisites) (les exigences évoluent avec les versions).
+Vérifier la **compatibilité** entre la version du moteur Docker et Portainer sur [les prérequis Portainer](https://docs.portainer.io/start/requirements-and-prerequisites) (les exigences évoluent avec les versions).
 
 [Documentation d'installation](https://docs.portainer.io/start/install-ce/server/docker/linux)
 
