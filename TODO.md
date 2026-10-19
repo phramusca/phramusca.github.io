@@ -97,26 +97,6 @@ Voir TODO Tree.
 - ✅ Exclure les fichiers de documentation du build
 - ✅ Documenter les collections, includes, layouts dans le README
 
-## 🔄 Tâches nécessitant une action manuelle
-
-### Intégrer les logiciels de soft-old.md
-
-**Impact** : Moyen, nécessite décision sur chaque logiciel  
-**Fichier** : `_wiki/linux/soft-old.md`
-
-**Problème** : Fichier avec beaucoup de TODOs et de logiciels à intégrer
-
-**Action** :
-
-- Passer en revue les logiciels listés dans `soft-old.md`
-- Pour chaque logiciel :
-  - Soit l'ajouter dans `_data/soft_list.yaml` et créer une page dans `_wiki/linux/soft/`
-  - Soit créer une page wiki sans l'ajouter à la liste
-  - Soit archiver si obsolète
-- Une fois intégré, archiver ou supprimer `soft-old.md`
-
-**Note** : Cette tâche nécessite une décision manuelle pour chaque logiciel, ce n'est pas un quick win.
-
 ## 📝 Notes
 
 - Tester chaque changement localement avant de commit
