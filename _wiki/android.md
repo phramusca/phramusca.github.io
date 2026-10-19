@@ -6,18 +6,9 @@ layout: content
 
 ![50px-Android](/assets/images/wiki/50px-Android.jpg)
 
-[Android](wiki/Android) est un système d'exploitation Open Source, racheté à la société [Android](wiki/Android) par Google, basé sur un noyau [Linux](wiki/Linux). Il tourne sur de plus en plus d'équipements mobiles: smartphones, PDA, tablettes, téléviseurs, autoradios ...
+Android est un système d'exploitation Open Source, racheté à la société Android par Google, basé sur un noyau [Linux](/wiki/linux). Il tourne sur de plus en plus d'équipements mobiles: smartphones, PDA, tablettes, téléviseurs, autoradios ...
 
-## Applications
-
-Voici une petite sélection d'applications:
-
-|                                    |                   |
-|------------------------------------|-------------------|
-| Nom                                | Description       |
-| [Augment](http://augmentedev.com/) | Réalité augmentée |
-|                                    |                   |
-|                                    |                   |
+TODO: Revoir cette doc Android. Y ajouter /e/OS et lien vers https://keepandroidopen.org/fr/
 
 ## Astuces
 

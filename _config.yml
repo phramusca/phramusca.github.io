@@ -40,7 +40,6 @@ exclude:
   - vendor/ruby/
   # Nos exclusions personnalisées
   - README.md
-  - TODO.md
   - .devcontainer/
   - .vscode/
   - .git/
