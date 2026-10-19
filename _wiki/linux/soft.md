@@ -20,7 +20,7 @@ Il existe des centaines (voire des milliers) d'applications disponible sous [Lin
 Il existe énormément de sites qui listent ou proposent des logiciels
 pour [Linux](../). En voici une petite sélection:
 
-- [Logiciels pour Ubuntu](http://doc.ubuntu-fr.org/logiciels) sur Ubuntu-fr - Pour [Linux Mint](../dist/Mint), choisir les versions [Ubuntu](../dist/Ubuntu) (Gonme) qui sont compatibles et mieux integrées que les logiciels pour Kubuntu (KDE).
+- [Logiciels pour Ubuntu](http://doc.ubuntu-fr.org/logiciels) sur Ubuntu-fr - Pour [Linux Mint](../dist/mint), choisir les versions [Ubuntu](../dist/ubuntu) (Gonme) qui sont compatibles et mieux integrées que les logiciels pour Kubuntu (KDE).
 - [Alternativeto.net](http://alternativeto.net/) (Anglais) - Trouver des équivalences de programmes. Très utile et pratique !
 - [Framasoft](http://www.framasoft.net/) - Association française qui promeut des alternatives libres et éthiques aux services en ligne, notamment en développant et en soutenant des logiciels libres et des outils collaboratifs pour préserver la vie privée et favoriser l'autonomie numérique.
 
@@ -30,7 +30,7 @@ pour [Linux](../). En voici une petite sélection:
 
 Voici un petit aperçu des programmes disponibles que j'ai eu l'occasion de tester, et que j'apprécie, ainsi que des astuces (installation, problèmes connus,...).
 
-Les programmes sont distribués sous [différents formats](../system/soft-packages/), chacun avec ses avantages et ses limites.
+Les programmes sont distribués sous [différents formats](../system/soft_packages/), chacun avec ses avantages et ses limites.
 
 Handlers utiles :
 - [apt-thirdparty-handler](https://github.com/phramusca/apt-thirdparty-handler/releases/latest) pour les liens `apt-thirdparty://...`

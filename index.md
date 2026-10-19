@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
 - 🚧 [Android](wiki/android)
 - [Raspberry](wiki/raspberry)
 - 🚧 [Développement](wiki/dev)
-  - 🚧 [Java](wiki/dev/Java)
+  - 🚧 [Java](wiki/dev/java)
 
 ## Publications
 
@@ -49,4 +49,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ------------------------------------------------------------------------
 
-*Ce site a été converti depuis [MediaWiki](wiki/MediaWiki) en utilisant [mediawiki-to-gfm](https://github.com/outofcontrol/mediawiki-to-gfm) fin 2024, lui-même migré depuis Wikini fin 2009.*
+*Ce site a été converti depuis [MediaWiki](wiki/dev/mediawiki) en utilisant [mediawiki-to-gfm](https://github.com/outofcontrol/mediawiki-to-gfm) fin 2024, lui-même migré depuis Wikini fin 2009.*

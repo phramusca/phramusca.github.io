@@ -43,9 +43,9 @@ MonoDevelop est un IDE, similaire à Visual Studio de Microsoft
 - [Librairie MySQL](apt://libmysql-cil-dev)
 - [Documentation](apt://monodoc-browser,monodoc-mysql-manual,monodoc-gtk2.0-manual)
 - [Contrôle de Version](apt://monodevelop-versioncontrol); permet
-  d'utiliser entre autre [Subversion](../../../archive/Subversion).
+  d'utiliser entre autre [Subversion](../../../archive/subversion).
 - [Debugger](apt://monodevelop-debugger-mdb,monodevelop-debugger-gdb),
-  pour version \>= 2.0 (linux/dist/Ubuntu \>= 9.04):
+  pour version \>= 2.0 (linux/dist/ubuntu \>= 9.04):
 
 ### Astuces
 

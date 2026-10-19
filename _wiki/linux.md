@@ -27,11 +27,11 @@ Chaque distribution a ses spécificités (outils, apparence, gestionnaire de paq
 
 ## Distributions basées sur Debian (Linux Mint, Ubuntu,...)
 
-Pour les utilisateurs recherchant une distribution Linux, je recommande celles basées sur Debian, en particulier [Linux Mint](dist/Mint).
+Pour les utilisateurs recherchant une distribution Linux, je recommande celles basées sur Debian, en particulier [Linux Mint](dist/mint).
 
-Adaptée tant aux débutants qu'aux utilisateurs expérimentés, cette distribution est celle que j'utilise depuis 2017. Avant cela, j'ai découvert [Ubuntu](dist/Ubuntu) en 2005, qui m'a conduit à abandonner définitivement [Windows](../windows/).
+Adaptée tant aux débutants qu'aux utilisateurs expérimentés, cette distribution est celle que j'utilise depuis 2017. Avant cela, j'ai découvert [Ubuntu](dist/ubuntu) en 2005, qui m'a conduit à abandonner définitivement [Windows](../windows/).
 
-[Linux Mint](dist/Mint) est construit sur [Ubuntu](dist/Ubuntu), elle-même fondée sur Debian, ce qui garantit une stabilité et des performances appréciables. Pour une expérience utilisateur fluide et une grande communauté de soutien, [Linux Mint](dist/Mint) constitue un excellent choix pour ceux qui souhaitent explorer le monde de Linux.
+[Linux Mint](dist/mint) est construit sur [Ubuntu](dist/ubuntu), elle-même fondée sur Debian, ce qui garantit une stabilité et des performances appréciables. Pour une expérience utilisateur fluide et une grande communauté de soutien, [Linux Mint](dist/mint) constitue un excellent choix pour ceux qui souhaitent explorer le monde de Linux.
 
 - [Programmes](soft/)
 - [Système](system/)
@@ -43,15 +43,15 @@ l'on a le choix de son interface.
 
 Plusieurs interfaces graphiques existent sous Linux, les plus connues étant:
 
-- Gnome Shell (par défaut dans [Ubuntu](dist/Ubuntu)),
-- **Cinnamon** (par et pour [Linux Mint](dist/Mint)),
+- Gnome Shell (par défaut dans [Ubuntu](dist/ubuntu)),
+- **Cinnamon** (par et pour [Linux Mint](dist/mint)),
 - KDE (complexe mais complète)
 - XFCE (légère)
 - et de de nombreuses autres, que je ne connais pas personnellement.
 
 ## Tenté par l'aventure
 
-Si tu es tenté, tu peux dès maintenant et facilement tester et/ou installer [Linux Mint](dist/Mint), [Ubuntu](dist/Ubuntu) ou une autre distribution.
+Si tu es tenté, tu peux dès maintenant et facilement tester et/ou installer [Linux Mint](dist/mint), [Ubuntu](dist/ubuntu) ou une autre distribution.
 
 Il est aussi possible d'[acheter un PC pré-installé](http://linuxpreinstalle.com/) avec Linux.
 

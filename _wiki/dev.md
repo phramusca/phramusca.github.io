@@ -49,7 +49,7 @@ Gambas se veut le presque Visual Basic libre
 
 ### Java
 
-Contenu transféré sur la page [Java](../dev/Java) ...
+Contenu transféré sur la page [Java](../dev/java) ...
 
 ### Visual Basic
 
@@ -69,7 +69,7 @@ Mon éditeur de prédilection est [NetBeans](../linux/soft/netbeans). Voir la
 page dédiée pour l'installation et la configuration cet IDE pour une
 utilisation avec PhP.
 
-Serveur Web : Solution [LAMP](../dev/LAMP) (Linux, Apache, Mysql,
+Serveur Web : Solution [LAMP](../dev/lamp) (Linux, Apache, Mysql,
 Php/Perl)
 
 Misc: [Visionneuse Panoramique](../linux/soft/visionneuse_panoramique)

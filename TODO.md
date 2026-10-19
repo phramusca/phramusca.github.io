@@ -6,36 +6,11 @@ Voir TODO Tree.
 
 ## 🔧 Tâches d'amélioration structurelles
 
-### 1. Standardiser les noms de fichiers dans `_wiki/`
+### 1. ✅ Standardiser les noms de fichiers dans `_wiki/`
 
-**Impact** : Moyen, nécessite mise à jour des liens  
-**Problème** : Mélange de conventions de nommage dans `_wiki/`
-
-**Fichiers avec espaces/majuscules** :
-
-- `_wiki/linux/system/Disques_Locaux.md`
-- `_wiki/linux/system/Disques_Réseau.md`
-- `_wiki/linux/system/Installer_un_programme_sous_Linux.md`
-- `_wiki/linux/system/Système_de_Fichiers.md`
-- `_wiki/linux/tuto/Créer un panoramique avec Hugin.md`
-- `_wiki/perso/Ma_Configuration_LAMP.md`
-- `_wiki/perso/Mes_Résultats.md`
-- `_wiki/perso/Sauvegardes_et_Restauration.md`
-- `_wiki/perso/Sauvegardes_MySQL.md`
-- `_wiki/perso/Scripts_de_Backup.md`
-- Et d'autres dans `_wiki/archive/`
-
-**Solution** :
-
-- Convertir en snake_case progressivement
-- Mettre à jour les liens internes
-- Vérifier que les URLs fonctionnent toujours
-
-**Impact** :
-
-- URLs plus propres
-- Meilleure compatibilité cross-platform
-- Cohérence avec les fichiers de logiciels déjà en snake_case
+Les noms des pages Markdown non conformes ont été normalisés en minuscules
+ASCII et `snake_case`, y compris dans `_wiki/archive/`. Les liens internes
+concernés ont été mis à jour.
 
 ### 2. Organiser le dossier `_wiki/archive/`
 

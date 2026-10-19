@@ -4,7 +4,7 @@ layout: content
 
 # Ubuntu
 
-Ubuntu (à prononcer « Ou-boun-tou ») est une distribution de [Linux](../) populaire ... jusqu'à l'adoption du bureau [Unity](http://doc.ubuntu-fr.org/unity) très déroutant et qui a conduit de nombreux utilisateurs (comme moi) à se tourner vers [Linux Mint](../Mint).
+Ubuntu (à prononcer « Ou-boun-tou ») est une distribution de [Linux](../) populaire ... jusqu'à l'adoption du bureau [Unity](http://doc.ubuntu-fr.org/unity) très déroutant et qui a conduit de nombreux utilisateurs (comme moi) à se tourner vers [Linux Mint](../mint).
 
 **Cette page n'est donc plus à jour depuis 2017 environ quand le support de Gnome 2 (Gnome classic) a été supprimé.**
 
@@ -87,5 +87,4 @@ Cette interface est un peu déroutante au premier abord, mais il est possible d'
 [Activer le cube 3D avec Unity](http://www.le-libriste.fr/ubuntu/configuration-dunity/activer-le-cube-3d-avec-unity/)
 
 Installer [Classic Menu Indicator](http://www.florian-diesch.de/software/classicmenu-indicator/), pour avoir accès aux programmes un peu comme "à l'ancienne"
-
 
