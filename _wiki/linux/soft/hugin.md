@@ -27,21 +27,47 @@ Une fois le panoramique créé, il faut, avec jhead :
 
 ### Intégration Web
 
-### *De Chat GPT, 11/2024, A TESTER :*
+TODO: Ceci est une mise à jour de 10/2026 par Copilot. Solutions à tester.
 
-Pour afficher une image panoramique cylindrique ou sphérique en mode immersif dans un navigateur web, plusieurs options modernes existent, remplaçant le QTVR d’autrefois. Voici quelques solutions populaires et performantes :
+Pour publier un panorama Hugin sur un hébergement de pages personnelles, un lecteur HTML/JavaScript suffit : aucun traitement côté serveur n'est nécessaire. Le panorama et, si souhaité, les fichiers du lecteur peuvent être téléversés comme des fichiers ordinaires.
 
-1. [Pannellum](https://pannellum.org/)
-   - **Description** : Pannellum est une bibliothèque JavaScript open-source permettant d’afficher des panoramas à 360° dans un navigateur sans dépendre de plugins.
-   - **Avantages** : Léger, rapide et facile à intégrer. Fonctionne avec des images equirectangulaires et propose une vue immersive fluide.
+| Préférence | Solution | Intérêt | À savoir |
+| --- | --- | --- | --- |
+| 1 | [Pannellum](https://pannellum.org/) | Le choix le plus simple pour afficher un panorama équirectangulaire. Léger, libre, intégrable dans une page et disponible par CDN. Il accepte aussi les panoramas multirésolution et les visites avec points d'intérêt. | Pas de mode casque VR intégré. La version publiée la plus récente vérifiée est [2.5.7](https://github.com/mpetroff/pannellum/releases/tag/2.5.7). |
+| 2 | [Photo Sphere Viewer](https://photo-sphere-viewer.js.org/) | Alternative libre plus riche, avec des extensions pour les marqueurs et les visites. Le projet est actif ; version publiée vérifiée : [5.15.1](https://github.com/mistic100/Photo-Sphere-Viewer/releases/tag/5.15.1). | Plus lourd et plus complexe à intégrer que Pannellum, notamment à cause de ses modules et extensions. Il faut publier les fichiers JavaScript/CSS nécessaires ou les charger depuis un CDN. |
 
-2. [Marzipano](http://www.marzipano.net/)
-   - **Description** : Marzipano est également une bibliothèque JavaScript open-source pour créer des panoramas à 360°. Elle prend en charge les images cylindriques et sphériques et est compatible avec les navigateurs modernes.
-   - **Avantages** : Puissant et flexible, il permet de créer des expériences de réalité virtuelle (VR) et est compatible avec Google Cardboard.
+Les deux peuvent être utilisés sur un hébergement statique. Un CDN évite de téléverser les fichiers du lecteur, mais rend la page dépendante de ce service tiers ; l'hébergement local des fichiers donne davantage de contrôle.
 
-4. [A-Frame](https://aframe.io/)
-   - **Description** : A-Frame est un framework basé sur Three.js, conçu pour créer des expériences VR en HTML et JavaScript. Il permet de créer des environnements immersifs très rapidement.
-   - **Avantages** : Accessible pour ceux qui n’ont pas une forte expérience en programmation et très efficace pour créer des expériences interactives VR en 360°.
+### Panorama immersif avec un casque VR
 
-- https://pchen66.github.io/Panolens/
-- https://github.com/lequangios/webgl-panorama-player?tab=readme-ov-file
+TODO: Ceci est une nouveauté de 10/2026 par Copilot. Solution à tester.
+
+[A-Frame](https://aframe.io/) convient pour afficher un panorama dans le navigateur du casque, puis passer en réalité virtuelle avec WebXR. Ce n'est pas seulement un lecteur d'image 360° : c'est un framework de scènes 3D, mais un panorama simple tient dans une page HTML.
+
+#### Exemple minimal pour Oculus Quest 2
+
+Placer l'image équirectangulaire exportée par Hugin, par exemple `panorama.jpg`, à côté du fichier `index.html` :
+
+```html
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panorama 360°</title>
+  <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <a-sky src="panorama.jpg"></a-sky>
+    <a-camera look-controls></a-camera>
+  </a-scene>
+</body>
+</html>
+```
+
+Téléverser `index.html` et `panorama.jpg` sur l'hébergement, puis ouvrir la page dans le navigateur du Quest 2. Le bouton VR d'A-Frame permet d'entrer dans la vue casque lorsque WebXR est disponible.
+
+**Condition importante :** WebXR exige une origine sécurisée, normalement HTTPS (ou `localhost` pour les essais locaux). Il faut donc vérifier que l'adresse des pages personnelles Free est bien accessible en HTTPS. Si elle ne l'est pas, le panorama restera consultable dans un navigateur classique, mais le mode casque nécessitera un hébergement HTTPS.
+
+Voir la [documentation d'installation d'A-Frame](https://aframe.io/docs/1.8.0/introduction/installation.html) et les explications de MDN sur les [contextes sécurisés](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts).
