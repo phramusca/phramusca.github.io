@@ -32,7 +32,8 @@
         "TakumiI.markdowntable"
       ],
       "settings": {
-        "terminal.integrated.defaultProfile.linux": "bash"
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "todo-tree.ripgrep.ripgrep": "/usr/bin/rg"
       }
     }
   },

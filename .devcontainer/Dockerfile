@@ -2,8 +2,9 @@
 FROM mcr.microsoft.com/devcontainers/ruby:3.2
 
 # Outils requis pour la signature de whitelist apt-thirdparty
+# ripgrep : requis par l'extension Todo-Tree
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends gnupg && \
+    apt-get install -y --no-install-recommends gnupg ripgrep && \
     rm -rf /var/lib/apt/lists/*
 
 # Installer Rust et Cargo pour l'utilisateur vscode (utilisateur par défaut des dev containers)
