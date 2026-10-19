@@ -10,7 +10,7 @@ Ubuntu (à prononcer « Ou-boun-tou ») est une distribution de [Linux](/wiki/li
 
 - [Ubuntu sur Wikipédia](https://fr.wikipedia.org/wiki/Ubuntu_(syst%C3%A8me_d%27exploitation))
 - [Communauté francophone des utilisateurs d'Ubuntu (officiel)](http://www.ubuntu-fr.org/) : Documentation, forum, ...
-- [Site Officiel en anglais](http://www.ubuntu.com/)
+- [Site Officiel en anglais](https://ubuntu.com/)
 - [Versions](http://distrowatch.com/table.php?distribution=ubuntu)
 
 ## Installation
