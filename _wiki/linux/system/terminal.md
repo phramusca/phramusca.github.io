@@ -4,7 +4,7 @@ layout: content
 
 # Terminal
 
-Personnellement, j'apprécie [Tilix](../../soft#category-11-administration) et [guake](../../soft#category-12-prfrences)
+Personnellement, j'apprécie [Tilix](../../soft#category-10-administration) et [guake](../../soft#category-11-prfrences)
 
 ## Pimp My Terminal
 
