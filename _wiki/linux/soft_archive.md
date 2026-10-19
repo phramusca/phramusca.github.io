@@ -5,7 +5,9 @@ title: Programmes archivés
 
 # {{ page.title }}
 
-Cette page regroupe les programmes conservés à titre d'archive. Ils ne figurent plus dans la [liste principale des programmes](soft).
+Cette page regroupe les programmes conservés à titre d'archive.
+
+Ils ne figurent plus dans la [liste principale des programmes](../soft).
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
