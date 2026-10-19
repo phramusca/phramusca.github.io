@@ -1,6 +1,25 @@
+# Catalogue des logiciels affiché dans la page wiki/linux/soft.
+# Les catégories regroupent les entrées; les champs propres à chaque logiciel sont facultatifs.
+# archive: true affiche l'entrée uniquement sur la page dédiée aux programmes archivés.
 categories:
   - nom: Accessoires
     logiciels:
+      - nom: GCStar
+        archive: true
+        apt: gcstar
+        url_internal: gcstar
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/gcstar
+        url_website: null
+        url_repository: null
+        description: Gestionnaire de collections (logiciel ancien, conservé à titre d'archive).
+      - nom: JBMGen
+        archive: true
+        apt: null
+        url_internal: jbmgen
+        url_doc_ubuntu_fr: null
+        url_website: http://jbmgen.sourceforge.net/
+        url_repository: null
+        description: Outil Ruby pour mettre à jour la bibliothèque ARC de certains jukebox Archos.
       - nom: dupeGuru
         apt: null
         apt_thirdparty: dupeguru
@@ -32,7 +51,7 @@ categories:
         url_repository: https://github.com/raspberrypi/rpi-imager
         description: Créer une image pour Raspberry Pi.
       - nom: KeePassXC
-        archive: yes
+        archive: true
         apt: keepassxc
         url_internal: null
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/keepassxc
@@ -47,7 +66,7 @@ categories:
         url_repository: https://github.com/pwr-solaar/solaar
         description: Protocole Logitech™ Unifying Receiver.
       - nom: Spectacle
-        archive: yes
+        archive: true
         apt: kde-spectacle
         url_internal: null
         url_doc_ubuntu_fr: null
@@ -55,7 +74,7 @@ categories:
         url_repository: https://invent.kde.org/plasma/spectacle
         description: Créer des screenshots. Pour KDE
       - nom: VNote
-        archive: yes
+        archive: true
         apt: https://github.com/vnotex/vnote/releases/latest
         url_internal: null
         url_doc_ubuntu_fr: null
@@ -124,7 +143,7 @@ categories:
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/educatif
         url_website: null
         url_repository: null
-        description: 
+        description: null
   - nom: Graphisme
     logiciels:
       - nom: GIMP
@@ -222,7 +241,7 @@ categories:
         url_repository: null
         description: Globe virtuel pour explorer la Terre en 3D (satellite, cartes, Street View).
       - nom: HomeBank
-        archive: yes
+        archive: true
         apt: homebank
         url_internal: null
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/homebank
@@ -290,6 +309,22 @@ categories:
         description: Précurseur pour faire tourner les jeux Windows sous Linux. Préférer Lutris ou GameHub.
   - nom: Programmation
     logiciels:
+      - nom: Mono
+        archive: true
+        apt: null
+        url_internal: mono
+        url_doc_ubuntu_fr: null
+        url_website: https://gitlab.winehq.org/wine-mono/mono
+        url_repository: https://gitlab.winehq.org/wine-mono/mono
+        description: Ancienne implémentation libre de .NET, dont la dernière version majeure date de 2019.
+      - nom: Subversion
+        archive: true
+        apt: subversion
+        url_internal: subversion
+        url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/subversion
+        url_website: null
+        url_repository: null
+        description: Système de gestion de versions centralisé (SVN), conservé à titre d'archive.
       - nom: Android Studio
         apt: null
         flathub: com.google.AndroidStudio
@@ -444,6 +479,14 @@ categories:
           url_website: https://wiki.gnome.org/Apps/SoundJuicer
           url_repository: https://gitlab.gnome.org/GNOME/sound-juicer
           description: Extraction (rip) de CDs audio.
+        - nom: Amarok
+          archive: true
+          apt: amarok
+          url_internal: amarok
+          url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/amarok
+          url_website: https://amarok.kde.org/
+          url_repository: null
+          description: Lecteur et gestionnaire de musique, conservé à titre d'archive.
         - nom: Grip
           archive: true
           apt: null
@@ -496,6 +539,14 @@ categories:
           description: DJing, mixer des musiques sur ordinateur..
       - nom: Video
         logiciels:
+        - nom: QuickTime 4 Linux
+          archive: true
+          apt: null
+          url_internal: quicktime
+          url_doc_ubuntu_fr: null
+          url_website: null
+          url_repository: null
+          description: Ancien projet de lecture de fichiers QuickTime et QTVR sous Linux.
         - nom: vlc
           apt: vlc
           url_internal: null
@@ -567,7 +618,7 @@ categories:
     - nom: Grsync
       description: Interface graphique pour le logiciel de synchronisation de fichiers rsync.
       apt: grsync
-      url_internal: Grsync
+      url_internal: grsync
       url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/grsync
       url_website: http://www.opbyte.it/grsync/
       url_repository: https://sourceforge.net/projects/grsync/
@@ -596,6 +647,14 @@ categories:
       description: Terminal déroulant.
   - nom: Divers
     logiciels:
+    - nom: Waydroid
+      archive: true
+      apt: null
+      url_internal: waydroid
+      url_doc_ubuntu_fr: null
+      url_website: https://waydro.id/
+      url_repository: https://github.com/waydroid/waydroid
+      description: Environnement pour lancer des applications Android sous Linux; documentation historique conservée en archive.
     - nom: Ventoy
       apt: null
       url_internal: ventoy

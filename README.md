@@ -101,7 +101,7 @@ Pour ajouter un nouveau logiciel à la liste :
    ```yaml
    - nom: Nom du Logiciel
      apt: nom-du-paquet
-     url_internal: nom_du_logiciel  # En snake_case, correspond au nom du fichier .md dans le dossier _includes/linux/soft
+     url_internal: nom_du_logiciel  # En snake_case, correspond à _wiki/linux/soft/nom_du_logiciel.md
      url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/...
      url_website: https://...
      url_repository: https://github.com/...
@@ -215,6 +215,7 @@ Le système de gestion des logiciels utilise :
 
 - **`_data/soft_list.yaml`** : Liste structurée par catégories avec toutes les informations
 - **`url_internal`** : Identifiant en snake_case qui correspond au nom du fichier `.md` (ex: `calibre`, `ripper_x`)
+- **`archive: true`** : Retire l'entrée de la liste principale et l'affiche sur la page des [programmes archivés](/wiki/linux/soft_archive/)
 - **`_includes/linux/soft/table.html`** : Affiche la liste des logiciels avec contenu expandable
 - **`_includes/linux/soft/software_info.html`** : Affiche automatiquement les infos (Ubuntu-fr, Site, Repo)
 - **`_layouts/software.html`** : Layout qui inclut automatiquement `software_info.html` pour les pages de logiciels

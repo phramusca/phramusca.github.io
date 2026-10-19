@@ -32,6 +32,8 @@ Voici un petit aperçu des programmes disponibles que j'ai eu l'occasion de test
 
 Les programmes sont distribués sous [différents formats](../system/soft_packages/), chacun avec ses avantages et ses limites.
 
+Les programmes archivés sont disponibles sur la page [Programmes archivés](../soft_archive).
+
 Handlers utiles :
 - [apt-thirdparty-handler](https://github.com/phramusca/apt-thirdparty-handler/releases/latest) pour les liens `apt-thirdparty://...`
 - [flatpak-https-handler](https://github.com/phramusca/flatpak-https-handler/releases/latest) pour les liens `flatpak+https://...` (si besoin selon la distribution)
@@ -60,18 +62,22 @@ Handlers utiles :
 
   <tbody>
     {% for categorie in site.data.soft_list.categories %}
-      {% if categorie.logiciels != null or categorie.categories != null%}
+      {% assign logiciels_actifs = categorie.logiciels | where_exp: "logiciel", "logiciel.archive != true" %}
+      {% if logiciels_actifs.size > 0 %}
         <tr>
           <td colspan="4" style="text-align: center; color: #B5E852;"><strong>{{ categorie.nom }}</strong></td>
         </tr>
-        {% include linux/soft/table.html software_list=categorie.logiciels %}
+        {% include linux/soft/table.html software_list=logiciels_actifs %}
       {% endif %}
       {% if categorie.categories != null %}
         {% for sous_categorie in categorie.categories %}
-          <tr>
-            <td colspan="4" style="color: #B5E852;"><strong>{{ sous_categorie.nom }}</strong></td>
-          </tr>
-          {% include linux/soft/table.html software_list=sous_categorie.logiciels %}
+          {% assign logiciels_actifs = sous_categorie.logiciels | where_exp: "logiciel", "logiciel.archive != true" %}
+          {% if logiciels_actifs.size > 0 %}
+            <tr>
+              <td colspan="4" style="color: #B5E852;"><strong>{{ sous_categorie.nom }}</strong></td>
+            </tr>
+            {% include linux/soft/table.html software_list=logiciels_actifs %}
+          {% endif %}
         {% endfor %}
       {% endif %}
     {% endfor %}

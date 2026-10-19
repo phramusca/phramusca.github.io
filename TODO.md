@@ -6,18 +6,12 @@ Voir TODO Tree.
 
 ## 🔧 Tâches d'amélioration structurelles
 
-### 1. Améliorer la structure des données `soft_list.yaml`
+### 1. ✅ Améliorer la structure des données `soft_list.yaml`
 
 **Impact** : Faible, organisation  
 **Problème** : Le fichier fait 450+ lignes et peut être difficile à maintenir
 
-**Options** :
-
-- Garder un seul fichier (préférence actuelle) mais mieux structuré
-- Ajouter des commentaires pour séparer les sections
-- Vérifier la cohérence des données
-
-**Note** : L'utilisateur préfère garder un seul fichier, donc on se concentre sur l'organisation et les commentaires
+Le catalogue reste dans un seul fichier, avec des commentaires de structure et des valeurs `archive` uniformisées. Les logiciels de l'ancienne archive ont été ajoutés au catalogue avec `archive: true`; seuls les logiciels sont conservés sous forme d'entrées, pas les pages d'archive.
 
 ### 2. Vérifier les liens internes cassés
 
