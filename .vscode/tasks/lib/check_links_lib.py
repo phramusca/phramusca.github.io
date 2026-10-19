@@ -116,6 +116,7 @@ class LinkClassifier:
         r'^#',  # Ancres
         r'^JaMuz$',  # Projet externe
         r'^https?://utilisateur:motdepasse@monproxy:leport/?(?:[?#].*)?$',  # Exemple de proxy, pas une URL réelle
+        r'^https?://localhost(?::\d+)?(?:[/?#].*)?$',  # Services locaux
     ]
     
     @staticmethod
