@@ -15,9 +15,9 @@ from urllib.parse import urlparse, urljoin, unquote, quote
 class LinkExtractor:
     """Extrait les liens des fichiers Markdown."""
     
-    # Pattern pour les liens Markdown : [texte](url) ou [texte](url "titre")
+    # Début de lien Markdown : [texte](
     MARKDOWN_LINK_PATTERN = re.compile(
-        r'\[([^\]]+)\]\(([^)]+)\)',
+        r'\[([^\]]+)\]\(',
         re.MULTILINE
     )
     
@@ -52,24 +52,52 @@ class LinkExtractor:
             with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
                 content = f.read()
                 lines = content.split('\n')
+                content_offset = 0
                 
                 for line_num, line in enumerate(lines, start=1):
-                    # Trouver tous les liens dans la ligne
-                    for match in LinkExtractor.MARKDOWN_LINK_PATTERN.finditer(line):
-                        url = match.group(2).strip()
+                    # Lire les liens jusqu'à leur parenthèse fermante, en respectant les parenthèses de l'URL.
+                    position = 0
+                    while True:
+                        match = LinkExtractor.MARKDOWN_LINK_PATTERN.search(line, position)
+                        if match is None:
+                            break
+
+                        url_start = match.end()
+                        depth = 1
+                        cursor = url_start
+                        while cursor < len(line) and depth:
+                            if line[cursor] == '\\':
+                                cursor += 2
+                                continue
+                            if line[cursor] == '(':
+                                depth += 1
+                            elif line[cursor] == ')':
+                                depth -= 1
+                            cursor += 1
+
+                        if depth:
+                            position = match.end()
+                            continue
+
+                        url = line[url_start:cursor - 1].strip()
                         text = match.group(1).strip()
                         
                         # Ignorer les liens vides
                         if not url:
+                            position = cursor
                             continue
                         
                         # Ignorer les liens Liquid
-                        start_pos = match.start()
-                        end_pos = match.end()
+                        start_pos = content_offset + match.start()
+                        end_pos = content_offset + cursor
                         if LinkExtractor.is_liquid_template(content, start_pos, end_pos):
+                            position = cursor
                             continue
                         
                         links.append((line_num, text, url))
+                        position = cursor
+
+                    content_offset += len(line) + 1
         
         except Exception as e:
             print(f"⚠️  Erreur lors de la lecture de {file_path}: {e}", file=sys.stderr)
