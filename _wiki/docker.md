@@ -376,7 +376,7 @@ services:
       timeout: 10s
   db:
     container_name: wanderer-db
-    image: flomp/wanderer-db
+    image: flomp/wanderer-db:${APP_VERSION:-latest}
     depends_on:
       search:
         condition: service_healthy
@@ -402,7 +402,7 @@ services:
       timeout: 10s
   web:
     container_name: wanderer-web
-    image: flomp/wanderer-web
+    image: flomp/wanderer-web:${APP_VERSION:-latest}
     depends_on:
       search:
         condition: service_healthy
@@ -447,6 +447,9 @@ Fichier `.env` ([dépôt](https://github.com/open-wanderer/wanderer), [documenta
 ```ini
 # Chemin des données de Wanderer
 WANDERER_DATA_DIR="/chemin/vers/données/wanderer"
+
+# Application version : "latest" ou "v1.0.0" (ou autre tag du dépôt)
+APP_VERSION=latest
 
 # URL exacte dans le navigateur : protocole + hôte + port, sinon erreurs CORS.
 # WANDERER_ORIGIN=http://localhost:3000
