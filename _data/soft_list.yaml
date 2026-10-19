@@ -11,7 +11,7 @@ categories:
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/gcstar
         url_website: null
         url_repository: null
-        description: Gestionnaire de collections (logiciel ancien, conservé à titre d'archive).
+        description: Gestionnaire de collections.
       - nom: JBMGen
         archive: true
         apt: null
