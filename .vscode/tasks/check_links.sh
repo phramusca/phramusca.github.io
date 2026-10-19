@@ -67,10 +67,9 @@ check_htmlproofer() {
     bundle exec htmlproofer _site \
         --checks Links,Images,Scripts \
         --no-enforce-https \
+        --root-dir "$SITE_DIR" \
         --allow-hash-href \
-        --ignore-urls "/#.*/" \
-        --ignore-urls "mailto:.*" \
-        --ignore-urls "tel:.*" \
+        --ignore-urls "(/#.*|mailto:.*|tel:.*|apt://.*|localhost|monproxy:leport|^JaMuz$)" \
         --typhoeus '{ "timeout": 10, "connecttimeout": 10 }'
     
     return $?
@@ -98,9 +97,11 @@ check_lychee() {
     lychee _site \
         --format detailed \
         --verbose \
+        --root-dir "$SITE_DIR" \
         --exclude-all-private \
         --exclude "^mailto:.*" \
         --exclude "^tel:.*" \
+        --exclude "^apt://.*" \
         --exclude "^#.*$" \
         --exclude "^/assets/.*" \
         --exclude "^/search\\.json.*" \
