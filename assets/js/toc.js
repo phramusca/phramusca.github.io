@@ -194,22 +194,18 @@
         // Descendre : créer des listes imbriquées dans le dernier li
         while (currentLevel < level) {
           const lastLi = ulStack[ulStack.length - 1].lastElementChild;
-          if (lastLi) {
-            let nestedUl = lastLi.querySelector('ul.toc-list');
-            if (!nestedUl) {
-              nestedUl = document.createElement('ul');
-              nestedUl.className = 'toc-list';
-              lastLi.appendChild(nestedUl);
-            }
-            ulStack.push(nestedUl);
-          } else {
-            // Si la liste est vide, créer un nouveau ul au même niveau
-            const newUl = document.createElement('ul');
-            newUl.className = 'toc-list';
-            ulStack.push(newUl);
+          if (!lastLi) break;
+
+          let nestedUl = lastLi.querySelector('ul.toc-list');
+          if (!nestedUl) {
+            nestedUl = document.createElement('ul');
+            nestedUl.className = 'toc-list';
+            lastLi.appendChild(nestedUl);
           }
+          ulStack.push(nestedUl);
           currentLevel++;
         }
+        currentLevel = level;
       } else if (level < currentLevel) {
         // Remonter : retirer des listes de la pile
         while (currentLevel > level && ulStack.length > 1) {
@@ -241,40 +237,42 @@
     const container = mainContent.closest('.container');
     
     /**
-     * Calcule la position du TOC au niveau du titre principal (h1) du contenu
-     * @returns {number} Position en pixels depuis le haut de la fenêtre
+     * Calcule la position du TOC dans le document, indépendamment du scroll courant.
+     * @returns {number} Position en pixels depuis le haut du document
      */
-    function calculateTopPosition() {
+    function calculateDocumentTopPosition() {
       // Chercher le premier h1 dans le contenu principal
       const firstH1 = mainContent.querySelector('h1');
       if (firstH1) {
         const rect = firstH1.getBoundingClientRect();
-        // Positionner au niveau du haut du titre
-        return Math.max(rect.top, 20);
+        return rect.top + window.scrollY;
       }
       
       // Si pas de h1, utiliser le début du contenu principal
       const mainContentRect = mainContent.getBoundingClientRect();
-      return Math.max(mainContentRect.top, 20);
+      return mainContentRect.top + window.scrollY;
     }
     
-    // Calculer la position une seule fois au chargement (fixe ensuite)
-    let fixedTopPosition = 20; // Valeur par défaut
+    let tocDocumentTop = 20;
     
     function updateTOCPosition() {
+      const header = document.querySelector('header');
+      const headerBottom = header ? header.getBoundingClientRect().bottom : 0;
+      const minimumTop = Math.max(20, headerBottom + 20);
+      const top = Math.max(tocDocumentTop - window.scrollY, minimumTop);
+
       if (container && mainContent) {
         const containerRect = container.getBoundingClientRect();
         
-        // Position fixe : top reste toujours à la même position
         floatingContainer.style.position = 'fixed';
-        floatingContainer.style.top = fixedTopPosition + 'px';
+        floatingContainer.style.top = top + 'px';
         // Positionner juste à droite du container : left = right du container + 20px
         floatingContainer.style.left = (containerRect.right + 20) + 'px';
         floatingContainer.style.right = 'auto';
       } else {
         // Fallback si pas de container
         floatingContainer.style.position = 'fixed';
-        floatingContainer.style.top = fixedTopPosition + 'px';
+        floatingContainer.style.top = top + 'px';
         floatingContainer.style.right = '20px';
         floatingContainer.style.left = 'auto';
       }
@@ -285,7 +283,7 @@
       // Attendre que le layout soit calculé
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          fixedTopPosition = calculateTopPosition();
+          tocDocumentTop = calculateDocumentTopPosition();
           updateTOCPosition();
         });
       });
@@ -294,11 +292,10 @@
     // Initialiser la position
     initializePosition();
     
-    // Mettre à jour la position au scroll (seulement left pour rester alignée) et au redimensionnement
+    // Suivre le scroll en gardant la TOC sous son emplacement initial jusqu'au bord haut.
     window.addEventListener('scroll', updateTOCPosition);
     window.addEventListener('resize', () => {
-      // Recalculer seulement au redimensionnement (pas au scroll)
-      fixedTopPosition = calculateTopPosition();
+      tocDocumentTop = calculateDocumentTopPosition();
       updateTOCPosition();
     });
     
