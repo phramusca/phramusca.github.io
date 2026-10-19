@@ -72,8 +72,6 @@ utilisation avec PhP.
 Serveur Web : Solution [LAMP](../dev/lamp) (Linux, Apache, Mysql,
 Php/Perl)
 
-Misc: [Visionneuse Panoramique](../linux/soft/visionneuse_panoramique)
-
 #### Astuces
 
 ##### Changer la couleur d'une icone PNG transparente avec GD

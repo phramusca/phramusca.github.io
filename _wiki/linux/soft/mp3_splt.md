@@ -29,7 +29,3 @@ mp3splt-gtk pour le lancer
 - Préférences :
   - Lecteur : Beep Media Player puisqu'intallé avec paquet Debian.
   - coupure : Tags options : original file tags
-
-------------------------------------------------------------------------
-
-Retour à [Programmes](Programmes)

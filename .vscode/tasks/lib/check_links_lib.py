@@ -145,6 +145,38 @@ class InternalLinkResolver:
         self.project_root = project_root
         self.wiki_dir = project_root / "_wiki"
         self.posts_dir = project_root / "_posts"
+
+    def resolve_wiki_url(self, link: str, from_file: Path) -> Optional[Path]:
+        """Résout un lien relatif comme le navigateur depuis le permalink Jekyll."""
+        if not from_file.is_relative_to(self.wiki_dir):
+            return None
+
+        wiki_path = from_file.relative_to(self.wiki_dir).with_suffix('').as_posix()
+        source_url = f"/wiki/{wiki_path}/"
+        public_path = unquote(urlparse(urljoin(source_url, link)).path)
+        if public_path.startswith('/wiki/'):
+            target = self.wiki_dir / public_path.removeprefix('/wiki/')
+        else:
+            target = self.project_root / public_path.lstrip('/')
+
+        if target.is_file():
+            return target
+
+        if target.is_dir():
+            index_file = target / 'index.md'
+            if index_file.is_file():
+                return index_file
+
+            sibling_page = target.parent / f"{target.name}.md"
+            if sibling_page.is_file():
+                return sibling_page
+
+        if not target.suffix:
+            markdown_file = target.with_suffix('.md')
+            if markdown_file.is_file():
+                return markdown_file
+
+        return None
     
     def normalize_internal_link(self, link: str, from_file: Path) -> Optional[Path]:
         """
@@ -198,18 +230,6 @@ class InternalLinkResolver:
             else:
                 target = target_dir
 
-            # Les liens d'une page Jekyll sont relatifs à son URL publique, pas
-            # à son chemin source dans _wiki/. Si la résolution source sort du
-            # dépôt, résoudre le chemin comme le ferait le navigateur.
-            if from_file.is_relative_to(self.wiki_dir) and not target.is_relative_to(self.project_root):
-                wiki_path = from_file.relative_to(self.wiki_dir).with_suffix('').as_posix()
-                source_url = f"/wiki/{wiki_path}/"
-                public_path = unquote(urlparse(urljoin(source_url, link)).path)
-                if public_path.startswith('/wiki/'):
-                    target = self.wiki_dir / public_path.removeprefix('/wiki/')
-                else:
-                    target = self.project_root / public_path.lstrip('/')
-
             # Les liens internes peuvent aussi pointer vers des scripts ou
             # d'autres fichiers qui ne sont pas des pages Markdown.
             if target.is_file():
@@ -256,6 +276,10 @@ class InternalLinkResolver:
                         if wiki_md.exists():
                             return wiki_md
             
+            public_target = self.resolve_wiki_url(link, from_file)
+            if public_target:
+                return public_target
+
             return None
         else:
             # Lien relatif simple
@@ -294,6 +318,10 @@ class InternalLinkResolver:
                 md_file = target.parent / f"{target.name}.md"
                 if md_file.exists():
                     return md_file
+
+        public_target = self.resolve_wiki_url(link, from_file)
+        if public_target:
+            return public_target
         
         return None
     

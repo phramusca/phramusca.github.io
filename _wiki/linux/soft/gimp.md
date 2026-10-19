@@ -63,7 +63,3 @@ Je ne connais qu'une utilisation :
 <http://replay.waybackmachine.org/20040215114320/http://www.panoguide.com/technique/circular.html>
 
 Il en existe surement d'autres, a vous de jouer.
-
-------------------------------------------------------------------------
-
-Retour à [Programmes](Programmes)

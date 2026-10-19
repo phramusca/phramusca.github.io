@@ -31,6 +31,8 @@ TODO: Reparcourir tout ça et trouver la meilleure solution en 2026
 
 #### OpenPanorama
 
+> Apparement, le format OpenPanorama n'a pas été adopté par la communauté et est finalement spécifique à la société ImmerVision. Le lien vers le site OpenPanorama est mort et le player Java n'est plus disponible sur le site d'ImmerVision. Il est donc préférable de ne pas utiliser ce format.
+
 - Spécifications Open Source du format XML : <http://www.openpanorama.org/>
 - Player gratuit: <http://www.immervision.com/fr/multimedia/multimedia_download/player.php?player=PlayerPROJava>
 
@@ -117,11 +119,3 @@ A essayer quand même: PanoSalado en v1 car des tutos sont dispos:
 - <http://www.sweethome3d.com/blog/2010/04/28/advanced_rendering_plug_in.html>
   (avec aussi PTViewer tuto)
 - D'autres à retrouver (google)
-
-La solution dans [Visionneuse Panoramique](../visionneuse_panoramique) n'est finalement pas si
-bonne. Le format OpenPanoram ne semble pas avoir pris et est finalement
-spécifique à la société ImmerVision.
-
-----
-
-Retour à [Programmes](Programmes)

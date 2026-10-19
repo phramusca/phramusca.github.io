@@ -14,7 +14,3 @@ RipperX permet de convertir les CDs en fichiers MP3.
 - Mp3 :
   - lame MP3 Encoder (installer 'lame')
     - Use VBR (4), 128K
-
-------------------------------------------------------------------------
-
-Retour à [Programmes](Programmes)

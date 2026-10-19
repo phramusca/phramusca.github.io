@@ -11,8 +11,6 @@ LAMP (Linux, Apache, Mysql, Php/Perl)
 Se référer à la documentation [lamp sur
 ubuntu-fr](http://doc.ubuntu-fr.org/lamp).
 
-[Ma Configuration LAMP](../../archive/perso/ma_configuration_lamp)
-
 ## Résolution de problèmes
 
 ### MySQL
@@ -63,7 +61,3 @@ Il peut aussi s'agir d'un problème de permissions ou plus grave de
 dossier effacé ou corrompu. Dans ce dernier cas, une réinstallation de
 MySQL peut s'avérer utile, moyennant la perte des bases, d'où l'intérêt
 de faire des backups réguliers ;).
-
-------------------------------------------------------------------------
-
-Retour à [Développement Web](Développement_Web).

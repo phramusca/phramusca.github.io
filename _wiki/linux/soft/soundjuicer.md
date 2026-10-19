@@ -8,13 +8,10 @@ Soundjuicer permet de convertir les CDs en fichiers MP3.
 
 ATTENTION: PB VBR et Durée affichage dans Amarok ! A vérifier !!!
 
-[Plus d'infos sur Ubuntu-fr](http://doc.ubuntu-fr.org/sound_juicer)
-
 ## Installation
 
-Installé par défaut dans [Ubuntu](linux/dist/ubuntu), mais il faut
-installer le [paquet](Paquet)
-[gstreamer0.10-plugins-ugly-multiverse](apt://gstreamer0.10-plugins-ugly-multiverse)
+Installé par défaut dans [Ubuntu](/wiki/linux/dist/ubuntu),
+mais il faut installer le paquet [gstreamer0.10-plugins-ugly-multiverse](apt://gstreamer0.10-plugins-ugly-multiverse)
 pour pouvoir encoder en MP3.
 
 ## Configuration
@@ -48,7 +45,3 @@ Pour les options du plugin lame:
 Pour une description des preset lame:
 
 `lame --preset help`
-
-------------------------------------------------------------------------
-
-Retour à [Programmes](Programmes)

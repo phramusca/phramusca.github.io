@@ -140,7 +140,3 @@ c'est bon.
 Pour revenir en Wifi (ou autre connexion), désinstaller speedtouch-ng,
 configurer la nouvelle connexion à utiliser. Un redémarrage du système
 peux être nécessaire.
-
-------------------------------------------------------------------------
-
-Retour à [Misc](Misc)

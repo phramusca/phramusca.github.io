@@ -37,7 +37,3 @@ Voici ma configuration:
 
     #Pour avoir UTF-8 par défaut:
     code.page=65001
-
-------------------------------------------------------------------------
-
-Retour à [Programmes](Programmes)
