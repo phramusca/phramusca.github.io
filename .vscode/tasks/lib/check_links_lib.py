@@ -87,6 +87,7 @@ class LinkClassifier:
     IGNORED_PATTERNS = [
         r'^#',  # Ancres
         r'^JaMuz$',  # Projet externe
+        r'^https?://utilisateur:motdepasse@monproxy:leport/?(?:[?#].*)?$',  # Exemple de proxy, pas une URL réelle
     ]
     
     @staticmethod
