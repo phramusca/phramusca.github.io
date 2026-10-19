@@ -62,8 +62,6 @@ MonoDevelop est un IDE, similaire à Visual Studio de Microsoft
 - [Doc Ubuntu](http://doc.ubuntu-fr.org/monodevelop)
 - [Portail francophone des utilisateurs de
   Mono](http://monofrance.tuxfamily.org/)
-- [Référence Mono](http://www.go-mono.com/docs/)
-- [Sharp ToolBox](http://sharptoolbox.com/) (A TESTER)
 
 ## Programmer
 
@@ -88,7 +86,6 @@ Un NodeView est un TreeView simplifié.
 #### Tree View
 
 - [Tutoriel](http://www.mono-project.com/GtkSharp_TreeView_Tutorial)
-- [Tutoriel plus détaillé](http://www.mono-lab.ch/?p=22)
 - [Un tutoriel plus complet, mais
   complexe](http://scentric.net/tutorial/treeview-tutorial.html)
 - [DataBinding an IList as DataSource for the

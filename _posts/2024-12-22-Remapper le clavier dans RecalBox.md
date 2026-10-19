@@ -76,7 +76,7 @@ Voici les [touches clavier utilisées](https://wiki.recalbox.com/fr/tutorials/ot
         </inputConfig>
         ```
 
-    - Je voulais reconfigurer ainsi, trouvant les bon ids (Decimal Value) pour chaque touche dans le [KeyCode SDL](https://wiki.libsdl.org/SDL2/SDLKeycodeLookup)
+    - Je voulais reconfigurer ainsi, trouvant les bon ids (Decimal Value) pour chaque touche dans le [KeyCode SDL](https://wiki.libsdl.org/SDL2/SDL_KeyCode)
 
     | Manette | Clavier   | id         | SDL              |
     | ------- | --------- | ---------- | ---------------- |

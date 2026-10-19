@@ -98,8 +98,6 @@ alias ll='ls -la'
 
 Ensuite, relancer le shell avec la commande `exec bash` ou `exec zsh`
 
-[Exemples d'alias](http://forum.ubuntu-fr.org/viewtopic.php?id=20437)
-
 ## Samba
 
 Samba est un logiciel libre qui permet de partager des fichiers et des imprimantes sur les réseaux locaux. Il est compatible avec les systèmes Windows, Linux et macOS.

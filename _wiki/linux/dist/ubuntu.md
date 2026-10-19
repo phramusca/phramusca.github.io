@@ -50,8 +50,6 @@ Très simple et pas de bidouilles à faire avec cette solution d'Oracle:
 
 [Images toutes prêtes](http://virtualboxes.org/images/)
 
-[Partage dossier Windows sous hôte Ubuntu](http://www.commentcamarche.net/faq/21387-virtualbox-partage-d-un-dossier-windows-sous-un-hote-ubuntu)
-
 Pour info, il existe d'autres solutions de virtualisation: VMWare, Virtual PC, ...
 
 ### Vieille Bécane ?

@@ -31,8 +31,7 @@ deb <http://ppa.launchpad.net/bogdanb/ppa/ubuntu> karmic main
 
 deb-src <http://ppa.launchpad.net/bogdanb/ppa/ubuntu> karmic main
 
-A partir de lucid (10.04 LTS), il faut au préalable installer le paquet
-[libmysqlclient15off_5.0.51a-3ubuntu5.8_i386.deb](http://fr.archive.ubuntu.com/ubuntu/pool/main/m/mysql-dfsg-5.0/libmysqlclient15off_5.0.51a-3ubuntu5.8_i386.deb)
+A partir de lucid (10.04 LTS), il faut au préalable installer le paquet libmysqlclient15off_5.0.51a-3ubuntu5.8_i386.deb
 
 - faire la mise a jour:
 
