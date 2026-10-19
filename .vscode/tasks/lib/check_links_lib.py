@@ -9,7 +9,7 @@ import os
 import sys
 from pathlib import Path
 from typing import List, Tuple, Optional
-from urllib.parse import urlparse, quote
+from urllib.parse import urlparse, urljoin, unquote, quote
 
 
 class LinkExtractor:
@@ -197,6 +197,23 @@ class InternalLinkResolver:
                 target = target_dir / '/'.join(remaining)
             else:
                 target = target_dir
+
+            # Les liens d'une page Jekyll sont relatifs à son URL publique, pas
+            # à son chemin source dans _wiki/. Si la résolution source sort du
+            # dépôt, résoudre le chemin comme le ferait le navigateur.
+            if from_file.is_relative_to(self.wiki_dir) and not target.is_relative_to(self.project_root):
+                wiki_path = from_file.relative_to(self.wiki_dir).with_suffix('').as_posix()
+                source_url = f"/wiki/{wiki_path}/"
+                public_path = unquote(urlparse(urljoin(source_url, link)).path)
+                if public_path.startswith('/wiki/'):
+                    target = self.wiki_dir / public_path.removeprefix('/wiki/')
+                else:
+                    target = self.project_root / public_path.lstrip('/')
+
+            # Les liens internes peuvent aussi pointer vers des scripts ou
+            # d'autres fichiers qui ne sont pas des pages Markdown.
+            if target.is_file():
+                return target
             
             # Chercher le fichier .md correspondant
             if target.is_file() and target.suffix == '.md':
@@ -244,8 +261,9 @@ class InternalLinkResolver:
             # Lien relatif simple
             target = from_file.parent / link
         
-        # Chercher le fichier .md correspondant
-        if target.is_file() and target.suffix == '.md':
+        # Les liens internes peuvent aussi pointer vers des scripts ou d'autres
+        # fichiers qui ne sont pas des pages Markdown.
+        if target.is_file():
             return target
         
         # Si c'est un dossier, chercher index.md ou un fichier .md avec le même nom
@@ -338,4 +356,3 @@ def make_file_link(file_path: Path, line_num: int) -> str:
     abs_path_encoded = quote(str(abs_path), safe='/:')
     # Format file:// avec : au lieu de #L (format qui fonctionne dans VS Code)
     return f"file://{abs_path_encoded}:{line_num}"
-
