@@ -6,6 +6,20 @@ layout: software
 
 [rclone](https://rclone.org/) est un outil en ligne de commande pour gérer des fichiers locaux et des espaces de stockage en ligne.
 
+## Tiers des backends
+
+Les tiers indiquent le niveau de maturité et de prise en charge des backends rclone :
+
+| Tier | Niveau       | Signification                                                         |
+| ---- | ------------ | --------------------------------------------------------------------- |
+| 1    | Core         | Production, backend de premier plan                                   |
+| 2    | Stable       | Bien pris en charge, avec quelques lacunes mineures                   |
+| 3    | Supported    | Fonctionne dans de nombreux cas, avec des réserves connues            |
+| 4    | Experimental | Expérimental : utilisation prudente, lacunes ou changements possibles |
+| 5    | Deprecated   | Obsolète : plus maintenu ni pris en charge                            |
+
+Par exemple, **Proton Drive est classé Tier 4** : faites d'abord des essais avec des données non critiques et conservez une copie de sauvegarde. Voir la [définition officielle des tiers](https://rclone.org/tiers/).
+
 ## Mettre à jour rclone sous Linux Mint
 
 La version des dépôts APT peut être ancienne. Par exemple, le backend Proton Drive nécessite rclone 1.64.0 ou plus récent. La version actuellement utilisée se vérifie avec :
