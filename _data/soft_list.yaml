@@ -265,7 +265,7 @@ categories:
         description: Analyseur de paquets réseau.
       - nom: rclone
         apt: rclone
-        url_internal: null
+        url_internal: rclone
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/rclone
         url_website: https://rclone.org/
         url_repository: https://github.com/rclone/rclone
