@@ -443,7 +443,7 @@ Tous les outils ignorent automatiquement :
 - Les liens `tel:`
 - Les liens `apt://`, `snap://`, `flatpak+https://` (protocoles système non-HTTP)
 - Les services locaux (`localhost`, hôtes `.local` comme `rpi5.local`, IPs privées)
-- Les sites avec filtrage anti-robot répondant systématiquement 403 (stackoverflow.com, alternativeto.net, distrowatch.com, kobo.com, raspberrypi.com)
+- Les sites avec filtrage anti-robot répondant systématiquement 403 (stackoverflow.com, alternativeto.net, distrowatch.com, kobo.com, raspberrypi.com, samfw.com)
 - Les projets externes (comme `JaMuz`)
 - Les templates Liquid (`{url}`, `{title}`, etc.)
 

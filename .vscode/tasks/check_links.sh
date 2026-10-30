@@ -69,7 +69,7 @@ check_htmlproofer() {
         --no-enforce-https \
         --root-dir "$SITE_DIR" \
         --allow-hash-href \
-        --ignore-urls "(/#.*|mailto:.*|tel:.*|apt://.*|localhost|monproxy:leport|^JaMuz$|^https?://[a-zA-Z0-9.-]+\.local(:[0-9]+)?(/|$)|https?://([a-zA-Z0-9-]+\.)*(stackoverflow\.com|alternativeto\.net|distrowatch\.com|kobo\.com|raspberrypi\.com)(/|$))" \
+        --ignore-urls "(/#.*|mailto:.*|tel:.*|apt://.*|localhost|monproxy:leport|^JaMuz$|^https?://[a-zA-Z0-9.-]+\.local(:[0-9]+)?(/|$)|https?://([a-zA-Z0-9-]+\.)*(stackoverflow\.com|alternativeto\.net|distrowatch\.com|kobo\.com|raspberrypi\.com|samfw\.com)(/|$))" \
         --typhoeus '{ "timeout": 10, "connecttimeout": 10 }'
     
     return $?
@@ -107,7 +107,6 @@ check_lychee() {
         --exclude "^/search\\.json.*" \
         --exclude "^JaMuz$" \
         --exclude "^http://localhost:8086/.*" \
-        --exclude "^https://samfw.com/firmware/SM-P600/XEF" \
         --exclude "^http://www.planete-android.com/.*" \
         --exclude "^http://browse.geekbench.ca/user/xxxxAailes/profile" \
         --exclude "^http://meta.wikimedia.org/wiki/Aide:Contenu" \
