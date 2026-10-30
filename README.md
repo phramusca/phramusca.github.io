@@ -455,7 +455,8 @@ Tous les outils ignorent ainsi automatiquement :
 - Les liens `tel:`
 - Les liens `apt://`, `snap://`, `flatpak+https://` (protocoles système non-HTTP)
 - Les services locaux (`localhost`, hôtes `.local` comme `rpi5.local`, IPs privées)
-- Les sites avec filtrage anti-robot répondant systématiquement 403/406 (stackoverflow.com, alternativeto.net, distrowatch.com, kobo.com, raspberrypi.com, samfw.com, gitlab.gnome.org, ubunlog.com)
+- Les sites avec filtrage anti-robot répondant systématiquement 403/406 (stackoverflow.com, alternativeto.net, distrowatch.com, kobo.com, raspberrypi.com, samfw.com, gitlab.gnome.org, ubunlog.com, apkmirror.com, sourceforge.net/.io, dev.mysql.com)
+- Des cas spécifiques documentés dans le fichier (hôte IPv6-only injoignable depuis le dev container, certificat TLS invalide...)
 - Les projets externes (comme `JaMuz`)
 - Les templates Liquid (`{url}`, `{title}`, etc.)
 
