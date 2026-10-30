@@ -37,9 +37,6 @@ MonoDevelop est un IDE, similaire à Visual Studio de Microsoft
 ### Installation
 
 - [MonoDevelop](apt://monodevelop,libmono-i18n2.0-cil,gtk-sharp2,mono-gmcs,mono-gac,mono-utils)
-  ([Détail pour
-  libmono-i18n2.0-cil](http://ubuntuforums.org/showthread.php?t=831409))
-  (gtk-sharp2 depuis Ubuntu Lucid 10.04)
 - [Librairie MySQL](apt://libmysql-cil-dev)
 - [Documentation](apt://monodoc-browser,monodoc-mysql-manual,monodoc-gtk2.0-manual)
 - [Contrôle de Version](apt://monodevelop-versioncontrol); permet
@@ -60,8 +57,6 @@ MonoDevelop est un IDE, similaire à Visual Studio de Microsoft
 - [Mono Project](http://mono-project.com/)
 - [MonoDevelop](http://monodevelop.com)
 - [Doc Ubuntu](http://doc.ubuntu-fr.org/monodevelop)
-- [Portail francophone des utilisateurs de
-  Mono](http://monofrance.tuxfamily.org/)
 
 ## Programmer
 
@@ -86,17 +81,6 @@ Un NodeView est un TreeView simplifié.
 #### Tree View
 
 - [Tutoriel](http://www.mono-project.com/GtkSharp_TreeView_Tutorial)
-- [Un tutoriel plus complet, mais
-  complexe](http://scentric.net/tutorial/treeview-tutorial.html)
-- [DataBinding an IList as DataSource for the
-  Gtk.TreeView](http://pvanhoof.be/blog/index.php/2006/04/21/databinding-an-ilist-as-datasource-for-the-gtktreeview)
-
-### Librairies
-
-- [TagLib
-  Sharp](http://developer.novell.com/wiki/index.php/TagLib_Sharp) : .NET
-  library capable of reading and writing both the basic and advanced
-  tagging information stored in popular audio formats.
 
 ## Programmes
 

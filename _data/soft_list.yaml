@@ -78,7 +78,7 @@ categories:
         apt: https://github.com/vnotex/vnote/releases/latest
         url_internal: null
         url_doc_ubuntu_fr: null
-        url_website: https://app.vnote.fun/en_us/
+        url_website: https://docs.vnote.fun/
         url_repository: https://github.com/vnotex/vnote
         description: Créer et modifier des notes, en markdown.
   - nom: Autre
@@ -126,7 +126,7 @@ categories:
         apt: https://github.com/cpc6128/LangageLinotte/releases/latest
         url_internal: null
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/linotte
-        url_website: http://langagelinotte.free.fr/wordpress/
+        url_website: null
         url_repository: https://github.com/cpc6128/LangageLinotte
         description: Langage de programmation en français.
       - nom: GCompris
@@ -164,14 +164,14 @@ categories:
         apt: fotowall 
         url_internal: null 
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/fotowall
-        url_website: https://www.enricoros.com/opensource/fotowall/gfx/screenshots/
+        url_website: https://fotowall.github.io/fotowall/
         url_repository: https://github.com/fotowall/fotowall
         description: Patchworks de photos
       - nom: gcolor3
         apt: gcolor3
         url_internal: null
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/gcolor
-        url_website: https://hjdskes.nl/projects/gcolor3/
+        url_website: https://www.hjdskes.nl/projects/gcolor3/
         url_repository: https://gitlab.gnome.org/World/gcolor3
         description: Sélecteur de couleur très simple.
       - nom: Dia
@@ -186,7 +186,7 @@ categories:
         url_internal: null
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/digikam
         url_website: https://www.digikam.org/
-        url_repository: https://github.com/digikam/digikam
+        url_repository: https://invent.kde.org/graphics/digikam
         description: Gestionnaire de photos.
       - nom: gscan2pdf
         apt: gscan2pdf
@@ -297,14 +297,14 @@ categories:
         apt: gamehub
         url_internal: null
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/jeu#gestionnaires_de_jeux
-        url_website: https://tkashkin.github.io/projects/gamehub/
+        url_website: null
         url_repository: https://github.com/tkashkin/GameHub
         description: Gestionnaire de jeux (Steam, GOG, Humble, itch.io).
       - nom: PlayOnLinux
         apt: playonlinux
         url_internal: null
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/playonlinux
-        url_website: https://www.playonlinux.com/fr/
+        url_website: null
         url_repository: https://github.com/PlayOnLinux
         description: Précurseur pour faire tourner les jeux Windows sous Linux. Préférer Lutris ou GameHub.
   - nom: Programmation
@@ -397,7 +397,7 @@ categories:
         apt: gambas3
         url_internal: null
         url_doc_ubuntu_fr: https://doc.ubuntu-fr.org/gambas
-        url_website: https://gambas.sourceforge.net/fr/main.html
+        url_website: https://gambaswiki.org/website/fr/main.html
         url_repository: https://sourceforge.net/p/gambas/code/HEAD/tree/
         description: Le Visual Basic™ libre, mais en mieux
       - nom: DbVisualizer

@@ -42,9 +42,6 @@ LocalSettings.php:
 J'utilise maintenant, pour mettre du code source, un [Syntax
 Highlighter](http://alexgorbatchev.com/wiki/SyntaxHighlighter).
 
-[Source du tutoriel
-(anglais)](http://www.lastengine.com/syntax-highlighter-code-colorizer-mediawiki/)
-
 #### Installation
 
 Pour le mettre en place, rien de plus simple:
