@@ -128,7 +128,24 @@
       "detail": "Vérifie les liens internes et externes avec les scripts maison"
     },
     {
-      "label": "🔍 Vérifier les liens (htmlproofer)",
+      "label": "�️ Vider le cache des liens externes",
+      "type": "shell",
+      "command": "python3 ${workspaceFolder}/.vscode/tasks/check_external_links.py --clear-cache",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Vide le cache des liens externes (.cache/external_links_cache.json)"
+    },
+    {
+      "label": "�🔍 Vérifier les liens (htmlproofer)",
       "type": "shell",
       "command": "${workspaceFolder}/.vscode/tasks/check_links.sh",
       "args": ["htmlproofer"],

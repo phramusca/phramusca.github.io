@@ -21,6 +21,12 @@ class LinkExtractor:
         re.MULTILINE
     )
     
+    # Autoliens : <http://...> ou <https://...>
+    AUTOLINK_PATTERN = re.compile(
+        r'<(https?://[^>\s]+)>',
+        re.MULTILINE
+    )
+    
     # Pattern pour les liens Liquid (à ignorer)
     LIQUID_PATTERN = re.compile(
         r'\{\{.*?\}\}|\{%.*?%\}',
@@ -41,7 +47,8 @@ class LinkExtractor:
     @staticmethod
     def extract_links(file_path: Path) -> List[Tuple[int, str, str]]:
         """
-        Extrait tous les liens d'un fichier Markdown.
+        Extrait tous les liens d'un fichier Markdown :
+        liens [texte](url) et autoliens <http://...>.
         
         Returns:
             List de tuples (numéro_ligne, texte_lien, url)
@@ -55,6 +62,11 @@ class LinkExtractor:
                 content_offset = 0
                 
                 for line_num, line in enumerate(lines, start=1):
+                    # Liens trouvés sur la ligne : (colonne, texte, url)
+                    line_links: List[Tuple[int, str, str]] = []
+                    # Portions de ligne déjà couvertes par un lien Markdown [texte](url)
+                    markdown_spans: List[Tuple[int, int]] = []
+
                     # Lire les liens jusqu'à leur parenthèse fermante, en respectant les parenthèses de l'URL.
                     position = 0
                     while True:
@@ -79,8 +91,14 @@ class LinkExtractor:
                             position = match.end()
                             continue
 
+                        markdown_spans.append((match.start(), cursor))
+
                         url = line[url_start:cursor - 1].strip()
                         text = match.group(1).strip()
+                        
+                        # Syntaxe [texte](<url>) : retirer les chevrons
+                        if url.startswith('<') and url.endswith('>'):
+                            url = url[1:-1].strip()
                         
                         # Ignorer les liens vides
                         if not url:
@@ -94,8 +112,25 @@ class LinkExtractor:
                             position = cursor
                             continue
                         
-                        links.append((line_num, text, url))
+                        line_links.append((match.start(), text, url))
                         position = cursor
+
+                    # Autoliens <http://...> (hors liens Markdown déjà trouvés)
+                    for match in LinkExtractor.AUTOLINK_PATTERN.finditer(line):
+                        if any(start <= match.start() < end for start, end in markdown_spans):
+                            continue
+                        
+                        # Ignorer les liens Liquid
+                        start_pos = content_offset + match.start()
+                        end_pos = content_offset + match.end()
+                        if LinkExtractor.is_liquid_template(content, start_pos, end_pos):
+                            continue
+                        
+                        line_links.append((match.start(), "", match.group(1)))
+
+                    # Conserver l'ordre d'apparition dans la ligne
+                    line_links.sort(key=lambda link: link[0])
+                    links.extend((line_num, text, url) for _, text, url in line_links)
 
                     content_offset += len(line) + 1
         

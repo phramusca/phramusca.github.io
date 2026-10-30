@@ -52,6 +52,7 @@ Site personnel hébergé sur GitHub Pages, construit avec Jekyll. Ce site contie
 - `🔍 Vérifier les liens (htmlproofer)` - Vérifie avec htmlproofer (analyse _site)
 - `🔍 Vérifier les liens (lychee)` - Vérifie avec lychee (analyse _site)
 - `🔍 Vérifier les liens (toutes les méthodes)` - Toutes les méthodes
+- `🗑️ Vider le cache des liens externes` - Vide le cache des liens externes
 
 ## 🔐 Clés de signature apt-thirdparty
 
@@ -389,6 +390,7 @@ Ce projet utilise une approche hybride pour vérifier les liens morts :
 - **🔍 Vérifier les liens (htmlproofer)** : Utilise htmlproofer
 - **🔍 Vérifier les liens (lychee)** : Utilise lychee
 - **🔍 Vérifier les liens (toutes les méthodes)** : Toutes les méthodes
+- **🗑️ Vider le cache des liens externes** : Vide le cache des liens externes
 
 #### Script shell
 
@@ -445,7 +447,7 @@ Tous les outils ignorent automatiquement :
 
 #### Cache
 
-- **Scripts maison (liens externes)** : Cache de 7 jours dans `.cache/external_links_cache.json`
+- **Scripts maison (liens externes)** : Cache de 7 jours dans `.cache/external_links_cache.json` (1 heure seulement pour les erreurs réseau transitoires : DNS, timeouts...). Pour le vider : `python3 .vscode/tasks/check_external_links.py --clear-cache` (ou supprimez le fichier)
 - **htmlproofer** : Cache de 7 jours (configuré dans `.htmlproofer.yml`)
 - **lychee** : Pas de cache par défaut
 

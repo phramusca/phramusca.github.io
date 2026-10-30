@@ -30,9 +30,12 @@ from check_links_lib import (
 class LinkCache:
     """Cache pour les résultats de vérification des liens externes."""
     
-    def __init__(self, cache_file: Path, cache_duration_days: int = 7):
+    def __init__(self, cache_file: Path, cache_duration_days: int = 7, error_cache_duration_hours: int = 1):
         self.cache_file = cache_file
         self.cache_duration = timedelta(days=cache_duration_days)
+        # Les erreurs réseau (sans code HTTP : DNS, timeout...) sont souvent
+        # transitoires : elles sont mises en cache pour une durée beaucoup plus courte.
+        self.error_cache_duration = timedelta(hours=error_cache_duration_hours)
         self.cache: Dict[str, Dict] = self._load_cache()
     
     def _load_cache(self) -> Dict[str, Dict]:
@@ -69,7 +72,9 @@ class LinkCache:
         cached_time = datetime.fromisoformat(entry['timestamp'])
         
         # Vérifier si le cache est encore valide
-        if datetime.now() - cached_time > self.cache_duration:
+        # (durée réduite pour les erreurs réseau, sans code HTTP)
+        duration = self.cache_duration if entry.get('status_code') is not None else self.error_cache_duration
+        if datetime.now() - cached_time > duration:
             del self.cache[key]
             return None
         
@@ -161,6 +166,15 @@ def main():
     project_root = Path.cwd()
     cache_file = project_root / ".cache" / "external_links_cache.json"
     cache_file.parent.mkdir(exist_ok=True)
+    
+    # Option pour vider le cache et quitter
+    if "--clear-cache" in sys.argv:
+        if cache_file.exists():
+            cache_file.unlink()
+            print(f"🗑️  Cache supprimé: {cache_file}")
+        else:
+            print("ℹ️  Aucun cache à supprimer")
+        sys.exit(0)
     
     cache = LinkCache(cache_file, cache_duration_days=7)
     checker = ExternalLinkChecker(cache, timeout=10)
