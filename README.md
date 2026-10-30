@@ -356,11 +356,13 @@ Ce projet utilise une approche hybride pour vérifier les liens morts :
 - **Liens internes** : Vérifie directement les fichiers Markdown source
   - ✅ Numéros de ligne corrects (du Markdown, pas du HTML)
   - ✅ Pas besoin de build Jekyll
-  - ✅ Résolution intelligente des chemins relatifs
+  - ✅ Liens relatifs résolus comme le navigateur (depuis l'URL publiée `/wiki/.../`)
   - ❌ Ne vérifie pas les images/scripts
   
 - **Liens externes** : Vérifie les URLs HTTP/HTTPS
   - ✅ Numéros de ligne corrects
+  - ✅ Liens Markdown multi-lignes et autoliens `<http://...>` supportés
+  - ✅ Vérifie aussi les URLs de `_data/soft_list.yaml`
   - ✅ Cache de 7 jours pour éviter les vérifications répétées
   - ✅ Pas besoin de build Jekyll
   - ❌ Plus lent que les outils spécialisés

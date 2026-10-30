@@ -13,9 +13,9 @@ from urllib.parse import urlparse, urljoin, unquote, quote
 
 
 class LinkExtractor:
-    """Extrait les liens des fichiers Markdown."""
+    """Extrait les liens des fichiers Markdown et YAML."""
     
-    # Début de lien Markdown : [texte](
+    # Début de lien Markdown : [texte](  ([^\]]+ peut contenir des sauts de ligne)
     MARKDOWN_LINK_PATTERN = re.compile(
         r'\[([^\]]+)\]\(',
         re.MULTILINE
@@ -24,6 +24,12 @@ class LinkExtractor:
     # Autoliens : <http://...> ou <https://...>
     AUTOLINK_PATTERN = re.compile(
         r'<(https?://[^>\s]+)>',
+        re.MULTILINE
+    )
+    
+    # URLs nues dans les fichiers YAML (ex: url_website: https://...)
+    YAML_URL_PATTERN = re.compile(
+        r'https?://[^\s\'"<>]+',
         re.MULTILINE
     )
     
@@ -47,96 +53,100 @@ class LinkExtractor:
     @staticmethod
     def extract_links(file_path: Path) -> List[Tuple[int, str, str]]:
         """
-        Extrait tous les liens d'un fichier Markdown :
-        liens [texte](url) et autoliens <http://...>.
+        Extrait tous les liens d'un fichier :
+        - Markdown : liens [texte](url) (y compris multi-lignes) et autoliens <http://...>
+        - YAML : URLs nues (http://..., https://...)
         
         Returns:
             List de tuples (numéro_ligne, texte_lien, url)
         """
-        links = []
-        
         try:
             with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
                 content = f.read()
-                lines = content.split('\n')
-                content_offset = 0
-                
-                for line_num, line in enumerate(lines, start=1):
-                    # Liens trouvés sur la ligne : (colonne, texte, url)
-                    line_links: List[Tuple[int, str, str]] = []
-                    # Portions de ligne déjà couvertes par un lien Markdown [texte](url)
-                    markdown_spans: List[Tuple[int, int]] = []
-
-                    # Lire les liens jusqu'à leur parenthèse fermante, en respectant les parenthèses de l'URL.
-                    position = 0
-                    while True:
-                        match = LinkExtractor.MARKDOWN_LINK_PATTERN.search(line, position)
-                        if match is None:
-                            break
-
-                        url_start = match.end()
-                        depth = 1
-                        cursor = url_start
-                        while cursor < len(line) and depth:
-                            if line[cursor] == '\\':
-                                cursor += 2
-                                continue
-                            if line[cursor] == '(':
-                                depth += 1
-                            elif line[cursor] == ')':
-                                depth -= 1
-                            cursor += 1
-
-                        if depth:
-                            position = match.end()
-                            continue
-
-                        markdown_spans.append((match.start(), cursor))
-
-                        url = line[url_start:cursor - 1].strip()
-                        text = match.group(1).strip()
-                        
-                        # Syntaxe [texte](<url>) : retirer les chevrons
-                        if url.startswith('<') and url.endswith('>'):
-                            url = url[1:-1].strip()
-                        
-                        # Ignorer les liens vides
-                        if not url:
-                            position = cursor
-                            continue
-                        
-                        # Ignorer les liens Liquid
-                        start_pos = content_offset + match.start()
-                        end_pos = content_offset + cursor
-                        if LinkExtractor.is_liquid_template(content, start_pos, end_pos):
-                            position = cursor
-                            continue
-                        
-                        line_links.append((match.start(), text, url))
-                        position = cursor
-
-                    # Autoliens <http://...> (hors liens Markdown déjà trouvés)
-                    for match in LinkExtractor.AUTOLINK_PATTERN.finditer(line):
-                        if any(start <= match.start() < end for start, end in markdown_spans):
-                            continue
-                        
-                        # Ignorer les liens Liquid
-                        start_pos = content_offset + match.start()
-                        end_pos = content_offset + match.end()
-                        if LinkExtractor.is_liquid_template(content, start_pos, end_pos):
-                            continue
-                        
-                        line_links.append((match.start(), "", match.group(1)))
-
-                    # Conserver l'ordre d'apparition dans la ligne
-                    line_links.sort(key=lambda link: link[0])
-                    links.extend((line_num, text, url) for _, text, url in line_links)
-
-                    content_offset += len(line) + 1
-        
         except Exception as e:
             print(f"⚠️  Erreur lors de la lecture de {file_path}: {e}", file=sys.stderr)
+            return []
         
+        if file_path.suffix in ('.yml', '.yaml'):
+            return LinkExtractor._extract_yaml_links(content)
+        
+        # Liens trouvés : (position dans le contenu, texte, url)
+        found: List[Tuple[int, str, str]] = []
+        # Portions du contenu déjà couvertes par un lien Markdown [texte](url)
+        markdown_spans: List[Tuple[int, int]] = []
+
+        # Lire les liens jusqu'à leur parenthèse fermante, en respectant les parenthèses de l'URL.
+        position = 0
+        while True:
+            match = LinkExtractor.MARKDOWN_LINK_PATTERN.search(content, position)
+            if match is None:
+                break
+
+            url_start = match.end()
+            depth = 1
+            cursor = url_start
+            while cursor < len(content) and depth:
+                if content[cursor] == '\\':
+                    cursor += 2
+                    continue
+                if content[cursor] == '(':
+                    depth += 1
+                elif content[cursor] == ')':
+                    depth -= 1
+                cursor += 1
+
+            if depth:
+                position = match.end()
+                continue
+
+            markdown_spans.append((match.start(), cursor))
+
+            url = content[url_start:cursor - 1].strip()
+            # Texte éventuellement multi-lignes : normaliser pour l'affichage
+            text = ' '.join(match.group(1).split())
+            
+            # Syntaxe [texte](<url>) : retirer les chevrons
+            if url.startswith('<') and url.endswith('>'):
+                url = url[1:-1].strip()
+            
+            # Ignorer les liens vides
+            if not url:
+                position = cursor
+                continue
+            
+            # Ignorer les liens Liquid
+            if LinkExtractor.is_liquid_template(content, match.start(), cursor):
+                position = cursor
+                continue
+            
+            found.append((match.start(), text, url))
+            position = cursor
+
+        # Autoliens <http://...> (hors liens Markdown déjà trouvés)
+        for match in LinkExtractor.AUTOLINK_PATTERN.finditer(content):
+            if any(start <= match.start() < end for start, end in markdown_spans):
+                continue
+            
+            # Ignorer les liens Liquid
+            if LinkExtractor.is_liquid_template(content, match.start(), match.end()):
+                continue
+            
+            found.append((match.start(), "", match.group(1)))
+
+        # Conserver l'ordre d'apparition et calculer les numéros de ligne
+        found.sort(key=lambda link: link[0])
+        return [
+            (content.count('\n', 0, start) + 1, text, url)
+            for start, text, url in found
+        ]
+    
+    @staticmethod
+    def _extract_yaml_links(content: str) -> List[Tuple[int, str, str]]:
+        """Extrait les URLs nues d'un fichier YAML (ex: url_website: https://...)."""
+        links = []
+        for line_num, line in enumerate(content.split('\n'), start=1):
+            for match in LinkExtractor.YAML_URL_PATTERN.finditer(line):
+                links.append((line_num, "", match.group(0)))
         return links
 
 
@@ -273,6 +283,11 @@ class InternalLinkResolver:
         link = link.split('#')[0]
         if not link:
             return None
+        
+        # Dans _wiki/, les liens relatifs sont résolus comme le navigateur :
+        # depuis l'URL publiée de la page (permalink /wiki/.../), pas depuis le dossier source
+        if not link.startswith('/') and from_file.is_relative_to(self.wiki_dir):
+            return self.resolve_wiki_url(link, from_file)
         
         # Liens absolus commençant par /
         if link.startswith('/'):
@@ -437,21 +452,27 @@ class InternalLinkResolver:
         return True, None
 
 
-def find_markdown_files(project_root: Path) -> List[Path]:
-    """Trouve tous les fichiers Markdown du projet."""
-    markdown_files = []
+def find_source_files(project_root: Path) -> List[Path]:
+    """Trouve tous les fichiers sources contenant des liens (Markdown + données YAML)."""
+    source_files = []
     
     # Fichiers dans _wiki
     wiki_dir = project_root / "_wiki"
     if wiki_dir.exists():
-        markdown_files.extend(wiki_dir.rglob("*.md"))
+        source_files.extend(wiki_dir.rglob("*.md"))
     
     # Fichiers dans _posts
     posts_dir = project_root / "_posts"
     if posts_dir.exists():
-        markdown_files.extend(posts_dir.glob("*.md"))
+        source_files.extend(posts_dir.glob("*.md"))
     
-    return sorted(markdown_files)
+    # Données YAML (ex: _data/soft_list.yaml contient url_website, url_repository...)
+    data_dir = project_root / "_data"
+    if data_dir.exists():
+        source_files.extend(data_dir.glob("*.yml"))
+        source_files.extend(data_dir.glob("*.yaml"))
+    
+    return sorted(source_files)
 
 
 def make_file_link(file_path: Path, line_num: int) -> str:

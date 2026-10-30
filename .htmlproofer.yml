@@ -16,7 +16,7 @@ check_external_hash: false  # Ne pas vérifier les ancres externes
 # NOTE: le CLI htmlproofer ne charge pas ce fichier ; la configuration effective
 # est passée par check_links.sh via --ignore-urls (généré depuis la whitelist commune).
 ignore_urls:
-      # >>> GENERATED FROM .vscode/tasks/link_whitelist.txt - ne pas editer a la main >>>
+                # >>> GENERATED FROM .vscode/tasks/link_whitelist.txt - ne pas editer a la main >>>
   - '/^#/'
   - '/^mailto:.*/'
   - '/^tel:.*/'
@@ -29,7 +29,7 @@ ignore_urls:
   - '/^https?://localhost(:[0-9]+)?([/?#].*)?$/'
   - '/^https?://[a-zA-Z0-9.-]+\.local(:[0-9]+)?([/?#].*)?$/'
   - '/^https?://(10\.[0-9]+\.[0-9]+\.[0-9]+|192\.168\.[0-9]+\.[0-9]+|172\.(1[6-9]|2[0-9]|3[01])\.[0-9]+\.[0-9]+)(:[0-9]+)?([/?#].*)?$/'
-  - '/^https?://([a-zA-Z0-9-]+\.)*(stackoverflow\.com|alternativeto\.net|distrowatch\.com|kobo\.com|raspberrypi\.com|samfw\.com)(/|$)/'
+  - '/^https?://([a-zA-Z0-9-]+\.)*(stackoverflow\.com|alternativeto\.net|distrowatch\.com|kobo\.com|raspberrypi\.com|samfw\.com|gitlab\.gnome\.org)(/|$)/'
   # <<< END GENERATED <<<
   - '/#.*/'  # URLs avec fragment (spécifique htmlproofer)
 

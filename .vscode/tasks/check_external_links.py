@@ -22,7 +22,7 @@ sys.path.insert(0, str(Path(__file__).parent / "lib"))
 from check_links_lib import (
     LinkExtractor,
     LinkClassifier,
-    find_markdown_files,
+    find_source_files,
     make_file_link
 )
 
@@ -179,10 +179,10 @@ def main():
     cache = LinkCache(cache_file, cache_duration_days=7)
     checker = ExternalLinkChecker(cache, timeout=10)
     
-    markdown_files = find_markdown_files(project_root)
+    source_files = find_source_files(project_root)
     
-    if not markdown_files:
-        print("❌ Aucun fichier Markdown trouvé", file=sys.stderr)
+    if not source_files:
+        print("❌ Aucun fichier source trouvé", file=sys.stderr)
         sys.exit(1)
     
     errors = []
@@ -191,9 +191,9 @@ def main():
     checked_files = 0
     cached_count = 0
     
-    print(f"🔍 Vérification des liens externes dans {len(markdown_files)} fichiers...\n")
+    print(f"🔍 Vérification des liens externes dans {len(source_files)} fichiers...\n")
     
-    for file_path in markdown_files:
+    for file_path in source_files:
         links = LinkExtractor.extract_links(file_path)
         
         if not links:

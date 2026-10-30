@@ -8,7 +8,7 @@ Cette page traite du développement de logiciels et d'applications ou sites Inte
 
 ## Outils et généralités
 
-Ma liste de [logiciels et outils de développement](linux/soft/)
+Ma liste de [logiciels et outils de développement](/wiki/linux/soft/)
 
 ### Contrôle de version
 
