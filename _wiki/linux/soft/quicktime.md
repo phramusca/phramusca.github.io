@@ -26,7 +26,7 @@ vidéos MOV (pas les QTVR) dans tous les lecteurs Multimédia.
 
 - Installer "nasm" depuis le gestionnaire de paquets.
 - Télécharger les sources de "QuickTime 4 Linux" et "Libmpeg3" sur
-  <http://heroinewarrior.com/quicktime.php3>
+  [**Site mort, faire une recherche pour trouver les sources actuelles**]
 - Decompresser les archives "QuickTime 4 Linux" et "Libmpeg3".
 - Faire un `sudo chmod -R 777 <REPERTOIRE>` sur les deux répertoires
   extraits pour être sur d'avoir les droits pour compiler

@@ -8,8 +8,6 @@ GIMP est un équivalent Open Source de Photoshop.
 
 ## GIF animés
 
-<http://www.infetech.com/article.php3?id_article=166>
-
 - Ouvrir la première image
 - Rajouter les autres photos dans le menu "Fichier-\>ouvrir comme un
   calque"

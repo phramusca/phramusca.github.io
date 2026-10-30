@@ -11,9 +11,6 @@ bien connu Eclipse, que je ne connais que très peu)
 
 - Developpez.com (tutoriels, outils, api,...) :
   <http://java.developpez.com/>
-- Cours bien complet:
-  <http://www.siteduzero.com/tutoriel-3-10601-programmation-en-java.html>
-- Cours, un autre: <http://prevert.upmf-grenoble.fr/Prog/>
 - Ubuntu.fr: <http://doc.ubuntu-fr.org/java>
 
 - Verify the Java Version
@@ -60,8 +57,6 @@ bien connu Eclipse, que je ne connais que très peu)
 - Interruptions:
   <http://thecodersbreakfast.net/index.php?post/2009/06/08/G%C3%A9rer-proprement-les-interruptions-de-threads-en-Java>
 - <http://ydisanto.developpez.com/tutoriels/java/runtime-exec/>
-- From Runtime.exec() to ProcessBuilder :
-  <http://www.java-tips.org/java-se-tips/java.util/from-runtime.exec-to-processbuilder.html>
 - Passing a parameter to a thread:
   <http://stackoverflow.com/questions/877096/how-can-i-pass-a-parameter-to-a-java-thread>
 
@@ -72,25 +67,14 @@ bien connu Eclipse, que je ne connais que très peu)
 |           |                                                                     |                                                                                                                                                                                                               |
 | --------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Component | Description                                                         | Lien                                                                                                                                                                                                          |
-| JList     | Get selected item(s)                                                | <http://www.exampledepot.com/egs/javax.swing/list_ListGetSel.html>                                                                                                                                            |
 |           | Double click                                                        | <http://www.developpez.net/forums/d539105/java/interfaces-graphiques-java/awt-swing/composants/listes/jlist-double-clique-element/#>                                                                          |
-|           | How to add a checkbox to items in a JList                           | <http://helpdesk.objects.com.au/java/how-do-add-a-checkbox-to-items-in-a-jlist>                                                                                                                               |
 | JTable    | Hide/Show columns                                                   | <http://www.stephenkelvin.de/XTableColumnModel/>                                                                                                                                                              |
 |           | Choose the color of a JTable cell                                   | <http://www.javaworld.com/article/2077430/core-java/set-the-jtable.html>                                                                                                                                      |
-|           | How to change color of JTable row having a particular value         | <http://www.java-forums.org/awt-swing/541-how-change-color-jtable-row-having-particular-value.html>                                                                                                           |
 |           | Horizontal scrollbar                                                | <http://stackoverflow.com/questions/2452694/jtable-horizontal-scrollbar-in-java> <http://stackoverflow.com/questions/3857807/java-swing-problems-with-horizontal-scroll-for-a-jtable-embedded-in-a-jscrolled> |
 |           | How to Insert Image into JTable Cell                                | <http://stackoverflow.com/questions/4941372/how-to-insert-image-into-jtable-cell>                                                                                                                             |
 |           | JButton in a JTable cell                                            | <http://www.theinsanetechie.in/2013/08/java-jbutton-in-jtable-cell.html>                                                                                                                                      |
 |           | Click event                                                         | <http://stackoverflow.com/questions/7350893/click-event-on-jtable-java>                                                                                                                                       |
 | ImageIcon | Creating border around ImageIcon on a JLabel, not around the Jlabel | <http://stackoverflow.com/questions/7350893/click-event-on-jtable-java>                                                                                                                                       |
-
-### Graphic
-
-|                                                   |                                                                     |
-| ------------------------------------------------- | ------------------------------------------------------------------- |
-| Description                                       | Lien                                                                |
-| Reading an Image from a File, InputStream, or URL | <http://www.exampledepot.com/egs/javax.imageio/BasicImageRead.html> |
-| Saving a Generated Graphic to a PNG or JPEG File  | <http://www.exampledepot.com/egs/javax.imageio/Graphic2File.html>   |
 
 ### String
 
@@ -99,7 +83,6 @@ bien connu Eclipse, que je ne connais que très peu)
 | Description           | Lien                                                                                      |
 | Left-padding integers | <http://stackoverflow.com/questions/473282/left-padding-integers-with-zeros-in-java>      |
 | Date format           | <http://30minparjour.la-bnbox.fr/post/2010/petit-point-sur-simpledateformat>              |
-| Regex                 | <http://benhur.teluq.uqam.ca/SPIP/inf6460/article.php3?id_article=29&id_rubrique=7&sem=5> |
 
 ## En vrac (pour l'instant)
 
@@ -107,7 +90,6 @@ bien connu Eclipse, que je ne connais que très peu)
   <http://www.chicoree.fr/w/Programmation_imp%C3%A9rative/Tableaux_associatifs>
 - <http://download.oracle.com/javase/tutorial/index.html>
 - Overriding .equals():
-  - <http://stevenharman.net/blog/archive/2006/04/27/HowTo_Override_equals_and_hashCode_Part1.aspx>
   - <http://java.developpez.com/faq/java/?page=divers#DIVERS_equals>
 - OnExit Event:
   <http://stackoverflow.com/questions/2467070/onexit-event-for-a-swing-application>
@@ -117,29 +99,24 @@ bien connu Eclipse, que je ne connais que très peu)
   <http://stackoverflow.com/questions/27581/overriding-equals-and-hashcode-in-java>
 - Look&Feel (a tester):
   <http://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html>
-- JavaDoc:
-  <http://www.siteduzero.com/tutoriel-3-35079-presentation-de-la-javadoc.html>
 - mime: <http://www.rgagnon.com/javadetails/java-0487.html>
 - Cloner des objets:
   <http://ydisanto.developpez.com/tutoriels/java/cloneable/>
 - Get User Name: <http://www.rgagnon.com/javadetails/java-0048.html>
 - Group a List by property:
   <http://vladzloteanu.wordpress.com/2009/05/20/java-lists-group-by-element-property-as-ruby-group_by-method/>
-- Random numbers:
-  <http://www.cs.geneseo.edu/~baldwin/reference/random.html>
 - How to split a path platform independent?:
   <http://stackoverflow.com/questions/1099859/how-to-split-a-path-platform-independent>
 - Maven behind proxy:
   - Maven does not use Netbean's nor system configured proxy
   - You have to modify Maven's settings.xml configuration file as
-    described here: <http://wiki.netbeans.org/FaqMavenProxySettings>
+    described here: **Lien mort**
   - On Windows, the file is located under C:\Program Files\NetBeans
     7.0.1\java\maven\conf
 
 ## Maven (A TESTER)
 
 - <http://dcabasson.developpez.com/articles/java/maven/introduction-maven2/>
-- <http://chrisdail.com/2008/04/17/building-with-maven/>
 
 ## JAR Version
 

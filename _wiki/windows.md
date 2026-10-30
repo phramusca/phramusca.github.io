@@ -16,7 +16,6 @@ Bien que Windows ne soit pas libre, il existe cependant de nombreuses applicatio
 
 Voici quelques sites pour trouver des équivalences:
 
-- <http://www.misfu.com/equivalence-logiciels-windows-linux.html>
 - <http://lesalternatives.free.fr/>
 - <http://alternativeto.net/>
 

@@ -107,9 +107,6 @@ inspiration)
 - MonoCop, l'équivalent du FxCop qui permet de faire un "audit" de code
   et de vérifier de nombreuses règles personnalisables.
   (http://www.advogato.org/person/jluke/diary.html?start=24)
-- MonoForge, un hébergeur de site web dédié à la plateforme Mono/Linux
-  avec MySQL. Actuellement en phase de test, l'hébergement est gratuit
-  pendant 1 an : <http://www.monoforge.com/>
 - Gecko# marche sous Windows, il devient possible de faire un navigateur
   portable en GTK#.
   (http://primates.ximian.com/~miguel/pic.php?name=mozwin32.JPG&ca)
@@ -118,9 +115,7 @@ inspiration)
 - Blam!, un agrégateur de news RSS intégré à Gnome
   (http://www.imendio.com/projects/blam/)
 - F-Spot, un gestionnaire de photo pour Gnome
-  (http://www.gnome.org/projects/f-spot/ , quelques jolis screenshot des
-  futures focntionnalités par ici :
-  <http://primates.ximian.com/~glesage/wiki/doku.php?id=f-spot>)
+  (http://www.gnome.org/projects/f-spot/
 - iFolder3, une solution de partage de fichiers multi-plateforme, porté
   par Novell sur Mono.
   (http://forge.novell.com/modules/xfmod/project/?ifolder)

@@ -25,8 +25,6 @@ La version principale est - Ubuntu. Les [programmes](/wiki/linux/soft) présents
 
 Pour choisir la version qui te convient et pour plus de détails sur l'installation, tu peux consulter la [page consacrée](http://doc.ubuntu-fr.org/installation) sur le site de la Communauté francophone des utilisateurs d'Ubuntu.
 
-*Forums, aide, FAQ, ... :* <http://forum.ubuntu-fr.org/>
-
 *Documentation :* <http://doc.ubuntu-fr.org/>
 
 ### Test

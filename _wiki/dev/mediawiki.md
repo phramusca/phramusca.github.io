@@ -33,7 +33,6 @@ LocalSettings.php:
 
 ### Anti-SPAM
 
-- <http://bima.astro.umd.edu/wiki/index.php/Mediawiki_spam_protection>
 - <http://www.mediawiki.org/wiki/Manual:Combating_spam>
 
 ## Extensions
@@ -52,7 +51,7 @@ Pour le mettre en place, rien de plus simple:
 
 - Télécharger et de-zipper dans le répertoire /extensions de MediaWiki
   le ZIP :
-  <http://www.lastengine.com/wp-content/uploads/2009/04/syntax-highlighter-code-colorizer.zip>
+  **Lien mort**
 - Dans LocalSettings.php, ajouter la ligne suivante (à la fin):
 
     `require_once("extensions/syntax-highlighter-code-colorizer/syntax-highlighter-mediawiki.php");`

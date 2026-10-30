@@ -37,7 +37,7 @@ A partir de lucid (10.04 LTS), il faut au préalable installer le paquet libmysq
 
      `sudo apt-get remove amarok && sudo apt-get install amarok14`
 
-Source: <http://forum.ubuntu-fr.org/viewtopic.php?id=311176>
+Source: **Lien mort**
 
 ## Forks de Amarok 1.4.x
 
@@ -49,9 +49,6 @@ Il existe de nombreux forks (embranchements) de Amarok 1.4
   comme Bdd :(
 - Gereki, plus minimaliste, facile à installer par un .deb. supporte
   MySQL (et SQLLite). A FINIR DE TESTER
-- Pana, plus dur a installer (pas de .deb):
-  <http://www.ubuntugeek.com/pana-a-music-player-based-on-amarok-1-4.html#more-4664>
-  . Je n'ai pas réussi à installer la version 1.4.16 sur Ubuntu 11.04
 
 ## Options pour Amarok 1.4.10
 
@@ -68,7 +65,6 @@ installation, une option dans Amarok permet de visualiser cette mood
 
 ### Scripts pour Amarok
 
-- **replaygain**: <http://kde-apps.org/content/show.php?content=26073>
 - usb_device_amaroKscript (gestion des appareils USB - ex Archos):
   - Installer [kdebase](apt://kdebase) (pour kfminfo)
   - Installer [mp3info](apt://mp3info)
@@ -88,8 +84,6 @@ scripts d'AmaroK
 
 **Apparemment, dans la version 2.2 et + Amarok gère
 ceci lui-même comme dans la version 1.4**
-
-Source originale: <http://forum.ubuntu-fr.org/viewtopic.php?id=280537>
 
 Je conseillerai de faire avant tout une sauvegarde d'un éventuel dossier
 amarok dans /var/lib/mysql (genre la base de la version 1.x), avec:

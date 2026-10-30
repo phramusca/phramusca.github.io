@@ -28,5 +28,4 @@ Cependant, il ne permet pas de créer des repository SVN. Pour cela, il faut lan
   - <http://doc.ubuntu-fr.org/subversion>
   - <http://hikage.developpez.com/linux/tutoriels/subversion/?page=page_2#LII-D-3>
   - <http://www.toutprogrammer.com/wiki/Installation_et_utilisation_de_base_de_Subversion#Cr.C3.A9ation_et_configuration_d.27un_r.C3.A9f.C3.A9rentiel>
-  - <http://www.vogelweith.com/debian_server/09_subversion.php#x1-80003.1>
 - USVN: <http://linuxfr.org/2007/05/30/22561.html>
