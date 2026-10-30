@@ -17,6 +17,10 @@ ignore_urls:
   - '/#.*/'  # Ignorer les ancres
   - 'mailto:.*'  # Ignorer les liens mailto
   - 'tel:.*'  # Ignorer les liens tel
+  - 'apt://.*'  # Ignorer les liens apt
+  - 'localhost|monproxy:leport|^JaMuz$'  # Services locaux, exemples, projets externes
+  - '^https?://[a-zA-Z0-9.-]+\.local(:[0-9]+)?(/|$)'  # mDNS (.local), ex: rpi5.local
+  - '^https?://([a-zA-Z0-9-]+\.)*(stackoverflow\.com|alternativeto\.net|distrowatch\.com|kobo\.com|raspberrypi\.com)(/|$)'  # Anti-robot (403 systématique)
 
 # Options de cache
 cache:

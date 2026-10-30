@@ -69,7 +69,7 @@ check_htmlproofer() {
         --no-enforce-https \
         --root-dir "$SITE_DIR" \
         --allow-hash-href \
-        --ignore-urls "(/#.*|mailto:.*|tel:.*|apt://.*|localhost|monproxy:leport|^JaMuz$)" \
+        --ignore-urls "(/#.*|mailto:.*|tel:.*|apt://.*|localhost|monproxy:leport|^JaMuz$|^https?://[a-zA-Z0-9.-]+\.local(:[0-9]+)?(/|$)|https?://([a-zA-Z0-9-]+\.)*(stackoverflow\.com|alternativeto\.net|distrowatch\.com|kobo\.com|raspberrypi\.com)(/|$))" \
         --typhoeus '{ "timeout": 10, "connecttimeout": 10 }'
     
     return $?

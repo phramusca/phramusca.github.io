@@ -20,3 +20,9 @@
 # Ignorer les liens vers des projets externes (exemples)
 ^JaMuz$
 
+# Ignorer les services locaux mDNS (.local), ex: rpi5.local
+^https?://[a-zA-Z0-9.-]+\.local(:[0-9]+)?(/|$)
+
+# Ignorer les sites avec filtrage anti-robot (403 systématique)
+^https?://([a-zA-Z0-9-]+\.)*(stackoverflow\.com|alternativeto\.net|distrowatch\.com|kobo\.com|raspberrypi\.com)(/|$)
+
