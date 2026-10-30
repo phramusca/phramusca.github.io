@@ -145,11 +145,27 @@
       "detail": "Vide le cache des liens externes (.cache/external_links_cache.json)"
     },
     {
-      "label": "�🔍 Vérifier les liens (htmlproofer)",
+      "label": "🔧 Mettre à jour la whitelist des liens",
+      "type": "shell",
+      "command": "python3 ${workspaceFolder}/.vscode/tasks/generate_link_configs.py",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Régénère .lycheeignore, .htmlproofer.yml et les arguments htmlproofer depuis la whitelist commune .vscode/tasks/link_whitelist.txt"
+    },
+    {
+      "label": "🔍 Vérifier les liens (htmlproofer)",
       "type": "shell",
       "command": "${workspaceFolder}/.vscode/tasks/check_links.sh",
       "args": ["htmlproofer"],
-      "dependsOn": "Jekyll: Build",
+      "dependsOn": ["Jekyll: Build", "🔧 Mettre à jour la whitelist des liens"],
       "group": "test",
       "presentation": {
         "reveal": "always",
@@ -165,7 +181,7 @@
       "type": "shell",
       "command": "${workspaceFolder}/.vscode/tasks/check_links.sh",
       "args": ["lychee"],
-      "dependsOn": "Jekyll: Build",
+      "dependsOn": ["Jekyll: Build", "🔧 Mettre à jour la whitelist des liens"],
       "group": "test",
       "presentation": {
         "reveal": "always",
@@ -181,7 +197,7 @@
       "type": "shell",
       "command": "${workspaceFolder}/.vscode/tasks/check_links.sh",
       "args": ["all"],
-      "dependsOn": "Jekyll: Build",
+      "dependsOn": ["Jekyll: Build", "🔧 Mettre à jour la whitelist des liens"],
       "group": "test",
       "presentation": {
         "reveal": "always",

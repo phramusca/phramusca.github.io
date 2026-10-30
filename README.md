@@ -53,6 +53,7 @@ Site personnel hébergé sur GitHub Pages, construit avec Jekyll. Ce site contie
 - `🔍 Vérifier les liens (lychee)` - Vérifie avec lychee (analyse _site)
 - `🔍 Vérifier les liens (toutes les méthodes)` - Toutes les méthodes
 - `🗑️ Vider le cache des liens externes` - Vide le cache des liens externes
+- `🔧 Mettre à jour la whitelist des liens` - Régénère les configs htmlproofer/lychee depuis la whitelist commune
 
 ## 🔐 Clés de signature apt-thirdparty
 
@@ -391,6 +392,7 @@ Ce projet utilise une approche hybride pour vérifier les liens morts :
 - **🔍 Vérifier les liens (lychee)** : Utilise lychee
 - **🔍 Vérifier les liens (toutes les méthodes)** : Toutes les méthodes
 - **🗑️ Vider le cache des liens externes** : Vide le cache des liens externes
+- **🔧 Mettre à jour la whitelist des liens** : Régénère les configs htmlproofer/lychee depuis la whitelist commune (lancée automatiquement en prérequis des tâches htmlproofer/lychee)
 
 #### Script shell
 
@@ -422,21 +424,29 @@ python3 .vscode/tasks/check_external_links.py
 
 ```bash
 bundle exec jekyll build
-bundle exec htmlproofer _site --checks Links,Images,Scripts --no-enforce-https --allow-hash-href --ignore-urls '/#.*/' --ignore-urls 'mailto:.*' --ignore-urls 'tel:.*'
+python3 .vscode/tasks/generate_link_configs.py  # génère .vscode/tasks/generated/whitelist_cli.sh
+source .vscode/tasks/generated/whitelist_cli.sh
+bundle exec htmlproofer _site --checks Links,Images,Scripts --no-enforce-https --allow-hash-href --ignore-urls "$HTMLPROOFER_IGNORE_URLS"
 ```
 
 **lychee** :
 
 ```bash
 bundle exec jekyll build
-lychee _site --format detailed --verbose --exclude-all-private --exclude "^mailto:.*" --exclude "^tel:.*" --exclude "^#.*$"
+python3 .vscode/tasks/generate_link_configs.py  # génère .lycheeignore
+lychee _site --format detailed --verbose --exclude-all-private
 ```
 
 ### Configuration
 
 #### Liens ignorés
 
-Tous les outils ignorent automatiquement :
+La whitelist est **centralisée** dans `.vscode/tasks/link_whitelist.txt` (un regex par ligne) :
+
+- Les **scripts maison** lisent ce fichier directement au lancement.
+- Pour **htmlproofer** et **lychee**, la tâche **🔧 Mettre à jour la whitelist des liens** (`python3 .vscode/tasks/generate_link_configs.py`) régénère `.lycheeignore`, `.htmlproofer.yml` et les arguments `--ignore-urls` utilisés par `check_links.sh`. Elle est lancée automatiquement en prérequis (`dependsOn`) des tâches htmlproofer/lychee.
+
+Tous les outils ignorent ainsi automatiquement :
 
 - Les ancres (`#...`)
 - Les liens `mailto:`

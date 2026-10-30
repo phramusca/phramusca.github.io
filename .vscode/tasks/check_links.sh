@@ -64,12 +64,22 @@ check_htmlproofer() {
         bundle exec jekyll build
     fi
     
+    # Charger l'argument --ignore-urls généré depuis la whitelist commune (link_whitelist.txt)
+    WHITELIST_CLI="$SCRIPT_DIR/generated/whitelist_cli.sh"
+    if [ ! -f "$WHITELIST_CLI" ]; then
+        echo -e "${RED}❌ $WHITELIST_CLI introuvable.${NC}"
+        echo -e "${YELLOW}   Lancez d'abord: python3 $SCRIPT_DIR/generate_link_configs.py${NC}"
+        exit 1
+    fi
+    # shellcheck source=/dev/null
+    source "$WHITELIST_CLI"
+    
     bundle exec htmlproofer _site \
         --checks Links,Images,Scripts \
         --no-enforce-https \
         --root-dir "$SITE_DIR" \
         --allow-hash-href \
-        --ignore-urls "(/#.*|mailto:.*|tel:.*|apt://.*|localhost|monproxy:leport|^JaMuz$|^https?://[a-zA-Z0-9.-]+\.local(:[0-9]+)?(/|$)|https?://([a-zA-Z0-9-]+\.)*(stackoverflow\.com|alternativeto\.net|distrowatch\.com|kobo\.com|raspberrypi\.com|samfw\.com)(/|$))" \
+        --ignore-urls "$HTMLPROOFER_IGNORE_URLS" \
         --typhoeus '{ "timeout": 10, "connecttimeout": 10 }'
     
     return $?
@@ -94,27 +104,15 @@ check_lychee() {
         bundle exec jekyll build
     fi
     
+    # Les URLs ignorées sont dans .lycheeignore (lu automatiquement par lychee,
+    # généré depuis la whitelist commune link_whitelist.txt)
     lychee _site \
         --format detailed \
         --verbose \
         --root-dir "$SITE_DIR" \
         --exclude-all-private \
-        --exclude "^mailto:.*" \
-        --exclude "^tel:.*" \
-        --exclude "^apt://.*" \
-        --exclude "^#.*$" \
-        --exclude "^/assets/.*" \
-        --exclude "^/search\\.json.*" \
-        --exclude "^JaMuz$" \
-        --exclude "^http://localhost:8086/.*" \
-        --exclude "^http://www.planete-android.com/.*" \
-        --exclude "^http://browse.geekbench.ca/user/xxxxAailes/profile" \
-        --exclude "^http://meta.wikimedia.org/wiki/Aide:Contenu" \
-        --exclude "^http://www.jkconception.com/dotclear/index.php/2007/07/09/21-les-crons-ou-les-taches-planifiees-sous-linux" \
-        --exclude "^http://xxxxxxx.yyyyy.free.fr/" \
         --timeout 10 \
-        --max-concurrency 5 \
-        --exclude-path ".lycheeignore"
+        --max-concurrency 5
     
     return $?
 }

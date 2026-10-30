@@ -1,0 +1,35 @@
+# Whitelist commune des liens ignorés par tous les outils de vérification
+# (scripts maison Python, htmlproofer, lychee).
+#
+# Un regex par ligne, '#' = commentaire.
+# Syntaxe commune Python / Ruby / Rust (regex crate) :
+# - pas de {n,m} (htmlproofer découpe --ignore-urls sur les virgules)
+# - pas de guillemets simples (le snippet shell généré les utilise)
+#
+# Lu directement par les scripts maison (check_links_lib.py).
+# Après modification, lancer la tâche "🔧 Mettre à jour la whitelist des liens"
+# (ou : python3 .vscode/tasks/generate_link_configs.py)
+# pour régénérer les configurations d'htmlproofer et lychee.
+
+# Ancres
+^#
+
+# Protocoles non-HTTP
+^mailto:.*
+^tel:.*
+^apt://.*
+^apt-thirdparty://.*
+^snap://.*
+^flatpak\+https://.*
+
+# Projets externes / exemples
+^JaMuz$
+^https?://utilisateur:motdepasse@monproxy:leport/?([?#].*)?$
+
+# Services locaux
+^https?://localhost(:[0-9]+)?([/?#].*)?$
+^https?://[a-zA-Z0-9.-]+\.local(:[0-9]+)?([/?#].*)?$
+^https?://(10\.[0-9]+\.[0-9]+\.[0-9]+|192\.168\.[0-9]+\.[0-9]+|172\.(1[6-9]|2[0-9]|3[01])\.[0-9]+\.[0-9]+)(:[0-9]+)?([/?#].*)?$
+
+# Sites avec filtrage anti-robot (403 systématique pour les scripts)
+^https?://([a-zA-Z0-9-]+\.)*(stackoverflow\.com|alternativeto\.net|distrowatch\.com|kobo\.com|raspberrypi\.com|samfw\.com)(/|$)

@@ -13,14 +13,25 @@ allow_hash_href: true  # Permettre les ancres vides (#)
 check_external_hash: false  # Ne pas vérifier les ancres externes
 
 # URLs à ignorer (regex)
+# NOTE: le CLI htmlproofer ne charge pas ce fichier ; la configuration effective
+# est passée par check_links.sh via --ignore-urls (généré depuis la whitelist commune).
 ignore_urls:
-  - '/#.*/'  # Ignorer les ancres
-  - 'mailto:.*'  # Ignorer les liens mailto
-  - 'tel:.*'  # Ignorer les liens tel
-  - 'apt://.*'  # Ignorer les liens apt
-  - 'localhost|monproxy:leport|^JaMuz$'  # Services locaux, exemples, projets externes
-  - '^https?://[a-zA-Z0-9.-]+\.local(:[0-9]+)?(/|$)'  # mDNS (.local), ex: rpi5.local
-  - '^https?://([a-zA-Z0-9-]+\.)*(stackoverflow\.com|alternativeto\.net|distrowatch\.com|kobo\.com|raspberrypi\.com|samfw\.com)(/|$)'  # Anti-robot (403 systématique)
+      # >>> GENERATED FROM .vscode/tasks/link_whitelist.txt - ne pas editer a la main >>>
+  - '/^#/'
+  - '/^mailto:.*/'
+  - '/^tel:.*/'
+  - '/^apt://.*/'
+  - '/^apt-thirdparty://.*/'
+  - '/^snap://.*/'
+  - '/^flatpak\+https://.*/'
+  - '/^JaMuz$/'
+  - '/^https?://utilisateur:motdepasse@monproxy:leport/?([?#].*)?$/'
+  - '/^https?://localhost(:[0-9]+)?([/?#].*)?$/'
+  - '/^https?://[a-zA-Z0-9.-]+\.local(:[0-9]+)?([/?#].*)?$/'
+  - '/^https?://(10\.[0-9]+\.[0-9]+\.[0-9]+|192\.168\.[0-9]+\.[0-9]+|172\.(1[6-9]|2[0-9]|3[01])\.[0-9]+\.[0-9]+)(:[0-9]+)?([/?#].*)?$/'
+  - '/^https?://([a-zA-Z0-9-]+\.)*(stackoverflow\.com|alternativeto\.net|distrowatch\.com|kobo\.com|raspberrypi\.com|samfw\.com)(/|$)/'
+  # <<< END GENERATED <<<
+  - '/#.*/'  # URLs avec fragment (spécifique htmlproofer)
 
 # Options de cache
 cache:

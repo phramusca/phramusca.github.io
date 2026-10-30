@@ -140,24 +140,34 @@ class LinkExtractor:
         return links
 
 
+# Fichier de whitelist commun à tous les outils (scripts maison, htmlproofer, lychee).
+# htmlproofer et lychee sont régénérés depuis ce fichier par generate_link_configs.py.
+WHITELIST_FILE = Path(__file__).resolve().parent.parent / "link_whitelist.txt"
+
+
+def load_whitelist_patterns(whitelist_file: Path = WHITELIST_FILE) -> List[str]:
+    """Charge les motifs de la whitelist commune (un regex par ligne, # = commentaire)."""
+    patterns = []
+    try:
+        with open(whitelist_file, 'r', encoding='utf-8') as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith('#'):
+                    re.compile(line)  # Valide le regex
+                    patterns.append(line)
+    except FileNotFoundError:
+        print(f"⚠️  Whitelist commune introuvable: {whitelist_file}", file=sys.stderr)
+    return patterns
+
+
 class LinkClassifier:
     """Classe les liens en internes ou externes."""
     
     # Protocoles à ignorer (ne sont pas vérifiables)
     IGNORED_PROTOCOLS = {'mailto', 'tel', 'apt', 'apt-thirdparty', 'snap', 'flatpak+https', 'file'}
     
-    # Liens à ignorer complètement
-    IGNORED_PATTERNS = [
-        r'^#',  # Ancres
-        r'^JaMuz$',  # Projet externe
-        r'^https?://utilisateur:motdepasse@monproxy:leport/?(?:[?#].*)?$',  # Exemple de proxy, pas une URL réelle
-        # Services locaux
-        r'^https?://localhost(?::\d+)?(?:[/?#].*)?$',
-        r'^https?://[\w.-]+\.local(?::\d+)?(?:[/?#].*)?$',  # mDNS (.local), ex: rpi5.local
-        r'^https?://(?:10\.\d{1,3}\.\d{1,3}\.\d{1,3}|192\.168\.\d{1,3}\.\d{1,3}|172\.(?:1[6-9]|2\d|3[01])\.\d{1,3}\.\d{1,3})(?::\d+)?(?:[/?#].*)?$',  # IPs privées
-        # Sites avec filtrage anti-robot (403 systématique pour les scripts)
-        r'^https?://([\w-]+\.)*(stackoverflow\.com|alternativeto\.net|distrowatch\.com|kobo\.com|raspberrypi\.com|samfw\.com)(/|$)',
-    ]
+    # Liens à ignorer complètement (chargés depuis la whitelist commune link_whitelist.txt)
+    IGNORED_PATTERNS = load_whitelist_patterns()
     
     @staticmethod
     def is_ignored(url: str) -> bool:
