@@ -34,7 +34,7 @@ title: Emulateurs de jeux pour Nintendo DS
 
 1. Créer un fichier texte nommé `databases.txt` dans le dossier `Kekatsu`.
 
-    Voici une liste à mettre dans le fichiers `databases.txt` pour récupérer les listes depuis [Romm](/wiki/docker.md#romm) et [UDB-Kekatsu-DS](https://github.com/cavv-dev/UDB-Kekatsu-DS) (une sélection de logiciels DS et DSi de [Universal-DB](https://db.universal-team.net/ds/), dont des [émulateurs](https://db.universal-team.net/ds/category/emulator) transposée au format Kekatsu).
+    Voici une liste à mettre dans le fichiers `databases.txt` pour récupérer les listes depuis [Romm](/wiki/docker/#romm) et [UDB-Kekatsu-DS](https://github.com/cavv-dev/UDB-Kekatsu-DS) (une sélection de logiciels DS et DSi de [Universal-DB](https://db.universal-team.net/ds/), dont des [émulateurs](https://db.universal-team.net/ds/category/emulator) transposée au format Kekatsu).
 
     Bien entendu, remplacer `192.168.1.12` par l'IP ou est déployé romm.
 

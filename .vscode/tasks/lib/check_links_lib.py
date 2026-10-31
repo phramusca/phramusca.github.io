@@ -244,6 +244,11 @@ class InternalLinkResolver:
         wiki_path = from_file.relative_to(self.wiki_dir).with_suffix('').as_posix()
         source_url = f"/wiki/{wiki_path}/"
         public_path = unquote(urlparse(urljoin(source_url, link)).path)
+        
+        # Jekyll publie les pages wiki en /wiki/<page>/ : /wiki/<page>.md n'existe pas sur le site
+        if public_path.startswith('/wiki/') and public_path.endswith('.md'):
+            return None
+        
         if public_path.startswith('/wiki/'):
             target = self.wiki_dir / public_path.removeprefix('/wiki/')
         else:
@@ -288,6 +293,10 @@ class InternalLinkResolver:
         # depuis l'URL publiée de la page (permalink /wiki/.../), pas depuis le dossier source
         if not link.startswith('/') and from_file.is_relative_to(self.wiki_dir):
             return self.resolve_wiki_url(link, from_file)
+        
+        # Les URLs /wiki/<page>.md n'existent pas sur le site publié (Jekyll publie /wiki/<page>/)
+        if link.startswith('/wiki/') and link.endswith('.md'):
+            return None
         
         # Liens absolus commençant par /
         if link.startswith('/'):

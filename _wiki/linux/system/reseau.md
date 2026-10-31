@@ -110,7 +110,7 @@ application:
 - apt-get: Utilise la variable d'environnement
 - wget: Modifier (en root / sudo) le fichier /etc/wgetrc:
   - http_proxy =
-    [http://utilisateur:motdepasse@monproxy:leport](http://utilisateur:motdepasse@monproxy:leport)
+    `http://utilisateur:motdepasse@monproxy:leport`
   - proxy = on (ou utiliser l'option de commande -Y yes)
 - Eclipse: dans les options
 - RapidSVN: editer en root le fichier /etc/subversion/servers et
@@ -119,9 +119,9 @@ application:
   ~/.kde/share/config/kioslaverc et rajouter les lignes suivantes:
   - \[Proxy Settings\]\[\$i\]
   - ProxyType=1
-  - httpProxy=[http://utilisateur:motdepasse@monproxy:leport](http://utilisateur:motdepasse@monproxy:leport)
-  - httpsProxy=[http://utilisateur:motdepasse@monproxy:leport](http://utilisateur:motdepasse@monproxy:leport)
-  - ftpProxy=[http://utilisateur:motdepasse@monproxy:leport](http://utilisateur:motdepasse@monproxy:leport)
+  - httpProxy=`http://utilisateur:motdepasse@monproxy:leport`
+  - httpsProxy=`http://utilisateur:motdepasse@monproxy:leport`
+  - ftpProxy=`http://utilisateur:motdepasse@monproxy:leport`
 
 Pour OpenSUSE 11.2, éditer le fichier /etc/sysconfig/proxy en root
 (apparemment le GUI "Serveur mandataire ne met pas ce fichier à jour qui

@@ -40,7 +40,7 @@ LocalSettings.php:
 ### Syntax Highlighter
 
 J'utilise maintenant, pour mettre du code source, un [Syntax
-Highlighter](http://alexgorbatchev.com/wiki/SyntaxHighlighter).
+Highlighter](https://github.com/syntaxhighlighter/syntaxhighlighter).
 
 #### Installation
 
@@ -61,7 +61,7 @@ Pour le mettre en place, rien de plus simple:
 `<pre class="brush:[code-alias]"> Ton code ici </pre>`
 
 - [Liste des "code-alias"
-  utlisables](http://alexgorbatchev.com/wiki/SyntaxHighlighter:Brushes)
+  utlisables](https://github.com/syntaxhighlighter/syntaxhighlighter)
 - Par exemple, pour mettre du code PHP:
 
 `<pre class="brush:php"> Ton code PHP ici </pre>`

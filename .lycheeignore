@@ -27,7 +27,7 @@
 ^snap://.*
 ^flatpak\+https://.*
 # Projets externes / exemples
-^JaMuz$
+(^|/)JaMuz$
 ^https?://utilisateur:motdepasse@monproxy:leport/?([?#].*)?$
 # Services locaux
 ^https?://localhost(:[0-9]+)?([/?#].*)?$
@@ -39,6 +39,9 @@
 ^https?://git\.codecoop\.org(/|$)
 # Certificat TLS invalide (hostname mismatch) mais site vivant
 ^https?://([a-zA-Z0-9-]+\.)*gftp\.org(/|$)
+# Sites archivés ou aux réponses intermittentes (OK en navigateur, 500/reset/timeout pour les scripts)
+#^https?://([a-zA-Z0-9-]+\.)*code\.google\.com(/|$)
+#^https?://([a-zA-Z0-9-]+\.)*epubor\.com(/|$)
 
 # <<< END GENERATED <<<
 
