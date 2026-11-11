@@ -472,6 +472,37 @@ POCKETBASE_PROXY_SECRET=
 # UPLOAD_PASSWORD=
 ```
 
+### Cooklang
+
+Voir:
+
+- [docker-compose.yml](https://github.com/cooklang/cookcli/blob/main/docker-compose.yml) sur le dépôt GitHub de [Cookcli](https://github.com/cooklang/cookcli).
+- la documentation sur [Gérer les utilisateurs](https://github.com/cooklang/cookcli#sign-in-in-a-container) pour la configuration des utilisateurs dans le conteneur.
+- la documentation sur [Guides Cooklang](https://cooklang.org/guides/) pour plus d'informations sur l'utilisation de Cooklang.
+- L'[extension Cook pour Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=dubadub.cook) pour l'édition des fichiers Cooklang dans VS Code.
+- Des recettes sur [Cooklang Recipes](https://recipes.cooklang.org/?q=&locale=fr&sort=relevance)
+- La liste des recettes Cooklang sur [Awesome Cooklang Recipes](https://github.com/cooklang/awesome-cooklang-recipes)
+
+```yaml
+services:
+  cookcli:
+    image: ghcr.io/cooklang/cookcli:0.41.1
+    user: "1000:1000"
+    ports:
+      - "9080:9080"
+    volumes:
+      - ${VOLUME_PATH}/recipes:/recipes
+    environment:
+      COOK_CORS_ORIGIN: http://rpi5.local:9080
+    restart: unless-stopped
+```
+
+Avec fichier `.env` :
+
+```ini
+VOLUME_PATH="/chemin/avec des espaces"
+```
+
 ## Accéder aux applications Docker par leur nom
 
 Pour accéder aux applications sans mémoriser un port, j'utilise deux services
