@@ -487,13 +487,43 @@ Voir:
 services:
   cookcli:
     image: ghcr.io/cooklang/cookcli:0.41.1
-    user: "1000:1000"
     ports:
       - "9080:9080"
     volumes:
       - ${VOLUME_PATH}/recipes:/recipes
     environment:
       COOK_CORS_ORIGIN: http://rpi5.local:9080
+    restart: unless-stopped
+```
+
+Avec fichier `.env` :
+
+```ini
+VOLUME_PATH="/chemin/avec des espaces"
+```
+
+### Syncthing
+
+[syncthing](https://syncthing.net/) est un outil de synchronisation de fichiers en temps réel. 
+
+[Documentation Docker Syncthing](https://docs.linuxserver.io/images/docker-syncthing)
+
+```yaml
+services:
+  syncthing:
+    image: lscr.io/linuxserver/syncthing:latest
+    container_name: syncthing
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - ${VOLUME_PATH}/syncthing/config:/config
+      - ${VOLUME_PATH}/cooklang/recipes:/volume/cooklang
+    ports:
+      - 8384:8384
+      - 22000:22000/tcp
+      - 22000:22000/udp
+      - 21027:21027/udp
     restart: unless-stopped
 ```
 
