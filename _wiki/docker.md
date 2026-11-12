@@ -156,6 +156,7 @@ Avec fichier `.env` :
 ```
 
 #### Se connecter aux repos git avec `ssh`
+{: .no_toc}
 
 1. **Configuration de Forgejo**
 
@@ -533,7 +534,9 @@ Avec fichier `.env` :
 VOLUME_PATH="/chemin/avec des espaces"
 ```
 
-## Accéder aux applications Docker par leur nom
+## Configuration
+
+### Accéder aux applications Docker par leur nom
 
 Pour accéder aux applications sans mémoriser un port, j'utilise deux services
 complémentaires :
@@ -565,7 +568,8 @@ http://romm.rpi5.home.arpa
 http://portainer.rpi5.home.arpa
 ```
 
-### Nginx Proxy Manager
+#### Nginx Proxy Manager
+{: .no_toc}
 
 Nginx Proxy Manager doit être le seul service qui utilise les ports `80` et
 `443` de l'hôte. Les applications peuvent continuer à utiliser leurs ports
@@ -622,7 +626,8 @@ immich.rpi5.home.arpa     -> 192.168.1.92:2283
 Ne pas exposer le port `81` sur Internet. Il sert uniquement à administrer
 Nginx Proxy Manager depuis le réseau local.
 
-### Pi-hole et DNS local
+#### Pi-hole et DNS local
+{: .no_toc}
 
 Pi-hole est le serveur DNS utilisé par les appareils du réseau. Il doit être
 joignable sur le port DNS `53` de l'hôte. Dans son interface
@@ -676,7 +681,8 @@ Avec fichier `.env` :
 VOLUME_PATH="/chemin/avec des espaces"
 ```
 
-### Configurer le DNS distribué par le routeur
+#### Configurer le DNS distribué par le routeur
+{: .no_toc}
 
 Le serveur DHCP du routeur doit annoncer l'adresse IP de Pi-hole comme serveur
 DNS. Dans la Freebox, ouvrir l'application Freebox ou l'interface
@@ -696,6 +702,7 @@ adresse doit être configurée statiquement sur le Raspberry Pi), car le routeur
 doit toujours retrouver Pi-hole à la même adresse.
 
 #### Cas de la Freebox et du DNS IPv6
+{: .no_toc}
 
 La Freebox peut aussi annoncer un serveur DNS IPv6 aux clients au moyen des
 annonces IPv6 et de DHCPv6. Android peut alors utiliser ce DNS IPv6 en
@@ -722,7 +729,8 @@ avertissement indiquant que DHCPv6 peut dégrader la connectivité IPv6 de
 certains appareils Android : contrôler donc aussi l'accès IPv6 avant de
 conserver ce réglage.
 
-### Renouveler le réseau sur les hôtes clients
+#### Renouveler le réseau sur les hôtes clients
+{: .no_toc}
 
 Après avoir modifié les paramètres DHCP/DNS, les appareils doivent récupérer la
 nouvelle configuration. Le plus simple est par le gestionnaire de réseau de la distrib. Sinon, en ligne de commande, il faut: 
@@ -766,11 +774,12 @@ getent hosts romm.rpi5.home.arpa
 curl -I http://romm.rpi5.home.arpa
 ```
 
-## Monter un disque externe avant de lancer docker
+### Monter un disque externe avant de lancer docker
 
 J'utilise un disque externe pour stocker les données des services Docker. Le disque doit être monté **avant** `docker.service`. Un script automatise les unités `.mount` et le *drop-in* `docker.service` (`After=` / `Requires=`).
 
-### Script [docker-pre-mount-disks.sh](../../scripts/docker-pre-mount-disks.sh)
+#### Script [docker-pre-mount-disks.sh](../../scripts/docker-pre-mount-disks.sh)
+{: .no_toc}
 
 ```sh
 chmod +x docker-pre-mount-disks.sh
@@ -792,7 +801,8 @@ sudo systemctl status media-…-.mount
 sudo systemctl status docker
 ```
 
-### Référence manuelle (sans script)
+#### Référence manuelle (sans script)
+{: .no_toc}
 
 Procédure :
 

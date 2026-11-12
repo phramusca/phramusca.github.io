@@ -279,15 +279,25 @@ Le layout `content` inclut automatiquement la table des matières. **Aucune acti
 
 ### Fonctionnalités
 
-- **Génération automatique** : La TOC est générée par JavaScript à partir des titres de la page (h2 à h6)
-- **Flottante** : La TOC apparaît sous forme de bouton flottant sur le côté droit de la page
-- **Repliée par défaut** : Le bouton permet d'ouvrir/fermer la TOC à tout moment
-- **Imbrication** : Les sous-sections sont automatiquement imbriquées selon leur niveau
-- **Navigation** : Cliquer sur un lien dans la TOC ferme automatiquement le panneau
-- **Fermeture** : La TOC se ferme en cliquant en dehors, en appuyant sur `Escape`, ou en cliquant sur un lien
+- **Génération automatique** : La TOC est générée par `assets/js/toc.js` à partir des titres de la page (h2 à h6, le h1 sert de titre de la TOC)
+- **Flottante** : La TOC est affichée à droite du contenu, en position fixe, et suit le scroll (sous le header)
+- **Imbrication** : Les sous-sections sont imbriquées selon leur niveau
 - **Ancres automatiques** : Les IDs sont générés automatiquement pour les titres si absents
-- **Style cohérent** : Utilise le thème vert du site
+- **Catégories de tableaux** : Les lignes de tableau `td colspan="4"` en `<strong>` sont ajoutées (h3 si centrées, sinon h4)
+- **Style cohérent** : Utilise le thème vert du site (`assets/css/toc.css`)
 - **Responsive** : S'adapte aux petits écrans
+
+### Niveaux et exclusions
+
+- Les niveaux ne sont **pas configurables** : `toc_levels` dans `_config.yml` ne concerne que la syntaxe kramdown.
+- Il est possible d'exclure un titre (de niveau h4 ou plus) avec la classe `no_toc` (les h2/h3 restent affichés). Exemple :
+  
+  ```markdown
+  #### Titre
+  {: .no_toc}
+  ```
+
+- Note: Un titre dans un bloc `.toggle-content` est également exclu de la TOC (fait à l'origine pour les sections repliables de la liste des logiciels).
 
 ### Utilisation manuelle (optionnelle)
 
