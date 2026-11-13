@@ -8,10 +8,13 @@ exclude_search_sections: true
 
 {:.no_toc}
 
-Il existe des centaines (voire des milliers) d'applications disponible sous [Linux](../). Il n'est pas facile de s'y retrouver, mais voici déjà un point de départ.
+## Prérequis pour les liens d'installation rapide
 
-- [Installer une application sur Linux Mint](https://www.numetopia.fr/comment-installer-des-applications-sur-linux-mint/).
-- [Installer une application sur Ubuntu](https://doc.ubuntu-fr.org/installer_une_application).
+| Type de lien                      | Prérequis                                                                                                    |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `apt-thirdparty://`               | [apt-thirdparty-handler](https://github.com/phramusca/apt-thirdparty-handler/releases/latest) (par moi-même) |
+| `flathub://` (`flatpak+https://`) | [flatpak-https-handler](https://github.com/phramusca/flatpak-https-handler/releases/latest) (par moi-même)   |
+| `apt://`                          | Généralement natif                                                                                           |
 
 ## Sur le Web
 
@@ -24,6 +27,11 @@ pour [Linux](../). En voici une petite sélection:
 - [Alternativeto.net](http://alternativeto.net/) (Anglais) - Trouver des équivalences de programmes. Très utile et pratique !
 - [Framasoft](http://www.framasoft.net/) - Association française qui promeut des alternatives libres et éthiques aux services en ligne, notamment en développant et en soutenant des logiciels libres et des outils collaboratifs pour préserver la vie privée et favoriser l'autonomie numérique.
 
+Pour plus d'informations sur l'installation des applications sur Linux, vous pouvez consulter les guides suivants :
+
+- [Installer une application sur Linux Mint](https://www.numetopia.fr/comment-installer-des-applications-sur-linux-mint/).
+- [Installer une application sur Ubuntu](https://doc.ubuntu-fr.org/installer_une_application).
+
 ## Ma Sélection
 
 {:.no_toc}
@@ -33,10 +41,6 @@ Voici un petit aperçu des programmes disponibles que j'ai eu l'occasion de test
 Les programmes sont distribués sous [différents formats](../system/soft_packages/), chacun avec ses avantages et ses limites.
 
 Les programmes archivés sont disponibles sur la page [Programmes archivés](../soft_archive).
-
-Handlers utiles :
-- [apt-thirdparty-handler](https://github.com/phramusca/apt-thirdparty-handler/releases/latest) pour les liens `apt-thirdparty://...`
-- [flatpak-https-handler](https://github.com/phramusca/flatpak-https-handler/releases/latest) pour les liens `flatpak+https://...` (si besoin selon la distribution)
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
